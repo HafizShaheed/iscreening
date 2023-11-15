@@ -37,8 +37,9 @@ Route::get('/clear-cache', function() {
     Route::prefix('company')->namespace('user')->middleware('userAuth')->group(function(){
 
         Route::get('/', 'userController@index')->name('company.dashboard');
+        Route::post('/sendEmailForRequestThirdParty', 'userController@sendEmailForRequestThirdParty')->name('company.sendEmailForRequestThirdParty');
 
-        
+
 
         Route::prefix('report')->group(function(){
             Route::get('/', 'userController@report_List')->name('company.report_List');
@@ -94,31 +95,37 @@ Route::get('/clear-cache', function() {
             // Route::get('/report-page', 'adminController@reportPage')->name('admin.reportPage');
             Route::prefix('client')->group(function(){
                 Route::get('/', 'adminController@companyList')->name('admin.companyList');
-                // Route::get('/add', 'adminController@add_company')->name('admin.add_company');
-                Route::get('/edit', 'adminController@Edit_company')->name('admin.Edit_company');
+                Route::post('/add', 'userController@addClient')->name('admin.addClient');
+                Route::post('/update_company', 'adminController@update_company')->name('admin.update_company');
+                Route::get('/edit/{id}', 'adminController@Edit_company')->name('admin.Edit_company');
+
 
             });
 
             Route::prefix('team')->group(function(){
                 Route::get('/', 'adminController@team_List')->name('admin.team_List');
-                // Route::get('/add', 'adminController@add_company')->name('admin.add_company');
-                Route::get('/edit', 'adminController@Edit_team')->name('admin.Edit_team');
+                Route::post('/add', 'userController@addTeamMember')->name('admin.addTeamMember');
+                Route::get('/edit/{id}', 'adminController@Edit_team')->name('admin.Edit_team');
+                Route::post('/update_team', 'adminController@update_team')->name('admin.update_team');
+
+
 
             });
             Route::prefix('third-party')->group(function(){
                 Route::get('/', 'adminController@vender_List')->name('admin.vender_List');
-                // Route::get('/add', 'adminController@add_company')->name('admin.add_company');
-                Route::get('/edit', 'adminController@Edit_vender')->name('admin.Edit_vender');
+                Route::post('/add', 'userController@addThirdParty')->name('admin.addThirdParty');
+                Route::post('/update_vender', 'adminController@update_vender')->name('admin.update_vender');
+                Route::get('/edit/{id}', 'adminController@Edit_vender')->name('admin.Edit_vender');
 
             });
 
             Route::prefix('report')->group(function(){
                 Route::get('/', 'adminController@report_List')->name('admin.report_List');
-                Route::get('/view', 'adminController@report_View')->name('admin.report_View');
-                Route::get('/edit', 'adminController@Edit_report')->name('admin.Edit_report');
+                Route::get('/view/{id}', 'adminController@report_View')->name('admin.report_View');
+                Route::get('/edit/{id}', 'adminController@Edit_report')->name('admin.Edit_report');
 
             });
-            
+
 
 
         });

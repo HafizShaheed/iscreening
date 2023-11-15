@@ -142,12 +142,17 @@
             border: 0;
             transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
             }
-         
-                .table tbody tr td {
-                    vertical-align: middle!important;
-                    border-color: #E6E6E6!important;
-                    white-space: inherit!important;
-                    
-                    }
 
+.table tbody tr td {
+vertical-align: middle!important;
+border-color: #E6E6E6!important;
+white-space: inherit!important;
+
+}
+
+
+
+.form-check-input:checked {
+    background-color: #3AC977!important;
+border-color: #3AC977!important; }
 

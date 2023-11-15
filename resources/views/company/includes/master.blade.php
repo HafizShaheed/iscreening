@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="robots" content="">
@@ -17,6 +18,8 @@
     <link rel="shortcut icon" type="image/png" href="{{URL::to('/public/admin/assets/images/logo/logo.png')}}">
     <title> I SCREEING CLIENT | {{ $title }} </title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     @include('company.includes.style')
     @yield('addStyle')

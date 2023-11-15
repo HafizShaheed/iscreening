@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="robots" content="">
@@ -18,6 +19,7 @@
 
     <title> I SCREEING | {{ $title }} </title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     @include('admin.includes.style')
     @yield('addStyle')
@@ -150,7 +152,19 @@
                     </div>
                 </div>
                   <!-- ============================================================== -->
+                  @if(session('success'))
+                    <div class="alert alert-success" id="successAlert">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger" id="errorAlert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                 @yield('content')
+
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->

@@ -1,5 +1,6 @@
 
 <link  href="{{URL::to('/public/admin/assets')}}/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 	<link  href="{{URL::to('/public/admin/assets')}}/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link  href="{{URL::to('/public/admin/assets')}}/vendor/jvmap/jquery-jvectormap.css" rel="stylesheet">

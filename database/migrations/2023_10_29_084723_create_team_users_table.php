@@ -17,9 +17,10 @@ class CreateTeamUsersTable extends Migration
             $table->id();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('user_name')->nullable();
             $table->string('team_email');
             $table->string('password');
-            $table->string('status')->default(0);
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

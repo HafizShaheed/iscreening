@@ -353,7 +353,11 @@
                             <label for="ofacCheck" class="form-label">Regulatory Score </label>
                             <input type="text" class="form-control" id="ofacCheck" placeholder="">
                         </div>
-                        <div class="col-xl-6 mb-3">
+                        <div class="col-xl-3 mb-3">
+                            <label for="ofacCheck" class="form-label">Score Analysis </label>
+                            <input type="text" class="form-control" id="ofacCheck" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
                             <label for="exampleFormControlInput3" class="form-label"></label>
                             <div class="dz-default dlab-message upload-img mb-3">
                                 <div class="fallback">
@@ -430,7 +434,7 @@
                         <span style="color:darkgray; font-size:12px;">Directorship Check</span>
                     </h4>
                     <div class="row">
-                        <!-- =========== Director1 ============ -->
+                    <!-- =========== Director1 ============ -->
 
                         <div class="col-xl-4 mb-3">
                             <label for="exampleFormControlInput99" class="form-label">Director 1</label>
@@ -689,41 +693,9 @@
                             <input type="text" class="form-control" id="exampleFormControlInput99">
                         </div>
 
-                        <!-- =========== Director1 ============ -->
+                    <!-- =========== Director1 ============ -->
 
-                        <!-- =========== Director2 ============ -->
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">Appointment
-                                Date</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="exampleFormControlInput99" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="exampleFormControlInput99">
-                        </div>
+                    <!-- =========== Director2 ============ -->
 
                         <div class="col-xl-4 mb-3">
                             <label for="exampleFormControlInput99" class="form-label">Director 2</label>
@@ -885,6 +857,38 @@
                             <input type="text" class="form-control" id="exampleFormControlInput99">
                         </div>
 
+                        <div class="col-xl-4 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">Director 2</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">CIN</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">Company Status</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">Appointment
+                                Date</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">Business of the
+                                Entity</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+                        <div class="col-xl-12 mb-3">
+                            <label for="exampleFormControlInput99" class="form-label">Business Conflict
+                            </label>
+                            <input type="text" class="form-control" id="exampleFormControlInput99">
+                        </div>
+
 
                         <div class="col-xl-4 mb-3">
                             <label for="exampleFormControlInput99" class="form-label">Director 2</label>
@@ -950,8 +954,8 @@
                             <input type="text" class="form-control" id="exampleFormControlInput99">
                         </div>
 
-                        <!-- =========== Director2 ============ -->
-                        <!-- =========== Director3 ============ -->
+                    <!-- =========== Director2 ============ -->
+                    <!-- =========== Director3 ============ -->
 
                         <div class="col-xl-4 mb-3">
                             <label for="exampleFormControlInput99" class="form-label">Director 3</label>
@@ -1210,7 +1214,7 @@
                             <input type="text" class="form-control" id="exampleFormControlInput99">
                         </div>
 
-                        <!-- =========== Director3 ============ -->
+                    <!-- =========== Director3 ============ -->
                         <div class="row">
                             <div class="col-xl-6 d-flex justify-content-start">
 
@@ -1261,7 +1265,12 @@
                                 <label for="ofacCheck" class="form-label">On-Ground Verification Score</label>
                                 <input type="text" class="form-control" id="ofacCheck" placeholder="">
                             </div>
-                            <div class="col-xl-9  mb-3">
+                            <div class="col-xl-3  mb-3">
+                                <label for="ofacCheck" class="form-label">Score Analysis</label>
+                                <input type="text" class="form-control" id="ofacCheck" placeholder="">
+                            </div>
+
+                            <div class="col-xl-6  mb-3">
                                 <label for="exampleFormControlInput3" class="form-label">Upload Picture</label>
                                 <div class="dz-default dlab-message upload-img mb-3">
                                     <div class="fallback">
@@ -1495,6 +1504,10 @@
                             <label for="educationalBackground" class="form-label">Legal Score</label>
                             <input type="text" class="form-control" id="educationalBackground">
                         </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="educationalBackground" class="form-label">Score Analysis</label>
+                            <input type="text" class="form-control" id="educationalBackground">
+                        </div>
 
                     </div>
                     <div class="row">
@@ -1523,9 +1536,7 @@
 <div class="row" id="Financials">
     <div class="card">
         <div class="card-header justify-content-start">
-            <h4 class="card-title">Financials<br>
-                <span style="color:darkgray; font-size:12px;"> Charges on the Entity </span>
-            </h4>
+
 
 
         </div>
@@ -1534,6 +1545,9 @@
             <form id="Financials-step-form">
                 <!-- Financials 1 step end -->
                 <div class="Financials-step" id="Financials-step-1">
+                    <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Charges on the Entity </span>
+                    </h4>
                     <div class="row">
                         <div class="col-xl-3 mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Name </label>
@@ -1610,1269 +1624,1293 @@
                 </div>
                 <!-- Financials 1 step end -->
                 <!-- Financials part 1 FY1 to FY5 start -->
-                <!-- Financials 2 step start ========================-->
-                <div class="Financials-step" id="Financials-step-2">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Revenue</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                    <!-- Financials 2 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-2">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Revenue</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Net Profit</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Total Assets</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current Assets</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Current Liabilities</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Average Inventory</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Sales</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Sundry Debtors</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Sundry Creditors</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Loans and Advances</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Overall Financial Score</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Net Profit</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
+
+                        <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-2">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-2">Next</button>
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Total Assets</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current Assets</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Current Liabilities</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Average Inventory</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Sales</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Sundry Debtors</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Sundry Creditors</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Loans and Advances</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Overall Financial Score</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
+
                     </div>
-
-                    <!-- Navigation buttons -->
-
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-2">Previous</button>
+                    <!--Financials 2 step end ========================-->
+                    <!--Financials 3 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-3">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Revenue</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Net Profit</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Total Assets</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current Assets</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Current Liabilities</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Average Inventory</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Sales</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Sundry Debtors</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Sundry Creditors</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Loans and Advances</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Overall Financial Score</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-2">Next</button>
+                        <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-3">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-3">Next</button>
+                            </div>
                         </div>
+
                     </div>
+                    <!--Financials 3 step end ========================-->
+                    <!--Financials 4 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-4">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Revenue</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Net Profit</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Total Assets</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current Assets</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Current Liabilities</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Average Inventory</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Sales</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Sundry Debtors</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Sundry Creditors</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Loans and Advances</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Overall Financial Score</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                        </div>
 
-                </div>
-                <!--Financials 2 step end ========================-->
-                <!--Financials 3 step start ========================-->
-                <div class="Financials-step" id="Financials-step-3">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Revenue</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-4">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-4">Next</button>
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Net Profit</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Total Assets</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current Assets</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Current Liabilities</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Average Inventory</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Sales</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Sundry Debtors</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Sundry Creditors</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Loans and Advances</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Overall Financial Score</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
+
                     </div>
-
-                    <!-- Navigation buttons -->
-
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-3">Previous</button>
+                    <!--Financials 4 step end ========================-->
+                    <!--Financials 5 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-5">
+                     <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="javascript:void(0)">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="javascript:void(0)">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Revenue</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Net Profit</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Total Assets</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current Assets</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Current Liabilities</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Average Inventory</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Sales</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Sundry Debtors</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Sundry Creditors</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Loans and Advances</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Overall Financial Score</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-3">Next</button>
+                        <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-5">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-5">Next</button>
+                            </div>
                         </div>
+
                     </div>
+                    <!--Financials 5 step end ========================-->
+                    <!--Financials 6 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-6">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Revenue</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Net Profit</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Working capital</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Total Assets</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current Assets</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Current Liabilities</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Average Inventory</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Sales</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Sundry Debtors</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Sundry Creditors</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Loans and Advances</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Overall Financial Score</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                        </div>
 
-                </div>
-                <!--Financials 3 step end ========================-->
-                <!--Financials 4 step start ========================-->
-                <div class="Financials-step" id="Financials-step-4">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Revenue</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-6">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-6">Next</button>
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Net Profit</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Total Assets</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current Assets</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Current Liabilities</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Average Inventory</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Sales</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Sundry Debtors</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Sundry Creditors</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Loans and Advances</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Overall Financial Score</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
+
                     </div>
-
-                    <!-- Navigation buttons -->
-
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-4">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
-
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-4">Next</button>
-                        </div>
-                    </div>
-
-                </div>
-                <!--Financials 4 step end ========================-->
-                <!--Financials 5 step start ========================-->
-                <div class="Financials-step" id="Financials-step-5">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="javascript:void(0)">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="javascript:void(0)">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Revenue</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Net Profit</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Total Assets</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current Assets</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Current Liabilities</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Average Inventory</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Sales</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Sundry Debtors</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Sundry Creditors</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Loans and Advances</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Overall Financial Score</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                    </div>
-
-                    <!-- Navigation buttons -->
-
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-5">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
-
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-5">Next</button>
-                        </div>
-                    </div>
-
-                </div>
-                <!--Financials 5 step end ========================-->
-                <!--Financials 6 step start ========================-->
-                <div class="Financials-step" id="Financials-step-6">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Revenue</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Net Profit</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Working capital</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Total Assets</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current Assets</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Current Liabilities</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Average Inventory</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Sales</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Equity/Share Capital</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Sundry Debtors</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Sundry Creditors</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Loans and Advances</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Cash and Cash Equivalents</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Overall Financial Score</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                    </div>
-
-                    <!-- Navigation buttons -->
-
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-6">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
-
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-6">Next</button>
-                        </div>
-                    </div>
-
-                </div>
-                <!--Financials 6 step end ========================-->
+                    <!--Financials 6 step end ========================-->
                 <!-- Financials part 1 FY1 to FY5 end -->
 
                 <!-- Financials part 2 FY1 to FY5 end -->
-                <!--Financials 7 step start ========================-->
-                <div class="Financials-step" id="Financials-step-7">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                    <!--Financials 7 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-7">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Solvency Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Proprietary Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Springate S Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Receivable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Payable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Solvency Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Taffler Z-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Proprietary Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Springate S Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Receivable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Payable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Taffler Z-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                    </div>
 
-                    <!-- Navigation buttons -->
+                        <!-- Navigation buttons -->
 
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-7">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-7">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-7">Next</button>
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-7">Next</button>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <!--Financials 7 step end ========================-->
-                <!--Financials 8 step start ========================-->
-                <div class="Financials-step" id="Financials-step-8">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Solvency Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Proprietary Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Springate S Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                    <!--Financials 7 step end ========================-->
+                    <!--Financials 8 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-8">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Solvency Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Proprietary Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Receivable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Springate S Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Payable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Receivable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Taffler Z-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Payable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Taffler Z-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                        </div>
 
-                    <!-- Navigation buttons -->
+                        <!-- Navigation buttons -->
 
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-8">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-8">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-8">Next</button>
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-8">Next</button>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <!--Financials 8 step end ========================-->
-                <!--Financials 9 step start ========================-->
-                <div class="Financials-step" id="Financials-step-9">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Solvency Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Proprietary Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Springate S Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                    <!--Financials 8 step end ========================-->
+                    <!--Financials 9 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-9">
+                       <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Solvency Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Proprietary Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Receivable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Springate S Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Payable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Receivable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Taffler Z-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Payable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Taffler Z-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                        </div>
 
-                    <!-- Navigation buttons -->
+                        <!-- Navigation buttons -->
 
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-9">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-9">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-9">Next</button>
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-9">Next</button>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <!--Financials 9 step end ========================-->
-                <!--Financials 10 step start ========================-->
-                <div class="Financials-step" id="Financials-step-10">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Solvency Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Proprietary Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Springate S Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                    <!--Financials 9 step end ========================-->
+                    <!--Financials 10 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-10">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Solvency Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Proprietary Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Receivable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Springate S Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Payable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Receivable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Taffler Z-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Payable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Taffler Z-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                        </div>
 
-                    <!-- Navigation buttons -->
+                        <!-- Navigation buttons -->
 
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-10">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-10">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-next-10">Next</button>
+                                <button type="button" class="btn btn report-tab-active" id="Financials-next-10">Next</button>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <!--Financials 10 step end ========================-->
-                <!--Financials 11 step start ========================-->
-                <div class="Financials-step" id="Financials-step-11">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY1</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY2</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY3</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
-                                href="#">FY4</a>
-                        </li>
-                        <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
-                                href="#">FY5</a>
-                        </li>
-                    </ul>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Current ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Solvency Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Proprietary Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Net Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseNo1" class="form-label">Analysis</label>
-                            <input type="text" class="form-control" id="licenseNo1" placeholder="">
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Springate S Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                    <!--Financials 10 step end ========================-->
+                    <!--Financials 11 step start ========================-->
+                    <div class="Financials-step" id="Financials-step-11">
+                        <h4 class="card-title">Financials<br>
+                        <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY1</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY2</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY3</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:darkgray" aria-current="page"
+                                    href="#">FY4</a>
+                            </li>
+                            <li class="nav-item mb-2 mr-1 p-2">
+                                <a class="nav-link" style="color:white;background-color:#6d3b7a" aria-current="page"
+                                    href="#">FY5</a>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Current ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Solvency Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Debt to Equity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Asset Turnover Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Absolute Liquidity Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Proprietary Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Net Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Gross Profit Ratio</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseNo1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" id="licenseNo1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Receivable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Springate S Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Trade Payable Days</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Receivable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Taffler Z-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Trade Payable Days</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
-                            <input type="text" class="form-control" id="licenseName1" placeholder="">
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Taffler Z-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Zmijewski X-Score</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="licenseName1" class="form-label">Score Analysis</label>
+                                <input type="text" class="form-control" id="licenseName1" placeholder="">
+                            </div>
+                        </div>
 
-                    <!-- Navigation buttons -->
+                        <!-- Navigation buttons -->
 
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-11">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="Financials-prev-11">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="Financials-submit">Submit</button>
+                                <button type="button" class="btn btn report-tab-active" id="Financials-submit">Submit</button>
+                            </div>
                         </div>
+
                     </div>
-
-                </div>
-                <!--Financials 11 step end ========================-->
+                    <!--Financials 11 step end ========================-->
                 <!-- Financials part 2 FY1 to FY5 end -->
 
 
@@ -2965,6 +3003,10 @@
                         <div class="row">
                             <div class="col-xl-4  mb-3">
                                 <label for="ofacCheck" class="form-label">Efficiency Score</label>
+                                <input type="text" class="form-control" id="ofacCheck" placeholder="">
+                            </div>
+                            <div class="col-xl-4  mb-3">
+                                <label for="ofacCheck" class="form-label"> Score Analysis</label>
                                 <input type="text" class="form-control" id="ofacCheck" placeholder="">
                             </div>
 
@@ -3176,6 +3218,10 @@
                             <label for="educationalBackground" class="form-label">Overall Credit History Score</label>
                             <input type="text" class="form-control" id="educationalBackground">
                         </div>
+                        <div class="col-xl-2 mb-3">
+                            <label for="educationalBackground" class="form-label">Score Analysis</label>
+                            <input type="text" class="form-control" id="educationalBackground">
+                        </div>
 
                     </div>
                     <div class="row">
@@ -3218,16 +3264,31 @@
                     <div class="row">
 
 
-                        <div class="row">
-                            <div class="file-upload">
-                                <input type="file" id="fileInput" class="file-input" accept="image/*" />
-                                <label for="fileInput" class="file-label">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    Drag & Drop or Click to Upload
-                                </label>
-                            </div>
+                    <div class="row">
 
+                        <div class="col-xl-3 mb-3">
+                            <label for="ofacCheck" class="form-label">RMarket Reputation Score </label>
+                            <input type="text" class="form-control" id="ofacCheck" placeholder="">
                         </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="ofacCheck" class="form-label">Score Analysis </label>
+                            <input type="text" class="form-control" id="ofacCheck" placeholder="">
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+
+                    <div class="col-xl-6 mb-3">
+                        <label for="exampleFormControlInput3" class="form-label"></label>
+                        <div class="dz-default dlab-message upload-img mb-3">
+                            <div class="fallback">
+                                <input name="file" type="file" title="Support Formate Pdf only" class="form-control" id="exampleFormControlInput3"
+                                    placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
 
 
 

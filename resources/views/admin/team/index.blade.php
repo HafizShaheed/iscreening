@@ -69,7 +69,7 @@
                     <div class="tbl-caption">
                         <h4 class="heading mb-0">Team List</h4>
                         <div>
-                            
+
 
                         </div>
                     </div>
@@ -80,40 +80,49 @@
 
                                 <th> User Name</th>
                                 <th> Email</th>
+                                <th>Created_at</th>
+
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
 
-                            <tr>
-                                <td><span>1001</span></td>
-                                <td><span>Screening</span></td>
-                                <td><span>zxr@icreening.com</span></td>
-                                <td>
-                                    <span class="badge badge-success light border-0">Active</span>
-                                </td>
+                        @if (count($getallTeamMember) > 0)
+                                @foreach ($getallTeamMember as  $value)
+                                    <tr>
+                                        <td><span>{{$value->id}}</span></td>
+                                        <td><span>{{$value->user_name}}</span></td>
+                                        <td><span>{{$value->team_email}}</span></td>
+                                        <td><span>{{$value->created_at->format('d/m/Y')}}</span></td>
+                                        <td>
+                                            @switch($value->status)
+                                                @case('1')
+                                                <span class="badge badge-success light  border-0">Active </span>
+                                                    @break
 
-                                <td>
-                                    <a href="{{ URL::to('/panel/team/edit') }}">
+                                                @case('0')
+                                                <span class="badge badge-danger light  border-0">In-active </span>
 
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M11.4925 2.789H7.75349C4.67849 2.789 2.75049 4.966 2.75049 8.048V16.362C2.75049 19.444 4.66949 21.621 7.75349 21.621H16.5775C19.6625 21.621 21.5815 19.444 21.5815 16.362V12.334"
-                                                stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M8.82812 10.9209L16.3011 3.44793C17.2321 2.51793 18.7411 2.51793 19.6721 3.44793L20.8891 4.66493C21.8201 5.59593 21.8201 7.10593 20.8891 8.03593L13.3801 15.5449C12.9731 15.9519 12.4211 16.1809 11.8451 16.1809H8.09912L8.19312 12.4009C8.20712 11.8449 8.43412 11.3149 8.82812 10.9209Z"
-                                                stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M15.1655 4.60254L19.7315 9.16854" stroke="#130F26"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </td>
-                            </tr>
-                        
+                                                    @break
+
+                                            @endswitch
+                                        </td>
+
+                                        <td>
+                                            <a href="{{ URL::to('/panel/team/edit').'/'.$value->id }}" title="Team Edit">
+
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.4925 2.789H7.75349C4.67849 2.789 2.75049 4.966 2.75049 8.048V16.362C2.75049 19.444 4.66949 21.621 7.75349 21.621H16.5775C19.6625 21.621 21.5815 19.444 21.5815 16.362V12.334" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.82812 10.9209L16.3011 3.44793C17.2321 2.51793 18.7411 2.51793 19.6721 3.44793L20.8891 4.66493C21.8201 5.59593 21.8201 7.10593 20.8891 8.03593L13.3801 15.5449C12.9731 15.9519 12.4211 16.1809 11.8451 16.1809H8.09912L8.19312 12.4009C8.20712 11.8449 8.43412 11.3149 8.82812 10.9209Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M15.1655 4.60254L19.7315 9.16854" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+
 
 
                         </tbody>

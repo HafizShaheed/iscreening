@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use Hash;
-
+use Illuminate\Support\Facades\Mail;
 class userController extends Controller
 {
     //
@@ -41,7 +41,7 @@ class userController extends Controller
         $data['page'] = "Reports Managment";
         $data['pageIntro'] = "Reports List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-       
+
         //   $vendoruser=User::where('vendor_status',2)->count();
             return view('company.reports.index',$data);
     }
@@ -53,6 +53,57 @@ class userController extends Controller
         $data['pageIntro'] = "Introducing Client View Reports";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         return view('company.reports.view-reports',$data);
+    }
+
+    public function sendEmailForRequestThirdParty(Request $request)
+    {
+        // dd($request->all());
+        $data =array(
+            "third_party_name" =>       $request->third_party_name,
+            "third_party_address" =>    $request->third_party_address,
+            "third_party_department" => $request->third_party_department,
+            "third_party_pos" =>       $request->third_party_pos,
+            "third_party_location" =>   $request->third_party_location,
+            "third_party_email" =>      $request->third_party_email,
+            "third_party_phone" =>      $request->third_party_phone,
+            'auth_name'=> auth()->user()->first_name,
+            'auth_email'=> auth()->user()->email,
+        );
+             
+        $recipient = array(
+            'auth_name'=> auth()->user()->first_name,
+            'auth_email'=> auth()->user()->email,
+        );
+        $subject='Request for third party';
+        
+
+        // Send email with Markdown template
+      
+
+
+        try {
+            // Send email with Markdown template
+            Mail::send('mail.forThirdpartyRequest', ['data' => $data], function ($mail) use ($recipient, $subject) {
+                $mail->to($recipient['auth_email'],$recipient['auth_name'],)
+                     ->subject($subject);
+            });
+    
+            // Email sent successfully
+            $response = [
+                'success' => true,
+                'message' => 'Email sent successfully!',
+            ];
+        } catch (\Exception $e) {
+            // Email sending failed
+            $response = [
+                'success' => false,
+                'message' => 'Email sending failed. Error: ' . $e->getMessage(),
+            ];
+        }
+    
+        return response()->json($response);
+
+        return 'Email sent successfully!';
     }
 
 

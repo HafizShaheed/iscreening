@@ -11,9 +11,12 @@
 
     <div class="card">
         <div class="card-body justify-content-start">
-            <form>
+        <form action="{{route('admin.update_team')}}" method="POST">
+                @csrf
                 <div class="row">
                     <div class=" col-xl-12 col-sm-12 col-12 mt-4 mt-md-0">
+                <input type="hidden" name="id" id="input" class="form-control" value="{{$getTeamMember->id}}">
+
                         <!-- <div class=" justify-content-center align-items-center">
 
                             <label>Company Logo</label>
@@ -45,30 +48,37 @@
                         <div class="row">
 
                         <div class="col-xl-6 mb-3">
-                                                <label for="exampleFormControlInput2" class="form-label">User Name<span
+                                                <label for="exampleFormControlInput2"  class="form-label">User Name<span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="">
+                                                <input type="text" class="form-control" name="user_name" value="{{$getTeamMember->user_name}}" id="exampleFormControlInput2" placeholder="">
                                             </div>
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput4" class="form-label">Email<span
                                                         class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" id="exampleFormControlInput4"
+                                                <input type="email" class="form-control" name="team_email" value="{{$getTeamMember->team_email}}" id="exampleFormControlInput4"
                                                     placeholder="">
                                             </div>
-                                            
+
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput4" class="form-label">Password<span
                                                         class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" id="exampleFormControlInput4"
+                                                <input type="password" class="form-control" name="password" id="exampleFormControlInput4"
                                                     placeholder="">
                                             </div>
-                
+
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput4" class="form-label">Confirm Password<span
                                                         class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" id="exampleFormControlInput4"
+                                                <input type="password" class="form-control" name="password_confirmation" id="exampleFormControlInput4"
                                                     placeholder="">
                                             </div>
+                                            <div class="col-xl-6 mb-3">
+                                        <!-- <label class="form-check-label" for="customCheckBox3"> status</label> -->
+                                        <label for="TeamStatusCheck" class="form-label">Status<span
+                                                class="text-danger">*</span></label>
+                                        <input type="checkbox" class="form-check-input"
+                                            name="TeamStatusCheck"  {{$getTeamMember->status== 1 ? 'checked' : '' }} />
+                                    </div>
                         </div>
                         <div>
                             <button class="btn btn- light ms-1 report-tab-unactive">Cancel</button>

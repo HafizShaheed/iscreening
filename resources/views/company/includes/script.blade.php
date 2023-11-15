@@ -11,6 +11,7 @@
 <script src="{{URL::to('/public/admin/assets')}}/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
 <script src="{{URL::to('/public/admin/assets')}}/vendor/morris/morris.min.js"></script>
 <!-- Custom Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="{{URL::to('/public/admin/assets')}}/js/custom.js"></script>
 <script src="{{URL::to('/public/admin/assets')}}/js/deznav-init.js"></script>
 <script src="{{URL::to('/public/admin/assets')}}/vendor/peity/jquery.peity.min.js"></script>
