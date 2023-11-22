@@ -14,9 +14,9 @@
             <div class="card-body justify-content-start">
                 <form id="" action="{{route('admin.team_List')}}"
                     class="row d-flex justify-content-between align-items-end">
-                  
 
-                    <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
+
+                    <div class="col-xl-6 col-sm-6 col-6 mt-4 mt-md-0">
                         <label for="thirdPartyName">Status:</label>
                         <div class="d-flex justify-content-start align-items-start">
                             <select class="multi-select" name="status" placeholder="Select status Party">
@@ -26,13 +26,19 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
-                        <div class="d-flex justify-content-start align-items-end">
+                    <div class="col-xl-2 col-sm-6 col-6 mt-4 mt-md-0">
+                        <div class="d-flex justify-content-start align-items-end justify-content-between">
                             <button type="submit" class="btn btn report-tab-active"
                                 id="filter-reprot-btn">Filter</button>
+                                <a href="{{route('admin.team_List')}}" class="btn btn report-tab-unactive"
+                                id="filter-reprot-btn">Reset</a>
                         </div>
+
                     </div>
-                    
+                    <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
+
+                    </div>
+
                 </form>
 
 
@@ -56,12 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-sm-6 col-6 ">
-                        <div class="d-flex justify-content-start mb-3">
-                            <a href="{{route('admin.team_List')}}" class="btn btn report-tab-active"
-                                id="filter-reprot-btn">Reset</a>
-                        </div>
-                    </div>
+
                     </from>
             </div>
         </div>
@@ -127,6 +128,9 @@
                                         </td>
                                     </tr>
                                 @endforeach
+                                @else
+                            <tr>
+                                <td colspan="3"><span>No records found!</span></td>
                             @endif
 
 

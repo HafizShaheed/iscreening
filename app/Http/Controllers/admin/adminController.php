@@ -87,10 +87,10 @@ class adminController extends Controller
         $data['page'] = "Client Managment";
         $data['pageIntro'] = "Company List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-       
+
         $query = User::query();
 
-    
+
         if (isset($request->location) && !empty($request->location)) {
             $party_id = (int)$request->input('location');
             $query->where('zone_id', $party_id);
@@ -107,24 +107,24 @@ class adminController extends Controller
                       ->orWhere('poc', 'like', '%' . $clientName . '%');
             });
         }
-        
 
-       
 
-        
+
+
+
         if (isset($request->status) && !empty($request->status))   {
             $statusMapping = [
                 'Active' => 1,
                 'In-Active' => 0,
-               
+
             ];
             $statusString = $request->status;
             $status = isset($statusMapping[$statusString]) ? (int)$statusMapping[$statusString] : null;
             $query->where('status',$status);
-            
+
         }
-       
-        
+
+
         $data['getallclient'] = $query->latest()->get();
 
             return view('admin.client.index',$data);
@@ -200,14 +200,49 @@ class adminController extends Controller
 
 
     // team list start
-    function team_List(){
+    function team_List(Request $request){
 
         $data['title'] = "Team Managment";
         $data['page'] = "Team Managment";
         $data['pageIntro'] = "Team List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
-        $data['getallTeamMember'] = TeamUser::latest()->get();
+
+
+
+        $query = TeamUser::query();
+
+
+
+        if (isset($request->TeamMember) && !empty($request->TeamMember)) {
+            $TeamMemberName = $request->input('TeamMember');
+            $query->where(function($query) use ($TeamMemberName) {
+                $query->orWhere('first_name', 'like', '%' . $TeamMemberName . '%')
+                      ->orWhere('last_name', 'like', '%' . $TeamMemberName . '%')
+                      ->orWhere('user_name', 'like', '%' . $TeamMemberName . '%')
+                      ->orWhere('team_email', 'like', '%' . $TeamMemberName . '%');
+
+            });
+        }
+
+
+
+
+
+        if (isset($request->status) && !empty($request->status))   {
+            $statusMapping = [
+                'Active' => 1,
+                'In-Active' => 0,
+
+            ];
+            $statusString = $request->status;
+            $status = isset($statusMapping[$statusString]) ? (int)$statusMapping[$statusString] : null;
+            $query->where('status',$status);
+
+        }
+
+
+        $data['getallTeamMember'] = $query->latest()->get();
         // dd($data['getallTeamMember']);
             return view('admin.team.index',$data);
     }
@@ -271,16 +306,61 @@ class adminController extends Controller
 
 
     // vender means Third-party list start
-    function vender_List(){
+    function vender_List(Request $request){
 
         $data['title'] = "Third-Party Managment";
         $data['page'] = "Third-Party Managment";
         $data['pageIntro'] = "Third-Party List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
-        $data['getallThirdParty'] = ThirdParty::latest()->get();
         // dd( $data['getallThirdParty']);
 
+
+
+        $query = ThirdParty::query();
+
+
+        if (isset($request->ThirdParty) && !empty($request->ThirdParty)) {
+            $ThirdPartyName = $request->input('ThirdParty');
+            $query->where(function($query) use ($ThirdPartyName) {
+                $query->orWhere('third_party_name	', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_email ', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_phone', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_pos', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_address', 'like', '%' . $ThirdPartyName . '%');
+
+            });
+        }
+        if (isset($request->ClientName) && !empty($request->ClientName)) {
+            $client_id = (int)$request->input('ClientName');
+            $query->where('user_id', $client_id);
+        }
+        if (isset($request->location) && !empty($request->location)) {
+            $location = (int)$request->input('location');
+            $query->where('zone_id', $location);
+        }
+        if (isset($request->Department) && !empty($request->Department)) {
+            $department_id = (int)$request->input('Department');
+            $query->where('department_id', $department_id);
+        }
+
+
+
+        if (isset($request->status) && !empty($request->status))   {
+            $statusMapping = [
+                'Active' => 1,
+                'Pending' => 0,
+                'Resubmit' => 2,
+                'Completed' => 3,
+            ];
+            $statusString = $request->status;
+            $status = isset($statusMapping[$statusString]) ? (int)$statusMapping[$statusString] : null;
+            $query->where('status',$status);
+
+        }
+
+
+        $data['getallThirdParty'] = $query->latest()->get();
             return view('admin.third-party.index',$data);
     }
 
@@ -347,14 +427,14 @@ class adminController extends Controller
 
      // vender means Reports list start
     function report_List(Request $request){
-        
+
         $data['title'] = "Reports Management";
         $data['page'] = "Reports Management";
         $data['pageIntro'] = "Reports List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         $query = ThirdParty::query();
 
-    
+
         if (isset($request->PartyName) && !empty($request->PartyName)) {
             $party_id = (int)$request->input('PartyName');
             $query->where('id', $party_id);
@@ -365,9 +445,9 @@ class adminController extends Controller
             $query->where('user_id', $client_id);
         }
 
-       
 
-        
+
+
         if (isset($request->status) && !empty($request->status))   {
             $statusMapping = [
                 'Active' => 1,
@@ -378,9 +458,9 @@ class adminController extends Controller
             $statusString = $request->status;
             $status = isset($statusMapping[$statusString]) ? (int)$statusMapping[$statusString] : null;
             $query->where('status',$status);
-            
+
         }
-        
+
 
         $data['getallThirdParty'] = $query->latest()->get();
 
