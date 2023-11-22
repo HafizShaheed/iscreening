@@ -24,7 +24,8 @@ class ClientUserTableSeeder extends Seeder
                 'email_verified_at' => now(),
                 'industry' => 'Technology',
                 'poc' => 'Jane Smith',
-                'location' => 'New York',
+                'zone_id' => 2,
+                'role_id' => 1,
                 'password' => Hash::make('secret123'), // Hash the password
                 'status' => 1,
                 'remember_token' =>Str::random(12),
@@ -32,6 +33,26 @@ class ClientUserTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+
+            [
+                'first_name' => 'c-1',
+                'last_name' => 'c-1',
+                'user_name' => 'client1',
+                'email' => 'i@screening.com',
+                'email_verified_at' => now(),
+                'industry' => 'Technology',
+                'poc' => 'Jane Smith',
+                'zone_id' => 1,
+                'role_id' => 1,
+                'password' => Hash::make('secret123'), // Hash the password
+                'status' => 1,
+                'remember_token' =>Str::random(12),
+                // Generate a random remember token
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            
 
             // Add more user data here if needed
         ]);

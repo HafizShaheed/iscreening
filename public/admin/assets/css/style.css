@@ -10347,7 +10347,7 @@ label {
 
 /* Editable */
 #preloader {
-  background-color: #6d3b7a;
+  background-color: white;
   padding: 0;
   margin: 0;
   height: 100%;
@@ -10385,8 +10385,8 @@ label {
     height: 72px;
     opacity: 0; } }
 
-[data-theme-version="light"] #preloader {
-  background-color: #6d3b7a; }
+[data-theme-version="dark"] #preloader {
+  background-color: #0d99ff; }
 
 .footer {
   padding-left: 15rem;

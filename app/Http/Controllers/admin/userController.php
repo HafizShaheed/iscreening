@@ -53,6 +53,8 @@ class userController extends Controller
             'third_party_name' => 'required',
             'user_id' => 'required|exists:users,id',
             'third_party_email' => 'required',
+            'zone_id' => 'required',
+            'department_id' => 'required',
 
         ],[
             'user_id.required' => 'Please select client'
@@ -73,55 +75,56 @@ class userController extends Controller
             'third_party_name'=> $request->third_party_name,
             'user_id'=> $request->user_id,
             'third_party_address'=> $request->third_party_address,
-           'third_party_department'=> $request->third_party_department,
+           'department_id'=> $request->department_id,
             'third_party_pos'=> $request->third_party_pos,
-            'third_party_location'=> $request->third_party_location,
+            'zone_id'=> $request->zone_id,
             'third_party_email' => $request->third_party_email,
             'third_party_phone'=> $request->third_party_phone,
             'created_at' => now(),
 
         ]);
+        // dd($thirdParty->id);
         if ($thirdParty) {
             $thirdPartyID = $thirdParty->id;
             if(isset($thirdPartyID) && !is_null($thirdPartyID)){
                 $firmbackgound =FirmBackground::create([
                         'user_id' =>$request->user_id,
-                        'team_user_id' => $thirdPartyID,
+                        'third_party_id' => $thirdPartyID,
                         'created_at' => now(),
                     ]);
                 OnGroundVerification::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                 CourtCheck::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                 BusinessIntelligence::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                 TaxReurnCredit::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                 MarketReputation::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                 KeyObservation::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                $financial = Financial::create([
                     'user_id' =>$request->user_id,
-                    'team_user_id' => $thirdPartyID,
+                    'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
                 $firmbackgoundID = $firmbackgound->id;
@@ -222,7 +225,8 @@ class userController extends Controller
             'email' => 'required|email|unique:users',
             'industry' => 'required|string',
             'poc' => 'required|string',
-            'location' => 'required|string',
+            'zone_id' => 'required|string',
+            'role_id' => 'required|string',
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required',
         ], [
@@ -245,7 +249,8 @@ class userController extends Controller
             'email' => $request->email,
             'industry' => $request->industry,
             'poc' => $request->poc,
-            'location' => $request->location,
+            'zone_id' => $request->zone_id,
+            'role_id' => $request->role_id,
             'password' => Hash::make($request->password),
             'status' => $request->clientStatusCheck == true ? 1 : 0,
             'created_at' => now()

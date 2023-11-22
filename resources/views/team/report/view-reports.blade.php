@@ -99,7 +99,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Incorporation Year</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">2015</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">{{ $FirmBackground->incorporation_year }}</th>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Directors</td>
@@ -107,19 +107,19 @@
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Form of Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">Sole Proprietorship</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->form_of_entity }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Industry</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">Medical Supplies</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->industry }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4"></td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">Ground Floor, Plot No: 80, C- Block, Mangolpuri Industrial Area, Phase -1, New Delhi – 110083</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->address }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Business Details</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">The company deals in trading of Medical/hospital/surgical Equipments/Instruments and appliances.</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->business_details }}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -146,20 +146,59 @@
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Expiry Date</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">UDYAM Registration Number</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">UDYAM-DL-06-0001949</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">21-03-2023</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">21-03-2027</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_1}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_1}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_1}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_1}}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">GST Registrations</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">07ASVPC3648R1ZU</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">21-03-2023</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">21-03-2027</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_2}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_2}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_2}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_2}}</td>
                                                         </tr>
+                                                        <tr>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_3}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_3}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_3}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_3}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_4}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_4}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_4}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_4}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_5}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_5}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_5}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_5}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_6}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_6}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_6}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_6}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_7}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_7}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_7}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_7}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_8}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_8}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_8}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_8}}</td>
+                                                        </tr>
+
+
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 text-start">Ofac Check</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 align-items-end"><button class="download-license-btn">Download Licenses</button></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 text-start">{{$FirmBackground->ofac_check}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 align-items-end"><a href="{{ URL::to('/panel/report/firm_file_download'.'/'.$FirmBackground->id) }}" class="download-license-btn">Download Licenses</a></td>
 
                                                         </tr>
 
@@ -670,9 +709,9 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="Credit-History">
-                                      
+
                                         <div class="pt-4">
-                                           
+
                                                 <div class="table-responsive">
                                                     <table class="table primary-table-bordered">
                                                         <thead class="thead-primary">
@@ -688,7 +727,7 @@
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Ms. 
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Ms.
                                                                     Cherry Banga</td>
                                                                 <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-1">779</td>
                                                                 <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-1">779 Text and number
@@ -701,7 +740,7 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                           
+
                                         </div>
 
                                     </div>
@@ -736,7 +775,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#Market-Reputation">Market Reputation</a>
                                     </li>
-                                  
+
 
                                 </ul>
                                 <div class="tab-content">
@@ -745,25 +784,25 @@
                                             <div class="table-responsive">
                                                 <table class="table primary-table-bordered">
                                                     <thead class="thead-primary">
-                                                     
+
 
                                                     </thead>
                                                     <tbody>
-     
+
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">
                                                                 <embed src="{{URL::to('/public/pdf/sa.pdf')}}" width="500" height="550" type="application/pdf">
-                                                            
+
                                                             </td>
                                                             <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">MARKET REPUTATION SCORE =</th>
                                                         </tr>
-                                                        
+
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
-                               
+
                                 </div>
                             </div>
                         </div>
@@ -825,7 +864,7 @@
                                             <div class="row">
                                                 <div class="col-xl-6 mb-3">
                                                     <p for="educationalBackground" class="text-start">
-                                                        
+
                                                         In the light of above observation, the entity is fit for the intended purpose of engagement subject to the following recommendation:
                                                     </p>
                                                     <ul  class="text-start">
@@ -843,10 +882,10 @@
                                                     <p for="educationalBackground" class="text-center"><button class="download-license-btn">Download Licenses</button></p>
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </div>

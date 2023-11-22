@@ -20,7 +20,7 @@
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
-
+<!-- 
                 
                 <li>
                     <a href="{{ URL::to('/panel-team/report') }}" class="{{ $title == 'Reports Managment' ? 'mm-active' : '' }}"
@@ -63,7 +63,7 @@
                         </div>
                         <span class="nav-text">Entery Reports</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="{{ URL::to('/panel-team/third-party') }}" class="{{ $title == 'Third-Party Managment' ? 'mm-active' : '' }}"
                         aria-expanded="false">

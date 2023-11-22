@@ -15,13 +15,14 @@
                 @csrf
                 <div class="row">
                     <div class=" col-xl-12 col-sm-12 col-12 mt-4 mt-md-0">
-                   
+
                     </div>
                     <div class=" col-xl-12 col-sm-12 col-12 mt-4 mt-md-0">
 
                         <div class="row">
 
                         <div class="col-xl-6 mb-3">
+                            <input id="id" type="hidden" name="id" value="{{$getThirdParty->id}}">
                                                 <label for="exampleFormControlInput2" class="form-label">Third Party Name<span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" name="third_party_name" value="{{$getThirdParty->third_party_name}}" class="form-control" id="exampleFormControlInput2" placeholder="">
@@ -53,9 +54,26 @@
                                                 <textarea rows="1" name="third_party_address"    class="form-control">{{$getThirdParty->third_party_address}}</textarea>
                                             </div>
                                             <div class="col-xl-6 mb-3">
-                                                <label for="exampleFormControlInput88" class="form-label">Department<span
-                                                        class="text-danger">*</span></label>
-                                                <input type="text" name="third_party_department"  value="{{$getThirdParty->third_party_department}}"  class="form-control" id="exampleFormControlInput88" placeholder="">
+
+                                        <label for="thirdPartDepartment" class="form-label">Department<span
+                                                class="text-danger">*</span></label>
+                                                   @php
+                                            $departments = \App\Models\Department::get();
+                                            @endphp
+                                            <select class="multi-select" id="department_id" name="department_id" placeholder="Select Third Party">
+                                                <option disabled selected>Select Department</option>
+                                                @forelse ($departments as $department )
+                                                <option data-display="Select" value="{{ $department->id }}" {{ $department->id == $getThirdParty->department_id ? 'selected' : ''  }}>
+                                                    {{ $department->dept_name  }}
+                                                </option>
+                                                @empty
+                                                <p> No records found!</p>
+                                                @endforelse
+
+                                            </select>
+
+
+
                                             </div>
 
                                             <div class="col-xl-6 mb-3">
@@ -63,11 +81,25 @@
                                                         class="text-danger">*</span></label>
                                                 <input type="text" name="third_party_pos"  value="{{$getThirdParty->third_party_pos}}"  class="form-control" id="exampleFormControlInput2" placeholder="">
                                             </div>
+
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput2" class="form-label">Location<span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" name="third_party_location"  value="{{$getThirdParty->third_party_location}}"  class="form-control" id="exampleFormControlInput2" placeholder="">
-                                            </div>
+                                                        @php
+                                            $zones = \App\Models\Zone::get();
+                                            @endphp
+                                            <select class="multi-select" id="zone_id" name="zone_id" placeholder="Select Third Party">
+                                                <option disabled selected>Select Location</option>
+                                                @forelse ($zones as $zone )
+                                                <option data-display="Select" value="{{ $zone->id }}" {{ $zone->id == $getThirdParty->zone_id ? 'selected' : ''  }}>
+                                                    {{ $zone->zone_name  }}
+                                                </option>
+                                                @empty
+                                                <p> No records found!</p>
+                                                @endforelse
+
+                                            </select>                                            </div>
+
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput4" class="form-label">Email<span
                                                         class="text-danger">*</span></label>

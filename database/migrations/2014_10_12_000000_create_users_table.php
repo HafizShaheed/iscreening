@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('industry')->nullable();
             $table->string('poc')->nullable();
-            $table->string('location')->nullable();
+            $table->string('zone_id')->nullable();
+            $table->string('role_id')->nullable();
             $table->string('password');
             $table->tinyInteger('status')->default(1);
             $table->rememberToken();

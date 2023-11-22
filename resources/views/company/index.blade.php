@@ -39,19 +39,19 @@
 
                 <div class="row">
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Urgent</h4>
+                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">High Risk</h4>
                         <div class="d-flex justify-content-center align-items-center">
                             <div id="animating-donut-new-1" class="ct-chart ct-golden-section chartlist-chart"></div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Elevated</h4>
+                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Medium Risk</h4>
                         <div class="d-flex justify-content-center align-items-center">
                             <div id="animating-donut-new-2" class="ct-chart ct-golden-section chartlist-chart"></div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Low</h4>
+                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Low Risk</h4>
                         <div class="d-flex justify-content-center align-items-center">
                             <div id="animating-donut-new-3" class="ct-chart ct-golden-section chartlist-chart"></div>
                         </div>
@@ -190,11 +190,27 @@
                                         <label class="form-label">Address<span class="text-danger">*</span></label>
                                         <textarea rows="1" class="form-control" id="thirdPartyAddress" name="thirdPartyAddress"></textarea>
                                     </div>
-                                    <div class="col-xl-6 mb-3">
-                                        <label for="thirdPartDepartment" class="form-label">Department<span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="thirdPartDepartment" name="thirdPartDepartment"
-                                            placeholder="" required />
+
+                                    @php
+                                            $departments = \App\Models\Department::get();
+                                            @endphp
+                                      <div class="col-xl-6 mb-3">
+                                        <label class="form-label">Department<span class="text-danger">*</span></label>
+                                        <select class="default-select style-1 form-control" name="thirdPartDepartment" id="thirdPartDepartment">
+                                            <option data-display="Select" disabled selected>
+                                                Select Departmen
+                                            </option>
+                                            @forelse ($departments as $department )
+                                            <option data-display="Select" value="{{ $department->id }}">
+                                                {{ $department->dept_name }}
+                                            </option>
+                                            @empty
+                                            <p> No records found!</p>
+                                            @endforelse
+
+
+
+                                        </select>
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
@@ -203,11 +219,27 @@
                                         <input type="text" class="form-control" id="thirdPartPoc" name="thirdPartPoc"
                                             placeholder="" required />
                                     </div>
-                                    <div class="col-xl-6 mb-3">
-                                        <label for="thirdPartLocation" class="form-label">Location<span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="thirdPartLocation"
-                                            placeholder="" required />
+
+                                    @php
+                                            $zones = \App\Models\Zone::get();
+                                            @endphp
+                                      <div class="col-xl-6 mb-3">
+                                        <label class="form-label">Location<span class="text-danger">*</span></label>
+                                        <select class="default-select style-1 form-control" name="thirdPartLocation" id="thirdPartLocation">
+                                            <option data-display="Select" disabled selected>
+                                                Select Location
+                                            </option>
+                                            @forelse ($zones as $zone )
+                                            <option data-display="Select" value="{{ $zone->id }}">
+                                                {{ $zone->zone_name }}
+                                            </option>
+                                            @empty
+                                            <p> No records found!</p>
+                                            @endforelse
+
+
+
+                                        </select>
                                     </div>
                                     <div class="col-xl-6 mb-3">
                                         <label for="thirdPartEmail" class="form-label">Email<span

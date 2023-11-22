@@ -30,7 +30,7 @@
                 <div class="row mb-4">
                     <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="thirdPartyName">Third Party:</label>
-                        <div class="d-flex justify-content-start align-items-start">                   
+                        <div class="d-flex justify-content-start align-items-start">
                             <select class="multi-select" name="states" multiple="multiple" placeholder="Select Third Party" id="thirdPartyName">
                                 <option value="" disabled>Select Third Party Name</option>
                                 <option value="AL">M Party</option>
@@ -49,7 +49,7 @@
                             </select>
                         </div>
                     </div>
-                </div>    
+                </div>
                 <div class="row  mb-4">
                     <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="departments">Department:</label>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row  mb-4"> 
+                <div class="row  mb-4">
                     <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="overallRisk">Overall Risk:</label>
 
@@ -108,7 +108,7 @@
                 </div>
                 <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
                     <div class="d-flex justify-content-center align-items-center">
-                        <button class="attention-reprot-clinet-btn">Safe</button>
+                        <button class="attention-reprot-clinet-btn">Low Risk</button>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                     <div class="tbl-caption">
                         <h4 class="heading mb-0"></h4>
                         <div>
-                            
+
 
                         </div>
                     </div>
@@ -142,39 +142,67 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            @if (count($getallThirdParty) > 0)
+                            @foreach ($getallThirdParty as $key => $value)
                             <tr>
-                                <td><span>1001</span></td>
-                                <td><span>Party Hond</span></td>
-                                <td><span>Dep-A</span></td>
-                                <td><span>Mumbai</span></td>
-                                <td><span>High</span></td>
-                                <td><span>Low</span></td>
-                              
+                                <td><span>{{++$key}}</span></td>
 
-                                <td class="text-center space-between">
-                             
 
-                                    <a href="{{ URL::to('/company/report/view') }}" title="View Reports">
+                                <td>
+                                    <span>{{ $value->third_party_name  }}</span>
+                                </td>
 
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M13.5096 2.53165H7.41104C5.50437 2.52432 3.94146 4.04415 3.89654 5.9499V15.7701C3.85437 17.7071 5.38979 19.3121 7.32671 19.3552C7.35512 19.3552 7.38262 19.3561 7.41104 19.3552H14.7343C16.6538 19.2773 18.1663 17.6915 18.1525 15.7701V7.36798L13.5096 2.53165Z"
-                                    stroke="#130F26" stroke-width="1.5"  stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M13.2688 2.52084V5.18742C13.2688 6.48909 14.3211 7.54417 15.6228 7.54784H18.1482"
-                                    stroke="#130F26" stroke-width="1.5"  stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M13.0974 14.0786H8.1474" stroke="#130F26" stroke-width="1.5"  stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M11.2229 10.6388H8.14655" stroke="#130F26" stroke-width="1.5"  stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            </a>
-                         
+                                @php
+                                            $department = \App\Models\Department::where('id',$value->department_id)->first();
+                                            @endphp
+                                <td>
+
+
+                                        <span>   {{ $department ?  $department->dept_name : '' }} </span>
+
+                                </td>
+                                @php
+                                $zone = \App\Models\Zone::where('id',$value->zone_id)->first();
+                                @endphp
+                                <td>
+                                        <span>   {{ $zone ? $zone->zone_name : '' }} </span>
+                                </td>
+                                @php
+                                $KeyObservation = \App\Models\KeyObservation::where('third_party_id',$value->id)->first();
+                                @endphp
+                                <td>
+
+
+                                        <span>   {{ $KeyObservation ? $zone->overall_risk_score : '' }} </span>
+                                </td>
+                                <td>
+                                     <span>   {{ $KeyObservation ? $zone->Type_of_risk : '' }} </span>
+
+
+                                </td>
+
+                                <td class="text-center space-between ">
+
+
+
+                                    <a href="{{ URL::to('/company/report/view'.'/'.base64_encode($value->id)) }}" title="View Reports">
+
+                                        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5096 2.53165H7.41104C5.50437 2.52432 3.94146 4.04415 3.89654 5.9499V15.7701C3.85437 17.7071 5.38979 19.3121 7.32671 19.3552C7.35512 19.3552 7.38262 19.3561 7.41104 19.3552H14.7343C16.6538 19.2773 18.1663 17.6915 18.1525 15.7701V7.36798L13.5096 2.53165Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.2688 2.52084V5.18742C13.2688 6.48909 14.3211 7.54417 15.6228 7.54784H18.1482" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.0974 14.0786H8.1474" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.2229 10.6388H8.14655" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+
+
+
+
                                 </td>
                             </tr>
-                        
+                            @endforeach
+                            @endif
+
 
 
                         </tbody>

@@ -20,6 +20,9 @@ class CreateKeyObservationsTable extends Migration
             $table->integer('team_user_id')->nullable();
             $table->string('score_analysis')->nullable();
             $table->string('overall_risk_score')->nullable();
+            $table->string('key_observation')->nullable();
+            $table->string('key_recommendations')->nullable();
+
 
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();

@@ -20,6 +20,7 @@ class CreateFinancialsTable extends Migration
             $table->integer('third_party_id')->nullable();
             $table->integer('team_user_id')->nullable();
             $table->string('score_analysis')->nullable();
+            $table->string('overall_financial_score')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
 

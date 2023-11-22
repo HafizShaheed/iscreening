@@ -43,7 +43,12 @@ Route::get('/clear-cache', function() {
 
         Route::prefix('report')->group(function(){
             Route::get('/', 'userController@report_List')->name('company.report_List');
-            Route::get('/view', 'userController@viewReportsData')->name('company.viewReportsData');
+            Route::get('/view/{id}', 'userController@viewReportsData')->name('company.viewReportsData');
+            Route::get('/firm_file_download/{id}', 'userController@firm_file_download')->name('company.firm_file_download');
+            Route::get('/onGround_file_download/{id}', 'userController@onGround_file_download')->name('company.onGround_file_download');
+            Route::get('/generate_pdf_of_reports/{id}', 'userController@generate_pdf_of_reports')->name('company.generate_pdf_of_reports');
+
+
 
         });
 
@@ -68,7 +73,16 @@ Route::get('/clear-cache', function() {
             Route::prefix('report')->group(function(){
                 Route::get('/', 'teamController@report_List')->name('team.report_List');
                 Route::get('/view', 'teamController@report_View')->name('team.report_View');
-                Route::get('/add', 'teamController@add_report')->name('team.add_report');
+                Route::get('/edit/{id}', 'teamController@add_report')->name('team.add_report');
+                
+                Route::post('/update_firm_background', 'teamController@update_firm_background')->name('team.update_firm_background');
+                Route::post('/update_on_ground_verification', 'teamController@update_on_ground_verification')->name('team.update_on_ground_verification');
+                Route::post('/update_court_check', 'teamController@update_court_check')->name('team.update_court_check');
+                Route::post('/update_financial', 'teamController@update_financial')->name('team.update_financial');
+                Route::post('/update_Business_Intelligence', 'teamController@update_Business_Intelligence')->name('team.update_Business_Intelligence');
+                Route::post('/update_Tax_Return_and_Credit', 'teamController@update_Tax_Return_and_Credit')->name('team.update_Tax_Return_and_Credit');
+                Route::post('/update_Market_Reputation', 'teamController@update_Market_Reputation')->name('team.update_Market_Reputation');
+                Route::post('/update_Key_Observation', 'teamController@update_Key_Observation')->name('team.update_Key_Observation');
 
             });
             Route::prefix('third-party')->group(function(){
@@ -123,6 +137,30 @@ Route::get('/clear-cache', function() {
                 Route::get('/', 'adminController@report_List')->name('admin.report_List');
                 Route::get('/view/{id}', 'adminController@report_View')->name('admin.report_View');
                 Route::get('/edit/{id}', 'adminController@Edit_report')->name('admin.Edit_report');
+                Route::post('/update_firm_background', 'adminController@update_firm_background')->name('admin.update_firm_background');
+                Route::post('/update_on_ground_verification', 'adminController@update_on_ground_verification')->name('admin.update_on_ground_verification');
+                Route::post('/update_court_check', 'adminController@update_court_check')->name('admin.update_court_check');
+                Route::post('/update_financial', 'adminController@update_financial')->name('admin.update_financial');
+                Route::post('/update_Business_Intelligence', 'adminController@update_Business_Intelligence')->name('admin.update_Business_Intelligence');
+                Route::post('/update_Tax_Return_and_Credit', 'adminController@update_Tax_Return_and_Credit')->name('admin.update_Tax_Return_and_Credit');
+                Route::post('/update_Market_Reputation', 'adminController@update_Market_Reputation')->name('admin.update_Market_Reputation');
+                Route::post('/update_Key_Observation', 'adminController@update_Key_Observation')->name('admin.update_Key_Observation');
+                Route::post('/update_resubmited_allreports', 'adminController@update_resubmited_allreports')->name('admin.update_resubmited_allreports');
+                Route::post('/update_completed_allreports', 'adminController@update_completed_allreports')->name('admin.update_completed_allreports');
+                Route::get('/firm_file_download/{id}', 'adminController@firm_file_download')->name('admin.firm_file_download');
+                Route::get('/onGround_file_download/{id}', 'adminController@onGround_file_download')->name('admin.onGround_file_download');
+                Route::get('/generate_pdf_of_reports/{id}', 'adminController@generate_pdf_of_reports')->name('admin.generate_pdf_of_reports');
+                
+
+
+
+
+
+
+
+
+
+
 
             });
 

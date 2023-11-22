@@ -5,9 +5,47 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Auth;
-use Hash;
 use Illuminate\Support\Facades\Mail;
+
+use App\Models\ThirdParty;
+use App\Models\team\TeamUser;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+use DB;
+use Carbon\Carbon;
+
+use App\Models\BusinessIntelligence;
+use App\Models\CourtCheck;
+
+use App\Models\Financial;
+use App\Models\FinancialsFindingsFyFive;
+use App\Models\FinancialsFindingsFyFour;
+use App\Models\FinancialsFindingsFyThree;
+use App\Models\FinancialsFindingsFyTwo;
+use App\Models\FinancialsFindingsFyOne;
+
+use App\Models\FinancialsRatioAnalysisFyFive;
+use App\Models\FinancialsRatioAnalysisFyFour;
+use App\Models\FinancialsRatioAnalysisFyThree;
+use App\Models\FinancialsRatioAnalysisFyTwo;
+use App\Models\FinancialsRatioAnalysisFyOne;
+
+use App\Models\FirmBackground;
+use App\Models\FirstDirectorsFirm;
+use App\Models\SecondDirectorsFirm;
+use App\Models\ThirdDirectorsFirm;
+use App\Models\License;
+
+use App\Models\KeyObservation;
+use App\Models\MarketReputation;
+use App\Models\OnGroundVerification;
+use App\Models\TaxReurnCredit;
+use App\Models\Department;
+use App\Models\Zone;
+
+use Validator;
+use PDF;
+
 class userController extends Controller
 {
     //
@@ -41,44 +79,164 @@ class userController extends Controller
         $data['page'] = "Reports Managment";
         $data['pageIntro'] = "Reports List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        $data['getallThirdParty'] = ThirdParty::where('user_id', auth()->user()->id)->get();
 
         //   $vendoruser=User::where('vendor_status',2)->count();
             return view('company.reports.index',$data);
     }
 
-    public function viewReportsData()
+    public function viewReportsData($id)
     {
+        $id = base64_decode($id);
         $data['title'] = "View Reports";
         $data['page'] = "View Reports";
         $data['pageIntro'] = "Introducing Client View Reports";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id',$id)->first();
+        $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
+        $data['Financial'] = Financial::where('third_party_id',$id)->first();
+        $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
+        $data['MarketReputation'] = MarketReputation::where('third_party_id',$id)->first();
+        $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id',$id)->first();
+        $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id',$id)->first();
+
+        $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->first();
+
+        // dd($data['FinancialsFindingsFyFive'] );
+        $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyThree'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyTwo'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->first();
+
+        $data['FirmBackground'] = FirmBackground::where('third_party_id',$id)->first();
+        $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['License'] = License::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['getThirdPartyForID'] = ThirdParty::where('id',$id)->first();
+        $data['Getclient'] = User::where('id', $data['getThirdPartyForID']->user_id)->first();
+        $data['GetTeaMuser'] = TeamUser::where('id', $data['FirmBackground']->team_user_id)->first();
+
+
+
         return view('company.reports.view-reports',$data);
+    }
+
+
+    public function firm_file_download($id)
+    {
+        $id = base64_decode($id);
+        $data['FirmBackground'] = FirmBackground::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $data['FirmBackground']->file);
+
+        // Specify the desired file name
+        $fileName = $data['FirmBackground']->file;
+
+        return response()->download($imagePath, $fileName);
+    }
+    public function onGround_file_download($id)
+    {
+        $id = base64_decode($id);
+        $data['OnGroundVerification'] = OnGroundVerification::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/OnGroundVerification/' . $data['OnGroundVerification']->upload_picture);
+
+        // Specify the desired file name
+        $fileName = $data['OnGroundVerification']->upload_picture;
+
+        return response()->download($imagePath, $fileName);
+    }
+
+
+    public function generate_pdf_of_reports($id)
+    {
+        $id = base64_decode($id);
+        $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id',$id)->first();
+        $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
+        $data['Financial'] = Financial::where('third_party_id',$id)->first();
+        $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
+        $data['MarketReputation'] = MarketReputation::where('third_party_id',$id)->first();
+        $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id',$id)->first();
+        $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id',$id)->first();
+
+        $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->first();
+
+        // dd($data['FinancialsFindingsFyFive'] );
+        $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyThree'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyTwo'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->first();
+
+        $data['FirmBackground'] = FirmBackground::where('third_party_id',$id)->first();
+        $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['License'] = License::where('firm_background_id',$data['FirmBackground']->id)->first();
+        $data['getThirdPartyForID'] = ThirdParty::where('id',$id)->first();
+        $data['Getclient'] = User::where('id', $data['getThirdPartyForID']->user_id)->first();
+        $data['GetTeaMuser'] = TeamUser::where('id', $data['FirmBackground']->team_user_id)->first();
+        $contxt = stream_context_create([
+            'ssl' => [
+                'verify_peer' => FALSE,
+                'verify_peer_name' => FALSE,
+                'allow_self_signed' => TRUE,
+
+            ]
+        ]);
+
+
+        $pdf = PDF::setOptions(['isHTML5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+        $pdf->getDomPDF()->setHttpContext($contxt);
+        //#################################################################################
+
+        $pdf->setOptions(['isPhpEnabled' => true])->loadView('company.reports.all_reports_pdf', $data)
+            ->setOptions(['defaultFont' => 'sans-serif']);
+            // return View('admin.sale-invoices.trade-buyer-invoice-2', ['tradeInvoices' =>$data, 'path_img_jrais' => $path_img_jrais, 'path_img_logo' => $path_img_logo,]);
+        $fecha = date('d/m/Y');
+        return $pdf->download("reports-" . strtoupper(utf8_decode($id)) . "-detail-" . $fecha . ".pdf");
     }
 
     public function sendEmailForRequestThirdParty(Request $request)
     {
         // dd($request->all());
+
+        $department=Department::where('id',$request->third_party_department)->first();
+        $zone=Zone::where('id',$request->third_party_location)->first();
+
         $data =array(
             "third_party_name" =>       $request->third_party_name,
             "third_party_address" =>    $request->third_party_address,
-            "third_party_department" => $request->third_party_department,
+            "third_party_department" => $department ? $department->dept_name : '',
             "third_party_pos" =>       $request->third_party_pos,
-            "third_party_location" =>   $request->third_party_location,
+            "third_party_location" =>   $zone ? $zone->zone_name : '',
             "third_party_email" =>      $request->third_party_email,
             "third_party_phone" =>      $request->third_party_phone,
             'auth_name'=> auth()->user()->first_name,
             'auth_email'=> auth()->user()->email,
         );
-             
+
         $recipient = array(
             'auth_name'=> auth()->user()->first_name,
             'auth_email'=> auth()->user()->email,
         );
         $subject='Request for third party';
-        
+
 
         // Send email with Markdown template
-      
+
 
 
         try {
@@ -87,7 +245,7 @@ class userController extends Controller
                 $mail->to($recipient['auth_email'],$recipient['auth_name'],)
                      ->subject($subject);
             });
-    
+
             // Email sent successfully
             $response = [
                 'success' => true,
@@ -100,7 +258,7 @@ class userController extends Controller
                 'message' => 'Email sending failed. Error: ' . $e->getMessage(),
             ];
         }
-    
+
         return response()->json($response);
 
         return 'Email sent successfully!';

@@ -55,7 +55,43 @@
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput2" class="form-label">Location<span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="location" value="{{$getAclient->location}}" id="exampleFormControlInput2" placeholder="">
+
+                                                @php
+                                            $zones = \App\Models\Zone::get();
+                                            @endphp
+                                            <select class="multi-select" id="zone_id" name="zone_id" placeholder="Select Third Party">
+                                                <option disabled selected>Select Client</option>
+                                                @forelse ($zones as $zone )
+                                                <option data-display="Select" value="{{ $zone->id }}" {{  $zone->id ==$getAclient->zone_id ? 'selected' : '' }}>
+                                                    {{ $zone->zone_name  }}
+                                                </option>
+                                                @empty
+                                                <p> No records found!</p>
+                                                @endforelse
+
+                                            </select>
+
+                                            </div>
+
+                                            <div class="col-xl-6 mb-3">
+                                                <label for="exampleFormControlInput2" class="form-label">Role<span
+                                                        class="text-danger">*</span></label>
+
+                                                @php
+                                            $roles = \App\Models\Role::get();
+                                            @endphp
+                                            <select class="multi-select" id="role_id" name="role_id" placeholder="Select Third Party">
+                                                <option disabled selected>Select Role</option>
+                                                @forelse ($roles as $role )
+                                                <option data-display="Select" value="{{ $role->id }}" {{  $role->id ==$getAclient->role_id ? 'selected' : '' }}>
+                                                    {{ $role->role_name  }}
+                                                </option>
+                                                @empty
+                                                <p> No records found!</p>
+                                                @endforelse
+
+                                            </select>
+
                                             </div>
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput4"  class="form-label">Password<span

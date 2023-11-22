@@ -1,4 +1,4 @@
-@extends('admin.includes.master') @section('title', 'Dashboard')
+@extends('admin.includes.master')
 @section('addStyle')
 <style>
     .ct-chart .ct-series.ct-series-b .ct-slice-donut {
@@ -96,12 +96,50 @@
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="poc" name="poc" placeholder="" />
                                     </div>
-                                    <div class="col-xl-6 mb-3">
-                                        <label for="location" class="form-label">Location<span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="location" name="location"
-                                            placeholder="" />
+                                      @php
+                                            $zones = \App\Models\Zone::get();
+                                            @endphp
+                                     <div class="col-xl-6 mb-3">
+                                        <label class="form-label">Location<span class="text-danger">*</span></label>
+                                        <select class="default-select style-1 form-control" name="location" id="location">
+                                            <option data-display="Select" disabled selected>
+                                                Select Location
+                                            </option>
+                                            @forelse ($zones as $zone )
+                                            <option data-display="Select" value="{{ $zone->id }}">
+                                                {{ $zone->zone_name }}
+                                            </option>
+                                            @empty
+                                            <p> No records found!</p>
+                                            @endforelse
+
+
+
+                                        </select>
                                     </div>
+
+                                         @php
+                                            $roles = \App\Models\Role::get();
+                                            @endphp
+                                     <div class="col-xl-6 mb-3">
+                                        <label class="form-label">Roles<span class="text-danger">*</span></label>
+                                        <select class="default-select style-1 form-control" name="role_id" id="role_id">
+                                            <option data-display="Select" disabled selected>
+                                                Select Role
+                                            </option>
+                                            @forelse ($roles as $role )
+                                            <option data-display="Select" value="{{ $role->id }}">
+                                                {{ $role->role_name }}
+                                            </option>
+                                            @empty
+                                            <p> No records found!</p>
+                                            @endforelse
+
+
+
+                                        </select>
+                                    </div>
+
                                     <div class="col-xl-6 mb-3">
                                         <label for="password" class="form-label">Password<span
                                                 class="text-danger">*</span></label>
@@ -185,15 +223,57 @@
                                         </select>
                                     </div>
 
+
+                                             @php
+                                            $zones = \App\Models\Zone::get();
+                                            @endphp
+                                      <div class="col-xl-6 mb-3">
+                                        <label class="form-label">Location<span class="text-danger">*</span></label>
+                                        <select class="default-select style-1 form-control" name="locationthirdPart" id="locationthirdPart">
+                                            <option data-display="Select" disabled selected>
+                                                Select Location
+                                            </option>
+                                            @forelse ($zones as $zone )
+                                            <option data-display="Select" value="{{ $zone->id }}">
+                                                {{ $zone->zone_name }}
+                                            </option>
+                                            @empty
+                                            <p> No records found!</p>
+                                            @endforelse
+
+
+
+                                        </select>
+                                    </div>
+
                                     <div class="col-xl-6 mb-3">
                                         <label class="form-label">Address<span class="text-danger">*</span></label>
                                         <textarea rows="1" class="form-control" id="thirdPartyAddress" name="thirdPartyAddress"></textarea>
                                     </div>
-                                    <div class="col-xl-6 mb-3">
-                                        <label for="thirdPartDepartment" class="form-label">Department<span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="thirdPartDepartment" name="thirdPartDepartment"
-                                            placeholder="" />
+
+
+
+
+                                             @php
+                                            $departments = \App\Models\Department::get();
+                                            @endphp
+                                      <div class="col-xl-6 mb-3">
+                                        <label class="form-label">Department<span class="text-danger">*</span></label>
+                                        <select class="default-select style-1 form-control" name="thirdPartDepartment" id="thirdPartDepartment">
+                                            <option data-display="Select" disabled selected>
+                                                Select Departmen
+                                            </option>
+                                            @forelse ($departments as $department )
+                                            <option data-display="Select" value="{{ $department->id }}">
+                                                {{ $department->dept_name }}
+                                            </option>
+                                            @empty
+                                            <p> No records found!</p>
+                                            @endforelse
+
+
+
+                                        </select>
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
@@ -202,12 +282,7 @@
                                         <input type="text" class="form-control" id="thirdPartPoc" name="thirdPartPoc"
                                             placeholder="" />
                                     </div>
-                                    <div class="col-xl-6 mb-3">
-                                        <label for="thirdPartLocation" class="form-label">Location<span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="thirdPartLocation"
-                                            placeholder="" />
-                                    </div>
+
                                     <div class="col-xl-6 mb-3">
                                         <label for="thirdPartEmail" class="form-label">Email<span
                                                 class="text-danger">*</span></label>
@@ -347,6 +422,8 @@
             var industry = $("#industry").val();
             var poc = $("#poc").val();
             var location = $("#location").val();
+            var role_id = $("#role_id").val();
+
             var password = $("#password").val();
             var password_confirmation = $("#password_confirmation").val();
             var clientStatusCheck = $("#clientStatusCheck").prop("checked");
@@ -368,7 +445,8 @@
                     email: companyEmail,
                     industry: industry,
                     poc: poc,
-                    location: location,
+                    zone_id: location,
+                    role_id: role_id,
                     password: password,
                     password_confirmation: password_confirmation,
                     clientStatusCheck: clientStatusCheck,
@@ -412,7 +490,7 @@
             var thirdPartyAddress = $("#thirdPartyAddress").val();
             var thirdPartDepartment = $("#thirdPartDepartment").val();
             var thirdPartPoc = $("#thirdPartPoc").val();
-            var thirdPartLocation = $("#thirdPartLocation").val();
+            var locationthirdPart = $("#locationthirdPart").val();
             var thirdPartEmail = $("#thirdPartEmail").val();
             var thirdPartPhone = $("#thirdPartPhone").val();
 
@@ -431,9 +509,9 @@
                     third_party_name: thirdPartyName,
                     user_id: clientID,
                     third_party_address: thirdPartyAddress,
-                    third_party_department: thirdPartDepartment,
+                    department_id: thirdPartDepartment,
                     third_party_pos: thirdPartPoc,
-                    third_party_location: thirdPartLocation,
+                    zone_id: locationthirdPart,
                     third_party_email : thirdPartEmail,
                     third_party_phone: thirdPartPhone,
                 },
