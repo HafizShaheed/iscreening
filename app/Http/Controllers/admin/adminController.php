@@ -1535,39 +1535,39 @@ class adminController extends Controller
     function update_resubmited_allreports(Request $request){
 
         $KeyObservation = KeyObservation::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-        $KeyObservation->status = 1;
+        $KeyObservation->status = 2;
         $KeyObservation->save();
 
        $FirmBackground = FirmBackground::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $FirmBackground->status = 1;
+       $FirmBackground->status = 2;
        $FirmBackground->save();
 
        $BusinessIntelligence = BusinessIntelligence::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $BusinessIntelligence->status = 1;
+       $BusinessIntelligence->status = 2;
        $BusinessIntelligence->save();
 
        $CourtCheck = CourtCheck::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $CourtCheck->status = 1;
+       $CourtCheck->status = 2;
        $CourtCheck->save();
 
        $Financial = Financial::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $Financial->status = 1;
+       $Financial->status = 2;
        $Financial->save();
 
        $MarketReputation = MarketReputation::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $MarketReputation->status = 1;
+       $MarketReputation->status = 2;
        $MarketReputation->save();
 
        $OnGroundVerification = OnGroundVerification::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $OnGroundVerification->status = 1;
+       $OnGroundVerification->status = 2;
        $OnGroundVerification->save();
 
        $TaxReurnCredit = TaxReurnCredit::where('third_party_id', $request->thirdpartyId)->firstOrFail();
-       $TaxReurnCredit->status = 1;
+       $TaxReurnCredit->status = 2;
        $TaxReurnCredit->save();
 
        $ThirdParty = ThirdParty::findOrFail($request->thirdpartyId);
-       $ThirdParty->status = 1;
+       $ThirdParty->status = 2;
        $ThirdParty->save();
 
        return response()->json(['message' => 'ALl Reports Re-Submited successfully!']);

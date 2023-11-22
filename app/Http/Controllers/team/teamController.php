@@ -1119,17 +1119,49 @@ class teamController extends Controller
 
 
      // vender means Third-party list start
-     function vender_List(){
+     function vender_List(Request $request){
 
         $data['title'] = "Third-Party Managment";
         $data['page'] = "Third-Party Managment";
         $data['pageIntro'] = "Third-Party List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         // $data['getallThirdParty'] = ThirdParty::where(['status' => '1', 'status' => '0'])->latest()->get();
-        $data['getallThirdParty'] = ThirdParty::whereIn('status', ['0', '1'])
-    ->orderBy('status', 'asc') // Order by status in ascending order
-    ->latest() // Add any additional ordering if needed
-    ->get();
+        // $data['getallThirdParty'] = ThirdParty::whereIn('status', ['0', '1','2'])
+        // ->orderBy('status', 'asc') // Order by status in ascending order
+        // ->latest() // Add any additional ordering if needed
+        // ->get();
+
+
+        $query = ThirdParty::query();
+
+        if (isset($request->PartyName) && !empty($request->PartyName)) {
+            $party_id = (int) $request->input('PartyName');
+            $query->where('id', $party_id);
+        }
+
+        if (isset($request->clientNameID) && !empty($request->clientNameID)) {
+            $client_id = (int) $request->input('clientNameID');
+            $query->where('user_id', $client_id);
+        }
+
+        if (isset($request->status) && !empty($request->status)) {
+            $statusMapping = [
+                'Active' => 1,
+                'Pending' => 0,
+                'Resubmit' => 2,
+
+            ];
+            $statusString = $request->status;
+            $status = isset($statusMapping[$statusString]) ? (int) $statusMapping[$statusString] : null;
+            $query->where('status', $status);
+        } else {
+            // If status is not provided in the request, include the initial conditions
+            $query->whereIn('status', ['0', '1', '2'])
+                ->orderBy('status', 'asc')
+                ->latest();
+        }
+
+        $data['getallThirdParty'] = $query->get();
 
         //   $vendoruser=User::where('vendor_status',2)->coun   t();
             return view('team.third-party.index',$data);
