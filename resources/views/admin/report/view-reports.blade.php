@@ -1276,7 +1276,7 @@
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
-                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">FY1</h4>
+                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Financials Findinds Analysis</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_1"></canvas>
                                                         </div>
@@ -1288,19 +1288,20 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="Ratio-Analysis">
-                                    <div class="pt-4">
-                                        <div class="row">
-                                            <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                <div class="card">
+                                <div class="pt-4">
+                                        <div class="table-responsive">
+                                            <div class="row">
 
-                                                    <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">FY1</h4>
-
-                                                    <div class="d-flex justify-content-center align-items-center">
-                                                        <div id="chart-with-area-view-reports" class="ct-chart ct-golden-section chartlist-chart"></div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Financials Ratio Analysis</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_financialRation"></canvas>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1338,24 +1339,23 @@
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="Business-Intelligence " role="tabpanel">
-                                        <div class="pt-4">
+                                    <div class="pt-4">
+                                        <div class="table-responsive">
                                             <div class="row">
-                                                <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
-
-                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">FY1</h4>
-
+                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Business Intelligence</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
-                                                            <div id="line_chart_2" class="morris_chart_height"></div>
+                                                            <canvas id="barChart_businessIntelligence"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
 
-
-
-
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
                                     </div>
 
                                 </div>
@@ -1544,7 +1544,10 @@
 
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">
-                                                                <embed src="{{URL::to('public/admin/assets/imgs/MarketReputations/') .'/'.$MarketReputation->file_path_market_reputations}}" width="500" height="550" type="application/pdf">
+                                                            @if ($MarketReputation->file_path_market_reputations)
+
+                                                            <embed src="{{URL::to('public/admin/assets/imgs/MarketReputations/') .'/'.$MarketReputation->file_path_market_reputations}}" width="500" height="550" type="application/pdf">
+                                                            @endif
 
                                                             </td>
                                                             <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">MARKET REPUTATION SCORE = {{ $MarketReputation->market_reputation_score }}</th>
@@ -1652,6 +1655,16 @@
 @endsection
 
 @section('addScript')
+<script>
+    var financialRationGrapFY = @json($financialrationGrapFY);
+    var  financialFindingsGrapFY = @json($financialFindingsGrapFY);
+    var  businessInteligenceGrapFY = @json($businessInteligenceGrapFY);
+
+
+    // Your external JavaScript file
+    // Include this script before your external JS that uses financialRationGrapFY
+</script>
+
  <script>
     $(document).ready(function() {
 

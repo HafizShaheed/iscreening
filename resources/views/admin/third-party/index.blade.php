@@ -265,6 +265,7 @@
 @endsection
 
 @section('addScript')
+
 <script>
 
 </script>

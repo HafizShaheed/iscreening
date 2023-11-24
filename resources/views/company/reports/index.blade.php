@@ -1,7 +1,7 @@
 @extends('company.includes.master')
 @section('addStyle')
 <style>
-.attention-reprot-clinet-btn{
+.attention-reprot-clinet-btn {
     background-color: #949395;
     padding: 19px;
     border-radius: 16px;
@@ -9,7 +9,8 @@
     color: #fff;
     width: 50%;
 }
-.attention-reprot-clinet-btn:hover{
+
+.attention-reprot-clinet-btn:hover {
     background-color: #6d3b7a;
     padding: 19px;
     border-radius: 16px;
@@ -24,97 +25,211 @@
 
 <div class="row">
     <div class="col-12">
-            <h2>Filter:</h2>
+        <h2>Filter:</h2>
+
+
         <div class="card">
-            <div class="card-body  justify-content-start">
-                <div class="row mb-4">
-                    <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
-                        <label for="thirdPartyName">Third Party:</label>
-                        <div class="d-flex justify-content-start align-items-start">
-                            <select class="multi-select" name="states" multiple="multiple" placeholder="Select Third Party" id="thirdPartyName">
-                                <option value="" disabled>Select Third Party Name</option>
-                                <option value="AL">M Party</option>
-                                <option value="AL">B Party</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
-                        <label for="locations">Locations:</label>
+            <div class="card-body justify-content-start">
+                <form id="" action="{{route('company.report_List')}}"
+                    class="row d-flex justify-content-between align-items-end">
+                    <div class="row mb-4">
+                        <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                            <label for="thirdPartyName">Third Party:</label>
+                            <div class="d-flex justify-content-start align-items-start">
+                                @php
+                                $thirdparties = \App\Models\ThirdParty::where('user_id', auth()->user()->id )->get();
+                                @endphp
+                                <select class="multi-select" multiple="multiple" name="PartyName[]" id="PartyName"
+                                    placeholder="Select Third Party">
+                                    <option disabled>Select Party</option>
+                                    @forelse ($thirdparties as $thirdparty)
+                                    <option data-display="Select" value="{{ $thirdparty->id }}"
+                                        @if(is_array(request('PartyName')) && in_array($thirdparty->id,
+                                        request('PartyName'))) selected @endif>
+                                        {{ $thirdparty->third_party_name }}
+                                    </option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                                </select>
 
-                        <div class="d-flex justify-content-start align-items-start">
-                            <select class="multi-select" name="states" multiple="multiple" placeholder="Select Locations" id="locations">
-                                <option value="" disabled>Select Locations</option>
-                                <option value="AL">M Location</option>
-                                <option value="AL">B Location</option>
-                            </select>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row  mb-4">
-                    <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
-                        <label for="departments">Department:</label>
+                        <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                            <label for="locations">Locations:</label>
 
-                        <div class="d-flex justify-content-start align-items-start">
-                            <select class="multi-select" name="states" multiple="multiple" placeholder="Select Department" id="departments">
-                                <option value="" disabled>Select Department</option>
-                                <option value="AL">M Department</option>
-                                <option value="AL">B Department</option>
-                            </select>
+                            <div class="d-flex justify-content-start align-items-start">
+                                @php
+                                $zones = \App\Models\Zone::get();
+                                @endphp
+                                <select class="multi-select" multiple="multiple" name="location[]" id="location"
+                                    placeholder="Select Third Party">
+                                    <option disabled>Select Location</option>
+                                    @forelse ($zones as $value )
+                                    <option data-display="Select" value="{{ $value->id }}"
+                                        @if(is_array(request('location')) && in_array($value->id,
+                                        request('location'))) selected @endif>
+                                        {{ $value->zone_name  }}
+                                    </option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
-                        <label for="riskType">Type of Risk:</label>
+                        <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                            <label for="departments">Department:</label>
 
-                        <div class="d-flex justify-content-start align-items-start">
-                            <select class="multi-select" name="states" multiple="multiple" placeholder="Select Type of Risk" id="riskType">
-                                <option value="" disabled>Select Type of Risk</option>
-                                <option value="AL">Policy</option>
-                                <option value="AL">ETC</option>
-                            </select>
+                            <div class="d-flex justify-content-start align-items-start">
+                                @php
+                                $departments = \App\Models\Department::get();
+                                @endphp
+                                <select class="multi-select" multiple="multiple" name="Department[]" id="Department"
+                                    placeholder="Select Third Party">
+                                    <option disabled>Select Department</option>
+                                    @forelse ($departments as $department )
+                                    <option data-display="Select" value="{{ $department->id }}">
+                                        {{ $department->dept_name  }}
+                                    </option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row  mb-4">
-                    <div class="col-xl-6 col-sm-12 col-6 mt-4 mt-md-0">
-                        <label for="overallRisk">Overall Risk:</label>
 
-                        <div class="d-flex justify-content-start align-items-start">
-                            <select class="multi-select" name="states" multiple="multiple" placeholder="Select Overall Risk" id="overallRisk">
-                                <option value="" disabled>Select Overall Risk</option>
-                                <option value="AL">High</option>
-                                <option value="AL">Low</option>
-                            </select>
+                    </div>
+                    <div class="row  mb-0">
+                        <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                            <label for="riskType">Type of Risk:</label>
+
+                            <div class="d-flex justify-content-start align-items-start">
+                                <select class="multi-select" name="riskType" placeholder="Select Type of Risk"
+                                    id="riskType">
+                                    <option value="">Select Type of Risk</option>
+                                    <option value="Reputation" @if(request('riskType')=='Reputation' ) selected @endif>
+                                        Reputation</option>
+                                    <option value="Legal" @if(request('riskType')=='Legal' ) selected @endif>Legal
+                                    </option>
+                                    <option value="Financial" @if(request('riskType')=='Financial' ) selected @endif>
+                                        Financial</option>
+                                    <option value="Operational" @if(request('riskType')=='Operational' ) selected
+                                        @endif>Operational</option>
+                                    <option value="Regulatory" @if(request('riskType')=='Regulatory' ) selected @endif>
+                                        Regulatory</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                            <label for="overallRisk">Overall Risk:</label>
+
+                            <div class="d-flex justify-content-start align-items-start">
+                                <select class="multi-select" name="overallRisk" placeholder="Select Overall Risk"
+                                    id="overallRisk">
+                                    <option value="">Select Overall Risk</option>
+                                    <option value="High Risk" @if(request('overallRisk')=='High Risk' ) selected @endif>
+                                        High</option>
+                                    <option value="Medium Risk" @if(request('overallRisk')=='Medium Risk' ) selected
+                                        @endif>Medium</option>
+                                    <option value="Low Risk" @if(request('overallRisk')=='Low Risk' ) selected @endif>
+                                        Low</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xl-4 col-sm-12 col-6 mt-1">
+                            <label for="overallRisk"></label>
+
+                            <div class="d-flex justify-content-start align-items-end">
+                                <button type="submit" class="btn btn report-tab-active"
+                                    id="filter-reprot-btn">Filter</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+
+
+                <form id="" action="{{route('company.report_List')}}"
+                    class="row d-flex justify-content-between align-items-end">
+
+                    <div class="col-xl-4 col-sm-3 col-3 ml-3 ">
+                        <div class="c-list ">
+                            <div class="input-group search-area">
+                                <input type="text" name="Client" class="form-control" placeholder="Enter key words">
+                                <span class="input-group-text">
+
+                                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8.82495" cy="9.32491" r="6.74142" stroke="#0D99FF"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M13.5137 14.3638L16.1568 16.9999" stroke="#0D99FF"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-xl-8 col-sm-6 col-6 ">
+                        <div class="d-flex justify-content-start mb-3">
+                            <a href="{{route('company.report_List')}}" class="btn btn report-tab-active"
+                                id="filter-reprot-btn">Reset</a>
+                        </div>
+                    </div>
+                    </from>
             </div>
         </div>
+
     </div>
 
 
     <div class="col-12">
-    <div class="card">
-        <div class="card-body justify-content-center">
-            <div class="row">
-                <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button class="attention-reprot-clinet-btn">High Risk</button>
+        <div class="card">
+            <div class="card-body justify-content-between  justify-content-center">
+                <div class="row ">
+                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <form action="{{route('company.report_List')}}">
+
+                                <input type="hidden" name="HighRisk" id="" class="form-control" value="HighRisk">
+
+
+                                <button type="submit" style="{{request('HighRisk')=='HighRisk' ? 'background-color:#6D3B7D' : ''}}" class="attention-reprot-clinet-btn">High Risk</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button class="attention-reprot-clinet-btn">Medium Risk</button>
+                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                        <div class=" justify-content-center align-items-center">
+                            <form action="{{route('company.report_List')}}">
+
+                                <input type="hidden" name="MediumRisk" id="" class="form-control" value="MediumRisk">
+
+                                <button type="submit" style ="{{request('MediumRisk')=='MediumRisk' ? 'background-color:#6D3B7D' : ''}}"  class="attention-reprot-clinet-btn">Medium Risk</button>
+                            </form>
+
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <button class="attention-reprot-clinet-btn">Low Risk</button>
+                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                        <div class=" justify-content-center align-items-center">
+                            <form action="{{route('company.report_List')}}">
+
+                                <input type="hidden" name="LowRisk" id="" class="form-control" value="LowRisk">
+
+                                <button type="submit" style="{{request('LowRisk')=='LowRisk' ? 'background-color:#6D3B7D' : ''}}"  class="attention-reprot-clinet-btn">Low Risk</button>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <div class="col-xl-12">
@@ -134,10 +249,10 @@
                                 <th> ID</th>
 
                                 <th>Third Party Name</th>
-                                <th> Department	</th>
+                                <th> Department </th>
                                 <th>Location</th>
-                                <th>Type of Risk	</th>
-                                <th>Over All Risk	</th>
+                                <th>Type of Risk </th>
+                                <th>Over All Risk </th>
                                 <th class="text-center">View Report</th>
                             </tr>
                         </thead>
@@ -153,30 +268,31 @@
                                 </td>
 
                                 @php
-                                            $department = \App\Models\Department::where('id',$value->department_id)->first();
-                                            @endphp
+                                $department = \App\Models\Department::where('id',$value->department_id)->first();
+                                @endphp
                                 <td>
 
 
-                                        <span>   {{ $department ?  $department->dept_name : '' }} </span>
+                                    <span> {{ $department ?  $department->dept_name : '' }} </span>
 
                                 </td>
                                 @php
                                 $zone = \App\Models\Zone::where('id',$value->zone_id)->first();
                                 @endphp
                                 <td>
-                                        <span>   {{ $zone ? $zone->zone_name : '' }} </span>
+                                    <span> {{ $zone ? $zone->zone_name : '' }} </span>
                                 </td>
                                 @php
-                                $KeyObservation = \App\Models\KeyObservation::where('third_party_id',$value->id)->first();
+                                $KeyObservation =
+                                \App\Models\KeyObservation::where('third_party_id',$value->id)->first();
                                 @endphp
                                 <td>
 
 
-                                        <span>   {{ $KeyObservation ? $zone->overall_risk_score : '' }} </span>
+                                    <span> {{ $KeyObservation ? $zone->overall_risk_score : '' }} </span>
                                 </td>
                                 <td>
-                                     <span>   {{ $KeyObservation ? $zone->Type_of_risk : '' }} </span>
+                                    <span> {{ $KeyObservation ? $zone->Type_of_risk : '' }} </span>
 
 
                                 </td>
@@ -185,13 +301,22 @@
 
 
 
-                                    <a href="{{ URL::to('/company/report/view'.'/'.base64_encode($value->id)) }}" title="View Reports">
+                                    <a href="{{ URL::to('/company/report/view'.'/'.base64_encode($value->id)) }}"
+                                        title="View Reports">
 
                                         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5096 2.53165H7.41104C5.50437 2.52432 3.94146 4.04415 3.89654 5.9499V15.7701C3.85437 17.7071 5.38979 19.3121 7.32671 19.3552C7.35512 19.3552 7.38262 19.3561 7.41104 19.3552H14.7343C16.6538 19.2773 18.1663 17.6915 18.1525 15.7701V7.36798L13.5096 2.53165Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M13.2688 2.52084V5.18742C13.2688 6.48909 14.3211 7.54417 15.6228 7.54784H18.1482" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M13.0974 14.0786H8.1474" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M11.2229 10.6388H8.14655" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M13.5096 2.53165H7.41104C5.50437 2.52432 3.94146 4.04415 3.89654 5.9499V15.7701C3.85437 17.7071 5.38979 19.3121 7.32671 19.3552C7.35512 19.3552 7.38262 19.3561 7.41104 19.3552H14.7343C16.6538 19.2773 18.1663 17.6915 18.1525 15.7701V7.36798L13.5096 2.53165Z"
+                                                stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M13.2688 2.52084V5.18742C13.2688 6.48909 14.3211 7.54417 15.6228 7.54784H18.1482"
+                                                stroke="#130F26" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M13.0974 14.0786H8.1474" stroke="#130F26" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.2229 10.6388H8.14655" stroke="#130F26" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </a>
 

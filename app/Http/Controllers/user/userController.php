@@ -72,17 +72,122 @@ class userController extends Controller
     //     $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     //     return view('company.reports.entry-reports',$data);
     // }
-    function report_List(){
-        // dd('dsds');
+    function report_List(Request $request)
+    {
+        // dd($request->all());
 
         $data['title'] = "Reports Managment";
         $data['page'] = "Reports Managment";
         $data['pageIntro'] = "Reports List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-        $data['getallThirdParty'] = ThirdParty::where('user_id', auth()->user()->id)->get();
+        // $data['getallThirdParty'] = ThirdParty::where('user_id', auth()->user()->id)->get();
+        $query = ThirdParty::where('user_id', auth()->user()->id);
 
-        //   $vendoruser=User::where('vendor_status',2)->count();
-            return view('company.reports.index',$data);
+        if (isset($request->PartyName) && !empty($request->PartyName)) {
+            $party_id = array_map('intval', $request->PartyName);
+            $query->whereIn('id', $party_id);
+        }
+
+        if (isset($request->location) && !empty($request->location)) {
+            $location = array_map('intval', $request->location);
+            $query->whereIn('zone_id', $location);
+        }
+
+        if (isset($request->Department) && !empty($request->Department)) {
+            $Department = array_map('intval', $request->Department);
+            $query->whereIn('department_id', $Department);
+        }
+        if (isset($request->Department) && !empty($request->Department)) {
+            $Department = array_map('intval', $request->Department);
+            $query->whereIn('department_id', $Department);
+        }
+
+        if (isset($request->overallRisk) && !empty($request->overallRisk)) {
+            $overallRisk = $request->overallRisk;
+            $observationIds = KeyObservation::where('user_id', auth()->user()->id)
+                ->where('Type_of_risk', $overallRisk)
+                ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
+
+            $query->whereIn('id', $observationIds);
+        }
+
+        if (isset($request->HighRisk) && !empty($request->HighRisk)) {
+
+            $observationIds = KeyObservation::where('user_id', auth()->user()->id)
+                ->where('Type_of_risk', 'High Risk')
+                ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
+
+            $query->whereIn('id', $observationIds);
+        }
+
+        if (isset($request->MediumRisk) && !empty($request->MediumRisk)) {
+
+            $observationIds = KeyObservation::where('user_id', auth()->user()->id)
+                ->where('Type_of_risk', 'Medium Risk')
+                ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
+
+            $query->whereIn('id', $observationIds);
+        }
+
+        if (isset($request->LowRisk) && !empty($request->LowRisk)) {
+
+            $observationIds = KeyObservation::where('user_id', auth()->user()->id)
+                ->where('Type_of_risk', 'Low Risk')
+                ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
+
+            $query->whereIn('id', $observationIds);
+        }
+
+
+        if (isset($request->riskType) && !empty($request->riskType)) {
+
+            if ($request->riskType === "Reputation") {
+                $MarketReputation = MarketReputation::where('user_id', auth()->user()->id)
+                    ->where('market_reputation_score', '>', 30)
+                    ->pluck('third_party_id');
+
+                $query->whereIn('id', $MarketReputation);
+            }
+
+
+            if($request->riskType ==="Legal"){
+                 $CourtCheck = CourtCheck::where('user_id', auth()->user()->id)
+                    ->where('legal_score', '>', 30)
+                    ->pluck('third_party_id');
+
+                $query->whereIn('id', $CourtCheck);
+            }
+            if($request->riskType ==="Financial"){
+                 $Financial = Financial::where('user_id', auth()->user()->id)
+                    ->where('overall_financial_score', '>', 30)
+                    ->pluck('third_party_id');
+
+                $query->whereIn('id', $Financial);
+            }
+            if($request->riskType ==="Operational"){
+                 $TaxReurnCredit = TaxReurnCredit::where('user_id', auth()->user()->id)
+                    ->where('overall_credit_history_score', '>', 30)
+                    ->pluck('third_party_id');
+
+                $query->whereIn('id', $TaxReurnCredit);
+            }
+            if($request->riskType ==="Regulatory"){
+                 $firmBackground = FirmBackground::where('user_id', auth()->user()->id)
+                    ->where('regulatory_score', '>', 30)
+                    ->pluck('third_party_id');
+
+                $query->whereIn('id', $firmBackground);
+            }
+
+        }
+
+
+
+
+
+        $data['getallThirdParty'] = $query->get();
+        return view('company.reports.index', $data);
+
     }
 
     public function viewReportsData($id)
