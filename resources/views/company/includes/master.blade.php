@@ -170,6 +170,7 @@
     <!--**********************************
 		Scripts
 	***********************************-->
+    
     @include('company.includes.script')
     @yield('addScript')
 

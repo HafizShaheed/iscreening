@@ -56,6 +56,34 @@ class userController extends Controller
         $data['page'] = "Dashboard";
         $data['pageIntro'] = "Introducing Client Dashboard";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        $highRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
+        $mediumRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+        $lowRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+        $totalRisk = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
+
+         
+        
+        $data['dougGraphHighRisk'] = [
+            $highRiskCOunt,
+            $totalRisk,
+        ];
+        
+        $data['dougGraphMediumRisk'] = [
+            $mediumRiskCOunt,
+            $totalRisk,
+        ];
+        // dd($data['dougGraphMediumRisk'] );
+        $data['dougGraphLowRisk'] = [
+            $lowRiskCOunt,
+            $totalRisk,
+        ];
+        $data['OverallRisk'] = [
+            $totalRisk,
+            0,
+        ];
+
+        
+        
         return view('company.index',$data);
         }else{
             return redirect()->route('web.login');
@@ -198,25 +226,84 @@ class userController extends Controller
         $data['pageIntro'] = "Introducing Client View Reports";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id',$id)->first();
+        $business_inteligence = [
+
+            $data['BusinessIntelligence']->business_fy1,
+            $data['BusinessIntelligence']->business_fy2,
+            $data['BusinessIntelligence']->business_fy3,
+            $data['BusinessIntelligence']->business_fy4,
+            $data['BusinessIntelligence']->business_fy5,
+
+        ];
+
+        // dd($business_inteligence);
+
+        $cleaned_business_inteligence = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $business_inteligence);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['businessInteligenceGrapFY'] = $cleaned_business_inteligence;
         $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
         $data['Financial'] = Financial::where('third_party_id',$id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
+
+        $getKwyObservationScore =$data['KeyObservation']->overall_risk_score ? : 0;
+        $getKeyObservationOutOf =   $getKwyObservationScore - 100;
+        $data['finalValueforGraKeyObservation'] = [
+            $getKwyObservationScore,
+            $getKeyObservationOutOf,
+        ];
+
         $data['MarketReputation'] = MarketReputation::where('third_party_id',$id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id',$id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id',$id)->first();
 
-        $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_five_finding__1');
+        $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_four_finding__1');
+        $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_three_finding__1');
+        $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_two_finding__1');
+        $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_one_finding__1');
+
+
+        $financialFindings = [
+
+            $data['FinancialsFindingsFyOne'],
+            $data['FinancialsFindingsFyTwo'],
+            $data['FinancialsFindingsFyThree'],
+            $data['FinancialsFindingsFyFour'],
+            $data['FinancialsFindingsFyFive'],
+        ];
+
+        $cleanedFinancialFindings = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY'] = $cleanedFinancialFindings;
 
         // dd($data['FinancialsFindingsFyFive'] );
-        $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsRatioAnalysisFyThree'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsRatioAnalysisFyTwo'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->first();
-        $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->first();
+        $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->pluck('current_ratio_fy_five_1');
+        $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->pluck('current_ratio_fy_four_1');
+        $data['FinancialsRatioAnalysisFyThree'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->pluck('current_ratio_fy_three_1');
+        $data['FinancialsRatioAnalysisFyTwo'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->pluck('current_ratio_fy_two_1');
+        $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->pluck('current_ratio_fy_one_1');
+        $financialRatios = [
+
+            $data['FinancialsRatioAnalysisFyOne'],
+            $data['FinancialsRatioAnalysisFyTwo'],
+            $data['FinancialsRatioAnalysisFyThree'],
+            $data['FinancialsRatioAnalysisFyFour'],
+            $data['FinancialsRatioAnalysisFyFive'],
+        ];
+
+        // Filter out null values and convert the remaining items to a simple array
+        $cleanedFinancialRatios = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatios);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialrationGrapFY'] = $cleanedFinancialRatios;
 
         $data['FirmBackground'] = FirmBackground::where('third_party_id',$id)->first();
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();

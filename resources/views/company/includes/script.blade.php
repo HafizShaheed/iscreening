@@ -16,9 +16,10 @@
 <script src="{{URL::to('/public/admin/assets')}}/js/deznav-init.js"></script>
 <script src="{{URL::to('/public/admin/assets')}}/vendor/peity/jquery.peity.min.js"></script>
 <script src="{{URL::to('/public/admin/assets')}}/js/plugins-init/piety-init.js"></script>
-<script src="{{URL::to('/public/admin/assets')}}/vendor/chartist/js/chartist.min.js"></script>
-<script src="{{URL::to('/public/admin/assets')}}/vendor/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
-<script src="{{URL::to('/public/admin/assets')}}/js/plugins-init/chartist-init.js"></script>
+
+<!-- <script src="{{URL::to('/public/admin/assets')}}/js/plugins-init/client/chartjs-init.js"></script> -->
+
+
 <script src="{{URL::to('/public/admin/assets')}}/js/plugins-init/widgets-script-init.js"></script>
 
 

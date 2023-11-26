@@ -500,6 +500,16 @@ class adminController extends Controller
         $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
         $data['Financial'] = Financial::where('third_party_id',$id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
+
+         $getKwyObservationScore =$data['KeyObservation']->overall_risk_score ? : 0;
+        $getKeyObservationOutOf =   $getKwyObservationScore - 100;
+        $data['finalValueforGraKeyObservation'] = [
+            $getKwyObservationScore,
+            $getKeyObservationOutOf,
+        ];
+
+        // dd($finalValueforGraKeyObservation);
+
         $data['MarketReputation'] = MarketReputation::where('third_party_id',$id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id',$id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id',$id)->first();

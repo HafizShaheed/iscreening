@@ -1,3 +1,5 @@
+
+
 (function($) {
   "use strict"
 
@@ -956,72 +958,54 @@
 			});
 		}
 	}
-    // var doughnutChart = function(){
-    //     if(jQuery('#doughnut_chart').length > 0 ){
-    //         //doughut chart
-    //         const doughnut_chart = document.getElementById("doughnut_chart").getContext('2d');
-    //         doughnut_chart.height = 100;
 
-    //         new Chart(doughnut_chart, {
-    //             type: 'doughnut',
-    //             data: {
-    //                 weight: 5,
-    //                 defaultFontFamily: 'Poppins',
-    //                 datasets: [{
-    //                     data: [2],
-    //                     borderWidth: 3,
-    //                     borderColor: "rgba(255,255,255,1)",
-    //                     backgroundColor: [
-    //                         "rgba(98, 126, 234, 1)",
-    //                     ],
-    //                     hoverBackgroundColor: [
-    //                         "rgba(98, 126, 234, .9)",
-    //                     ]
-    //                 }],
-    //                 labels: ["score"],
-    //             },
-    //             options: {
-    //                 weight: 19,
-    //                 cutoutPercentage: 80,
-    //                 rotation: 1 * Math.PI,
-    //                 circumference: 1 * Math.PI,
-    //                 responsive: true,
-    //                 plugins: {
-    //                     afterDraw: function(chart) {
-    //                         var ctx = chart.ctx;
-    //                         var width = chart.width;
-    //                         var height = chart.height;
 
-    //                         var heading = "Doughnut Chart";
-    //                         var label = "Score";
-    //                         var value = chart.data.datasets[0].data[0].toString();
+    // Doughnut Chart Function
+    var doughnutChartall = function (elementId, dataValues, label1, label2) {
+        if (jQuery('#' + elementId).length > 0) {
+            const doughnut_chart = document.getElementById(elementId).getContext('2d');
+            new Chart(doughnut_chart, {
+                type: 'doughnut',
+                data: {
+                    weight: 10,
+                    defaultFontFamily: 'Poppins',
+                    datasets: [{
+                        data: dataValues,
+                        borderWidth: 3,
+                        borderColor: "rgba(255,255,255,1)",
+                        backgroundColor: [
+                            "rgba(44, 44, 44, 1)",
+                            "rgba(98, 126, 234, 1)",
+                        ],
+                        hoverBackgroundColor: [
+                            "rgba(44, 44, 44, 0.9)",
+                            "rgba(98, 126, 234, .9)",
+                        ]
+                    }],
+                    labels: [
+						label1,
+                        label2,
+					]
+                },
+                options: {
+                    weight: 10,
+                    cutoutPercentage: 60,
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+    }
 
-    //                         ctx.font = "24px Poppins";
-    //                         ctx.fillStyle = "#666"; // Color for the heading
-    //                         ctx.textBaseline = "middle";
-    //                         ctx.textAlign = "center";
 
-    //                         var centerX = width / 2;
-    //                         var centerY = height / 4; // Adjust the vertical position
 
-    //                         // Display the heading
-    //                         ctx.fillText(heading, centerX, centerY);
+    // Example usage for a data value of 35 and label "Example"
 
-    //                         // Display the label
-    //                         ctx.font = "20px Poppins";
-    //                         centerY += 20; // Adjust the vertical position
-    //                         ctx.fillText(label, centerX, centerY);
 
-    //                         // Display the value
-    //                         ctx.font = "30px Poppins";
-    //                         centerY += 30; // Adjust the vertical position
-    //                         ctx.fillText(value, centerX, centerY);
-    //                     }
-    //                 }
-    //             }
-    //         });
-    //     }
-    // }
+    // Call the function for each section
+    doughnutChartall("doughnut_chart_1", dougGraphHighRisk, "High Risk", "Over All Risk");
+    doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, "Medium Risk", "Over All Risk");
+    doughnutChartall("doughnut_chart_3", dougGraphLowRisk, "Low Risk", "Over All Risk");
 
 	var polarChart = function(){
 		if(jQuery('#polar_chart').length > 0 ){
@@ -1066,7 +1050,7 @@
 			barChart1();
             barChart1financialRatio();
             barChart1businessIntelligenc();
-
+            doughnutChartall();
 			barChart2();
 			barChart3();
 			lineChart1();
