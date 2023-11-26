@@ -90,7 +90,7 @@
             <div class="card-body justify-content-center">
 
                 <div class="row">
-                 
+
                     <div class=" col-xl-6 col-sm-5 col-5 mt-5 mt-md-0">
                         <div class="card">
 
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                  
+
 
                 </div>
             </div>
@@ -129,7 +129,7 @@
             <div class="card-body justify-content-center">
 
                 <div class="row">
-                 
+
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
 
@@ -167,15 +167,15 @@
                             </div>
                         </div>
                     </div>
-                    
-                  
+
+
 
                 </div>
                 <div class="row">
                       <div class=" col-xl-2 col-sm-2 col-2 mt-2 mt-md-0">
-                       
+
                        </div>
-                 
+
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
 
@@ -202,10 +202,10 @@
                         </div>
                     </div>
                     <div class=" col-xl-2 col-sm-2 col-2 mt-2 mt-md-0">
-                       
+
                     </div>
-                    
-                  
+
+
 
                 </div>
             </div>
@@ -392,6 +392,14 @@ var dougGraphHighRisk = {!!isset($dougGraphHighRisk) ? json_encode($dougGraphHig
 var dougGraphMediumRisk = {!!isset($dougGraphMediumRisk) ? json_encode($dougGraphMediumRisk) : 'null'!!};
 var dougGraphLowRisk = {!!isset($dougGraphLowRisk) ? json_encode($dougGraphLowRisk) : 'null'!!};
 var OverallRisk = {!!isset($OverallRisk) ? json_encode($OverallRisk) : 'null'!!};
+var departmentCount = {!!isset($departmentCount) ? json_encode($departmentCount) : 'null'!!};
+var zoneCount = {!!isset($zoneCount) ? json_encode($zoneCount) : 'null'!!};
+var ReputationCount = {!!isset($ReputationCount) ? json_encode($ReputationCount) : 'null'!!};
+var legalCount = {!!isset($legalCount) ? json_encode($legalCount) : 'null'!!};
+var financialCount = {!!isset($financialCount) ? json_encode($financialCount) : 'null'!!};
+var taxReurnCreditCount = {!!isset($taxReurnCreditCount) ? json_encode($taxReurnCreditCount) : 'null'!!};
+var regulataryCount = {!!isset($regulataryCount) ? json_encode($regulataryCount) : 'null'!!};
+
 
 
 // var dougGraphHighRisk = @json($dougGraphHighRisk) ? @json($dougGraphHighRisk) : null ;
@@ -556,7 +564,7 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
+
                     'rgba(75, 192, 192, 1)',
                     'rgba(255, 205, 86, 1)',
                     'rgba(54, 162, 235, 1)',
@@ -578,8 +586,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["North Zone", "North West Zone", "North East Zone", "South Zone", "South East Zone", "South West Zone", "East Zone", "West Zone", "Central"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56, 55, 40, 75, 65, 90, 55],
+                            label: "Zone",
+                            data:zoneCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]
@@ -617,8 +625,8 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
-                
+
+
                     'rgba(255, 0, 0, 1)', // August
                     'rgba(0, 255, 0, 1)', // September
                     'rgba(0, 0, 255, 1)', // October
@@ -635,8 +643,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["Finance", "HR", "Sales", "Procurement", "Marketing"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56],
+                            label: "Department",
+                            data: departmentCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]
@@ -674,8 +682,8 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
-                
+
+
                     'rgba(255, 0, 0, 1)', // August
                     'rgba(0, 0, 255, 1)', // October
                     'rgba(0, 255, 0, 1)', // September
@@ -690,8 +698,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["High Risk", "Medium Risk", "Low Risk"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56],
+                            label: "Reputation",
+                            data: ReputationCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]
@@ -729,7 +737,7 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
+
                     'rgba(255, 0, 0, 1)', // August
                     'rgba(0, 0, 255, 1)', // October
                     'rgba(0, 255, 0, 1)', // September
@@ -744,8 +752,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["High Risk", "Medium Risk", "Low Risk"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56],
+                            label: "Legal",
+                            data: legalCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]
@@ -782,7 +790,7 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
+
                     'rgba(255, 0, 0, 1)', // August
                     'rgba(0, 0, 255, 1)', // October
                     'rgba(0, 255, 0, 1)', // September
@@ -797,8 +805,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["High Risk", "Medium Risk", "Low Risk"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56],
+                            label: "Financial",
+                            data: financialCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]
@@ -835,7 +843,7 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
+
                     'rgba(255, 0, 0, 1)', // August
                     'rgba(0, 0, 255, 1)', // October
                     'rgba(0, 255, 0, 1)', // September
@@ -850,8 +858,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["High Risk", "Medium Risk", "Low Risk"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56],
+                            label: "Operational",
+                            data: taxReurnCreditCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]
@@ -888,7 +896,7 @@ $(document).ready(function() {
 
                 // Create an array of different colors for each month
                 const barColors = [
-                   
+
                     'rgba(255, 0, 0, 1)', // August
                     'rgba(0, 0, 255, 1)', // October
                     'rgba(0, 255, 0, 1)', // September
@@ -903,8 +911,8 @@ $(document).ready(function() {
                         defaultFontFamily: 'Poppins',
                         labels: ["High Risk", "Medium Risk", "Low Risk"],
                         datasets: [{
-                            label: "My First dataset",
-                            data: [65, 59, 80, 81, 56],
+                            label: "Reputation",
+                            data: regulataryCount,
                             backgroundColor: barColors,
                             hoverBackgroundColor: barColors
                         }]

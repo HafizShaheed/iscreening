@@ -502,7 +502,7 @@ class adminController extends Controller
         $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
 
          $getKwyObservationScore =$data['KeyObservation']->overall_risk_score ? : 0;
-        $getKeyObservationOutOf =   $getKwyObservationScore - 100;
+        $getKeyObservationOutOf = 100 -  $getKwyObservationScore;
         $data['finalValueforGraKeyObservation'] = [
             $getKwyObservationScore,
             $getKeyObservationOutOf,

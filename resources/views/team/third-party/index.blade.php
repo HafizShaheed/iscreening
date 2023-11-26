@@ -54,11 +54,16 @@
                     <div class="col-xl-3 col-sm-6 col-6 mt-4 mt-md-0">
                         <label for="thirdPartyName">Status:</label>
                         <div class="d-flex justify-content-start align-items-start">
+                        @php
+                            $pendingCount = \App\Models\ThirdParty::where('status',0)->count();
+                            $activeCount = \App\Models\ThirdParty::where('status',1)->count();
+                            $reSubmitCount = \App\Models\ThirdParty::where('status',2)->count();
+                            @endphp
                             <select class="multi-select" name="status" placeholder="Select status Party">
                                 <option disabled selected>Report Status</option>
-                                <option value="Pending">Pending</option>
-                                <option class="badge badge-success border-0" value="Active">Active</option>
-                                <option value="Resubmit">Resubmit</option>
+                                <option value="Pending">Pending ({{ $pendingCount }})</option>
+                                <option class="badge badge-success border-0" value="Active">Active ({{  $activeCount }})</option>
+                                <option value="Resubmit">Resubmit ({{  $reSubmitCount  }})</option>
                             </select>
                         </div>
                     </div>

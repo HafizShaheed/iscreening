@@ -1,7 +1,7 @@
     <div class="deznav">
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
-                <li class="menu-title">I SCREENING</li>
+                <li class="menu-title">I SCREENING ADMIN</li>
                 <li>
                     <a href="{{ URL::to('/panel/dashboard') }}" class="{{ $page == 'Dashboard' ? 'mm-active' : '' }}"
                         aria-expanded="false">
@@ -19,8 +19,8 @@
                     </a>
 
                 </li>
-       
-           
+
+
                 <!-- <li>
                     <a href="#" class="" aria-expanded="false">
                         <div class="menu-icon">
@@ -83,7 +83,7 @@
                         <span class="nav-text">Client Managment</span>
                     </a>
                 </li>
-                        
+
                 <li>
                     <a href="{{ URL::to('/panel/team') }}" class="{{ $title == 'Team Managment' ? 'mm-active' : '' }}"
                         aria-expanded="false">
