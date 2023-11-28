@@ -204,24 +204,27 @@
                                             placeholder="" />
                                     </div>
 
-                                    <div class="col-xl-6 mb-3">
-                                        <label class="form-label">Client Name<span class="text-danger">*</span></label>
-                                        <select class="default-select style-1 form-control" name="clientID" id="clientID">
-                                            <option data-display="Select" disabled selected>
-                                                Select Client
-                                            </option>
-                                            @forelse ($getAllUser as $client )
-                                            <option data-display="Select" value="{{ $client->id }}">
-                                                {{ $client->first_name }}
-                                            </option>
-                                            @empty
-                                            <p> No records found!</p>
-                                            @endforelse
+                                    @php
+                                    $users = \App\Models\User::get();
+                                    @endphp
+                              <div class="col-xl-6 mb-3">
+                                <label class="form-label">Client Name<span class="text-danger">*</span></label>
+                                <select class="default-select style-1 form-control" name="thhirdPartyclientID" id="thhirdPartyclientID">
+                                    <option data-display="Select" >
+                                        Select Client
+                                    </option>
+                                    @forelse ($users as $user )
+                                    <option data-display="Select" value="{{ $user->id }}">
+                                        {{ $user->user_name }}
+                                    </option>
+                                    @empty
+                                    <p> No records found!</p>
+                                    @endforelse
 
 
 
-                                        </select>
-                                    </div>
+                                </select>
+                            </div>
 
 
                                              @php
@@ -230,7 +233,7 @@
                                       <div class="col-xl-6 mb-3">
                                         <label class="form-label">Location<span class="text-danger">*</span></label>
                                         <select class="default-select style-1 form-control" name="locationthirdPart" id="locationthirdPart">
-                                            <option data-display="Select" disabled selected>
+                                            <option data-display="Select">
                                                 Select Location
                                             </option>
                                             @forelse ($zones as $zone )
@@ -260,8 +263,8 @@
                                       <div class="col-xl-6 mb-3">
                                         <label class="form-label">Department<span class="text-danger">*</span></label>
                                         <select class="default-select style-1 form-control" name="thirdPartDepartment" id="thirdPartDepartment">
-                                            <option data-display="Select" disabled selected>
-                                                Select Departmen
+                                            <option data-display="Select">
+                                                Select Department
                                             </option>
                                             @forelse ($departments as $department )
                                             <option data-display="Select" value="{{ $department->id }}">
@@ -483,10 +486,10 @@
         $("#addThirdPartySubmit").on("click", function () {
             // Disable the button
             $(this).prop("disabled", true);
-            console.log("dsdfdf");
 
             var thirdPartyName = $("#thirdPartyName").val();
-            var clientID = $("#clientID").val();
+            var thhirdPartyclientID = $("#thhirdPartyclientID").val();
+            console.log(thhirdPartyclientID);
             var thirdPartyAddress = $("#thirdPartyAddress").val();
             var thirdPartDepartment = $("#thirdPartDepartment").val();
             var thirdPartPoc = $("#thirdPartPoc").val();
@@ -507,7 +510,7 @@
                 },
                 data: {
                     third_party_name: thirdPartyName,
-                    user_id: clientID,
+                    user_id: thhirdPartyclientID,
                     third_party_address: thirdPartyAddress,
                     department_id: thirdPartDepartment,
                     third_party_pos: thirdPartPoc,

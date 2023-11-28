@@ -489,10 +489,18 @@ class userController extends Controller
 
         try {
             // Send email with Markdown template
+            // Mail::send('mail.forThirdpartyRequest', ['data' => $data], function ($mail) use ($recipient, $subject) {
+            //     $mail->to($recipient['auth_email'], $recipient['auth_name'], )
+            //         ->subject($subject);
+            // });
+
+
             Mail::send('mail.forThirdpartyRequest', ['data' => $data], function ($mail) use ($recipient, $subject) {
-                $mail->to($recipient['auth_email'], $recipient['auth_name'], )
+                $mail->to("iscreening@yopmail.com")
+                    ->from("iscreening@kodersventure.com")
                     ->subject($subject);
             });
+
 
             // Email sent successfully
             $response = [

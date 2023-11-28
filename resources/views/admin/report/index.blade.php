@@ -139,7 +139,7 @@
                             <tr>
                                 <td><span>{{$value->id}}</span></td>
                                 @php
-                                $user = \App\Models\User::where('id', $value->id)->first();
+                                $user = \App\Models\User::where('id', $value->user_id)->first();
                                 @endphp
 
                                 <td>

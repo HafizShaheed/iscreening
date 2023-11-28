@@ -257,10 +257,12 @@
 
                                                     </thead>
                                                     <tbody>
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_1))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_1}}</th>
                                                         </tr>
+
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
@@ -281,6 +283,10 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_1}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_2))
+
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_2}}</th>
@@ -305,6 +311,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_2}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_3))
 
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
@@ -330,6 +339,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_3}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_4))
 
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
@@ -355,6 +367,10 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_4}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_5))
+
 
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
@@ -380,6 +396,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_5}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_6))
 
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
@@ -405,6 +424,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_6}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_7))
 
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
@@ -430,6 +452,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_7}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_1_8))
 
 
                                                         <tr>
@@ -457,9 +482,13 @@
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_8}}</td>
                                                         </tr>
 
+                                                        @endif
+
 
 
                                                 <!-----------------===========================================    second director      ============================================================  -->
+
+                                                @if (!empty($FirstDirectorsFirm->director_name_2_1))
                                                             <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_1}}</th>
@@ -484,6 +513,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_1}}</td>
                                                         </tr>
+                                                        @endif
+
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_2))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_2}}</th>
@@ -508,7 +540,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_2}}</td>
                                                         </tr>
+                                                        @endif
 
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_3))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_3}}</th>
@@ -533,7 +567,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_3}}</td>
                                                         </tr>
+                                                        @endif
 
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_4))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_4}}</th>
@@ -558,7 +594,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_4}}</td>
                                                         </tr>
+                                                        @endif
 
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_5))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_5}}</th>
@@ -583,7 +621,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_5}}</td>
                                                         </tr>
+                                                        @endif
 
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_6))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_6}}</th>
@@ -608,7 +648,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_6}}</td>
                                                         </tr>
+                                                        @endif
 
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_7))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_7}}</th>
@@ -634,7 +676,9 @@
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_7}}</td>
                                                         </tr>
 
+                                                        @endif
 
+                                                        @if (!empty($FirstDirectorsFirm->director_name_2_8))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_8}}</th>
@@ -661,8 +705,11 @@
                                                         </tr>
 
 
+                                                        @endif
 
                                             <!-----------------===========================================    third director      ============================================================  -->
+                                            @if (!empty($FirstDirectorsFirm->director_name_3_1))
+
                                                             <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_1}}</th>
@@ -687,6 +734,9 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_1}}</td>
                                                         </tr>
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_2))
+
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_2}}</th>
@@ -711,7 +761,8 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_2}}</td>
                                                         </tr>
-
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_3))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_3}}</th>
@@ -736,7 +787,8 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_3}}</td>
                                                         </tr>
-
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_4))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_4}}</th>
@@ -761,7 +813,8 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_4}}</td>
                                                         </tr>
-
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_5))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_5}}</th>
@@ -786,7 +839,8 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_5}}</td>
                                                         </tr>
-
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_6))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_6}}</th>
@@ -811,7 +865,8 @@
 
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_6}}</td>
                                                         </tr>
-
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_7))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_7}}</th>
@@ -837,7 +892,8 @@
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_7}}</td>
                                                         </tr>
 
-
+                                                        @endif
+                                                        @if (!empty($FirstDirectorsFirm->director_name_3_8))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_8}}</th>
@@ -863,6 +919,7 @@
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_8}}</td>
                                                         </tr>
 
+                                                        @endif
 
                                                     </tbody>
                                                 </table>
@@ -1868,7 +1925,7 @@
 </script>
 
 <script>
-    
+
 (function($) {
   "use strict"
 

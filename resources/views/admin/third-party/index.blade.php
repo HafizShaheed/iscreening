@@ -171,7 +171,7 @@
                                 <td><span>{{$value->third_party_email}}</span></td>
                                 <td><span>{{$value->third_party_phone}}</span></td>
                                 @php
-                                $user = \App\Models\User::where('id', $value->id)->first();
+                                $user = \App\Models\User::where('id', $value->user_id)->first();
                                 @endphp
 
                                 <td>
