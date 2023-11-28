@@ -41,25 +41,30 @@
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">High Risk</h4>
                         <div class="d-flex justify-content-center align-items-center">
-                            <canvas id="doughnut_chart_1" width="220" height="220"></canvas>
+                            <canvas id="doughnut_chart_1" width="170" height="170"></canvas>
                         </div>
+                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">{{$highRiskPercentage.'%'}}</h4>
                     </div>
                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Medium Risk</h4>
                         <div class="d-flex justify-content-center align-items-center">
-                            <canvas id="doughnut_chart_2" width="220" height="220"></canvas>
+                            <canvas id="doughnut_chart_2" width="170" height="170"></canvas>
                         </div>
+                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">{{$mediumRiskPercentage.'%'}}</h4>
+
                     </div>
                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Low Risk</h4>
                         <div class="d-flex justify-content-center align-items-center">
-                            <canvas id="doughnut_chart_3" width="220" height="220"></canvas>
+                            <canvas id="doughnut_chart_3" width="170" height="170"></canvas>
                         </div>
+                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">{{$lowRiskPercentage.'%'}}</h4>
+
                     </div>
 
                 </div>
 
-                <div class="row mt-5">
+                <!-- <div class="row mt-5">
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
 
                     </div>
@@ -74,7 +79,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
 
 
             </div>

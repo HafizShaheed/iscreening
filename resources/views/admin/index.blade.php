@@ -68,45 +68,45 @@
                                         <label for="compnayName" class="form-label">Company Name<span
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="compnayName" name="first_name"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="user_name" class="form-label">Username<span
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="user_name" name="user_name"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="companyEmail" class="form-label">Company Email<span
                                                 class="text-danger">*</span></label>
                                         <input type="email" class="form-control" id="companyEmail" name="email"
-                                            placeholder="" />
+                                             required />
                                     </div>
                                     <div class="col-xl-6 mb-3">
                                         <label for="industry" class="form-label">Industry,<span
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="industry" name="industry"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="poc" class="form-label">POC<span
                                                 class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="poc" name="poc" placeholder="" />
+                                        <input type="text" class="form-control" id="poc" name="poc"  required />
                                     </div>
                                       @php
                                             $zones = \App\Models\Zone::get();
                                             @endphp
                                      <div class="col-xl-6 mb-3">
                                         <label class="form-label">Location<span class="text-danger">*</span></label>
-                                        <select class="default-select style-1 form-control" name="location" id="location">
+                                        <select class="default-select style-1 form-control" name="location" id="location" required>
                                             <option data-display="Select" disabled selected>
                                                 Select Location
                                             </option>
                                             @forelse ($zones as $zone )
-                                            <option data-display="Select" value="{{ $zone->id }}">
+                                            <option data-display="Select" value="{{ $zone->id }}" required>
                                                 {{ $zone->zone_name }}
                                             </option>
                                             @empty
@@ -123,7 +123,7 @@
                                             @endphp
                                      <div class="col-xl-6 mb-3">
                                         <label class="form-label">Roles<span class="text-danger">*</span></label>
-                                        <select class="default-select style-1 form-control" name="role_id" id="role_id">
+                                        <select class="default-select style-1 form-control" name="role_id" id="role_id" required>
                                             <option data-display="Select" disabled selected>
                                                 Select Role
                                             </option>
@@ -144,14 +144,14 @@
                                         <label for="password" class="form-label">Password<span
                                                 class="text-danger">*</span></label>
                                         <input type="password" class="form-control" id="password" name="password"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="password_confirmation" class="form-label">Confirm Password<span
                                                 class="text-danger">*</span></label>
                                         <input type="password" class="form-control" id="password_confirmation"
-                                            name="password_confirmation" placeholder="" />
+                                            name="password_confirmation"  required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
@@ -159,7 +159,7 @@
                                         <label for="clientStatusCheck" class="form-label">Status<span
                                                 class="text-danger">*</span></label>
                                         <input type="checkbox" class="form-check-input" id="clientStatusCheck"
-                                            name="clientStatusCheck" required="" checked />
+                                            name="clientStatusCheck"  checked />
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                 <button type="button" class="btn btn-danger light report-tab-unactive" data-bs-dismiss="modal">
                     Close
                 </button>
-                <button type="button" id="clinetSubmit" class="btn btn report-tab-active">
+                <button type="submit" id="clinetSubmit" class="btn btn report-tab-active">
                     Save changes
                 </button>
             </div>
@@ -201,7 +201,7 @@
                                         <label for="thirdPartyName" class="form-label">Third Party Name<span
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="thirdPartyName" name="thirdPartyName"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     @php
@@ -209,7 +209,7 @@
                                     @endphp
                               <div class="col-xl-6 mb-3">
                                 <label class="form-label">Client Name<span class="text-danger">*</span></label>
-                                <select class="default-select style-1 form-control" name="thhirdPartyclientID" id="thhirdPartyclientID">
+                                <select class="default-select style-1 form-control" name="thhirdPartyclientID" id="thhirdPartyclientID" required>
                                     <option data-display="Select" >
                                         Select Client
                                     </option>
@@ -232,7 +232,7 @@
                                             @endphp
                                       <div class="col-xl-6 mb-3">
                                         <label class="form-label">Location<span class="text-danger">*</span></label>
-                                        <select class="default-select style-1 form-control" name="locationthirdPart" id="locationthirdPart">
+                                        <select class="default-select style-1 form-control" name="locationthirdPart" id="locationthirdPart" required>
                                             <option data-display="Select">
                                                 Select Location
                                             </option>
@@ -251,7 +251,7 @@
 
                                     <div class="col-xl-6 mb-3">
                                         <label class="form-label">Address<span class="text-danger">*</span></label>
-                                        <textarea rows="1" class="form-control" id="thirdPartyAddress" name="thirdPartyAddress"></textarea>
+                                        <textarea rows="1" class="form-control" id="thirdPartyAddress" name="thirdPartyAddress" required></textarea>
                                     </div>
 
 
@@ -262,7 +262,7 @@
                                             @endphp
                                       <div class="col-xl-6 mb-3">
                                         <label class="form-label">Department<span class="text-danger">*</span></label>
-                                        <select class="default-select style-1 form-control" name="thirdPartDepartment" id="thirdPartDepartment">
+                                        <select class="default-select style-1 form-control" name="thirdPartDepartment" id="thirdPartDepartment" required>
                                             <option data-display="Select">
                                                 Select Department
                                             </option>
@@ -283,21 +283,21 @@
                                         <label for="thirdPartPoc" class="form-label">POC<span
                                                 class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="thirdPartPoc" name="thirdPartPoc"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="thirdPartEmail" class="form-label">Email<span
                                                 class="text-danger">*</span></label>
                                         <input type="email" class="form-control" id="thirdPartEmail" name="thirdPartEmail"
-                                            placeholder="" />
+                                             required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="thirdPartPhone" class="form-label">Phone Number<span
                                                 class="text-danger">*</span></label>
                                         <input type="number" class="form-control" id="thirdPartPhone" name="thirdPartPhone"
-                                            placeholder="" />
+                                             required />
                                     </div>
                                 </div>
                             </div>
@@ -363,34 +363,34 @@
                                         <label for="exampleFormControlInput2" class="form-label">User Name<span
                                                 class="text-danger">*</span></label>
                                         <input type="text" id="user_nameTeam" name="user_nameTeam" class="form-control"
-                                            placeholder="" />
+                                             required />
                                     </div>
                                     <div class="col-xl-6 mb-3">
                                         <label for="exampleFormControlInput4" class="form-label">Email<span
                                                 class="text-danger">*</span></label>
                                         <input type="email" id="TemMemeberEmail" name="TemMemeberEmail"
-                                            class="form-control" placeholder="" />
+                                            class="form-control"  required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="exampleFormControlInput4" class="form-label">Password<span
                                                 class="text-danger">*</span></label>
                                         <input type="password" id="passwordTeam" name="passwordTeam"
-                                            class="form-control" placeholder="" />
+                                            class="form-control"  required />
                                     </div>
 
                                     <div class="col-xl-6 mb-3">
                                         <label for="exampleFormControlInput4" class="form-label">Confirm Password<span
                                                 class="text-danger">*</span></label>
                                         <input type="password" id="password_confirmationTeam"
-                                            name="password_confirmationTeam" class="form-control" placeholder="" />
+                                            name="password_confirmationTeam" class="form-control"  required />
                                     </div>
                                     <div class="col-xl-6 mb-3">
                                         <!-- <label class="form-check-label" for="customCheckBox3"> status</label> -->
                                         <label for="customCheckBoxteam" class="form-label">Status<span
                                                 class="text-danger">*</span></label>
                                         <input type="checkbox" id="TeamMemberStatusCheck" name="TeamMemberStatusCheck"
-                                            class="form-check-input" required="" checked />
+                                            class="form-check-input"  checked />
                                     </div>
                                 </div>
                             </div>
@@ -471,9 +471,24 @@
                             },
                         });
                     }
+
+                    if (response.errors) {
+                        // Display SweetAlert success message with auto-close after 3 seconds
+                        Swal.fire({
+                            title: "Error!",
+                            text: "All Fields are required Or Recheck Feilds",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            timer: 3000, // 3 seconds
+                            timerProgressBar: true,
+                            willClose: () => {
+                                // Add any additional actions after the SweetAlert is closed
+                            },
+                        });
+                    }
                 },
                 error: function (xhr, status, error) {
-                    // Handle the error response
+
                 },
                 complete: function () {
                     // Re-enable the button and hide the loading spinner after the request is complete
@@ -536,6 +551,20 @@
                             },
                         });
                     }
+                    if (response.errors) {
+                        // Display SweetAlert success message with auto-close after 3 seconds
+                        Swal.fire({
+                            title: "Error!",
+                            text: "All Fields are required Or Recheck Feilds",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                            timer: 3000, // 3 seconds
+                            timerProgressBar: true,
+                            willClose: () => {
+                                // Add any additional actions after the SweetAlert is closed
+                            },
+                        });
+                    }
                 },
                 error: function (xhr, status, error) {
                     // Handle the error response
@@ -586,6 +615,21 @@
                             title: "Success!",
                             text: response.message,
                             icon: "success",
+                            confirmButtonText: "OK",
+                            timer: 3000, // 3 seconds
+                            timerProgressBar: true,
+                            willClose: () => {
+                                // Add any additional actions after the SweetAlert is closed
+                            },
+                        });
+                    }
+
+                    if (response.errors) {
+                        // Display SweetAlert success message with auto-close after 3 seconds
+                        Swal.fire({
+                            title: "Error!",
+                            text: "All Fields are required Or Recheck Feilds",
+                            icon: "error",
                             confirmButtonText: "OK",
                             timer: 3000, // 3 seconds
                             timerProgressBar: true,

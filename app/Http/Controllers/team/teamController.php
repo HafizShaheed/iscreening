@@ -205,6 +205,7 @@ class teamController extends Controller
         $firmBackground->date_of_appointment = $request->input('date_of_appointment');
         $firmBackground->educational_background = $request->input('educational_background');
         $firmBackground->credit_score = $request->input('credit_score');
+        $firmBackground->status = 1;
         $firmBackground->save();
 
         if($firmBackground->id){
@@ -515,7 +516,9 @@ class teamController extends Controller
        $KeyObservation->team_user_id = Auth::guard('team')->id();
        $KeyObservation->save();
 
-
+       $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+       $ThirdParty->status = 1;
+       $ThirdParty->save();
 
         }
 
@@ -547,7 +550,12 @@ class teamController extends Controller
         $OnGroundVerification->address_details = $request->input('address_details');
         $OnGroundVerification->address_visit_findings = $request->input('address_visit_findings');
         $OnGroundVerification->on_ground_verification_score = $request->input('on_ground_verification_score');
+       $OnGroundVerification->status = 1;
         $OnGroundVerification->save();
+
+       $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+       $ThirdParty->status = 1;
+       $ThirdParty->save();
         return response()->json(['message' => 'On Ground Verification  Reports updated successfully!']);
 
 
@@ -616,8 +624,12 @@ class teamController extends Controller
         $CourtCheck->legal_score  = $request->input('legal_score');
         $CourtCheck->score_analysis = $request->input('score_analysis');
         $CourtCheck->Type_of_risk = $request->input('legal_score') > 60 ? 'High Risk' : ($request->input('legal_score') <= 60 && $request->input('legal_score') > 30 ? 'Medium Risk' : ($request->input('legal_score') <= 30 ? 'Low Risk' : '' ) );
+        $CourtCheck->status = 1;
 
         $CourtCheck->save();
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
         return response()->json(['message' => 'Court Check  Reports updated successfully!']);
 
     }
@@ -654,8 +666,12 @@ class teamController extends Controller
         $Financial->charged_property_4  = $request->input('charged_property_4');
         $Financial->overall_financial_score  = $request->input('overall_financial_score');
         $Financial->Type_of_risk = $request->input('overall_financial_score') > 60 ? 'High Risk' : ($request->input('overall_financial_score') <= 60 && $request->input('overall_financial_score') > 30 ? 'Medium Risk' : ($request->input('overall_financial_score') <= 30 ? 'Low Risk' : '' ) );
+        $Financial->status = 1;
 
         $Financial->save();
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
 
         if($Financial->id){
 
@@ -959,8 +975,12 @@ class teamController extends Controller
 
         $BusinessIntelligence->score_analysis = $request->input('score_analysis');
         $BusinessIntelligence->Type_of_risk = $request->input('efficiency_score') > 60 ? 'High Risk' : ($request->input('efficiency_score') <= 60 && $request->input('efficiency_score') > 30 ? 'Medium Risk' : ($request->input('efficiency_score') <= 30 ? 'Low Risk' : '' ) );
-
+        $BusinessIntelligence->status = 1;
         $BusinessIntelligence->save();
+
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
         return response()->json(['message' => 'Business Intelligence  Reports updated successfully!']);
 
     }
@@ -1018,8 +1038,13 @@ class teamController extends Controller
         $TaxReurnCredit->overall_credit_history_score  = $request->input('overall_credit_history_score');
         $TaxReurnCredit->score_analysis = $request->input('score_analysis');
         $TaxReurnCredit->Type_of_risk = $request->input('overall_credit_history_score') > 60 ? 'High Risk' : ($request->input('overall_credit_history_score') <= 60 && $request->input('overall_credit_history_score') > 30 ? 'Medium Risk' : ($request->input('overall_credit_history_score') <= 30 ? 'Low Risk' : '' ) );
+        $TaxReurnCredit->status = 1;
 
         $TaxReurnCredit->save();
+
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
         return response()->json(['message' => 'Tax Reurn Credit  Reports updated successfully!']);
 
 
@@ -1051,8 +1076,13 @@ class teamController extends Controller
         $MarketReputation->market_reputation_score  = $request->input('market_reputation_score');
         $MarketReputation->score_analysis = $request->input('score_analysis');
         $MarketReputation->Type_of_risk = $request->input('market_reputation_score') > 60 ? 'High Risk' : ($request->input('market_reputation_score') <= 60 && $request->input('market_reputation_score') > 30 ? 'Medium Risk' : ($request->input('market_reputation_score') <= 30 ? 'Low Risk' : '' ) );
+        $MarketReputation->status = 1;
 
         $MarketReputation->save();
+
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
         return response()->json(['message' => 'Market Reputations  Reports updated successfully!']);
     }
 
@@ -1077,6 +1107,7 @@ class teamController extends Controller
 
        $FirmBackground = FirmBackground::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $FirmBackground->status = 3;
+
        $FirmBackground->save();
 
        $BusinessIntelligence = BusinessIntelligence::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();

@@ -177,7 +177,7 @@
 
                                 <td class="text-center space-between ">
 
-                                    <a href="javascript:void(0)" id="thirdpartyIdForFormResubmit" data-thirdparty="{{ $value->id }}">
+                                    <a href="javascript:void(0)" class="thirdpartyIdForFormResubmit" data-thirdparty="{{ $value->id }}">
                                         <i class="fa fa-refresh fa-2x" style="cursor:pointer;" title="Re-submit Report" aria-hidden="true"></i>
                                     </a>
 
@@ -199,7 +199,7 @@
                                             <path d="M15.1655 4.60254L19.7315 9.16854" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </a>
-                                    <a href="javascript:void(0)" id="thirdpartyIdForForComplete" data-thirdparty="{{$value->id}}">
+                                    <a href="javascript:void(0)" class="thirdpartyIdForForComplete" data-thirdparty="{{$value->id}}">
                                         <i class="fa fa-check-square fa-2x" title="Click to complete Report" aria-hidden="true"></i>
                                     </a>
 
@@ -244,7 +244,7 @@
 <script>
 
      $(document).ready(function () {
-        $('#thirdpartyIdForFormResubmit').on('click', function() {
+        $('.thirdpartyIdForFormResubmit').on('click', function() {
 
               var thirdpartyId = $(this).data("thirdparty");
 
@@ -292,7 +292,7 @@
          });
 
 
-         $('#thirdpartyIdForForComplete').on('click', function() {
+         $('.thirdpartyIdForForComplete').on('click', function() {
 
                 var thirdpartyId = $(this).data("thirdparty");
 

@@ -51,6 +51,11 @@ class userController extends Controller
             $lowRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
             $totalRisk = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
 
+            $data['highRiskPercentage'] = ($highRiskCOunt * 100) / $totalRisk;
+            $data['mediumRiskPercentage'] = ($mediumRiskCOunt * 100) / $totalRisk;
+            $data['lowRiskPercentage'] = ($lowRiskCOunt * 100) / $totalRisk;
+
+
             $data['dougGraphHighRisk'] = [
                 $highRiskCOunt,
                 $totalRisk,

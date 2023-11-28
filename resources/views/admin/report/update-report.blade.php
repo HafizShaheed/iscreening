@@ -221,7 +221,7 @@
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="no_of_directors" class="form-label">No of Directors</label>
-                            <input type="number" class="form-control" id="no_of_directors" name="no_of_directors" value="{{$FirmBackground->no_of_directors}}" placeholder="">
+                            <input type="number" class="form-control" id="no_of_directors"  name="no_of_directors" value="{{$FirmBackground->no_of_directors}}" placeholder="">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="industry" class="form-label">Industry</label>
@@ -241,15 +241,15 @@
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="state" class="form-label">State</label>
-                            <input type="email" class="form-control" id="state" name="state" value="{{$FirmBackground->state}}" placeholder="">
+                            <input type="text" class="form-control" id="state" name="state" value="{{$FirmBackground->state}}" placeholder="">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="pincode" class="form-label">Pincode</label>
-                            <input type="email" class="form-control" id="pincode" name="pincode" value="{{$FirmBackground->pincode}}" placeholder="">
+                            <input type="text" class="form-control" id="pincode" name="pincode" value="{{$FirmBackground->pincode}}" placeholder="">
                         </div>
                         <div class="col-xl-12 mb-3">
                             <label for="business_details" class="form-label">Business Details</label>
-                            <input type="email" class="form-control" id="business_details" name="business_details" value="{{$FirmBackground->business_details}}" placeholder="">
+                            <input type="text" class="form-control" id="business_details" name="business_details" value="{{$FirmBackground->business_details}}" placeholder="">
                         </div>
 
                         <div class="col-xl-12 d-flex justify-content-end">

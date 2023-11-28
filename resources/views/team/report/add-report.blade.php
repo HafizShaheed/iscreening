@@ -172,7 +172,7 @@
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="no_of_directors" class="form-label">No of Directors</label>
-                            <input type="number" class="form-control" id="no_of_directors" name="no_of_directors" value="{{$FirmBackground->no_of_directors}}" placeholder="">
+                            <input type="number" class="form-control"  id="no_of_directors" name="no_of_directors" value="{{$FirmBackground->no_of_directors}}" placeholder="">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="industry" class="form-label">Industry</label>
@@ -192,15 +192,15 @@
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="state" class="form-label">State</label>
-                            <input type="email" class="form-control" id="state" name="state" value="{{$FirmBackground->state}}" placeholder="">
+                            <input type="text" class="form-control" id="state" name="state" value="{{$FirmBackground->state}}" placeholder="">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="pincode" class="form-label">Pincode</label>
-                            <input type="email" class="form-control" id="pincode" name="pincode" value="{{$FirmBackground->pincode}}" placeholder="">
+                            <input type="text" class="form-control" id="pincode" name="pincode" value="{{$FirmBackground->pincode}}" placeholder="">
                         </div>
                         <div class="col-xl-12 mb-3">
                             <label for="business_details" class="form-label">Business Details</label>
-                            <input type="email" class="form-control" id="business_details" name="business_details" value="{{$FirmBackground->business_details}}" placeholder="">
+                            <input type="text" class="form-control" id="business_details" name="business_details" value="{{$FirmBackground->business_details}}" placeholder="">
                         </div>
 
                         <div class="col-xl-12 d-flex justify-content-end">
@@ -356,7 +356,7 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="regulatory_score" class="form-label">Regulatory Score </label>
-                            <input type="number" class="form-control" id="regulatory_score" name="regulatory_score" value="{{$FirmBackground->regulatory_score}}" placeholder="">
+                            <input type="number" class="form-control" id="regulatory_score" step="any" name="regulatory_score" value="{{$FirmBackground->regulatory_score}}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="score_analysis" class="form-label">Score Analysis </label>
@@ -1280,6 +1280,7 @@
             <form id="onGround-step-form" enctype="multipart/form-data">
                 <!-- Verificationform 1 step end -->
                 <div class="onGround-step" id="onGround-step-1">
+                <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
 
                     <div class="row">
@@ -1346,6 +1347,7 @@
                         <span style="color:darkgray; font-size:12px;"> Court Check of Directors </span>
                     </h4>
                     <div class="row">
+                    <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                         <input type="hidden" name="CourtCheckId" id="CourtCheckId" value="{{$CourtCheck->id}}" class="form-control" value="">
 
@@ -1586,7 +1588,10 @@
 
             <form id="Financials-step-form" enctype="multipart/form-data">
                 <!-- Financials 1 step end -->
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                 <div class="Financials-step" id="Financials-step-1">
+
                     <h4 class="card-title">Financials<br>
                         <span style="color:darkgray; font-size:12px;"> Charges on the Entity </span>
                     </h4>
@@ -2918,6 +2923,8 @@
         <div class="card-body justify-content-start">
             <form id="Business-Intelligence-step-form" enctype="multipart/form-data">
                 <!-- firm background 1 step end -->
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                 <div class="Business-Intelligence-step" id="Business-Intelligence-step-1">
                     <div class="row">
 
@@ -3024,6 +3031,7 @@
 
 <div class="row" id="Tax-Return-and-Credit">
     <div class="card">
+
         <div class="card-header justify-content-start">
             <h4 class="card-title">Tax Return and Credit<br>
                 <span style="color:darkgray; font-size:12px;"> Tax Returns</span>
@@ -3032,6 +3040,8 @@
         </div>
         <div class="card-body justify-content-start">
             <form id="Tax-Return-and-Credit-step-form" enctype="multipart/form-data">
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                 <!-- Tax Return and Credit 1 step end -->
                 <div class="Tax-Return-and-Credit-step" id="Tax-Return-and-Credit-step-1">
                     <div class="row">
@@ -3249,6 +3259,8 @@
         </div>
         <div class="card-body justify-content-start">
             <form id="Market-Reputatio-step-form" enctype="multipart/form-data">
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                 <!-- firm background 1 step end -->
                 <div class="Market-Reputation-step" id="Market-Reputation-step-1">
                     <div class="row">
@@ -3313,6 +3325,8 @@
             <form id="Key-Observation-step-form">
                 <!-- Tax Return and Credit 1 step end -->
                 <div class="Key-Observation-step" id="Key-Observation-step-1">
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                     <div class="row">
 
                         <input type="hidden" name="KeyObservationID" id="KeyObservationID" class="form-control" value="{{$KeyObservation->id}}">
