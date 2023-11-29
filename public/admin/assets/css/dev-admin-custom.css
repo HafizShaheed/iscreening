@@ -14,6 +14,14 @@
     color: black !important;
     background-color: darkgray !important;
 }
+
+.default-tab .nav-link.active {
+    color: #f5f5f5 !important;
+    background-color: #1c9bf6 !important;
+    border-color: #dee2e6 #1363b4 #fff #ebeef6;
+    border-radius: 0.375rem 0.375rem 0 0;
+    color: var(--primary);
+    }
 /* .border-round-tab{
     border-radius: 9px !important;
 } */

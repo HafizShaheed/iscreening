@@ -17,7 +17,7 @@
                             </svg>
                         </div>
 
-                        <span class="nav-text">Dashboard</span>
+                        <span class="nav-text">Risk Analytics</span>
                     </a>
                 </li>
 
@@ -62,7 +62,7 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <span class="nav-text">Attention  Required</span>
+                        <span class="nav-text">Insights </span>
                     </a>
                 </li>
 

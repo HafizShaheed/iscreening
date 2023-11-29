@@ -33,7 +33,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header d-flex justify-content-center">
-                <h2 class="card-title ">Action Required </h2>
+                <h1 class="card-title " style="font-size: 25px; font-weight: 900;">Risk Insights   </h1>
             </div>
             <div class="card-body justify-content-center">
 
@@ -90,7 +90,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header d-flex justify-content-center">
-                <h2 class="card-title ">Risk Overview</h2>
+                <!-- <h2 class="card-title ">Risk Overview</h2> -->
+                <h1 class="card-title " style="font-size: 25px; font-weight: 900;">Risk Impact </h1>
+
             </div>
             <div class="card-body justify-content-center">
 
@@ -119,21 +121,9 @@
 
 
                 </div>
-            </div>
 
-
-        </div>
-
-    </div>
-
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header d-flex justify-content-center">
-                <h2 class="card-title ">Impact</h2>
-            </div>
-            <div class="card-body justify-content-center">
-
-                <div class="row">
+                <br>
+                <div class="row  mt-4 ">
 
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
@@ -219,6 +209,20 @@
         </div>
 
     </div>
+
+    <!-- <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-center">
+                <h2 class="card-title ">Impact</h2>
+            </div>
+            <div class="card-body justify-content-center">
+
+            </div>
+
+
+        </div>
+
+    </div> -->
 
     <!-- <div class="col-12">
         <div class="card">
@@ -1736,53 +1740,65 @@ $(document).ready(function() {
         // }
 
 
-        // Doughnut Chart Function
-        var doughnutChartall = function(elementId, dataValues, label1, label2) {
-            if (jQuery('#' + elementId).length > 0) {
-                const doughnut_chart = document.getElementById(elementId).getContext('2d');
-                new Chart(doughnut_chart, {
-                    type: 'doughnut',
-                    data: {
-                        weight: 10,
-                        defaultFontFamily: 'Poppins',
-                        datasets: [{
-                            data: dataValues,
-                            borderWidth: 3,
-                            borderColor: "rgba(255,255,255,1)",
-                            backgroundColor: [
-                                "rgba(44, 44, 44, 1)",
-                                "rgba(98, 126, 234, 1)",
-                            ],
-                            hoverBackgroundColor: [
-                                "rgba(44, 44, 44, 0.9)",
-                                "rgba(98, 126, 234, .9)",
-                            ]
-                        }],
-                        labels: [
-                            label1,
-                            label2,
-                        ]
-                    },
-                    options: {
-                        weight: 10,
-                        cutoutPercentage: 60,
-                        responsive: true,
-                        maintainAspectRatio: false
+       // Doughnut Chart Function
+// Doughnut Chart Function
+// Doughnut Chart Function
+var doughnutChartall = function(elementId, dataValues,dynamicColor, label1, label2) {
+    if (jQuery('#' + elementId).length > 0) {
+        const doughnut_chart = document.getElementById(elementId).getContext('2d');
+        new Chart(doughnut_chart, {
+            type: 'doughnut',
+            data: {
+                weight: 10,
+                defaultFontFamily: 'Poppins',
+                datasets: [{
+                    data: dataValues,
+                    borderWidth: 3,
+                    borderColor: "rgba(255,255,255,1)",
+                    backgroundColor: [
+                        dynamicColor,
+                        "#1c9bf6",
+                    ],
+                    hoverBackgroundColor: [
+                        dynamicColor,
+                        "#1c9bf6",
+                        // August
+                     // October
+                    // September
+
+                    ]
+                }],
+                labels: [
+                    label1,
+                    label2,
+                ],
+            },
+            options: {
+                weight: 10,
+                cutoutPercentage: 60,
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
                     }
-                });
+                }
             }
-        }
-
-
-
-        // Example usage for a data value of 35 and label "Example"
+        });
+    }
+}
 
 
         // Call the function for each section
-        doughnutChartall("doughnut_chart_1", dougGraphHighRisk, "High Risk", "Over All Risk");
-        doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, "Medium Risk", "Over All Risk");
-        doughnutChartall("doughnut_chart_3", dougGraphLowRisk, "Low Risk", "Over All Risk");
-        doughnutChartall("doughnut_chart_4", OverallRisk, "Over All Risk", "");
+        doughnutChartall("doughnut_chart_1", dougGraphHighRisk,  'rgba(255, 0, 0, 1)', "High Risk", "Over All Risk");
+        doughnutChartall("doughnut_chart_2", dougGraphMediumRisk,'rgba(0, 0, 255, 1)', "Medium Risk", "Over All Risk");
+        doughnutChartall("doughnut_chart_3", dougGraphLowRisk,  'rgba(0, 255, 0, 1)', "Low Risk",  "Over All Risk");
+        // doughnutChartall("doughnut_chart_4", OverallRisk, "Over All Risk", "");
 
         var polarChart = function() {
             if (jQuery('#polar_chart').length > 0) {
