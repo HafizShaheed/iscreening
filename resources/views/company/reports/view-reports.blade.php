@@ -1984,7 +1984,8 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
-                    }
+                    },
+                    
                 }
 			});
 		}
@@ -1996,19 +1997,19 @@
             barChart_financialRation.height = 100;
 
             new Chart(barChart_financialRation, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: ["FY1", "FY2", "FY3", "FY4", "FY5"],
+                    labels:  ["FY1", "FY2", "FY3", "FY4", "FY5"],
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: ['abc','ddas','asdd','adds','qwewee'],
+                            data: [2,45,6,7,7],//businessInteligenceGrapFY,
                             borderColor: '#fff',
-                            borderWidth: "0",
-                            // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
-                        }
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 1)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
                 },
                 options: {
@@ -2027,7 +2028,7 @@
                             }
                         }],
                         xAxes: [{
-                            barPercentage: 0.5,
+                            barPercentage: 2,
                             ticks:{
                                 fontColor: '#888',
                             },
@@ -2035,7 +2036,14 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
                     }
+                }
                 }
             });
         }
@@ -2049,18 +2057,19 @@
             barChart_businessIntelligence.height = 100;
 
             new Chart(barChart_businessIntelligence, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: businessInteligenceGrapFY,
+                    labels:  ["FY1", "FY2", "FY3", "FY4", "FY5"],
                     datasets: [
                         {
-                            label: "Business Intelligence",
-                            data: [2,4,5,1,4],
+                            label: ['abc','ddas','asdd','adds','qwewee'],
+                            data: [2,45,6,7,7],//businessInteligenceGrapFY,
                             borderColor: '#fff',
-                            borderWidth: "0",
-                            // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 1)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
                 },
                 options: {
@@ -2079,7 +2088,7 @@
                             }
                         }],
                         xAxes: [{
-                            barPercentage: 0.5,
+                            barPercentage: 2,
                             ticks:{
                                 fontColor: '#888',
                             },
@@ -2087,7 +2096,14 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
                     }
+                }
                 }
             });
         }

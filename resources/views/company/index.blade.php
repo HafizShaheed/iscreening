@@ -567,123 +567,354 @@ $(document).ready(function() {
         //         });
         //     }
         // }
+        
 
-        var barHorizontalChartForLocation = function() {
-            if (jQuery('#barChartHorizontalLocation').length > 0) {
+        // ============================================== department chart of high risk low risk medium =============
 
-                // Create an array of different colors for each month
-                const barColors = [
+        var barVerticalChartForDepartment = function(){
+		//stalked bar chart
+            if(jQuery('#barChartVerticalDepartment').length > 0 ){
+                const barChartVerticalDepartment = document.getElementById("barChartVerticalDepartment").getContext('2d');
+                //generate gradient
+                const barChartVerticalDepartmentgradientStroke = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+                barChartVerticalDepartmentgradientStroke.addColorStop(0, "rgba(255, 0, 0, 1)");
+                barChartVerticalDepartmentgradientStroke.addColorStop(1, "rgba(255, 0, 0, 1)");
 
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255, 205, 86, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 0, 0, 1)', // August
-                    'rgba(0, 255, 0, 1)', // September
-                    'rgba(0, 0, 255, 1)', // October
-                    'rgba(255, 165, 0, 1)', // December
-                    'rgba(128, 0, 128, 1)', // November
-                ];
+                const barChartVerticalDepartmentgradientStroke2 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+                barChartVerticalDepartmentgradientStroke2.addColorStop(0, "rgba(0, 0, 255, 1)");
+                barChartVerticalDepartmentgradientStroke2.addColorStop(1, "rgba(0, 0, 255, 1)");
 
-                const barChart = document.getElementById("barChartHorizontalLocation").getContext('2d');
-                barChart.height = 100;
+                const barChartVerticalDepartmentgradientStroke3 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+                barChartVerticalDepartmentgradientStroke3.addColorStop(0, "rgba(0, 255, 0, 1)");
+                barChartVerticalDepartmentgradientStroke3.addColorStop(1, "rgba(0, 255, 0, 1)");
 
-                new Chart(barChart, {
-                    type: 'horizontalBar',
-                    data: {
-                        defaultFontFamily: 'Poppins',
-                        labels: ["North Zone", "North West Zone", "North East Zone", "South Zone", "South East Zone", "South West Zone", "East Zone", "West Zone", "Central"],
-                        datasets: [{
-                            label: "Zone",
-                            data:zoneCount,
-                            backgroundColor: barColors,
-                            hoverBackgroundColor: barColors
-                        }]
-                    },
-                    options: {
-                        legend: false,
-                        scales: {
-                            xAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    fontColor: '#888',
-                                },
-                                gridLines: {
-                                    color: "rgba(255, 255, 255, 0.1)"
-                                }
-                            }],
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    fontColor: '#888',
-                                },
-                                gridLines: {
-                                    color: "rgba(255, 255, 255, 0.1)"
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        }
+                // '', // August
+                //     '', // October
+                //     '', // September
 
+                barChartVerticalDepartment.height = 100;
 
-        var barVerticalChartForDepartment = function() {
-            if (jQuery('#barChartVerticalDepartment').length > 0) {
+                let barChartData = {
+                    defaultFontFamily: 'Poppins',
+                    labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'High Risk',
+                        backgroundColor: barChartVerticalDepartmentgradientStroke,
+                        hoverBackgroundColor: barChartVerticalDepartmentgradientStroke,
+                        data: [
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12'
+                        ]
+                    }, {
+                        label: 'Medium Risk',
+                        backgroundColor: barChartVerticalDepartmentgradientStroke2,
+                        hoverBackgroundColor: barChartVerticalDepartmentgradientStroke2,
+                        data: [
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12'
+                        ]
+                    }, {
+                        label: 'Low Risk',
+                        backgroundColor: barChartVerticalDepartmentgradientStroke3,
+                        hoverBackgroundColor: barChartVerticalDepartmentgradientStroke3,
+                        data: [
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12'
+                        ]
+                    }]
 
-                // Create an array of different colors for each month
-                const barColors = [
+                };
 
-
-                    'rgba(255, 0, 0, 1)', // August
-                    'rgba(0, 255, 0, 1)', // September
-                    'rgba(0, 0, 255, 1)', // October
-                    'rgba(255, 165, 0, 1)', // December
-                    'rgba(128, 0, 128, 1)', // November
-                ];
-
-                const barChart = document.getElementById("barChartVerticalDepartment").getContext('2d');
-                barChart.height = 100;
-
-                new Chart(barChart, {
+                new Chart(barChartVerticalDepartment, {
                     type: 'bar',
-                    data: {
-                        defaultFontFamily: 'Poppins',
-                        labels: ["Finance", "HR", "Sales", "Procurement", "Marketing"],
-                        datasets: [{
-                            label: "Department",
-                            data: departmentCount,
-                            backgroundColor: barColors,
-                            hoverBackgroundColor: barColors
-                        }]
-                    },
+                    data: barChartData,
                     options: {
-                        legend: false,
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: true
+                        },
+                        responsive: true,
                         scales: {
                             xAxes: [{
+                                //display:0,
+                                stacked: true,
                                 ticks: {
-                                    beginAtZero: true,
-                                    fontColor: '#888',
+                                    fontColor:	'#888',
                                 },
-                                gridLines: {
-                                    color: "rgba(255, 255, 255, 0.1)"
+                                gridLines:{
+                                    color:"rgba(255, 255, 255, 0.1)"
                                 }
                             }],
                             yAxes: [{
+                                //display:0,
+                                stacked: true,
                                 ticks: {
-                                    beginAtZero: true,
-                                    fontColor: '#888',
+                                    fontColor:	'#888',
                                 },
-                                gridLines: {
-                                    color: "rgba(255, 255, 255, 0.1)"
+                                gridLines:{
+                                    color:"rgba(255, 255, 255, 0.1)"
                                 }
                             }]
                         }
                     }
                 });
             }
-        }
+	    }
+
+
+
+        var barHorizontalChartForLocation = function(){
+		//stalked bar chart
+            if(jQuery('#barChartHorizontalLocation').length > 0 ){
+                const barChartHorizontalLocation = document.getElementById("barChartHorizontalLocation").getContext('2d');
+                //generate gradient
+                const barChartHorizontalLocationgradientStroke = barChartHorizontalLocation.createLinearGradient(50, 100, 50, 50);
+                barChartHorizontalLocationgradientStroke.addColorStop(0, "rgba(255, 0, 0, 1)");
+                barChartHorizontalLocationgradientStroke.addColorStop(1, "rgba(255, 0, 0, 1)");
+
+                const barChartHorizontalLocationgradientStroke2 = barChartHorizontalLocation.createLinearGradient(50, 100, 50, 50);
+                barChartHorizontalLocationgradientStroke2.addColorStop(0, "rgba(0, 0, 255, 1)");
+                barChartHorizontalLocationgradientStroke2.addColorStop(1, "rgba(0, 0, 255, 1)");
+
+                const barChartHorizontalLocationgradientStroke3 = barChartHorizontalLocation.createLinearGradient(50, 100, 50, 50);
+                barChartHorizontalLocationgradientStroke3.addColorStop(0, "rgba(0, 255, 0, 1)");
+                barChartHorizontalLocationgradientStroke3.addColorStop(1, "rgba(0, 255, 0, 1)");
+
+                // '', // August
+                //     '', // October
+                //     '', // September
+
+                barChartHorizontalLocation.height = 100;
+
+                let barChartData = {
+                    defaultFontFamily: 'Poppins',
+                    labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'High Risk',
+                        backgroundColor: barChartHorizontalLocationgradientStroke,
+                        hoverBackgroundColor: barChartHorizontalLocationgradientStroke,
+                        data: [
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12'
+                        ]
+                    }, {
+                        label: 'Medium Risk',
+                        backgroundColor: barChartHorizontalLocationgradientStroke2,
+                        hoverBackgroundColor: barChartHorizontalLocationgradientStroke2,
+                        data: [
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12'
+                        ]
+                    }, {
+                        label: 'Low Risk',
+                        backgroundColor: barChartHorizontalLocationgradientStroke3,
+                        hoverBackgroundColor: barChartHorizontalLocationgradientStroke3,
+                        data: [
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12',
+                            '12'
+                        ]
+                    }]
+
+                };
+
+                new Chart(barChartHorizontalLocation, {
+                    type: 'horizontalBar',
+                    data: barChartData,
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: false
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: true
+                        },
+                        responsive: true,
+                        scales: {
+                            xAxes: [{
+                                //display:0,
+                                stacked: true,
+                                ticks: {
+                                    fontColor:	'#888',
+                                },
+                                gridLines:{
+                                    color:"rgba(255, 255, 255, 0.1)"
+                                }
+                            }],
+                            yAxes: [{
+                                //display:0,
+                                stacked: true,
+                                ticks: {
+                                    fontColor:	'#888',
+                                },
+                                gridLines:{
+                                    color:"rgba(255, 255, 255, 0.1)"
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+	    }
+
+
+
+
+
+        // var barHorizontalChartForLocation = function() {
+        //     if (jQuery('#barChartHorizontalLocation').length > 0) {
+
+        //         // Create an array of different colors for each month
+        //         const barColors = [
+
+        //             'rgba(75, 192, 192, 1)',
+        //             'rgba(255, 205, 86, 1)',
+        //             'rgba(54, 162, 235, 1)',
+        //             'rgba(153, 102, 255, 1)',
+        //             'rgba(255, 159, 64, 1)',
+        //             'rgba(255, 0, 0, 1)', // August
+        //             'rgba(0, 255, 0, 1)', // September
+        //             'rgba(0, 0, 255, 1)', // October
+        //             'rgba(255, 165, 0, 1)', // December
+        //             'rgba(128, 0, 128, 1)', // November
+        //         ];
+
+        //         const barChart = document.getElementById("barChartHorizontalLocation").getContext('2d');
+        //         barChart.height = 100;
+
+        //         new Chart(barChart, {
+        //             type: 'horizontalBar',
+        //             data: {
+        //                 defaultFontFamily: 'Poppins',
+        //                 labels: ["North Zone", "North West Zone", "North East Zone", "South Zone", "South East Zone", "South West Zone", "East Zone", "West Zone", "Central"],
+        //                 datasets: [{
+        //                     label: "Zone",
+        //                     data:zoneCount,
+        //                     backgroundColor: barColors,
+        //                     hoverBackgroundColor: barColors
+        //                 }]
+        //             },
+        //             options: {
+        //                 legend: false,
+        //                 scales: {
+        //                     xAxes: [{
+        //                         ticks: {
+        //                             beginAtZero: true,
+        //                             fontColor: '#888',
+        //                         },
+        //                         gridLines: {
+        //                             color: "rgba(255, 255, 255, 0.1)"
+        //                         }
+        //                     }],
+        //                     yAxes: [{
+        //                         ticks: {
+        //                             beginAtZero: true,
+        //                             fontColor: '#888',
+        //                         },
+        //                         gridLines: {
+        //                             color: "rgba(255, 255, 255, 0.1)"
+        //                         }
+        //                     }]
+        //                 }
+        //             }
+        //         });
+        //     }
+        // }
+
+
+        // var barVerticalChartForDepartment = function() {
+        //     if (jQuery('#barChartVerticalDepartment').length > 0) {
+
+        //         // Create an array of different colors for each month
+        //         const barColors = [
+
+
+        //             'rgba(255, 0, 0, 1)', // August
+        //             'rgba(0, 255, 0, 1)', // September
+        //             'rgba(0, 0, 255, 1)', // October
+        //             'rgba(255, 165, 0, 1)', // December
+        //             'rgba(128, 0, 128, 1)', // November
+        //         ];
+
+        //         const barChart = document.getElementById("barChartVerticalDepartment").getContext('2d');
+        //         barChart.height = 100;
+
+        //         new Chart(barChart, {
+        //             type: 'bar',
+        //             data: {
+        //                 defaultFontFamily: 'Poppins',
+        //                 labels: ["Finance", "HR", "Sales", "Procurement", "Marketing"],
+        //                 datasets: [{
+        //                     label: "Department",
+        //                     data: departmentCount,
+        //                     backgroundColor: barColors,
+        //                     hoverBackgroundColor: barColors
+        //                 }]
+        //             },
+        //             options: {
+        //                 legend: false,
+        //                 scales: {
+        //                     xAxes: [{
+        //                         ticks: {
+        //                             beginAtZero: true,
+        //                             fontColor: '#888',
+        //                         },
+        //                         gridLines: {
+        //                             color: "rgba(255, 255, 255, 0.1)"
+        //                         }
+        //                     }],
+        //                     yAxes: [{
+        //                         ticks: {
+        //                             beginAtZero: true,
+        //                             fontColor: '#888',
+        //                         },
+        //                         gridLines: {
+        //                             color: "rgba(255, 255, 255, 0.1)"
+        //                         }
+        //                     }]
+        //                 }
+        //             }
+        //         });
+        //     }
+        // }
 
 
         var barVerticalChartForReputation = function() {
@@ -955,174 +1186,6 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-        // var barChart2 = function(){
-        // 	if(jQuery('#barChart_2').length > 0 ){
-
-        // 	//gradient bar chart
-        // 		const barChart_2 = document.getElementById("barChart_2").getContext('2d');
-        // 		//generate gradient
-        // 		const barChart_2gradientStroke = barChart_2.createLinearGradient(0, 0, 0, 250);
-        // 		barChart_2gradientStroke.addColorStop(0, "rgba(44, 44, 44, 1)");
-        // 		barChart_2gradientStroke.addColorStop(1, "rgba(44, 44, 44, 0.5)");
-
-        // 		barChart_2.height = 100;
-
-        // 		new Chart(barChart_2, {
-        // 			type: 'bar',
-        // 			data: {
-        // 				defaultFontFamily: 'Poppins',
-        // 				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-        // 				datasets: [
-        // 					{
-        // 						label: "My First dataset",
-        // 						data: [65, 59, 80, 81, 56, 55, 40],
-        // 						borderColor: barChart_2gradientStroke,
-        // 						borderWidth: "0",
-        // 						backgroundColor: barChart_2gradientStroke,
-        // 						hoverBackgroundColor: barChart_2gradientStroke
-        // 					}
-        // 				]
-        // 			},
-        // 			options: {
-        // 				legend: false,
-        // 				scales: {
-        // 					yAxes: [{
-        // 						//display:0,
-        // 						ticks: {
-        // 							beginAtZero: true,
-        // 							fontColor:	'#888',
-
-        // 						},
-        // 						gridLines:{
-        // 							color:"rgba(255, 255, 255, 0.1)"
-        // 						}
-        // 					}],
-        // 					xAxes: [{
-        // 						// Change here
-        // 						barPercentage: 0.5,
-        // 						ticks: {
-        // 							fontColor:	'#888',
-        // 						},
-        // 						gridLines:{
-        // 							color:"rgba(255, 255, 255, 0.1)"
-        // 						}
-        // 					}]
-        // 				}
-        // 			}
-        // 		});
-        // 	}
-        // }
-
-        // var barChart3 = function(){
-        // 	//stalked bar chart
-        // 	if(jQuery('#barChart_3').length > 0 ){
-        // 		const barChart_3 = document.getElementById("barChart_3").getContext('2d');
-        // 		//generate gradient
-        // 		const barChart_3gradientStroke = barChart_3.createLinearGradient(50, 100, 50, 50);
-        // 		barChart_3gradientStroke.addColorStop(0, "rgba(44, 44, 44, 1)");
-        // 		barChart_3gradientStroke.addColorStop(1, "rgba(44, 44, 44, 0.5)");
-
-        // 		const barChart_3gradientStroke2 = barChart_3.createLinearGradient(50, 100, 50, 50);
-        // 		barChart_3gradientStroke2.addColorStop(0, "rgba(98, 126, 234, 1)");
-        // 		barChart_3gradientStroke2.addColorStop(1, "rgba(98, 126, 234, 1)");
-
-        // 		const barChart_3gradientStroke3 = barChart_3.createLinearGradient(50, 100, 50, 50);
-        // 		barChart_3gradientStroke3.addColorStop(0, "rgba(238, 60, 60, 1)");
-        // 		barChart_3gradientStroke3.addColorStop(1, "rgba(238, 60, 60, 1)");
-
-        // 		barChart_3.height = 100;
-
-        // 		let barChartData = {
-        // 			defaultFontFamily: 'Poppins',
-        // 			labels: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'],
-        // 			datasets: [{
-        // 				label: 'Red',
-        // 				backgroundColor: barChart_3gradientStroke,
-        // 				hoverBackgroundColor: barChart_3gradientStroke,
-        // 				data: [
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12'
-        // 				]
-        // 			}, {
-        // 				label: 'Green',
-        // 				backgroundColor: barChart_3gradientStroke2,
-        // 				hoverBackgroundColor: barChart_3gradientStroke2,
-        // 				data: [
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12'
-        // 				]
-        // 			}, {
-        // 				label: 'Blue',
-        // 				backgroundColor: barChart_3gradientStroke3,
-        // 				hoverBackgroundColor: barChart_3gradientStroke3,
-        // 				data: [
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12',
-        // 					'12'
-        // 				]
-        // 			}]
-
-        // 		};
-
-        // 		new Chart(barChart_3, {
-        // 			type: 'bar',
-        // 			data: barChartData,
-        // 			options: {
-        // 				legend: {
-        // 					display: false
-        // 				},
-        // 				title: {
-        // 					display: false
-        // 				},
-        // 				tooltips: {
-        // 					mode: 'index',
-        // 					intersect: false
-        // 				},
-        // 				responsive: true,
-        // 				scales: {
-        // 					xAxes: [{
-        // 						//display:0,
-        // 						stacked: true,
-        // 						ticks: {
-        // 							fontColor:	'#888',
-        // 						},
-        // 						gridLines:{
-        // 							color:"rgba(255, 255, 255, 0.1)"
-        // 						}
-        // 					}],
-        // 					yAxes: [{
-        // 						//display:0,
-        // 						stacked: true,
-        // 						ticks: {
-        // 							fontColor:	'#888',
-        // 						},
-        // 						gridLines:{
-        // 							color:"rgba(255, 255, 255, 0.1)"
-        // 						}
-        // 					}]
-        // 				}
-        // 			}
-        // 		});
-        // 	}
-        // }
         var lineChart1 = function() {
 
 
