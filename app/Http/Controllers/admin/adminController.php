@@ -394,6 +394,7 @@ class adminController extends Controller
             'department_id' => 'required',
             'third_party_pos' => 'required',
             'zone_id' => 'required',
+            'state_id' => 'required',
             'third_party_phone' => 'required',
         ]);
 
@@ -416,6 +417,7 @@ class adminController extends Controller
             'department_id' => $request->department_id,
             'third_party_pos' => $request->third_party_pos,
             'zone_id' => $request->zone_id,
+            'state_id' => $request->state_id,
             'third_party_phone' => $request->third_party_phone,
 
 

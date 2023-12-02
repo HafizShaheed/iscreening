@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(DepartmentSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(ZoneSeeder::class);
-
+        $this->call(StatesTableSeeder::class);
+        
 
     }
 }

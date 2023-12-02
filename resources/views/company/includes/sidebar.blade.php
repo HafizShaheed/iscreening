@@ -21,26 +21,7 @@
                     </a>
                 </li>
 
-                <!-- <li>
-                    <a href="{{ URL::to('/company/entery-reports') }}" class="{{ $page == 'Entery Reports' ? 'mm-active' : '' }}" aria-expanded="false">
-                        <div class="menu-icon">
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                            xmlns="">
-                            <path d="M6.75713 9.35157V15.64" stroke="#888888" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M11.0349 6.34253V15.64" stroke="#888888" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M15.2428 12.6746V15.64" stroke="#888888" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15.2952 1.83333H6.70474C3.7103 1.83333 1.83331 3.95274 1.83331 6.95306V15.0469C1.83331 18.0473 3.70157 20.1667 6.70474 20.1667H15.2952C18.2984 20.1667 20.1666 18.0473 20.1666 15.0469V6.95306C20.1666 3.95274 18.2984 1.83333 15.2952 1.83333Z"
-                                stroke="#888888" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        </div>
-                        <span class="nav-text">Entry Report</span>
-                    </a>
 
-                </li> -->
 
 
 
@@ -65,6 +46,31 @@
                         <span class="nav-text">Insights </span>
                     </a>
                 </li>
+
+
+                <li>
+                    <a href="{{ URL::to('company/profile-setting') }}" class="{{ $page == 'Profile Setting' || $page == 'Profile Setting' ? 'mm-active' : '' }}"
+                        aria-expanded="false">
+                        <div class="menu-icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                                            xmlns="">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.9848 15.3462C8.11714 15.3462 4.81429 15.931 4.81429 18.2729C4.81429 20.6148 8.09619 21.2205 11.9848 21.2205C15.8524 21.2205 19.1543 20.6348 19.1543 18.2938C19.1543 15.9529 15.8733 15.3462 11.9848 15.3462Z"
+                                    stroke="#888888" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.9848 12.0059C14.5229 12.0059 16.58 9.94779 16.58 7.40969C16.58 4.8716 14.5229 2.81445 11.9848 2.81445C9.44667 2.81445 7.38857 4.8716 7.38857 7.40969C7.38 9.93922 9.42381 11.9973 11.9524 12.0059H11.9848Z"
+                                    stroke="#888888" stroke-width="1.42857"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="nav-text">Profile </span>
+                    </a>
+                </li>
+
+
+
+
 
 
                 <li class="menu-title"></li>

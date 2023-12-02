@@ -55,6 +55,8 @@ class userController extends Controller
             'third_party_email' => 'required',
             'zone_id' => 'required',
             'department_id' => 'required',
+            'state_id' => 'required',
+            
 
         ],[
             'user_id.required' => 'Please select client'
@@ -78,6 +80,7 @@ class userController extends Controller
            'department_id'=> $request->department_id,
             'third_party_pos'=> $request->third_party_pos,
             'zone_id'=> $request->zone_id,
+            'state_id'=> $request->state_id,
             'third_party_email' => $request->third_party_email,
             'third_party_phone'=> $request->third_party_phone,
             'created_at' => now(),

@@ -52,6 +52,11 @@ Route::get('/clear-cache', function() {
 
         });
 
+        Route::get('/profile-setting', 'userController@profileSetting')->name('company.profileSetting');
+        Route::post('/profile-setting-submit', 'userController@profileSettingSubmit')->name('company.profileSettingSubmit');
+
+
+
     });
 
 
@@ -74,7 +79,7 @@ Route::get('/clear-cache', function() {
                 Route::get('/', 'teamController@report_List')->name('team.report_List');
                 Route::get('/view', 'teamController@report_View')->name('team.report_View');
                 Route::get('/edit/{id}', 'teamController@add_report')->name('team.add_report');
-                
+
                 Route::post('/update_firm_background', 'teamController@update_firm_background')->name('team.update_firm_background');
                 Route::post('/update_on_ground_verification', 'teamController@update_on_ground_verification')->name('team.update_on_ground_verification');
                 Route::post('/update_court_check', 'teamController@update_court_check')->name('team.update_court_check');
@@ -150,7 +155,7 @@ Route::get('/clear-cache', function() {
                 Route::get('/firm_file_download/{id}', 'adminController@firm_file_download')->name('admin.firm_file_download');
                 Route::get('/onGround_file_download/{id}', 'adminController@onGround_file_download')->name('admin.onGround_file_download');
                 Route::get('/generate_pdf_of_reports/{id}', 'adminController@generate_pdf_of_reports')->name('admin.generate_pdf_of_reports');
-                
+
 
 
 

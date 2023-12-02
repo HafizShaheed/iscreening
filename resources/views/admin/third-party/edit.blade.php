@@ -86,19 +86,39 @@
                                                 <label for="exampleFormControlInput2" class="form-label">Location<span
                                                         class="text-danger">*</span></label>
                                                         @php
-                                            $zones = \App\Models\Zone::get();
-                                            @endphp
-                                            <select class="multi-select" id="zone_id" name="zone_id" placeholder="Select Third Party">
-                                                <option disabled selected>Select Location</option>
-                                                @forelse ($zones as $zone )
-                                                <option data-display="Select" value="{{ $zone->id }}" {{ $zone->id == $getThirdParty->zone_id ? 'selected' : ''  }}>
-                                                    {{ $zone->zone_name  }}
-                                                </option>
-                                                @empty
-                                                <p> No records found!</p>
-                                                @endforelse
+                                                $zones = \App\Models\Zone::get();
+                                                @endphp
+                                                <select class="multi-select" id="zone_id" name="zone_id" placeholder="">
+                                                    <option disabled selected>Select Location</option>
+                                                    @forelse ($zones as $zone )
+                                                    <option data-display="Select" value="{{ $zone->id }}" {{ $zone->id == $getThirdParty->zone_id ? 'selected' : ''  }}>
+                                                        {{ $zone->zone_name  }}
+                                                    </option>
+                                                    @empty
+                                                    <p> No records found!</p>
+                                                    @endforelse
 
-                                            </select>                                            </div>
+                                                </select>                                            
+                                            </div>
+
+                                            <div class="col-xl-6 mb-3">
+                                                <label for="exampleFormControlInput2" class="form-label">State<span
+                                                        class="text-danger">*</span></label>
+                                                        @php
+                                                $states = \App\Models\State::get();
+                                                @endphp
+                                                <select class="multi-select" id="state_id" name="state_id" placeholder="">
+                                                    <option disabled selected>Select Location</option>
+                                                    @forelse ($states as $state )
+                                                    <option data-display="Select" value="{{ $state->id }}" {{ $state->id == $getThirdParty->state_id ? 'selected' : ''  }}>
+                                                        {{ $state->state_name  }}
+                                                    </option>
+                                                    @empty
+                                                    <p> No records found!</p>
+                                                    @endforelse
+
+                                                </select>                                            
+                                            </div>
 
                                             <div class="col-xl-6 mb-3">
                                                 <label for="exampleFormControlInput4" class="form-label">Email<span

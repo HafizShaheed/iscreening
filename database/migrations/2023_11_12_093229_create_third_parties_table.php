@@ -23,7 +23,8 @@ class CreateThirdPartiesTable extends Migration
             $table->string('third_party_address')->nullable();
             $table->integer('department_id')->nullable();
             $table->string('third_party_pos')->nullable();
-            $table->string('zone_id')->nullable();
+            $table->integer('zone_id')->nullable();
+            $table->integer('state_id')->nullable();
             $table->string('third_party_score')->nullable();
             $table->integer('status')->default(0)->nullable();
 

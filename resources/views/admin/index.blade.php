@@ -249,6 +249,29 @@
                                         </select>
                                     </div>
 
+                                    
+                                    @php
+                                    $states = \App\Models\State::get();
+                                    @endphp
+                              <div class="col-xl-6 mb-3">
+                                <label class="form-label">State<span class="text-danger">*</span></label>
+                                <select class="default-select style-1 form-control" name="StatethirdPart" id="StatethirdPart" required>
+                                    <option data-display="Select">
+                                        Select State
+                                    </option>
+                                    @forelse ($states as $state )
+                                    <option data-display="Select" value="{{ $state->id }}">
+                                        {{ $state->state_name }}
+                                    </option>
+                                    @empty
+                                    <p> No records found!</p>
+                                    @endforelse
+
+
+
+                                </select>
+                            </div>
+
                                     <div class="col-xl-6 mb-3">
                                         <label class="form-label">Address<span class="text-danger">*</span></label>
                                         <textarea rows="1" class="form-control" id="thirdPartyAddress" name="thirdPartyAddress" required></textarea>
@@ -425,8 +448,7 @@
             var industry = $("#industry").val();
             var poc = $("#poc").val();
             var location = $("#location").val();
-            var role_id = $("#role_id").val();
-
+            var role_id = $("#role_id").val(); 
             var password = $("#password").val();
             var password_confirmation = $("#password_confirmation").val();
             var clientStatusCheck = $("#clientStatusCheck").prop("checked");
@@ -509,6 +531,7 @@
             var thirdPartDepartment = $("#thirdPartDepartment").val();
             var thirdPartPoc = $("#thirdPartPoc").val();
             var locationthirdPart = $("#locationthirdPart").val();
+            var state = $("#StatethirdPart").val();
             var thirdPartEmail = $("#thirdPartEmail").val();
             var thirdPartPhone = $("#thirdPartPhone").val();
 
@@ -530,6 +553,9 @@
                     department_id: thirdPartDepartment,
                     third_party_pos: thirdPartPoc,
                     zone_id: locationthirdPart,
+                    state_id: state,
+
+                    
                     third_party_email : thirdPartEmail,
                     third_party_phone: thirdPartPhone,
                 },

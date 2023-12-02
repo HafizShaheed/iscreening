@@ -35,6 +35,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use PDF;
+use DB;
 
 class userController extends Controller
 {
@@ -75,41 +76,66 @@ class userController extends Controller
                 0,
             ];
 
-            $financeCount = ThirdParty::where('user_id', auth()->user()->id)->where('department_id',1)->count();
-            $hRCount = ThirdParty::where('user_id', auth()->user()->id)->where('department_id',2)->count();
-            $salesCount = ThirdParty::where('user_id', auth()->user()->id)->where('department_id',3)->count();
-            $procurementCount = ThirdParty::where('user_id', auth()->user()->id)->where('department_id',4)->count();
-            $marketingCount = ThirdParty::where('user_id', auth()->user()->id)->where('department_id',5)->count();
+        //================================= departmen thirdparty risk ======================
+            $departRiskCounts = DB::table('departments')
+            ->leftJoin('third_parties', 'departments.id', '=', 'third_parties.department_id')
+            ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
+            ->where('key_observations.user_id', auth()->user()->id)
+            ->select('departments.dept_name as department', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
+            ->groupBy('departments.id', 'departments.dept_name', 'key_observations.Type_of_risk')
+            ->get();
 
-            $data['departmentCount'] = [
-                $financeCount,
-                $hRCount,
-                $salesCount,
-                $procurementCount,
-                $marketingCount,
-            ];
+            // Organize the data by department and risk type
+            $result = [];
+            foreach ($departRiskCounts as $count) {
+                $result[$count->department][$count->Type_of_risk] = $count->count;
+            }
+
+            // Prepare data for the JavaScript chart
+            $data['labels'] = array_keys($result);
+            $data['highRiskCounts_department'] = [];
+            $data['mediumRiskCounts_department'] = [];
+            $data['lowRiskCounts_department'] = [];
+
+            foreach ($result as $department => $departRiskCounts) {
+                $data['highRiskCounts_department'][] = $departRiskCounts['High Risk'] ?? 0;
+                $data['mediumRiskCounts_department'][] = $departRiskCounts['Medium Risk'] ?? 0;
+                $data['lowRiskCounts_department'][] = $departRiskCounts['Low Risk'] ?? 0;
+            }
 
 
-           $northZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',1)->count();
-           $northWestZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',2)->count();
-           $northEastZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',3)->count();
-           $southZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',4)->count();
-           $southEastZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',5)->count();
-           $southWestZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',6)->count();
-           $eastZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',7)->count();
-           $westZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',8)->count();
-           $centralZoneCount = ThirdParty::where('user_id', auth()->user()->id)->where('zone_id',9)->count();
-            $data['zoneCount'] = [
-                $northZoneCount,
-                $northWestZoneCount,
-                $northEastZoneCount,
-                    $southZoneCount,
-                $southEastZoneCount,
-                $southWestZoneCount,
-                    $eastZoneCount,
-                    $westZoneCount,
-                $centralZoneCount,
-            ];
+        //================================= departmen thirdparty risk end ======================
+
+        //================================= location/Zone thirdparty risk start ======================
+        $zoneRiskCounts = DB::table('zones')
+        ->leftJoin('third_parties', 'zones.id', '=', 'third_parties.zone_id')
+        ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
+        ->where('key_observations.user_id', auth()->user()->id)
+        ->select('zones.zone_name as zone', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
+        ->groupBy('zones.id', 'zones.zone_name', 'key_observations.Type_of_risk')
+        ->get();
+
+        // Organize the data by zone and risk type
+        $result = [];
+        foreach ($zoneRiskCounts as $count) {
+            $result[$count->zone][$count->Type_of_risk] = $count->count;
+        }
+
+        // Prepare data for the JavaScript chart
+        $data['labels_zone'] = array_keys($result);
+        $data['highRiskCounts_zone'] = [];
+        $data['mediumRiskCounts_zone'] = [];
+        $data['lowRiskCounts_zone'] = [];
+
+        foreach ($result as $zone => $zoneRiskCounts) {
+            $data['highRiskCounts_zone'][] = $zoneRiskCounts['High Risk'] ?? 0;
+            $data['mediumRiskCounts_zone'][] = $zoneRiskCounts['Medium Risk'] ?? 0;
+            $data['lowRiskCounts_zone'][] = $zoneRiskCounts['Low Risk'] ?? 0;
+        }
+        //================================= location/Zone thirdparty risk end ======================
+
+
+
 
             // Reputation count
             $ReputationCountHigh = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
@@ -160,6 +186,9 @@ class userController extends Controller
                      $marketReputationCountLow,
               ];
 
+              $data['highRiskCOunt'] = $highRiskCOunt;
+              $data['mediumRiskCOunt'] = $mediumRiskCOunt;
+                 $data['lowRiskCOunt'] = $lowRiskCOunt;
             // dd( $data['departmentCount']);
 
             return view('company.index', $data);
@@ -556,27 +585,33 @@ class userController extends Controller
         return redirect()->back()->with('success', 'Profile Updated.');
     }
 
-    public function settingPassword()
+    public function profileSetting()
     {
-        return view('user.setting.change_password');
+        $data['title'] = "Profile Setting";
+        $data['page'] = "Profile Setting";
+        $data['pageIntro'] = "Password Setting";
+        $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        return view('company.setting.change_password', $data);
     }
 
-    public function settingPasswordSubmit(Request $request)
+    public function profileSettingSubmit(Request $request)
     {
+        // dd($request->all());
         $data = $request->all();
         $password = $request->input('old_password');
 
         $user = User::find(Auth::id());
         if (!Hash::check($password, $user->password)) {
-            return redirect()->back()->with('error', 'Current password is incorrect.');
+            return response()->json(['error' => 'Current password is incorrect.'], 422);
         } else {
             if ($data['password'] == $data['password_confirmation']) {
                 $user->password = bcrypt($data['password']);
                 $user->save();
+            return response()->json(['error' => 'Password updated.'], 200);
 
-                return redirect()->back()->with('success', 'Password updated.');
             } else {
-                return redirect()->back()->with('error', 'Password does not match.');
+            return response()->json(['error' => 'Password does not match.'], 422);
+
             }
         }
     }
