@@ -20,10 +20,12 @@
                                 @php
                                 $users = \App\Models\User::get();
                                 @endphp
-                                <select class="multi-select" name="ClientName" id="ClientName" placeholder="Select ">
-                                    <option disabled selected>Select Client</option>
+                                <select class="multi-select" multiple="multiple"  name="ClientName[]" id="ClientName" placeholder="Select ">
+                                    <option disabled >Select Client</option>
                                     @forelse ($users as $user )
-                                    <option data-display="Select" value="{{ $user->id }}">
+                                    <option data-display="Select" value="{{ $user->id }}"
+                                    @if(is_array(request('ClientName')) && in_array($user->id,
+                                        request('ClientName'))) selected @endif>
                                         {{ $user->first_name  }}
                                     </option>
                                     @empty
@@ -38,10 +40,12 @@
                                 @php
                                 $zones = \App\Models\Zone::get();
                                 @endphp
-                                <select class="multi-select" name="location" id="location" placeholder="Select Third Party">
-                                    <option disabled selected>Select Location</option>
+                                <select class="multi-select" multiple="multiple" name="location[]" id="location" placeholder="Select Third Party">
+                                    <option disabled >Select Location</option>
                                     @forelse ($zones as $zone)
-                                    <option data-display="Select" value="{{ $zone->id }}">
+                                    <option data-display="Select" value="{{ $zone->id }}"
+                                    @if(is_array(request('location')) && in_array($zone->id,
+                                        request('location'))) selected @endif>
                                         {{ $zone->zone_name  }}
                                     </option>
                                     @empty
@@ -58,10 +62,12 @@
                                 $states = \App\Models\State::get();
 
                                 @endphp
-                                <select class="multi-select" name="State" id="State" placeholder="Select Third Party">
-                                    <option disabled selected>Select State</option>
+                                <select class="multi-select" multiple="multiple" name="State[]"  id="State" placeholder="Select Third Party">
+                                    <option disabled >Select State</option>
                                     @forelse ($states as $state )
-                                    <option data-display="Select" value="{{ $state->id }}">
+                                        <option data-display="Select" value="{{ $state->id }}"
+                                        @if(is_array(request('State')) && in_array($state->id,
+                                        request('State'))) selected @endif>
                                         {{ $state->state_name  }}
                                     </option>
                                     @empty
@@ -73,49 +79,51 @@
                     </div>
 
                     <div class="row mt-3">
-    <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
-        <label for="thirdPartyName">Department:</label>
-        <div class="d-flex justify-content-start align-items-start">
-            @php
-            $departments = \App\Models\Department::get();
-            @endphp
-            <select class="multi-select" name="Department" id="Department" placeholder="Select Department">
-                <option disabled selected>Select Department</option>
-                @forelse ($departments as $department )
-                    <option data-display="Select" value="{{ $department->id }}">
-                        {{ $department->dept_name  }}
-                    </option>
-                @empty
-                    <p>No records found!</p>
-                @endforelse
-            </select>
-        </div>
-    </div>
-    <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
-        <label for="thirdPartyName">Status:</label>
-        <div class="d-flex justify-content-start align-items-start">
-            @php
-            $pendingCount = \App\Models\ThirdParty::where('status',0)->count();
-            $activeCount = \App\Models\ThirdParty::where('status',1)->count();
-            $reSubmitCount = \App\Models\ThirdParty::where('status',2)->count();
-            $completedCount = \App\Models\ThirdParty::where('status',3)->count();
-            @endphp
-            <select class="multi-select" name="status" placeholder="Select status Party">
-                <option disabled selected>Status:</option>
-                <option value="Pending">Pending ({{ $pendingCount }}) </option>
-                <option class="badge badge-success border-0" value="Active">Active ({{ $activeCount }}) </option>
-                <option value="Resubmit">Resubmit ({{ $reSubmitCount }}) </option>
-                <option value="Completed">Completed ({{ $completedCount }}) </option>
-            </select>
-        </div>
-    </div>
-    <div class="col-xl-4 col-sm-6 col-6 mt-8 ">
-        <div class="" style="margin-top: 26px;">
-            <button type="submit" class="btn btn report-tab-active" id="filter-report-btn">Filter</button>
-            <a href="{{route('admin.vender_List')}}" class="btn btn report-tab-unactive ml-2" id="reset-report-btn">Reset</a>
-        </div>
-    </div>
-</div>
+                        <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
+                            <label for="thirdPartyName">Department:</label>
+                            <div class="d-flex justify-content-start align-items-start">
+                                @php
+                                $departments = \App\Models\Department::get();
+                                @endphp
+                                <select class="multi-select" multiple="multiple" name="Department[]" id="Department" placeholder="Select Department">
+                                    <option disabled >Select Department</option>
+                                    @forelse ($departments as $department )
+                                    <option data-display="Select" value="{{ $department->id }}"
+                                    @if(is_array(request('Department')) && in_array($department->id,
+                                        request('Department'))) selected @endif>
+                                        {{ $department->dept_name  }}
+                                    </option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-sm-6 col-6 mt-4 mt-md-0">
+                            <label for="thirdPartyName">Status:</label>
+                            <div class="d-flex justify-content-start align-items-start">
+                                @php
+                                $pendingCount = \App\Models\ThirdParty::where('status',0)->count();
+                                $activeCount = \App\Models\ThirdParty::where('status',1)->count();
+                                $reSubmitCount = \App\Models\ThirdParty::where('status',2)->count();
+                                $completedCount = \App\Models\ThirdParty::where('status',3)->count();
+                                @endphp
+                                <select class="multi-select" name="status" placeholder="Select status Party">
+                                    <option value="" >Status:</option>
+                                    <option value="Pending">Pending ({{ $pendingCount }}) </option>
+                                    <option class="badge badge-success border-0" value="Active">Active ({{ $activeCount }}) </option>
+                                    <option value="Resubmit">Resubmit ({{ $reSubmitCount }}) </option>
+                                    <option value="Completed">Completed ({{ $completedCount }}) </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-sm-6 col-6 mt-8 ">
+                            <div class="" style="margin-top: 26px;">
+                                <button type="submit" class="btn btn report-tab-active" id="filter-report-btn">Filter</button>
+                                <a href="{{route('admin.vender_List')}}" class="btn btn report-tab-unactive ml-2" id="reset-report-btn">Reset</a>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </form>
@@ -172,6 +180,7 @@
                                 <th>Department </th>
                                 <th>POC</th>
                                 <th>Location</th>
+                                <th>State</th>
                                 <th>Created At</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -214,6 +223,14 @@
 
 
                                     <span> {{ $zone ? $zone->zone_name : '' }} </span>
+                                </td>
+                                @php
+                                $state = \App\Models\State::where('id',$value->state_id)->first();
+                                @endphp
+                                <td>
+
+
+                                    <span> {{ $state ? $state->state_name : '' }} </span>
                                 </td>
                                 <td><span>{{$value->created_at->format('d/m/Y')}}</span></td>
                                 <td>
@@ -258,7 +275,8 @@
                             @else
                             <tr>
                                 <td colspan="6"><span>No records found!</span></td>
-                                @endif
+                            </tr>
+                            @endif
 
 
 

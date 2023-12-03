@@ -320,11 +320,11 @@ class adminController extends Controller
         $query = ThirdParty::query();
 
 
-        if (isset($request->ThirdParty) && !empty($request->ThirdParty)) {
-            $ThirdPartyName = $request->input('ThirdParty');
+        if (isset($request->searchThirdparty) && !empty($request->searchThirdparty)) {
+            $ThirdPartyName = $request->input('searchThirdparty');
             $query->where(function($query) use ($ThirdPartyName) {
-                $query->orWhere('third_party_name	', 'like', '%' . $ThirdPartyName . '%')
-                      ->orWhere('third_party_email ', 'like', '%' . $ThirdPartyName . '%')
+                $query->orWhere('third_party_name', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_email', 'like', '%' . $ThirdPartyName . '%')
                       ->orWhere('third_party_phone', 'like', '%' . $ThirdPartyName . '%')
                       ->orWhere('third_party_pos', 'like', '%' . $ThirdPartyName . '%')
                       ->orWhere('third_party_address', 'like', '%' . $ThirdPartyName . '%');
@@ -332,18 +332,25 @@ class adminController extends Controller
             });
         }
         if (isset($request->ClientName) && !empty($request->ClientName)) {
-            $client_id = (int)$request->input('ClientName');
-            $query->where('user_id', $client_id);
-        }
-        if (isset($request->location) && !empty($request->location)) {
-            $location = (int)$request->input('location');
-            $query->where('zone_id', $location);
-        }
-        if (isset($request->Department) && !empty($request->Department)) {
-            $department_id = (int)$request->input('Department');
-            $query->where('department_id', $department_id);
+            $client_id = array_map('intval', $request->ClientName);
+            $query->whereIn('user_id', $client_id);
         }
 
+        if (isset($request->location) && !empty($request->location)) {
+            $location = array_map('intval', $request->location);
+            $query->whereIn('zone_id', $location);
+        }
+
+
+        if (isset($request->Department) && !empty($request->Department)) {
+            $department_id = array_map('intval', $request->Department);
+            $query->whereIn('department_id', $department_id);
+        }
+
+        if (isset($request->State) && !empty($request->State)) {
+            $state_id = array_map('intval', $request->State);
+            $query->whereIn('state_id', $state_id);
+        }
 
 
         if (isset($request->status) && !empty($request->status))   {
