@@ -98,7 +98,7 @@
                                                     <p> No records found!</p>
                                                     @endforelse
 
-                                                </select>                                            
+                                                </select>
                                             </div>
 
                                             <div class="col-xl-6 mb-3">
@@ -108,7 +108,7 @@
                                                 $states = \App\Models\State::get();
                                                 @endphp
                                                 <select class="multi-select" id="state_id" name="state_id" placeholder="">
-                                                    <option disabled selected>Select Location</option>
+                                                    <option disabled selected>Select State</option>
                                                     @forelse ($states as $state )
                                                     <option data-display="Select" value="{{ $state->id }}" {{ $state->id == $getThirdParty->state_id ? 'selected' : ''  }}>
                                                         {{ $state->state_name  }}
@@ -117,7 +117,7 @@
                                                     <p> No records found!</p>
                                                     @endforelse
 
-                                                </select>                                            
+                                                </select>
                                             </div>
 
                                             <div class="col-xl-6 mb-3">

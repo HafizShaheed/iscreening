@@ -41,6 +41,20 @@ class CreateFirmBackgroundsTable extends Migration
             $table->string('aadhar')->nullable();
             $table->date('date_of_appointment')->nullable();
             $table->string('educational_background')->nullable();
+            $this->addDirectorInfoFields($table, 2);
+            $this->addDirectorInfoFields($table, 3);
+            $this->addDirectorInfoFields($table, 4);
+            $this->addDirectorInfoFields($table, 5);
+            $this->addDirectorInfoFields($table, 6);
+            $this->addDirectorInfoFields($table, 7);
+            $this->addDirectorInfoFields($table, 8);
+            $this->addDirectorInfoFields($table, 9);
+            $this->addDirectorInfoFields($table, 10);
+            $this->addDirectorInfoFields($table, 11);
+            $this->addDirectorInfoFields($table, 12);
+            $this->addDirectorInfoFields($table, 13);
+            $this->addDirectorInfoFields($table, 14);
+            $this->addDirectorInfoFields($table, 15);
             $table->string('credit_score')->nullable();
             $table->integer('status')->default(0)->nullable();
             $table->timestamps();
@@ -158,6 +172,16 @@ class CreateFirmBackgroundsTable extends Migration
         $table->string("license_no_$index")->nullable();
         $table->date("date_of_issuance_$index")->nullable();
         $table->date("date_of_expiry_$index")->nullable();
+
+    }
+
+    private function addDirectorInfoFields(Blueprint $table, $index)
+    {
+        $table->string("name_$index")->nullable();
+        $table->string("pan_$index")->nullable();
+        $table->string("aadhar_$index")->nullable();
+        $table->date("date_of_appointment_$index")->nullable();
+        $table->string("educational_background_$index")->nullable();
     }
 
     private function addDirector1Fields(Blueprint $table, $index)

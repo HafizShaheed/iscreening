@@ -216,22 +216,57 @@ class userController extends Controller
         // $data['getallThirdParty'] = ThirdParty::where('user_id', auth()->user()->id)->get();
         $query = ThirdParty::where('user_id', auth()->user()->id);
 
-        if (isset($request->PartyName) && !empty($request->PartyName)) {
-            $party_id = array_map('intval', $request->PartyName);
-            $query->whereIn('id', $party_id);
+
+        if (isset($request->searchThirdparty) && !empty($request->searchThirdparty)) {
+            $ThirdPartyName = $request->input('searchThirdparty');
+            $query->where(function($query) use ($ThirdPartyName) {
+                $query->orWhere('third_party_name', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_email', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_phone', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_pos', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_address', 'like', '%' . $ThirdPartyName . '%');
+
+            });
         }
 
-        if (isset($request->location) && !empty($request->location)) {
-            $location = array_map('intval', $request->location);
+
+        if (isset($request->PartyName) && is_array($request->PartyName) && !empty($request->PartyName)) {
+            $decodedPartyNames = array_map(function ($PartyName) {
+                return base64_decode($PartyName);
+            }, $request->PartyName);
+            $PartyName = array_map('intval', $decodedPartyNames);
+            $query->whereIn('id', $PartyName);
+        }
+
+        if (isset($request->location) && is_array($request->location) && !empty($request->location)) {
+            $decodedlocations = array_map(function ($location) {
+                return base64_decode($location);
+            }, $request->location);
+
+            $location = array_map('intval', $decodedlocations);
+
             $query->whereIn('zone_id', $location);
         }
 
-        if (isset($request->Department) && !empty($request->Department)) {
-            $Department = array_map('intval', $request->Department);
-            $query->whereIn('department_id', $Department);
+
+        if (isset($request->State) && is_array($request->State) && !empty($request->State)) {
+            $decodedStates = array_map(function ($state) {
+                return base64_decode($state);
+            }, $request->State);
+
+            // Now $decodedStates contains the decoded values of each element in $request->State
+
+            // Assuming that the decoded values are integers, you can convert them to an array of integers
+            $state = array_map('intval', $decodedStates);
+
+            $query->whereIn('state_id', $state);
         }
-        if (isset($request->Department) && !empty($request->Department)) {
-            $Department = array_map('intval', $request->Department);
+
+        if (isset($request->Department) && is_array($request->Department) && !empty($request->Department)) {
+            $decodedDepartments = array_map(function ($Department) {
+                return base64_decode($Department);
+            }, $request->Department);
+            $Department = array_map('intval', $decodedDepartments);
             $query->whereIn('department_id', $Department);
         }
 

@@ -15,6 +15,39 @@
 
 
 <div class="row">
+<div class="col-12">
+    <div class="card">
+        <div class="card-body justify-content-between  justify-content-center">
+            <div class="row ">
+
+                <form id="SearchClient" action="{{route('company.report_List')}}" method="GET" onsubmit="submitForm(this); return false;" class="row d-flex justify-content-between align-items-end">
+
+                    <div class="col-xl-6 col-sm-3 col-3 ml-3 ">
+                        <div class="c-list ">
+                            <div class="input-group search-area">
+                                <input type="text" name="searchThirdparty" class="form-control" placeholder="Enter key words">
+                                <span class="input-group-text">
+
+                                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8.82495" cy="9.32491" r="6.74142" stroke="#0D99FF" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M13.5137 14.3638L16.1568 16.9999" stroke="#0D99FF" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-sm-6 col-6 ">
+                        <div class=" justify-content-start mb-3">
+                            <button type="submit" class="btn btn report-tab-active" onsubmit="submitForm(this); return false;">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="col-12">
         <div class="">
             <div class="card-header d-flex justify-content-start">

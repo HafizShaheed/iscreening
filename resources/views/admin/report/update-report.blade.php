@@ -1733,7 +1733,7 @@
                         <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
                         <ul class="nav nav-pills">
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="one_finding_FY1" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY1</a>
+                                <a class="nav-link" id="one_finding_FY1" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY1</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="two_finding_FY1"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
@@ -1748,6 +1748,25 @@
                                 <a class="nav-link" id="five_finding_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                        <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_one_finding__1" class="form-label">Revenue</label>
@@ -1839,7 +1858,7 @@
                                 <a class="nav-link" id="one_finding_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="two_finding_FY1_2" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY2</a>
+                                <a class="nav-link" id="two_finding_FY1_2" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY2</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="three_finding_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
@@ -1851,6 +1870,25 @@
                                 <a class="nav-link" id="five_finding_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_two_finding__1" class="form-label">Revenue</label>
@@ -1945,7 +1983,7 @@
                                 <a class="nav-link" id="two_finding_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="three_finding_FY1_3" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY3</a>
+                                <a class="nav-link" id="three_finding_FY1_3" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY3</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="four_finding_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
@@ -1954,6 +1992,25 @@
                                 <a class="nav-link" id="five_finding_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_three_finding__1" class="form-label">Revenue</label>
@@ -2051,12 +2108,31 @@
                                 <a class="nav-link" id="three_finding_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="javascript:void(0)">FY3</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="four_finding_FY1_4" style="color:white;background-color:#6d3b7a" aria-current="page" href="javascript:void(0)">FY4</a>
+                                <a class="nav-link" id="four_finding_FY1_4" style="color:white;background-color:#1c9bf6" aria-current="page" href="javascript:void(0)">FY4</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="five_finding_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_four_finding__1" class="form-label">Revenue</label>
@@ -2157,9 +2233,28 @@
                                 <a class="nav-link" id="four_finding_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="five_finding_FY1_5" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY5</a>
+                                <a class="nav-link" id="five_finding_FY1_5" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_five_finding__1" class="form-label">Revenue</label>
@@ -2251,7 +2346,7 @@
                         <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
                         <ul class="nav nav-pills">
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="one_ratio_FY1" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY1</a>
+                                <a class="nav-link" id="one_ratio_FY1" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY1</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="two_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
@@ -2266,6 +2361,25 @@
                                 <a class="nav-link" id="five_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="current_ratio_fy_one_1" class="form-label">Current ratio</label>
@@ -2339,37 +2453,48 @@
                                 <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
                                 <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_one_1" class="form-label">Springate S Score</label>
                                 <input type="number" class="form-control" name="springate_s_score_ratio_fy_one_1"  id="springate_s_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                            </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_one_1" class="form-label">Trade Receivable Days</label>
                                 <input type="text" class="form-control" name="trade_receivable_days_ratio_fy_one_1"  id="trade_receivable_days_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_fy_one_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                            </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_payable_days_ratio_fy_one_1" class="form-label">Trade Payable Days</label>
                                 <input type="text" class="form-control" name="trade_payable_days_ratio_fy_one_1"  id="trade_payable_days_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                            </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="taffler_z_score_ratio_fy_one_1" class="form-label">Taffler Z-Score</label>
                                 <input type="text" class="form-control" name="taffler_z_score_ratio_fy_one_1"  id="taffler_z_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                            </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_one_1" class="form-label">Zmijewski X-Score</label>
                                 <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_one_1"  id="zmijewski_x_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1}}" placeholder="">
                             </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                            </div>
                         </div>
+
 
                         <!-- Navigation buttons -->
 
@@ -2394,7 +2519,7 @@
                                 <a class="nav-link" id="one_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="two_ratio_FY1_2" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY2</a>
+                                <a class="nav-link" id="two_ratio_FY1_2" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY2</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="three_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
@@ -2406,47 +2531,51 @@
                                 <a class="nav-link" id="five_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="current_ratio_fy_two_1" class="form-label">Current ratio</label>
                                 <input type="text" class="form-control" name="current_ratio_fy_two_1"  id="current_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->current_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="current_ratio_analysis_fy_two_1"  id="current_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->current_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_ratio_fy_two_1" class="form-label">Debt Ratio</label>
                                 <input type="text" class="form-control" name="debt_ratio_fy_two_1"  id="debt_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->debt_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_ratio_analysis_fy_two_1"  id="debt_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->debt_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="solvency_ratio_fy_two_1" class="form-label">Solvency Ratio</label>
                                 <input type="text" class="form-control" name="solvency_ratio_fy_two_1"  id="solvency_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->solvency_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="solvency_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="solvency_ratio_analysis_fy_two_1"  id="solvency_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->solvency_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_to_equity_ratio_fy_two_1" class="form-label">Debt to Equity Ratio</label>
                                 <input type="text" class="form-control" name="debt_to_equity_ratio_fy_two_1"  id="debt_to_equity_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_to_equity_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_to_equity_ratio_analysis_fy_two_1"  id="debt_to_equity_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="asset_turnover_ratio_fy_two_1" class="form-label">Asset Turnover Ratio</label>
                                 <input type="text" class="form-control" name="asset_turnover_ratio_fy_two_1"  id="asset_turnover_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="asset_turnover_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="asset_turnover_ratio_analysis_fy_two_1"  id="asset_turnover_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="absolute_liquidity_ratio_fy_two_1" class="form-label">Absolute Liquidity Ratio</label>
                                 <input type="text" class="form-control" name="absolute_liquidity_ratio_fy_two_1"  id="absolute_liquidity_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1}}" placeholder="">
@@ -2459,57 +2588,40 @@
                                 <label for="proprietary_ratio_fy_two_1" class="form-label">Proprietary Ratio</label>
                                 <input type="text" class="form-control" name="proprietary_ratio_fy_two_1"  id="proprietary_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="proprietary_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="proprietary_ratio_analysis_fy_two_1"  id="proprietary_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->proprietary_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="net_profit_ratio_fy_two_1" class="form-label">Net Profit Ratio</label>
                                 <input type="text" class="form-control" name="net_profit_ratio_fy_two_1"  id="net_profit_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->net_profit_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="net_profit_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="net_profit_ratio_analysis_fy_two_1"  id="net_profit_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->net_profit_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="gross_profit_ratio_fy_two_1" class="form-label">Gross Profit Ratio</label>
                                 <input type="text" class="form-control" name="gross_profit_ratio_fy_two_1"  id="gross_profit_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->gross_profit_ratio_fy_two_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_two_1"  id="gross_profit_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->gross_profit_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_two_1" class="form-label">Springate S Score</label>
                                 <input type="number" class="form-control" name="springate_s_score_ratio_fy_two_1"  id="springate_s_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_two_1" class="form-label">Trade Receivable Days</label>
                                 <input type="text" class="form-control" name="trade_receivable_days_ratio_fy_two_1"  id="trade_receivable_days_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->trade_receivable_days_ratio_fy_two_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_payable_days_ratio_fy_two_1" class="form-label">Trade Payable Days</label>
                                 <input type="text" class="form-control" name="trade_payable_days_ratio_fy_two_1"  id="trade_payable_days_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->trade_payable_days_ratio_fy_two_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="taffler_z_score_ratio_fy_two_1" class="form-label">Taffler Z-Score</label>
                                 <input type="text" class="form-control" name="taffler_z_score_ratio_fy_two_1"  id="taffler_z_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->taffler_z_score_ratio_fy_two_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_two_1" class="form-label">Zmijewski X-Score</label>
                                 <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_two_1"  id="zmijewski_x_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->zmijewski_x_score_ratio_fy_two_1}}" placeholder="">
                             </div>
+
                         </div>
+
+
 
                         <!-- Navigation buttons -->
 
@@ -2537,7 +2649,7 @@
                                 <a class="nav-link" id="two_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="three_ratio_FY1_3" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY3</a>
+                                <a class="nav-link" id="three_ratio_FY1_3" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY3</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="four_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
@@ -2546,105 +2658,91 @@
                                 <a class="nav-link" id="five_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="current_ratio_fy_three_1" class="form-label">Current ratio</label>
                                 <input type="text" class="form-control" name="current_ratio_fy_three_1" id="current_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->current_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="current_ratio_analysis_fy_three_1" id="current_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->current_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_ratio_fy_three_1" class="form-label">Debt Ratio</label>
                                 <input type="text" class="form-control" name="debt_ratio_fy_three_1" id="debt_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->debt_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_ratio_analysis_fy_three_1" id="debt_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->debt_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="solvency_ratio_fy_three_1" class="form-label">Solvency Ratio</label>
                                 <input type="text" class="form-control" name="solvency_ratio_fy_three_1" id="solvency_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->solvency_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="solvency_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="solvency_ratio_analysis_fy_three_1" id="solvency_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->solvency_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_to_equity_ratio_fy_three_1" class="form-label">Debt to Equity Ratio</label>
                                 <input type="text" class="form-control" name="debt_to_equity_ratio_fy_three_1" id="debt_to_equity_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->debt_to_equity_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_to_equity_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_to_equity_ratio_analysis_fy_three_1" id="debt_to_equity_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->debt_to_equity_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="asset_turnover_ratio_fy_three_1" class="form-label">Asset Turnover Ratio</label>
                                 <input type="text" class="form-control" name="asset_turnover_ratio_fy_three_1" id="asset_turnover_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->asset_turnover_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="asset_turnover_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="asset_turnover_ratio_analysis_fy_three_1" id="asset_turnover_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->asset_turnover_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="absolute_liquidity_ratio_fy_three_1" class="form-label">Absolute Liquidity Ratio</label>
                                 <input type="text" class="form-control" name="absolute_liquidity_ratio_fy_three_1" id="absolute_liquidity_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->absolute_liquidity_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="absolute_liquidity_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="absolute_liquidity_ratio_analysis_fy_three_1" id="absolute_liquidity_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->absolute_liquidity_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="proprietary_ratio_fy_three_1" class="form-label">Proprietary Ratio</label>
                                 <input type="text" class="form-control" name="proprietary_ratio_fy_three_1" id="proprietary_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->proprietary_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="proprietary_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="proprietary_ratio_analysis_fy_three_1" id="proprietary_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->proprietary_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="net_profit_ratio_fy_three_1" class="form-label">Net Profit Ratio</label>
                                 <input type="text" class="form-control" name="net_profit_ratio_fy_three_1" id="net_profit_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->net_profit_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="net_profit_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="net_profit_ratio_analysis_fy_three_1" id="net_profit_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->net_profit_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="gross_profit_ratio_fy_three_1" class="form-label">Gross Profit Ratio</label>
                                 <input type="text" class="form-control" name="gross_profit_ratio_fy_three_1" id="gross_profit_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->gross_profit_ratio_fy_three_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_three_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_three_1" id="gross_profit_ratio_analysis_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->gross_profit_ratio_analysis_fy_three_1}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_three_1" class="form-label">Springate S Score</label>
                                 <input type="number" class="form-control" name="springate_s_score_ratio_fy_three_1" id="springate_s_score_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->springate_s_score_ratio_fy_three_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_three_1" class="form-label">Trade Receivable Days</label>
                                 <input type="text" class="form-control" name="trade_receivable_days_ratio_fy_three_1" id="trade_receivable_days_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->trade_receivable_days_ratio_fy_three_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_payable_days_ratio_fy_three_1" class="form-label">Trade Payable Days</label>
                                 <input type="text" class="form-control" name="trade_payable_days_ratio_fy_three_1" id="trade_payable_days_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->trade_payable_days_ratio_fy_three_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="taffler_z_score_ratio_fy_three_1" class="form-label">Taffler Z-Score</label>
                                 <input type="text" class="form-control" name="taffler_z_score_ratio_fy_three_1" id="taffler_z_score_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->taffler_z_score_ratio_fy_three_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_three_1" class="form-label">Zmijewski X-Score</label>
                                 <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_three_1" id="zmijewski_x_score_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->zmijewski_x_score_ratio_fy_three_1}}" placeholder="">
@@ -2680,111 +2778,98 @@
                                 <a class="nav-link" id="three_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="four_ratio_FY1_4" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY4</a>
+                                <a class="nav-link" id="four_ratio_FY1_4" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY4</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="five_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="current_ratio_fy_four_1" class="form-label">Current ratio</label>
                                 <input type="text" class="form-control" name="current_ratio_fy_four_1" id="current_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->current_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="current_ratio_analysis_fy_four_1" id="current_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->current_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_ratio_fy_four_1" class="form-label">Debt Ratio</label>
                                 <input type="text" class="form-control" name="debt_ratio_fy_four_1" id="debt_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->debt_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_ratio_analysis_fy_four_1" id="debt_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->debt_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="solvency_ratio_fy_four_1" class="form-label">Solvency Ratio</label>
                                 <input type="text" class="form-control" name="solvency_ratio_fy_four_1" id="solvency_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->solvency_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="solvency_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="solvency_ratio_analysis_fy_four_1" id="solvency_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->solvency_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_to_equity_ratio_fy_four_1" class="form-label">Debt to Equity Ratio</label>
                                 <input type="text" class="form-control" name="debt_to_equity_ratio_fy_four_1"  id="debt_to_equity_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->debt_to_equity_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_to_equity_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_to_equity_ratio_analysis_fy_four_1"  id="debt_to_equity_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->debt_to_equity_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="asset_turnover_ratio_fy_four_1" class="form-label">Asset Turnover Ratio</label>
                                 <input type="text" class="form-control" name="asset_turnover_ratio_fy_four_1"  id="asset_turnover_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->asset_turnover_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="asset_turnover_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="asset_turnover_ratio_analysis_fy_four_1"  id="asset_turnover_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->asset_turnover_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="absolute_liquidity_ratio_fy_four_1" class="form-label">Absolute Liquidity Ratio</label>
                                 <input type="text" class="form-control" name="absolute_liquidity_ratio_fy_four_1"  id="absolute_liquidity_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->absolute_liquidity_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="absolute_liquidity_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="absolute_liquidity_ratio_analysis_fy_four_1"  id="absolute_liquidity_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->absolute_liquidity_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="proprietary_ratio_fy_four_1" class="form-label">Proprietary Ratio</label>
                                 <input type="text" class="form-control" name="proprietary_ratio_fy_four_1"  id="proprietary_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->proprietary_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="proprietary_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="proprietary_ratio_analysis_fy_four_1"  id="proprietary_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->proprietary_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="net_profit_ratio_fy_four_1" class="form-label">Net Profit Ratio</label>
                                 <input type="text" class="form-control" name="net_profit_ratio_fy_four_1"  id="net_profit_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->net_profit_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="net_profit_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="net_profit_ratio_analysis_fy_four_1"  id="net_profit_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->net_profit_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="gross_profit_ratio_fy_four_1" class="form-label">Gross Profit Ratio</label>
                                 <input type="text" class="form-control" name="gross_profit_ratio_fy_four_1"  id="gross_profit_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->gross_profit_ratio_fy_four_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_four_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_four_1"  id="gross_profit_ratio_analysis_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->gross_profit_ratio_analysis_fy_four_1}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
+
+
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_four_1" class="form-label">Springate S Score</label>
                                 <input type="number" class="form-control" name="springate_s_score_ratio_fy_four_1"  id="springate_s_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->springate_s_score_ratio_fy_four_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_four_1" class="form-label">Trade Receivable Days</label>
                                 <input type="text" class="form-control" name="trade_receivable_days_ratio_fy_four_1"  id="trade_receivable_days_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->trade_receivable_days_ratio_fy_four_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_payable_days_ratio_fy_four_1" class="form-label">Trade Payable Days</label>
                                 <input type="text" class="form-control" name="trade_payable_days_ratio_fy_four_1"  id="trade_payable_days_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->trade_payable_days_ratio_fy_four_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="taffler_z_score_ratio_fy_four_1" class="form-label">Taffler Z-Score</label>
                                 <input type="text" class="form-control" name="taffler_z_score_ratio_fy_four_1"  id="taffler_z_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->taffler_z_score_ratio_fy_four_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_four_1" class="form-label">Zmijewski X-Score</label>
                                 <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_four_1"  id="zmijewski_x_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_four_1}}" placeholder="">
@@ -2823,108 +2908,95 @@
                                 <a class="nav-link" id="four_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
                             </li>
                             <li class="nav-item mb-2 mr-1 p-2">
-                                <a class="nav-link" id="five_ratio_FY1_5" style="color:white;background-color:#6d3b7a" aria-current="page" href="#">FY5</a>
+                                <a class="nav-link" id="five_ratio_FY1_5" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY5</a>
                             </li>
                         </ul>
+                         <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
+                                        @php
+                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+
+                                        @endphp
+                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
+                                            <option  >Select year</option>
+                                            @forelse ($years as $year )
+                                                <option data-display="Select" value="{{$year->year}}">
+                                                {{ $year->year  }}
+                                            </option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                        </select>
+                                </div>
+                        </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="current_ratio_fy_five_1" class="form-label">Current ratio</label>
                                 <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="current_ratio_analysis_fy_five_1" id="current_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_ratio_fy_five_1" class="form-label">Debt Ratio</label>
                                 <input type="text" class="form-control" name="debt_ratio_fy_five_1" id="debt_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_ratio_analysis_fy_five_1" id="debt_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="solvency_ratio_fy_five_1" class="form-label">Solvency Ratio</label>
                                 <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="solvency_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="solvency_ratio_analysis_fy_five_1" id="solvency_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="debt_to_equity_ratio_fy_five_1" class="form-label">Debt to Equity Ratio</label>
                                 <input type="text" class="form-control" name="debt_to_equity_ratio_fy_five_1"  id="debt_to_equity_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="debt_to_equity_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="debt_to_equity_ratio_analysis_fy_five_1"  id="debt_to_equity_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="asset_turnover_ratio_fy_five_1" class="form-label">Asset Turnover Ratio</label>
                                 <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="asset_turnover_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="asset_turnover_ratio_analysis_fy_five_1"  id="asset_turnover_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="absolute_liquidity_ratio_fy_five_1" class="form-label">Absolute Liquidity Ratio</label>
                                 <input type="text" class="form-control" name="absolute_liquidity_ratio_fy_five_1"  id="absolute_liquidity_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->absolute_liquidity_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="absolute_liquidity_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="absolute_liquidity_ratio_analysis_fy_five_1"  id="absolute_liquidity_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->absolute_liquidity_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="proprietary_ratio_fy_five_1" class="form-label">Proprietary Ratio</label>
                                 <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="proprietary_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="proprietary_ratio_analysis_fy_five_1"  id="proprietary_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="net_profit_ratio_fy_five_1" class="form-label">Net Profit Ratio</label>
                                 <input type="text" class="form-control" name="net_profit_ratio_fy_five_1"  id="net_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->net_profit_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="net_profit_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="net_profit_ratio_analysis_fy_five_1"  id="net_profit_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->net_profit_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
+
                             <div class="col-xl-3 mb-3">
                                 <label for="gross_profit_ratio_fy_five_1" class="form-label">Gross Profit Ratio</label>
                                 <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_five_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_five_1"  id="gross_profit_ratio_analysis_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_analysis_fy_five_1}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
+
+
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_five_1" class="form-label">Springate S Score</label>
                                 <input type="number" class="form-control" name="springate_s_score_ratio_fy_five_1"  id="springate_s_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_five_1" class="form-label">Trade Receivable Days</label>
                                 <input type="text" class="form-control" name="trade_receivable_days_ratio_fy_five_1"  id="trade_receivable_days_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->trade_receivable_days_ratio_fy_five_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_payable_days_ratio_fy_five_1" class="form-label">Trade Payable Days</label>
                                 <input type="text" class="form-control" name="trade_payable_days_ratio_fy_five_1"  id="trade_payable_days_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->trade_payable_days_ratio_fy_five_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="taffler_z_score_ratio_fy_five_1" class="form-label">Taffler Z-Score</label>
                                 <input type="text" class="form-control" name="taffler_z_score_ratio_fy_five_1"  id="taffler_z_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->taffler_z_score_ratio_fy_five_1}}" placeholder="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_five_1" class="form-label">Zmijewski X-Score</label>
                                 <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_five_1"  id="zmijewski_x_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->zmijewski_x_score_ratio_fy_five_1}}" placeholder="">
@@ -3978,6 +4050,8 @@
                     }
                 });
 
+
+
                 // Check if at least one field is empty and apply the style to the specified container
                 if (isEmpty) {
                     $('#' + containerId).attr('style', 'color:Black;background-color:yellow');
@@ -4266,7 +4340,6 @@
 
 
 
-
         $('#Financials-step-form').on('submit', function (e) {
             e.preventDefault();
 
@@ -4508,6 +4581,109 @@
                 }
             });
         });
+
+
+        //  finding financial
+        $('#Financials-next-1').on('click', function(){
+            console.log('chages');
+            $('#one_finding_FY1').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-2').on('click', function(){
+            console.log('chages');
+            $('#one_finding_FY1').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        $('#Financials-next-2').on('click', function(){
+            console.log('chages');
+            $('#two_finding_FY1_2').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-3').on('click', function(){
+            console.log('chages');
+            $('#two_finding_FY1_2').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        $('#Financials-next-3').on('click', function(){
+            console.log('chages');
+            $('#three_finding_FY1_3').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-4').on('click', function(){
+            console.log('chages');
+            $('#three_finding_FY1_3').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+
+        $('#Financials-next-4').on('click', function(){
+            console.log('chages');
+            $('#four_finding_FY1_4').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-5').on('click', function(){
+            console.log('chages');
+            $('#four_finding_FY1_4').attr('style', 'color:white;background-color:darkgray');
+        });
+
+        $('#Financials-next-5').on('click', function(){
+            console.log('chages');
+            $('#five_finding_FY1_5').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-6').on('click', function(){
+            console.log('chages');
+            $('#five_finding_FY1_5').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        // ratio financial
+        $('#Financials-next-6').on('click', function(){
+            console.log('chages');
+            $('#one_ratio_FY1').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-7').on('click', function(){
+            console.log('chages');
+            $('#one_ratio_FY1').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        $('#Financials-next-7').on('click', function(){
+            console.log('chages');
+            $('#two_ratio_FY1_2').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-8').on('click', function(){
+            console.log('chages');
+            $('#two_ratio_FY1_2').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        $('#Financials-next-8').on('click', function(){
+            console.log('chages');
+            $('#three_ratio_FY1_3').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-9').on('click', function(){
+            console.log('chages');
+            $('#three_ratio_FY1_3').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        $('#Financials-next-9').on('click', function(){
+            console.log('chages');
+            $('#four_ratio_FY1_4').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-10').on('click', function(){
+            console.log('chages');
+            $('#four_ratio_FY1_4').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+        $('#Financials-next-10').on('click', function(){
+            console.log('chages');
+            $('#five_ratio_FY1_5').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#Financials-prev-11').on('click', function(){
+            console.log('chages');
+            $('#five_ratio_FY1_5').attr('style', 'color:white;background-color:darkgray');
+        });
+
 
 
 

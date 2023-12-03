@@ -32,17 +32,19 @@
         <div class="card-body justify-content-start">
             <form id="allFilters" action="{{route('company.report_List')}}" method="GET" onsubmit="submitForm(this); return false;" class="row d-flex justify-content-between align-items-end">
                 <div class="row mb-4">
-                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                    <div class="col-xl-3 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="thirdPartyName">Third Party:</label>
                         <div class="d-flex justify-content-start align-items-start">
                             @php
-                            $thirdparties = \App\Models\ThirdParty::where('user_id', auth()->user()->id )->get();
+                            $thirdparties = \App\Models\ThirdParty::where('user_id', auth()->user()->id)->get();
                             @endphp
                             <select class="multi-select" multiple="multiple" name="PartyName[]" id="PartyName" placeholder="Select Third Party">
                                 <option disabled>Select Party</option>
                                 @forelse ($thirdparties as $thirdparty)
-                                <option data-display="Select" value="{{ $thirdparty->id }}" @if(is_array(request('PartyName')) && in_array($thirdparty->id,
-                                    request('PartyName'))) selected @endif>
+                                <option data-display="Select" value="{{ base64_encode($thirdparty->id) }}"
+                                @if(is_array(request('PartyName')) && in_array(base64_encode($thirdparty->id), request('PartyName')))
+                                            selected
+                                        @endif>
                                     {{ $thirdparty->third_party_name }}
                                 </option>
                                 @empty
@@ -52,7 +54,7 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                    <div class="col-xl-3 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="locations">Locations:</label>
 
                         <div class="d-flex justify-content-start align-items-start">
@@ -62,8 +64,10 @@
                             <select class="multi-select" multiple="multiple" name="location[]" id="location" placeholder="Select Third Party">
                                 <option disabled>Select Location</option>
                                 @forelse ($zones as $value )
-                                <option data-display="Select" value="{{ $value->id }}" @if(is_array(request('location')) && in_array($value->id,
-                                    request('location'))) selected @endif>
+                                <option data-display="Select" value="{{ base64_encode($value->id) }}"
+                                @if(is_array(request('location')) && in_array(base64_encode($value->id), request('location')))
+                                            selected
+                                        @endif>
                                     {{ $value->zone_name  }}
                                 </option>
                                 @empty
@@ -72,7 +76,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                    <div class="col-xl-3 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="departments">Department:</label>
 
                         <div class="d-flex justify-content-start align-items-start">
@@ -82,7 +86,10 @@
                             <select class="multi-select" multiple="multiple" name="Department[]" id="Department" placeholder="Select Third Party">
                                 <option disabled>Select Department</option>
                                 @forelse ($departments as $department )
-                                <option data-display="Select" value="{{ $department->id }}">
+                                <option data-display="Select" value="{{ base64_encode($department->id) }}"
+                                @if(is_array(request('Department')) && in_array(base64_encode($department->id), request('Department')))
+                                            selected
+                                        @endif>
                                     {{ $department->dept_name  }}
                                 </option>
                                 @empty
@@ -91,10 +98,32 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-xl-3 col-sm-12 col-6 mt-4 mt-md-0">
+                        <label for="departments">State:</label>
 
+                        <div class="d-flex justify-content-start align-items-start">
+                                @php
+                                $states = \App\Models\State::get();
+
+                                @endphp
+                                <select class="multi-select" multiple="multiple" name="State[]"  id="State" placeholder="Select Third Party">
+                                    <option disabled >Select State</option>
+                                    @forelse ($states as $state )
+                                        <option data-display="Select" value="{{base64_encode($state->id) }}"
+                                        @if(is_array(request('State')) && in_array(base64_encode($state->id), request('State')))
+                                            selected
+                                        @endif>
+                                        {{ $state->state_name  }}
+                                    </option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                                </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="row  mb-0">
-                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                    <div class="col-xl-3 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="riskType">Type of Risk:</label>
 
                         <div class="d-flex justify-content-start align-items-start">
@@ -113,7 +142,7 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-4 col-sm-12 col-6 mt-4 mt-md-0">
+                    <div class="col-xl-3 col-sm-12 col-6 mt-4 mt-md-0">
                         <label for="overallRisk">Overall Risk:</label>
 
                         <div class="d-flex justify-content-start align-items-start">
@@ -129,7 +158,7 @@
                         </div>
 
                     </div>
-                    <div class="col-xl-4 col-sm-12 col-6 mt-1">
+                    <div class="col-xl-3 col-sm-12 col-6 mt-1">
                         <label for="overallRisk"></label>
 
                         <div class="d-flex justify-content-start align-items-end">
@@ -159,7 +188,7 @@
                     <div class="col-xl-6 col-sm-3 col-3 ml-3 ">
                         <div class="c-list ">
                             <div class="input-group search-area">
-                                <input type="text" name="Client" class="form-control" placeholder="Enter key words">
+                                <input type="text" name="searchThirdparty" class="form-control" placeholder="Enter key words">
                                 <span class="input-group-text">
 
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,31 +214,29 @@
 </div>
 <div class="col-12">
     <div class="card">
-        <div class="card-body align-items-center justify-content-center">
-            <div class="d-flex  align-items-center">
+        <div class="card-body  d-flex justify-content-between align-items-end " style="margin-left: 10%;">
 
-            <div class="col-xl-3 col-sm-4 col-4 ">
-                <form id="HighRiskFormButton" action="{{route('company.report_List')}}" method="GET" onsubmit="submitForm(this); return false;">
-                    <input type="hidden" name="HighRisk" class="form-control" value="HighRisk">
-                    <button type="submit" style="{{ request('HighRisk') == 'HighRisk' ? 'background-color: #6D3B7D;' : '' }}" onclick="submitForm(this.form);" class="attention-reprot-clinet-btn">High Risk</button>
-                </form>
-            </div>
-            <div class="col-xl-3 col-sm-4 col-4 ">
-
-                <form id="MediumRiskFormButton" action="{{route('company.report_List')}}" method="GET" onsubmit="submitForm(this); return false;">
-                    <input type="hidden" name="MediumRisk" class="form-control" value="MediumRisk">
-                    <button type="submit" style="{{ request('MediumRisk') == 'MediumRisk' ? 'background-color: #6D3B7D;' : '' }}" onclick="submitForm(this.form);" class="attention-reprot-clinet-btn">Medium Risk</button>
-                </form>
+                <div class="col-xl-3 col-sm-4 col-4 justify-content-start mr-lg-2">
+                    <form id="HighRiskFormButton" action="{{route('company.report_List')}}" method="GET" onsubmit="submitForm(this); return false;">
+                        <input type="hidden" name="HighRisk" class="form-control" value="HighRisk">
+                        <button type="submit" style="{{ request('HighRisk') == 'HighRisk' ? 'background-color: #6D3B7D;' : '' }}" onclick="submitForm(this.form);" class="attention-reprot-clinet-btn">High Risk</button>
+                    </form>
                 </div>
-            <div class="col-xl-3 col-sm-4 col-4 ">
+                <div class="col-xl-3 col-sm-4 col-4 justify-content-center ">
 
-                <form id="lowRiskFormButton" action="{{route('company.report_List')}}" onsubmit="submitForm(this); return false;">
-                    <input type="hidden" name="LowRisk" class="form-control" value="LowRisk">
-                    <button type="submit" style="{{request('LowRisk')=='LowRisk' ? 'background-color:#6D3B7D' : ''}}" onclick="submitForm(this.form);" class="lowRiskFormButtonClass attention-reprot-clinet-btn">Low Risk</button>
-                </form>
+                    <form id="MediumRiskFormButton" action="{{route('company.report_List')}}" method="GET" onsubmit="submitForm(this); return false;">
+                        <input type="hidden" name="MediumRisk" class="form-control" value="MediumRisk">
+                        <button type="submit" style="{{ request('MediumRisk') == 'MediumRisk' ? 'background-color: #6D3B7D;' : '' }}" onclick="submitForm(this.form);" class="attention-reprot-clinet-btn">Medium Risk</button>
+                    </form>
+                </div>
+                <div class="col-xl-3 col-sm-4 col-4  justify-content-end">
+
+                    <form id="lowRiskFormButton" action="{{route('company.report_List')}}" onsubmit="submitForm(this); return false;">
+                        <input type="hidden" name="LowRisk" class="form-control" value="LowRisk">
+                        <button type="submit" style="{{request('LowRisk')=='LowRisk' ? 'background-color:#6D3B7D' : ''}}" onclick="submitForm(this.form);" class="lowRiskFormButtonClass attention-reprot-clinet-btn">Low Risk</button>
+                    </form>
                 </div>
 
-            </div>
         </div>
     </div>
 </div>
@@ -236,6 +263,7 @@
                             <th>Third Party Name</th>
                             <th> Department </th>
                             <th>Location</th>
+                            <th>State</th>
                             <th>Type of Risk </th>
                             <th>Over All Risk </th>
                             <th class="text-center">View Report</th>
@@ -267,6 +295,13 @@
                             <td>
                                 <span> {{ $zone ? $zone->zone_name : '' }} </span>
                             </td>
+
+                            @php
+                            $state = \App\Models\State::where('id',$value->state_id)->first();
+                            @endphp
+                            <td>
+                                <span> {{ $state ? $state->state_name : '' }} </span>
+                            </td>
                             @php
                             $KeyObservation =
                             \App\Models\KeyObservation::where('third_party_id',$value->id)->first();
@@ -274,15 +309,15 @@
                             <td class="">
 
 
-                                <span> {{ $KeyObservation ? $KeyObservation->Type_of_risk : '' }} </span>
-                            </td>
-                            <td class="text-center">
-                                <span> {{ $KeyObservation ? $KeyObservation->overall_risk_score : '' }} </span>
+                                <span class=""> {{ $KeyObservation ? $KeyObservation->overall_risk_score : '' }} </span>
+                                </td>
+                                <td class="">
+                                    <span class=""> {{ $KeyObservation ? $KeyObservation->Type_of_risk : '' }} </span>
 
 
                             </td>
 
-                            <td class="text-center space-between ">
+                            <td class=" space-between ">
 
 
 
