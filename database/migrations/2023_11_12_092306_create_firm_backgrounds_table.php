@@ -36,11 +36,8 @@ class CreateFirmBackgroundsTable extends Migration
             $table->string('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->string('file')->nullable();
-            $table->string('name')->nullable();
-            $table->string('pan')->nullable();
-            $table->string('aadhar')->nullable();
-            $table->date('date_of_appointment')->nullable();
-            $table->string('educational_background')->nullable();
+          
+            $this->addDirectorInfoFields($table, 1);
             $this->addDirectorInfoFields($table, 2);
             $this->addDirectorInfoFields($table, 3);
             $this->addDirectorInfoFields($table, 4);
@@ -50,11 +47,7 @@ class CreateFirmBackgroundsTable extends Migration
             $this->addDirectorInfoFields($table, 8);
             $this->addDirectorInfoFields($table, 9);
             $this->addDirectorInfoFields($table, 10);
-            $this->addDirectorInfoFields($table, 11);
-            $this->addDirectorInfoFields($table, 12);
-            $this->addDirectorInfoFields($table, 13);
-            $this->addDirectorInfoFields($table, 14);
-            $this->addDirectorInfoFields($table, 15);
+          
             $table->string('credit_score')->nullable();
             $table->integer('status')->default(0)->nullable();
             $table->timestamps();

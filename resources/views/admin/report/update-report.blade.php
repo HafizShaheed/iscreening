@@ -441,29 +441,378 @@
                     <h4 class="card-title">Firm Background<br>
                         <span style="color:darkgray; font-size:12px;">Director/Proprietor/Partner Details </span>
                     </h4>
+                 <!-- Copy 1 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (1)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 2 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (2)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 3 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (3)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 4 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (4)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 5 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (5)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 6 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (6)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 7 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (7)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 8 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (8)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 9 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (9)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+
+
+                        <!-- Copy 6 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (10)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 7 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (11)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 8 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (12)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+                        <!-- Copy 9 -->
+                        <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (13)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+                         <!-- Copy 9 -->
+                         <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (14)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+                         <!-- Copy 15 -->
+                         <div class="row">
+                            <div class="col">
+                                <label for="name" class="form-label">Name (15)</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                            </div>
+                            <div class="col">
+                                <label for="pan" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                            </div>
+                            <div class="col">
+                                <label for="aadhar" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                            </div>
+                            <div class="col">
+                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                            </div>
+                            <div class="col">
+                                <label for="educational_background" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
                     <div class="row">
-                        <div class="col-xl-6 mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
-                        </div>
-                        <div class="col-xl-6 mb-3">
-                            <label for="pan" class="form-label">PAN</label>
-                            <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
-                        </div>
-                        <div class="col-xl-6 mb-3">
-                            <label for="aadhar" class="form-label">Aadhar</label>
-                            <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
-                        </div>
-                        <div class="col-xl-6 mb-3">
-                            <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                            <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 mb-3">
-                            <label for="educational_background" class="form-label">Educational Background</label>
-                            <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
-                        </div>
                         <div class="col-xl-6 mb-3">
                             <label for="credit_score" class="form-label">Credit Score</label>
                             <input type="number" class="form-control" id="credit_score" name="credit_score" value="{{$FirmBackground->credit_score}}">
@@ -1626,11 +1975,7 @@
 
 <div class="row" id="Financials">
     <div class="card">
-        <div class="card-header justify-content-start">
 
-
-
-        </div>
         <div class="card-body justify-content-start">
 
             <form id="Financials-step-form" enctype="multipart/form-data">
@@ -1749,23 +2094,27 @@
                             </li>
                         </ul>
                         <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
+                                     @php
                                         $years = \App\Models\YearRecordForFy1ToFy5::get();
 
                                         @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+
+
+                                <div class="col-xl-4 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
+
                         </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -1785,8 +2134,8 @@
                                 <input type="text" class="form-control"  name="working_capital_1_fy_one_finding__1"  id="working_capital_1_fy_one_finding__1" value="{{$FinancialsFindingsFyOne->working_capital_1_fy_one_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="working_capital_2_fy_one_finding__1" class="form-label">Working capital</label>
-                                <input type="text" class="form-control"  name="working_capital_2_fy_one_finding__1"  id="working_capital_2_fy_one_finding__1" value="{{$FinancialsFindingsFyOne->working_capital_2_fy_one_finding__1}}" placeholder="">
+                                <label for="quick_assets_fy_one_finding__1" class="form-label">Quick Assets</label>
+                                <input type="text" class="form-control"  name="quick_assets_fy_one_finding__1"  id="quick_assets_fy_one_finding__1" value="{{$FinancialsFindingsFyOne->quick_assets_fy_one_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="total_assets_fy_one_finding__1" class="form-label">Total Assets</label>
@@ -1853,6 +2202,7 @@
                 <div class="Financials-step" id="Financials-step-3">
                     <h4 class="card-title">Financials<br>
                         <span style="color:darkgray; font-size:12px;"> Financial Findings </span>
+                    </h4>
                         <ul class="nav nav-pills">
                             <li class="nav-item mb-2 mr-1 p-2">
                                 <a class="nav-link" id="one_finding_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
@@ -1871,22 +2221,20 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                                <div class="col-xl-4 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
                         </div>
                         <div class="row">
@@ -1907,8 +2255,8 @@
                                 <input type="text" class="form-control"  name="working_capital_1_fy_two_finding__1" id="working_capital_1_fy_two_finding__1" value="{{$FinancialsFindingsFyTwo->working_capital_1_fy_two_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="working_capital_2_fy_two_finding__1" class="form-label">Working capital</label>
-                                <input type="text" class="form-control"  name="working_capital_2_fy_two_finding__1"  id="working_capital_2_fy_two_finding__1" value="{{$FinancialsFindingsFyTwo->working_capital_2_fy_two_finding__1}}" placeholder="">
+                                <label for="quick_assets_fy_two_finding__1" class="form-label">Quick Assets</label>
+                                <input type="text" class="form-control"  name="quick_assets_fy_two_finding__1"  id="quick_assets_fy_two_finding__1" value="{{$FinancialsFindingsFyTwo->quick_assets_fy_two_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="total_assets_fy_two_finding__1" class="form-label">Total Assets</label>
@@ -1993,22 +2341,20 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                                <div class="col-xl-4 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
                         </div>
                         <div class="row">
@@ -2029,8 +2375,8 @@
                                 <input type="text" class="form-control"  name="working_capital_1_fy_three_finding__1" id="working_capital_1_fy_three_finding__1" value="{{$FinancialsFindingsFyThree->working_capital_1_fy_three_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="working_capital_2_fy_three_finding__1" class="form-label">Working capital</label>
-                                <input type="text" class="form-control"  name="working_capital_2_fy_three_finding__1" id="working_capital_2_fy_three_finding__1" value="{{$FinancialsFindingsFyThree->working_capital_2_fy_three_finding__1}}" placeholder="">
+                                <label for="quick_assets_fy_three_finding__1" class="form-label">Quick Assets</label>
+                                <input type="text" class="form-control"  name="quick_assets_fy_three_finding__1" id="quick_assets_fy_three_finding__1" value="{{$FinancialsFindingsFyThree->quick_assets_fy_three_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="total_assets_fy_three_finding__1" class="form-label">Total Assets</label>
@@ -2115,22 +2461,20 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                                <div class="col-xl-4 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
                         </div>
                         <div class="row">
@@ -2151,8 +2495,8 @@
                                 <input type="text" class="form-control"  name="working_capital_1_fy_four_finding__1"  id="working_capital_1_fy_four_finding__1" value="{{$FinancialsFindingsFyFour->working_capital_1_fy_four_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="working_capital_2_fy_four_finding__1" class="form-label">Working capital</label>
-                                <input type="text" class="form-control"  name="working_capital_2_fy_four_finding__1"  id="working_capital_2_fy_four_finding__1" value="{{$FinancialsFindingsFyFour->working_capital_2_fy_four_finding__1}}" placeholder="">
+                                <label for="quick_assets_fy_four_finding__1" class="form-label">Quick Assets</label>
+                                <input type="text" class="form-control"  name="quick_assets_fy_four_finding__1"  id="quick_assets_fy_four_finding__1" value="{{$FinancialsFindingsFyFour->quick_assets_fy_four_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="total_assets_fy_four_finding__1" class="form-label">Total Assets</label>
@@ -2237,22 +2581,20 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                                 <div class="col-xl-4 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
                         </div>
                         <div class="row">
@@ -2273,8 +2615,8 @@
                                 <input type="text" class="form-control"  name="working_capital_1_fy_five_finding__1"  id="working_capital_1_fy_five_finding__1" value="{{$FinancialsFindingsFyFive->working_capital_1_fy_five_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="working_capital_2_fy_five_finding__1" class="form-label">Working capital</label>
-                                <input type="text" class="form-control"  name="working_capital_2_fy_five_finding__1"  id="working_capital_2_fy_five_finding__1" value="{{$FinancialsFindingsFyFive->working_capital_2_fy_five_finding__1}}" placeholder="">
+                                <label for="quick_assets_fy_five_finding__1" class="form-label">Quick Assets</label>
+                                <input type="text" class="form-control"  name="quick_assets_fy_five_finding__1"  id="quick_assets_fy_five_finding__1" value="{{$FinancialsFindingsFyFive->quick_assets_fy_five_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="total_assets_fy_five_finding__1" class="form-label">Total Assets</label>
@@ -2339,10 +2681,10 @@
                 <!--Financials 6 step end ========================-->
                 <!-- Financials part 1 FY1 to FY5 end -->
 
-                <!-- Financials part 2 FY1 to FY5 end -->
+                <!-- Financials part 2 FY1 to FY5 start -->
                 <!--Financials 7 step start ========================-->
                 <div class="Financials-step" id="Financials-step-7">
-                    <h4 class="card-title">Financials<br>
+                    <h4 class="card-title">Financials<br> </h4>
                         <span style="color:darkgray; font-size:12px;"> Ratio Analysis </span>
                         <ul class="nav nav-pills">
                             <li class="nav-item mb-2 mr-1 p-2">
@@ -2362,23 +2704,29 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                            <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
+                                <div class="col-xl-3 mb-3">
+                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="current_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="current_ratio_analysis_fy_one_1"  id="current_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1}}" placeholder="">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -2532,23 +2880,24 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
+                                    <div class="col-xl-3 mb-3">
+                                            <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                            <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                                <option data-display="Select" value="" disabled>
+                                                    Select Year
+                                                </option>
+                                                    @forelse ($years as $year)
+                                                    <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                                    @empty
+                                                    <p>No records found!</p>
+                                                    @endforelse
+                                            </select>
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
-                                            @empty
-                                            <p>No records found!</p>
-                                            @endforelse
-                                        </select>
-                                </div>
+                                        </div>
+                                        <div class="col-xl-3 mb-3">
+                                        <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
+                                        <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                                    </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -2580,10 +2929,7 @@
                                 <label for="absolute_liquidity_ratio_fy_two_1" class="form-label">Absolute Liquidity Ratio</label>
                                 <input type="text" class="form-control" name="absolute_liquidity_ratio_fy_two_1"  id="absolute_liquidity_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1}}" placeholder="">
                             </div>
-                            <div class="col-xl-3 mb-3">
-                                <label for="absolute_liquidity_ratio_analysis_fy_two_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="absolute_liquidity_ratio_analysis_fy_two_1"  id="absolute_liquidity_ratio_analysis_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_analysis_fy_two_1}}" placeholder="">
-                            </div>
+                          
                             <div class="col-xl-3 mb-3">
                                 <label for="proprietary_ratio_fy_two_1" class="form-label">Proprietary Ratio</label>
                                 <input type="text" class="form-control" name="proprietary_ratio_fy_two_1"  id="proprietary_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1}}" placeholder="">
@@ -2659,23 +3005,24 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
-
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                            <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
+                                <div class="col-xl-3 mb-3">
+                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -2785,23 +3132,25 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
 
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                            <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
+                                <div class="col-xl-3 mb-3">
+                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -2912,23 +3261,24 @@
                             </li>
                         </ul>
                          <div class="row">
-                                <div class="col-xl-3 mb-3">
-                                        <label for="revenue_fy_one_finding__1" class="form-label">Year</label>
-                                        @php
-                                        $years = \App\Models\YearRecordForFy1ToFy5::get();
-
-                                        @endphp
-                                        <select class="multi-select" name=""  id="State" placeholder="Select Third Party">
-                                            <option  >Select year</option>
-                                            @forelse ($years as $year )
-                                                <option data-display="Select" value="{{$year->year}}">
-                                                {{ $year->year  }}
-                                            </option>
+                            <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
-                                        </select>
+                                    </select>
+
                                 </div>
+                                <div class="col-xl-3 mb-3">
+                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -3039,98 +3389,463 @@
         </div>
         <div class="card-body justify-content-start">
             <form id="Business-Intelligence-step-form" enctype="multipart/form-data">
-                <!-- firm background 1 step end -->
-                <div class="Business-Intelligence-step" id="Business-Intelligence-step-1">
+                <!--BusinessIntelligence FY1 step start ========================-->
+                <div class="BusinessIntelligence-step" id="BusinessIntelligence-step-1">
+
+
+                    <h4 class="card-title">Business Intelligence<br>
+                    <span style="color:darkgray; font-size:12px;"> FY-1</span>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="one_ratio_FY1"  style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY1</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="two_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="three_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="four_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="five_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                        </li>
+                    </ul>
+
                     <div class="row">
 
-                                <input type="hidden" name="BusinessIntelligenceID" id="BusinessIntelligenceID" class="form-control" value="{{$BusinessIntelligence->id}}">
+                        <div class="col-xl-3 mb-3">
+                            <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                            <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                <option data-display="Select" value="" disabled>
+                                    Select Year
+                                </option>
+                                    @forelse ($years as $year)
+                                    <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xl-3 mb-3">
+                    <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
+                    <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="debt_ratio_fy_five_1" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="debt_ratio_fy_five_1" id="debt_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
+                    <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="debt_to_equity_ratio_fy_five_1" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="debt_to_equity_ratio_fy_five_1"  id="debt_to_equity_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
+                    <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                    </div>
+                    <div class="col-xl-3 mb-3">
+                    <label for="debt_to_equity_ratio_fy_five_1" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="debt_to_equity_ratio_fy_five_1"  id="debt_to_equity_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
+                    <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="net_profit_ratio_fy_five_1" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="net_profit_ratio_fy_five_1"  id="net_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->net_profit_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
+                    <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="springate_s_score_ratio_fy_five_1" class="form-label">Score Analysis</label>
+                    <input type="number" class="form-control" name="springate_s_score_ratio_fy_five_1"  id="springate_s_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1}}" placeholder="">
+                    </div>
+
+
+                    </div>
+
+
+                            <!-- Navigation buttons -->
 
                         <div class="row">
-                            <div class="col-xl-2  mb-3">
-                                <label for="business_fy1" class="form-label">FY1</label>
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <!-- <button type="button" class="btn btn report-tab-unactive" id="BusinessIntelligence-prev-8">Previous</button> -->
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
 
-                                <input type="text" class="form-control"  name="business_fy1" id="business_fy1" value="{{$BusinessIntelligence->business_fy1}}" placeholder="">
-                            </div>
-                            <div class="col-xl-2  mb-3">
-                                <label for="business_fy2" class="form-label">FY2</label>
-                                <input type="text" class="form-control"  name="business_fy2" id="business_fy2" value="{{$BusinessIntelligence->business_fy2}}" placeholder="">
-                            </div>
-                            <div class="col-xl-2  mb-3">
-                                <label for="business_fy3" class="form-label">FY3</label>
-                                <input type="text" class="form-control"  name="business_fy3" id="business_fy3" value="{{$BusinessIntelligence->business_fy3}}" placeholder="">
-                            </div>
-                            <div class="col-xl-2  mb-3">
-                                <label for="business_fy4" class="form-label">FY4</label>
-                                <input type="text" class="form-control"  name="business_fy4" id="business_fy4" value="{{$BusinessIntelligence->business_fy4}}" placeholder="">
-                            </div>
-                            <div class="col-xl-2  mb-3">
-                                <label for="business_fy5" class="form-label">FY5</label>
-                                <input type="text" class="form-control"  name="business_fy5" id="business_fy5" value="{{$BusinessIntelligence->business_fy5}}" placeholder="">
+                                <button type="button" class="btn btn report-tab-active" id="BusinessIntelligence-next-1">Next</button>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-xl-4  mb-3">
-                                <label for="operating_efficiency_ratio" class="form-label">Operating Efficiency ratio</label>
-                                <input type="text" class="form-control" name="operating_efficiency_ratio" id="operating_efficiency_ratio" value="{{$BusinessIntelligence->operating_efficiency_ratio}}" placeholder="">
-                            </div>
-                            <div class="col-xl-4  mb-3">
-                                <label for="operating_efficiency_ratio_analysis" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="operating_efficiency_ratio_analysis" id="operating_efficiency_ratio_analysis" value="{{$BusinessIntelligence->operating_efficiency_ratio_analysis}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4  mb-3">
-                                <label for="inventory_turnover_ratio" class="form-label">Inventory Turnover Ratio</label>
-                                <input type="text" class="form-control" name="inventory_turnover_ratio" id="inventory_turnover_ratio" value="{{$BusinessIntelligence->inventory_turnover_ratio}}" placeholder="">
-                            </div>
-                            <div class="col-xl-4  mb-3">
-                                <label for="inventory_turnover_ratio_analysis" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="inventory_turnover_ratio_analysis" id="inventory_turnover_ratio_analysis" value="{{$BusinessIntelligence->inventory_turnover_ratio_analysis}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4  mb-3">
-                                <label for="days_sales_in_inventory" class="form-label">Days sales in Inventory</label>
-                                <input type="text" class="form-control" name="days_sales_in_inventory" id="days_sales_in_inventory" value="{{$BusinessIntelligence->days_sales_in_inventory}}" placeholder="">
-                            </div>
-                            <div class="col-xl-4  mb-3">
-                                <label for="days_sales_in_inventory_analysis" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="days_sales_in_inventory_analysis" id="days_sales_in_inventory_analysis" value="{{$BusinessIntelligence->days_sales_in_inventory_analysis}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4  mb-3">
-                                <label for="accounts_payable_turnover_ratio" class="form-label">Accounts Payable Turnover Ratio</label>
-                                <input type="text" class="form-control" name="accounts_payable_turnover_ratio" id="accounts_payable_turnover_ratio" value="{{$BusinessIntelligence->accounts_payable_turnover_ratio}}" placeholder="">
-                            </div>
-                            <div class="col-xl-4  mb-3">
-                                <label for="accounts_payable_turnover_ratio_analysis" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="accounts_payable_turnover_ratio_analysis" id="accounts_payable_turnover_ratio_analysis" value="{{$BusinessIntelligence->accounts_payable_turnover_ratio_analysis}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4  mb-3">
-                                <label for="efficiency_score" class="form-label">Efficiency Score</label>
-                                <input type="number" class="form-control" name="efficiency_score" id="efficiency_score" value="{{$BusinessIntelligence->efficiency_score}}" placeholder="">
-                            </div>
-                            <div class="col-xl-4  mb-3">
-                                <label for="score_analysis" class="form-label"> Score Analysis</label>
-                                <input type="text" class="form-control" name="score_analysis" id="score_analysis" value="{{$BusinessIntelligence->score_analysis}}" placeholder="">
-                            </div>
 
+                </div>
+                <!--BusinessIntelligence FY1 step end ========================-->
+
+                <!--BusinessIntelligence FY2 step start ========================-->
+                <div class="BusinessIntelligence-step" id="BusinessIntelligence-step-2">
+                  <h4 class="card-title">Business Intelligence<br>
+                    <span style="color:darkgray; font-size:12px;"> FY-2</span>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="one_ratio_FY1_2"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="two_ratio_FY1_2" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY2</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="three_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="four_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="five_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                        </li>
+                    </ul>
+
+                    <div class="row">
+
+                    <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                    </select>
+
+                                </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
                         </div>
 
 
 
-                        <div class="col-xl-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn report-tab-active" id="submit-Business-Intelligence">submit</button>
+                        <div class="col-xl-3 mb-3">
+                            <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
+                            <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
                         </div>
 
 
                     </div>
+
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="BusinessIntelligence-prev-2">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="BusinessIntelligence-next-2">Next</button>
+                            </div>
+                        </div>
+
                 </div>
-                <!-- firm background 1 step end -->
+                  <!--BusinessIntelligence FY2 step end ========================-->
+
+                <!--BusinessIntelligence FY3 step start ========================-->
+                <div class="BusinessIntelligence-step" id="BusinessIntelligence-step-3">
+
+                 <h4 class="card-title">Business Intelligence<br>
+                    <span style="color:darkgray; font-size:12px;"> FY-3</span>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="one_ratio_FY1_3"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="two_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="three_ratio_FY1_3" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY3</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="four_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="five_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                        </li>
+                    </ul>
+
+                    <div class="row">
+
+                                 <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                    </select>
+
+                                </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
+                            <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+                    </div>
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="BusinessIntelligence-prev-3">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="BusinessIntelligence-next-3">Next</button>
+                            </div>
+                        </div>
+
+                </div>
+                <!--BusinessIntelligence FY3 step end ========================-->
+                <!--BusinessIntelligence FY4 step start ========================-->
+                <div class="BusinessIntelligence-step" id="BusinessIntelligence-step-4">
+
+                     <h4 class="card-title">Business Intelligence<br>
+                    <span style="color:darkgray; font-size:12px;"> FY-4</span>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="one_ratio_FY1_4"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="two_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="three_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="four_ratio_FY1_4" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY4</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="five_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                        </li>
+                    </ul>
+
+                    <div class="row">
+
+                                <div class="col-xl-3 mb-3">
+                                    <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                        <option data-display="Select" value="" disabled>
+                                            Select Year
+                                        </option>
+                                            @forelse ($years as $year)
+                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            @empty
+                                            <p>No records found!</p>
+                                            @endforelse
+                                    </select>
+
+                                </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
+                            <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+                    </div>
+
+
+
+
+                            <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="BusinessIntelligence-prev-4">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="BusinessIntelligence-next-4">Next</button>
+                            </div>
+                        </div>
+
+                </div>
+                <!--BusinessIntelligence FY3 step end ========================-->
+                <!--BusinessIntelligence FY3 step start ========================-->
+                <div class="BusinessIntelligence-step" id="BusinessIntelligence-step-5">
+                    <h4 class="card-title">Business Intelligence<br>
+                    <span style="color:darkgray; font-size:12px;"> FY-5</span>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="one_ratio_FY1_5"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="two_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="three_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="four_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                        </li>
+                        <li class="nav-item mb-2 mr-1 p-2">
+                            <a class="nav-link" id="five_ratio_FY1_5" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY5</a>
+                        </li>
+                    </ul>
+
+
+                    <div class="row">
+
+                        <div class="col-xl-3 mb-3">
+                            <label class="form-label">Select Year<span class="text-danger">*</span></label>
+                            <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                <option data-display="Select" value="" disabled>
+                                    Select Year
+                                </option>
+                                    @forelse ($years as $year)
+                                    <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                            </select>
+
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                        <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
+                        <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                        <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
+                        <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                        <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
+                        <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+
+                        <div class="col-xl-3 mb-3">
+                        <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
+                        <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                        <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
+                        <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
+                        </div>
+
+
+                        </div>
+                        <!-- Navigation buttons -->
+
+                    <div class="row">
+                        <div class="col-xl-6 d-flex justify-content-start">
+                            <button type="button" class="btn btn report-tab-unactive" id="BusinessIntelligence-prev-5">Previous</button>
+                        </div>
+                        <div class="col-xl-6 d-flex justify-content-end">
+
+                        <button type="submit" class="btn btn report-tab-active" id="submit-Business-Intelligence">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+                        <!--BusinessIntelligence FY3 step end ========================-->
+
 
 
 
@@ -3726,6 +4441,37 @@
 
         });
 
+          var BusinessIntelligencecurrentStep = 1;
+        $(".BusinessIntelligence-step").hide();
+        $("#BusinessIntelligence-step-1").show();
+
+        // Function to navigate to the next step
+        function BusinessIntelligencenextStep() {
+            $(".BusinessIntelligence-step").hide();
+            BusinessIntelligencecurrentStep++;
+            $("#BusinessIntelligence-step-" + BusinessIntelligencecurrentStep).show();
+        }
+
+        // Function to navigate to the previous step
+        function BusinessIntelligenceprevStep() {
+            $(".BusinessIntelligence-step").hide();
+            BusinessIntelligencecurrentStep--;
+            $("#BusinessIntelligence-step-" + BusinessIntelligencecurrentStep).show();
+        }
+
+        // Event listeners for "Next" and "Previous" buttons
+        $("#BusinessIntelligence-next-1").on("click", BusinessIntelligencenextStep);
+        $("#BusinessIntelligence-prev-2").on("click", BusinessIntelligenceprevStep);
+        $("#BusinessIntelligence-next-2").on("click", BusinessIntelligencenextStep);
+        $("#BusinessIntelligence-prev-3").on("click", BusinessIntelligenceprevStep);
+        $("#BusinessIntelligence-next-3").on("click", BusinessIntelligencenextStep);
+        $("#BusinessIntelligence-prev-4").on("click", BusinessIntelligenceprevStep);
+        $("#BusinessIntelligence-next-4").on("click", BusinessIntelligencenextStep);
+        $("#BusinessIntelligence-prev-5").on("click", BusinessIntelligenceprevStep);
+        $("#BusinessIntelligence-next-5").on("click", BusinessIntelligencenextStep);
+
+
+
         $('#click-Tax-Return-and-Credit').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
@@ -4068,7 +4814,7 @@
                 'net_profit_fy_one_finding__1',
                 'gross_profit_fy_one_finding__1',
                 'working_capital_1_fy_one_finding__1',
-                'working_capital_2_fy_one_finding__1',
+                'quick_assets_fy_one_finding__1',
                 'total_assets_fy_one_finding__1',
                 'current_assets_fy_one_finding__1',
                 'current_liabilities_fy_one_finding__1',
@@ -4090,7 +4836,7 @@
                 'net_profit_fy_two_finding__1',
                 'gross_profit_fy_two_finding__1',
                 'working_capital_1_fy_two_finding__1',
-                'working_capital_2_fy_two_finding__1',
+                'quick_assets_fy_two_finding__1',
                 'total_assets_fy_two_finding__1',
                 'current_assets_fy_two_finding__1',
                 'current_liabilities_fy_two_finding__1',
@@ -4109,7 +4855,7 @@
                 'net_profit_fy_three_finding__1',
                 'gross_profit_fy_three_finding__1',
                 'working_capital_1_fy_three_finding__1',
-                'working_capital_2_fy_three_finding__1',
+                'quick_assets_fy_three_finding__1',
                 'total_assets_fy_three_finding__1',
                 'current_assets_fy_three_finding__1',
                 'current_liabilities_fy_three_finding__1',
@@ -4129,7 +4875,7 @@
                 'net_profit_fy_four_finding__1',
                 'gross_profit_fy_four_finding__1',
                 'working_capital_1_fy_four_finding__1',
-                'working_capital_2_fy_four_finding__1',
+                'quick_assets_fy_four_finding__1',
                 'total_assets_fy_four_finding__1',
                 'current_assets_fy_four_finding__1',
                 'current_liabilities_fy_four_finding__1',
@@ -4149,7 +4895,7 @@
                 'net_profit_fy_five_finding__1',
                 'gross_profit_fy_five_finding__1',
                 'working_capital_1_fy_five_finding__1',
-                'working_capital_2_fy_five_finding__1',
+                'quick_assets_fy_five_finding__1',
                 'total_assets_fy_five_finding__1',
                 'current_assets_fy_five_finding__1',
                 'current_liabilities_fy_five_finding__1',

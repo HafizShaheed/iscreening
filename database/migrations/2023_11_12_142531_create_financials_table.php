@@ -286,8 +286,6 @@ class CreateFinancialsTable extends Migration
     {
         $table->string("current_ratio_fy_two_$set")->nullable();
         $table->string("year_ratio_two_$set")->nullable();
-
-        $table->string("current_ratio_fy_two_$set")->nullable();
         // $table->string("current_ratio_analysis_fy_two_$set")->nullable();
         $table->string("debt_ratio_fy_two_$set")->nullable();
         // $table->string("debt_ratio_analysis_fy_two_$set")->nullable();
