@@ -3302,6 +3302,10 @@
 
                     <div class="row">
 
+                    
+                    <input type="hidden" name="BusinessIntelligenceID" id="BusinessIntelligenceID" class="form-control" value="{{$BusinessIntelligence->id}}">
+                    
+
                         <div class="col-xl-3 mb-3">
                             <label class="form-label">Select Year<span class="text-danger">*</span></label>
                             <select class="default-select style-1 form-control" id="year_BI_FY_one" name="year_BI_FY_one">

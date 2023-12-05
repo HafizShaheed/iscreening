@@ -1284,7 +1284,7 @@ class adminController extends Controller
         $FinancialsFindingsFyFour = FinancialsFindingsFyFour::where('financial_id', $Financial->id)->firstOrFail();
 
 
-       $FinancialsFindingsFyFour->year_fy_four_finding__1  = $request->input('revenue_fy_four_finding__1');
+       $FinancialsFindingsFyFour->year_four_finding__1  = $request->input('year_four_finding__1');
        $FinancialsFindingsFyFour->revenue_fy_four_finding__1  = $request->input('revenue_fy_four_finding__1');
        $FinancialsFindingsFyFour->net_profit_fy_four_finding__1  = $request->input('net_profit_fy_four_finding__1');
        $FinancialsFindingsFyFour->gross_profit_fy_four_finding__1  = $request->input('gross_profit_fy_four_finding__1');
@@ -1308,7 +1308,7 @@ class adminController extends Controller
 
 
        $FinancialsFindingsFyFive->revenue_fy_five_finding__1  = $request->input('revenue_fy_five_finding__1');
-       $FinancialsFindingsFyFive->year_fy_five_finding__1  = $request->input('revenue_fy_five_finding__1');
+       $FinancialsFindingsFyFive->year_five_finding__1  = $request->input('year_five_finding__1');
        $FinancialsFindingsFyFive->net_profit_fy_five_finding__1  = $request->input('net_profit_fy_five_finding__1');
        $FinancialsFindingsFyFive->gross_profit_fy_five_finding__1  = $request->input('gross_profit_fy_five_finding__1');
        $FinancialsFindingsFyFive->working_capital_1_fy_five_finding__1  = $request->input('working_capital_1_fy_five_finding__1');
@@ -1374,7 +1374,7 @@ class adminController extends Controller
 
 
 
-       $FinancialsRatioAnalysisFyTwo->year_ratio_fy_two_1  = $request->input('year_ratio_fy_two_1');
+       $FinancialsRatioAnalysisFyTwo->year_ratio_two_1  = $request->input('year_ratio_two_1');
        $FinancialsRatioAnalysisFyTwo->current_ratio_fy_two_1  = $request->input('current_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->debt_ratio_fy_two_1  = $request->input('debt_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->solvency_ratio_fy_two_1  = $request->input('solvency_ratio_fy_two_1');
@@ -1398,7 +1398,7 @@ class adminController extends Controller
 
 
         $FinancialsRatioAnalysisFyThree = FinancialsRatioAnalysisFyThree::where('financial_id', $Financial->id)->firstOrFail();
-       $FinancialsRatioAnalysisFyThree->year_ratio_fy_three_1  = $request->input('year_ratio_fy_three_1');
+       $FinancialsRatioAnalysisFyThree->year_ratio_three_1  = $request->input('year_ratio_three_1');
 
        $FinancialsRatioAnalysisFyThree->current_ratio_fy_three_1  = $request->input('current_ratio_fy_three_1');
        $FinancialsRatioAnalysisFyThree->debt_ratio_fy_three_1  = $request->input('debt_ratio_fy_three_1');
@@ -1423,7 +1423,7 @@ class adminController extends Controller
 
 
         $FinancialsRatioAnalysisFyFour = FinancialsRatioAnalysisFyFour::where('financial_id', $Financial->id)->firstOrFail();
-       $FinancialsRatioAnalysisFyFour->year_ratio_fy_four_1  = $request->input('year_ratio_fy_four_1');
+       $FinancialsRatioAnalysisFyFour->year_ratio_four_1  = $request->input('year_ratio_four_1');
 
        $FinancialsRatioAnalysisFyFour->current_ratio_fy_four_1  = $request->input('current_ratio_fy_four_1');
        $FinancialsRatioAnalysisFyFour->debt_ratio_fy_four_1  = $request->input('debt_ratio_fy_four_1');
@@ -1444,7 +1444,7 @@ class adminController extends Controller
         $FinancialsRatioAnalysisFyFour->save();
 
         $FinancialsRatioAnalysisFyFive = FinancialsRatioAnalysisFyFive::where('financial_id', $Financial->id)->firstOrFail();
-        $FinancialsRatioAnalysisFyFive->year_ratio_fy_five_1  = $request->input('year_ratio_fy_five_1');
+        $FinancialsRatioAnalysisFyFive->year_ratio_five_1  = $request->input('year_ratio_five_1');
 
        $FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1  = $request->input('current_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1  = $request->input('debt_ratio_fy_five_1');
@@ -1460,7 +1460,7 @@ class adminController extends Controller
        $FinancialsRatioAnalysisFyFive->trade_payable_days_ratio_fy_five_1  = $request->input('trade_payable_days_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->taffler_z_score_ratio_fy_five_1  = $request->input('taffler_z_score_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->zmijewski_x_score_ratio_fy_five_1  = $request->input('zmijewski_x_score_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->quick_ratio_fy_four_1  = $request->input('quick_ratio_fy_four_1');
+       $FinancialsRatioAnalysisFyFive->quick_ratio_fy_five_1  = $request->input('quick_ratio_fy_five_1');
 
         $FinancialsRatioAnalysisFyFive->save();
         }
