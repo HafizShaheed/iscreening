@@ -25,16 +25,16 @@ class CreateBusinessIntelligencesTable extends Migration
 
 
             // Operating Efficiency Ratio
-            $table->string('operating_efficiency_ratio_analysis')->nullable();
+            $table->string('operating_efficiency_BI_analysis')->nullable();
 
             // Inventory Turnover Ratio
-            $table->string('inventory_turnover_ratio_analysis')->nullable();
+            $table->string('inventory_turnover_BI_analysis')->nullable();
 
             // Days Sales in Inventory
-            $table->string('days_sales_in_inventory_analysis')->nullable();
+            $table->string('days_sales_in_inventory_BI_analysis')->nullable();
 
                // Accounts Payable Turnover Ratio
-            $table->string('accounts_payable_turnover_ratio_analysis')->nullable();
+            $table->string('accounts_payable_turnover_BI_analysis')->nullable();
 
             $this->addBusinessIntelligencesFYFields($table, "one");
             $this->addBusinessIntelligencesFYFields($table, "two");
@@ -63,16 +63,18 @@ class CreateBusinessIntelligencesTable extends Migration
 
     private function addBusinessIntelligencesFYFields(Blueprint $table, $set)
     {
-        $table->string("operating_efficiency_ratio_BI_FY_$set")->nullable();
+        $table->string("year_BI_FY_$set")->nullable();
+
+        $table->string("operating_efficiency_BI_FY_$set")->nullable();
 
         // Inventory Turnover Ratio
-        $table->string("inventory_turnover_ratio_BI_FY_$set")->nullable();
+        $table->string("inventory_turnover_BI_FY_$set")->nullable();
 
         // Days Sales in Inventory
         $table->string("days_sales_in_inventory_BI_FY_$set")->nullable();
 
            // Accounts Payable Turnover Ratio
-        $table->string("accounts_payable_turnover_ratio_BI_FY_$set")->nullable();
+        $table->string("accounts_payable_turnover_BI_FY_$set")->nullable();
     }
 }
 

@@ -221,7 +221,7 @@
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="no_of_directors" class="form-label">No of Directors</label>
-                            <input type="number" class="form-control" id="no_of_directors"  name="no_of_directors" value="{{$FirmBackground->no_of_directors}}" placeholder="">
+                            <input type="number" step="any" class="form-control" id="no_of_directors"  name="no_of_directors" value="{{$FirmBackground->no_of_directors}}" placeholder="">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="industry" class="form-label">Industry</label>
@@ -405,10 +405,10 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="regulatory_score" class="form-label">Regulatory Score </label>
-                            <input type="number" class="form-control" id="regulatory_score" name="regulatory_score" value="{{$FirmBackground->regulatory_score}}" placeholder="">
+                            <input type="number" step="any" class="form-control" id="regulatory_score" name="regulatory_score" value="{{$FirmBackground->regulatory_score}}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="score_analysis" class="form-label">Score Analysis </label>
+                            <label for="score_analysis"  class="form-label">Score Analysis </label>
                             <input type="text" class="form-control" id="score_analysis" name="score_analysis" value="{{$FirmBackground->score_analysis}}" min="1" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
@@ -444,216 +444,216 @@
                  <!-- Copy 1 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (1)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_1" class="form-label">Name (1)</label>
+                                <input type="text" class="form-control" id="name_1" name="name_1" value="{{$FirmBackground->name_1}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_1" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_1" name="pan_1" value="{{$FirmBackground->pan_1}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_1" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_1" name="aadhar_1" value="{{$FirmBackground->aadhar_1}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_1" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_1" name="date_of_appointment_1" value="{{$FirmBackground->date_of_appointment_1}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_1" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_1" name="educational_background_1" value="{{$FirmBackground->educational_background_1}}">
                             </div>
                         </div>
 
                         <!-- Copy 2 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (2)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_2" class="form-label">Name (2)</label>
+                                <input type="text" class="form-control" id="name_2" name="name_2" value="{{$FirmBackground->name_2}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_2" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_2" name="pan_2" value="{{$FirmBackground->pan_2}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_2" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_2" name="aadhar_2" value="{{$FirmBackground->aadhar_2}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_2" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_2" name="date_of_appointment_2" value="{{$FirmBackground->date_of_appointment_2}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_2" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_2" name="educational_background_2" value="{{$FirmBackground->educational_background_2}}">
                             </div>
                         </div>
 
                         <!-- Copy 3 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (3)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_3" class="form-label">Name (3)</label>
+                                <input type="text" class="form-control" id="name_3" name="name_3" value="{{$FirmBackground->name_3}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_3" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_3" name="pan_3" value="{{$FirmBackground->pan_3}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_3" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_3" name="aadhar_3" value="{{$FirmBackground->aadhar_3}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_3" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_3" name="date_of_appointment_3" value="{{$FirmBackground->date_of_appointment_3}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_3" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_3" name="educational_background_3" value="{{$FirmBackground->educational_background_3}}">
                             </div>
                         </div>
 
                         <!-- Copy 4 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (4)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_4" class="form-label">Name (4)</label>
+                                <input type="text" class="form-control" id="name_4" name="name_4" value="{{$FirmBackground->name_4}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_4" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_4" name="pan_4" value="{{$FirmBackground->pan_4}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_4" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_4" name="aadhar_4" value="{{$FirmBackground->aadhar_4}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_4" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_4" name="date_of_appointment_4" value="{{$FirmBackground->date_of_appointment_4}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_4" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_4" name="educational_background_4" value="{{$FirmBackground->educational_background_4}}">
                             </div>
                         </div>
 
                         <!-- Copy 5 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (5)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_5" class="form-label">Name (5)</label>
+                                <input type="text" class="form-control" id="name_5" name="name_5" value="{{$FirmBackground->name_5}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_5" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_5" name="pan_5" value="{{$FirmBackground->pan_5}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_5" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_5" name="aadhar_5" value="{{$FirmBackground->aadhar_5}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_5" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_5" name="date_of_appointment_5" value="{{$FirmBackground->date_of_appointment_5}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_5" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_5" name="educational_background_5" value="{{$FirmBackground->educational_background_5}}">
                             </div>
                         </div>
 
                         <!-- Copy 6 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (6)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_6" class="form-label">Name (6)</label>
+                                <input type="text" class="form-control" id="name_6" name="name_6" value="{{$FirmBackground->name_6}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_6" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_6" name="pan_6" value="{{$FirmBackground->pan_6}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_6" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_6" name="aadhar_6" value="{{$FirmBackground->aadhar_6}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_6" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_6" name="date_of_appointment_6" value="{{$FirmBackground->date_of_appointment_6}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_6" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_6" name="educational_background_6" value="{{$FirmBackground->educational_background_6}}">
                             </div>
                         </div>
 
                         <!-- Copy 7 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (7)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_7" class="form-label">Name (7)</label>
+                                <input type="text" class="form-control" id="name_7" name="name_7" value="{{$FirmBackground->name_7}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_7" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_7" name="pan_7" value="{{$FirmBackground->pan_7}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_7" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_7" name="aadhar_7" value="{{$FirmBackground->aadhar_7}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_7" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_7" name="date_of_appointment_7" value="{{$FirmBackground->date_of_appointment_7}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_7" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_7" name="educational_background_7" value="{{$FirmBackground->educational_background_7}}">
                             </div>
                         </div>
 
                         <!-- Copy 8 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (8)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_8" class="form-label">Name (8)</label>
+                                <input type="text" class="form-control" id="name_8" name="name_8" value="{{$FirmBackground->name_8}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_8" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_8" name="pan_8" value="{{$FirmBackground->pan_8}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_8" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_8" name="aadhar_8" value="{{$FirmBackground->aadhar_8}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_8" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_8" name="date_of_appointment_8" value="{{$FirmBackground->date_of_appointment_8}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_8" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_8" name="educational_background_8" value="{{$FirmBackground->educational_background_8}}">
                             </div>
                         </div>
 
                         <!-- Copy 9 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (9)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_9" class="form-label">Name (9)</label>
+                                <input type="text" class="form-control" id="name_9" name="name_9" value="{{$FirmBackground->name_9}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_9" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_9" name="pan_9" value="{{$FirmBackground->pan_9}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_9" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_9" name="aadhar_9" value="{{$FirmBackground->aadhar_9}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_9" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_9" name="date_of_appointment_9" value="{{$FirmBackground->date_of_appointment_9}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_9" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_9" name="educational_background_9" value="{{$FirmBackground->educational_background_9}}">
                             </div>
                         </div>
 
@@ -662,144 +662,28 @@
                         <!-- Copy 6 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name" class="form-label">Name (10)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
+                                <label for="name_3" class="form-label">Name (10)</label>
+                                <input type="text" class="form-control" id="name_3" name="name_3" value="{{$FirmBackground->name_3}}">
                             </div>
                             <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
+                                <label for="pan_3" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_3" name="pan_3" value="{{$FirmBackground->pan_3}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
+                                <label for="aadhar_3" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_3" name="aadhar_3" value="{{$FirmBackground->aadhar_3}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
+                                <label for="date_of_appointment_3" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_3" name="date_of_appointment_3" value="{{$FirmBackground->date_of_appointment_3}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
+                                <label for="educational_background_3" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_3" name="educational_background_3" value="{{$FirmBackground->educational_background_3}}">
                             </div>
                         </div>
 
-                        <!-- Copy 7 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name" class="form-label">Name (11)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
-                            </div>
-                        </div>
 
-                        <!-- Copy 8 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name" class="form-label">Name (12)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 9 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name" class="form-label">Name (13)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
-                            </div>
-                        </div>
-                         <!-- Copy 9 -->
-                         <div class="row">
-                            <div class="col">
-                                <label for="name" class="form-label">Name (14)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
-                            </div>
-                        </div>
-                         <!-- Copy 15 -->
-                         <div class="row">
-                            <div class="col">
-                                <label for="name" class="form-label">Name (15)</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{$FirmBackground->name}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan" name="pan" value="{{$FirmBackground->pan}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar" name="aadhar" value="{{$FirmBackground->aadhar}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment" name="date_of_appointment" value="{{$FirmBackground->date_of_appointment}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background" name="educational_background" value="{{$FirmBackground->educational_background}}">
-                            </div>
-                        </div>
 
 
 
@@ -815,7 +699,7 @@
                     <div class="row">
                         <div class="col-xl-6 mb-3">
                             <label for="credit_score" class="form-label">Credit Score</label>
-                            <input type="number" class="form-control" id="credit_score" name="credit_score" value="{{$FirmBackground->credit_score}}">
+                            <input type="number" step="any" class="form-control" id="credit_score" name="credit_score" value="{{$FirmBackground->credit_score}}">
                         </div>
                     </div>
                     <div class="row">
@@ -1696,7 +1580,7 @@
                         <div class="row">
                             <div class="col-xl-3  mb-3">
                                 <label for="on_ground_verification_score" class="form-label">On-Ground Verification Score</label>
-                                <input type="number" minlength="1" class="form-control" id="on_ground_verification_score" name="on_ground_verification_score" value="{{$OnGroundVerification->on_ground_verification_score}}" placeholder="">
+                                <input type="number" step="any" minlength="1" class="form-control" id="on_ground_verification_score" name="on_ground_verification_score" value="{{$OnGroundVerification->on_ground_verification_score}}" placeholder="">
                             </div>
                             <div class="col-xl-3  mb-3">
                                 <label for="score_analysis" class="form-label">Score Analysis</label>
@@ -1942,7 +1826,7 @@
                     <div class="row">
                         <div class="col-xl-4 mb-3">
                             <label for="legal_score" class="form-label">Legal Score</label>
-                            <input type="number" class="form-control" name="legal_score" id="legal_score" value="{{$CourtCheck->legal_score}}">
+                            <input type="number" step="any" class="form-control" name="legal_score" id="legal_score" value="{{$CourtCheck->legal_score}}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="score_analysis" class="form-label">Score Analysis</label>
@@ -1998,7 +1882,7 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="amount_1" class="form-label">Amount</label>
-                            <input type="number" minlenght="0" class="form-control" name="amount_1"  id="amount_1" value="{{$Financial->amount_1}}" placeholder="">
+                            <input type="number" step="any" minlenght="0" class="form-control" name="amount_1"  id="amount_1" value="{{$Financial->amount_1}}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="charged_property_1" class="form-label">Charged Property </label>
@@ -2015,7 +1899,7 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="amount_2" class="form-label">Amount</label>
-                            <input  type="number" minlenght="0" class="form-control" name="amount_2"  id="amount_2" value="{{$Financial->amount_2}}" placeholder="">
+                            <input  type="number" step="any" minlenght="0" class="form-control" name="amount_2"  id="amount_2" value="{{$Financial->amount_2}}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="charged_property_2" class="form-label">Charged Property </label>
@@ -2032,7 +1916,7 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="amount_3" class="form-label">Amount</label>
-                            <input  type="number" minlenght="0" class="form-control" name="amount_3"  id="amount_3" value="{{$Financial->amount_3}}" placeholder="">
+                            <input  type="number" step="any" minlenght="0" class="form-control" name="amount_3"  id="amount_3" value="{{$Financial->amount_3}}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="charged_property_3" class="form-label">Charged Property </label>
@@ -2050,7 +1934,7 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="amount_4" class="form-label">Amount</label>
-                            <input  type="number" minlenght="0" class="form-control" name="amount_4"  id="amount_4" value="{{$Financial->amount_4}}" placeholder="">
+                            <input  type="number" step="any" minlenght="0" class="form-control" name="amount_4"  id="amount_4" value="{{$Financial->amount_4}}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
                             <label for="charged_property_4" class="form-label">Charged Property </label>
@@ -2058,7 +1942,7 @@
                         </div>
                         <div class="col-xl-3 mb-3">
                                 <label for="overall_financial_score" class="form-label">Overall Financial Score</label>
-                                <input type="number" minlength="0" class="form-control" name="overall_financial_score" id="overall_financial_score" value="{{$Financial->overall_financial_score}}" placeholder="">
+                                <input type="number" step="any" minlength="0" class="form-control" name="overall_financial_score" id="overall_financial_score" value="{{$Financial->overall_financial_score}}" placeholder="">
                             </div>
 
 
@@ -2102,12 +1986,12 @@
 
                                 <div class="col-xl-4 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_one_finding__1" name="year_one_finding__1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}" {{$FinancialsFindingsFyOne->year_one_finding__1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -2119,7 +2003,7 @@
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_one_finding__1" class="form-label">Revenue</label>
-                                <input type="text" class="form-control" name="revenue_fy_one_finding__1"  id="revenue_fy_one_finding__1" value="{{$FinancialsFindingsFyOne->revenue_fy_one_finding__1}}" placeholder="">
+                                <input type="text" step="any" class="form-control" name="revenue_fy_one_finding__1"  id="revenue_fy_one_finding__1" value="{{$FinancialsFindingsFyOne->revenue_fy_one_finding__1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="net_profit_fy_one_finding__1" class="form-label">Net Profit</label>
@@ -2224,12 +2108,13 @@
 
                                 <div class="col-xl-4 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_two_finding__1" name="year_two_finding__1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}"
+                                            {{$FinancialsFindingsFyTwo->year_two_finding__1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -2344,12 +2229,13 @@
 
                                 <div class="col-xl-4 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_three_finding__1" name="year_three_finding__1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}"
+                                            {{$FinancialsFindingsFyThree->year_three_finding__1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -2464,12 +2350,12 @@
 
                                 <div class="col-xl-4 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_four_finding__1" name="year_four_finding__1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}" {{$FinancialsFindingsFyFour->year_four_finding__1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -2584,12 +2470,13 @@
 
                                  <div class="col-xl-4 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_five_finding__1" name="year_five_finding__1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}"
+                                            {{$FinancialsFindingsFyFive->year_five_finding__1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -2707,12 +2594,12 @@
 
                             <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_ratio_one_1" name="year_ratio_one_1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}" {{$FinancialsRatioAnalysisFyOne->year_ratio_one_1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -2720,12 +2607,12 @@
 
                                 </div>
                                 <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
-                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                                <label for="quick_ratio_fy_one_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="quick_ratio_fy_one_1"  id="quick_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->quick_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="current_ratio_analysis_fy_one_1"  id="current_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1}}" placeholder="">
+                                <label for="quick_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="quick_ratio_analysis_fy_one_1"  id="quick_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
                         </div>
                         <div class="row">
@@ -2803,7 +2690,7 @@
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_one_1" class="form-label">Springate S Score</label>
-                                <input type="number" class="form-control" name="springate_s_score_ratio_fy_one_1"  id="springate_s_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1}}" placeholder="">
+                                <input type="number" step="any" class="form-control" name="springate_s_score_ratio_fy_one_1"  id="springate_s_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
@@ -2882,12 +2769,12 @@
                          <div class="row">
                                     <div class="col-xl-3 mb-3">
                                             <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                            <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                            <select class="default-select style-1 form-control" id="year_ratio_two_1" name="year_ratio_two_1">
                                                 <option data-display="Select" value="" disabled>
                                                     Select Year
                                                 </option>
                                                     @forelse ($years as $year)
-                                                    <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                                    <option value="{{$year->year}}" {{$FinancialsRatioAnalysisFyTwo->year_ratio_two_1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                                     @empty
                                                     <p>No records found!</p>
                                                     @endforelse
@@ -2895,8 +2782,8 @@
 
                                         </div>
                                         <div class="col-xl-3 mb-3">
-                                        <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
-                                        <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                                        <label for="quick_ratio_fy_two_1" class="form-label">Quick Ratio </label>
+                                        <input type="text" class="form-control" name="quick_ratio_fy_two_1"  id="quick_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->quick_ratio_fy_two_1}}" placeholder="">
                                     </div>
                         </div>
                         <div class="row">
@@ -2929,7 +2816,7 @@
                                 <label for="absolute_liquidity_ratio_fy_two_1" class="form-label">Absolute Liquidity Ratio</label>
                                 <input type="text" class="form-control" name="absolute_liquidity_ratio_fy_two_1"  id="absolute_liquidity_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1}}" placeholder="">
                             </div>
-                          
+
                             <div class="col-xl-3 mb-3">
                                 <label for="proprietary_ratio_fy_two_1" class="form-label">Proprietary Ratio</label>
                                 <input type="text" class="form-control" name="proprietary_ratio_fy_two_1"  id="proprietary_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1}}" placeholder="">
@@ -2946,7 +2833,7 @@
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_two_1" class="form-label">Springate S Score</label>
-                                <input type="number" class="form-control" name="springate_s_score_ratio_fy_two_1"  id="springate_s_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1}}" placeholder="">
+                                <input type="number"  step="any" class="form-control" name="springate_s_score_ratio_fy_two_1"  id="springate_s_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_two_1" class="form-label">Trade Receivable Days</label>
@@ -3007,12 +2894,12 @@
                          <div class="row">
                             <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_ratio_three_1" name="year_ratio_three_1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}" {{$FinancialsRatioAnalysisFyThree->year_ratio_three_1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -3020,8 +2907,8 @@
 
                                 </div>
                                 <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
-                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                                <label for="quick_ratio_fy_three_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="quick_ratio_fy_three_1"  id="quick_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->quick_ratio_fy_three_1}}" placeholder="">
                             </div>
                         </div>
                         <div class="row">
@@ -3072,7 +2959,7 @@
 
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_three_1" class="form-label">Springate S Score</label>
-                                <input type="number" class="form-control" name="springate_s_score_ratio_fy_three_1" id="springate_s_score_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->springate_s_score_ratio_fy_three_1}}" placeholder="">
+                                <input type="number" step="any" class="form-control" name="springate_s_score_ratio_fy_three_1" id="springate_s_score_ratio_fy_three_1" value="{{$FinancialsRatioAnalysisFyThree->springate_s_score_ratio_fy_three_1}}" placeholder="">
                             </div>
 
                             <div class="col-xl-3 mb-3">
@@ -3135,12 +3022,12 @@
 
                             <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_ratio_four_1" name="year_ratio_four_1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}"{{$FinancialsRatioAnalysisFyFour->year_ratio_four_1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -3148,8 +3035,8 @@
 
                                 </div>
                                 <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
-                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                                <label for="quick_ratio_fy_four_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="quick_ratio_fy_four_1"  id="quick_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->quick_ratio_fy_four_1}}" placeholder="">
                             </div>
                         </div>
                         <div class="row">
@@ -3201,7 +3088,7 @@
 
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_four_1" class="form-label">Springate S Score</label>
-                                <input type="number" class="form-control" name="springate_s_score_ratio_fy_four_1"  id="springate_s_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->springate_s_score_ratio_fy_four_1}}" placeholder="">
+                                <input type="number" step="any" class="form-control" name="springate_s_score_ratio_fy_four_1"  id="springate_s_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->springate_s_score_ratio_fy_four_1}}" placeholder="">
                             </div>
 
                             <div class="col-xl-3 mb-3">
@@ -3263,12 +3150,12 @@
                          <div class="row">
                             <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                                    <select class="default-select style-1 form-control" id="year_ratio_five_1" name="year_ratio_five_1">
                                         <option data-display="Select" value="" disabled>
                                             Select Year
                                         </option>
                                             @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                            <option value="{{$year->year}}" {{$FinancialsRatioAnalysisFyFive->year_ratio_five_1 ==$year->year ? 'selected' : '' }}>{{ $year->year  }}</option>
                                             @empty
                                             <p>No records found!</p>
                                             @endforelse
@@ -3276,8 +3163,8 @@
 
                                 </div>
                                 <div class="col-xl-3 mb-3">
-                                <label for="current_ratio_fy_one_1" class="form-label">Quick Ratio </label>
-                                <input type="text" class="form-control" name="current_ratio_fy_one_1"  id="current_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1}}" placeholder="">
+                                <label for="quick_ratio_fy_five_1" class="form-label">Quick Ratio </label>
+                                <input type="text" class="form-control" name="quick_ratio_fy_five_1"  id="quick_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->quick_ratio_fy_five_1}}" placeholder="">
                             </div>
                         </div>
                         <div class="row">
@@ -3329,7 +3216,7 @@
 
                             <div class="col-xl-3 mb-3">
                                 <label for="springate_s_score_ratio_fy_five_1" class="form-label">Springate S Score</label>
-                                <input type="number" class="form-control" name="springate_s_score_ratio_fy_five_1"  id="springate_s_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1}}" placeholder="">
+                                <input type="number" step="any" class="form-control" name="springate_s_score_ratio_fy_five_1"  id="springate_s_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1}}" placeholder="">
                             </div>
 
                             <div class="col-xl-3 mb-3">
@@ -3417,12 +3304,12 @@
 
                         <div class="col-xl-3 mb-3">
                             <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                            <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                            <select class="default-select style-1 form-control" id="year_BI_FY_one" name="year_BI_FY_one">
                                 <option data-display="Select" value="" disabled>
                                     Select Year
                                 </option>
                                     @forelse ($years as $year)
-                                    <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                    <option value="{{$year->year}}" {{$BusinessIntelligence->year_BI_FY_one ==$year->year ? 'selected' : '' }}>{{ $year->year}}</option>
                                     @empty
                                     <p>No records found!</p>
                                     @endforelse
@@ -3432,54 +3319,54 @@
                     </div>
                     <div class="row">
                     <div class="col-xl-3 mb-3">
-                    <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
-                    <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                    <label for="operating_efficiency_BI_FY_one" class="form-label">Operating Efficiency ratio</label>
+                    <input type="text" class="form-control" name="operating_efficiency_BI_FY_one" id="operating_efficiency_BI_FY_one" value="{{$BusinessIntelligence->operating_efficiency_BI_FY_one}}" placeholder="">
                     </div>
 
                     <div class="col-xl-3 mb-3">
-                    <label for="debt_ratio_fy_five_1" class="form-label">Analysis</label>
-                    <input type="text" class="form-control" name="debt_ratio_fy_five_1" id="debt_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1}}" placeholder="">
+                    <label for="operating_efficiency_BI_analysis" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="operating_efficiency_BI_analysis" id="operating_efficiency_BI_analysis" value="{{$BusinessIntelligence->operating_efficiency_BI_analysis}}" placeholder="">
                     </div>
 
                     <div class="col-xl-3 mb-3">
-                    <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
-                    <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                    <label for="inventory_turnover_BI_FY_one" class="form-label">Inventory Turnover Ratio</label>
+                    <input type="text" class="form-control" name="inventory_turnover_BI_FY_one" id="inventory_turnover_BI_FY_one" value="{{$BusinessIntelligence->inventory_turnover_BI_FY_one}}" placeholder="">
                     </div>
 
                     <div class="col-xl-3 mb-3">
-                    <label for="debt_to_equity_ratio_fy_five_1" class="form-label">Analysis</label>
-                    <input type="text" class="form-control" name="debt_to_equity_ratio_fy_five_1"  id="debt_to_equity_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1}}" placeholder="">
+                    <label for="inventory_turnover_BI_analysis" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="inventory_turnover_BI_analysis"  id="inventory_turnover_BI_analysis" value="{{$BusinessIntelligence->inventory_turnover_BI_analysis}}" placeholder="">
                     </div>
 
                     <div class="col-xl-3 mb-3">
-                    <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
-                    <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                    <label for="days_sales_in_inventory_BI_FY_one" class="form-label">Days sales in Inventory</label>
+                    <input type="text" class="form-control" name="days_sales_in_inventory_BI_FY_one"  id="days_sales_in_inventory_BI_FY_one" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_FY_one}}" placeholder="">
                     </div>
                     <div class="col-xl-3 mb-3">
-                    <label for="debt_to_equity_ratio_fy_five_1" class="form-label">Analysis</label>
-                    <input type="text" class="form-control" name="debt_to_equity_ratio_fy_five_1"  id="debt_to_equity_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1}}" placeholder="">
-                    </div>
-
-
-                    <div class="col-xl-3 mb-3">
-                    <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
-                    <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
-                    </div>
-
-                    <div class="col-xl-3 mb-3">
-                    <label for="net_profit_ratio_fy_five_1" class="form-label">Analysis</label>
-                    <input type="text" class="form-control" name="net_profit_ratio_fy_five_1"  id="net_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->net_profit_ratio_fy_five_1}}" placeholder="">
-                    </div>
-
-                    <div class="col-xl-3 mb-3">
-                    <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
-                    <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
+                    <label for="days_sales_in_inventory_BI_analysis" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="days_sales_in_inventory_BI_analysis"  id="days_sales_in_inventory_BI_analysis" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_analysis}}" placeholder="">
                     </div>
 
 
                     <div class="col-xl-3 mb-3">
-                    <label for="springate_s_score_ratio_fy_five_1" class="form-label">Score Analysis</label>
-                    <input type="number" class="form-control" name="springate_s_score_ratio_fy_five_1"  id="springate_s_score_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1}}" placeholder="">
+                    <label for="accounts_payable_turnover_BI_FY_one" class="form-label">Accounts Payable Turnover Ratio</label>
+                    <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_one"  id="accounts_payable_turnover_BI_FY_one" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_one}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="accounts_payable_turnover_BI_analysis" class="form-label">Analysis</label>
+                    <input type="text" class="form-control" name="accounts_payable_turnover_BI_analysis"  id="accounts_payable_turnover_BI_analysis" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_analysis}}" placeholder="">
+                    </div>
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="efficiency_score" class="form-label">Efficiency Score</label>
+                    <input type="number" step="any" class="form-control" name="efficiency_score"  id="efficiency_score" value="{{$BusinessIntelligence->efficiency_score}}" placeholder="">
+                    </div>
+
+
+                    <div class="col-xl-3 mb-3">
+                    <label for="score_analysis" class="form-label">Score Analysis</label>
+                    <input type="number"  step="any" class="form-control" name="score_analysis"  id="score_analysis" value="{{$BusinessIntelligence->score_analysis}}" placeholder="">
                     </div>
 
 
@@ -3528,48 +3415,44 @@
 
                     <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
-                                        <option data-display="Select" value="" disabled>
-                                            Select Year
-                                        </option>
-                                            @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
-                                            @empty
-                                            <p>No records found!</p>
-                                            @endforelse
-                                    </select>
+                                    <select class="default-select style-1 form-control" id="year_BI_FY_two" name="year_BI_FY_two">
+                                <option data-display="Select" value="" disabled>
+                                    Select Year
+                                </option>
+                                    @forelse ($years as $year)
+                                    <option value="{{$year->year}}" {{$BusinessIntelligence->year_BI_FY_two ==$year->year ? 'selected' : '' }}>{{ $year->year}}</option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                            </select>
 
                                 </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
-                            <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                            <label for="operating_efficiency_BI_FY_two" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="operating_efficiency_BI_FY_two" id="operating_efficiency_BI_FY_two" value="{{$BusinessIntelligence->operating_efficiency_BI_FY_two}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
-                            <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                            <label for="inventory_turnover_BI_FY_two" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="inventory_turnover_BI_FY_two" id="inventory_turnover_BI_FY_two" value="{{$BusinessIntelligence->inventory_turnover_BI_FY_two}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
-                            <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                            <label for="days_sales_in_inventory_BI_FY_two" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="days_sales_in_inventory_BI_FY_two"  id="days_sales_in_inventory_BI_FY_two" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_FY_two}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
-                            <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                            <label for="accounts_payable_turnover_BI_FY_two" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_two"  id="accounts_payable_turnover_BI_FY_two" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_two}}" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
-                            <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
-                        </div>
-
+                     
 
                     </div>
 
@@ -3614,48 +3497,44 @@
 
                                  <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
-                                        <option data-display="Select" value="" disabled>
-                                            Select Year
-                                        </option>
-                                            @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
-                                            @empty
-                                            <p>No records found!</p>
-                                            @endforelse
-                                    </select>
+                                    <select class="default-select style-1 form-control" id="year_BI_FY_three" name="year_BI_FY_three">
+                                <option data-display="Select" value="" disabled>
+                                    Select Year
+                                </option>
+                                    @forelse ($years as $year)
+                                    <option value="{{$year->year}}" {{$BusinessIntelligence->year_BI_FY_three ==$year->year ? 'selected' : '' }}>{{ $year->year}}</option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                            </select>
 
                                 </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
-                            <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                                <div class="col-xl-3 mb-3">
+                            <label for="operating_efficiency_BI_FY_three" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="operating_efficiency_BI_FY_three" id="operating_efficiency_BI_FY_three" value="{{$BusinessIntelligence->operating_efficiency_BI_FY_three}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
-                            <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                            <label for="inventory_turnover_BI_FY_three" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="inventory_turnover_BI_FY_three" id="inventory_turnover_BI_FY_three" value="{{$BusinessIntelligence->inventory_turnover_BI_FY_three}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
-                            <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                            <label for="days_sales_in_inventory_BI_FY_three" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="days_sales_in_inventory_BI_FY_three"  id="days_sales_in_inventory_BI_FY_three" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_FY_three}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
-                            <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                            <label for="accounts_payable_turnover_BI_FY_three" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_three"  id="accounts_payable_turnover_BI_FY_three" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_three}}" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
-                            <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
-                        </div>
-
+                       
 
                     </div>
 
@@ -3698,47 +3577,44 @@
 
                                 <div class="col-xl-3 mb-3">
                                     <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                                    <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
-                                        <option data-display="Select" value="" disabled>
-                                            Select Year
-                                        </option>
-                                            @forelse ($years as $year)
-                                            <option value="{{$year->year}}">{{ $year->year  }}</option>
-                                            @empty
-                                            <p>No records found!</p>
-                                            @endforelse
-                                    </select>
+                                    <select class="default-select style-1 form-control" id="year_BI_FY_four" name="year_BI_FY_four">
+                                <option data-display="Select" value="" disabled>
+                                    Select Year
+                                </option>
+                                    @forelse ($years as $year)
+                                    <option value="{{$year->year}}" {{$BusinessIntelligence->year_BI_FY_four ==$year->year ? 'selected' : '' }}>{{ $year->year}}</option>
+                                    @empty
+                                    <p>No records found!</p>
+                                    @endforelse
+                            </select>
 
                                 </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
-                            <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                                <div class="col-xl-3 mb-3">
+                            <label for="operating_efficiency_BI_FY_four" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="operating_efficiency_BI_FY_four" id="operating_efficiency_BI_FY_four" value="{{$BusinessIntelligence->operating_efficiency_BI_FY_four}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
-                            <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                            <label for="inventory_turnover_BI_FY_four" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="inventory_turnover_BI_FY_four" id="inventory_turnover_BI_FY_four" value="{{$BusinessIntelligence->inventory_turnover_BI_FY_four}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
-                            <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                            <label for="days_sales_in_inventory_BI_FY_four" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="days_sales_in_inventory_BI_FY_four"  id="days_sales_in_inventory_BI_FY_four" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_FY_four}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                            <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
-                            <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                            <label for="accounts_payable_turnover_BI_FY_four" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_four"  id="accounts_payable_turnover_BI_FY_four" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_four}}" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
-                            <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
-                        </div>
+                        
 
 
                     </div>
@@ -3787,12 +3663,12 @@
 
                         <div class="col-xl-3 mb-3">
                             <label class="form-label">Select Year<span class="text-danger">*</span></label>
-                            <select class="default-select style-1 form-control" id="form_of_entity" name="form_of_entity">
+                            <select class="default-select style-1 form-control" id="year_BI_FY_five" name="year_BI_FY_five">
                                 <option data-display="Select" value="" disabled>
                                     Select Year
                                 </option>
                                     @forelse ($years as $year)
-                                    <option value="{{$year->year}}">{{ $year->year  }}</option>
+                                    <option value="{{$year->year}}" {{$BusinessIntelligence->year_BI_FY_five ==$year->year ? 'selected' : '' }}>{{ $year->year}}</option>
                                     @empty
                                     <p>No records found!</p>
                                     @endforelse
@@ -3800,35 +3676,31 @@
 
                         </div>
                         <div class="col-xl-3 mb-3">
-                        <label for="current_ratio_fy_five_1" class="form-label">Operating Efficiency ratio</label>
-                        <input type="text" class="form-control" name="current_ratio_fy_five_1" id="current_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1}}" placeholder="">
+                            <label for="operating_efficiency_BI_FY_five" class="form-label">Operating Efficiency ratio</label>
+                            <input type="text" class="form-control" name="operating_efficiency_BI_FY_five" id="operating_efficiency_BI_FY_five" value="{{$BusinessIntelligence->operating_efficiency_BI_FY_five}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                        <label for="solvency_ratio_fy_five_1" class="form-label">Inventory Turnover Ratio</label>
-                        <input type="text" class="form-control" name="solvency_ratio_fy_five_1" id="solvency_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1}}" placeholder="">
+                            <label for="inventory_turnover_BI_FY_five" class="form-label">Inventory Turnover Ratio</label>
+                            <input type="text" class="form-control" name="inventory_turnover_BI_FY_five" id="inventory_turnover_BI_FY_five" value="{{$BusinessIntelligence->inventory_turnover_BI_FY_five}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                        <label for="asset_turnover_ratio_fy_five_1" class="form-label">Days sales in Inventory</label>
-                        <input type="text" class="form-control" name="asset_turnover_ratio_fy_five_1"  id="asset_turnover_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1}}" placeholder="">
+                            <label for="days_sales_in_inventory_BI_FY_five" class="form-label">Days sales in Inventory</label>
+                            <input type="text" class="form-control" name="days_sales_in_inventory_BI_FY_five"  id="days_sales_in_inventory_BI_FY_five" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_FY_five}}" placeholder="">
                         </div>
 
 
 
                         <div class="col-xl-3 mb-3">
-                        <label for="proprietary_ratio_fy_five_1" class="form-label">Accounts Payable Turnover Ratio</label>
-                        <input type="text" class="form-control" name="proprietary_ratio_fy_five_1"  id="proprietary_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1}}" placeholder="">
+                            <label for="accounts_payable_turnover_BI_FY_five" class="form-label">Accounts Payable Turnover Ratio</label>
+                            <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_five"  id="accounts_payable_turnover_BI_FY_five" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_five}}" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
-                        <label for="gross_profit_ratio_fy_five_1" class="form-label">Efficiency Score</label>
-                        <input type="text" class="form-control" name="gross_profit_ratio_fy_five_1"  id="gross_profit_ratio_fy_five_1" value="{{$FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1}}" placeholder="">
-                        </div>
-
+                     
 
                         </div>
                         <!-- Navigation buttons -->
@@ -3924,15 +3796,15 @@
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="credit_score_1" class="form-label">Credit Score</label>
-                            <input type="number" class="form-control" name="credit_score_1" id="credit_score_1" value="{{$TaxReurnCredit->credit_score_1}}">
+                            <input type="number"  step="any" class="form-control" name="credit_score_1" id="credit_score_1" value="{{$TaxReurnCredit->credit_score_1}}">
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="num_of_loans_1" class="form-label">No. of Loans</label>
-                            <input type="number" class="form-control"  name="num_of_loans_1"  id="num_of_loans_1" value="{{$TaxReurnCredit->num_of_loans_1}}">
+                            <input type="number"  step="any" class="form-control"  name="num_of_loans_1"  id="num_of_loans_1" value="{{$TaxReurnCredit->num_of_loans_1}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="outstanding_amount_1" class="form-label">Outstanding Amount</label>
-                            <input type="number" class="form-control" name="outstanding_amount_1" id="outstanding_amount_1" value="{{$TaxReurnCredit->outstanding_amount_1}}">
+                            <input type="number"  step="any" class="form-control" name="outstanding_amount_1" id="outstanding_amount_1" value="{{$TaxReurnCredit->outstanding_amount_1}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="solvency_1" class="form-label">Solvency</label>
@@ -3955,15 +3827,15 @@
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="credit_score_2" class="form-label">Credit Score</label>
-                            <input type="number" class="form-control" name="credit_score_2" id="credit_score_2" value="{{$TaxReurnCredit->credit_score_2}}">
+                            <input type="number"  step="any" class="form-control" name="credit_score_2" id="credit_score_2" value="{{$TaxReurnCredit->credit_score_2}}">
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="num_of_loans_2" class="form-label">No. of Loans</label>
-                            <input type="number" class="form-control"  name="num_of_loans_2"  id="num_of_loans_2" value="{{$TaxReurnCredit->num_of_loans_2}}">
+                            <input type="number"  step="any" class="form-control"  name="num_of_loans_2"  id="num_of_loans_2" value="{{$TaxReurnCredit->num_of_loans_2}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="outstanding_amount_2" class="form-label">Outstanding Amount</label>
-                            <input type="number" class="form-control" name="outstanding_amount_2" id="outstanding_amount_2" value="{{$TaxReurnCredit->outstanding_amount_2}}">
+                            <input type="number"  step="any" class="form-control" name="outstanding_amount_2" id="outstanding_amount_2" value="{{$TaxReurnCredit->outstanding_amount_2}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="solvency_2" class="form-label">Solvency</label>
@@ -3986,15 +3858,15 @@
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="credit_score_3" class="form-label">Credit Score</label>
-                            <input type="number" class="form-control" name="credit_score_3" id="credit_score_3" value="{{$TaxReurnCredit->credit_score_3}}">
+                            <input type="number"  step="any" class="form-control" name="credit_score_3" id="credit_score_3" value="{{$TaxReurnCredit->credit_score_3}}">
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="num_of_loans_3" class="form-label">No. of Loans</label>
-                            <input type="number" class="form-control"  name="num_of_loans_3"  id="num_of_loans_3" value="{{$TaxReurnCredit->num_of_loans_3}}">
+                            <input type="number"  step="any" class="form-control"  name="num_of_loans_3"  id="num_of_loans_3" value="{{$TaxReurnCredit->num_of_loans_3}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="outstanding_amount_3" class="form-label">Outstanding Amount</label>
-                            <input type="number" class="form-control" name="outstanding_amount_3" id="outstanding_amount_3" value="{{$TaxReurnCredit->outstanding_amount_3}}">
+                            <input type="number"  step="any" class="form-control" name="outstanding_amount_3" id="outstanding_amount_3" value="{{$TaxReurnCredit->outstanding_amount_3}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="solvency_3" class="form-label">Solvency</label>
@@ -4017,15 +3889,15 @@
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="credit_score_4" class="form-label">Credit Score</label>
-                            <input type="number" class="form-control" name="credit_score_4" id="credit_score_4" value="{{$TaxReurnCredit->credit_score_4}}">
+                            <input type="number"  step="any" class="form-control" name="credit_score_4" id="credit_score_4" value="{{$TaxReurnCredit->credit_score_4}}">
                         </div>
                         <div class="col-xl-1 mb-3">
                             <label for="num_of_loans_4" class="form-label">No. of Loans</label>
-                            <input type="number" class="form-control"  name="num_of_loans_4"  id="num_of_loans_4" value="{{$TaxReurnCredit->num_of_loans_4}}">
+                            <input type="number"  step="any" class="form-control"  name="num_of_loans_4"  id="num_of_loans_4" value="{{$TaxReurnCredit->num_of_loans_4}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="outstanding_amount_4" class="form-label">Outstanding Amount</label>
-                            <input type="number" class="form-control" name="outstanding_amount_4" id="outstanding_amount_4" value="{{$TaxReurnCredit->outstanding_amount_4}}">
+                            <input type="number"  step="any" class="form-control" name="outstanding_amount_4" id="outstanding_amount_4" value="{{$TaxReurnCredit->outstanding_amount_4}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="solvency_4" class="form-label">Solvency</label>
@@ -4045,7 +3917,7 @@
                     <div class="row">
                         <div class="col-xl-2 mb-3">
                             <label for="overall_credit_history_score" class="form-label">Overall Credit History Score</label>
-                            <input type="number" class="form-control" name="overall_credit_history_score" id="overall_credit_history_score" value="{{$TaxReurnCredit->overall_credit_history_score}}">
+                            <input type="number"  step="any" class="form-control" name="overall_credit_history_score" id="overall_credit_history_score" value="{{$TaxReurnCredit->overall_credit_history_score}}">
                         </div>
                         <div class="col-xl-2 mb-3">
                             <label for="score_analysis" class="form-label">Score Analysis</label>
@@ -4097,7 +3969,7 @@
 
                             <div class="col-xl-3 mb-3">
                                 <label for="market_reputation_score" class="form-label">Market Reputation Score </label>
-                                <input type="number" class="form-control"  name="market_reputation_score" id="market_reputation_score" value="{{$MarketReputation->market_reputation_score}}" placeholder="">
+                                <input type="number"  step="any" class="form-control"  name="market_reputation_score" id="market_reputation_score" value="{{$MarketReputation->market_reputation_score}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="score_analysis" class="form-label">Score Analysis </label>
@@ -4185,6 +4057,15 @@
                         <div class="col-xl-2 mb-3">
                             <label for="key_observation" class="form-label">Observations</label>
                             <input type="text" class="form-control" name="key_observation" id="key_observation" value="{{$KeyObservation->key_observation}}" >
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="file" class="form-label">Upload Final Report</label>
+                            <div class="dz-default dlab-message upload-img mb-3">
+                                <div class="fallback">
+                                    <input name="key_observation_final_report_file" title="Support Formate Pdf only" type="file" class="form-control" id="key_observation_final_report_file" accept=".pdf" placeholder="">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

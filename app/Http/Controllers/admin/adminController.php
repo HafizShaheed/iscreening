@@ -680,11 +680,66 @@ class adminController extends Controller
         $firmBackground->regulatory_score = $request->input('regulatory_score');
         $firmBackground->score_analysis = $request->input('score_analysis');
         $firmBackground->Type_of_risk = $request->input('credit_score') > 60 ? 'High Risk' : ($request->input('credit_score') <= 60 && $request->input('credit_score') > 30 ? 'Medium Risk' : ($request->input('credit_score') <= 30 ? 'Low Risk' : '' ) );
-        $firmBackground->name = $request->input('name');
-        $firmBackground->pan = $request->input('pan');
-        $firmBackground->aadhar = $request->input('aadhar');
-        $firmBackground->date_of_appointment = $request->input('date_of_appointment');
-        $firmBackground->educational_background = $request->input('educational_background');
+        $firmBackground->name_1 = $request->input('name_1');
+        $firmBackground->pan_1 = $request->input('pan_1');
+        $firmBackground->aadhar_1 = $request->input('aadhar_1');
+        $firmBackground->date_of_appointment_1 = $request->input('date_of_appointment_1');
+        $firmBackground->educational_background_1 = $request->input('educational_background_1');
+        // second
+        $firmBackground->name_2 = $request->input('name_2');
+        $firmBackground->pan_2 = $request->input('pan_2');
+        $firmBackground->aadhar_2 = $request->input('aadhar_2');
+        $firmBackground->date_of_appointment_2 = $request->input('date_of_appointment_2');
+        $firmBackground->educational_background_2 = $request->input('educational_background_2');
+        // 3rd
+
+        $firmBackground->name_3 = $request->input('name_3');
+        $firmBackground->pan_3 = $request->input('pan_3');
+        $firmBackground->aadhar_3 = $request->input('aadhar_3');
+        $firmBackground->date_of_appointment_3 = $request->input('date_of_appointment_3');
+        $firmBackground->educational_background_3 = $request->input('educational_background_3');
+        // 4th name
+        $firmBackground->name_4 = $request->input('name_4');
+        $firmBackground->pan_4 = $request->input('pan_4');
+        $firmBackground->aadhar_4 = $request->input('aadhar_4');
+        $firmBackground->date_of_appointment_4 = $request->input('date_of_appointment_4');
+        $firmBackground->educational_background_4 = $request->input('educational_background_4');
+        // 5th
+        $firmBackground->name_5 = $request->input('name_5');
+        $firmBackground->pan_5 = $request->input('pan_5');
+        $firmBackground->aadhar_5 = $request->input('aadhar_5');
+        $firmBackground->date_of_appointment_5 = $request->input('date_of_appointment_5');
+        $firmBackground->educational_background_5 = $request->input('educational_background_5');
+        // 6th
+        $firmBackground->name_6 = $request->input('name_6');
+        $firmBackground->pan_6 = $request->input('pan_6');
+        $firmBackground->aadhar_6 = $request->input('aadhar_6');
+        $firmBackground->date_of_appointment_6 = $request->input('date_of_appointment_6');
+        $firmBackground->educational_background_6 = $request->input('educational_background_6');
+        // 7th
+        $firmBackground->name_7 = $request->input('name_7');
+        $firmBackground->pan_7 = $request->input('pan_7');
+        $firmBackground->aadhar_7 = $request->input('aadhar_7');
+        $firmBackground->date_of_appointment_7 = $request->input('date_of_appointment_7');
+        $firmBackground->educational_background_7 = $request->input('educational_background_7');
+        // 8th
+        $firmBackground->name_8 = $request->input('name_8');
+        $firmBackground->pan_8 = $request->input('pan_8');
+        $firmBackground->aadhar_8 = $request->input('aadhar_8');
+        $firmBackground->date_of_appointment_8 = $request->input('date_of_appointment_8');
+        $firmBackground->educational_background_8 = $request->input('educational_background_8');
+        // 9th
+        $firmBackground->name_9 = $request->input('name_9');
+        $firmBackground->pan_9 = $request->input('pan_9');
+        $firmBackground->aadhar_9 = $request->input('aadhar_9');
+        $firmBackground->date_of_appointment_9 = $request->input('date_of_appointment_9');
+        $firmBackground->educational_background_9 = $request->input('educational_background_9');
+        // 10th
+        $firmBackground->name_10 = $request->input('name_10');
+        $firmBackground->pan_10 = $request->input('pan_10');
+        $firmBackground->aadhar_10 = $request->input('aadhar_10');
+        $firmBackground->date_of_appointment_10 = $request->input('date_of_appointment_10');
+        $firmBackground->educational_background_10 = $request->input('educational_background_10');
         $firmBackground->credit_score = $request->input('credit_score');
         $firmBackground->save();
 
@@ -1156,10 +1211,11 @@ class adminController extends Controller
 
 
        $FinancialsFindingsFyOne->revenue_fy_one_finding__1  = $request->input('revenue_fy_one_finding__1');
+       $FinancialsFindingsFyOne->year_one_finding__1  = $request->input('year_one_finding__1');
        $FinancialsFindingsFyOne->net_profit_fy_one_finding__1  = $request->input('net_profit_fy_one_finding__1');
        $FinancialsFindingsFyOne->gross_profit_fy_one_finding__1  = $request->input('gross_profit_fy_one_finding__1');
        $FinancialsFindingsFyOne->working_capital_1_fy_one_finding__1  = $request->input('working_capital_1_fy_one_finding__1');
-       $FinancialsFindingsFyOne->working_capital_2_fy_one_finding__1  = $request->input('working_capital_2_fy_one_finding__1');
+       $FinancialsFindingsFyOne->quick_assets_fy_one_finding__1  = $request->input('quick_assets_fy_one_finding__1');
        $FinancialsFindingsFyOne->total_assets_fy_one_finding__1  = $request->input('total_assets_fy_one_finding__1');
        $FinancialsFindingsFyOne->current_assets_fy_one_finding__1  = $request->input('current_assets_fy_one_finding__1');
        $FinancialsFindingsFyOne->current_liabilities_fy_one_finding__1  = $request->input('current_liabilities_fy_one_finding__1');
@@ -1178,11 +1234,12 @@ class adminController extends Controller
        $FinancialsFindingsFyTwo = FinancialsFindingsFyTwo::where('financial_id', $Financial->id)->firstOrFail();
 
 
+       $FinancialsFindingsFyTwo->year_two_finding__1  = $request->input('revenue_fy_two_finding__1');
        $FinancialsFindingsFyTwo->revenue_fy_two_finding__1  = $request->input('revenue_fy_two_finding__1');
        $FinancialsFindingsFyTwo->net_profit_fy_two_finding__1  = $request->input('net_profit_fy_two_finding__1');
        $FinancialsFindingsFyTwo->gross_profit_fy_two_finding__1  = $request->input('gross_profit_fy_two_finding__1');
        $FinancialsFindingsFyTwo->working_capital_1_fy_two_finding__1  = $request->input('working_capital_1_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->working_capital_2_fy_two_finding__1  = $request->input('working_capital_2_fy_two_finding__1');
+       $FinancialsFindingsFyTwo->quick_assets_fy_two_finding__1  = $request->input('quick_assets_fy_two_finding__1');
        $FinancialsFindingsFyTwo->total_assets_fy_two_finding__1  = $request->input('total_assets_fy_two_finding__1');
        $FinancialsFindingsFyTwo->current_assets_fy_two_finding__1  = $request->input('current_assets_fy_two_finding__1');
        $FinancialsFindingsFyTwo->current_liabilities_fy_two_finding__1  = $request->input('current_liabilities_fy_two_finding__1');
@@ -1204,11 +1261,12 @@ class adminController extends Controller
        $FinancialsFindingsFyThree = FinancialsFindingsFyThree::where('financial_id', $Financial->id)->firstOrFail();
 
 
+       $FinancialsFindingsFyThree->year_three_finding__1  = $request->input('revenue_fy_three_finding__1');
        $FinancialsFindingsFyThree->revenue_fy_three_finding__1  = $request->input('revenue_fy_three_finding__1');
        $FinancialsFindingsFyThree->net_profit_fy_three_finding__1  = $request->input('net_profit_fy_three_finding__1');
        $FinancialsFindingsFyThree->gross_profit_fy_three_finding__1  = $request->input('gross_profit_fy_three_finding__1');
        $FinancialsFindingsFyThree->working_capital_1_fy_three_finding__1  = $request->input('working_capital_1_fy_three_finding__1');
-       $FinancialsFindingsFyThree->working_capital_2_fy_three_finding__1  = $request->input('working_capital_2_fy_three_finding__1');
+       $FinancialsFindingsFyThree->quick_assets_fy_three_finding__1  = $request->input('quick_assets_fy_three_finding__1');
        $FinancialsFindingsFyThree->total_assets_fy_three_finding__1  = $request->input('total_assets_fy_three_finding__1');
        $FinancialsFindingsFyThree->current_assets_fy_three_finding__1  = $request->input('current_assets_fy_three_finding__1');
        $FinancialsFindingsFyThree->current_liabilities_fy_three_finding__1  = $request->input('current_liabilities_fy_three_finding__1');
@@ -1226,11 +1284,12 @@ class adminController extends Controller
         $FinancialsFindingsFyFour = FinancialsFindingsFyFour::where('financial_id', $Financial->id)->firstOrFail();
 
 
+       $FinancialsFindingsFyFour->year_fy_four_finding__1  = $request->input('revenue_fy_four_finding__1');
        $FinancialsFindingsFyFour->revenue_fy_four_finding__1  = $request->input('revenue_fy_four_finding__1');
        $FinancialsFindingsFyFour->net_profit_fy_four_finding__1  = $request->input('net_profit_fy_four_finding__1');
        $FinancialsFindingsFyFour->gross_profit_fy_four_finding__1  = $request->input('gross_profit_fy_four_finding__1');
        $FinancialsFindingsFyFour->working_capital_1_fy_four_finding__1  = $request->input('working_capital_1_fy_four_finding__1');
-       $FinancialsFindingsFyFour->working_capital_2_fy_four_finding__1  = $request->input('working_capital_2_fy_four_finding__1');
+       $FinancialsFindingsFyFour->quick_assets_fy_four_finding__1  = $request->input('quick_assets_fy_four_finding__1');
        $FinancialsFindingsFyFour->total_assets_fy_four_finding__1  = $request->input('total_assets_fy_four_finding__1');
        $FinancialsFindingsFyFour->current_assets_fy_four_finding__1  = $request->input('current_assets_fy_four_finding__1');
        $FinancialsFindingsFyFour->current_liabilities_fy_four_finding__1  = $request->input('current_liabilities_fy_four_finding__1');
@@ -1249,10 +1308,11 @@ class adminController extends Controller
 
 
        $FinancialsFindingsFyFive->revenue_fy_five_finding__1  = $request->input('revenue_fy_five_finding__1');
+       $FinancialsFindingsFyFive->year_fy_five_finding__1  = $request->input('revenue_fy_five_finding__1');
        $FinancialsFindingsFyFive->net_profit_fy_five_finding__1  = $request->input('net_profit_fy_five_finding__1');
        $FinancialsFindingsFyFive->gross_profit_fy_five_finding__1  = $request->input('gross_profit_fy_five_finding__1');
        $FinancialsFindingsFyFive->working_capital_1_fy_five_finding__1  = $request->input('working_capital_1_fy_five_finding__1');
-       $FinancialsFindingsFyFive->working_capital_2_fy_five_finding__1  = $request->input('working_capital_2_fy_five_finding__1');
+       $FinancialsFindingsFyFive->quick_assets_fy_five_finding__1  = $request->input('quick_assets_fy_five_finding__1');
        $FinancialsFindingsFyFive->total_assets_fy_five_finding__1  = $request->input('total_assets_fy_five_finding__1');
        $FinancialsFindingsFyFive->current_assets_fy_five_finding__1  = $request->input('current_assets_fy_five_finding__1');
        $FinancialsFindingsFyFive->current_liabilities_fy_five_finding__1  = $request->input('current_liabilities_fy_five_finding__1');
@@ -1273,6 +1333,7 @@ class adminController extends Controller
         $FinancialsRatioAnalysisFyOne = FinancialsRatioAnalysisFyOne::where('financial_id', $Financial->id)->firstOrFail();
 
 
+       $FinancialsRatioAnalysisFyOne->year_ratio_one_1  = $request->input('year_ratio_one_1');
        $FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1  = $request->input('current_ratio_fy_one_1');
        $FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1  = $request->input('current_ratio_analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->debt_ratio_fy_one_1  = $request->input('debt_ratio_fy_one_1');
@@ -1291,40 +1352,45 @@ class adminController extends Controller
        $FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1  = $request->input('net_profit_ratio_analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->gross_profit_ratio_fy_one_1  = $request->input('gross_profit_ratio_fy_one_1');
        $FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1  = $request->input('gross_profit_ratio_analysis_fy_one_1');
+
        $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1  = $request->input('springate_s_score_ratio_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1  = $request->input('springate_s_score_ratio_analysis_fy_one_1');
+       
        $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_fy_one_1  = $request->input('trade_receivable_days_ratio_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1  = $request->input('trade_receivable_days_ratio_analysis_fy_one_1');
+
+       
        $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1  = $request->input('trade_payable_days_ratio_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1  = $request->input('trade_payable_days_ratio__analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1  = $request->input('taffler_z_score_ratio_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1  = $request->input('taffler_z_score_ratio_analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1  = $request->input('zmijewski_x_score_ratio_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1  = $request->input('zmijewski_x_score_ratio_analysis_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->quick_ratio_fy_one_1  = $request->input('quick_ratio_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1  = $request->input('quick_ratio_analysis_fy_one_1');
             $FinancialsRatioAnalysisFyOne->save();
 
         $FinancialsRatioAnalysisFyTwo = FinancialsRatioAnalysisFyTwo::where('financial_id', $Financial->id)->firstOrFail();
 
 
 
+       $FinancialsRatioAnalysisFyTwo->year_ratio_fy_two_1  = $request->input('year_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->current_ratio_fy_two_1  = $request->input('current_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->current_ratio_analysis_fy_two_1  = $request->input('current_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->debt_ratio_fy_two_1  = $request->input('debt_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->debt_ratio_analysis_fy_two_1  = $request->input('debt_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->solvency_ratio_fy_two_1  = $request->input('solvency_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->solvency_ratio_analysis_fy_two_1  = $request->input('solvency_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_fy_two_1  = $request->input('debt_to_equity_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_analysis_fy_two_1  = $request->input('debt_to_equity_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_fy_two_1  = $request->input('asset_turnover_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_analysis_fy_two_1  = $request->input('asset_turnover_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1  = $request->input('absolute_liquidity_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_analysis_fy_two_1  = $request->input('absolute_liquidity_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1  = $request->input('proprietary_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->proprietary_ratio_analysis_fy_two_1  = $request->input('proprietary_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->net_profit_ratio_fy_two_1  = $request->input('net_profit_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->net_profit_ratio_analysis_fy_two_1  = $request->input('net_profit_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->gross_profit_ratio_fy_two_1  = $request->input('gross_profit_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->gross_profit_ratio_analysis_fy_two_1  = $request->input('gross_profit_ratio_analysis_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1  = $request->input('springate_s_score_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->trade_receivable_days_ratio_fy_two_1  = $request->input('trade_receivable_days_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->trade_payable_days_ratio_fy_two_1  = $request->input('trade_payable_days_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->taffler_z_score_ratio_fy_two_1  = $request->input('taffler_z_score_ratio_fy_two_1');
        $FinancialsRatioAnalysisFyTwo->zmijewski_x_score_ratio_fy_two_1  = $request->input('zmijewski_x_score_ratio_fy_two_1');
+       $FinancialsRatioAnalysisFyTwo->quick_ratio_fy_two_1  = $request->input('quick_ratio_fy_two_1');
+
             $FinancialsRatioAnalysisFyTwo->save();
 
 
@@ -1332,30 +1398,24 @@ class adminController extends Controller
 
 
         $FinancialsRatioAnalysisFyThree = FinancialsRatioAnalysisFyThree::where('financial_id', $Financial->id)->firstOrFail();
+       $FinancialsRatioAnalysisFyThree->year_ratio_fy_three_1  = $request->input('year_ratio_fy_three_1');
 
        $FinancialsRatioAnalysisFyThree->current_ratio_fy_three_1  = $request->input('current_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->current_ratio_analysis_fy_three_1  = $request->input('current_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->debt_ratio_fy_three_1  = $request->input('debt_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->debt_ratio_analysis_fy_three_1  = $request->input('debt_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->solvency_ratio_fy_three_1  = $request->input('solvency_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->solvency_ratio_analysis_fy_three_1  = $request->input('solvency_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->debt_to_equity_ratio_fy_three_1  = $request->input('debt_to_equity_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->debt_to_equity_ratio_analysis_fy_three_1  = $request->input('debt_to_equity_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->asset_turnover_ratio_fy_three_1  = $request->input('asset_turnover_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->asset_turnover_ratio_analysis_fy_three_1  = $request->input('asset_turnover_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->absolute_liquidity_ratio_fy_three_1  = $request->input('absolute_liquidity_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->absolute_liquidity_ratio_analysis_fy_three_1  = $request->input('absolute_liquidity_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->proprietary_ratio_fy_three_1  = $request->input('proprietary_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->proprietary_ratio_analysis_fy_three_1  = $request->input('proprietary_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->net_profit_ratio_fy_three_1  = $request->input('net_profit_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->net_profit_ratio_analysis_fy_three_1  = $request->input('net_profit_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->gross_profit_ratio_fy_three_1  = $request->input('gross_profit_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->gross_profit_ratio_analysis_fy_three_1  = $request->input('gross_profit_ratio_analysis_fy_three_1');
        $FinancialsRatioAnalysisFyThree->springate_s_score_ratio_fy_three_1  = $request->input('springate_s_score_ratio_fy_three_1');
        $FinancialsRatioAnalysisFyThree->trade_receivable_days_ratio_fy_three_1  = $request->input('trade_receivable_days_ratio_fy_three_1');
        $FinancialsRatioAnalysisFyThree->trade_payable_days_ratio_fy_three_1  = $request->input('trade_payable_days_ratio_fy_three_1');
        $FinancialsRatioAnalysisFyThree->taffler_z_score_ratio_fy_three_1  = $request->input('taffler_z_score_ratio_fy_three_1');
        $FinancialsRatioAnalysisFyThree->zmijewski_x_score_ratio_fy_three_1  = $request->input('zmijewski_x_score_ratio_fy_three_1');
+       $FinancialsRatioAnalysisFyThree->quick_ratio_fy_three_1  = $request->input('quick_ratio_fy_three_1');
+
             $FinancialsRatioAnalysisFyThree->SAVE();
 
 
@@ -1363,57 +1423,45 @@ class adminController extends Controller
 
 
         $FinancialsRatioAnalysisFyFour = FinancialsRatioAnalysisFyFour::where('financial_id', $Financial->id)->firstOrFail();
+       $FinancialsRatioAnalysisFyFour->year_ratio_fy_four_1  = $request->input('year_ratio_fy_four_1');
 
        $FinancialsRatioAnalysisFyFour->current_ratio_fy_four_1  = $request->input('current_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->current_ratio_analysis_fy_four_1  = $request->input('current_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->debt_ratio_fy_four_1  = $request->input('debt_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->debt_ratio_analysis_fy_four_1  = $request->input('debt_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->solvency_ratio_fy_four_1  = $request->input('solvency_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->solvency_ratio_analysis_fy_four_1  = $request->input('solvency_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->debt_to_equity_ratio_fy_four_1  = $request->input('debt_to_equity_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->debt_to_equity_ratio_analysis_fy_four_1  = $request->input('debt_to_equity_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->asset_turnover_ratio_fy_four_1  = $request->input('asset_turnover_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->asset_turnover_ratio_analysis_fy_four_1  = $request->input('asset_turnover_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->absolute_liquidity_ratio_fy_four_1  = $request->input('absolute_liquidity_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->absolute_liquidity_ratio_analysis_fy_four_1  = $request->input('absolute_liquidity_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->proprietary_ratio_fy_four_1  = $request->input('proprietary_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->proprietary_ratio_analysis_fy_four_1  = $request->input('proprietary_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->net_profit_ratio_fy_four_1  = $request->input('net_profit_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->net_profit_ratio_analysis_fy_four_1  = $request->input('net_profit_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->gross_profit_ratio_fy_four_1  = $request->input('gross_profit_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->gross_profit_ratio_analysis_fy_four_1  = $request->input('gross_profit_ratio_analysis_fy_four_1');
        $FinancialsRatioAnalysisFyFour->springate_s_score_ratio_fy_four_1  = $request->input('springate_s_score_ratio_fy_four_1');
        $FinancialsRatioAnalysisFyFour->trade_receivable_days_ratio_fy_four_1  = $request->input('trade_receivable_days_ratio_fy_four_1');
        $FinancialsRatioAnalysisFyFour->trade_payable_days_ratio_fy_four_1  = $request->input('trade_payable_days_ratio_fy_four_1');
        $FinancialsRatioAnalysisFyFour->taffler_z_score_ratio_fy_four_1  = $request->input('taffler_z_score_ratio_fy_four_1');
        $FinancialsRatioAnalysisFyFour->zmijewski_x_score_ratio_fy_four_1  = $request->input('zmijewski_x_score_ratio_fy_four_1');
+       $FinancialsRatioAnalysisFyFour->quick_ratio_fy_four_1  = $request->input('quick_ratio_fy_four_1');
+
         $FinancialsRatioAnalysisFyFour->save();
 
         $FinancialsRatioAnalysisFyFive = FinancialsRatioAnalysisFyFive::where('financial_id', $Financial->id)->firstOrFail();
+        $FinancialsRatioAnalysisFyFive->year_ratio_fy_five_1  = $request->input('year_ratio_fy_five_1');
 
        $FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1  = $request->input('current_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->current_ratio_analysis_fy_five_1  = $request->input('current_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1  = $request->input('debt_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->debt_ratio_analysis_fy_five_1  = $request->input('debt_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1  = $request->input('solvency_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->solvency_ratio_analysis_fy_five_1  = $request->input('solvency_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1  = $request->input('debt_to_equity_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_analysis_fy_five_1  = $request->input('debt_to_equity_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1  = $request->input('asset_turnover_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->asset_turnover_ratio_analysis_fy_five_1  = $request->input('asset_turnover_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->absolute_liquidity_ratio_fy_five_1  = $request->input('absolute_liquidity_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->absolute_liquidity_ratio_analysis_fy_five_1  = $request->input('absolute_liquidity_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1  = $request->input('proprietary_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->proprietary_ratio_analysis_fy_five_1  = $request->input('proprietary_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->net_profit_ratio_fy_five_1  = $request->input('net_profit_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->net_profit_ratio_analysis_fy_five_1  = $request->input('net_profit_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1  = $request->input('gross_profit_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->gross_profit_ratio_analysis_fy_five_1  = $request->input('gross_profit_ratio_analysis_fy_five_1');
        $FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1  = $request->input('springate_s_score_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->trade_receivable_days_ratio_fy_five_1  = $request->input('trade_receivable_days_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->trade_payable_days_ratio_fy_five_1  = $request->input('trade_payable_days_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->taffler_z_score_ratio_fy_five_1  = $request->input('taffler_z_score_ratio_fy_five_1');
        $FinancialsRatioAnalysisFyFive->zmijewski_x_score_ratio_fy_five_1  = $request->input('zmijewski_x_score_ratio_fy_five_1');
+       $FinancialsRatioAnalysisFyFive->quick_ratio_fy_four_1  = $request->input('quick_ratio_fy_four_1');
+
         $FinancialsRatioAnalysisFyFive->save();
         }
         return response()->json(['message' => 'Financial  Reports updated successfully!']);
@@ -1430,22 +1478,51 @@ class adminController extends Controller
 
         }
 
-        $BusinessIntelligence->business_fy1  = $request->input('business_fy1');
-        $BusinessIntelligence->business_fy2  = $request->input('business_fy2');
-        $BusinessIntelligence->business_fy3  = $request->input('business_fy3');
-        $BusinessIntelligence->business_fy4  = $request->input('business_fy4');
-        $BusinessIntelligence->business_fy5  = $request->input('business_fy5');
+       
 
-        $BusinessIntelligence->operating_efficiency_ratio  = $request->input('operating_efficiency_ratio');
-        $BusinessIntelligence->operating_efficiency_ratio_analysis  = $request->input('operating_efficiency_ratio_analysis');
-        $BusinessIntelligence->inventory_turnover_ratio  = $request->input('inventory_turnover_ratio');
-        $BusinessIntelligence->inventory_turnover_ratio_analysis  = $request->input('inventory_turnover_ratio_analysis');
-        $BusinessIntelligence->days_sales_in_inventory  = $request->input('days_sales_in_inventory');
-        $BusinessIntelligence->days_sales_in_inventory_analysis  = $request->input('days_sales_in_inventory_analysis');
-        $BusinessIntelligence->accounts_payable_turnover_ratio  = $request->input('accounts_payable_turnover_ratio');
-        $BusinessIntelligence->accounts_payable_turnover_ratio_analysis  = $request->input('accounts_payable_turnover_ratio_analysis');
+        $BusinessIntelligence->operating_efficiency_BI_analysis  = $request->input('operating_efficiency_BI_analysis');
+        $BusinessIntelligence->inventory_turnover_BI_analysis  = $request->input('inventory_turnover_BI_analysis');
+        $BusinessIntelligence->days_sales_in_inventory_BI_analysis  = $request->input('days_sales_in_inventory_BI_analysis');
+        $BusinessIntelligence->accounts_payable_turnover_BI_analysis  = $request->input('accounts_payable_turnover_BI_analysis');
+        
+        $BusinessIntelligence->year_BI_FY_one  = $request->input('year_BI_FY_one');
+        $BusinessIntelligence->operating_efficiency_BI_FY_one  = $request->input('operating_efficiency_BI_FY_one');
+        $BusinessIntelligence->inventory_turnover_BI_FY_one  = $request->input('inventory_turnover_BI_FY_one');
+        $BusinessIntelligence->days_sales_in_inventory_BI_FY_one  = $request->input('days_sales_in_inventory_BI_FY_one');
+        $BusinessIntelligence->accounts_payable_turnover_BI_FY_one  = $request->input('accounts_payable_turnover_BI_FY_one');
+
+
+        $BusinessIntelligence->year_BI_FY_two  = $request->input('year_BI_FY_two');
+        $BusinessIntelligence->operating_efficiency_BI_FY_two  = $request->input('operating_efficiency_BI_FY_two');
+        $BusinessIntelligence->inventory_turnover_BI_FY_two  = $request->input('inventory_turnover_BI_FY_two');
+        $BusinessIntelligence->days_sales_in_inventory_BI_FY_two  = $request->input('days_sales_in_inventory_BI_FY_two');
+        $BusinessIntelligence->accounts_payable_turnover_BI_FY_two  = $request->input('accounts_payable_turnover_BI_FY_two');
+
+        $BusinessIntelligence->year_BI_FY_three  = $request->input('year_BI_FY_three');
+        $BusinessIntelligence->operating_efficiency_BI_FY_three  = $request->input('operating_efficiency_BI_FY_three');
+        $BusinessIntelligence->inventory_turnover_BI_FY_three  = $request->input('inventory_turnover_BI_FY_three');
+        $BusinessIntelligence->days_sales_in_inventory_BI_FY_three  = $request->input('days_sales_in_inventory_BI_FY_three');
+        $BusinessIntelligence->accounts_payable_turnover_BI_FY_three  = $request->input('accounts_payable_turnover_BI_FY_three');
+
+        
+        
+        $BusinessIntelligence->year_BI_FY_four  = $request->input('year_BI_FY_four');
+        $BusinessIntelligence->operating_efficiency_BI_FY_four  = $request->input('operating_efficiency_BI_FY_four');
+        $BusinessIntelligence->inventory_turnover_BI_FY_four  = $request->input('inventory_turnover_BI_FY_four');
+        $BusinessIntelligence->days_sales_in_inventory_BI_FY_four  = $request->input('days_sales_in_inventory_BI_FY_four');
+        $BusinessIntelligence->accounts_payable_turnover_BI_FY_four  = $request->input('accounts_payable_turnover_BI_FY_four');
+
+        
+        $BusinessIntelligence->year_BI_FY_five  = $request->input('year_BI_FY_five');
+        $BusinessIntelligence->operating_efficiency_BI_FY_five  = $request->input('operating_efficiency_BI_FY_five');
+        $BusinessIntelligence->inventory_turnover_BI_FY_five  = $request->input('inventory_turnover_BI_FY_five');
+        $BusinessIntelligence->days_sales_in_inventory_BI_FY_five  = $request->input('days_sales_in_inventory_BI_FY_five');
+        $BusinessIntelligence->accounts_payable_turnover_BI_FY_five  = $request->input('accounts_payable_turnover_BI_FY_five');
+        
+
         $BusinessIntelligence->efficiency_score  = $request->input('efficiency_score');
 
+        
 
 
         $BusinessIntelligence->score_analysis = $request->input('score_analysis');
@@ -1555,6 +1632,18 @@ class adminController extends Controller
             return response()->json(['error' => 'This Reports not found.']);
 
        }
+
+       if ($request->hasFile('key_observation_final_report_file')) {
+        $file = $request->file('key_observation_final_report_file');
+        // Generate a unique filename
+        $filename = 'KeYoFinalReport' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+        // Move the file to the destination folder
+        $file->move(public_path('admin/assets/imgs/KeyObservationFinalReports/'), $filename);
+
+
+        $KeyObservation->key_observation_final_report_file = $filename;
+    }
+
 
 
        $KeyObservation->overall_risk_score  = $request->input('overall_risk_score');
