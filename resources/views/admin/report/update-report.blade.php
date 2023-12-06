@@ -3284,27 +3284,27 @@
                     <span style="color:darkgray; font-size:12px;"> FY-1</span>
                     <ul class="nav nav-pills">
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="one_ratio_FY1"  style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY1</a>
+                            <a class="nav-link" id="one_BI_FY1"  style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY1</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="two_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                            <a class="nav-link" id="two_BI_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="three_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                            <a class="nav-link" id="three_BI_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="four_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                            <a class="nav-link" id="four_BI_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="five_ratio_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                            <a class="nav-link" id="five_BI_FY1" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                         </li>
                     </ul>
 
                     <div class="row">
 
-                    
-                    <input type="hidden" name="BusinessIntelligenceID" id="BusinessIntelligenceID" class="form-control" value="{{$BusinessIntelligence->id}}">
-                    
+
+                         <input type="hidden" name="BusinessIntelligenceID" id="BusinessIntelligenceID" class="form-control" value="{{$BusinessIntelligence->id}}">
+
 
                         <div class="col-xl-3 mb-3">
                             <label class="form-label">Select Year<span class="text-danger">*</span></label>
@@ -3399,19 +3399,19 @@
                     <span style="color:darkgray; font-size:12px;"> FY-2</span>
                     <ul class="nav nav-pills">
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="one_ratio_FY1_2"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                            <a class="nav-link" id="one_BI_FY1_2"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="two_ratio_FY1_2" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY2</a>
+                            <a class="nav-link" id="two_BI_FY1_2" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY2</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="three_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                            <a class="nav-link" id="three_BI_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="four_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                            <a class="nav-link" id="four_BI_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="five_ratio_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                            <a class="nav-link" id="five_BI_FY1_2" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                         </li>
                     </ul>
 
@@ -3456,7 +3456,7 @@
                             <label for="accounts_payable_turnover_BI_FY_two" class="form-label">Accounts Payable Turnover Ratio</label>
                             <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_two"  id="accounts_payable_turnover_BI_FY_two" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_two}}" placeholder="">
                         </div>
-                     
+
 
                     </div>
 
@@ -3481,19 +3481,19 @@
                     <span style="color:darkgray; font-size:12px;"> FY-3</span>
                     <ul class="nav nav-pills">
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="one_ratio_FY1_3"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                            <a class="nav-link" id="one_BI_FY1_3"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="two_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                            <a class="nav-link" id="two_BI_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="three_ratio_FY1_3" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY3</a>
+                            <a class="nav-link" id="three_BI_FY1_3" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY3</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="four_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                            <a class="nav-link" id="four_BI_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="five_ratio_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                            <a class="nav-link" id="five_BI_FY1_3" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                         </li>
                     </ul>
 
@@ -3538,7 +3538,7 @@
                             <label for="accounts_payable_turnover_BI_FY_three" class="form-label">Accounts Payable Turnover Ratio</label>
                             <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_three"  id="accounts_payable_turnover_BI_FY_three" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_three}}" placeholder="">
                         </div>
-                       
+
 
                     </div>
 
@@ -3561,19 +3561,19 @@
                     <span style="color:darkgray; font-size:12px;"> FY-4</span>
                     <ul class="nav nav-pills">
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="one_ratio_FY1_4"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                            <a class="nav-link" id="one_BI_FY1_4"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="two_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                            <a class="nav-link" id="two_BI_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="three_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                            <a class="nav-link" id="three_BI_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="four_ratio_FY1_4" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY4</a>
+                            <a class="nav-link" id="four_BI_FY1_4" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY4</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="five_ratio_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
+                            <a class="nav-link" id="five_BI_FY1_4" style="color:white;background-color:darkgray" aria-current="page" href="#">FY5</a>
                         </li>
                     </ul>
 
@@ -3618,7 +3618,7 @@
                             <label for="accounts_payable_turnover_BI_FY_four" class="form-label">Accounts Payable Turnover Ratio</label>
                             <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_four"  id="accounts_payable_turnover_BI_FY_four" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_four}}" placeholder="">
                         </div>
-                        
+
 
 
                     </div>
@@ -3646,19 +3646,19 @@
                     <span style="color:darkgray; font-size:12px;"> FY-5</span>
                     <ul class="nav nav-pills">
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="one_ratio_FY1_5"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
+                            <a class="nav-link" id="one_BI_FY1_5"  style="color:white;background-color:darkgray" aria-current="page" href="#">FY1</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="two_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
+                            <a class="nav-link" id="two_BI_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY2</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="three_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
+                            <a class="nav-link" id="three_BI_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY3</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="four_ratio_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
+                            <a class="nav-link" id="four_BI_FY1_5" style="color:white;background-color:darkgray" aria-current="page" href="#">FY4</a>
                         </li>
                         <li class="nav-item mb-2 mr-1 p-2">
-                            <a class="nav-link" id="five_ratio_FY1_5" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY5</a>
+                            <a class="nav-link" id="five_BI_FY1_5" style="color:white;background-color:#1c9bf6" aria-current="page" href="#">FY5</a>
                         </li>
                     </ul>
 
@@ -3704,7 +3704,7 @@
                             <label for="accounts_payable_turnover_BI_FY_five" class="form-label">Accounts Payable Turnover Ratio</label>
                             <input type="text" class="form-control" name="accounts_payable_turnover_BI_FY_five"  id="accounts_payable_turnover_BI_FY_five" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_FY_five}}" placeholder="">
                         </div>
-                     
+
 
                         </div>
                         <!-- Navigation buttons -->
@@ -5004,7 +5004,7 @@
                             $("#Financials-submit").prop("disabled", false);
                             $('#Financials').hide();
                             $("#Business-Intelligence").show();
-
+                            $('#one_BI_FY1').attr('style', 'color:white;background-color:#1c9bf6');
 
                             $('#click-Business-Intelligence').addClass('report-tab-active').removeClass('report-tab-unactive');
                             $('#click-Financials').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -5315,6 +5315,165 @@
             $('#five_ratio_FY1_5').attr('style', 'color:white;background-color:darkgray');
         });
 
+
+
+
+
+        // =================== bussiness intellegence start ===================== //
+
+
+
+
+
+             // Flag to check if any field is empty
+             function applyStyleIfEmptyBI(fieldIds, containerId) {
+                // Flag to check if any field is empty
+                var isEmptyRatio = false;
+
+                // Iterate through each input field ID
+                $.each(fieldIds, function(index, fieldId) {
+                    // Get the input field by ID
+                    var inputField = $('#' + fieldId);
+
+                    // Check if the value of the input field is empty
+                    if (inputField.val() === '') {
+                        // If empty, set the flag to true
+                        isEmptyRatio = true;
+                        // Exit the loop early if you only want to check if at least one field is empty
+                        return false;
+                    }
+                });
+
+                // Check if at least one field is empty and apply the style to the specified container
+                if (isEmptyRatio) {
+                    $('#' + containerId).attr('style', 'color:Black;background-color:#ff9f00');
+                    $('#' + containerId + '_2').attr('style', 'color:Black;background-color:#ff9f00');
+                    $('#' + containerId + '_3').attr('style', 'color:Black;background-color:#ff9f00');
+                    $('#' + containerId + '_4').attr('style', 'color:Black;background-color:#ff9f00');
+                    $('#' + containerId + '_5').attr('style', 'color:Black;background-color:#ff9f00');
+                }
+            }
+
+            // Call the function for the first set of fields
+            applyStyleIfEmptyBI([
+                'operating_efficiency_BI_FY_one',
+                'operating_efficiency_BI_analysis',
+
+                'inventory_turnover_BI_FY_one',
+                'inventory_turnover_BI_analysis',
+
+                'days_sales_in_inventory_BI_FY_one',
+                'days_sales_in_inventory_BI_analysis',
+
+                'accounts_payable_turnover_BI_FY_one',
+                'accounts_payable_turnover_BI_analysis',
+                'efficiency_score',
+                'score_analysis',
+
+            ], 'one_BI_FY1');
+
+            applyStyleIfEmptyBI([
+                'operating_efficiency_BI_FY_two',
+
+                'inventory_turnover_BI_FY_two',
+
+                'days_sales_in_inventory_BI_FY_two',
+
+                'accounts_payable_turnover_BI_FY_two',
+
+                // Add other field IDs here
+            ], 'two_BI_FY1');
+
+
+            applyStyleIfEmptyBI([
+                'operating_efficiency_BI_FY_three',
+
+                'inventory_turnover_BI_FY_three',
+
+                'days_sales_in_inventory_BI_FY_three',
+
+                'accounts_payable_turnover_BI_FY_three',
+                // Add other field IDs here
+            ], 'three_BI_FY1');
+
+
+            applyStyleIfEmptyBI([
+                'operating_efficiency_BI_FY_four',
+
+                'inventory_turnover_BI_FY_four',
+
+                'days_sales_in_inventory_BI_FY_four',
+
+                'accounts_payable_turnover_BI_FY_four',
+                // Add other field IDs here
+            ], 'four_BI_FY1');
+
+
+            applyStyleIfEmptyBI([
+                'operating_efficiency_BI_FY_five',
+
+                'inventory_turnover_BI_FY_five',
+
+                'days_sales_in_inventory_BI_FY_five',
+
+                'accounts_payable_turnover_BI_FY_five',
+                // Add other field IDs here
+            ], 'five_BI_FY1');
+        // Bussiness intelligenec
+
+
+
+        $('#click-Business-Intelligence').on('click', function(){
+            console.log('chages');
+            $('#one_BI_FY1').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+
+        $('#BusinessIntelligence-next-1').on('click', function(){
+            console.log('chages');
+            $('#two_BI_FY1_2').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+
+        $('#BusinessIntelligence-prev-2').on('click', function(){
+            console.log('chages');
+            $('#two_BI_FY1_2').attr('style', 'color:white;background-color:darkgray');
+        });
+        $('#BusinessIntelligence-next-2').on('click', function(){
+            console.log('chages');
+            $('#three_BI_FY1_3').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#BusinessIntelligence-prev-3').on('click', function(){
+            console.log('chages');
+            $('#three_BI_FY1_3').attr('style', 'color:white;background-color:darkgray');
+        });
+
+        $('#BusinessIntelligence-next-3').on('click', function(){
+            console.log('chages');
+            $('#four_BI_FY1_4').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+        $('#BusinessIntelligence-prev-4').on('click', function(){
+            console.log('chages');
+            $('#four_BI_FY1_4').attr('style', 'color:white;background-color:darkgray');
+        });
+        $('#BusinessIntelligence-next-4').on('click', function(){
+            console.log('chages');
+            $('#five_BI_FY1_5').attr('style', 'color:white;background-color:#1c9bf6');
+        });
+
+        $('#BusinessIntelligence-prev-5').on('click', function(){
+            console.log('chages');
+            $('#five_BI_FY1_5').attr('style', 'color:white;background-color:darkgray');
+        });
+
+
+
+
+
+
+
+
+
+
+        //==================== bussiness intellegence end  ===================== //
 
 
 
