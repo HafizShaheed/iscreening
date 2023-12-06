@@ -2246,7 +2246,8 @@
                         <div class="row">
                             <div class="col-xl-3 mb-3">
                                 <label for="revenue_fy_three_finding__1" class="form-label">Revenue</label>
-                                <input type="text" class="form-control" name="revenue_fy_three_finding__1 id="revenue_fy_three_finding__1" value="{{$FinancialsFindingsFyThree->revenue_fy_three_finding__1}}" placeholder="">
+                                <input type="text" class="form-control"  name="revenue_fy_three_finding__1" id="revenue_fy_three_finding__1" value="{{$FinancialsFindingsFyThree->revenue_fy_three_finding__1}}" placeholder="">
+
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="net_profit_fy_three_finding__1" class="form-label">Net Profit</label>
@@ -3108,7 +3109,7 @@
 
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_four_1" class="form-label">Zmijewski X-Score</label>
-                                <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_four_1"  id="zmijewski_x_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_four_1}}" placeholder="">
+                                <input type="text" class="form-control" name="zmijewski_x_score_ratio_fy_four_1"  id="zmijewski_x_score_ratio_fy_four_1" value="{{$FinancialsRatioAnalysisFyFour->zmijewski_x_score_ratio_fy_four_1}}" placeholder="">
                             </div>
                         </div>
 

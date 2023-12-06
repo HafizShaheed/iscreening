@@ -539,6 +539,8 @@ class adminController extends Controller
         $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_two_finding__1');
         $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->pluck('revenue_fy_one_finding__1');
 
+
+
           $financialFindings = [
 
             $data['FinancialsFindingsFyOne'],
@@ -554,6 +556,21 @@ class adminController extends Controller
 
         // Combine the cleaned financial ratios into a single array
         $data['financialFindingsGrapFY'] = $cleanedFinancialFindings;
+
+        $data['FinancialsFindingsFyFiveGraphLableName'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->pluck('year_five_finding__1');
+        $data['FinancialsFindingsFyFourGraphLableName'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->pluck('year_four_finding__1');
+        $data['FinancialsFindingsFyThreeGraphLableName'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->pluck('year_three_finding__1');
+        $data['FinancialsFindingsFyTwoGraphLableName'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_two_finding__1');
+        $data['FinancialsFindingsFyOneGraphLableName'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->pluck('year_one_finding__1');
+
+        $data['financialFindingsGrapFYhLablesName'] = [
+
+            $data['FinancialsFindingsFyFiveGraphLableName'], 
+            $data['FinancialsFindingsFyFourGraphLableName'],
+            $data['FinancialsFindingsFyThreeGraphLableName'],
+            $data['FinancialsFindingsFyTwoGraphLableName'], 
+            $data['FinancialsFindingsFyOneGraphLableName'], 
+        ];
 
         // dd($data['FinancialsFindingsFyFive'] );
         $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->pluck('current_ratio_fy_five_1');
@@ -578,6 +595,22 @@ class adminController extends Controller
 
         // Combine the cleaned financial ratios into a single array
         $data['financialrationGrapFY'] = $cleanedFinancialRatios;
+
+        $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->pluck('year_ratio_five_1');
+        $data['FinancialsRatioAnalysisFyFourGraphLabelNames'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->pluck('year_ratio_four_1');
+        $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->pluck('year_ratio_three_1');
+        $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_ratio_two_1');
+        $data['FinancialsRatioAnalysisFyOneGraphLabelNames'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->pluck('year_ratio_one_1');
+
+        
+        $data['financialRatioGrapFYhLablesName'] = [
+
+            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'], 
+            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'], 
+            $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'], 
+            $data['FinancialsRatioAnalysisFyOneGraphLabelNames'], 
+        ];
         // dd(  $data['financialrationGrapFY'] );
         $data['FirmBackground'] = FirmBackground::where('third_party_id',$id)->first();
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
@@ -1244,7 +1277,7 @@ class adminController extends Controller
        $FinancialsFindingsFyTwo = FinancialsFindingsFyTwo::where('financial_id', $Financial->id)->firstOrFail();
 
 
-       $FinancialsFindingsFyTwo->year_two_finding__1  = $request->input('revenue_fy_two_finding__1');
+       $FinancialsFindingsFyTwo->year_two_finding__1  = $request->input('year_two_finding__1');
        $FinancialsFindingsFyTwo->revenue_fy_two_finding__1  = $request->input('revenue_fy_two_finding__1');
        $FinancialsFindingsFyTwo->net_profit_fy_two_finding__1  = $request->input('net_profit_fy_two_finding__1');
        $FinancialsFindingsFyTwo->gross_profit_fy_two_finding__1  = $request->input('gross_profit_fy_two_finding__1');
@@ -1271,7 +1304,7 @@ class adminController extends Controller
        $FinancialsFindingsFyThree = FinancialsFindingsFyThree::where('financial_id', $Financial->id)->firstOrFail();
 
 
-       $FinancialsFindingsFyThree->year_three_finding__1  = $request->input('revenue_fy_three_finding__1');
+       $FinancialsFindingsFyThree->year_three_finding__1  = $request->input('year_three_finding__1');
        $FinancialsFindingsFyThree->revenue_fy_three_finding__1  = $request->input('revenue_fy_three_finding__1');
        $FinancialsFindingsFyThree->net_profit_fy_three_finding__1  = $request->input('net_profit_fy_three_finding__1');
        $FinancialsFindingsFyThree->gross_profit_fy_three_finding__1  = $request->input('gross_profit_fy_three_finding__1');
@@ -1371,11 +1404,11 @@ class adminController extends Controller
 
        
        $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1  = $request->input('trade_payable_days_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1  = $request->input('trade_payable_days_ratio__analysis_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1  = $request->input('trade_payable_days_ratio_analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1  = $request->input('taffler_z_score_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1  = $request->input('taffler_z_score_ratio_analysis_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1  = $request->input('taffler_z_score_ratio_analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1  = $request->input('zmijewski_x_score_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1  = $request->input('zmijewski_x_score_ratio_analysis_fy_one_1');
+       $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1  = $request->input('zmijewski_x_score_ratio_analysis_fy_one_1');
        $FinancialsRatioAnalysisFyOne->quick_ratio_fy_one_1  = $request->input('quick_ratio_fy_one_1');
        $FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1  = $request->input('quick_ratio_analysis_fy_one_1');
             $FinancialsRatioAnalysisFyOne->save();

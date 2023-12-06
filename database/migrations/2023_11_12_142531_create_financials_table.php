@@ -273,6 +273,7 @@ class CreateFinancialsTable extends Migration
 
         $table->string("trade_payable_days_ratio_fy_one_$set")->nullable();
         $table->string("trade_payable_days_ratio_analysis_fy_one_$set")->nullable();
+        
         $table->string("taffler_z_score_ratio_fy_one_$set")->nullable();
         $table->string("taffler_z_score_ratio_analysis_fy_one_$set")->nullable();
         $table->string("zmijewski_x_score_ratio_fy_one_$set")->nullable();

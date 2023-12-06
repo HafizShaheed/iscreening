@@ -21,7 +21,7 @@
                 type: 'bar',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: ["FY1", "FY2", "FY3", "FY4", "FY5"],
+                    labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
                             label: "Financials Findinds Analysis",
@@ -71,7 +71,7 @@
                 type: 'bar',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: ["FY1", "FY2", "FY3", "FY4", "FY5"],
+                    labels: financialRatioGrapFYhLablesName,
                     datasets: [
                         {
                             label: "Financials Ratio Analysis",

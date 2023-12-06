@@ -2429,6 +2429,8 @@ var financialFindingsGrapFY = @json($financialFindingsGrapFY);
 var businessInteligenceGrapFY = @json($businessInteligenceGrapFY);
 var finalValueforGraKeyObservation =@json($finalValueforGraKeyObservation);
 var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
+var financialFindingsGrapFYhLablesName =@json($financialFindingsGrapFYhLablesName);
+var financialRatioGrapFYhLablesName =@json($financialRatioGrapFYhLablesName);
 
 
 // Your external JavaScript file
