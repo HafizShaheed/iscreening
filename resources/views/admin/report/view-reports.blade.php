@@ -2428,6 +2428,8 @@ var financialRationGrapFY = @json($financialrationGrapFY);
 var financialFindingsGrapFY = @json($financialFindingsGrapFY);
 var businessInteligenceGrapFY = @json($businessInteligenceGrapFY);
 var finalValueforGraKeyObservation =@json($finalValueforGraKeyObservation);
+var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
+
 
 // Your external JavaScript file
 // Include this script before your external JS that uses financialRationGrapFY

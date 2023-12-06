@@ -124,11 +124,11 @@
                 type: 'bar',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: businessInteligenceGrapFY,
+                    labels: businessInteligenceGraphLablesName,
                     datasets: [
                         {
                             label: "Business Intelligence",
-                            data: [2,4,5,1,4],
+                            data: businessInteligenceGrapFY,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar

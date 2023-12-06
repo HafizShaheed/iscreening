@@ -487,11 +487,11 @@ class adminController extends Controller
 
         $business_inteligence = [
 
-            $data['BusinessIntelligence']->business_fy1,
-            $data['BusinessIntelligence']->business_fy2,
-            $data['BusinessIntelligence']->business_fy3,
-            $data['BusinessIntelligence']->business_fy4,
-            $data['BusinessIntelligence']->business_fy5,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_one,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_two,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_three,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_four,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_five,
 
         ];
 
@@ -503,7 +503,17 @@ class adminController extends Controller
 
         // Combine the cleaned financial ratios into a single array
         $data['businessInteligenceGrapFY'] = $cleaned_business_inteligence;
-        // dd( $data['businessInteligenceGrapFY']);
+
+        $data['businessInteligenceGraphLablesName'] = [
+
+            $data['BusinessIntelligence']->year_BI_FY_one,
+            $data['BusinessIntelligence']->year_BI_FY_two,
+            $data['BusinessIntelligence']->year_BI_FY_three,
+            $data['BusinessIntelligence']->year_BI_FY_four,
+            $data['BusinessIntelligence']->year_BI_FY_five,
+
+        ];
+        // dd(  $data['businessInteligenceGrapFY']);
 
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
@@ -1633,16 +1643,16 @@ class adminController extends Controller
 
        }
 
-       if ($request->hasFile('key_observation_final_report_file')) {
-        $file = $request->file('key_observation_final_report_file');
-        // Generate a unique filename
-        $filename = 'KeYoFinalReport' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-        // Move the file to the destination folder
-        $file->move(public_path('admin/assets/imgs/KeyObservationFinalReports/'), $filename);
+        if ($request->hasFile('key_observation_final_report_file')) {
+            $file = $request->file('key_observation_final_report_file');
+            // Generate a unique filename
+            $filename = 'KeYoFinalReport' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+            // Move the file to the destination folder
+            $file->move(public_path('admin/assets/imgs/KeyObservationFinalReports/'), $filename);
 
 
-        $KeyObservation->key_observation_final_report_file = $filename;
-    }
+            $KeyObservation->key_observation_final_report_file = $filename;
+        }
 
 
 
