@@ -274,39 +274,286 @@
                                                 </tr>
 
                                             </thead>
-                                            <tbody>
-                                                <tr>
+                                    <tbody>
+                                                 <!-- director 2 -->
+                                            @if ( !empty($FirmBackground->name_1) )
+                                            <tr>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name</th>
+                                                        class="col-md-4">Director's Name (1)</th>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name }}</th>
+                                                        class="col-md-8">{{ $FirmBackground->name_1 }}</th>
                                                 </tr>
                                                 <tr>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">PAN</td>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan }}</td>
+                                                        class="col-md-8">{{ $FirmBackground->pan_1 }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">AADHAR</td>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar }}</td>
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_1 }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Educational Background</td>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background }}
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_1 }}
                                                     </td>
                                                 </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_2) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (2)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_2 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_2 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_2 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_2 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_3) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (3)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_3 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_3 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_3 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_3 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_4) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (4)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_4 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_4 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_4 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_4 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_5) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (5)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_5 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_5 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_5 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_5 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_6) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (6)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_6 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_6 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_6 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_6 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_7) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (7)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_7 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_7 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_7 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_7 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_8) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (8)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_8 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_8 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_8 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_8 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_9) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (9)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_9 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_9 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_9 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_9 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_10) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (10)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_10 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_10 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_10 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_10 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
                                                 <tr>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Credit Score</td>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-8">{{ $FirmBackground->credit_score }}</td>
                                                 </tr>
-                                            </tbody>
+
+                                    </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -2387,7 +2634,7 @@
                                         </div>
                                         <div class="col-xl-6 mb-3">
                                             <p for="educationalBackground" class="text-center"><a
-                                                    href="{{ URL::to('/panel/report/generate_pdf_of_reports'.'/'.$getThirdPartyForID->id) }}"
+                                                    href="{{ URL::to('/panel/report/final_Reprts_file_download'.'/'.$KeyObservation->id) }}"
                                                     class="download-license-btn">Download Licenses</a></p>
                                         </div>
 

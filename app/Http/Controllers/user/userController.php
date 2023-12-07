@@ -50,11 +50,12 @@ class userController extends Controller
             $highRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
             $mediumRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
             $lowRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+            // dd( $lowRiskCOunt);
             $totalRisk = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
 
-            $data['highRiskPercentage'] = ($highRiskCOunt * 100) / $totalRisk;
-            $data['mediumRiskPercentage'] = ($mediumRiskCOunt * 100) / $totalRisk;
-            $data['lowRiskPercentage'] = ($lowRiskCOunt * 100) / $totalRisk;
+            $data['highRiskPercentage'] = $totalRisk > 0 ? (($highRiskCOunt * 100) / $totalRisk) : 0;
+            $data['mediumRiskPercentage'] = $totalRisk > 0 ? (($mediumRiskCOunt * 100) / $totalRisk) : 0;
+            $data['lowRiskPercentage'] = $totalRisk > 0 ? (($lowRiskCOunt * 100) / $totalRisk) : 0;
 
 
             $data['dougGraphHighRisk'] = [
@@ -362,11 +363,11 @@ class userController extends Controller
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
         $business_inteligence = [
 
-            $data['BusinessIntelligence']->business_fy1,
-            $data['BusinessIntelligence']->business_fy2,
-            $data['BusinessIntelligence']->business_fy3,
-            $data['BusinessIntelligence']->business_fy4,
-            $data['BusinessIntelligence']->business_fy5,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_one,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_two,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_three,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_four,
+            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_five,
 
         ];
 
@@ -378,6 +379,17 @@ class userController extends Controller
 
         // Combine the cleaned financial ratios into a single array
         $data['businessInteligenceGrapFY'] = $cleaned_business_inteligence;
+
+        $data['businessInteligenceGraphLablesName'] = [
+
+            $data['BusinessIntelligence']->year_BI_FY_one,
+            $data['BusinessIntelligence']->year_BI_FY_two,
+            $data['BusinessIntelligence']->year_BI_FY_three,
+            $data['BusinessIntelligence']->year_BI_FY_four,
+            $data['BusinessIntelligence']->year_BI_FY_five,
+
+        ];
+
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
         $data['Financial'] = Financial::where('third_party_id', $id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id', $id)->first();
@@ -415,7 +427,21 @@ class userController extends Controller
         // Combine the cleaned financial ratios into a single array
         $data['financialFindingsGrapFY'] = $cleanedFinancialFindings;
 
-        // dd($data['FinancialsFindingsFyFive'] );
+        $data['FinancialsFindingsFyFiveGraphLableName'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->pluck('year_five_finding__1');
+        $data['FinancialsFindingsFyFourGraphLableName'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->pluck('year_four_finding__1');
+        $data['FinancialsFindingsFyThreeGraphLableName'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->pluck('year_three_finding__1');
+        $data['FinancialsFindingsFyTwoGraphLableName'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_two_finding__1');
+        $data['FinancialsFindingsFyOneGraphLableName'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->pluck('year_one_finding__1');
+
+        $data['financialFindingsGrapFYhLablesName'] = [
+
+            $data['FinancialsFindingsFyFiveGraphLableName'],
+            $data['FinancialsFindingsFyFourGraphLableName'],
+            $data['FinancialsFindingsFyThreeGraphLableName'],
+            $data['FinancialsFindingsFyTwoGraphLableName'],
+            $data['FinancialsFindingsFyOneGraphLableName'],
+        ];
+        // dd($data['financialFindingsGrapFYhLablesName'] );
         $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id', $data['Financial']->id)->pluck('current_ratio_fy_five_1');
         $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id', $data['Financial']->id)->pluck('current_ratio_fy_four_1');
         $data['FinancialsRatioAnalysisFyThree'] = FinancialsRatioAnalysisFyThree::where('financial_id', $data['Financial']->id)->pluck('current_ratio_fy_three_1');
@@ -438,6 +464,23 @@ class userController extends Controller
         // Combine the cleaned financial ratios into a single array
         $data['financialrationGrapFY'] = $cleanedFinancialRatios;
 
+        $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->pluck('year_ratio_five_1');
+        $data['FinancialsRatioAnalysisFyFourGraphLabelNames'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->pluck('year_ratio_four_1');
+        $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->pluck('year_ratio_three_1');
+        $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_ratio_two_1');
+        $data['FinancialsRatioAnalysisFyOneGraphLabelNames'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->pluck('year_ratio_one_1');
+
+
+        $data['financialRatioGrapFYhLablesName'] = [
+
+            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyOneGraphLabelNames'],
+        ];
+
+        // dd($data['financialRatioGrapFYhLablesName']);
         $data['FirmBackground'] = FirmBackground::where('third_party_id', $id)->first();
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
@@ -473,6 +516,20 @@ class userController extends Controller
 
         // Specify the desired file name
         $fileName = $data['OnGroundVerification']->upload_picture;
+
+        return response()->download($imagePath, $fileName);
+    }
+
+    public function final_Reprts_file_download($id)
+    {
+        $id = base64_decode($id);
+        $data['KeyObservation'] = KeyObservation::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/KeyObservationFinalReports/' . $data['KeyObservation']->key_observation_final_report_file);
+
+        // Specify the desired file name
+        $fileName = $data['KeyObservation']->key_observation_final_report_file;
 
         return response()->download($imagePath, $fileName);
     }

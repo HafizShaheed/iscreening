@@ -217,27 +217,285 @@
 
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">{{ $FirmBackground->name }}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">PAN</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->pan }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">AADHAR</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->aadhar }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Educational Background</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->educational_background }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Credit Score</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->credit_score }}</td>
-                                                        </tr>
-                                                    </tbody>
+                                                 <!-- director 2 -->
+                                            @if ( !empty($FirmBackground->name_1) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (1)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_1 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_1 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_1 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_1 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_2) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (2)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_2 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_2 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_2 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_2 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_3) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (3)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_3 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_3 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_3 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_3 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_4) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (4)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_4 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_4 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_4 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_4 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_5) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (5)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_5 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_5 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_5 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_5 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_6) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (6)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_6 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_6 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_6 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_6 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_7) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (7)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_7 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_7 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_7 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_7 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_8) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (8)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_8 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_8 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_8 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_8 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_9) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (9)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_9 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_9 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_9 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_9 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @if ( !empty($FirmBackground->name_10) )
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Director's Name (10)</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8">{{ $FirmBackground->name_10 }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->pan_10 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->aadhar_10 }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->educational_background_10 }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                                <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Credit Score</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8">{{ $FirmBackground->credit_score }}</td>
+                                                </tr>
+
+                                    </tbody>
                                                 </table>
                                             </div>
                                         </div>
@@ -1694,7 +1952,7 @@
                                         </div>
                                         <div class="col-xl-6 mb-3">
                                             <p for="educationalBackground" class="text-center"><a
-                                                    href="{{ URL::to('/panel/report/generate_pdf_of_reports'.'/'.$getThirdPartyForID->id) }}"
+                                                    href="{{ URL::to('/panel/report/final_Reprts_file_download'.'/'. base64_encode($KeyObservation->id)) }}"
                                                     class="download-license-btn">Download Licenses</a></p>
                                         </div>
 
@@ -1736,6 +1994,9 @@
     var businessInteligenceGrapFY = @json($businessInteligenceGrapFY);
     var finalValueforGraKeyObservation =@json($finalValueforGraKeyObservation);
 
+    var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
+    var financialFindingsGrapFYhLablesName =@json($financialFindingsGrapFYhLablesName);
+    var financialRatioGrapFYhLablesName =@json($financialRatioGrapFYhLablesName);
     // Your external JavaScript file
     // Include this script before your external JS that uses financialRationGrapFY
     </script>
@@ -1939,7 +2200,178 @@
 
 	var screenWidth = $(window).width();
 
-	var barChart1 = function(){
+	// var barChart1 = function(){
+	// 	if(jQuery('#barChart_1').length > 0 ){
+	// 		const barChart_1 = document.getElementById("barChart_1").getContext('2d');
+
+	// 		barChart_1.height = 100;
+
+	// 		new Chart(barChart_1, {
+    //             type: 'bar',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels: financialFindingsGrapFYhLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Financials Findinds Analysis",
+    //                         data: financialFindingsGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "0",
+    //                         // Use an array of colors for each bar
+    //                         backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 0.5,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 },
+
+    //             }
+	// 		});
+	// 	}
+	// }
+    // var barChart1financialRatio = function(){
+    //     if(jQuery('#barChart_financialRation').length > 0 ){
+    //         const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
+
+    //         barChart_financialRation.height = 100;
+
+    //         new Chart(barChart_financialRation, {
+    //             type: 'line',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels:  financialRatioGrapFYhLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Financials Ratio Analysis",
+    //                         data:financialrationGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "2",
+	// 						backgroundColor: 'rgba(33, 150, 243, 1)',
+    //                         pointRadius: 5,
+    //                         pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 2,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 },
+    //                 tooltips: {
+    //                 callbacks: {
+    //                     label: function (tooltipItem, data) {
+    //                         return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+    //                     }
+    //                 }
+    //             }
+    //             }
+    //         });
+    //     }
+    // }
+
+
+    // var barChart1businessIntelligenc = function(){
+    //     if(jQuery('#barChart_businessIntelligence').length > 0 ){
+    //         const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
+
+    //         barChart_businessIntelligence.height = 100;
+
+    //         new Chart(barChart_businessIntelligence, {
+    //             type: 'line',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels:  businessInteligenceGraphLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Business Intelligence",
+    //                         data: businessInteligenceGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "2",
+	// 						backgroundColor: 'rgba(33, 150, 243, 1)',
+    //                         pointRadius: 5,
+    //                         pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 2,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 },
+    //                 tooltips: {
+    //                 callbacks: {
+    //                     label: function (tooltipItem, data) {
+    //                         return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+    //                     }
+    //                 }
+    //             }
+    //             }
+    //         });
+    //     }
+    // }
+
+
+    var barChart1 = function(){
 		if(jQuery('#barChart_1').length > 0 ){
 			const barChart_1 = document.getElementById("barChart_1").getContext('2d');
 
@@ -1949,7 +2381,7 @@
                 type: 'bar',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: ["FY1", "FY2", "FY3", "FY4", "FY5"],
+                    labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
                             label: "Financials Findinds Analysis",
@@ -1984,8 +2416,7 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
-                    },
-                    
+                    }
                 }
 			});
 		}
@@ -1997,19 +2428,19 @@
             barChart_financialRation.height = 100;
 
             new Chart(barChart_financialRation, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels:  ["FY1", "FY2", "FY3", "FY4", "FY5"],
+                    labels: financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: ['abc','ddas','asdd','adds','qwewee'],
-                            data: [2,45,6,7,7],//businessInteligenceGrapFY,
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
                             borderColor: '#fff',
-                            borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 1)',
-                            pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
+                        }
                     ]
                 },
                 options: {
@@ -2028,7 +2459,7 @@
                             }
                         }],
                         xAxes: [{
-                            barPercentage: 2,
+                            barPercentage: 0.5,
                             ticks:{
                                 fontColor: '#888',
                             },
@@ -2036,14 +2467,7 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
-                    },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
                     }
-                }
                 }
             });
         }
@@ -2057,19 +2481,18 @@
             barChart_businessIntelligence.height = 100;
 
             new Chart(barChart_businessIntelligence, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels:  ["FY1", "FY2", "FY3", "FY4", "FY5"],
+                    labels: businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: ['abc','ddas','asdd','adds','qwewee'],
-                            data: [2,45,6,7,7],//businessInteligenceGrapFY,
+                            label: "Business Intelligence",
+                            data: businessInteligenceGrapFY,
                             borderColor: '#fff',
-                            borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 1)',
-                            pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
                     ]
                 },
                 options: {
@@ -2088,7 +2511,7 @@
                             }
                         }],
                         xAxes: [{
-                            barPercentage: 2,
+                            barPercentage: 0.5,
                             ticks:{
                                 fontColor: '#888',
                             },
@@ -2096,19 +2519,11 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
-                    },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
                     }
-                }
                 }
             });
         }
     }
-
 
 
 	var barChart2 = function(){

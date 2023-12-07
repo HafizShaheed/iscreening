@@ -565,11 +565,11 @@ class adminController extends Controller
 
         $data['financialFindingsGrapFYhLablesName'] = [
 
-            $data['FinancialsFindingsFyFiveGraphLableName'], 
+            $data['FinancialsFindingsFyFiveGraphLableName'],
             $data['FinancialsFindingsFyFourGraphLableName'],
             $data['FinancialsFindingsFyThreeGraphLableName'],
-            $data['FinancialsFindingsFyTwoGraphLableName'], 
-            $data['FinancialsFindingsFyOneGraphLableName'], 
+            $data['FinancialsFindingsFyTwoGraphLableName'],
+            $data['FinancialsFindingsFyOneGraphLableName'],
         ];
 
         // dd($data['FinancialsFindingsFyFive'] );
@@ -602,16 +602,16 @@ class adminController extends Controller
         $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_ratio_two_1');
         $data['FinancialsRatioAnalysisFyOneGraphLabelNames'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->pluck('year_ratio_one_1');
 
-        
+
         $data['financialRatioGrapFYhLablesName'] = [
 
-            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'], 
-            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'], 
+            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
             $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'], 
-            $data['FinancialsRatioAnalysisFyOneGraphLabelNames'], 
+            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyOneGraphLabelNames'],
         ];
-        // dd(  $data['financialrationGrapFY'] );
+        // dd(  $data['financialRatioGrapFYhLablesName'] );
         $data['FirmBackground'] = FirmBackground::where('third_party_id',$id)->first();
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id',$data['FirmBackground']->id)->first();
@@ -1243,8 +1243,10 @@ class adminController extends Controller
         $Financial->overall_financial_score  = $request->input('overall_financial_score');
         $Financial->Type_of_risk = $request->input('overall_financial_score') > 60 ? 'High Risk' : ($request->input('overall_financial_score') <= 60 && $request->input('overall_financial_score') > 30 ? 'Medium Risk' : ($request->input('overall_financial_score') <= 30 ? 'Low Risk' : '' ) );
 
-
         $Financial->save();
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
 
         if($Financial->id){
 
@@ -1253,259 +1255,259 @@ class adminController extends Controller
 
 
 
-       $FinancialsFindingsFyOne->revenue_fy_one_finding__1  = $request->input('revenue_fy_one_finding__1');
-       $FinancialsFindingsFyOne->year_one_finding__1  = $request->input('year_one_finding__1');
-       $FinancialsFindingsFyOne->net_profit_fy_one_finding__1  = $request->input('net_profit_fy_one_finding__1');
-       $FinancialsFindingsFyOne->gross_profit_fy_one_finding__1  = $request->input('gross_profit_fy_one_finding__1');
-       $FinancialsFindingsFyOne->working_capital_1_fy_one_finding__1  = $request->input('working_capital_1_fy_one_finding__1');
-       $FinancialsFindingsFyOne->quick_assets_fy_one_finding__1  = $request->input('quick_assets_fy_one_finding__1');
-       $FinancialsFindingsFyOne->total_assets_fy_one_finding__1  = $request->input('total_assets_fy_one_finding__1');
-       $FinancialsFindingsFyOne->current_assets_fy_one_finding__1  = $request->input('current_assets_fy_one_finding__1');
-       $FinancialsFindingsFyOne->current_liabilities_fy_one_finding__1  = $request->input('current_liabilities_fy_one_finding__1');
-       $FinancialsFindingsFyOne->debt_fy_one_finding__1  = $request->input('debt_fy_one_finding__1');
-       $FinancialsFindingsFyOne->average_inventory_fy_one_finding__1  = $request->input('average_inventory_fy_one_finding__1');
-       $FinancialsFindingsFyOne->net_sales_fy_one_finding__1  = $request->input('net_sales_fy_one_finding__1');
-       $FinancialsFindingsFyOne->equity_share_capital_fy_one_finding__1  = $request->input('equity_share_capital_fy_one_finding__1');
-       $FinancialsFindingsFyOne->sundry_debtors_fy_one_finding__1  = $request->input('sundry_debtors_fy_one_finding__1');
-       $FinancialsFindingsFyOne->sundry_creditors_fy_one_finding__1  = $request->input('sundry_creditors_fy_one_finding__1');
-       $FinancialsFindingsFyOne->loans_and_advances_fy_one_finding__1  = $request->input('loans_and_advances_fy_one_finding__1');
-       $FinancialsFindingsFyOne->cash_and_cash_equivalents_fy_one_finding__1  = $request->input('cash_and_cash_equivalents_fy_one_finding__1');
-        //    $FinancialsFindingsFyOne->overall_financial_score_fy_one_finding__1  = $request->input('overall_financial_score_fy_one_finding__1');
+            $FinancialsFindingsFyOne->revenue_fy_one_finding__1  = $request->input('revenue_fy_one_finding__1');
+            $FinancialsFindingsFyOne->year_one_finding__1  = $request->input('year_one_finding__1');
+            $FinancialsFindingsFyOne->net_profit_fy_one_finding__1  = $request->input('net_profit_fy_one_finding__1');
+            $FinancialsFindingsFyOne->gross_profit_fy_one_finding__1  = $request->input('gross_profit_fy_one_finding__1');
+            $FinancialsFindingsFyOne->working_capital_1_fy_one_finding__1  = $request->input('working_capital_1_fy_one_finding__1');
+            $FinancialsFindingsFyOne->quick_assets_fy_one_finding__1  = $request->input('quick_assets_fy_one_finding__1');
+            $FinancialsFindingsFyOne->total_assets_fy_one_finding__1  = $request->input('total_assets_fy_one_finding__1');
+            $FinancialsFindingsFyOne->current_assets_fy_one_finding__1  = $request->input('current_assets_fy_one_finding__1');
+            $FinancialsFindingsFyOne->current_liabilities_fy_one_finding__1  = $request->input('current_liabilities_fy_one_finding__1');
+            $FinancialsFindingsFyOne->debt_fy_one_finding__1  = $request->input('debt_fy_one_finding__1');
+            $FinancialsFindingsFyOne->average_inventory_fy_one_finding__1  = $request->input('average_inventory_fy_one_finding__1');
+            $FinancialsFindingsFyOne->net_sales_fy_one_finding__1  = $request->input('net_sales_fy_one_finding__1');
+            $FinancialsFindingsFyOne->equity_share_capital_fy_one_finding__1  = $request->input('equity_share_capital_fy_one_finding__1');
+            $FinancialsFindingsFyOne->sundry_debtors_fy_one_finding__1  = $request->input('sundry_debtors_fy_one_finding__1');
+            $FinancialsFindingsFyOne->sundry_creditors_fy_one_finding__1  = $request->input('sundry_creditors_fy_one_finding__1');
+            $FinancialsFindingsFyOne->loans_and_advances_fy_one_finding__1  = $request->input('loans_and_advances_fy_one_finding__1');
+            $FinancialsFindingsFyOne->cash_and_cash_equivalents_fy_one_finding__1  = $request->input('cash_and_cash_equivalents_fy_one_finding__1');
+                //    $FinancialsFindingsFyOne->overall_financial_score_fy_one_finding__1  = $request->input('overall_financial_score_fy_one_finding__1');
 
-       $FinancialsFindingsFyOne->save();
+            $FinancialsFindingsFyOne->save();
 
-       $FinancialsFindingsFyTwo = FinancialsFindingsFyTwo::where('financial_id', $Financial->id)->firstOrFail();
-
-
-       $FinancialsFindingsFyTwo->year_two_finding__1  = $request->input('year_two_finding__1');
-       $FinancialsFindingsFyTwo->revenue_fy_two_finding__1  = $request->input('revenue_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->net_profit_fy_two_finding__1  = $request->input('net_profit_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->gross_profit_fy_two_finding__1  = $request->input('gross_profit_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->working_capital_1_fy_two_finding__1  = $request->input('working_capital_1_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->quick_assets_fy_two_finding__1  = $request->input('quick_assets_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->total_assets_fy_two_finding__1  = $request->input('total_assets_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->current_assets_fy_two_finding__1  = $request->input('current_assets_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->current_liabilities_fy_two_finding__1  = $request->input('current_liabilities_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->debt_fy_two_finding__1  = $request->input('debt_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->average_inventory_fy_two_finding__1  = $request->input('average_inventory_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->net_sales_fy_two_finding__1  = $request->input('net_sales_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->equity_share_capital_fy_two_finding__1  = $request->input('equity_share_capital_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->sundry_debtors_fy_two_finding__1  = $request->input('sundry_debtors_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->sundry_creditors_fy_two_finding__1  = $request->input('sundry_creditors_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->loans_and_advances_fy_two_finding__1  = $request->input('loans_and_advances_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->cash_and_cash_equivalents_fy_two_finding__1  = $request->input('cash_and_cash_equivalents_fy_two_finding__1');
-        //    $FinancialsFindingsFyTwo->overall_financial_score_fy_two_finding__1  = $request->input('overall_financial_score_fy_two_finding__1');
-       $FinancialsFindingsFyTwo->save();
+            $FinancialsFindingsFyTwo = FinancialsFindingsFyTwo::where('financial_id', $Financial->id)->firstOrFail();
 
 
-
-
-
-       $FinancialsFindingsFyThree = FinancialsFindingsFyThree::where('financial_id', $Financial->id)->firstOrFail();
-
-
-       $FinancialsFindingsFyThree->year_three_finding__1  = $request->input('year_three_finding__1');
-       $FinancialsFindingsFyThree->revenue_fy_three_finding__1  = $request->input('revenue_fy_three_finding__1');
-       $FinancialsFindingsFyThree->net_profit_fy_three_finding__1  = $request->input('net_profit_fy_three_finding__1');
-       $FinancialsFindingsFyThree->gross_profit_fy_three_finding__1  = $request->input('gross_profit_fy_three_finding__1');
-       $FinancialsFindingsFyThree->working_capital_1_fy_three_finding__1  = $request->input('working_capital_1_fy_three_finding__1');
-       $FinancialsFindingsFyThree->quick_assets_fy_three_finding__1  = $request->input('quick_assets_fy_three_finding__1');
-       $FinancialsFindingsFyThree->total_assets_fy_three_finding__1  = $request->input('total_assets_fy_three_finding__1');
-       $FinancialsFindingsFyThree->current_assets_fy_three_finding__1  = $request->input('current_assets_fy_three_finding__1');
-       $FinancialsFindingsFyThree->current_liabilities_fy_three_finding__1  = $request->input('current_liabilities_fy_three_finding__1');
-       $FinancialsFindingsFyThree->debt_fy_three_finding__1  = $request->input('debt_fy_three_finding__1');
-       $FinancialsFindingsFyThree->average_inventory_fy_three_finding__1  = $request->input('average_inventory_fy_three_finding__1');
-       $FinancialsFindingsFyThree->net_sales_fy_three_finding__1  = $request->input('net_sales_fy_three_finding__1');
-       $FinancialsFindingsFyThree->equity_share_capital_fy_three_finding__1  = $request->input('equity_share_capital_fy_three_finding__1');
-       $FinancialsFindingsFyThree->sundry_debtors_fy_three_finding__1  = $request->input('sundry_debtors_fy_three_finding__1');
-       $FinancialsFindingsFyThree->sundry_creditors_fy_three_finding__1  = $request->input('sundry_creditors_fy_three_finding__1');
-       $FinancialsFindingsFyThree->loans_and_advances_fy_three_finding__1  = $request->input('loans_and_advances_fy_three_finding__1');
-       $FinancialsFindingsFyThree->cash_and_cash_equivalents_fy_three_finding__1  = $request->input('cash_and_cash_equivalents_fy_three_finding__1');
-        //    $FinancialsFindingsFyThree->overall_financial_score_fy_three_finding__1  = $request->input('overall_financial_score_fy_three_finding__1');
-       $FinancialsFindingsFyThree->save();
-
-        $FinancialsFindingsFyFour = FinancialsFindingsFyFour::where('financial_id', $Financial->id)->firstOrFail();
-
-
-       $FinancialsFindingsFyFour->year_four_finding__1  = $request->input('year_four_finding__1');
-       $FinancialsFindingsFyFour->revenue_fy_four_finding__1  = $request->input('revenue_fy_four_finding__1');
-       $FinancialsFindingsFyFour->net_profit_fy_four_finding__1  = $request->input('net_profit_fy_four_finding__1');
-       $FinancialsFindingsFyFour->gross_profit_fy_four_finding__1  = $request->input('gross_profit_fy_four_finding__1');
-       $FinancialsFindingsFyFour->working_capital_1_fy_four_finding__1  = $request->input('working_capital_1_fy_four_finding__1');
-       $FinancialsFindingsFyFour->quick_assets_fy_four_finding__1  = $request->input('quick_assets_fy_four_finding__1');
-       $FinancialsFindingsFyFour->total_assets_fy_four_finding__1  = $request->input('total_assets_fy_four_finding__1');
-       $FinancialsFindingsFyFour->current_assets_fy_four_finding__1  = $request->input('current_assets_fy_four_finding__1');
-       $FinancialsFindingsFyFour->current_liabilities_fy_four_finding__1  = $request->input('current_liabilities_fy_four_finding__1');
-       $FinancialsFindingsFyFour->debt_fy_four_finding__1  = $request->input('debt_fy_four_finding__1');
-       $FinancialsFindingsFyFour->average_inventory_fy_four_finding__1  = $request->input('average_inventory_fy_four_finding__1');
-       $FinancialsFindingsFyFour->net_sales_fy_four_finding__1  = $request->input('net_sales_fy_four_finding__1');
-       $FinancialsFindingsFyFour->equity_share_capital_fy_four_finding__1  = $request->input('equity_share_capital_fy_four_finding__1');
-       $FinancialsFindingsFyFour->sundry_debtors_fy_four_finding__1  = $request->input('sundry_debtors_fy_four_finding__1');
-       $FinancialsFindingsFyFour->sundry_creditors_fy_four_finding__1  = $request->input('sundry_creditors_fy_four_finding__1');
-       $FinancialsFindingsFyFour->loans_and_advances_fy_four_finding__1  = $request->input('loans_and_advances_fy_four_finding__1');
-       $FinancialsFindingsFyFour->cash_and_cash_equivalents_fy_four_finding__1  = $request->input('cash_and_cash_equivalents_fy_four_finding__1');
-        //    $FinancialsFindingsFyFour->overall_financial_score_fy_four_finding__1  = $request->input('overall_financial_score_fy_four_finding__1');
-            $FinancialsFindingsFyFour->save();
-
-            $FinancialsFindingsFyFive = FinancialsFindingsFyFive::where('financial_id', $Financial->id)->firstOrFail();
-
-
-       $FinancialsFindingsFyFive->revenue_fy_five_finding__1  = $request->input('revenue_fy_five_finding__1');
-       $FinancialsFindingsFyFive->year_five_finding__1  = $request->input('year_five_finding__1');
-       $FinancialsFindingsFyFive->net_profit_fy_five_finding__1  = $request->input('net_profit_fy_five_finding__1');
-       $FinancialsFindingsFyFive->gross_profit_fy_five_finding__1  = $request->input('gross_profit_fy_five_finding__1');
-       $FinancialsFindingsFyFive->working_capital_1_fy_five_finding__1  = $request->input('working_capital_1_fy_five_finding__1');
-       $FinancialsFindingsFyFive->quick_assets_fy_five_finding__1  = $request->input('quick_assets_fy_five_finding__1');
-       $FinancialsFindingsFyFive->total_assets_fy_five_finding__1  = $request->input('total_assets_fy_five_finding__1');
-       $FinancialsFindingsFyFive->current_assets_fy_five_finding__1  = $request->input('current_assets_fy_five_finding__1');
-       $FinancialsFindingsFyFive->current_liabilities_fy_five_finding__1  = $request->input('current_liabilities_fy_five_finding__1');
-       $FinancialsFindingsFyFive->debt_fy_five_finding__1  = $request->input('debt_fy_five_finding__1');
-       $FinancialsFindingsFyFive->average_inventory_fy_five_finding__1  = $request->input('average_inventory_fy_five_finding__1');
-       $FinancialsFindingsFyFive->net_sales_fy_five_finding__1  = $request->input('net_sales_fy_five_finding__1');
-       $FinancialsFindingsFyFive->equity_share_capital_fy_five_finding__1  = $request->input('equity_share_capital_fy_five_finding__1');
-       $FinancialsFindingsFyFive->sundry_debtors_fy_five_finding__1  = $request->input('sundry_debtors_fy_five_finding__1');
-       $FinancialsFindingsFyFive->sundry_creditors_fy_five_finding__1  = $request->input('sundry_creditors_fy_five_finding__1');
-       $FinancialsFindingsFyFive->loans_and_advances_fy_five_finding__1  = $request->input('loans_and_advances_fy_five_finding__1');
-       $FinancialsFindingsFyFive->cash_and_cash_equivalents_fy_five_finding__1  = $request->input('cash_and_cash_equivalents_fy_five_finding__1');
-        //    $FinancialsFindingsFyFive->overall_financial_score_fy_five_finding__1  = $request->input('overall_financial_score_fy_five_finding__1');
-            $FinancialsFindingsFyFive->save();
-
-
-
-
-        $FinancialsRatioAnalysisFyOne = FinancialsRatioAnalysisFyOne::where('financial_id', $Financial->id)->firstOrFail();
-
-
-       $FinancialsRatioAnalysisFyOne->year_ratio_one_1  = $request->input('year_ratio_one_1');
-       $FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1  = $request->input('current_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1  = $request->input('current_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->debt_ratio_fy_one_1  = $request->input('debt_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->debt_ratio_analysis_fy_one_1  = $request->input('debt_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->solvency_ratio_fy_one_1  = $request->input('solvency_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->solvency_ratio_analysis_fy_one_1  = $request->input('solvency_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_fy_one_1  = $request->input('debt_to_equity_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_analysis_fy_one_1  = $request->input('debt_to_equity_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->asset_turnover_ratio_fy_one_1  = $request->input('asset_turnover_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->asset_turnover_ratio_analysis_fy_one_1  = $request->input('asset_turnover_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_fy_one_1  = $request->input('absolute_liquidity_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_analysis_fy_one_1  = $request->input('absolute_liquidity_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->proprietary_ratio_fy_one_1  = $request->input('proprietary_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1  = $request->input('proprietary_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->net_profit_ratio_fy_one_1  = $request->input('net_profit_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1  = $request->input('net_profit_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->gross_profit_ratio_fy_one_1  = $request->input('gross_profit_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1  = $request->input('gross_profit_ratio_analysis_fy_one_1');
-
-       $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1  = $request->input('springate_s_score_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1  = $request->input('springate_s_score_ratio_analysis_fy_one_1');
-       
-       $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_fy_one_1  = $request->input('trade_receivable_days_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1  = $request->input('trade_receivable_days_ratio_analysis_fy_one_1');
-
-       
-       $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1  = $request->input('trade_payable_days_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1  = $request->input('trade_payable_days_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1  = $request->input('taffler_z_score_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1  = $request->input('taffler_z_score_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1  = $request->input('zmijewski_x_score_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1  = $request->input('zmijewski_x_score_ratio_analysis_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->quick_ratio_fy_one_1  = $request->input('quick_ratio_fy_one_1');
-       $FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1  = $request->input('quick_ratio_analysis_fy_one_1');
-            $FinancialsRatioAnalysisFyOne->save();
-
-        $FinancialsRatioAnalysisFyTwo = FinancialsRatioAnalysisFyTwo::where('financial_id', $Financial->id)->firstOrFail();
-
-
-
-       $FinancialsRatioAnalysisFyTwo->year_ratio_two_1  = $request->input('year_ratio_two_1');
-       $FinancialsRatioAnalysisFyTwo->current_ratio_fy_two_1  = $request->input('current_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->debt_ratio_fy_two_1  = $request->input('debt_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->solvency_ratio_fy_two_1  = $request->input('solvency_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_fy_two_1  = $request->input('debt_to_equity_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_fy_two_1  = $request->input('asset_turnover_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1  = $request->input('absolute_liquidity_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1  = $request->input('proprietary_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->net_profit_ratio_fy_two_1  = $request->input('net_profit_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->gross_profit_ratio_fy_two_1  = $request->input('gross_profit_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1  = $request->input('springate_s_score_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->trade_receivable_days_ratio_fy_two_1  = $request->input('trade_receivable_days_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->trade_payable_days_ratio_fy_two_1  = $request->input('trade_payable_days_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->taffler_z_score_ratio_fy_two_1  = $request->input('taffler_z_score_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->zmijewski_x_score_ratio_fy_two_1  = $request->input('zmijewski_x_score_ratio_fy_two_1');
-       $FinancialsRatioAnalysisFyTwo->quick_ratio_fy_two_1  = $request->input('quick_ratio_fy_two_1');
-
-            $FinancialsRatioAnalysisFyTwo->save();
+            $FinancialsFindingsFyTwo->year_two_finding__1  = $request->input('year_two_finding__1');
+            $FinancialsFindingsFyTwo->revenue_fy_two_finding__1  = $request->input('revenue_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->net_profit_fy_two_finding__1  = $request->input('net_profit_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->gross_profit_fy_two_finding__1  = $request->input('gross_profit_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->working_capital_1_fy_two_finding__1  = $request->input('working_capital_1_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->quick_assets_fy_two_finding__1  = $request->input('quick_assets_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->total_assets_fy_two_finding__1  = $request->input('total_assets_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->current_assets_fy_two_finding__1  = $request->input('current_assets_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->current_liabilities_fy_two_finding__1  = $request->input('current_liabilities_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->debt_fy_two_finding__1  = $request->input('debt_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->average_inventory_fy_two_finding__1  = $request->input('average_inventory_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->net_sales_fy_two_finding__1  = $request->input('net_sales_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->equity_share_capital_fy_two_finding__1  = $request->input('equity_share_capital_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->sundry_debtors_fy_two_finding__1  = $request->input('sundry_debtors_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->sundry_creditors_fy_two_finding__1  = $request->input('sundry_creditors_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->loans_and_advances_fy_two_finding__1  = $request->input('loans_and_advances_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->cash_and_cash_equivalents_fy_two_finding__1  = $request->input('cash_and_cash_equivalents_fy_two_finding__1');
+                //    $FinancialsFindingsFyTwo->overall_financial_score_fy_two_finding__1  = $request->input('overall_financial_score_fy_two_finding__1');
+            $FinancialsFindingsFyTwo->save();
 
 
 
 
 
-        $FinancialsRatioAnalysisFyThree = FinancialsRatioAnalysisFyThree::where('financial_id', $Financial->id)->firstOrFail();
-       $FinancialsRatioAnalysisFyThree->year_ratio_three_1  = $request->input('year_ratio_three_1');
-
-       $FinancialsRatioAnalysisFyThree->current_ratio_fy_three_1  = $request->input('current_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->debt_ratio_fy_three_1  = $request->input('debt_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->solvency_ratio_fy_three_1  = $request->input('solvency_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->debt_to_equity_ratio_fy_three_1  = $request->input('debt_to_equity_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->asset_turnover_ratio_fy_three_1  = $request->input('asset_turnover_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->absolute_liquidity_ratio_fy_three_1  = $request->input('absolute_liquidity_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->proprietary_ratio_fy_three_1  = $request->input('proprietary_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->net_profit_ratio_fy_three_1  = $request->input('net_profit_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->gross_profit_ratio_fy_three_1  = $request->input('gross_profit_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->springate_s_score_ratio_fy_three_1  = $request->input('springate_s_score_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->trade_receivable_days_ratio_fy_three_1  = $request->input('trade_receivable_days_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->trade_payable_days_ratio_fy_three_1  = $request->input('trade_payable_days_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->taffler_z_score_ratio_fy_three_1  = $request->input('taffler_z_score_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->zmijewski_x_score_ratio_fy_three_1  = $request->input('zmijewski_x_score_ratio_fy_three_1');
-       $FinancialsRatioAnalysisFyThree->quick_ratio_fy_three_1  = $request->input('quick_ratio_fy_three_1');
-
-            $FinancialsRatioAnalysisFyThree->SAVE();
+            $FinancialsFindingsFyThree = FinancialsFindingsFyThree::where('financial_id', $Financial->id)->firstOrFail();
 
 
+            $FinancialsFindingsFyThree->year_three_finding__1  = $request->input('year_three_finding__1');
+            $FinancialsFindingsFyThree->revenue_fy_three_finding__1  = $request->input('revenue_fy_three_finding__1');
+            $FinancialsFindingsFyThree->net_profit_fy_three_finding__1  = $request->input('net_profit_fy_three_finding__1');
+            $FinancialsFindingsFyThree->gross_profit_fy_three_finding__1  = $request->input('gross_profit_fy_three_finding__1');
+            $FinancialsFindingsFyThree->working_capital_1_fy_three_finding__1  = $request->input('working_capital_1_fy_three_finding__1');
+            $FinancialsFindingsFyThree->quick_assets_fy_three_finding__1  = $request->input('quick_assets_fy_three_finding__1');
+            $FinancialsFindingsFyThree->total_assets_fy_three_finding__1  = $request->input('total_assets_fy_three_finding__1');
+            $FinancialsFindingsFyThree->current_assets_fy_three_finding__1  = $request->input('current_assets_fy_three_finding__1');
+            $FinancialsFindingsFyThree->current_liabilities_fy_three_finding__1  = $request->input('current_liabilities_fy_three_finding__1');
+            $FinancialsFindingsFyThree->debt_fy_three_finding__1  = $request->input('debt_fy_three_finding__1');
+            $FinancialsFindingsFyThree->average_inventory_fy_three_finding__1  = $request->input('average_inventory_fy_three_finding__1');
+            $FinancialsFindingsFyThree->net_sales_fy_three_finding__1  = $request->input('net_sales_fy_three_finding__1');
+            $FinancialsFindingsFyThree->equity_share_capital_fy_three_finding__1  = $request->input('equity_share_capital_fy_three_finding__1');
+            $FinancialsFindingsFyThree->sundry_debtors_fy_three_finding__1  = $request->input('sundry_debtors_fy_three_finding__1');
+            $FinancialsFindingsFyThree->sundry_creditors_fy_three_finding__1  = $request->input('sundry_creditors_fy_three_finding__1');
+            $FinancialsFindingsFyThree->loans_and_advances_fy_three_finding__1  = $request->input('loans_and_advances_fy_three_finding__1');
+            $FinancialsFindingsFyThree->cash_and_cash_equivalents_fy_three_finding__1  = $request->input('cash_and_cash_equivalents_fy_three_finding__1');
+                //    $FinancialsFindingsFyThree->overall_financial_score_fy_three_finding__1  = $request->input('overall_financial_score_fy_three_finding__1');
+            $FinancialsFindingsFyThree->save();
+
+                $FinancialsFindingsFyFour = FinancialsFindingsFyFour::where('financial_id', $Financial->id)->firstOrFail();
+
+
+            $FinancialsFindingsFyFour->year_four_finding__1  = $request->input('year_four_finding__1');
+            $FinancialsFindingsFyFour->revenue_fy_four_finding__1  = $request->input('revenue_fy_four_finding__1');
+            $FinancialsFindingsFyFour->net_profit_fy_four_finding__1  = $request->input('net_profit_fy_four_finding__1');
+            $FinancialsFindingsFyFour->gross_profit_fy_four_finding__1  = $request->input('gross_profit_fy_four_finding__1');
+            $FinancialsFindingsFyFour->working_capital_1_fy_four_finding__1  = $request->input('working_capital_1_fy_four_finding__1');
+            $FinancialsFindingsFyFour->quick_assets_fy_four_finding__1  = $request->input('quick_assets_fy_four_finding__1');
+            $FinancialsFindingsFyFour->total_assets_fy_four_finding__1  = $request->input('total_assets_fy_four_finding__1');
+            $FinancialsFindingsFyFour->current_assets_fy_four_finding__1  = $request->input('current_assets_fy_four_finding__1');
+            $FinancialsFindingsFyFour->current_liabilities_fy_four_finding__1  = $request->input('current_liabilities_fy_four_finding__1');
+            $FinancialsFindingsFyFour->debt_fy_four_finding__1  = $request->input('debt_fy_four_finding__1');
+            $FinancialsFindingsFyFour->average_inventory_fy_four_finding__1  = $request->input('average_inventory_fy_four_finding__1');
+            $FinancialsFindingsFyFour->net_sales_fy_four_finding__1  = $request->input('net_sales_fy_four_finding__1');
+            $FinancialsFindingsFyFour->equity_share_capital_fy_four_finding__1  = $request->input('equity_share_capital_fy_four_finding__1');
+            $FinancialsFindingsFyFour->sundry_debtors_fy_four_finding__1  = $request->input('sundry_debtors_fy_four_finding__1');
+            $FinancialsFindingsFyFour->sundry_creditors_fy_four_finding__1  = $request->input('sundry_creditors_fy_four_finding__1');
+            $FinancialsFindingsFyFour->loans_and_advances_fy_four_finding__1  = $request->input('loans_and_advances_fy_four_finding__1');
+            $FinancialsFindingsFyFour->cash_and_cash_equivalents_fy_four_finding__1  = $request->input('cash_and_cash_equivalents_fy_four_finding__1');
+                //    $FinancialsFindingsFyFour->overall_financial_score_fy_four_finding__1  = $request->input('overall_financial_score_fy_four_finding__1');
+                    $FinancialsFindingsFyFour->save();
+
+                    $FinancialsFindingsFyFive = FinancialsFindingsFyFive::where('financial_id', $Financial->id)->firstOrFail();
+
+
+            $FinancialsFindingsFyFive->revenue_fy_five_finding__1  = $request->input('revenue_fy_five_finding__1');
+            $FinancialsFindingsFyFive->year_five_finding__1  = $request->input('year_five_finding__1');
+            $FinancialsFindingsFyFive->net_profit_fy_five_finding__1  = $request->input('net_profit_fy_five_finding__1');
+            $FinancialsFindingsFyFive->gross_profit_fy_five_finding__1  = $request->input('gross_profit_fy_five_finding__1');
+            $FinancialsFindingsFyFive->working_capital_1_fy_five_finding__1  = $request->input('working_capital_1_fy_five_finding__1');
+            $FinancialsFindingsFyFive->quick_assets_fy_five_finding__1  = $request->input('quick_assets_fy_five_finding__1');
+            $FinancialsFindingsFyFive->total_assets_fy_five_finding__1  = $request->input('total_assets_fy_five_finding__1');
+            $FinancialsFindingsFyFive->current_assets_fy_five_finding__1  = $request->input('current_assets_fy_five_finding__1');
+            $FinancialsFindingsFyFive->current_liabilities_fy_five_finding__1  = $request->input('current_liabilities_fy_five_finding__1');
+            $FinancialsFindingsFyFive->debt_fy_five_finding__1  = $request->input('debt_fy_five_finding__1');
+            $FinancialsFindingsFyFive->average_inventory_fy_five_finding__1  = $request->input('average_inventory_fy_five_finding__1');
+            $FinancialsFindingsFyFive->net_sales_fy_five_finding__1  = $request->input('net_sales_fy_five_finding__1');
+            $FinancialsFindingsFyFive->equity_share_capital_fy_five_finding__1  = $request->input('equity_share_capital_fy_five_finding__1');
+            $FinancialsFindingsFyFive->sundry_debtors_fy_five_finding__1  = $request->input('sundry_debtors_fy_five_finding__1');
+            $FinancialsFindingsFyFive->sundry_creditors_fy_five_finding__1  = $request->input('sundry_creditors_fy_five_finding__1');
+            $FinancialsFindingsFyFive->loans_and_advances_fy_five_finding__1  = $request->input('loans_and_advances_fy_five_finding__1');
+            $FinancialsFindingsFyFive->cash_and_cash_equivalents_fy_five_finding__1  = $request->input('cash_and_cash_equivalents_fy_five_finding__1');
+                //    $FinancialsFindingsFyFive->overall_financial_score_fy_five_finding__1  = $request->input('overall_financial_score_fy_five_finding__1');
+                    $FinancialsFindingsFyFive->save();
 
 
 
-        $FinancialsRatioAnalysisFyFour = FinancialsRatioAnalysisFyFour::where('financial_id', $Financial->id)->firstOrFail();
-       $FinancialsRatioAnalysisFyFour->year_ratio_four_1  = $request->input('year_ratio_four_1');
 
-       $FinancialsRatioAnalysisFyFour->current_ratio_fy_four_1  = $request->input('current_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->debt_ratio_fy_four_1  = $request->input('debt_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->solvency_ratio_fy_four_1  = $request->input('solvency_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->debt_to_equity_ratio_fy_four_1  = $request->input('debt_to_equity_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->asset_turnover_ratio_fy_four_1  = $request->input('asset_turnover_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->absolute_liquidity_ratio_fy_four_1  = $request->input('absolute_liquidity_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->proprietary_ratio_fy_four_1  = $request->input('proprietary_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->net_profit_ratio_fy_four_1  = $request->input('net_profit_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->gross_profit_ratio_fy_four_1  = $request->input('gross_profit_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->springate_s_score_ratio_fy_four_1  = $request->input('springate_s_score_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->trade_receivable_days_ratio_fy_four_1  = $request->input('trade_receivable_days_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->trade_payable_days_ratio_fy_four_1  = $request->input('trade_payable_days_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->taffler_z_score_ratio_fy_four_1  = $request->input('taffler_z_score_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->zmijewski_x_score_ratio_fy_four_1  = $request->input('zmijewski_x_score_ratio_fy_four_1');
-       $FinancialsRatioAnalysisFyFour->quick_ratio_fy_four_1  = $request->input('quick_ratio_fy_four_1');
+                $FinancialsRatioAnalysisFyOne = FinancialsRatioAnalysisFyOne::where('financial_id', $Financial->id)->firstOrFail();
 
-        $FinancialsRatioAnalysisFyFour->save();
 
-        $FinancialsRatioAnalysisFyFive = FinancialsRatioAnalysisFyFive::where('financial_id', $Financial->id)->firstOrFail();
-        $FinancialsRatioAnalysisFyFive->year_ratio_five_1  = $request->input('year_ratio_five_1');
+            $FinancialsRatioAnalysisFyOne->year_ratio_one_1  = $request->input('year_ratio_one_1');
+            $FinancialsRatioAnalysisFyOne->current_ratio_fy_one_1  = $request->input('current_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1  = $request->input('current_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->debt_ratio_fy_one_1  = $request->input('debt_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->debt_ratio_analysis_fy_one_1  = $request->input('debt_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->solvency_ratio_fy_one_1  = $request->input('solvency_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->solvency_ratio_analysis_fy_one_1  = $request->input('solvency_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_fy_one_1  = $request->input('debt_to_equity_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_analysis_fy_one_1  = $request->input('debt_to_equity_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->asset_turnover_ratio_fy_one_1  = $request->input('asset_turnover_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->asset_turnover_ratio_analysis_fy_one_1  = $request->input('asset_turnover_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_fy_one_1  = $request->input('absolute_liquidity_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_analysis_fy_one_1  = $request->input('absolute_liquidity_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->proprietary_ratio_fy_one_1  = $request->input('proprietary_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1  = $request->input('proprietary_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->net_profit_ratio_fy_one_1  = $request->input('net_profit_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1  = $request->input('net_profit_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->gross_profit_ratio_fy_one_1  = $request->input('gross_profit_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1  = $request->input('gross_profit_ratio_analysis_fy_one_1');
 
-       $FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1  = $request->input('current_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1  = $request->input('debt_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1  = $request->input('solvency_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1  = $request->input('debt_to_equity_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1  = $request->input('asset_turnover_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->absolute_liquidity_ratio_fy_five_1  = $request->input('absolute_liquidity_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1  = $request->input('proprietary_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->net_profit_ratio_fy_five_1  = $request->input('net_profit_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1  = $request->input('gross_profit_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1  = $request->input('springate_s_score_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->trade_receivable_days_ratio_fy_five_1  = $request->input('trade_receivable_days_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->trade_payable_days_ratio_fy_five_1  = $request->input('trade_payable_days_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->taffler_z_score_ratio_fy_five_1  = $request->input('taffler_z_score_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->zmijewski_x_score_ratio_fy_five_1  = $request->input('zmijewski_x_score_ratio_fy_five_1');
-       $FinancialsRatioAnalysisFyFive->quick_ratio_fy_five_1  = $request->input('quick_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1  = $request->input('springate_s_score_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1  = $request->input('springate_s_score_ratio_analysis_fy_one_1');
 
-        $FinancialsRatioAnalysisFyFive->save();
+            $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_fy_one_1  = $request->input('trade_receivable_days_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1  = $request->input('trade_receivable_days_ratio_analysis_fy_one_1');
+
+
+            $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1  = $request->input('trade_payable_days_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1  = $request->input('trade_payable_days_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1  = $request->input('taffler_z_score_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1  = $request->input('taffler_z_score_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1  = $request->input('zmijewski_x_score_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1  = $request->input('zmijewski_x_score_ratio_analysis_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->quick_ratio_fy_one_1  = $request->input('quick_ratio_fy_one_1');
+            $FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1  = $request->input('quick_ratio_analysis_fy_one_1');
+                    $FinancialsRatioAnalysisFyOne->save();
+
+                $FinancialsRatioAnalysisFyTwo = FinancialsRatioAnalysisFyTwo::where('financial_id', $Financial->id)->firstOrFail();
+
+
+
+            $FinancialsRatioAnalysisFyTwo->year_ratio_two_1  = $request->input('year_ratio_two_1');
+            $FinancialsRatioAnalysisFyTwo->current_ratio_fy_two_1  = $request->input('current_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->debt_ratio_fy_two_1  = $request->input('debt_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->solvency_ratio_fy_two_1  = $request->input('solvency_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_fy_two_1  = $request->input('debt_to_equity_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_fy_two_1  = $request->input('asset_turnover_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1  = $request->input('absolute_liquidity_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1  = $request->input('proprietary_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->net_profit_ratio_fy_two_1  = $request->input('net_profit_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->gross_profit_ratio_fy_two_1  = $request->input('gross_profit_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1  = $request->input('springate_s_score_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->trade_receivable_days_ratio_fy_two_1  = $request->input('trade_receivable_days_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->trade_payable_days_ratio_fy_two_1  = $request->input('trade_payable_days_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->taffler_z_score_ratio_fy_two_1  = $request->input('taffler_z_score_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->zmijewski_x_score_ratio_fy_two_1  = $request->input('zmijewski_x_score_ratio_fy_two_1');
+            $FinancialsRatioAnalysisFyTwo->quick_ratio_fy_two_1  = $request->input('quick_ratio_fy_two_1');
+
+                    $FinancialsRatioAnalysisFyTwo->save();
+
+
+
+
+
+                $FinancialsRatioAnalysisFyThree = FinancialsRatioAnalysisFyThree::where('financial_id', $Financial->id)->firstOrFail();
+            $FinancialsRatioAnalysisFyThree->year_ratio_three_1  = $request->input('year_ratio_three_1');
+
+            $FinancialsRatioAnalysisFyThree->current_ratio_fy_three_1  = $request->input('current_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->debt_ratio_fy_three_1  = $request->input('debt_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->solvency_ratio_fy_three_1  = $request->input('solvency_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->debt_to_equity_ratio_fy_three_1  = $request->input('debt_to_equity_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->asset_turnover_ratio_fy_three_1  = $request->input('asset_turnover_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->absolute_liquidity_ratio_fy_three_1  = $request->input('absolute_liquidity_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->proprietary_ratio_fy_three_1  = $request->input('proprietary_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->net_profit_ratio_fy_three_1  = $request->input('net_profit_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->gross_profit_ratio_fy_three_1  = $request->input('gross_profit_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->springate_s_score_ratio_fy_three_1  = $request->input('springate_s_score_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->trade_receivable_days_ratio_fy_three_1  = $request->input('trade_receivable_days_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->trade_payable_days_ratio_fy_three_1  = $request->input('trade_payable_days_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->taffler_z_score_ratio_fy_three_1  = $request->input('taffler_z_score_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->zmijewski_x_score_ratio_fy_three_1  = $request->input('zmijewski_x_score_ratio_fy_three_1');
+            $FinancialsRatioAnalysisFyThree->quick_ratio_fy_three_1  = $request->input('quick_ratio_fy_three_1');
+
+                    $FinancialsRatioAnalysisFyThree->SAVE();
+
+
+
+
+
+                $FinancialsRatioAnalysisFyFour = FinancialsRatioAnalysisFyFour::where('financial_id', $Financial->id)->firstOrFail();
+            $FinancialsRatioAnalysisFyFour->year_ratio_four_1  = $request->input('year_ratio_four_1');
+
+            $FinancialsRatioAnalysisFyFour->current_ratio_fy_four_1  = $request->input('current_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->debt_ratio_fy_four_1  = $request->input('debt_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->solvency_ratio_fy_four_1  = $request->input('solvency_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->debt_to_equity_ratio_fy_four_1  = $request->input('debt_to_equity_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->asset_turnover_ratio_fy_four_1  = $request->input('asset_turnover_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->absolute_liquidity_ratio_fy_four_1  = $request->input('absolute_liquidity_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->proprietary_ratio_fy_four_1  = $request->input('proprietary_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->net_profit_ratio_fy_four_1  = $request->input('net_profit_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->gross_profit_ratio_fy_four_1  = $request->input('gross_profit_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->springate_s_score_ratio_fy_four_1  = $request->input('springate_s_score_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->trade_receivable_days_ratio_fy_four_1  = $request->input('trade_receivable_days_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->trade_payable_days_ratio_fy_four_1  = $request->input('trade_payable_days_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->taffler_z_score_ratio_fy_four_1  = $request->input('taffler_z_score_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->zmijewski_x_score_ratio_fy_four_1  = $request->input('zmijewski_x_score_ratio_fy_four_1');
+            $FinancialsRatioAnalysisFyFour->quick_ratio_fy_four_1  = $request->input('quick_ratio_fy_four_1');
+
+                $FinancialsRatioAnalysisFyFour->save();
+
+                $FinancialsRatioAnalysisFyFive = FinancialsRatioAnalysisFyFive::where('financial_id', $Financial->id)->firstOrFail();
+                $FinancialsRatioAnalysisFyFive->year_ratio_five_1  = $request->input('year_ratio_five_1');
+
+            $FinancialsRatioAnalysisFyFive->current_ratio_fy_five_1  = $request->input('current_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->debt_ratio_fy_five_1  = $request->input('debt_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->solvency_ratio_fy_five_1  = $request->input('solvency_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->debt_to_equity_ratio_fy_five_1  = $request->input('debt_to_equity_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->asset_turnover_ratio_fy_five_1  = $request->input('asset_turnover_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->absolute_liquidity_ratio_fy_five_1  = $request->input('absolute_liquidity_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->proprietary_ratio_fy_five_1  = $request->input('proprietary_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->net_profit_ratio_fy_five_1  = $request->input('net_profit_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->gross_profit_ratio_fy_five_1  = $request->input('gross_profit_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->springate_s_score_ratio_fy_five_1  = $request->input('springate_s_score_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->trade_receivable_days_ratio_fy_five_1  = $request->input('trade_receivable_days_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->trade_payable_days_ratio_fy_five_1  = $request->input('trade_payable_days_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->taffler_z_score_ratio_fy_five_1  = $request->input('taffler_z_score_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->zmijewski_x_score_ratio_fy_five_1  = $request->input('zmijewski_x_score_ratio_fy_five_1');
+            $FinancialsRatioAnalysisFyFive->quick_ratio_fy_five_1  = $request->input('quick_ratio_fy_five_1');
+
+                $FinancialsRatioAnalysisFyFive->save();
         }
         return response()->json(['message' => 'Financial  Reports updated successfully!']);
 
@@ -1521,13 +1523,13 @@ class adminController extends Controller
 
         }
 
-       
+
 
         $BusinessIntelligence->operating_efficiency_BI_analysis  = $request->input('operating_efficiency_BI_analysis');
         $BusinessIntelligence->inventory_turnover_BI_analysis  = $request->input('inventory_turnover_BI_analysis');
         $BusinessIntelligence->days_sales_in_inventory_BI_analysis  = $request->input('days_sales_in_inventory_BI_analysis');
         $BusinessIntelligence->accounts_payable_turnover_BI_analysis  = $request->input('accounts_payable_turnover_BI_analysis');
-        
+
         $BusinessIntelligence->year_BI_FY_one  = $request->input('year_BI_FY_one');
         $BusinessIntelligence->operating_efficiency_BI_FY_one  = $request->input('operating_efficiency_BI_FY_one');
         $BusinessIntelligence->inventory_turnover_BI_FY_one  = $request->input('inventory_turnover_BI_FY_one');
@@ -1547,31 +1549,36 @@ class adminController extends Controller
         $BusinessIntelligence->days_sales_in_inventory_BI_FY_three  = $request->input('days_sales_in_inventory_BI_FY_three');
         $BusinessIntelligence->accounts_payable_turnover_BI_FY_three  = $request->input('accounts_payable_turnover_BI_FY_three');
 
-        
-        
+
+
         $BusinessIntelligence->year_BI_FY_four  = $request->input('year_BI_FY_four');
         $BusinessIntelligence->operating_efficiency_BI_FY_four  = $request->input('operating_efficiency_BI_FY_four');
         $BusinessIntelligence->inventory_turnover_BI_FY_four  = $request->input('inventory_turnover_BI_FY_four');
         $BusinessIntelligence->days_sales_in_inventory_BI_FY_four  = $request->input('days_sales_in_inventory_BI_FY_four');
         $BusinessIntelligence->accounts_payable_turnover_BI_FY_four  = $request->input('accounts_payable_turnover_BI_FY_four');
 
-        
+
         $BusinessIntelligence->year_BI_FY_five  = $request->input('year_BI_FY_five');
         $BusinessIntelligence->operating_efficiency_BI_FY_five  = $request->input('operating_efficiency_BI_FY_five');
         $BusinessIntelligence->inventory_turnover_BI_FY_five  = $request->input('inventory_turnover_BI_FY_five');
         $BusinessIntelligence->days_sales_in_inventory_BI_FY_five  = $request->input('days_sales_in_inventory_BI_FY_five');
         $BusinessIntelligence->accounts_payable_turnover_BI_FY_five  = $request->input('accounts_payable_turnover_BI_FY_five');
-        
+
 
         $BusinessIntelligence->efficiency_score  = $request->input('efficiency_score');
 
-        
+
 
 
         $BusinessIntelligence->score_analysis = $request->input('score_analysis');
         $BusinessIntelligence->Type_of_risk = $request->input('efficiency_score') > 60 ? 'High Risk' : ($request->input('efficiency_score') <= 60 && $request->input('efficiency_score') > 30 ? 'Medium Risk' : ($request->input('efficiency_score') <= 30 ? 'Low Risk' : '' ) );
-
+        $BusinessIntelligence->status = 1;
         $BusinessIntelligence->save();
+
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
+
         return response()->json(['message' => 'Business Intelligence  Reports updated successfully!']);
 
     }
@@ -1846,6 +1853,20 @@ class adminController extends Controller
 
         // Specify the desired file name
         $fileName = $data['OnGroundVerification']->upload_picture;
+
+        return response()->download($imagePath, $fileName);
+    }
+
+
+    public function final_Reprts_file_download($id)
+    {
+        $data['KeyObservation'] = KeyObservation::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/KeyObservationFinalReports/' . $data['KeyObservation']->key_observation_final_report_file);
+
+        // Specify the desired file name
+        $fileName = $data['KeyObservation']->key_observation_final_report_file;
 
         return response()->download($imagePath, $fileName);
     }

@@ -662,24 +662,24 @@
                         <!-- Copy 6 -->
                         <div class="row">
                             <div class="col">
-                                <label for="name_3" class="form-label">Name (10)</label>
-                                <input type="text" class="form-control" id="name_3" name="name_3" value="{{$FirmBackground->name_3}}">
+                                <label for="name_10" class="form-label">Name (10)</label>
+                                <input type="text" class="form-control" id="name_10" name="name_10" value="{{$FirmBackground->name_10}}">
                             </div>
                             <div class="col">
-                                <label for="pan_3" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_3" name="pan_3" value="{{$FirmBackground->pan_3}}">
+                                <label for="pan_10" class="form-label">PAN</label>
+                                <input type="text" class="form-control" id="pan_10" name="pan_10" value="{{$FirmBackground->pan_10}}">
                             </div>
                             <div class="col">
-                                <label for="aadhar_3" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_3" name="aadhar_3" value="{{$FirmBackground->aadhar_3}}">
+                                <label for="aadhar_10" class="form-label">Aadhar</label>
+                                <input type="text" class="form-control" id="aadhar_10" name="aadhar_10" value="{{$FirmBackground->aadhar_10}}">
                             </div>
                             <div class="col">
-                                <label for="date_of_appointment_3" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_3" name="date_of_appointment_3" value="{{$FirmBackground->date_of_appointment_3}}">
+                                <label for="date_of_appointment_10" class="form-label">Date of Appointment</label>
+                                <input type="date" class="form-control" id="date_of_appointment_10" name="date_of_appointment_10" value="{{$FirmBackground->date_of_appointment_10}}">
                             </div>
                             <div class="col">
-                                <label for="educational_background_3" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_3" name="educational_background_3" value="{{$FirmBackground->educational_background_3}}">
+                                <label for="educational_background_10" class="form-label">Educational Background</label>
+                                <input type="text" class="form-control" id="educational_background_10" name="educational_background_10" value="{{$FirmBackground->educational_background_10}}">
                             </div>
                         </div>
 
