@@ -124,83 +124,45 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="Registrations-Licenses">
+
+
                                         <div class="pt-4">
                                             <div class="table-responsive">
-                                                <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
-                                                        <tr>
+                                            <table class="table primary-table-bordered">
+    <thead class="thead-primary">
+        <tr>
+            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
+            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License No.</th>
+            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
+            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for ($i = 1; $i <= 8; $i++)
+            @if(!empty($License->{'license_name_'.$i}))
+                <tr>
+                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_name_'.$i} }}</td>
+                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_no_'.$i} }}</td>
+                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
+                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
+                </tr>
+            @endif
+        @endfor
+
+        <tr>
+            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</td>
+            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$FirmBackground->ofac_check}}</td>
+            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 align-items-end text-start">
+                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
+            </td>
+            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+        </tr>
+    </tbody>
+</table>
 
 
-
-                                                        </tr>
-
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">License Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">License No.</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Date of Issuance</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Expiry Date</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_1}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_2}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_3}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_4}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_5}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_6}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_7}}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_name_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->license_no_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_issuance_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{$License->date_of_expiry_8}}</td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 text-start">Ofac Check</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 text-start">{{$FirmBackground->ofac_check}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 align-items-end"><a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a></td>
-
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -1294,88 +1256,49 @@
 
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_1 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_jurisdiction_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_record_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_subject_matter_1 }}</td>
-                                                    </tr>
+    @for ($i = 1; $i <= 5; $i++)
+        @if (!empty($CourtCheck->{'director_name_' . $i}))
+            <tr>
+               
+                <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4">Name</th>
+                                                    <th style="background-color: #5a595a; color: white;" colspan="2"
+                                                        scope="col" class="col-md-8"> {{ $CourtCheck->{'director_name_' . $i} }}
+                                                    </th>
+            </tr>
+            <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Jurisdiction</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Record</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Subject Matter</td>
+                                                </tr>
+            <tr>
+                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+                    {{ $CourtCheck->{'director_jurisdiction_' . $i} }}
+                </td>
+                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+                    {{ $CourtCheck->{'director_record_' . $i} }}
+                </td>
+                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+                    {{ $CourtCheck->{'director_subject_matter_' . $i} }}
+                </td>
+            </tr>
+        @endif
+    @endfor
 
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_2 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_jurisdiction_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_record_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_subject_matter_2 }}</td>
-                                                    </tr>
+    <tr>
+        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+            LEGAL SCORE = {{ $CourtCheck->legal_score }}
+        </td>
+    </tr>
+</tbody>
 
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_3 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_jurisdiction_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_record_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_subject_matter_3 }}</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_4 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_jurisdiction_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_record_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_subject_matter_4 }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_5 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_jurisdiction_5 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_record_5 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->director_subject_matter_5 }}</td>
-                                                    </tr>
-
-
-
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">LEGAL SCORE = {{ $CourtCheck->legal_score }}</td>
-
-                                                    </tr>
-
-                                                </tbody>
                                             </table>
                                         </div>
                                     </div>
@@ -1389,88 +1312,47 @@
 
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_1 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_jurisdiction_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_record_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_subject_matter_1 }}</td>
-                                                    </tr>
+    @for ($i = 1; $i <= 5; $i++)
+        @if (!empty($CourtCheck->{'director_name_' . $i}))
+            <tr>
+            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
+            <th style="background-color: #5a595a; color: white;" colspan="2"scope="col" class="col-md-8">
+                    {{ $CourtCheck->{'director_name_' . $i} }}
+                </th>
+            </tr>
+            <tr>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Jurisdiction</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Record</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Subject Matter</td>
+                                                </tr>
+            <tr>
+                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+                    {{ $CourtCheck->{'company_jurisdiction_' . $i} }}
+                </td>
+                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+                    {{ $CourtCheck->{'company_record_' . $i} }}
+                </td>
+                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+                    {{ $CourtCheck->{'company_subject_matter_' . $i} }}
+                </td>
+            </tr>
+        @endif
+    @endfor
 
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_2 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_jurisdiction_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_record_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_subject_matter_2 }}</td>
-                                                    </tr>
+    <tr>
+        <<td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">
+            LEGAL SCORE = {{ $CourtCheck->legal_score }}
+        </td>
+    </tr>
+</tbody>
 
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_3 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_jurisdiction_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_record_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_subject_matter_3 }}</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_4 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_jurisdiction_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_record_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_subject_matter_4 }}</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" colspan="2" scope="col" class="col-md-8">{{ $CourtCheck->director_name_5 }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Jurisdiction</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Record</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Subject Matter</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_jurisdiction_5 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_record_5 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">{{ $CourtCheck->company_subject_matter_5 }}</td>
-                                                    </tr>
-
-
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">LEGAL SCORE =  {{ $CourtCheck->legal_score }}</td>
-
-                                                    </tr>
-
-                                                </tbody>
                                             </table>
                                         </div>
                                     </div>
@@ -2251,124 +2133,124 @@
 	// 		});
 	// 	}
 	// }
-    // var barChart1financialRatio = function(){
-    //     if(jQuery('#barChart_financialRation').length > 0 ){
-    //         const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
+    var barChart1financialRatio = function(){
+        if(jQuery('#barChart_financialRation').length > 0 ){
+            const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
 
-    //         barChart_financialRation.height = 100;
+            barChart_financialRation.height = 100;
 
-    //         new Chart(barChart_financialRation, {
-    //             type: 'line',
-    //             data: {
-    //                 defaultFontFamily: 'Poppins',
-    //                 labels:  financialRatioGrapFYhLablesName,
-    //                 datasets: [
-    //                     {
-    //                         label: "Financials Ratio Analysis",
-    //                         data:financialrationGrapFY,
-    //                         borderColor: '#fff',
-    //                         borderWidth: "2",
-	// 						backgroundColor: 'rgba(33, 150, 243, 1)',
-    //                         pointRadius: 5,
-    //                         pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
-    //                 ]
-    //             },
-    //             options: {
-    //                 legend: false,
-    //                 scales: {
-    //                     yAxes: [{
-    //                         show: false,
-    //                         ticks: {
-    //                             beginAtZero: true,
-    //                             color: '#888',
-    //                             fontColor:'#888'
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)",
-    //                             offsetGridLines: true,
-    //                         }
-    //                     }],
-    //                     xAxes: [{
-    //                         barPercentage: 2,
-    //                         ticks:{
-    //                             fontColor: '#888',
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)"
-    //                         }
-    //                     }]
-    //                 },
-    //                 tooltips: {
-    //                 callbacks: {
-    //                     label: function (tooltipItem, data) {
-    //                         return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-    //                     }
-    //                 }
-    //             }
-    //             }
-    //         });
-    //     }
-    // }
+            new Chart(barChart_financialRation, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
 
 
-    // var barChart1businessIntelligenc = function(){
-    //     if(jQuery('#barChart_businessIntelligence').length > 0 ){
-    //         const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
+    var barChart1businessIntelligenc = function(){
+        if(jQuery('#barChart_businessIntelligence').length > 0 ){
+            const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
 
-    //         barChart_businessIntelligence.height = 100;
+            barChart_businessIntelligence.height = 100;
 
-    //         new Chart(barChart_businessIntelligence, {
-    //             type: 'line',
-    //             data: {
-    //                 defaultFontFamily: 'Poppins',
-    //                 labels:  businessInteligenceGraphLablesName,
-    //                 datasets: [
-    //                     {
-    //                         label: "Business Intelligence",
-    //                         data: businessInteligenceGrapFY,
-    //                         borderColor: '#fff',
-    //                         borderWidth: "2",
-	// 						backgroundColor: 'rgba(33, 150, 243, 1)',
-    //                         pointRadius: 5,
-    //                         pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
-    //                 ]
-    //             },
-    //             options: {
-    //                 legend: false,
-    //                 scales: {
-    //                     yAxes: [{
-    //                         show: false,
-    //                         ticks: {
-    //                             beginAtZero: true,
-    //                             color: '#888',
-    //                             fontColor:'#888'
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)",
-    //                             offsetGridLines: true,
-    //                         }
-    //                     }],
-    //                     xAxes: [{
-    //                         barPercentage: 2,
-    //                         ticks:{
-    //                             fontColor: '#888',
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)"
-    //                         }
-    //                     }]
-    //                 },
-    //                 tooltips: {
-    //                 callbacks: {
-    //                     label: function (tooltipItem, data) {
-    //                         return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-    //                     }
-    //                 }
-    //             }
-    //             }
-    //         });
-    //     }
-    // }
+            new Chart(barChart_businessIntelligence, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  businessInteligenceGraphLablesName,
+                    datasets: [
+                        {
+                            label: "Business Intelligence",
+                            data: businessInteligenceGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
 
 
     var barChart1 = function(){
@@ -2421,109 +2303,109 @@
 			});
 		}
 	}
-    var barChart1financialRatio = function(){
-        if(jQuery('#barChart_financialRation').length > 0 ){
-            const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
+    // var barChart1financialRatio = function(){
+    //     if(jQuery('#barChart_financialRation').length > 0 ){
+    //         const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
 
-            barChart_financialRation.height = 100;
+    //         barChart_financialRation.height = 100;
 
-            new Chart(barChart_financialRation, {
-                type: 'bar',
-                data: {
-                    defaultFontFamily: 'Poppins',
-                    labels: financialRatioGrapFYhLablesName,
-                    datasets: [
-                        {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
-                            borderColor: '#fff',
-                            borderWidth: "0",
-                            // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
-                        }
-                    ]
-                },
-                options: {
-                    legend: false,
-                    scales: {
-                        yAxes: [{
-                            show: false,
-                            ticks: {
-                                beginAtZero: true,
-                                color: '#888',
-                                fontColor:'#888'
-                            },
-                            gridLines:{
-                                color:"rgba(255, 255, 255, 0.1)",
-                                offsetGridLines: true,
-                            }
-                        }],
-                        xAxes: [{
-                            barPercentage: 0.5,
-                            ticks:{
-                                fontColor: '#888',
-                            },
-                            gridLines:{
-                                color:"rgba(255, 255, 255, 0.1)"
-                            }
-                        }]
-                    }
-                }
-            });
-        }
-    }
+    //         new Chart(barChart_financialRation, {
+    //             type: 'line',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels: financialRatioGrapFYhLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Financials Ratio Analysis",
+    //                         data: financialRationGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "0",
+    //                         // Use an array of colors for each bar
+    //                         backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
+    //                     }
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 0.5,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 }
+    //             }
+    //         });
+    //     }
+    // }
 
 
-    var barChart1businessIntelligenc = function(){
-        if(jQuery('#barChart_businessIntelligence').length > 0 ){
-            const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
+    // var barChart1businessIntelligenc = function(){
+    //     if(jQuery('#barChart_businessIntelligence').length > 0 ){
+    //         const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
 
-            barChart_businessIntelligence.height = 100;
+    //         barChart_businessIntelligence.height = 100;
 
-            new Chart(barChart_businessIntelligence, {
-                type: 'bar',
-                data: {
-                    defaultFontFamily: 'Poppins',
-                    labels: businessInteligenceGraphLablesName,
-                    datasets: [
-                        {
-                            label: "Business Intelligence",
-                            data: businessInteligenceGrapFY,
-                            borderColor: '#fff',
-                            borderWidth: "0",
-                            // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
-                    ]
-                },
-                options: {
-                    legend: false,
-                    scales: {
-                        yAxes: [{
-                            show: false,
-                            ticks: {
-                                beginAtZero: true,
-                                color: '#888',
-                                fontColor:'#888'
-                            },
-                            gridLines:{
-                                color:"rgba(255, 255, 255, 0.1)",
-                                offsetGridLines: true,
-                            }
-                        }],
-                        xAxes: [{
-                            barPercentage: 0.5,
-                            ticks:{
-                                fontColor: '#888',
-                            },
-                            gridLines:{
-                                color:"rgba(255, 255, 255, 0.1)"
-                            }
-                        }]
-                    }
-                }
-            });
-        }
-    }
+    //         new Chart(barChart_businessIntelligence, {
+    //             type: 'bar',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels: businessInteligenceGraphLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Business Intelligence",
+    //                         data: businessInteligenceGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "0",
+    //                         // Use an array of colors for each bar
+    //                         backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 0.5,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 }
+    //             }
+    //         });
+    //     }
+    // }
 
 
 	var barChart2 = function(){

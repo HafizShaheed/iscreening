@@ -1567,6 +1567,8 @@
                     <div class="row">
                         <div class="col-xl-12 mb-3">
                             <label for="address_details" class="form-label">Adrress Details</label>
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                             <input type="text" class="form-control" id="address_details" name="address_details" value="{{$OnGroundVerification->address_details}}" placeholder="">
                         </div>
 
@@ -1628,6 +1630,7 @@
                         <span style="color:darkgray; font-size:12px;"> Court Check of Directors </span>
                     </h4>
                     <div class="row">
+                    <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                         <input type="hidden" name="CourtCheckId" id="CourtCheckId" value="{{$CourtCheck->id}}" class="form-control" value="">
 
@@ -1869,6 +1872,7 @@
                         <span style="color:darkgray; font-size:12px;"> Charges on the Entity </span>
                     </h4>
                     <div class="row">
+                    <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                         <input type="hidden" name="FinancialID" id="FinancialID" class="form-control" value="{{$Financial->id}}">
 
@@ -3280,6 +3284,7 @@
                 <!--BusinessIntelligence FY1 step start ========================-->
                 <div class="BusinessIntelligence-step" id="BusinessIntelligence-step-1">
 
+                <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                     <h4 class="card-title">Business Intelligence<br>
                     <span style="color:darkgray; font-size:12px;"> FY-1</span>
@@ -3749,6 +3754,7 @@
                 <!-- Tax Return and Credit 1 step end -->
                 <div class="Tax-Return-and-Credit-step" id="Tax-Return-and-Credit-step-1">
                     <div class="row">
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                         <input type="hidden" name="TaxReurnCreditID" id="TaxReurnCreditID" class="form-control" value="{{$TaxReurnCredit->id}}" >
 
@@ -3969,6 +3975,8 @@
 
 
                         <div class="row">
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
                         <input type="hidden" class="form-control"  name="MarketReputationID" id="MarketReputationID" value="{{$MarketReputation->id}}">
 
 

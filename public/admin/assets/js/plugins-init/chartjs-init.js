@@ -61,6 +61,110 @@
 			});
 		}
 	}
+    // var barChart1financialRatio = function(){
+    //     if(jQuery('#barChart_financialRation').length > 0 ){
+    //         const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
+
+    //         barChart_financialRation.height = 100;
+
+    //         new Chart(barChart_financialRation, {
+    //             type: 'bar',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels: financialRatioGrapFYhLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Financials Ratio Analysis",
+    //                         data: financialRationGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "0",
+    //                         // Use an array of colors for each bar
+    //                         backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
+    //                     }
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 0.5,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 }
+    //             }
+    //         });
+    //     }
+    // }
+
+
+    // var barChart1businessIntelligenc = function(){
+    //     if(jQuery('#barChart_businessIntelligence').length > 0 ){
+    //         const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
+
+    //         barChart_businessIntelligence.height = 100;
+
+    //         new Chart(barChart_businessIntelligence, {
+    //             type: 'bar',
+    //             data: {
+    //                 defaultFontFamily: 'Poppins',
+    //                 labels: businessInteligenceGraphLablesName,
+    //                 datasets: [
+    //                     {
+    //                         label: "Business Intelligence",
+    //                         data: businessInteligenceGrapFY,
+    //                         borderColor: '#fff',
+    //                         borderWidth: "0",
+    //                         // Use an array of colors for each bar
+    //                         backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
+    //                 ]
+    //             },
+    //             options: {
+    //                 legend: false,
+    //                 scales: {
+    //                     yAxes: [{
+    //                         show: false,
+    //                         ticks: {
+    //                             beginAtZero: true,
+    //                             color: '#888',
+    //                             fontColor:'#888'
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)",
+    //                             offsetGridLines: true,
+    //                         }
+    //                     }],
+    //                     xAxes: [{
+    //                         barPercentage: 0.5,
+    //                         ticks:{
+    //                             fontColor: '#888',
+    //                         },
+    //                         gridLines:{
+    //                             color:"rgba(255, 255, 255, 0.1)"
+    //                         }
+    //                     }]
+    //                 }
+    //             }
+    //         });
+    //     }
+    // }
+
     var barChart1financialRatio = function(){
         if(jQuery('#barChart_financialRation').length > 0 ){
             const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
@@ -68,19 +172,19 @@
             barChart_financialRation.height = 100;
 
             new Chart(barChart_financialRation, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: financialRatioGrapFYhLablesName,
+                    labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
                             label: "Financials Ratio Analysis",
                             data: financialRationGrapFY,
-                            borderColor: '#fff',
-                            borderWidth: "0",
-                            // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
-                        }
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
                 },
                 options: {
@@ -99,7 +203,7 @@
                             }
                         }],
                         xAxes: [{
-                            barPercentage: 0.5,
+                            barPercentage: 2,
                             ticks:{
                                 fontColor: '#888',
                             },
@@ -107,7 +211,14 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
                     }
+                }
                 }
             });
         }
@@ -121,18 +232,19 @@
             barChart_businessIntelligence.height = 100;
 
             new Chart(barChart_businessIntelligence, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     defaultFontFamily: 'Poppins',
-                    labels: businessInteligenceGraphLablesName,
+                    labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
                             label: "Business Intelligence",
                             data: businessInteligenceGrapFY,
-                            borderColor: '#fff',
-                            borderWidth: "0",
-                            // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
                 },
                 options: {
@@ -151,7 +263,7 @@
                             }
                         }],
                         xAxes: [{
-                            barPercentage: 0.5,
+                            barPercentage: 2,
                             ticks:{
                                 fontColor: '#888',
                             },
@@ -159,7 +271,14 @@
                                 color:"rgba(255, 255, 255, 0.1)"
                             }
                         }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
                     }
+                }
                 }
             });
         }

@@ -28,11 +28,8 @@ use App\Models\BusinessIntelligence;
 use App\Models\TaxReurnCredit;
 use App\Models\MarketReputation;
 use App\Models\KeyObservation;
-
-
-
+use App\Models\team\TeamUser;
 use Illuminate\Support\Facades\Hash;
-
 use Auth;
 use Validator;
 
@@ -56,7 +53,7 @@ class userController extends Controller
             'zone_id' => 'required',
             'department_id' => 'required',
             'state_id' => 'required',
-            
+
 
         ],[
             'user_id.required' => 'Please select client'
@@ -270,8 +267,8 @@ class userController extends Controller
     {
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'user_name' => 'required|string|unique:users',
-            'email' => 'required|email|unique:users',
+            'user_name' => 'required|string|unique:team_users',
+            'team_email' => 'required|email|unique:team_users',
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required',
         ]);
@@ -286,10 +283,10 @@ class userController extends Controller
             return response()->json($response);
         }
 
-        User::create([
+        TeamUser::create([
 
             'user_name' => $request->user_name,
-            'email' => $request->email,
+            'team_email' => $request->team_email,
             'password' => Hash::make($request->password),
             'status' => $request->clientStatusCheck == true ? 1 : 0,
             'created_at' => now()

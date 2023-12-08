@@ -249,7 +249,7 @@
                                         </select>
                                     </div>
 
-                                    
+
                                     @php
                                     $states = \App\Models\State::get();
                                     @endphp
@@ -448,7 +448,7 @@
             var industry = $("#industry").val();
             var poc = $("#poc").val();
             var location = $("#location").val();
-            var role_id = $("#role_id").val(); 
+            var role_id = $("#role_id").val();
             var password = $("#password").val();
             var password_confirmation = $("#password_confirmation").val();
             var clientStatusCheck = $("#clientStatusCheck").prop("checked");
@@ -490,6 +490,8 @@
                             timerProgressBar: true,
                             willClose: () => {
                                 // Add any additional actions after the SweetAlert is closed
+                                $("#Add-Client-Modal input").val("")
+
                             },
                         });
                     }
@@ -555,7 +557,7 @@
                     zone_id: locationthirdPart,
                     state_id: state,
 
-                    
+
                     third_party_email : thirdPartEmail,
                     third_party_phone: thirdPartPhone,
                 },
@@ -573,6 +575,8 @@
                             timerProgressBar: true,
                             willClose: () => {
                                 $('#third-partyform').trigger("reset"); //Line1
+                                $("#Add-Third-party-Modal input").val("")
+
                                 $("#addThirdPartySubmit").prop("disabled", false);
                             },
                         });
@@ -607,12 +611,8 @@
             var user_nameTeam = $("#user_nameTeam").val();
             var TemMemeberEmail = $("#TemMemeberEmail").val();
             var passwordTeam = $("#passwordTeam").val();
-            var password_confirmationTeam = $(
-                "#password_confirmationTeam"
-            ).val();
-            var TeamMemberStatusCheck = $("#TeamMemberStatusCheck").prop(
-                "checked"
-            );
+            var password_confirmationTeam = $("#password_confirmationTeam").val();
+            var TeamMemberStatusCheck = $("#TeamMemberStatusCheck").prop("checked");
 
             // Show the loading spinner
             $("#loader").show();
@@ -627,7 +627,7 @@
                 },
                 data: {
                     user_name: user_nameTeam,
-                    email: TemMemeberEmail,
+                    team_email: TemMemeberEmail,
                     password: passwordTeam,
                     password_confirmation: password_confirmationTeam,
                     TeamMemberStatusCheck: TeamMemberStatusCheck,
@@ -645,7 +645,7 @@
                             timer: 3000, // 3 seconds
                             timerProgressBar: true,
                             willClose: () => {
-                                // Add any additional actions after the SweetAlert is closed
+                                $("#Add-team-user-Modal input").val("")
                             },
                         });
                     }
