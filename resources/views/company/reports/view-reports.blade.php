@@ -1259,7 +1259,7 @@
     @for ($i = 1; $i <= 5; $i++)
         @if (!empty($CourtCheck->{'director_name_' . $i}))
             <tr>
-               
+
                 <th style="background-color: #5a595a; color: white;" scope="col"
                                                         class="col-md-4">Name</th>
                                                     <th style="background-color: #5a595a; color: white;" colspan="2"
@@ -1508,7 +1508,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                          
+
 
 
 
@@ -1555,7 +1555,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                          
+
 
 
 
@@ -1602,7 +1602,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                          
+
 
 
 
@@ -1649,7 +1649,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                          
+
 
 
 
@@ -1672,13 +1672,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <h4 class="card-title mb-4 d-flex justify-content-start align-items-start">
+                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
                                                             Financials Ration Analysis
                                                         </h4>
                                                         <div class="d-flex justify-content-around">
-                                                            <div class="column">
+                                                            <div class="column justify-content-start align-items-start">
                                                                 <ul class="list-unstyled">
                                                                     <li>
                                                                         <label class="label"><b>Quick Ratio Analysis</b></label>
@@ -1701,45 +1701,50 @@
                                                                     <li>
                                                                         <label class="label"><b>Absolute Liquidity Ratio Analysis</b></label>
                                                                     </li>
-                                                                   
-                                                                   
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                <li>
                                                                         <label class="label"><b>Proprietary Ratio Analysis</b></label>
+                                                                    </li>
+
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column justify-content-start align-items-start">
+                                                                <ul class="list-unstyled">
+
+                                                                    <li>
+                                                                        <label class="label"><b>Net Profit Ratio</b></label>
+
                                                                     </li>
                                                                     <li>
                                                                         <label class="label"><b>Gross Profit Ratio Analysis</b></label>
@@ -1759,9 +1764,9 @@
                                                                     <li>
                                                                         <label class="label"><b>Zmijewski X-Score Analysis</b></label>
                                                                     </li>
-                                                                    
-                                                                 
-                                                                   
+
+
+
                                                                 </ul>
                                                             </div>
                                                             <div class="column">
@@ -1790,15 +1795,168 @@
                                                                     <li>
                                                                         <label class="text-start">VALUES</label>
                                                                     </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
+
                                                                 </ul>
                                                             </div>
-                                                           
+
                                                         </div>
                                                 </div>
 
+                                            </div>
+                                            <div class="row mt-2">
+
+                                             
+                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Quick Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_QuickRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Dept Ratio </h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_DebtRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Solvency Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_SolvencyRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Debt To Equity Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_DebtToEquityRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Asset Turnover Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_AssetTurnoverRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Absolute Liquidity Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_AbsoluteLiquidityRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Proprietary Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_ProprietaryRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Net Profit Ratio </h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_NetProfitRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Gross Profit Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_GrossProfitRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Springate Score</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_SpringateSScore"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Trade Receivable Days</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TradeReceivableDays"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Trade Payable Days</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TradePayableDays"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials TafflerZ Score</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TafflerZScore"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials ZmijewskiX Score</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_ZmijewskiXScore"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -1845,26 +2003,28 @@
                                                         <div class="card">
                                                             <h4
                                                                 class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                Business Intelligence</h4>
+                                                                Operating Efficiency Ratio</h4>
                                                             <div class="d-flex justify-content-center align-items-center">
-                                                                <canvas id="barChart_businessIntelligence"></canvas>
+                                                                <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
                                                         <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findings Revenue
+                                                        Business Intelligence Analysis
                                                         </h4>
                                                         <div class="d-flex justify-content-around">
                                                             <div class="column">
                                                                 <ul class="list-unstyled">
                                                                     <li>
-                                                                        <label class="label"><b>Quick Ratio Analysis</b></label>
+                                                                        <label class="label"><b>Operating Efficiency Ratio Analysis</b></label>
                                                                     </li>
+
                                                                     <li>
-                                                                        <span class="label">Label 2:</span>
+                                                                        <label class="label"><b>Inventory Turnover Ratio Analysis</b></label>
                                                                     </li>
+                                                                   
                                                                 </ul>
                                                             </div>
                                                             <div class="column">
@@ -1880,10 +2040,11 @@
                                                             <div class="column">
                                                                 <ul class="list-unstyled">
                                                                     <li>
-                                                                        <span class="label">Label 1:</span>
+                                                                        <label class="label"><b>Days Sales In Inventory Analysis</b></label>
                                                                     </li>
+
                                                                     <li>
-                                                                        <span class="label">Label 2:</span>
+                                                                        <label class="label"><b>Accounts Payable Turnover Ratio Analysis</b></label>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -1899,6 +2060,41 @@
                                                             </div>
                                                         </div>
                                                 </div>
+                                                  <div class="row mt-2">
+
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Inventory Turnover Ratio</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_InventoryTurnoverRatio"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Days Sales In Inventory</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_DaysSalesInInventory"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Accounts Payable Turnover Ratio</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_businessIntelligence"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
 
                                                 </div>
                                             </div>
@@ -2431,8 +2627,8 @@
 	var screenWidth = $(window).width();
 
     //========================================================================== Ratio graph start ========================= //
-    
-    // Current ratio  start 
+
+    // Current ratio  start
 
     var barChart1financialRatio = function(){
         if(jQuery('#barChart_financialRation').length > 0 ){
@@ -2493,9 +2689,837 @@
         }
     }
 
-    // Current ratio  end 
-    //========================================================================== Ratio graph start ========================= //
+    // Current ratio  end
 
+    var barChart_QuickRatio = function(){
+        if(jQuery('#barChart_QuickRatio').length > 0 ){
+            const barChart_QuickRatio = document.getElementById("barChart_QuickRatio").getContext('2d');
+
+            barChart_QuickRatio.height = 100;
+
+            new Chart(barChart_QuickRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_DebtRatio = function(){
+        if(jQuery('#barChart_DebtRatio').length > 0 ){
+            const barChart_DebtRatio = document.getElementById("barChart_DebtRatio").getContext('2d');
+
+            barChart_DebtRatio.height = 100;
+
+            new Chart(barChart_DebtRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+    var barChart_SolvencyRatio = function(){
+        if(jQuery('#barChart_SolvencyRatio').length > 0 ){
+            const barChart_SolvencyRatio = document.getElementById("barChart_SolvencyRatio").getContext('2d');
+
+            barChart_SolvencyRatio.height = 100;
+
+            new Chart(barChart_SolvencyRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_DebtToEquityRatio = function(){
+        if(jQuery('#barChart_DebtToEquityRatio').length > 0 ){
+            const barChart_DebtToEquityRatio = document.getElementById("barChart_DebtToEquityRatio").getContext('2d');
+
+            barChart_DebtToEquityRatio.height = 100;
+
+            new Chart(barChart_DebtToEquityRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_AssetTurnoverRatio = function(){
+        if(jQuery('#barChart_AssetTurnoverRatio').length > 0 ){
+            const barChart_AssetTurnoverRatio = document.getElementById("barChart_AssetTurnoverRatio").getContext('2d');
+
+            barChart_AssetTurnoverRatio.height = 100;
+
+            new Chart(barChart_AssetTurnoverRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_AbsoluteLiquidityRatio = function(){
+        if(jQuery('#barChart_AbsoluteLiquidityRatio').length > 0 ){
+            const barChart_AbsoluteLiquidityRatio = document.getElementById("barChart_AbsoluteLiquidityRatio").getContext('2d');
+
+            barChart_AbsoluteLiquidityRatio.height = 100;
+
+            new Chart(barChart_AbsoluteLiquidityRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_ProprietaryRatio = function(){
+        if(jQuery('#barChart_ProprietaryRatio').length > 0 ){
+            const barChart_ProprietaryRatio = document.getElementById("barChart_ProprietaryRatio").getContext('2d');
+
+            barChart_ProprietaryRatio.height = 100;
+
+            new Chart(barChart_ProprietaryRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+
+    var barChart_NetProfitRatio = function(){
+        if(jQuery('#barChart_NetProfitRatio').length > 0 ){
+            const barChart_NetProfitRatio = document.getElementById("barChart_NetProfitRatio").getContext('2d');
+
+            barChart_NetProfitRatio.height = 100;
+
+            new Chart(barChart_NetProfitRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_GrossProfitRatio = function(){
+        if(jQuery('#barChart_GrossProfitRatio').length > 0 ){
+            const barChart_GrossProfitRatio = document.getElementById("barChart_GrossProfitRatio").getContext('2d');
+
+            barChart_GrossProfitRatio.height = 100;
+
+            new Chart(barChart_GrossProfitRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_SpringateSScore = function(){
+        if(jQuery('#barChart_SpringateSScore').length > 0 ){
+            const barChart_SpringateSScore = document.getElementById("barChart_SpringateSScore").getContext('2d');
+
+            barChart_SpringateSScore.height = 100;
+
+            new Chart(barChart_SpringateSScore, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_TradeReceivableDays = function(){
+        if(jQuery('#barChart_TradeReceivableDays').length > 0 ){
+            const barChart_TradeReceivableDays = document.getElementById("barChart_TradeReceivableDays").getContext('2d');
+
+            barChart_TradeReceivableDays.height = 100;
+
+            new Chart(barChart_TradeReceivableDays, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_TradePayableDays = function(){
+        if(jQuery('#barChart_TradePayableDays').length > 0 ){
+            const barChart_TradePayableDays = document.getElementById("barChart_TradePayableDays").getContext('2d');
+
+            barChart_TradePayableDays.height = 100;
+
+            new Chart(barChart_TradePayableDays, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_TafflerZScore = function(){
+        if(jQuery('#barChart_TafflerZScore').length > 0 ){
+            const barChart_TafflerZScore = document.getElementById("barChart_TafflerZScore").getContext('2d');
+
+            barChart_TafflerZScore.height = 100;
+
+            new Chart(barChart_TafflerZScore, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+
+    var barChart_ZmijewskiXScore = function(){
+        if(jQuery('#barChart_ZmijewskiXScore').length > 0 ){
+            const barChart_ZmijewskiXScore = document.getElementById("barChart_ZmijewskiXScore").getContext('2d');
+
+            barChart_ZmijewskiXScore.height = 100;
+
+            new Chart(barChart_ZmijewskiXScore, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  financialRatioGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Ratio Analysis",
+                            data: financialRationGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+    //========================================================================== Ratio graph start ========================= //
+    //========================================================================== BI graph start ========================= //
+
+        // pay able start
     var barChart1businessIntelligenc = function(){
         if(jQuery('#barChart_businessIntelligence').length > 0 ){
             const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
@@ -2554,12 +3578,191 @@
             });
         }
     }
+   
+        // pay able end
+    var barChart_DaysSalesInInventory = function(){
+        if(jQuery('#barChart_DaysSalesInInventory').length > 0 ){
+            const barChart_DaysSalesInInventory = document.getElementById("barChart_DaysSalesInInventory").getContext('2d');
 
+            barChart_DaysSalesInInventory.height = 100;
+
+            new Chart(barChart_DaysSalesInInventory, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  businessInteligenceGraphLablesName,
+                    datasets: [
+                        {
+                            label: "Business Intelligence",
+                            data: businessInteligenceGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+    var barChart_InventoryTurnoverRatio = function(){
+        if(jQuery('#barChart_InventoryTurnoverRatio').length > 0 ){
+            const barChart_InventoryTurnoverRatio = document.getElementById("barChart_InventoryTurnoverRatio").getContext('2d');
+
+            barChart_InventoryTurnoverRatio.height = 100;
+
+            new Chart(barChart_InventoryTurnoverRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  businessInteligenceGraphLablesName,
+                    datasets: [
+                        {
+                            label: "Business Intelligence",
+                            data: businessInteligenceGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+    var barChart_OperatingEfficiencyRatio = function(){
+        if(jQuery('#barChart_OperatingEfficiencyRatio').length > 0 ){
+            const barChart_OperatingEfficiencyRatio = document.getElementById("barChart_OperatingEfficiencyRatio").getContext('2d');
+
+            barChart_OperatingEfficiencyRatio.height = 100;
+
+            new Chart(barChart_OperatingEfficiencyRatio, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  businessInteligenceGraphLablesName,
+                    datasets: [
+                        {
+                            label: "Business Intelligence",
+                            data: businessInteligenceGrapFY,
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                    tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                        }
+                    }
+                }
+                }
+            });
+        }
+    }
+   
+    //========================================================================== BI graph start ========================= //
+
+    //========================================================================== Ratio graph start ========================= //
 
 
     //========================================================================== finding graph start ========================= //
 
-    // Revenue graphp start 
+    // Revenue graphp start
     var barChart1 = function(){
 		if(jQuery('#barChart_1').length > 0 ){
 			const barChart_1 = document.getElementById("barChart_1").getContext('2d');
@@ -2611,7 +3814,7 @@
 		}
 	}
 
-    // Revenue graphp end 
+    // Revenue graphp end
 
     // =========================NetProfit graphp start  ===================
     var barChart_NetProfit = function(){
@@ -3129,7 +4332,7 @@
 			});
 		}
 	}
-    
+
     var barChart_ShareCapital = function(){
 		if(jQuery('#barChart_ShareCapital').length > 0 ){
 			const barChart_ShareCapital = document.getElementById("barChart_ShareCapital").getContext('2d');
@@ -3385,9 +4588,9 @@
 			});
 		}
 	}
-  
-  
-    
+
+
+
 
     // finding graph end
 
@@ -4293,11 +5496,34 @@
             barChart_CashAndCashEquivalents();
 
 			// finding financial end
+            // financial Ratio start
 
             barChart1financialRatio();
+            barChart_QuickRatio();
+            barChart_DebtRatio();
+            barChart_SolvencyRatio();
+            barChart_DebtToEquityRatio();
+            barChart_AssetTurnoverRatio();
+            barChart_AbsoluteLiquidityRatio();
+            barChart_ProprietaryRatio();
+            barChart_NetProfitRatio();
+            barChart_GrossProfitRatio();
+            barChart_SpringateSScore();
+            barChart_TradeReceivableDays();
+            barChart_TradePayableDays();
+            barChart_TafflerZScore();
+            barChart_ZmijewskiXScore();
+
+            // financial Ratio end
 
 
+            // business Ratio start
             barChart1businessIntelligenc();
+            barChart_DaysSalesInInventory();
+            barChart_InventoryTurnoverRatio();
+            barChart_OperatingEfficiencyRatio();
+            // business Ratio end
+
 
             // doughnutChartall();
 			barChart2();
