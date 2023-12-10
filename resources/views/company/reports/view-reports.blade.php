@@ -1468,16 +1468,190 @@
                                         <div class="table-responsive">
                                             <div class="row">
 
-                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Analysis</h4>
+                                                            Financials Findinds Revenue</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_1"></canvas>
+                                                            <canvas id="barChart_1" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Net Profit</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_NetProfit" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Gross Profit</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_GrossProfit" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Working Capital</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_WorkingCapital" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                          
+
+
+
+                                            </div>
+                                            <div class="row mt-2">
+
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Quick Assets</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_QuickAssets" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds  Total Assets</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TotalAssets" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Current Assets</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_CurrentAssets" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Current Liabilities</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_CurrentLiabilities" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                          
+
+
+
+                                            </div>
+                                            <div class="row mt-2">
+
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds  Debt</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_Debt" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Average Inventory</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_AverageInventory" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Net Sales</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_NetSales" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Share Capital</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_ShareCapital" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                          
+
+
+
+                                            </div>
+                                             <div class="row mt-2">
+
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Sundry Debtors</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_SundryDebtors" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Sundry Creditors</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_SundryCreditors" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Loans & Advances</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_LoansAndAdvances" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findinds Cash And Cash Equivalents</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_CashAndCashEquivalents" width="100px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                          
+
+
 
                                             </div>
                                         </div>
@@ -1492,11 +1666,137 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Ratio Analysis</h4>
+                                                            Financials Ratio Curren</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_financialRation"></canvas>
                                                         </div>
                                                     </div>
+                                                </div>
+                                                
+                                                <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <h4 class="card-title mb-4 d-flex justify-content-start align-items-start">
+                                                            Financials Ration Analysis
+                                                        </h4>
+                                                        <div class="d-flex justify-content-around">
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <label class="label"><b>Quick Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Current ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Debt Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Solvency Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Debt to Equity Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Asset Turnover Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Absolute Liquidity Ratio Analysis</b></label>
+                                                                    </li>
+                                                                   
+                                                                   
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                <li>
+                                                                        <label class="label"><b>Proprietary Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Gross Profit Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Springate S Score Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Trade Receivable Days Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Trade Payable Days Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Taffler Z-Score Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="label"><b>Zmijewski X-Score Analysis</b></label>
+                                                                    </li>
+                                                                    
+                                                                 
+                                                                   
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label class="text-start">VALUES</label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                           
+                                                        </div>
                                                 </div>
 
                                             </div>
@@ -1551,6 +1851,54 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Findings Revenue
+                                                        </h4>
+                                                        <div class="d-flex justify-content-around">
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <label class="label"><b>Quick Ratio Analysis</b></label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="label">Label 2:</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <span class="value">8 (Left)</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="value">8 (Right)</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <span class="label">Label 1:</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="label">Label 2:</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <span class="value">8 (Left)</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="value">8 (Right)</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                </div>
 
                                                 </div>
                                             </div>
@@ -2082,57 +2430,10 @@
 
 	var screenWidth = $(window).width();
 
-	// var barChart1 = function(){
-	// 	if(jQuery('#barChart_1').length > 0 ){
-	// 		const barChart_1 = document.getElementById("barChart_1").getContext('2d');
+    //========================================================================== Ratio graph start ========================= //
+    
+    // Current ratio  start 
 
-	// 		barChart_1.height = 100;
-
-	// 		new Chart(barChart_1, {
-    //             type: 'bar',
-    //             data: {
-    //                 defaultFontFamily: 'Poppins',
-    //                 labels: financialFindingsGrapFYhLablesName,
-    //                 datasets: [
-    //                     {
-    //                         label: "Financials Findinds Analysis",
-    //                         data: financialFindingsGrapFY,
-    //                         borderColor: '#fff',
-    //                         borderWidth: "0",
-    //                         // Use an array of colors for each bar
-    //                         backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
-    //                 ]
-    //             },
-    //             options: {
-    //                 legend: false,
-    //                 scales: {
-    //                     yAxes: [{
-    //                         show: false,
-    //                         ticks: {
-    //                             beginAtZero: true,
-    //                             color: '#888',
-    //                             fontColor:'#888'
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)",
-    //                             offsetGridLines: true,
-    //                         }
-    //                     }],
-    //                     xAxes: [{
-    //                         barPercentage: 0.5,
-    //                         ticks:{
-    //                             fontColor: '#888',
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)"
-    //                         }
-    //                     }]
-    //                 },
-
-    //             }
-	// 		});
-	// 	}
-	// }
     var barChart1financialRatio = function(){
         if(jQuery('#barChart_financialRation').length > 0 ){
             const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
@@ -2192,6 +2493,8 @@
         }
     }
 
+    // Current ratio  end 
+    //========================================================================== Ratio graph start ========================= //
 
     var barChart1businessIntelligenc = function(){
         if(jQuery('#barChart_businessIntelligence').length > 0 ){
@@ -2253,6 +2556,10 @@
     }
 
 
+
+    //========================================================================== finding graph start ========================= //
+
+    // Revenue graphp start 
     var barChart1 = function(){
 		if(jQuery('#barChart_1').length > 0 ){
 			const barChart_1 = document.getElementById("barChart_1").getContext('2d');
@@ -2266,7 +2573,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Analysis",
+                            label: "Financials Findinds Revenue",
                             data: financialFindingsGrapFY,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -2303,109 +2610,787 @@
 			});
 		}
 	}
-    // var barChart1financialRatio = function(){
-    //     if(jQuery('#barChart_financialRation').length > 0 ){
-    //         const barChart_financialRation = document.getElementById("barChart_financialRation").getContext('2d');
 
-    //         barChart_financialRation.height = 100;
+    // Revenue graphp end 
 
-    //         new Chart(barChart_financialRation, {
-    //             type: 'line',
-    //             data: {
-    //                 defaultFontFamily: 'Poppins',
-    //                 labels: financialRatioGrapFYhLablesName,
-    //                 datasets: [
-    //                     {
-    //                         label: "Financials Ratio Analysis",
-    //                         data: financialRationGrapFY,
-    //                         borderColor: '#fff',
-    //                         borderWidth: "0",
-    //                         // Use an array of colors for each bar
-    //                         backgroundColor: ['rgba(255, 0, 0, 1)', 'rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 255, 0, 1)', 'rgba(255, 0, 255, 1)', 'rgba(0, 255, 255, 1)'],
-    //                     }
-    //                 ]
-    //             },
-    //             options: {
-    //                 legend: false,
-    //                 scales: {
-    //                     yAxes: [{
-    //                         show: false,
-    //                         ticks: {
-    //                             beginAtZero: true,
-    //                             color: '#888',
-    //                             fontColor:'#888'
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)",
-    //                             offsetGridLines: true,
-    //                         }
-    //                     }],
-    //                     xAxes: [{
-    //                         barPercentage: 0.5,
-    //                         ticks:{
-    //                             fontColor: '#888',
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)"
-    //                         }
-    //                     }]
-    //                 }
-    //             }
-    //         });
-    //     }
-    // }
+    // =========================NetProfit graphp start  ===================
+    var barChart_NetProfit = function(){
+		if(jQuery('#barChart_NetProfit').length > 0 ){
+			const barChart_NetProfit = document.getElementById("barChart_NetProfit").getContext('2d');
+
+			barChart_NetProfit.height = 100;
+
+			new Chart(barChart_NetProfit, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    // =========================NetProfit graphp end =====================
 
 
-    // var barChart1businessIntelligenc = function(){
-    //     if(jQuery('#barChart_businessIntelligence').length > 0 ){
-    //         const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
+    // ========================GrossProfit graphp start  ===================
+     var barChart_GrossProfit = function(){
+		if(jQuery('#barChart_GrossProfit').length > 0 ){
+			const barChart_GrossProfit = document.getElementById("barChart_GrossProfit").getContext('2d');
 
-    //         barChart_businessIntelligence.height = 100;
+			barChart_GrossProfit.height = 100;
 
-    //         new Chart(barChart_businessIntelligence, {
-    //             type: 'bar',
-    //             data: {
-    //                 defaultFontFamily: 'Poppins',
-    //                 labels: businessInteligenceGraphLablesName,
-    //                 datasets: [
-    //                     {
-    //                         label: "Business Intelligence",
-    //                         data: businessInteligenceGrapFY,
-    //                         borderColor: '#fff',
-    //                         borderWidth: "0",
-    //                         // Use an array of colors for each bar
-    //                         backgroundColor: ['rgba(255, 112, 67, 1)', 'rgba(80, 195, 87, 1)', 'rgba(79, 135, 232, 1)', 'rgba(255, 206, 84, 1)', 'rgba(239, 83, 80, 1)', 'rgba(33, 150, 243, 1)'],                        }
-    //                 ]
-    //             },
-    //             options: {
-    //                 legend: false,
-    //                 scales: {
-    //                     yAxes: [{
-    //                         show: false,
-    //                         ticks: {
-    //                             beginAtZero: true,
-    //                             color: '#888',
-    //                             fontColor:'#888'
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)",
-    //                             offsetGridLines: true,
-    //                         }
-    //                     }],
-    //                     xAxes: [{
-    //                         barPercentage: 0.5,
-    //                         ticks:{
-    //                             fontColor: '#888',
-    //                         },
-    //                         gridLines:{
-    //                             color:"rgba(255, 255, 255, 0.1)"
-    //                         }
-    //                     }]
-    //                 }
-    //             }
-    //         });
-    //     }
-    // }
+			new Chart(barChart_GrossProfit, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+    // ========================GrossProfit graphp end =====================
+    // =======================WorkingCapital graphp start  ===================
+    var barChart_WorkingCapital = function(){
+		if(jQuery('#barChart_WorkingCapital').length > 0 ){
+			const barChart_WorkingCapital = document.getElementById("barChart_WorkingCapital").getContext('2d');
+
+			barChart_WorkingCapital.height = 100;
+
+			new Chart(barChart_WorkingCapital, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+    // =======================WorkingCapital graphp end =====================
+    // =======================WorkingCapital graphp start  ===================
+    var barChart_QuickAssets = function(){
+		if(jQuery('#barChart_QuickAssets').length > 0 ){
+			const barChart_QuickAssets = document.getElementById("barChart_QuickAssets").getContext('2d');
+
+			barChart_QuickAssets.height = 100;
+
+			new Chart(barChart_QuickAssets, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+    // =======================WorkingCapital graphp end =====================
+
+    var barChart_TotalAssets = function(){
+		if(jQuery('#barChart_TotalAssets').length > 0 ){
+			const barChart_TotalAssets = document.getElementById("barChart_TotalAssets").getContext('2d');
+
+			barChart_TotalAssets.height = 100;
+
+			new Chart(barChart_TotalAssets, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_CurrentAssets = function(){
+		if(jQuery('#barChart_CurrentAssets').length > 0 ){
+			const barChart_CurrentAssets = document.getElementById("barChart_CurrentAssets").getContext('2d');
+
+			barChart_CurrentAssets.height = 100;
+
+			new Chart(barChart_CurrentAssets, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_CurrentLiabilities = function(){
+		if(jQuery('#barChart_CurrentLiabilities').length > 0 ){
+			const barChart_CurrentLiabilities = document.getElementById("barChart_CurrentLiabilities").getContext('2d');
+
+			barChart_CurrentLiabilities.height = 100;
+
+			new Chart(barChart_CurrentLiabilities, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_Debt = function(){
+		if(jQuery('#barChart_Debt').length > 0 ){
+			const barChart_Debt = document.getElementById("barChart_Debt").getContext('2d');
+
+			barChart_Debt.height = 100;
+
+			new Chart(barChart_Debt, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+    var barChart_AverageInventory = function(){
+		if(jQuery('#barChart_AverageInventory').length > 0 ){
+			const barChart_AverageInventory = document.getElementById("barChart_AverageInventory").getContext('2d');
+
+			barChart_AverageInventory.height = 100;
+
+			new Chart(barChart_AverageInventory, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_NetSales = function(){
+		if(jQuery('#barChart_NetSales').length > 0 ){
+			const barChart_NetSales = document.getElementById("barChart_NetSales").getContext('2d');
+
+			barChart_NetSales.height = 100;
+
+			new Chart(barChart_NetSales, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+    
+    var barChart_ShareCapital = function(){
+		if(jQuery('#barChart_ShareCapital').length > 0 ){
+			const barChart_ShareCapital = document.getElementById("barChart_ShareCapital").getContext('2d');
+
+			barChart_ShareCapital.height = 100;
+
+			new Chart(barChart_ShareCapital, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_SundryDebtors = function(){
+		if(jQuery('#barChart_SundryDebtors').length > 0 ){
+			const barChart_SundryDebtors = document.getElementById("barChart_SundryDebtors").getContext('2d');
+
+			barChart_SundryDebtors.height = 100;
+
+			new Chart(barChart_SundryDebtors, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+
+    var barChart_SundryCreditors = function(){
+		if(jQuery('#barChart_SundryCreditors').length > 0 ){
+			const barChart_SundryCreditors = document.getElementById("barChart_SundryCreditors").getContext('2d');
+
+			barChart_SundryCreditors.height = 100;
+
+			new Chart(barChart_SundryCreditors, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_LoansAndAdvances = function(){
+		if(jQuery('#barChart_LoansAndAdvances').length > 0 ){
+			const barChart_LoansAndAdvances = document.getElementById("barChart_LoansAndAdvances").getContext('2d');
+
+			barChart_LoansAndAdvances.height = 100;
+
+			new Chart(barChart_LoansAndAdvances, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+
+    var barChart_CashAndCashEquivalents = function(){
+		if(jQuery('#barChart_CashAndCashEquivalents').length > 0 ){
+			const barChart_CashAndCashEquivalents = document.getElementById("barChart_CashAndCashEquivalents").getContext('2d');
+
+			barChart_CashAndCashEquivalents.height = 100;
+
+			new Chart(barChart_CashAndCashEquivalents, {
+                type: 'bar',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels: financialFindingsGrapFYhLablesName,
+                    datasets: [
+                        {
+                            label: "Financials Findinds Revenue",
+                            data: financialFindingsGrapFY,
+                            borderColor: '#fff',
+                            borderWidth: "0",
+                            // Use an array of colors for each bar
+                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.5,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    }
+                }
+			});
+		}
+	}
+  
+  
+    
+
+    // finding graph end
+
 
 
 	var barChart2 = function(){
@@ -3286,9 +4271,34 @@
 
 
 		load:function(){
-			barChart1();
+			// finding financial start
+            barChart1();
+			barChart_NetProfit();
+            barChart_GrossProfit();
+            barChart_WorkingCapital();
+            barChart_QuickAssets();
+            barChart_TotalAssets();
+            barChart_CurrentAssets();
+            barChart_CurrentLiabilities();
+
+            barChart_Debt();
+            barChart_AverageInventory();
+            barChart_NetSales();
+            barChart_ShareCapital();
+
+
+            barChart_SundryDebtors();
+            barChart_SundryCreditors();
+            barChart_LoansAndAdvances();
+            barChart_CashAndCashEquivalents();
+
+			// finding financial end
+
             barChart1financialRatio();
+
+
             barChart1businessIntelligenc();
+
             // doughnutChartall();
 			barChart2();
 			barChart3();
