@@ -2337,7 +2337,7 @@
                                                 {{ $KeyObservation->key_observation }}</p>
                                         </div>
                                         <div class="col-xl-5 mb-6">
-                                            <p for="educationalBackground" class="text-center mt-20"> OVERALL RISK SCORE =
+                                            <p for="educationalBackground" class="text-center mt-20" style="font-size:20px"> OVERALL RISK SCORE =
                                                 {{ $KeyObservation->overall_risk_score }}</p>
                                         </div>
 
