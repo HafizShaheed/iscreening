@@ -362,7 +362,7 @@ class userController extends Controller
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
 
-// ===================================================== financial finding graph start ===================
+// ===================================================== Business graph start ===================
 
         $business_inteligence_accounts_payable = [
 
@@ -454,7 +454,7 @@ class userController extends Controller
             $data['BusinessIntelligence']->year_BI_FY_five,
 
         ];
-// ===================================================== financial finding graph end ===================
+// ===================================================== Business graph end ===================
         
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
