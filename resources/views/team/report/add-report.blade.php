@@ -3330,7 +3330,7 @@
 
                     <div class="col-xl-3 mb-3">
                     <label for="score_analysis" class="form-label">Score Analysis</label>
-                    <input type="number"  step="any" class="form-control" name="score_analysis"  id="score_analysis" value="{{$BusinessIntelligence->score_analysis}}" placeholder="">
+                    <input type="text"  step="any" class="form-control" name="score_analysis"  id="score_analysis" value="{{$BusinessIntelligence->score_analysis}}" placeholder="">
                     </div>
 
 
