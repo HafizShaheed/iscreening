@@ -5332,7 +5332,7 @@
                 'accounts_payable_turnover_BI_FY_one',
                 'accounts_payable_turnover_BI_analysis',
                 'efficiency_score',
-                'score_analysis',
+              
 
             ], 'one_BI_FY1');
 
