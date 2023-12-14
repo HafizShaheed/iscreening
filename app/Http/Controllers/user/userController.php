@@ -361,7 +361,10 @@ class userController extends Controller
         $data['pageIntro'] = "Introducing Client View Reports";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
-        $business_inteligence = [
+
+// ===================================================== financial finding graph start ===================
+
+        $business_inteligence_accounts_payable = [
 
             $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_one,
             $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_two,
@@ -371,14 +374,76 @@ class userController extends Controller
 
         ];
 
-        // dd($business_inteligence);
+        // dd($business_inteligence_accounts_payable);
 
-        $cleaned_business_inteligence = array_map(function ($item) {
+        $cleaned_business_inteligence_accounts_payable = array_map(function ($item) {
             return $item ? $item[0] : null;
-        }, $business_inteligence);
+        }, $business_inteligence_accounts_payable);
 
         // Combine the cleaned financial ratios into a single array
-        $data['businessInteligenceGrapFY'] = $cleaned_business_inteligence;
+        $data['businessInteligenceGrapFY_accounts_payable'] = $cleaned_business_inteligence_accounts_payable;
+
+        
+        $business_inteligence_operating_efficiency = [
+
+            $data['BusinessIntelligence']->operating_efficiency_BI_FY_one,
+            $data['BusinessIntelligence']->operating_efficiency_BI_FY_two,
+            $data['BusinessIntelligence']->operating_efficiency_BI_FY_three,
+            $data['BusinessIntelligence']->operating_efficiency_BI_FY_four,
+            $data['BusinessIntelligence']->operating_efficiency_BI_FY_five,
+
+        ];
+
+        // dd($business_inteligence_operating_efficiency);
+
+        $cleaned_business_inteligence_operating_efficiency = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $business_inteligence_operating_efficiency);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['businessInteligenceGrapFY_operating_efficiency'] = $cleaned_business_inteligence_operating_efficiency;
+
+        $business_inteligence_inventory_turnover = [
+
+            $data['BusinessIntelligence']->inventory_turnover_BI_FY_one,
+            $data['BusinessIntelligence']->inventory_turnover_BI_FY_two,
+            $data['BusinessIntelligence']->inventory_turnover_BI_FY_three,
+            $data['BusinessIntelligence']->inventory_turnover_BI_FY_four,
+            $data['BusinessIntelligence']->inventory_turnover_BI_FY_five,
+
+        ];
+
+        // dd($business_inteligence_inventory_turnover);
+
+        $cleaned_business_inteligence_inventory_turnover = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $business_inteligence_inventory_turnover);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['businessInteligenceGrapFY_inventory_turnover'] = $cleaned_business_inteligence_inventory_turnover;
+
+        
+        $business_inteligence_days_sales_in_inventory = [
+
+            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_one,
+            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_two,
+            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_three,
+            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_four,
+            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_five,
+
+        ];
+
+        // dd($business_inteligence_days_sales_in_inventory);
+
+        $cleaned_business_inteligence_days_sales_in_inventory = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $business_inteligence_days_sales_in_inventory);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['businessInteligenceGrapFY_days_sales_in_inventory'] = $cleaned_business_inteligence_days_sales_in_inventory;
+
+
+
 
         $data['businessInteligenceGraphLablesName'] = [
 
@@ -389,6 +454,8 @@ class userController extends Controller
             $data['BusinessIntelligence']->year_BI_FY_five,
 
         ];
+// ===================================================== financial finding graph end ===================
+        
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
         $data['Financial'] = Financial::where('third_party_id', $id)->first();
@@ -405,27 +472,297 @@ class userController extends Controller
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
 
-        $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->pluck('revenue_fy_five_finding__1');
-        $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id', $data['Financial']->id)->pluck('revenue_fy_four_finding__1');
-        $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id', $data['Financial']->id)->pluck('revenue_fy_three_finding__1');
-        $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id', $data['Financial']->id)->pluck('revenue_fy_two_finding__1');
-        $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id', $data['Financial']->id)->pluck('revenue_fy_one_finding__1');
+// ===================================================== financial finding graph end ========================
 
-        $financialFindings = [
 
-            $data['FinancialsFindingsFyOne'],
-            $data['FinancialsFindingsFyTwo'],
-            $data['FinancialsFindingsFyThree'],
-            $data['FinancialsFindingsFyFour'],
-            $data['FinancialsFindingsFyFive'],
+        $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->first();
+        $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id', $data['Financial']->id)->first();
+        $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id', $data['Financial']->id)->first();
+        $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id', $data['Financial']->id)->first();
+        $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id', $data['Financial']->id)->first();
+        
+
+        $financialFindings_revenue = [
+
+            $data['FinancialsFindingsFyOne']->revenue_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->revenue_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->revenue_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->revenue_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->revenue_fy_five_finding__1,
         ];
 
-        $cleanedFinancialFindings = array_map(function ($item) {
+        $cleanedFinancialFindings_revenue = array_map(function ($item) {
             return $item ? $item[0] : null;
-        }, $financialFindings);
+        }, $financialFindings_revenue);
 
         // Combine the cleaned financial ratios into a single array
-        $data['financialFindingsGrapFY'] = $cleanedFinancialFindings;
+        $data['financialFindingsGrapFY_revenue'] = $cleanedFinancialFindings_revenue;
+
+        $financialFindings_net_profit = [
+
+            $data['FinancialsFindingsFyOne']->net_profit_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->net_profit_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->net_profit_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->net_profit_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->net_profit_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_net_profit = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_net_profit);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_net_profit'] = $cleanedFinancialFindings_net_profit;
+
+        // start
+        $financialFindings_gross_profit = [
+
+            $data['FinancialsFindingsFyOne']->gross_profit_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->gross_profit_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->gross_profit_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->gross_profit_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->gross_profit_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_gross_profit = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_gross_profit);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_gross_profit'] = $cleanedFinancialFindings_gross_profit;
+        // end
+           // start
+           $financialFindings_working_capital_1 = [
+
+            $data['FinancialsFindingsFyOne']->working_capital_1_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->working_capital_1_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->working_capital_1_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->working_capital_1_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->working_capital_1_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_working_capital_1 = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_working_capital_1);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_working_capital_1'] = $cleanedFinancialFindings_working_capital_1;
+        // end
+
+        // start
+        $financialFindings_quick_assets = [
+
+            $data['FinancialsFindingsFyOne']->quick_assets_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->quick_assets_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->quick_assets_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->quick_assets_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->quick_assets_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_quick_assets = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_quick_assets);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_quick_assets'] = $cleanedFinancialFindings_quick_assets;
+        // end
+
+          // start
+          $financialFindings_total_assets = [
+
+            $data['FinancialsFindingsFyOne']->total_assets_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->total_assets_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->total_assets_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->total_assets_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->total_assets_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_total_assets = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_total_assets);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_total_assets'] = $cleanedFinancialFindings_total_assets;
+        // end
+        
+          // start
+          $financialFindings_current_assets = [
+
+            $data['FinancialsFindingsFyOne']->current_assets_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->current_assets_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->current_assets_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->current_assets_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->current_assets_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_current_assets = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_current_assets);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_current_assets'] = $cleanedFinancialFindings_current_assets;
+        // end
+
+        // start
+        $financialFindings_current_liabilities = [
+
+            $data['FinancialsFindingsFyOne']->current_liabilities_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->current_liabilities_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->current_liabilities_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->current_liabilities_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->current_liabilities_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_current_liabilities = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_current_liabilities);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_current_liabilities'] = $cleanedFinancialFindings_current_liabilities;
+        // end
+      // start
+        $financialFindings_debt = [
+
+            $data['FinancialsFindingsFyOne']->debt_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->debt_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->debt_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->debt_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->debt_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_debt = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_debt);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_debt'] = $cleanedFinancialFindings_debt;
+        // end
+
+        // start
+        $financialFindings_average_inventory = [
+
+            $data['FinancialsFindingsFyOne']->average_inventory_fy_one_finding__1,
+            $data['FinancialsFindingsFyTwo']->average_inventory_fy_two_finding__1,
+            $data['FinancialsFindingsFyThree']->average_inventory_fy_three_finding__1,
+            $data['FinancialsFindingsFyFour']->average_inventory_fy_four_finding__1,
+            $data['FinancialsFindingsFyFive']->average_inventory_fy_five_finding__1,
+        ];
+
+        $cleanedFinancialFindings_average_inventory = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialFindings_average_inventory);
+
+        // Combine the cleaned financial ratios into a single array
+        $data['financialFindingsGrapFY_average_inventory'] = $cleanedFinancialFindings_average_inventory;
+        // end
+
+            // start
+            $financialFindings_net_sales = [
+
+                $data['FinancialsFindingsFyOne']->net_sales_fy_one_finding__1,
+                $data['FinancialsFindingsFyTwo']->net_sales_fy_two_finding__1,
+                $data['FinancialsFindingsFyThree']->net_sales_fy_three_finding__1,
+                $data['FinancialsFindingsFyFour']->net_sales_fy_four_finding__1,
+                $data['FinancialsFindingsFyFive']->net_sales_fy_five_finding__1,
+            ];
+    
+            $cleanedFinancialFindings_net_sales = array_map(function ($item) {
+                return $item ? $item[0] : null;
+            }, $financialFindings_net_sales);
+    
+            // Combine the cleaned financial ratios into a single array
+            $data['financialFindingsGrapFY_net_sales'] = $cleanedFinancialFindings_net_sales;
+            // end
+             // start
+             $financialFindings_equity_share_capital = [
+
+                $data['FinancialsFindingsFyOne']->equity_share_capital_fy_one_finding__1,
+                $data['FinancialsFindingsFyTwo']->equity_share_capital_fy_two_finding__1,
+                $data['FinancialsFindingsFyThree']->equity_share_capital_fy_three_finding__1,
+                $data['FinancialsFindingsFyFour']->equity_share_capital_fy_four_finding__1,
+                $data['FinancialsFindingsFyFive']->equity_share_capital_fy_five_finding__1,
+            ];
+    
+            $cleanedFinancialFindings_equity_share_capital = array_map(function ($item) {
+                return $item ? $item[0] : null;
+            }, $financialFindings_equity_share_capital);
+    
+            // Combine the cleaned financial ratios into a single array
+            $data['financialFindingsGrapFY_equity_share_capital'] = $cleanedFinancialFindings_equity_share_capital;
+            // end
+
+                 // start
+                 $financialFindings_sundry_debtors = [
+
+                    $data['FinancialsFindingsFyOne']->sundry_debtors_fy_one_finding__1,
+                    $data['FinancialsFindingsFyTwo']->sundry_debtors_fy_two_finding__1,
+                    $data['FinancialsFindingsFyThree']->sundry_debtors_fy_three_finding__1,
+                    $data['FinancialsFindingsFyFour']->sundry_debtors_fy_four_finding__1,
+                    $data['FinancialsFindingsFyFive']->sundry_debtors_fy_five_finding__1,
+                ];
+        
+                $cleanedFinancialFindings_sundry_debtors = array_map(function ($item) {
+                    return $item ? $item[0] : null;
+                }, $financialFindings_sundry_debtors);
+        
+                // Combine the cleaned financial ratios into a single array
+                $data['financialFindingsGrapFY_sundry_debtors'] = $cleanedFinancialFindings_sundry_debtors;
+                // end
+
+                     // start
+            $financialFindings_sundry_creditors = [
+
+                $data['FinancialsFindingsFyOne']->sundry_creditors_fy_one_finding__1,
+                $data['FinancialsFindingsFyTwo']->sundry_creditors_fy_two_finding__1,
+                $data['FinancialsFindingsFyThree']->sundry_creditors_fy_three_finding__1,
+                $data['FinancialsFindingsFyFour']->sundry_creditors_fy_four_finding__1,
+                $data['FinancialsFindingsFyFive']->sundry_creditors_fy_five_finding__1,
+            ];
+    
+            $cleanedFinancialFindings_sundry_creditors = array_map(function ($item) {
+                return $item ? $item[0] : null;
+            }, $financialFindings_sundry_creditors);
+    
+            // Combine the cleaned financial ratios into a single array
+            $data['financialFindingsGrapFY_sundry_creditors'] = $cleanedFinancialFindings_sundry_creditors;
+            // end
+
+                 // start
+                 $financialFindings_loans_and_advances = [
+
+                    $data['FinancialsFindingsFyOne']->loans_and_advances_fy_one_finding__1,
+                    $data['FinancialsFindingsFyTwo']->loans_and_advances_fy_two_finding__1,
+                    $data['FinancialsFindingsFyThree']->loans_and_advances_fy_three_finding__1,
+                    $data['FinancialsFindingsFyFour']->loans_and_advances_fy_four_finding__1,
+                    $data['FinancialsFindingsFyFive']->loans_and_advances_fy_five_finding__1,
+                ];
+        
+                $cleanedFinancialFindings_loans_and_advances = array_map(function ($item) {
+                    return $item ? $item[0] : null;
+                }, $financialFindings_loans_and_advances);
+        
+                // Combine the cleaned financial ratios into a single array
+                $data['financialFindingsGrapFY_loans_and_advances'] = $cleanedFinancialFindings_loans_and_advances;
+                // end
+
+                     // start
+                     $financialFindings_cash_and_cash_equivalents = [
+
+                        $data['FinancialsFindingsFyOne']->cash_and_cash_equivalents_fy_one_finding__1,
+                        $data['FinancialsFindingsFyTwo']->cash_and_cash_equivalents_fy_two_finding__1,
+                        $data['FinancialsFindingsFyThree']->cash_and_cash_equivalents_fy_three_finding__1,
+                        $data['FinancialsFindingsFyFour']->cash_and_cash_equivalents_fy_four_finding__1,
+                        $data['FinancialsFindingsFyFive']->cash_and_cash_equivalents_fy_five_finding__1,
+                    ];
+            
+                    $cleanedFinancialFindings_cash_and_cash_equivalents = array_map(function ($item) {
+                        return $item ? $item[0] : null;
+                    }, $financialFindings_cash_and_cash_equivalents);
+            
+                    // Combine the cleaned financial ratios into a single array
+                    $data['financialFindingsGrapFY_cash_and_cash_equivalents'] = $cleanedFinancialFindings_cash_and_cash_equivalents;
+                    // end
+
 
         $data['FinancialsFindingsFyFiveGraphLableName'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->pluck('year_five_finding__1');
         $data['FinancialsFindingsFyFourGraphLableName'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->pluck('year_four_finding__1');
@@ -441,12 +778,17 @@ class userController extends Controller
             $data['FinancialsFindingsFyTwoGraphLableName'],
             $data['FinancialsFindingsFyOneGraphLableName'],
         ];
+
+// ===================================================== financial finding graph end ========================
+
+// ===================================================== financial ratio graph start ========================
         // dd($data['financialFindingsGrapFYhLablesName'] );
         $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsRatioAnalysisFyThree'] = FinancialsRatioAnalysisFyThree::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsRatioAnalysisFyTwo'] = FinancialsRatioAnalysisFyTwo::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id', $data['Financial']->id)->first();
+
         $financialRatioscurrent = [
 
             $data['FinancialsRatioAnalysisFyOne']->current_ratio_fy_one_1,
@@ -478,7 +820,7 @@ class userController extends Controller
         $data['financialrationGrapFY_quick_ratio'] = $cleanedFinancialRatiosquick_ratio;
 
 
-        
+
         $financialRatiosdebt_ratio = [
 
             $data['FinancialsRatioAnalysisFyOne']->debt_ratio_fy_one_1,
@@ -511,7 +853,7 @@ class userController extends Controller
         $data['financialrationGrapFY_solvency_ratio'] = $cleanedFinancialRatiossolvency_ratio;
 
 
-        
+
 
         $financialRatiosdebt_to_equity_ratio = [
 
@@ -575,7 +917,7 @@ class userController extends Controller
         }, $financialRatiosproprietary_ratio);
 
         $data['financialrationGrapFY_proprietary_ratio'] = $cleanedFinancialRatiosproprietary_ratio;
-        
+
 
         $financialRatiosnet_profit_ratio = [
 
@@ -591,6 +933,96 @@ class userController extends Controller
         }, $financialRatiosnet_profit_ratio);
 
         $data['financialrationGrapFY_net_profit_ratio'] = $cleanedFinancialRatiosnet_profit_ratio;
+
+        $financialRatiosgross_profit_ratio = [
+
+            $data['FinancialsRatioAnalysisFyOne']->gross_profit_ratio_fy_one_1,
+            $data['FinancialsRatioAnalysisFyTwo']->gross_profit_ratio_fy_two_1,
+            $data['FinancialsRatioAnalysisFyThree']->gross_profit_ratio_fy_three_1,
+            $data['FinancialsRatioAnalysisFyFour']->gross_profit_ratio_fy_four_1,
+            $data['FinancialsRatioAnalysisFyFive']->gross_profit_ratio_fy_five_1,
+        ];
+
+        $cleanedFinancialRatiosgross_profit_ratio = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatiosgross_profit_ratio);
+
+        $data['financialrationGrapFY_gross_profit_ratio'] = $cleanedFinancialRatiosgross_profit_ratio;
+
+            $financialRatiosspringate_s_score_ratio = [
+
+            $data['FinancialsRatioAnalysisFyOne']->springate_s_score_ratio_fy_one_1,
+            $data['FinancialsRatioAnalysisFyTwo']->springate_s_score_ratio_fy_two_1,
+            $data['FinancialsRatioAnalysisFyThree']->springate_s_score_ratio_fy_three_1,
+            $data['FinancialsRatioAnalysisFyFour']->springate_s_score_ratio_fy_four_1,
+            $data['FinancialsRatioAnalysisFyFive']->springate_s_score_ratio_fy_five_1,
+        ];
+
+        $cleanedFinancialRatiosspringate_s_score_ratio = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatiosspringate_s_score_ratio);
+
+        $data['financialrationGrapFY_springate_s_score_ratio'] = $cleanedFinancialRatiosspringate_s_score_ratio;
+
+        $financialRatiostrade_receivable_days_ratio = [
+
+            $data['FinancialsRatioAnalysisFyOne']->trade_receivable_days_ratio_fy_one_1,
+            $data['FinancialsRatioAnalysisFyTwo']->trade_receivable_days_ratio_fy_two_1,
+            $data['FinancialsRatioAnalysisFyThree']->trade_receivable_days_ratio_fy_three_1,
+            $data['FinancialsRatioAnalysisFyFour']->trade_receivable_days_ratio_fy_four_1,
+            $data['FinancialsRatioAnalysisFyFive']->trade_receivable_days_ratio_fy_five_1,
+        ];
+
+        $cleanedFinancialRatiostrade_receivable_days_ratio = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatiostrade_receivable_days_ratio);
+
+        $data['financialrationGrapFY_trade_receivable_days_ratio'] = $cleanedFinancialRatiostrade_receivable_days_ratio;
+
+        $financialRatiostrade_payable_days_ratio = [
+
+            $data['FinancialsRatioAnalysisFyOne']->trade_payable_days_ratio_fy_one_1,
+            $data['FinancialsRatioAnalysisFyTwo']->trade_payable_days_ratio_fy_two_1,
+            $data['FinancialsRatioAnalysisFyThree']->trade_payable_days_ratio_fy_three_1,
+            $data['FinancialsRatioAnalysisFyFour']->trade_payable_days_ratio_fy_four_1,
+            $data['FinancialsRatioAnalysisFyFive']->trade_payable_days_ratio_fy_five_1,
+        ];
+
+        $cleanedFinancialRatiostrade_payable_days_ratio = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatiostrade_payable_days_ratio);
+
+        $data['financialrationGrapFY_trade_payable_days_ratio'] = $cleanedFinancialRatiostrade_payable_days_ratio;
+
+        $financialRatiostaffler_z_score_ratio = [
+
+            $data['FinancialsRatioAnalysisFyOne']->taffler_z_score_ratio_fy_one_1,
+            $data['FinancialsRatioAnalysisFyTwo']->taffler_z_score_ratio_fy_two_1,
+            $data['FinancialsRatioAnalysisFyThree']->taffler_z_score_ratio_fy_three_1,
+            $data['FinancialsRatioAnalysisFyFour']->taffler_z_score_ratio_fy_four_1,
+            $data['FinancialsRatioAnalysisFyFive']->taffler_z_score_ratio_fy_five_1,
+        ];
+
+        $cleanedFinancialRatiostaffler_z_score_ratio = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatiostaffler_z_score_ratio);
+
+        $data['financialrationGrapFY_taffler_z_score_ratio'] = $cleanedFinancialRatiostaffler_z_score_ratio;
+
+        $financialRatioszmijewski_x_score_ratio = [
+
+            $data['FinancialsRatioAnalysisFyOne']->zmijewski_x_score_ratio_fy_one_1,
+            $data['FinancialsRatioAnalysisFyTwo']->zmijewski_x_score_ratio_fy_two_1,
+            $data['FinancialsRatioAnalysisFyThree']->zmijewski_x_score_ratio_fy_three_1,
+            $data['FinancialsRatioAnalysisFyFour']->zmijewski_x_score_ratio_fy_four_1,
+            $data['FinancialsRatioAnalysisFyFive']->zmijewski_x_score_ratio_fy_five_1,
+        ];
+
+        $cleanedFinancialRatioszmijewski_x_score_ratio = array_map(function ($item) {
+            return $item ? $item[0] : null;
+        }, $financialRatioszmijewski_x_score_ratio);
+
+        $data['financialrationGrapFY_zmijewski_x_score_ratio'] = $cleanedFinancialRatioszmijewski_x_score_ratio;
 
         $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->pluck('year_ratio_five_1');
         $data['FinancialsRatioAnalysisFyFourGraphLabelNames'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->pluck('year_ratio_four_1');
@@ -609,6 +1041,9 @@ class userController extends Controller
         ];
 
         // dd($data['financialRatioGrapFYhLablesName']);
+
+// ===================================================== financial ratio graph end ========================
+
         $data['FirmBackground'] = FirmBackground::where('third_party_id', $id)->first();
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();

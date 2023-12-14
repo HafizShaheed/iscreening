@@ -2698,40 +2698,40 @@
                                 <input type="number" step="any" class="form-control" name="springate_s_score_ratio_fy_one_1"  id="springate_s_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                                <label for="springate_s_score_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="springate_s_score_ratio_analysis_fy_one_1"  id="springate_s_score_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_receivable_days_ratio_fy_one_1" class="form-label">Trade Receivable Days</label>
                                 <input  type="number" step="any"  class="form-control" name="trade_receivable_days_ratio_fy_one_1"  id="trade_receivable_days_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                                <label for="trade_receivable_days_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="trade_receivable_days_ratio_analysis_fy_one_1"  id="trade_receivable_days_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="trade_payable_days_ratio_fy_one_1" class="form-label">Trade Payable Days</label>
                                 <input  type="number" step="any"  class="form-control" name="trade_payable_days_ratio_fy_one_1"  id="trade_payable_days_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                                <label for="trade_payable_days_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="trade_payable_days_ratio_analysis_fy_one_1"  id="trade_payable_days_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="taffler_z_score_ratio_fy_one_1" class="form-label">Taffler Z-Score</label>
                                 <input type="number" step="any"   class="form-control" name="taffler_z_score_ratio_fy_one_1"  id="taffler_z_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                                <label for="taffler_z_score_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="taffler_z_score_ratio_analysis_fy_one_1"  id="taffler_z_score_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
                                 <label for="zmijewski_x_score_ratio_fy_one_1" class="form-label">Zmijewski X-Score</label>
                                 <input type="number" step="any"   class="form-control" name="zmijewski_x_score_ratio_fy_one_1"  id="zmijewski_x_score_ratio_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_fy_one_1}}" placeholder="">
                             </div>
                             <div class="col-xl-3 mb-3">
-                                <label for="gross_profit_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
-                                <input type="text" class="form-control" name="gross_profit_ratio_analysis_fy_one_1"  id="gross_profit_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}" placeholder="">
+                                <label for="zmijewski_x_score_ratio_analysis_fy_one_1" class="form-label">Analysis</label>
+                                <input type="text" class="form-control" name="zmijewski_x_score_ratio_analysis_fy_one_1"  id="zmijewski_x_score_ratio_analysis_fy_one_1" value="{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1}}" placeholder="">
                             </div>
                         </div>
 
@@ -5377,7 +5377,6 @@
                 'accounts_payable_turnover_BI_FY_one',
                 'accounts_payable_turnover_BI_analysis',
                 'efficiency_score',
-                'score_analysis',
 
             ], 'one_BI_FY1');
 

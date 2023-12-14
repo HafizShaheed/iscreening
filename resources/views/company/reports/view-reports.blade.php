@@ -1679,6 +1679,7 @@
                                                         </h4>
                                                         <div class="d-flex justify-content-around">
                                                             <div class="column justify-content-start align-items-start">
+                                                                
                                                                 <ul class="list-unstyled">
                                                                     <li>
                                                                         <label class="label"><b>Quick Ratio Analysis</b></label>
@@ -1708,35 +1709,33 @@
 
                                                                 </ul>
                                                             </div>
-                                                            <div class="column">
+                                                            <div class="column justify-content-start align-items-start">
                                                                 <ul class="list-unstyled">
                                                                 <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->debt_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->solvency_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->asset_turnover_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1 }}dddfdf</label>
                                                                     </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
+                                                                  
                                                                 </ul>
                                                             </div>
                                                             <div class="column justify-content-start align-items-start">
@@ -1772,30 +1771,27 @@
                                                             <div class="column">
                                                                 <ul class="list-unstyled">
                                                                 <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
                                                                     <li>
-                                                                        <label class="text-start">VALUES</label>
+                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
-                                                                    <li>
-                                                                        <label class="text-start">VALUES</label>
-                                                                    </li>
-
+                                                                 
                                                                 </ul>
                                                             </div>
 
@@ -1805,7 +1801,7 @@
                                             </div>
                                             <div class="row mt-2">
 
-                                             
+
                                                 <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
@@ -1956,7 +1952,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                              
+
                                             </div>
                                         </div>
                                     </div>
@@ -2024,16 +2020,16 @@
                                                                     <li>
                                                                         <label class="label"><b>Inventory Turnover Ratio Analysis</b></label>
                                                                     </li>
-                                                                   
+
                                                                 </ul>
                                                             </div>
                                                             <div class="column">
                                                                 <ul class="list-unstyled">
                                                                     <li>
-                                                                        <span class="value">8 (Left)</span>
+                                                                        <span class="label">{{$BusinessIntelligence->operating_efficiency_BI_analysis }}</span>
                                                                     </li>
                                                                     <li>
-                                                                        <span class="value">8 (Right)</span>
+                                                                        <span class="label">{{$BusinessIntelligence->inventory_turnover_BI_analysis }}</span>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -2051,10 +2047,10 @@
                                                             <div class="column">
                                                                 <ul class="list-unstyled">
                                                                     <li>
-                                                                        <span class="value">8 (Left)</span>
+                                                                        <span class="value">{{$BusinessIntelligence->days_sales_in_inventory_BI_analysis }}</span>
                                                                     </li>
                                                                     <li>
-                                                                        <span class="value">8 (Right)</span>
+                                                                        <span class="value">{{$BusinessIntelligence->accounts_payable_turnover_BI_analysis }}</span>
                                                                     </li>
                                                                 </ul>
                                                             </div>
@@ -2415,16 +2411,56 @@
 
 @section('addScript')
 <script>
-    var financialRationGrapFY = @json($financialrationGrapFY);
-    var financialFindingsGrapFY = @json($financialFindingsGrapFY);
-    var businessInteligenceGrapFY = @json($businessInteligenceGrapFY);
+    var financialrationGrapFY_current_ratio = @json($financialrationGrapFY_current_ratio);
+    var financialrationGrapFY_quick_ratio = @json($financialrationGrapFY_quick_ratio);
+    var financialrationGrapFY_debt_ratio = @json($financialrationGrapFY_debt_ratio);
+    var financialrationGrapFY_solvency_ratio = @json($financialrationGrapFY_solvency_ratio);
+    var financialrationGrapFY_debt_to_equity_ratio = @json($financialrationGrapFY_debt_to_equity_ratio);
+    var financialrationGrapFY_asset_turnover_ratio = @json($financialrationGrapFY_asset_turnover_ratio);
+    var financialrationGrapFY_absolute_liquidity_ratio = @json($financialrationGrapFY_absolute_liquidity_ratio);
+    var financialrationGrapFY_proprietary_ratio = @json($financialrationGrapFY_proprietary_ratio);
+    var financialrationGrapFY_net_profit_ratio = @json($financialrationGrapFY_net_profit_ratio);
+    var financialrationGrapFY_gross_profit_ratio = @json($financialrationGrapFY_gross_profit_ratio);
+    var financialrationGrapFY_springate_s_score_ratio = @json($financialrationGrapFY_springate_s_score_ratio);
+    var financialrationGrapFY_trade_receivable_days_ratio = @json($financialrationGrapFY_trade_receivable_days_ratio);
+    var financialrationGrapFY_trade_payable_days_ratio = @json($financialrationGrapFY_trade_payable_days_ratio);
+    var financialrationGrapFY_taffler_z_score_ratio = @json($financialrationGrapFY_taffler_z_score_ratio);
+    var financialrationGrapFY_zmijewski_x_score_ratio = @json($financialrationGrapFY_zmijewski_x_score_ratio);
+
+
+
+    var financialFindingsGrapFY_revenue = @json($financialFindingsGrapFY_revenue);
+    var financialFindingsGrapFY_net_profit = @json($financialFindingsGrapFY_net_profit);
+    var financialFindingsGrapFY_gross_profit = @json($financialFindingsGrapFY_gross_profit);
+    var financialFindingsGrapFY_working_capital_1 = @json($financialFindingsGrapFY_working_capital_1);
+    var financialFindingsGrapFY_quick_assets = @json($financialFindingsGrapFY_quick_assets);
+    var financialFindingsGrapFY_total_assets = @json($financialFindingsGrapFY_total_assets);
+    var financialFindingsGrapFY_current_assets = @json($financialFindingsGrapFY_current_assets);
+    var financialFindingsGrapFY_current_liabilities = @json($financialFindingsGrapFY_current_liabilities);
+    var financialFindingsGrapFY_debt = @json($financialFindingsGrapFY_debt);
+    var financialFindingsGrapFY_average_inventory = @json($financialFindingsGrapFY_average_inventory);
+    var financialFindingsGrapFY_net_sales = @json($financialFindingsGrapFY_net_sales);
+    var financialFindingsGrapFY_equity_share_capital = @json($financialFindingsGrapFY_equity_share_capital);
+    var financialFindingsGrapFY_sundry_debtors = @json($financialFindingsGrapFY_sundry_debtors);
+    var financialFindingsGrapFY_sundry_creditors = @json($financialFindingsGrapFY_sundry_creditors);
+    var financialFindingsGrapFY_loans_and_advances = @json($financialFindingsGrapFY_loans_and_advances);
+    var financialFindingsGrapFY_cash_and_cash_equivalents = @json($financialFindingsGrapFY_cash_and_cash_equivalents);
+
+
+
+    var businessInteligenceGrapFY_operating_efficiency = @json($businessInteligenceGrapFY_operating_efficiency);
+    var businessInteligenceGrapFY_inventory_turnover = @json($businessInteligenceGrapFY_inventory_turnover);
+    var businessInteligenceGrapFY_days_sales_in_inventory = @json($businessInteligenceGrapFY_days_sales_in_inventory);
+    var businessInteligenceGrapFY_accounts_payable = @json($businessInteligenceGrapFY_accounts_payable);
+
+    
     var finalValueforGraKeyObservation =@json($finalValueforGraKeyObservation);
 
     var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
     var financialFindingsGrapFYhLablesName =@json($financialFindingsGrapFYhLablesName);
     var financialRatioGrapFYhLablesName =@json($financialRatioGrapFYhLablesName);
     // Your external JavaScript file
-    // Include this script before your external JS that uses financialRationGrapFY
+    // Include this script before your external JS that uses financialrationGrapFY_current_ratio
     </script>
  <script>
     $(document).ready(function() {
@@ -2643,8 +2679,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Current Ratio",
+                            data: financialrationGrapFY_current_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -2677,13 +2713,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -2704,8 +2740,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Quick Ratio",
+                            data: financialrationGrapFY_quick_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -2738,13 +2774,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -2763,8 +2799,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Dept Ratio",
+                            data: financialrationGrapFY_debt_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -2797,13 +2833,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -2821,8 +2857,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Solvency Ratio",
+                            data: financialrationGrapFY_solvency_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -2855,13 +2891,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -2880,8 +2916,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Ratio Dept to Equity",
+                            data: financialrationGrapFY_debt_to_equity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -2914,13 +2950,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -2939,8 +2975,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Asset Turnover Ratio",
+                            data: financialrationGrapFY_asset_turnover_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -2973,13 +3009,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -2998,8 +3034,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials absolute liquidity ratio",
+                            data: financialrationGrapFY_absolute_liquidity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3032,13 +3068,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3057,8 +3093,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Property ratio",
+                            data: financialrationGrapFY_proprietary_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3091,13 +3127,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3117,8 +3153,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Net Profit",
+                            data: financialrationGrapFY_net_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3151,13 +3187,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3176,8 +3212,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials Gross Profit",
+                            data: financialrationGrapFY_gross_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3210,17 +3246,18 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
     }
+
 
     var barChart_SpringateSScore = function(){
         if(jQuery('#barChart_SpringateSScore').length > 0 ){
@@ -3235,8 +3272,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials springate score ratio",
+                            data: financialrationGrapFY_springate_s_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3269,13 +3306,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3294,8 +3331,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials trade receivable days ratio",
+                            data: financialrationGrapFY_trade_receivable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3328,13 +3365,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3353,8 +3390,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financialstrade payable days ratio",
+                            data: financialrationGrapFY_trade_payable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3387,13 +3424,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3412,8 +3449,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials taffler z score ratio",
+                            data: financialrationGrapFY_taffler_z_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3446,13 +3483,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3471,8 +3508,8 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Analysis",
-                            data: financialRationGrapFY,
+                            label: "Financials zmijewski x score ratio",
+                            data: financialrationGrapFY_zmijewski_x_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: 'rgba(33, 150, 243, 0.4)',
@@ -3505,19 +3542,20 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
     }
     //========================================================================== Ratio graph start ========================= //
     //========================================================================== BI graph start ========================= //
+
 
         // pay able start
     var barChart1businessIntelligenc = function(){
@@ -3533,11 +3571,11 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence",
-                            data: businessInteligenceGrapFY,
+                            label: "Business Intelligence operating efficiency",
+                            data: businessInteligenceGrapFY_operating_efficiency,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#f3643a',
                             pointRadius: 5,
                             pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
@@ -3567,18 +3605,18 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
     }
-   
+
         // pay able end
     var barChart_DaysSalesInInventory = function(){
         if(jQuery('#barChart_DaysSalesInInventory').length > 0 ){
@@ -3593,11 +3631,11 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence",
-                            data: businessInteligenceGrapFY,
+                            label: "Business Intelligence inventory turnover",
+                            data: businessInteligenceGrapFY_inventory_turnover,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#f3643a',
                             pointRadius: 5,
                             pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
@@ -3627,13 +3665,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3651,11 +3689,11 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence",
-                            data: businessInteligenceGrapFY,
+                            label: "Business Intelligence days sales in inventory",
+                            data: businessInteligenceGrapFY_days_sales_in_inventory,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#f3643a',
                             pointRadius: 5,
                             pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
@@ -3685,13 +3723,13 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
@@ -3709,11 +3747,11 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence",
-                            data: businessInteligenceGrapFY,
+                            label: "Business Intelligence accounts payable",
+                            data: businessInteligenceGrapFY_accounts_payable,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#f3643a',
                             pointRadius: 5,
                             pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
                     ]
@@ -3743,24 +3781,25 @@
                             }
                         }]
                     },
-                    tooltips: {
-                    callbacks: {
-                        label: function (tooltipItem, data) {
-                            return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
-                        }
-                    }
-                }
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
                 }
             });
         }
     }
-   
+
     //========================================================================== BI graph start ========================= //
 
     //========================================================================== Ratio graph start ========================= //
 
 
     //========================================================================== finding graph start ========================= //
+
 
     // Revenue graphp start
     var barChart1 = function(){
@@ -3777,7 +3816,7 @@
                     datasets: [
                         {
                             label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            data: financialFindingsGrapFY_revenue,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -3830,8 +3869,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Net Profit",
+                            data: financialFindingsGrapFY_net_profit,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -3867,10 +3906,7 @@
 			});
 		}
 	}
-
     // =========================NetProfit graphp end =====================
-
-
     // ========================GrossProfit graphp start  ===================
      var barChart_GrossProfit = function(){
 		if(jQuery('#barChart_GrossProfit').length > 0 ){
@@ -3885,8 +3921,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Gross Profit",
+                            data: financialFindingsGrapFY_gross_profit,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -3937,8 +3973,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Working Capital",
+                            data: financialFindingsGrapFY_working_capital_1,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -3975,6 +4011,7 @@
 		}
 	}
     // =======================WorkingCapital graphp end =====================
+  
     // =======================WorkingCapital graphp start  ===================
     var barChart_QuickAssets = function(){
 		if(jQuery('#barChart_QuickAssets').length > 0 ){
@@ -3989,8 +4026,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Quick Assets",
+                            data: financialFindingsGrapFY_quick_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4041,8 +4078,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Total Assets",
+                            data: financialFindingsGrapFY_total_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4092,8 +4129,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Current Assets",
+                            data: financialFindingsGrapFY_current_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4143,8 +4180,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Current Liabilities",
+                            data: financialFindingsGrapFY_current_liabilities,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4194,8 +4231,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Debt",
+                            data: financialFindingsGrapFY_debt,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4244,8 +4281,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Average Inventory",
+                            data: financialFindingsGrapFY_average_inventory,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4295,8 +4332,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Net Sales",
+                            data: financialFindingsGrapFY_net_sales,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4346,8 +4383,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Equity Share Capital",
+                            data: financialFindingsGrapFY_equity_share_capital,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4397,8 +4434,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Sundry Debtors",
+                            data: financialFindingsGrapFY_sundry_debtors,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4449,8 +4486,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Sundry Creditors",
+                            data: financialFindingsGrapFY_sundry_creditors,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4500,8 +4537,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Loans And Advances",
+                            data: financialFindingsGrapFY_loans_and_advances,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
@@ -4551,8 +4588,8 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
-                            data: financialFindingsGrapFY,
+                            label: "Financials Findinds Cash & Cash Equivalents",
+                            data: financialFindingsGrapFY_cash_and_cash_equivalents,
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
