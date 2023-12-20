@@ -100,7 +100,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Directors</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">Ms. Cherry Banga</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->no_of_directors }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Form of Entity</td>
@@ -1679,7 +1679,7 @@
                                                         </h4>
                                                         <div class="d-flex justify-content-around">
                                                             <div class="column justify-content-start align-items-start">
-                                                                
+
                                                                 <ul class="list-unstyled">
                                                                     <li>
                                                                         <label class="label"><b>Quick Ratio Analysis</b></label>
@@ -1735,7 +1735,7 @@
                                                                     <li>
                                                                         <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1 }}dddfdf</label>
                                                                     </li>
-                                                                  
+
                                                                 </ul>
                                                             </div>
                                                             <div class="column justify-content-start align-items-start">
@@ -1791,7 +1791,7 @@
                                                                     <li>
                                                                         <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1 }}</label>
                                                                     </li>
-                                                                 
+
                                                                 </ul>
                                                             </div>
 
@@ -2453,7 +2453,7 @@
     var businessInteligenceGrapFY_days_sales_in_inventory = @json($businessInteligenceGrapFY_days_sales_in_inventory);
     var businessInteligenceGrapFY_accounts_payable = @json($businessInteligenceGrapFY_accounts_payable);
 
-    
+
     var finalValueforGraKeyObservation =@json($finalValueforGraKeyObservation);
 
     var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
@@ -4011,7 +4011,7 @@
 		}
 	}
     // =======================WorkingCapital graphp end =====================
-  
+
     // =======================WorkingCapital graphp start  ===================
     var barChart_QuickAssets = function(){
 		if(jQuery('#barChart_QuickAssets').length > 0 ){

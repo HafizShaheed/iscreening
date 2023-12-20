@@ -103,7 +103,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Directors</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">Ms. Cherry Banga</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->no_of_directors }}</td>
                                                         </tr>
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Form of Entity</td>
@@ -1471,7 +1471,7 @@
                                         <div class="table-responsive">
                                             <div class="row">
 
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1481,7 +1481,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1491,7 +1491,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1501,7 +1501,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1515,10 +1515,8 @@
 
 
 
-                                            </div>
-                                            <div class="row mt-2">
 
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1528,7 +1526,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1538,7 +1536,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1548,7 +1546,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1558,14 +1556,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                
 
 
 
+                                       
 
-                                            </div>
-                                            <div class="row mt-2">
-
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1575,7 +1572,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1585,7 +1582,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1595,7 +1592,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1609,10 +1606,9 @@
 
 
 
-                                            </div>
-                                             <div class="row mt-2">
+                                           
 
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1622,7 +1618,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1632,7 +1628,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1642,7 +1638,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -1802,7 +1798,158 @@
                                                 </div>
 
                                             </div>
+                                            <div class="row mt-2">
 
+
+                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Quick Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_QuickRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Dept Ratio </h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_DebtRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Solvency Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_SolvencyRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                         
+
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Debt To Equity Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_DebtToEquityRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Asset Turnover Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_AssetTurnoverRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Absolute Liquidity Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_AbsoluteLiquidityRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Proprietary Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_ProprietaryRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                           
+
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Net Profit Ratio </h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_NetProfitRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Gross Profit Ratio</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_GrossProfitRatio"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Springate Score</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_SpringateSScore"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Trade Receivable Days</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TradeReceivableDays"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials Trade Payable Days</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TradePayableDays"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials TafflerZ Score</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_TafflerZScore"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                    <div class="card">
+                                                        <h4
+                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                            Financials ZmijewskiX Score</h4>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <canvas id="barChart_ZmijewskiXScore"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1838,7 +1985,115 @@
 
 
                                 </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="Business-Intelligence " role="tabpanel">
+                                        <div class="pt-4">
+                                            <div class="table-responsive">
+                                                <div class="row">
 
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Operating Efficiency Ratio</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                        Business Intelligence Analysis
+                                                        </h4>
+                                                        <div class="d-flex justify-content-around">
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <label class="label"><b>Operating Efficiency Ratio Analysis</b></label>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <label class="label"><b>Inventory Turnover Ratio Analysis</b></label>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <span class="label">{{$BusinessIntelligence->operating_efficiency_BI_analysis }}</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="label">{{$BusinessIntelligence->inventory_turnover_BI_analysis }}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <label class="label"><b>Days Sales In Inventory Analysis</b></label>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <label class="label"><b>Accounts Payable Turnover Ratio Analysis</b></label>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="column">
+                                                                <ul class="list-unstyled">
+                                                                    <li>
+                                                                        <span class="value">{{$BusinessIntelligence->days_sales_in_inventory_BI_analysis }}</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="value">{{$BusinessIntelligence->accounts_payable_turnover_BI_analysis }}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                  <div class="row mt-2">
+
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Inventory Turnover Ratio</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_InventoryTurnoverRatio"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Days Sales In Inventory</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_DaysSalesInInventory"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                        <div class="card">
+                                                            <h4
+                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                Accounts Payable Turnover Ratio</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_businessIntelligence"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
