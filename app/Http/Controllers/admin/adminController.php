@@ -578,14 +578,7 @@ $data['financialFindingsGrapFY_revenue'] = [
     $data['FinancialsFindingsFyFive']->revenue_fy_five_finding__1,
 ];
 
-// dd($financialFindings_revenue);
 
-// $cleanedFinancialFindings_revenue = array_map(function ($item) {
-//     return $item ? $item[0] : null;
-// }, $financialFindings_revenue);
-
-// Combine the cleaned financial ratios into a single array
-//  = $financialFindings_revenue;
 
 $data['financialFindingsGrapFY_net_profit'] = [
 
@@ -595,12 +588,6 @@ $data['financialFindingsGrapFY_net_profit'] = [
     $data['FinancialsFindingsFyFour']->net_profit_fy_four_finding__1,
     $data['FinancialsFindingsFyFive']->net_profit_fy_five_finding__1,
 ];
-
-// $cleanedFinancialFindings_net_profit = array_map(function ($item) {
-//     return $item ? $item[0] : null;
-// }, $financialFindings_net_profit);
-
-// Combine the cleaned financial ratios into a single array
 
 // start
 $data['financialFindingsGrapFY_gross_profit'] = [

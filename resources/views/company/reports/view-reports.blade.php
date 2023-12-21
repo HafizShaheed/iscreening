@@ -1368,7 +1368,7 @@
     </div>
 <!-- court check tab End -->
 <!-- Financials tab start -->
-    <div class="col-xl-12" id="tab-Financials">
+<div class="col-xl-12" id="tab-Financials">
         <div class="card dz-card">
 
             <div class="tab-content" id="myTabContent">
@@ -1401,9 +1401,9 @@
                                     <div class="pt-4">
                                         <div class="table-responsive">
                                             <table class="table primary-table-bordered">
-                                                <thead class="thead-primary">
-                                                </thead>
-                                                <tbody>
+                                                
+                                                    <tbody>
+                                                    @if (!empty($Financial->name_1))
                                                 <tr>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
@@ -1416,6 +1416,9 @@
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_1 }}</td>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_1 }}</td>
                                                     </tr>
+                                                        
+                                                    @endif
+                                                    @if (!empty($Financial->name_2))
                                                     <tr>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
@@ -1428,6 +1431,9 @@
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_2 }}</td>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_2 }}</td>
                                                     </tr>
+                                                        
+                                                    @endif
+                                                    @if (!empty($Financial->name_3))
                                                     <tr>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
@@ -1440,6 +1446,9 @@
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_3 }}</td>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_3 }}</td>
                                                     </tr>
+                                                        
+                                                    @endif
+                                                    @if (!empty($Financial->name_4))
                                                     <tr>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
@@ -1452,8 +1461,10 @@
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_4 }}</td>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_4 }}</td>
                                                     </tr>
+                                                    @endif
+                                                    
                                                     <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FINANCIAL SCORE = ????</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4"><b></b>FINANCIAL SCORE = {{ $Financial->overall_financial_score }} </b></td>
 
                                                     </tr>
 
@@ -1467,188 +1478,234 @@
                                     <div class="pt-4">
                                         <div class="table-responsive">
                                             <div class="row">
-
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                              
+                                                 @if (isset($financialFindingsGrapFY_revenue) && count($financialFindingsGrapFY_revenue) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Revenue</h4>
+                                                             Revenue</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_1" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                @endif
+
+                                                 @if (isset($financialFindingsGrapFY_net_profit) && count($financialFindingsGrapFY_net_profit) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Net Profit</h4>
+                                                             Net Profit</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_NetProfit" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                @endif
+
+                                                 @if (isset($financialFindingsGrapFY_gross_profit) && count($financialFindingsGrapFY_gross_profit) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Gross Profit</h4>
+                                                             Gross Profit</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_GrossProfit" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                @endif
+
+                                                 @if (isset($financialFindingsGrapFY_working_capital_1) && count($financialFindingsGrapFY_working_capital_1) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Working Capital</h4>
+                                                            Working Capital</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_WorkingCapital" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endif
 
 
 
 
-                                            </div>
-                                            <div class="row mt-2">
 
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+
+                                                 @if (isset($financialFindingsGrapFY_quick_assets) && count($financialFindingsGrapFY_quick_assets) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Quick Assets</h4>
+                                                              Quick Assets</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_QuickAssets" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                @endif
+
+                                                 @if (isset($financialFindingsGrapFY_total_assets) && count($financialFindingsGrapFY_total_assets) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds  Total Assets</h4>
+                                                               Total Assets</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TotalAssets" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Current Assets</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_CurrentAssets" width="100px"></canvas>
+                                                @endif
+
+                                                 @if (isset($financialFindingsGrapFY_current_assets) && count($financialFindingsGrapFY_current_assets) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                           Current Assets</h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_CurrentAssets" width="100px"></canvas>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                @endif
+                                                 @if (isset($financialFindingsGrapFY_current_liabilities) && count($financialFindingsGrapFY_current_liabilities) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Current Liabilities</h4>
+                                                              Current Liabilities</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_CurrentLiabilities" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endif
+                                                
 
-
-
-
-                                            </div>
-                                            <div class="row mt-2">
-
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                 @if (isset($financialFindingsGrapFY_debt) && count($financialFindingsGrapFY_debt) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds  Debt</h4>
+                                                               Debt</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_Debt" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Average Inventory</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_AverageInventory" width="100px"></canvas>
+                                                @endif
+                                                 @if (isset($financialFindingsGrapFY_average_inventory) && count($financialFindingsGrapFY_average_inventory) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                           Average Inventory</h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_AverageInventory" width="100px"></canvas>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                @endif
+                                                 @if (isset($financialFindingsGrapFY_net_sales) && count($financialFindingsGrapFY_net_sales) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Net Sales</h4>
+                                                              Net Sales</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_NetSales" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Share Capital</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_ShareCapital" width="100px"></canvas>
+                                                @endif
+                                                 @if (isset($financialFindingsGrapFY_equity_share_capital) && count($financialFindingsGrapFY_equity_share_capital) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                         Share Capital</h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_ShareCapital" width="100px"></canvas>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                 </div>
+                                                @endif
 
 
 
 
-                                            </div>
-                                             <div class="row mt-2">
+                                           
 
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                 @if (isset($financialFindingsGrapFY_sundry_debtors) && count($financialFindingsGrapFY_sundry_debtors) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Sundry Debtors</h4>
+                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                              Sundry Debtors</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SundryDebtors" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
+                                                @endif
+                                                @if (isset($financialFindingsGrapFY_sundry_creditors) && count($financialFindingsGrapFY_sundry_creditors) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Sundry Creditors</h4>
+                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                          Sundry Creditors</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SundryCreditors" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                @endif
+                                                 @if (isset($financialFindingsGrapFY_loans_and_advances) && count($financialFindingsGrapFY_loans_and_advances) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Loans & Advances</h4>
+                                                              Loans & Advances</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_LoansAndAdvances" width="100px"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Findinds Cash And Cash Equivalents</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_CashAndCashEquivalents" width="100px"></canvas>
+                                                @endif
+                                                 @if (isset($financialFindingsGrapFY_cash_and_cash_equivalents) && count($financialFindingsGrapFY_cash_and_cash_equivalents) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                           Cash And Cash Equivalents</h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_CashAndCashEquivalents" width="100px"></canvas>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                 </div>
+                                                @endif
 
 
 
@@ -1662,20 +1719,23 @@
                                         <div class="table-responsive">
                                             <div class="row">
 
-                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Ratio Curren</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_financialRation"></canvas>
+                                             @if (isset($financialrationGrapFY_current_ratio) && count($financialrationGrapFY_current_ratio) > 0)
+                                                    
+                                             <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                 <div class="card">
+                                                     <h4
+                                                     class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                      Ratio Current Ratio</h4>
+                                                     <div class="d-flex justify-content-center align-items-center">
+                                                         <canvas id="barChart_financialRation"></canvas>
                                                         </div>
                                                     </div>
-                                                </div>
+                                            </div>
+                                            @endif    
 
                                                 <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
                                                         <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Ration Analysis
+                                                             Ration Analysis
                                                         </h4>
                                                         <div class="d-flex justify-content-around">
                                                             <div class="column justify-content-start align-items-start">
@@ -1801,157 +1861,194 @@
                                             </div>
                                             <div class="row mt-2">
 
-
-                                                <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Quick Ratio</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_QuickRatio"></canvas>
-                                                        </div>
+                                            @if (isset($financialrationGrapFY_quick_ratio) && count($financialrationGrapFY_quick_ratio) > 0)
+                                                    
+                                            <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
+                                                <div class="card">
+                                                    <h4
+                                                    class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                    Quick Ratio</h4>
+                                                    <div class="d-flex justify-content-center align-items-center">
+                                                        <canvas id="barChart_QuickRatio"></canvas>
+                                                    </div>
                                                     </div>
                                                 </div>
-
+                                                    @endif   
+                                                @if (isset($financialrationGrapFY_debt_ratio) && count($financialrationGrapFY_debt_ratio) > 0)
+                                                    
                                                 <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Dept Ratio </h4>
+                                                             Dept Ratio </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_DebtRatio"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endif
+                                                @if (isset($financialrationGrapFY_solvency_ratio) && count($financialrationGrapFY_solvency_ratio) > 0)
+                                                    
+                                                @endif
                                                 <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Solvency Ratio</h4>
+                                                             Solvency Ratio</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SolvencyRatio"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row mt-2">
+                                         
 
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Debt To Equity Ratio</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_DebtToEquityRatio"></canvas>
+                                                 @if (isset($financialrationGrapFY_debt_to_equity_ratio) && count($financialrationGrapFY_debt_to_equity_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                          Debt To Equity Ratio</h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_DebtToEquityRatio"></canvas>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                    @endif
+                                                 @if (isset($financialrationGrapFY_asset_turnover_ratio) && count($financialrationGrapFY_asset_turnover_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Asset Turnover Ratio</h4>
+                                                             Asset Turnover Ratio</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_AssetTurnoverRatio"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                @endif
+                                                 @if (isset($financialrationGrapFY_absolute_liquidity_ratio) && count($financialrationGrapFY_absolute_liquidity_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Absolute Liquidity Ratio</h4>
+                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                         Absolute Liquidity Ratio</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_AbsoluteLiquidityRatio"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                @endif
+                                                 @if (isset($financialrationGrapFY_proprietary_ratio) && count($financialrationGrapFY_proprietary_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Proprietary Ratio</h4>
+                                                             Proprietary Ratio</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_ProprietaryRatio"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row mt-2">
+                                                @endif
+                                           
 
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Net Profit Ratio </h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_NetProfitRatio"></canvas>
+                                                 @if (isset($financialrationGrapFY_net_profit_ratio) && count($financialrationGrapFY_net_profit_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                          Net Profit Ratio </h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_NetProfitRatio"></canvas>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                @endif
+                                                    @if (isset($financialrationGrapFY_gross_profit_ratio) && count($financialrationGrapFY_gross_profit_ratio) > 0)
+                                                    
+                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Gross Profit Ratio</h4>
+                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                         Gross Profit Ratio</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_GrossProfitRatio"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
-                                                    <div class="card">
+                                                @endif
+                                                 @if (isset($financialrationGrapFY_springate_s_score_ratio) && count($financialrationGrapFY_springate_s_score_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Springate Score</h4>
+                                                             Springate Score</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SpringateSScore"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                @endif
+                                                @if (isset($financialrationGrapFY_trade_receivable_days_ratio) && count($financialrationGrapFY_trade_receivable_days_ratio) > 0)
+                                                    
+                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Trade Receivable Days</h4>
+                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                        Trade Receivable Days</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TradeReceivableDays"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row mt-2">
+                                                @endif
+                                            
 
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                 @if (isset($financialrationGrapFY_trade_payable_days_ratio) && count($financialrationGrapFY_trade_payable_days_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials Trade Payable Days</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_TradePayableDays"></canvas>
+                                                             Trade Payable Days</h4>
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <canvas id="barChart_TradePayableDays"></canvas>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
+                                                    @endif
+                                                 @if (isset($financialrationGrapFY_taffler_z_score_ratio) && count($financialrationGrapFY_taffler_z_score_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials TafflerZ Score</h4>
+                                                             TafflerZ Score</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TafflerZScore"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-3 col-sm-3 col-3 mt-4 mt-md-0">
-                                                    <div class="card">
-                                                        <h4
-                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Financials ZmijewskiX Score</h4>
-                                                        <div class="d-flex justify-content-center align-items-center">
-                                                            <canvas id="barChart_ZmijewskiXScore"></canvas>
+                                                @endif
+                                                 @if (isset($financialrationGrapFY_zmijewski_x_score_ratio) && count($financialrationGrapFY_zmijewski_x_score_ratio) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
+                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                          ZmijewskiX Score</h4>
+                                                         <div class="d-flex justify-content-center align-items-center">
+                                                             <canvas id="barChart_ZmijewskiXScore"></canvas>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                 </div>
+                                                        @endif
 
                                             </div>
                                         </div>
@@ -1995,16 +2092,19 @@
                                             <div class="table-responsive">
                                                 <div class="row">
 
-                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <div class="card">
-                                                            <h4
+                                                 @if (isset($businessInteligenceGrapFY_operating_efficiency) && count($businessInteligenceGrapFY_operating_efficiency) > 0)
+                                                    
+                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                     <div class="card">
+                                                         <h4
                                                                 class="card-title mb-4 d-flex justify-content-center align-items-center">
                                                                 Operating Efficiency Ratio</h4>
-                                                            <div class="d-flex justify-content-center align-items-center">
-                                                                <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
+                                                                <div class="d-flex justify-content-center align-items-center">
+                                                                    <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    @endif    
 
                                                     <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
                                                         <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
@@ -2058,37 +2158,46 @@
                                                 </div>
                                                   <div class="row mt-2">
 
-                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <div class="card">
-                                                            <h4
-                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                Inventory Turnover Ratio</h4>
-                                                            <div class="d-flex justify-content-center align-items-center">
-                                                                <canvas id="barChart_InventoryTurnoverRatio"></canvas>
+                                                   @if (isset($businessInteligenceGrapFY_inventory_turnover) && count($businessInteligenceGrapFY_inventory_turnover) > 0)
+                                                    
+                                                   <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                       <div class="card">
+                                                           <h4
+                                                           class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                           Inventory Turnover Ratio</h4>
+                                                           <div class="d-flex justify-content-center align-items-center">
+                                                               <canvas id="barChart_InventoryTurnoverRatio"></canvas>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endif  
 
-                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <div class="card">
-                                                            <h4
-                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                Days Sales In Inventory</h4>
-                                                            <div class="d-flex justify-content-center align-items-center">
+                                                     @if (isset($businessInteligenceGrapFY_days_sales_in_inventory) && count($businessInteligenceGrapFY_days_sales_in_inventory) > 0)
+                                                    
+                                                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                         <div class="card">
+                                                             <h4
+                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                             Days Sales In Inventory</h4>
+                                                             <div class="d-flex justify-content-center align-items-center">
                                                                 <canvas id="barChart_DaysSalesInInventory"></canvas>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <div class="card">
-                                                            <h4
-                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                Accounts Payable Turnover Ratio</h4>
-                                                            <div class="d-flex justify-content-center align-items-center">
-                                                                <canvas id="barChart_businessIntelligence"></canvas>
+                                                    @endif
+                                                     @if (isset($businessInteligenceGrapFY_accounts_payable) && count($businessInteligenceGrapFY_accounts_payable) > 0)
+                                                    
+                                                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                         <div class="card">
+                                                             <h4
+                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                             Accounts Payable Turnover Ratio</h4>
+                                                             <div class="d-flex justify-content-center align-items-center">
+                                                                 <canvas id="barChart_businessIntelligence"></canvas>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @endif
 
 
 
