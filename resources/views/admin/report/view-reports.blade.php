@@ -54,15 +54,15 @@
 
                 <div class="tab-content" id="myTabContent">
                 <div class="card-header flex-wrap border-0" id="default-tab">
-                <h4 class="card-title">Firm Background<br>
-                    <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{$Getclient->first_name}}</b><br>
-                        <b>Vender Name:{{$getThirdPartyForID->third_party_name}} </b>
-                    </p>
-                    <b>Team Member Name:{{$GetTeaMuser ? $GetTeaMuser->user_name : ''}} </b></p>
-                </h4>
+                    <h4 class="card-title">Firm Background<br>
+                        <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{$Getclient->first_name}}</b><br>
+                            <b>Vender Name:{{$getThirdPartyForID->third_party_name}} </b>
+                        </p>
+                        <b>Team Member Name:{{$GetTeaMuser ? $GetTeaMuser->user_name : ''}} </b></p>
+                    </h4>
 
 
-            </div>
+                </div>
                     <div class="tab-pane fade show active" id="DefaultTab" role="tabpanel" aria-labelledby="home-tab">
                         <div class="card-body pt-0">
                             <!-- Nav tabs -->
@@ -88,14 +88,6 @@
                                         <div class="pt-4">
                                             <div class="table-responsive">
                                                 <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
-                                                        <tr>
-
-
-
-                                                        </tr>
-
-                                                    </thead>
                                                     <tbody>
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Incorporation Year</th>
@@ -131,39 +123,39 @@
 
                                         <div class="pt-4">
                                             <div class="table-responsive">
-                                            <table class="table primary-table-bordered">
-    <thead class="thead-primary">
-        <tr>
-            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
-            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License No.</th>
-            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
-            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
-        </tr>
-    </thead>
-    <tbody>
+                                                <table class="table primary-table-bordered">
+                                                    <thead class="thead-primary">
+                                                        <tr>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License No.</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
 
-        @for ($i = 1; $i <= 8; $i++)
-            @if(!empty($License->{'license_name_'.$i}))
-                <tr>
-                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_name_'.$i} }}</td>
-                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_no_'.$i} }}</td>
-                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
-                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
-                </tr>
-            @endif
-        @endfor
+                                                        @for ($i = 1; $i <= 8; $i++)
+                                                            @if(!empty($License->{'license_name_'.$i}))
+                                                                <tr>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_name_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_no_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
+                                                                </tr>
+                                                            @endif
+                                                        @endfor
 
-        <tr>
-            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</td>
-            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$FirmBackground->ofac_check}}</td>
-            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 align-items-end text-start">
-                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
-            </td>
-            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$FirmBackground->ofac_check}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 align-items-end text-start">
+                                                                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
 
-        </tr>
-    </tbody>
-</table>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
 
 
                                             </div>
@@ -173,15 +165,8 @@
                                         <div class="pt-4">
                                             <div class="table-responsive">
                                                 <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
-                                                        <tr>
-
-
-
-                                                        </tr>
-
-                                                    </thead>
-                                                    <tbody>
+                                                  
+                                        <tbody>
                                                  <!-- director 2 -->
                                             @if ( !empty($FirmBackground->name_1) )
                                             <tr>
@@ -208,7 +193,7 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-8">{{ $FirmBackground->educational_background_1 }}
                                                     </td>
-                                                </tr>
+                                            </tr>
                                             @endif
                                             @if ( !empty($FirmBackground->name_2) )
                                             <tr>
@@ -235,7 +220,7 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-8">{{ $FirmBackground->educational_background_2 }}
                                                     </td>
-                                                </tr>
+                                            </tr>
                                             @endif
                                             @if ( !empty($FirmBackground->name_3) )
                                             <tr>
@@ -460,7 +445,7 @@
                                                         class="col-md-8">{{ $FirmBackground->credit_score }}</td>
                                                 </tr>
 
-                                    </tbody>
+                                    
                                                 </table>
                                             </div>
                                         </div>
@@ -1346,7 +1331,7 @@
     @endfor
 
     <tr>
-        <<td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">
             LEGAL SCORE = {{ $CourtCheck->legal_score }}
         </td>
@@ -2093,116 +2078,113 @@
                                             <div class="table-responsive">
                                                 <div class="row">
 
-                                                 @if (isset($businessInteligenceGrapFY_operating_efficiency) && count($businessInteligenceGrapFY_operating_efficiency) > 0)
+                                                            @if (isset($businessInteligenceGrapFY_operating_efficiency) && count($businessInteligenceGrapFY_operating_efficiency) > 0)
 
-                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                     <div class="card">
-                                                         <h4
-                                                                class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                Operating Efficiency Ratio</h4>
-                                                                <div class="d-flex justify-content-center align-items-center">
-                                                                    <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
+                                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                <div class="card">
+                                                                    <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                            Operating Efficiency Ratio</h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
+                                                                            </div>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    @endif
+                                                                @endif
 
-                                                    <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                        Business Intelligence Analysis
-                                                        </h4>
-                                                        <div class="d-flex justify-content-around">
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                    <li>
-                                                                        <label class="label"><b>Operating Efficiency Ratio Analysis</b></label>
-                                                                    </li>
+                                                                <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                    <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                    Business Intelligence Analysis
+                                                                    </h4>
+                                                                    <div class="d-flex justify-content-around">
+                                                                        <div class="column">
+                                                                            <ul class="list-unstyled">
+                                                                                <li>
+                                                                                    <label class="label"><b>Operating Efficiency Ratio Analysis</b></label>
+                                                                                </li>
 
-                                                                    <li>
-                                                                        <label class="label"><b>Inventory Turnover Ratio Analysis</b></label>
-                                                                    </li>
+                                                                                <li>
+                                                                                    <label class="label"><b>Inventory Turnover Ratio Analysis</b></label>
+                                                                                </li>
 
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                    <li>
-                                                                        <span class="label">{{$BusinessIntelligence->operating_efficiency_BI_analysis }}</span>
-                                                                    </li>
-                                                                    <li>
-                                                                        <span class="label">{{$BusinessIntelligence->inventory_turnover_BI_analysis }}</span>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                    <li>
-                                                                        <label class="label"><b>Days Sales In Inventory Analysis</b></label>
-                                                                    </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="column">
+                                                                            <ul class="list-unstyled">
+                                                                                <li>
+                                                                                    <span class="label">{{$BusinessIntelligence->operating_efficiency_BI_analysis }}</span>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <span class="label">{{$BusinessIntelligence->inventory_turnover_BI_analysis }}</span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="column">
+                                                                            <ul class="list-unstyled">
+                                                                                <li>
+                                                                                    <label class="label"><b>Days Sales In Inventory Analysis</b></label>
+                                                                                </li>
 
-                                                                    <li>
-                                                                        <label class="label"><b>Accounts Payable Turnover Ratio Analysis</b></label>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                    <li>
-                                                                        <span class="value">{{$BusinessIntelligence->days_sales_in_inventory_BI_analysis }}</span>
-                                                                    </li>
-                                                                    <li>
-                                                                        <span class="value">{{$BusinessIntelligence->accounts_payable_turnover_BI_analysis }}</span>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                </div>
-                                                  <div class="row mt-2">
+                                                                                <li>
+                                                                                    <label class="label"><b>Accounts Payable Turnover Ratio Analysis</b></label>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="column">
+                                                                            <ul class="list-unstyled">
+                                                                                <li>
+                                                                                    <span class="value">{{$BusinessIntelligence->days_sales_in_inventory_BI_analysis }}</span>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <span class="value">{{$BusinessIntelligence->accounts_payable_turnover_BI_analysis }}</span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            <div class="row mt-2">
 
-                                                   @if (isset($businessInteligenceGrapFY_inventory_turnover) && count($businessInteligenceGrapFY_inventory_turnover) > 0)
+                                                            @if (isset($businessInteligenceGrapFY_inventory_turnover) && count($businessInteligenceGrapFY_inventory_turnover) > 0)
 
-                                                   <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                       <div class="card">
-                                                           <h4
-                                                           class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                           Inventory Turnover Ratio</h4>
-                                                           <div class="d-flex justify-content-center align-items-center">
-                                                               <canvas id="barChart_InventoryTurnoverRatio"></canvas>
-                                                            </div>
-                                                        </div>
+                                                            <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                <div class="card">
+                                                                    <h4
+                                                                    class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                    Inventory Turnover Ratio</h4>
+                                                                    <div class="d-flex justify-content-center align-items-center">
+                                                                        <canvas id="barChart_InventoryTurnoverRatio"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                @endif
+
+                                                                @if (isset($businessInteligenceGrapFY_days_sales_in_inventory) && count($businessInteligenceGrapFY_days_sales_in_inventory) > 0)
+
+                                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                    <div class="card">
+                                                                        <h4
+                                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                        Days Sales In Inventory</h4>
+                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                            <canvas id="barChart_DaysSalesInInventory"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                @endif
+                                                                @if (isset($businessInteligenceGrapFY_accounts_payable) && count($businessInteligenceGrapFY_accounts_payable) > 0)
+
+                                                                <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                    <div class="card">
+                                                                        <h4
+                                                                        class="card-title mb-4 d-flex justify-content-center align-items-center">
+                                                                        Accounts Payable Turnover Ratio</h4>
+                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                            <canvas id="barChart_businessIntelligence"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                @endif
                                                     </div>
-                                                    @endif
-
-                                                     @if (isset($businessInteligenceGrapFY_days_sales_in_inventory) && count($businessInteligenceGrapFY_days_sales_in_inventory) > 0)
-
-                                                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                         <div class="card">
-                                                             <h4
-                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Days Sales In Inventory</h4>
-                                                             <div class="d-flex justify-content-center align-items-center">
-                                                                <canvas id="barChart_DaysSalesInInventory"></canvas>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-                                                     @if (isset($businessInteligenceGrapFY_accounts_payable) && count($businessInteligenceGrapFY_accounts_payable) > 0)
-
-                                                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                                                         <div class="card">
-                                                             <h4
-                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Accounts Payable Turnover Ratio</h4>
-                                                             <div class="d-flex justify-content-center align-items-center">
-                                                                 <canvas id="barChart_businessIntelligence"></canvas>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-
-
-
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -2215,6 +2197,7 @@
 
         </div>
     </div>
+</div>
 <!-- Business-Intelligence tab End -->
 <!--Tax-Return-and-Credit tab start -->
     <div class="col-xl-12" id="tab-Tax-Return-and-Credit">
@@ -2448,8 +2431,8 @@
                                                 {{ $KeyObservation->key_observation }}</p>
                                         </div>
                                         <div class="col-xl-5 mb-6">
-                                            <p for="educationalBackground" class="text-center mt-20" style="font-size:20px"> OVERALL RISK SCORE =
-                                                {{ $KeyObservation->overall_risk_score }}</p>
+                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:20px;color:#000000cf">OVERALL RISK SCORE =
+                                                {{ $KeyObservation->overall_risk_score }}</b></p>
                                         </div>
 
                                         <div  class="col-xl-2 mb-3">

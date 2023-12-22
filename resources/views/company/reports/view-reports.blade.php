@@ -2214,6 +2214,7 @@
 
         </div>
     </div>
+</div>
 <!-- Business-Intelligence tab End -->
 <!--Tax-Return-and-Credit tab start -->
     <div class="col-xl-12" id="tab-Tax-Return-and-Credit">
@@ -2446,8 +2447,8 @@
                                                 {{ $KeyObservation->key_observation }}</p>
                                         </div>
                                         <div class="col-xl-5 mb-6">
-                                            <p for="educationalBackground" class="text-center mt-20" style="font-size:20px"> OVERALL RISK SCORE =
-                                                {{ $KeyObservation->overall_risk_score }}</p>
+                                        <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:20px;color:#000000cf">OVERALL RISK SCORE =
+                                                {{ $KeyObservation->overall_risk_score }}</b></p>
                                         </div>
 
                                         <div  class="col-xl-2 mb-3">
