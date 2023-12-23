@@ -55,10 +55,10 @@
                 <div class="tab-content" id="myTabContent">
                 <div class="card-header flex-wrap border-0" id="default-tab">
                     <h4 class="card-title">Firm Background<br>
-                        <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{$Getclient->first_name}}</b><br>
-                            <b>Vender Name:{{$getThirdPartyForID->third_party_name}} </b>
+                        <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{$Getclient->first_name ? $Getclient->first_name : ''}}</b><br>
+                            <b>Vender Name:{{$getThirdPartyForID->third_party_name ? $getThirdPartyForID->third_party_name : ''}} </b>
                         </p>
-                        <b>Team Member Name:{{$GetTeaMuser ? $GetTeaMuser->user_name : ''}} </b></p>
+                        <b>Team Member Name:{{$GetTeaMuser->user_name ? $GetTeaMuser->user_name : ''}} </b></p>
                     </h4>
 
 
@@ -165,7 +165,7 @@
                                         <div class="pt-4">
                                             <div class="table-responsive">
                                                 <table class="table primary-table-bordered">
-                                                  
+
                                         <tbody>
                                                  <!-- director 2 -->
                                             @if ( !empty($FirmBackground->name_1) )
@@ -445,7 +445,7 @@
                                                         class="col-md-8">{{ $FirmBackground->credit_score }}</td>
                                                 </tr>
 
-                                    
+
                                                 </table>
                                             </div>
                                         </div>
@@ -2339,7 +2339,7 @@
 
         </div>
     </div>
-   
+
 <!--Tax-Return-and-Credit tab End -->
 <!-- Market-Reputation tab start -->
     <div class="col-xl-12" id="tab-Market-Reputation">
@@ -2555,7 +2555,7 @@
     var financialRatioGrapFYhLablesName =@json($financialRatioGrapFYhLablesName);
     // Your external JavaScript file
     // Include this script before your external JS that uses financialrationGrapFY_current_ratio
-  
+
 
 
 

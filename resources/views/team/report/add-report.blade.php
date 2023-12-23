@@ -139,11 +139,11 @@
 
 
                     <div class="col-xl-4 mb-3">
-                        <label class="form-label">Client Name : {{  $getClientID->first_name   }}<span class="text-danger">*</span></label>
+                        <label class="form-label">Client Name : {{  $getClientID->first_name ? $getClientID->first_name  : ''  }}<span class="text-danger">*</span></label>
 
                     </div>
                     <div class="col-xl-4 mb-3">
-                        <label class="form-label">Third Party Name: {{  $getThirdPartyForID->third_party_name  }}<span class="text-danger">*</span></label>
+                        <label class="form-label">Third Party Name: {{  $getThirdPartyForID->third_party_name ? $getThirdPartyForID->third_party_name  : '' }}<span class="text-danger">*</span></label>
 
                     </div>
 
@@ -5332,7 +5332,7 @@
                 'accounts_payable_turnover_BI_FY_one',
                 'accounts_payable_turnover_BI_analysis',
                 'efficiency_score',
-              
+
 
             ], 'one_BI_FY1');
 
