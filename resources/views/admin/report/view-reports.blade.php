@@ -1008,6 +1008,14 @@
                                                     <div class="d-flex justify-content-center align-items-center">
                                                         <canvas id="barChart_QuickRatio"></canvas>
                                                     </div>
+                                                    <hr>
+                                                    <h3
+                                                    class="card-title d-flex justify-content-center align-items-center">
+                                                      Analysis</h3>
+                                                    <p class="d-flex justify-content-center align-items-center text-center">
+                                                       abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                       </p>
                                                     </div>
                                                 </div>
                                                     @endif
@@ -1021,6 +1029,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_DebtRatio"></canvas>
                                                         </div>
+                                                        <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1035,6 +1051,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SolvencyRatio"></canvas>
                                                         </div>
+                                                        <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
 
@@ -1049,6 +1073,14 @@
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_DebtToEquityRatio"></canvas>
                                                             </div>
+                                                            <hr>
+                                                            <h3
+                                                            class="card-title d-flex justify-content-center align-items-center">
+                                                              Analysis</h3>
+                                                            <p class="d-flex justify-content-center align-items-center text-center">
+                                                               abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                               </p>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -1062,6 +1094,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_AssetTurnoverRatio"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1075,6 +1115,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_AbsoluteLiquidityRatio"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1088,6 +1136,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_ProprietaryRatio"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1103,6 +1159,14 @@
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_NetProfitRatio"></canvas>
                                                             </div>
+                                                             <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                         </div>
                                                 </div>
                                                 @endif
@@ -1116,6 +1180,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_GrossProfitRatio"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1129,6 +1201,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SpringateSScore"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1142,6 +1222,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TradeReceivableDays"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1157,6 +1245,14 @@
                                                             <div class="d-flex justify-content-center align-items-center">
                                                                 <canvas id="barChart_TradePayableDays"></canvas>
                                                             </div>
+                                                             <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -1170,6 +1266,14 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TafflerZScore"></canvas>
                                                         </div>
+                                                         <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                     </div>
                                                 </div>
                                                 @endif
@@ -1183,6 +1287,14 @@
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_ZmijewskiXScore"></canvas>
                                                             </div>
+                                                             <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
                                                         </div>
                                                 </div>
                                                         @endif
@@ -1239,61 +1351,19 @@
                                                                             <div class="d-flex justify-content-center align-items-center">
                                                                                 <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
                                                                             </div>
+                                                                             <hr>
+                                                                            <h3
+                                                                            class="card-title d-flex justify-content-center align-items-center">
+                                                                            Analysis</h3>
+                                                                            <p class="d-flex justify-content-center align-items-center text-center">
+                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                                            </p>
                                                                     </div>
                                                                 </div>
                                                                 @endif
 
-                                                                <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
-                                                                    <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                    Business Intelligence Analysis
-                                                                    </h4>
-                                                                    <div class="d-flex justify-content-around">
-                                                                        <div class="column">
-                                                                            <ul class="list-unstyled">
-                                                                                <li>
-                                                                                    <label class="label"><b>Operating Efficiency Ratio Analysis</b></label>
-                                                                                </li>
 
-                                                                                <li>
-                                                                                    <label class="label"><b>Inventory Turnover Ratio Analysis</b></label>
-                                                                                </li>
-
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div class="column">
-                                                                            <ul class="list-unstyled">
-                                                                                <li>
-                                                                                    <span class="label">{{$BusinessIntelligence->operating_efficiency_BI_analysis }}</span>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <span class="label">{{$BusinessIntelligence->inventory_turnover_BI_analysis }}</span>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div class="column">
-                                                                            <ul class="list-unstyled">
-                                                                                <li>
-                                                                                    <label class="label"><b>Days Sales In Inventory Analysis</b></label>
-                                                                                </li>
-
-                                                                                <li>
-                                                                                    <label class="label"><b>Accounts Payable Turnover Ratio Analysis</b></label>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div class="column">
-                                                                            <ul class="list-unstyled">
-                                                                                <li>
-                                                                                    <span class="value">{{$BusinessIntelligence->days_sales_in_inventory_BI_analysis }}</span>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <span class="value">{{$BusinessIntelligence->accounts_payable_turnover_BI_analysis }}</span>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            <div class="row mt-2">
 
                                                             @if (isset($businessInteligenceGrapFY_inventory_turnover) && areAllValuesNull($businessInteligenceGrapFY_inventory_turnover) ==false && count($businessInteligenceGrapFY_inventory_turnover) > 0)
 
@@ -1305,6 +1375,14 @@
                                                                     <div class="d-flex justify-content-center align-items-center">
                                                                         <canvas id="barChart_InventoryTurnoverRatio"></canvas>
                                                                         </div>
+                                                                         <hr>
+                                                                            <h3
+                                                                            class="card-title d-flex justify-content-center align-items-center">
+                                                                            Analysis</h3>
+                                                                            <p class="d-flex justify-content-center align-items-center text-center">
+                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                                            </p>
                                                                     </div>
                                                                 </div>
                                                                 @endif
@@ -1319,6 +1397,14 @@
                                                                         <div class="d-flex justify-content-center align-items-center">
                                                                             <canvas id="barChart_DaysSalesInInventory"></canvas>
                                                                         </div>
+                                                                         <hr>
+                                                                            <h3
+                                                                            class="card-title d-flex justify-content-center align-items-center">
+                                                                            Analysis</h3>
+                                                                            <p class="d-flex justify-content-center align-items-center text-center">
+                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                                            </p>
                                                                     </div>
                                                                 </div>
                                                                 @endif
@@ -1332,6 +1418,14 @@
                                                                         <div class="d-flex justify-content-center align-items-center">
                                                                             <canvas id="barChart_businessIntelligence"></canvas>
                                                                         </div>
+                                                                         <hr>
+                                                                            <h3
+                                                                            class="card-title d-flex justify-content-center align-items-center">
+                                                                            Analysis</h3>
+                                                                            <p class="d-flex justify-content-center align-items-center text-center">
+                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                                            </p>
                                                                     </div>
                                                                 </div>
                                                                 @endif
@@ -1396,23 +1490,23 @@
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">Tax Paid</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 1</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 1</>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy1 }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 2</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 2</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy2 }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 3</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 3</td>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy3 }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 4</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 4</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy4 }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 5</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 5</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy5 }}</td>
                                                         </tr>
 
@@ -1531,7 +1625,7 @@
                                                                 <embed src="{{URL::to('public/admin/assets/imgs/MarketReputations/') .'/'.$MarketReputation->file_path_market_reputations}}" width="500" height="550" type="application/pdf">
 
                                                             </td>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">MARKET REPUTATION SCORE = {{ $MarketReputation->market_reputation_score }}</th>
+                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">MARKET REPUTATION SCORE = {{ $MarketReputation->market_reputation_score }}</th>
                                                         </tr>
 
                                                     </tbody>
@@ -1568,7 +1662,7 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-bs-toggle="tab" href="#Key-Observation"> Key
-                                    Observation</a>
+                                     Observation</a>
                             </li>
 
                         </ul>
@@ -1603,7 +1697,7 @@
 
                                     <div class="row">
                                         <div class="col-xl-6 mb-3">
-                                            <b for="educationalBackground" class="text-start">Recommendations</b>
+                                            <b  style="color:black" for="educationalBackground" class="text-start">Recommendations</b>
                                         </div>
                                         <div class="col-xl-6 mb-3">
                                             <p for="educationalBackground" class=""></p>
