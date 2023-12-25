@@ -19,7 +19,7 @@ class CreateFinancialsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('third_party_id')->nullable();
             $table->integer('team_user_id')->nullable();
-            $table->string('score_analysis')->nullable();
+            $table->text('score_analysis')->nullable();
             $table->string('overall_financial_score')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
@@ -246,40 +246,40 @@ class CreateFinancialsTable extends Migration
     {
         $table->string("current_ratio_fy_one_$set")->nullable();
         $table->string("year_ratio_one_$set")->nullable();
-        $table->string("current_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("current_ratio_analysis_fy_one_$set")->nullable();
         $table->string("debt_ratio_fy_one_$set")->nullable();
-        $table->string("debt_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("debt_ratio_analysis_fy_one_$set")->nullable();
         $table->string("solvency_ratio_fy_one_$set")->nullable();
-        $table->string("solvency_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("solvency_ratio_analysis_fy_one_$set")->nullable();
         $table->string("debt_to_equity_ratio_fy_one_$set")->nullable();
-        $table->string("debt_to_equity_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("debt_to_equity_ratio_analysis_fy_one_$set")->nullable();
         $table->string("asset_turnover_ratio_fy_one_$set")->nullable();
-        $table->string("asset_turnover_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("asset_turnover_ratio_analysis_fy_one_$set")->nullable();
         $table->string("absolute_liquidity_ratio_fy_one_$set")->nullable();
-        $table->string("absolute_liquidity_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("absolute_liquidity_ratio_analysis_fy_one_$set")->nullable();
         $table->string("proprietary_ratio_fy_one_$set")->nullable();
-        $table->string("proprietary_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("proprietary_ratio_analysis_fy_one_$set")->nullable();
         $table->string("net_profit_ratio_fy_one_$set")->nullable();
-        $table->string("net_profit_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("net_profit_ratio_analysis_fy_one_$set")->nullable();
         $table->string("gross_profit_ratio_fy_one_$set")->nullable();
-        $table->string("gross_profit_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("gross_profit_ratio_analysis_fy_one_$set")->nullable();
 
         // Additional Ratios
         $table->string("springate_s_score_ratio_fy_one_$set")->nullable();
-        $table->string("springate_s_score_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("springate_s_score_ratio_analysis_fy_one_$set")->nullable();
 
         $table->string("trade_receivable_days_ratio_fy_one_$set")->nullable();
-        $table->string("trade_receivable_days_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("trade_receivable_days_ratio_analysis_fy_one_$set")->nullable();
 
         $table->string("trade_payable_days_ratio_fy_one_$set")->nullable();
-        $table->string("trade_payable_days_ratio_analysis_fy_one_$set")->nullable();
-        
+        $table->text("trade_payable_days_ratio_analysis_fy_one_$set")->nullable();
+
         $table->string("taffler_z_score_ratio_fy_one_$set")->nullable();
-        $table->string("taffler_z_score_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("taffler_z_score_ratio_analysis_fy_one_$set")->nullable();
         $table->string("zmijewski_x_score_ratio_fy_one_$set")->nullable();
-        $table->string("zmijewski_x_score_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("zmijewski_x_score_ratio_analysis_fy_one_$set")->nullable();
         $table->string("quick_ratio_fy_one_$set")->nullable();
-        $table->string("quick_ratio_analysis_fy_one_$set")->nullable();
+        $table->text("quick_ratio_analysis_fy_one_$set")->nullable();
 
 
     }

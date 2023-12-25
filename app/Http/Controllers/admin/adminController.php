@@ -497,6 +497,14 @@ class adminController extends Controller
                     $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_five,
 
                 ];
+
+                function areAllValuesNull($array) {
+                    return count(array_filter($array, function($value) {
+                        return $value !== null;
+                    })) === 0;
+                }
+
+                // dd(  areAllValuesNull($data['businessInteligenceGrapFY_accounts_payable']) == true ?  "trye" : "" );
                 $data['businessInteligenceGrapFY_operating_efficiency'] = [
 
                     $data['BusinessIntelligence']->operating_efficiency_BI_FY_one,
@@ -528,7 +536,7 @@ class adminController extends Controller
 
                 ];
 
-        
+
                 $data['businessInteligenceGraphLablesName'] = [
 
                     $data['BusinessIntelligence']->year_BI_FY_one,
@@ -698,7 +706,7 @@ $data['financialFindingsGrapFY_average_inventory'] = [
         $data['FinancialsFindingsFyFive']->net_sales_fy_five_finding__1,
     ];
 
-  
+
     // end
      // start
      $data['financialFindingsGrapFY_equity_share_capital'] = [
@@ -710,7 +718,7 @@ $data['financialFindingsGrapFY_average_inventory'] = [
         $data['FinancialsFindingsFyFive']->equity_share_capital_fy_five_finding__1,
     ];
 
-   
+
 
          // start
          $data['financialFindingsGrapFY_sundry_debtors'] = [
@@ -722,7 +730,7 @@ $data['financialFindingsGrapFY_average_inventory'] = [
             $data['FinancialsFindingsFyFive']->sundry_debtors_fy_five_finding__1,
         ];
 
-       
+
         // end
 
              // start
@@ -735,7 +743,7 @@ $data['financialFindingsGrapFY_average_inventory'] = [
         $data['FinancialsFindingsFyFive']->sundry_creditors_fy_five_finding__1,
     ];
 
-  
+
     // end
 
          // start
@@ -760,7 +768,7 @@ $data['financialFindingsGrapFY_average_inventory'] = [
                 $data['FinancialsFindingsFyFive']->cash_and_cash_equivalents_fy_five_finding__1,
             ];
 
-      
+
             // end
 
 

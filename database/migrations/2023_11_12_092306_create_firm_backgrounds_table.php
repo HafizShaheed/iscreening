@@ -26,17 +26,17 @@ class CreateFirmBackgroundsTable extends Migration
             $table->integer('no_of_directors')->nullable();
             $table->string('industry')->nullable();
             $table->string('website')->nullable();
-            $table->string('address')->nullable();
+            $table->text('address')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('pincode')->nullable();
-            $table->string('business_details')->nullable();
+            $table->longText('business_details')->nullable();
             $table->string('ofac_check')->nullable();
             $table->string('regulatory_score')->nullable();
-            $table->string('score_analysis')->nullable();
+            $table->text('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->string('file')->nullable();
-          
+
             $this->addDirectorInfoFields($table, 1);
             $this->addDirectorInfoFields($table, 2);
             $this->addDirectorInfoFields($table, 3);
@@ -47,7 +47,7 @@ class CreateFirmBackgroundsTable extends Migration
             $this->addDirectorInfoFields($table, 8);
             $this->addDirectorInfoFields($table, 9);
             $this->addDirectorInfoFields($table, 10);
-          
+
             $table->string('credit_score')->nullable();
             $table->integer('status')->default(0)->nullable();
             $table->timestamps();

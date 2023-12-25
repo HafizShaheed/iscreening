@@ -18,7 +18,7 @@ class CreateTaxReurnCreditsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('third_party_id')->nullable();
             $table->integer('team_user_id')->nullable();
-            $table->string('score_analysis')->nullable();
+            $table->text('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
 

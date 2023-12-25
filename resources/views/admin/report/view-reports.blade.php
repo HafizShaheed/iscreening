@@ -55,10 +55,10 @@
                 <div class="tab-content" id="myTabContent">
                 <div class="card-header flex-wrap border-0" id="default-tab">
                     <h4 class="card-title">Firm Background<br>
-                        <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{$Getclient->first_name ? $Getclient->first_name : ''}}</b><br>
-                            <b>Vender Name:{{$getThirdPartyForID->third_party_name ? $getThirdPartyForID->third_party_name : ''}} </b>
+                        <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{isset($Getclient->first_name) ? $Getclient->first_name : ''}}</b><br>
+                            <b>Vender Name:{{isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name : ''}} </b>
                         </p>
-                        <b>Team Member Name:{{$GetTeaMuser->user_name ? $GetTeaMuser->user_name : ''}} </b></p>
+                        <b>Team Member Name:{{isset($GetTeaMuser->user_name) ? $GetTeaMuser->user_name : ''}} </b></p>
                     </h4>
 
 
@@ -76,7 +76,7 @@
                                             Registrations/Licenses</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#Director-Details"> Director Details</a>
+                                        <a class="nav-link" data-bs-toggle="tab" href="#Director-Details"> Director/Proprietor/Partner Details</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#Directorship-Check-Business-Conflict-Check"></i> Directorship Check Business Conflict Check</a>
@@ -94,23 +94,23 @@
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">{{ $FirmBackground->incorporation_year }}</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Directors</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Directors</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->no_of_directors }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Form of Entity</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Form of Entity</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->form_of_entity }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Industry</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Industry</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->industry }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->address }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Business Details</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Business Details</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $FirmBackground->business_details }}</td>
                                                         </tr>
                                                     </tbody>
@@ -146,12 +146,32 @@
                                                         @endfor
 
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</th>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$FirmBackground->ofac_check}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 align-items-end text-start">
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Regulatory Score = {{$FirmBackground->regulatory_score}}</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Score Analysis</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3" class="col-md-3 text-start">{{$FirmBackground->score_analysis}}</td>
+
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
                                                                 <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
                                                             </td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
 
                                                         </tr>
                                                     </tbody>
@@ -168,282 +188,43 @@
 
                                         <tbody>
                                                  <!-- director 2 -->
-                                            @if ( !empty($FirmBackground->name_1) )
+
+
+                                            @for($i = 1; $i <= 10; $i++)
+                                            @if(!empty($FirmBackground->{'name_'.$i}))
                                             <tr>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (1)</th>
+                                                        class="col-md-4"> Name ({{ $i }})</th>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_1 }}</th>
+                                                        class="col-md-8"> {{$FirmBackground->{'name_'.$i} }}</th>
                                                 </tr>
                                                 <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">PAN</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_1 }}</td>
+                                                        class="col-md-8"> {{$FirmBackground->{'pan_'.$i} }}</td>
                                                 </tr>
                                                 <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">AADHAR</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_1 }}</td>
+                                                        class="col-md-8"> {{$FirmBackground->{'aadhar_'.$i} }}</td>
                                                 </tr>
                                                 <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Educational Background</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_1 }}
+                                                        class="col-md-8"> {{$FirmBackground->{'educational_background_'.$i} }}
                                                     </td>
                                             </tr>
                                             @endif
-                                            @if ( !empty($FirmBackground->name_2) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (2)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_2 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_2 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_2 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_2 }}
-                                                    </td>
-                                            </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_3) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (3)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_3 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_3 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_3 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_3 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_4) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (4)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_4 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_4 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_4 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_4 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_5) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (5)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_5 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_5 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_5 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_5 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_6) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (6)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_6 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_6 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_6 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_6 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_7) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (7)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_7 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_7 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_7 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_7 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_8) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (8)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_8 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_8 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_8 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_8 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_9) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (9)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_9 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_9 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_9 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_9 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @if ( !empty($FirmBackground->name_10) )
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Director's Name (10)</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8">{{ $FirmBackground->name_10 }}</th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">PAN</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->pan_10 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->aadhar_10 }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Educational Background</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8">{{ $FirmBackground->educational_background_10 }}
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                                <tr>
+                                            @endfor
+                                                <!-- <tr>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Credit Score</td>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-8">{{ $FirmBackground->credit_score }}</td>
-                                                </tr>
+                                                </tr> -->
 
 
                                                 </table>
@@ -465,669 +246,169 @@
 
                                                     </thead>
                                                     <tbody>
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_1))
+                                                        @for($i = 1; $i <= 8; $i++)
+                                                        @if(!empty($FirstDirectorsFirm->{'director_name_1_'.$i}))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_1}}</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">
+                                                                {{$FirstDirectorsFirm->{'director_name_1_'.$i} }}
+                                                                </th>
                                                         </tr>
 
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</th>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</th>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_1}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">
+                                                                {{$FirstDirectorsFirm->{'company_name_1_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_1}}</td>
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">
+                                                                {{$FirstDirectorsFirm->{'cin_1_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_1}}</td>
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$FirstDirectorsFirm->{'company_status_1_'.$i} }}
+
+                                                            </td>
+
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$FirstDirectorsFirm->{'appointment_date_1_'.$i} }}
+
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$FirstDirectorsFirm->{'business_of_entity_1_'.$i} }}
+
+                                                            </td>
+
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$FirstDirectorsFirm->{'business_conflict_1_'.$i} }}
+
+                                                            </td>
                                                         </tr>
                                                         @endif
+                                                        @endfor
 
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_2))
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_2}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_2}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_2}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_2}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_3))
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_3}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_3}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_3}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_3}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_4))
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_4}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_4}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_4}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_4}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_5))
-
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_5}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_5}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_5}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_5}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_6))
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_6}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_6}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_6}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_6}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_7))
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_7}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_7}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_7}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_7}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_1_8))
-
-
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$FirstDirectorsFirm->director_name_1_8}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$FirstDirectorsFirm->company_name_1_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$FirstDirectorsFirm->cin_1_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->company_status_1_8}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->appointment_date_1_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_of_entity_1_8}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$FirstDirectorsFirm->business_conflict_1_8}}</td>
-                                                        </tr>
-
-                                                        @endif
 
 
 
                                                 <!-----------------===========================================    second director      ============================================================  -->
-
-                                                @if (!empty($FirstDirectorsFirm->director_name_2_1))
-                                                            <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_1}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_1}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_1}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_1}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_2))
+                                                @for($i = 1; $i <= 8; $i++)
+                                                        @if(!empty($SecondDirectorsFirm->{'director_name_2_'.$i}))
                                                         <tr>
                                                             <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_2}}</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">
+                                                                {{$SecondDirectorsFirm->{'director_name_2_'.$i} }}
+                                                                </th>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</th>
+
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</th>
+
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</th>
                                                         </tr>
                                                         <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">
+                                                                {{$SecondDirectorsFirm->{'company_name_2_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">
+                                                                {{$SecondDirectorsFirm->{'cin_2_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_2}}</td>
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$SecondDirectorsFirm->{'company_status_2_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_2}}</td>
+                                                            </td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_2}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$SecondDirectorsFirm->{'appointment_date_2_'.$i} }}
+
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$SecondDirectorsFirm->{'business_of_entity_2_'.$i} }}
+
+                                                            </td>
+
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                                {{$SecondDirectorsFirm->{'business_conflict_2_'.$i} }}
+
+                                                            </td>
                                                         </tr>
                                                         @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_3))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_3}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_3}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_3}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_3}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_4))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_4}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_4}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_4}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_4}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_5))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_5}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_5}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_5}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_5}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_6))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_6}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_6}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_6}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_6}}</td>
-                                                        </tr>
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_7))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_7}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_7}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_7}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_7}}</td>
-                                                        </tr>
-
-                                                        @endif
-
-                                                        @if (!empty($FirstDirectorsFirm->director_name_2_8))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (2)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$SecondDirectorsFirm->director_name_2_8}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$SecondDirectorsFirm->company_name_2_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$SecondDirectorsFirm->cin_2_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->company_status_2_8}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->appointment_date_2_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_of_entity_2_8}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$SecondDirectorsFirm->business_conflict_2_8}}</td>
-                                                        </tr>
+                                                        @endfor
 
 
-                                                        @endif
+
 
                                             <!-----------------===========================================    third director      ============================================================  -->
-                                            @if (!empty($FirstDirectorsFirm->director_name_3_1))
 
-                                                            <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_1}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
+                                            @for($i = 1; $i <= 8; $i++)
+                                            @if(!empty($ThirdDirectorsFirm->{'director_name_3_'.$i}))
+                                            <tr>
+                                                <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
+                                                <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">
+                                                    {{$ThirdDirectorsFirm->{'director_name_3_'.$i} }}
+                                                    </th>
+                                            </tr>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_1}}</td>
+                                            <tr>
+                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</th>
+                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</th>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_1}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_1}}</td>
+                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</th>
+                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</th>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_1}}</td>
-                                                        </tr>
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_2))
+                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</th>
+                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">
+                                                    {{$ThirdDirectorsFirm->{'company_name_3_'.$i} }}
 
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_2}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
+                                                </td>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">
+                                                    {{$ThirdDirectorsFirm->{'cin_3_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
+                                                </td>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                    {{$ThirdDirectorsFirm->{'company_status_3_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_2}}</td>
+                                                </td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_2}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_2}}</td>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                    {{$ThirdDirectorsFirm->{'appointment_date_3_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_2}}</td>
-                                                        </tr>
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_3))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_3}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
+                                                </td>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                    {{$ThirdDirectorsFirm->{'business_of_entity_3_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
+                                                </td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_3}}</td>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">
+                                                    {{$ThirdDirectorsFirm->{'business_conflict_3_'.$i} }}
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_3}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_3}}</td>
+                                                </td>
+                                            </tr>
+                                            @endif
+                                            @endfor
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_3}}</td>
-                                                        </tr>
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_4))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_4}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_4}}</td>
 
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_4}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_4}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_4}}</td>
-                                                        </tr>
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_5))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_5}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_5}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_5}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_5}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_5}}</td>
-                                                        </tr>
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_6))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_6}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_6}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_6}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_6}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_6}}</td>
-                                                        </tr>
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_7))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_7}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_7}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_7}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_7}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_7}}</td>
-                                                        </tr>
-
-                                                        @endif
-                                                        @if (!empty($FirstDirectorsFirm->director_name_3_8))
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="2" class="col-md-4">Director's Name (3)</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col"  colspan="4" class="col-md-8">{{$ThirdDirectorsFirm->director_name_3_8}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-2">Company Name</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">CIN</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Company Status</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Appointment Date</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business of the Entity</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">Business Conflict</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1">{{$ThirdDirectorsFirm->company_name_3_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"   class="col-md-1"> {{$ThirdDirectorsFirm->cin_3_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->company_status_3_8}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->appointment_date_3_8}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_of_entity_3_8}}</td>
-
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{$ThirdDirectorsFirm->business_conflict_3_8}}</td>
-                                                        </tr>
-
-                                                        @endif
 
                                                     </tbody>
                                                 </table>
@@ -1156,7 +437,7 @@
                         <div class="default-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#ON-GROUND VERIFICATION "> Basic Information Registration/Licenses Director Details</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#ON-GROUND VERIFICATION "> On Ground Verification</a>
                                 </li>
 
 
@@ -1177,20 +458,27 @@
 
                                                     </tr>
                                                     <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address</td>
+                                                        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address</th>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{$OnGroundVerification->address_details}} </td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address Visit Findings</td>
+                                                        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address Visit Findings</th>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{$OnGroundVerification->address_visit_findings}}</td>
                                                     </tr>
 
                                                     <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 text-start">ON-GROUND VERIFICATION SCORE = {{$OnGroundVerification->on_ground_verification_score}}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 align-items-end"><a href="{{ URL::to('/panel/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn">Download field visit Image</a></td>
+                                                        <th colspan="2" style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4 text-start">ON-GROUND VERIFICATION SCORE = {{$OnGroundVerification->on_ground_verification_score}}</th>
 
                                                     </tr>
+                                                    <tr>
+                                                        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Score Analysis</th>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{$OnGroundVerification->score_analysis}}</td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td style=" text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="2"  class="col-md-4"><a href="{{ URL::to('/panel/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn">Download field visit Image</a></td>
+
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -1252,12 +540,12 @@
                                                     </th>
             </tr>
             <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Jurisdiction</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Record</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Subject Matter</td>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Jurisdiction</th>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Record</th>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Subject Matter</th>
                                                 </tr>
             <tr>
                 <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
@@ -1277,10 +565,18 @@
             @endfor
 
     <tr>
-        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+        <td style="font-size: 16px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">
             LEGAL SCORE = {{ $CourtCheck->legal_score }}
         </td>
+    </tr>
+
+    <tr>
+        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+            class="col-md-4">Score Analysis</th>
+        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+            class="col-md-4"> {{ $CourtCheck->score_analysis }}</td>
+
     </tr>
 </tbody>
 
@@ -1306,11 +602,11 @@
                 </th>
             </tr>
             <tr>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Jurisdiction</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Record</td>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Record</th>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Subject Matter</td>
                                                 </tr>
             <tr>
@@ -1330,12 +626,7 @@
         @endif
     @endfor
 
-    <tr>
-        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-            LEGAL SCORE = {{ $CourtCheck->legal_score }}
-        </td>
-    </tr>
+
 </tbody>
 
                                             </table>
@@ -1389,22 +680,12 @@
                                                 <thead class="thead-primary">
                                                     </thead>
                                                     <tbody>
-                                                    @if (!empty($Financial->name_1))
-                                                <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Amount</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Charged Property</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">  {{ $Financial->name_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->status_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_1 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_1 }}</td>
-                                                    </tr>
 
-                                                    @endif
-                                                    @if (!empty($Financial->name_2))
+
+
+
+                                                    @for ($i = 1; $i <= 4; $i++)
+                                                    @if (!empty($Financial->{'name_' . $i}))
                                                     <tr>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
@@ -1412,46 +693,23 @@
                                                         <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Charged Property</th>
                                                     </tr>
                                                     <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">  {{ $Financial->name_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->status_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_2 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_2 }}</td>
-                                                    </tr>
-
-                                                    @endif
-                                                    @if (!empty($Financial->name_3))
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Amount</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Charged Property</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">  {{ $Financial->name_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->status_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_3 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_3 }}</td>
-                                                    </tr>
-
-                                                    @endif
-                                                    @if (!empty($Financial->name_4))
-                                                    <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Name</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Status</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Amount</th>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3">Charged Property</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">  {{ $Financial->name_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->status_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->amount_4 }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->charged_property_4 }}</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">  {{ $Financial->{'name_' . $i} }}</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3"> {{ $Financial->{'status_' . $i} }}</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3">{{ $Financial->{'amount_' . $i} }}</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-3"> {{ $Financial->{'charged_property_' . $i} }}</td>
                                                     </tr>
                                                     @endif
+                                                    @endfor
+
 
                                                     <tr>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4"><b></b>FINANCIAL SCORE = {{ $Financial->overall_financial_score }} </b></td>
+                                                        <td style=" font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"  class="col-md-3"><b></b>FINANCIAL SCORE = {{ $Financial->overall_financial_score }} </b></td>
 
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1"  class="col-md-3"> Socre Analysis</th>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="1" class="col-md-3">{{ $Financial->score_analysis }}</td>
                                                     </tr>
 
                                                 </tbody>
@@ -1465,7 +723,16 @@
                                         <div class="table-responsive">
                                             <div class="row">
 
-                                                 @if (isset($financialFindingsGrapFY_revenue) && count($financialFindingsGrapFY_revenue) > 0)
+                                                @php
+
+                                                function areAllValuesNull($array) {
+                                                    return count(array_filter($array, function($value) {
+                                                        return $value !== null;
+                                                    })) === 0;
+                                                }
+                                                @endphp
+
+                                                 @if (isset($financialFindingsGrapFY_revenue) && areAllValuesNull($financialFindingsGrapFY_revenue) ==false && count($financialFindingsGrapFY_revenue) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1479,7 +746,7 @@
                                                 </div>
                                                 @endif
 
-                                                 @if (isset($financialFindingsGrapFY_net_profit) && count($financialFindingsGrapFY_net_profit) > 0)
+                                                 @if (isset($financialFindingsGrapFY_net_profit) && areAllValuesNull($financialFindingsGrapFY_net_profit) ==false && count($financialFindingsGrapFY_net_profit) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1493,7 +760,7 @@
                                                 </div>
                                                 @endif
 
-                                                 @if (isset($financialFindingsGrapFY_gross_profit) && count($financialFindingsGrapFY_gross_profit) > 0)
+                                                 @if (isset($financialFindingsGrapFY_gross_profit) && areAllValuesNull($financialFindingsGrapFY_gross_profit) ==false && count($financialFindingsGrapFY_gross_profit) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1507,7 +774,7 @@
                                                 </div>
                                                 @endif
 
-                                                 @if (isset($financialFindingsGrapFY_working_capital_1) && count($financialFindingsGrapFY_working_capital_1) > 0)
+                                                 @if (isset($financialFindingsGrapFY_working_capital_1) && areAllValuesNull($financialFindingsGrapFY_working_capital_1) ==false && count($financialFindingsGrapFY_working_capital_1) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1526,7 +793,7 @@
 
 
 
-                                                 @if (isset($financialFindingsGrapFY_quick_assets) && count($financialFindingsGrapFY_quick_assets) > 0)
+                                                 @if (isset($financialFindingsGrapFY_quick_assets) && areAllValuesNull($financialFindingsGrapFY_quick_assets) ==false && count($financialFindingsGrapFY_quick_assets) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1540,7 +807,7 @@
                                                 </div>
                                                 @endif
 
-                                                 @if (isset($financialFindingsGrapFY_total_assets) && count($financialFindingsGrapFY_total_assets) > 0)
+                                                 @if (isset($financialFindingsGrapFY_total_assets) && areAllValuesNull($financialFindingsGrapFY_total_assets) ==false && count($financialFindingsGrapFY_total_assets) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1554,7 +821,7 @@
                                                 </div>
                                                 @endif
 
-                                                 @if (isset($financialFindingsGrapFY_current_assets) && count($financialFindingsGrapFY_current_assets) > 0)
+                                                 @if (isset($financialFindingsGrapFY_current_assets) && areAllValuesNull($financialFindingsGrapFY_current_assets) ==false && count($financialFindingsGrapFY_current_assets) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1567,7 +834,7 @@
                                                         </div>
                                                     </div>
                                                 @endif
-                                                 @if (isset($financialFindingsGrapFY_current_liabilities) && count($financialFindingsGrapFY_current_liabilities) > 0)
+                                                 @if (isset($financialFindingsGrapFY_current_liabilities) && areAllValuesNull($financialFindingsGrapFY_current_liabilities) ==false && count($financialFindingsGrapFY_current_liabilities) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1582,7 +849,7 @@
                                                 @endif
 
 
-                                                 @if (isset($financialFindingsGrapFY_debt) && count($financialFindingsGrapFY_debt) > 0)
+                                                 @if (isset($financialFindingsGrapFY_debt) && areAllValuesNull($financialFindingsGrapFY_debt) ==false && count($financialFindingsGrapFY_debt) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1595,7 +862,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialFindingsGrapFY_average_inventory) && count($financialFindingsGrapFY_average_inventory) > 0)
+                                                 @if (isset($financialFindingsGrapFY_average_inventory) && areAllValuesNull($financialFindingsGrapFY_average_inventory) ==false && count($financialFindingsGrapFY_average_inventory) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1608,7 +875,7 @@
                                                         </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialFindingsGrapFY_net_sales) && count($financialFindingsGrapFY_net_sales) > 0)
+                                                 @if (isset($financialFindingsGrapFY_net_sales) && areAllValuesNull($financialFindingsGrapFY_net_sales) ==false && count($financialFindingsGrapFY_net_sales) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1621,7 +888,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialFindingsGrapFY_equity_share_capital) && count($financialFindingsGrapFY_equity_share_capital) > 0)
+                                                 @if (isset($financialFindingsGrapFY_equity_share_capital) && areAllValuesNull($financialFindingsGrapFY_equity_share_capital) ==false && count($financialFindingsGrapFY_equity_share_capital) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1640,7 +907,7 @@
 
 
 
-                                                 @if (isset($financialFindingsGrapFY_sundry_debtors) && count($financialFindingsGrapFY_sundry_debtors) > 0)
+                                                 @if (isset($financialFindingsGrapFY_sundry_debtors) && areAllValuesNull($financialFindingsGrapFY_sundry_debtors) ==false && count($financialFindingsGrapFY_sundry_debtors) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1653,7 +920,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                @if (isset($financialFindingsGrapFY_sundry_creditors) && count($financialFindingsGrapFY_sundry_creditors) > 0)
+                                                @if (isset($financialFindingsGrapFY_sundry_creditors) && areAllValuesNull($financialFindingsGrapFY_sundry_creditors) ==false && count($financialFindingsGrapFY_sundry_creditors) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1666,7 +933,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialFindingsGrapFY_loans_and_advances) && count($financialFindingsGrapFY_loans_and_advances) > 0)
+                                                 @if (isset($financialFindingsGrapFY_loans_and_advances) && areAllValuesNull($financialFindingsGrapFY_loans_and_advances) ==false && count($financialFindingsGrapFY_loans_and_advances) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1679,7 +946,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialFindingsGrapFY_cash_and_cash_equivalents) && count($financialFindingsGrapFY_cash_and_cash_equivalents) > 0)
+                                                 @if (isset($financialFindingsGrapFY_cash_and_cash_equivalents) && areAllValuesNull($financialFindingsGrapFY_cash_and_cash_equivalents) ==false && count($financialFindingsGrapFY_cash_and_cash_equivalents) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1705,149 +972,33 @@
                                         <div class="table-responsive">
                                             <div class="row">
 
-                                             @if (isset($financialrationGrapFY_current_ratio) && count($financialrationGrapFY_current_ratio) > 0)
+                                             @if (isset($financialrationGrapFY_current_ratio) && areAllValuesNull($financialrationGrapFY_current_ratio) ==false && count($financialrationGrapFY_current_ratio) > 0)
 
                                              <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                  <div class="card">
                                                      <h4
                                                      class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                      Ratio Current Ratio</h4>
+                                                       Current Ratio</h4>
                                                      <div class="d-flex justify-content-center align-items-center">
                                                          <canvas id="barChart_financialRation"></canvas>
                                                         </div>
-                                                    </div>
+                                                        <hr>
+                                                        <h3
+                                                        class="card-title d-flex justify-content-center align-items-center">
+                                                          Analysis</h3>
+                                                        <p class="d-flex justify-content-center align-items-center text-center">
+                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+
+                                                           </p>
+                                                </div>
                                             </div>
                                             @endif
 
-                                                <div class="col-xl-8 col-sm-4 col-4 mt-4 mt-md-0">
-                                                        <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Ration Analysis
-                                                        </h4>
-                                                        <div class="d-flex justify-content-around">
-                                                            <div class="column justify-content-start align-items-start">
-
-                                                                <ul class="list-unstyled">
-                                                                    <li>
-                                                                        <label class="label"><b>Quick Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Current ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Debt Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Solvency Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Debt to Equity Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Asset Turnover Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Absolute Liquidity Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Proprietary Ratio Analysis</b></label>
-                                                                    </li>
-
-
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column justify-content-start align-items-start">
-                                                                <ul class="list-unstyled">
-                                                                <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->debt_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->solvency_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_analysis_fy_one_1 }}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->asset_turnover_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1 }}dddfdf</label>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column justify-content-start align-items-start">
-                                                                <ul class="list-unstyled">
-
-                                                                    <li>
-                                                                        <label class="label"><b>Net Profit Ratio</b></label>
-
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Gross Profit Ratio Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Springate S Score Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Trade Receivable Days Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Trade Payable Days Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Taffler Z-Score Analysis</b></label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label"><b>Zmijewski X-Score Analysis</b></label>
-                                                                    </li>
 
 
 
-                                                                </ul>
-                                                            </div>
-                                                            <div class="column">
-                                                                <ul class="list-unstyled">
-                                                                <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1}}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1 }}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1 }}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1 }}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1 }}</label>
-                                                                    </li>
-                                                                    <li>
-                                                                        <label class="label text-start">{{$FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1 }}</label>
-                                                                    </li>
 
-                                                                </ul>
-                                                            </div>
-
-                                                        </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="row mt-2">
-
-                                            @if (isset($financialrationGrapFY_quick_ratio) && count($financialrationGrapFY_quick_ratio) > 0)
+                                            @if (isset($financialrationGrapFY_quick_ratio) && areAllValuesNull($financialrationGrapFY_quick_ratio) ==false && count($financialrationGrapFY_quick_ratio) > 0)
 
                                             <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
                                                 <div class="card">
@@ -1860,7 +1011,7 @@
                                                     </div>
                                                 </div>
                                                     @endif
-                                                @if (isset($financialrationGrapFY_debt_ratio) && count($financialrationGrapFY_debt_ratio) > 0)
+                                                @if (isset($financialrationGrapFY_debt_ratio) && areAllValuesNull($financialrationGrapFY_debt_ratio) ==false && count($financialrationGrapFY_debt_ratio) > 0)
 
                                                 <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1873,7 +1024,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                @if (isset($financialrationGrapFY_solvency_ratio) && count($financialrationGrapFY_solvency_ratio) > 0)
+                                                @if (isset($financialrationGrapFY_solvency_ratio) && areAllValuesNull($financialrationGrapFY_solvency_ratio) ==false && count($financialrationGrapFY_solvency_ratio) > 0)
 
                                                 @endif
                                                 <div class="col-xl-4  col-sm-4 col-4 mt-4 mt-md-0">
@@ -1888,7 +1039,7 @@
                                                 </div>
 
 
-                                                 @if (isset($financialrationGrapFY_debt_to_equity_ratio) && count($financialrationGrapFY_debt_to_equity_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_debt_to_equity_ratio) && areAllValuesNull($financialrationGrapFY_debt_to_equity_ratio) ==false && count($financialrationGrapFY_debt_to_equity_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1901,7 +1052,7 @@
                                                         </div>
                                                     </div>
                                                     @endif
-                                                 @if (isset($financialrationGrapFY_asset_turnover_ratio) && count($financialrationGrapFY_asset_turnover_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_asset_turnover_ratio) && areAllValuesNull($financialrationGrapFY_asset_turnover_ratio) ==false && count($financialrationGrapFY_asset_turnover_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1914,7 +1065,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialrationGrapFY_absolute_liquidity_ratio) && count($financialrationGrapFY_absolute_liquidity_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_absolute_liquidity_ratio) && areAllValuesNull($financialrationGrapFY_absolute_liquidity_ratio) ==false && count($financialrationGrapFY_absolute_liquidity_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1927,7 +1078,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialrationGrapFY_proprietary_ratio) && count($financialrationGrapFY_proprietary_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_proprietary_ratio) && areAllValuesNull($financialrationGrapFY_proprietary_ratio) ==false && count($financialrationGrapFY_proprietary_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1942,7 +1093,7 @@
                                                 @endif
 
 
-                                                 @if (isset($financialrationGrapFY_net_profit_ratio) && count($financialrationGrapFY_net_profit_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_net_profit_ratio) && areAllValuesNull($financialrationGrapFY_net_profit_ratio) ==false && count($financialrationGrapFY_net_profit_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1955,7 +1106,7 @@
                                                         </div>
                                                 </div>
                                                 @endif
-                                                    @if (isset($financialrationGrapFY_gross_profit_ratio) && count($financialrationGrapFY_gross_profit_ratio) > 0)
+                                                    @if (isset($financialrationGrapFY_gross_profit_ratio) && areAllValuesNull($financialrationGrapFY_gross_profit_ratio) ==false && count($financialrationGrapFY_gross_profit_ratio) > 0)
 
                                                     <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1968,7 +1119,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialrationGrapFY_springate_s_score_ratio) && count($financialrationGrapFY_springate_s_score_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_springate_s_score_ratio) && areAllValuesNull($financialrationGrapFY_springate_s_score_ratio) ==false && count($financialrationGrapFY_springate_s_score_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -1981,7 +1132,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                @if (isset($financialrationGrapFY_trade_receivable_days_ratio) && count($financialrationGrapFY_trade_receivable_days_ratio) > 0)
+                                                @if (isset($financialrationGrapFY_trade_receivable_days_ratio) && areAllValuesNull($financialrationGrapFY_trade_receivable_days_ratio) ==false && count($financialrationGrapFY_trade_receivable_days_ratio) > 0)
 
                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -1996,7 +1147,7 @@
                                                 @endif
 
 
-                                                 @if (isset($financialrationGrapFY_trade_payable_days_ratio) && count($financialrationGrapFY_trade_payable_days_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_trade_payable_days_ratio) && areAllValuesNull($financialrationGrapFY_trade_payable_days_ratio) ==false && count($financialrationGrapFY_trade_payable_days_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -2009,7 +1160,7 @@
                                                         </div>
                                                     </div>
                                                     @endif
-                                                 @if (isset($financialrationGrapFY_taffler_z_score_ratio) && count($financialrationGrapFY_taffler_z_score_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_taffler_z_score_ratio) && areAllValuesNull($financialrationGrapFY_taffler_z_score_ratio) ==false && count($financialrationGrapFY_taffler_z_score_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                     <div class="card">
@@ -2022,7 +1173,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
-                                                 @if (isset($financialrationGrapFY_zmijewski_x_score_ratio) && count($financialrationGrapFY_zmijewski_x_score_ratio) > 0)
+                                                 @if (isset($financialrationGrapFY_zmijewski_x_score_ratio) && areAllValuesNull($financialrationGrapFY_zmijewski_x_score_ratio) ==false && count($financialrationGrapFY_zmijewski_x_score_ratio) > 0)
 
                                                  <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                      <div class="card">
@@ -2078,7 +1229,7 @@
                                             <div class="table-responsive">
                                                 <div class="row">
 
-                                                            @if (isset($businessInteligenceGrapFY_operating_efficiency) && count($businessInteligenceGrapFY_operating_efficiency) > 0)
+                                                            @if (isset($businessInteligenceGrapFY_operating_efficiency) && areAllValuesNull($businessInteligenceGrapFY_operating_efficiency) ==false && count($businessInteligenceGrapFY_operating_efficiency) > 0)
 
                                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                                 <div class="card">
@@ -2144,7 +1295,7 @@
                                                                 </div>
                                                             <div class="row mt-2">
 
-                                                            @if (isset($businessInteligenceGrapFY_inventory_turnover) && count($businessInteligenceGrapFY_inventory_turnover) > 0)
+                                                            @if (isset($businessInteligenceGrapFY_inventory_turnover) && areAllValuesNull($businessInteligenceGrapFY_inventory_turnover) ==false && count($businessInteligenceGrapFY_inventory_turnover) > 0)
 
                                                             <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                                 <div class="card">
@@ -2158,7 +1309,7 @@
                                                                 </div>
                                                                 @endif
 
-                                                                @if (isset($businessInteligenceGrapFY_days_sales_in_inventory) && count($businessInteligenceGrapFY_days_sales_in_inventory) > 0)
+                                                                @if (isset($businessInteligenceGrapFY_days_sales_in_inventory) && areAllValuesNull($businessInteligenceGrapFY_days_sales_in_inventory) ==false && count($businessInteligenceGrapFY_days_sales_in_inventory) > 0)
 
                                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                                     <div class="card">
@@ -2171,7 +1322,7 @@
                                                                     </div>
                                                                 </div>
                                                                 @endif
-                                                                @if (isset($businessInteligenceGrapFY_accounts_payable) && count($businessInteligenceGrapFY_accounts_payable) > 0)
+                                                                @if (isset($businessInteligenceGrapFY_accounts_payable) && areAllValuesNull($businessInteligenceGrapFY_accounts_payable) ==false && count($businessInteligenceGrapFY_accounts_payable) > 0)
 
                                                                 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                                                                     <div class="card">
@@ -2469,7 +1620,7 @@
                                         <div class="col-xl-6 mb-3">
                                             <p for="educationalBackground" class="text-center"><a
                                                     href="{{ URL::to('/panel/report/final_Reprts_file_download'.'/'. base64_encode($KeyObservation->id)) }}"
-                                                    class="download-license-btn">Download Licenses</a></p>
+                                                    class="download-license-btn">Download Final Report</a></p>
                                         </div>
 
                                     </div>

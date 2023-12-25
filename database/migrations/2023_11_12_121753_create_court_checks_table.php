@@ -32,7 +32,7 @@ class CreateCourtChecksTable extends Migration
             $this->companyCourtFields($table, 4);
             $this->companyCourtFields($table, 5);
             $table->integer('legal_score')->nullable();
-            $table->string('score_analysis')->nullable();
+            $table->text('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
 

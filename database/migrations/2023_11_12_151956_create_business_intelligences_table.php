@@ -18,23 +18,23 @@ class CreateBusinessIntelligencesTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('third_party_id')->nullable();
             $table->integer('team_user_id')->nullable();
-            $table->string('score_analysis')->nullable();
+            $table->text('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
             // Financial Years
 
 
             // Operating Efficiency Ratio
-            $table->string('operating_efficiency_BI_analysis')->nullable();
+            $table->text('operating_efficiency_BI_analysis')->nullable();
 
             // Inventory Turnover Ratio
-            $table->string('inventory_turnover_BI_analysis')->nullable();
+            $table->text('inventory_turnover_BI_analysis')->nullable();
 
             // Days Sales in Inventory
-            $table->string('days_sales_in_inventory_BI_analysis')->nullable();
+            $table->text('days_sales_in_inventory_BI_analysis')->nullable();
 
                // Accounts Payable Turnover Ratio
-            $table->string('accounts_payable_turnover_BI_analysis')->nullable();
+            $table->text('accounts_payable_turnover_BI_analysis')->nullable();
 
             $this->addBusinessIntelligencesFYFields($table, "one");
             $this->addBusinessIntelligencesFYFields($table, "two");

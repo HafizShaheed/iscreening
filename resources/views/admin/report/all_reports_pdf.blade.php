@@ -39,9 +39,9 @@
 
     <!--  Firm Background start-->
     <h2>Firm Background</h2>
-    <h3>Client Name: {{$Getclient->first_name}}</h3>
-    <h3>Vender Name: {{$getThirdPartyForID->third_party_name}}</h3>
-    <h3>Team Member Name: {{$GetTeaMuser->user_name}}</h3>
+    <h3>Client Name: {{isset($Getclient->first_name) ? $Getclient->first_name : ''}}</h3>
+    <h3>Vender Name: {{isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name : ''}}</h3>
+    <h3>Team Member Name: {{ isset($GetTeaMuser->user_name) ? $GetTeaMuser->user_name : ''}}</h3>
 
     <div class="pt-4">
         <div class="table-responsive">
@@ -1333,8 +1333,8 @@
         </p>
 
     </div>
-   
-    
+
+
 </div>
 
 </div>

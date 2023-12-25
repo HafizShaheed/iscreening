@@ -920,7 +920,7 @@
                     datasets: [
                         {
                             label: "Business Intelligence operating efficiency",
-                            data: businessInteligenceGrapFY_operating_efficiency,
+                            data: businessInteligenceGrapFY_accounts_payable,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: '#f3643a',
@@ -1096,7 +1096,7 @@
                     datasets: [
                         {
                             label: "Business Intelligence accounts payable",
-                            data: businessInteligenceGrapFY_accounts_payable,
+                            data: businessInteligenceGrapFY_operating_efficiency,
                             borderColor: 'black',
                             borderWidth: "2",
 							backgroundColor: '#f3643a',
@@ -1359,7 +1359,7 @@
 		}
 	}
     // =======================WorkingCapital graphp end =====================
-  
+
     // =======================WorkingCapital graphp start  ===================
     var barChart_QuickAssets = function(){
 		if(jQuery('#barChart_QuickAssets').length > 0 ){
