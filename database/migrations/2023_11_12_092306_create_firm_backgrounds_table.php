@@ -175,6 +175,7 @@ class CreateFirmBackgroundsTable extends Migration
         $table->string("aadhar_$index")->nullable();
         $table->date("date_of_appointment_$index")->nullable();
         $table->string("educational_background_$index")->nullable();
+        $table->string("din_$index")->nullable();
     }
 
     private function addDirector1Fields(Blueprint $table, $index)

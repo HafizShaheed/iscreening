@@ -266,134 +266,25 @@
                         <span style="color:darkgray; font-size:12px;">Registrations/Compliance </span>
                     </h4>
                     <div class="row">
+                        @for ($i=1; $i <=8; $i++)
                         <div class="col-xl-3 mb-3">
-                            <label for="license_name_1" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_1" name="license_name_1" value="{{$License->license_name_1}}" placeholder="">
+                            <label for="license_name_{{ $i }}" class="form-label">License Name</label>
+                            <input type="text" class="form-control" id="license_name_{{ $i }}" name="license_name_{{ $i }}" value="{{ $License->{'license_name_' . $i} }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="license_no_1" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_1" name="license_no_1" value="{{$License->license_no_1}}" placeholder="">
+                            <label for="license_no_{{ $i }}" class="form-label">License No</label>
+                            <input type="text" class="form-control" id="license_no_{{ $i }}" name="license_no_{{ $i }}" value="{{$License->{'license_no_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_1" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_1" name="date_of_issuance_1" value="{{$License->date_of_issuance_1}}">
+                            <label for="date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
+                            <input type="date" class="form-control" id="date_of_issuance_{{ $i }}" name="date_of_issuance_{{ $i }}" value="{{$License->{'date_of_issuance_'.$i } }}">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_1" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_1" name="date_of_expiry_1" value="{{$License->date_of_expiry_1}}">
+                            <label for="date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
+                            <input type="date" class="form-control" id="date_of_expiry_{{ $i }}" name="date_of_expiry_{{ $i }}" value="{{$License->{'date_of_expiry_'. $i} }}">
                         </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_2" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_2" name="license_name_2" value="{{$License->license_name_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_2" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_2" name="license_no_2" value="{{$License->license_no_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_2" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_2" name="date_of_issuance_2" value="{{$License->date_of_issuance_2}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_2" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_2" name="date_of_expiry_2" value="{{$License->date_of_expiry_2}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_3" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_3" name="license_name_3" value="{{$License->license_name_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_3" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_3" name="license_no_3" value="{{$License->license_no_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_3" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_3" name="date_of_issuance_3" value="{{$License->date_of_issuance_3}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_3" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_3" name="date_of_expiry_3" value="{{$License->date_of_expiry_3}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_4" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_4" name="license_name_4" value="{{$License->license_name_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_4" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_4" name="license_no_4" value="{{$License->license_no_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_4" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_4" name="date_of_issuance_4" value="{{$License->date_of_issuance_4}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_4" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_4" name="date_of_expiry_4" value="{{$License->date_of_expiry_4}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_5" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_5" name="license_name_5" value="{{$License->license_name_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_5" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_5" name="license_no_5" value="{{$License->license_no_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_5" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_5" name="date_of_issuance_5" value="{{$License->date_of_issuance_5}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_5" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_5" name="date_of_expiry_5" value="{{$License->date_of_expiry_5}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_6" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_6" name="license_name_6" value="{{$License->license_name_6}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_6" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_6" name="license_no_6" value="{{$License->license_no_6}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_6" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_6" name="date_of_issuance_6" value="{{$License->date_of_issuance_6}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_6" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_6" name="date_of_expiry_6" value="{{$License->date_of_expiry_6}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_7" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_7" name="license_name_7" value="{{$License->license_name_7}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_7" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_7" name="license_no_7" value="{{$License->license_no_7}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_7" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_7" name="date_of_issuance_7" value="{{$License->date_of_issuance_7}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_7" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_7" name="date_of_expiry_7" value="{{$License->date_of_expiry_7}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_8" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_8" name="license_name_8" value="{{$License->license_name_8}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_8" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_8" name="license_no_8" value="{{$License->license_no_8}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_issuance_8" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_8" name="date_of_issuance_8" value="{{$License->date_of_issuance_8}}">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="date_of_expiry_8" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_8" name="date_of_expiry_8" value="{{$License->date_of_expiry_8}}">
-                        </div>
+
+                        @endfor
                     </div>
                     <!-- Repeat the above code block for additional rows -->
 
@@ -442,266 +333,35 @@
                         <span style="color:darkgray; font-size:12px;">Director/Proprietor/Partner Details </span>
                     </h4>
                  <!-- Copy 1 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_1" class="form-label">Name (1)</label>
-                                <input type="text" class="form-control" id="name_1" name="name_1" value="{{$FirmBackground->name_1}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_1" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_1" name="pan_1" value="{{$FirmBackground->pan_1}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_1" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_1" name="aadhar_1" value="{{$FirmBackground->aadhar_1}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_1" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_1" name="date_of_appointment_1" value="{{$FirmBackground->date_of_appointment_1}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_1" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_1" name="educational_background_1" value="{{$FirmBackground->educational_background_1}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 2 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_2" class="form-label">Name (2)</label>
-                                <input type="text" class="form-control" id="name_2" name="name_2" value="{{$FirmBackground->name_2}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_2" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_2" name="pan_2" value="{{$FirmBackground->pan_2}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_2" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_2" name="aadhar_2" value="{{$FirmBackground->aadhar_2}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_2" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_2" name="date_of_appointment_2" value="{{$FirmBackground->date_of_appointment_2}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_2" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_2" name="educational_background_2" value="{{$FirmBackground->educational_background_2}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 3 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_3" class="form-label">Name (3)</label>
-                                <input type="text" class="form-control" id="name_3" name="name_3" value="{{$FirmBackground->name_3}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_3" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_3" name="pan_3" value="{{$FirmBackground->pan_3}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_3" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_3" name="aadhar_3" value="{{$FirmBackground->aadhar_3}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_3" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_3" name="date_of_appointment_3" value="{{$FirmBackground->date_of_appointment_3}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_3" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_3" name="educational_background_3" value="{{$FirmBackground->educational_background_3}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 4 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_4" class="form-label">Name (4)</label>
-                                <input type="text" class="form-control" id="name_4" name="name_4" value="{{$FirmBackground->name_4}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_4" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_4" name="pan_4" value="{{$FirmBackground->pan_4}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_4" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_4" name="aadhar_4" value="{{$FirmBackground->aadhar_4}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_4" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_4" name="date_of_appointment_4" value="{{$FirmBackground->date_of_appointment_4}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_4" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_4" name="educational_background_4" value="{{$FirmBackground->educational_background_4}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 5 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_5" class="form-label">Name (5)</label>
-                                <input type="text" class="form-control" id="name_5" name="name_5" value="{{$FirmBackground->name_5}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_5" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_5" name="pan_5" value="{{$FirmBackground->pan_5}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_5" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_5" name="aadhar_5" value="{{$FirmBackground->aadhar_5}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_5" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_5" name="date_of_appointment_5" value="{{$FirmBackground->date_of_appointment_5}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_5" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_5" name="educational_background_5" value="{{$FirmBackground->educational_background_5}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 6 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_6" class="form-label">Name (6)</label>
-                                <input type="text" class="form-control" id="name_6" name="name_6" value="{{$FirmBackground->name_6}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_6" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_6" name="pan_6" value="{{$FirmBackground->pan_6}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_6" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_6" name="aadhar_6" value="{{$FirmBackground->aadhar_6}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_6" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_6" name="date_of_appointment_6" value="{{$FirmBackground->date_of_appointment_6}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_6" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_6" name="educational_background_6" value="{{$FirmBackground->educational_background_6}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 7 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_7" class="form-label">Name (7)</label>
-                                <input type="text" class="form-control" id="name_7" name="name_7" value="{{$FirmBackground->name_7}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_7" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_7" name="pan_7" value="{{$FirmBackground->pan_7}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_7" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_7" name="aadhar_7" value="{{$FirmBackground->aadhar_7}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_7" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_7" name="date_of_appointment_7" value="{{$FirmBackground->date_of_appointment_7}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_7" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_7" name="educational_background_7" value="{{$FirmBackground->educational_background_7}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 8 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_8" class="form-label">Name (8)</label>
-                                <input type="text" class="form-control" id="name_8" name="name_8" value="{{$FirmBackground->name_8}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_8" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_8" name="pan_8" value="{{$FirmBackground->pan_8}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_8" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_8" name="aadhar_8" value="{{$FirmBackground->aadhar_8}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_8" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_8" name="date_of_appointment_8" value="{{$FirmBackground->date_of_appointment_8}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_8" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_8" name="educational_background_8" value="{{$FirmBackground->educational_background_8}}">
-                            </div>
-                        </div>
-
-                        <!-- Copy 9 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_9" class="form-label">Name (9)</label>
-                                <input type="text" class="form-control" id="name_9" name="name_9" value="{{$FirmBackground->name_9}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_9" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_9" name="pan_9" value="{{$FirmBackground->pan_9}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_9" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_9" name="aadhar_9" value="{{$FirmBackground->aadhar_9}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_9" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_9" name="date_of_appointment_9" value="{{$FirmBackground->date_of_appointment_9}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_9" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_9" name="educational_background_9" value="{{$FirmBackground->educational_background_9}}">
-                            </div>
-                        </div>
-
-
-
-                        <!-- Copy 6 -->
-                        <div class="row">
-                            <div class="col">
-                                <label for="name_10" class="form-label">Name (10)</label>
-                                <input type="text" class="form-control" id="name_10" name="name_10" value="{{$FirmBackground->name_10}}">
-                            </div>
-                            <div class="col">
-                                <label for="pan_10" class="form-label">PAN</label>
-                                <input type="text" class="form-control" id="pan_10" name="pan_10" value="{{$FirmBackground->pan_10}}">
-                            </div>
-                            <div class="col">
-                                <label for="aadhar_10" class="form-label">Aadhar</label>
-                                <input type="text" class="form-control" id="aadhar_10" name="aadhar_10" value="{{$FirmBackground->aadhar_10}}">
-                            </div>
-                            <div class="col">
-                                <label for="date_of_appointment_10" class="form-label">Date of Appointment</label>
-                                <input type="date" class="form-control" id="date_of_appointment_10" name="date_of_appointment_10" value="{{$FirmBackground->date_of_appointment_10}}">
-                            </div>
-                            <div class="col">
-                                <label for="educational_background_10" class="form-label">Educational Background</label>
-                                <input type="text" class="form-control" id="educational_background_10" name="educational_background_10" value="{{$FirmBackground->educational_background_10}}">
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                 @for ($i = 1; $i <= 10; $i++)
                     <div class="row">
-                        <div class="col-xl-6 mb-3">
-                            <label for="credit_score" class="form-label">Credit Score</label>
-                            <input type="number" step="any" class="form-control" id="credit_score" name="credit_score" value="{{$FirmBackground->credit_score}}">
+                        <div class="col mt-4">
+                            <label for="name_{{ $i }}" class="form-label">Name ({{ $i }})</label>
+                            <input type="text" class="form-control" id="name_{{ $i }}" name="name_{{ $i }}" value="{{ $FirmBackground->{'name_' . $i} }}">
+                        </div>
+                        <div class="col mt-4">
+                            <label for="pan_{{ $i }}" class="form-label">PAN</label>
+                            <input type="text" class="form-control" id="pan_{{ $i }}" name="pan_{{ $i }}" value="{{ $FirmBackground->{'pan_' . $i} }}">
+                        </div>
+                        <div class="col mt-4">
+                            <label for="aadhar_{{ $i }}" class="form-label">Aadhar</label>
+                            <input type="text" class="form-control" id="aadhar_{{ $i }}" name="aadhar_{{ $i }}" value="{{ $FirmBackground->{'aadhar_' . $i} }}">
+                        </div>
+                        <div class="col mt-4">
+                            <label for="date_of_appointment_{{ $i }}" class="form-label">Date of Appointment</label>
+                            <input type="date" class="form-control" id="date_of_appointment_{{ $i }}" name="date_of_appointment_{{ $i }}" value="{{ $FirmBackground->{'date_of_appointment_' . $i} }}">
+                        </div>
+                        <div class="col mt-4">
+                            <label for="educational_background_{{ $i }}" class="form-label">Educational Background</label>
+                            <input type="text" class="form-control" id="educational_background_{{ $i }}" name="educational_background_{{ $i }}" value="{{ $FirmBackground->{'educational_background_' . $i} }}">
+                        </div>
+                        <div class="col mt-4">
+                            <label for="din_{{ $i }}" class="form-label">DIN</label>
+                            <input type="text" class="form-control" id="din_{{ $i }}" name="din_{{ $i }}" value="{{ $FirmBackground->{'din_' . $i} }}">
                         </div>
                     </div>
+                @endfor
+
                     <div class="row">
                         <div class="col-xl-6 d-flex justify-content-start">
 
@@ -722,810 +382,120 @@
                     </h4>
                     <div class="row">
                         <!-- =========== Director1 ============ -->
-
+                        @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_1" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_1" name="director_name_1_1" value="{{$FirstDirectorsFirm->director_name_1_1}}">
+                            <label for="director_name_1_{{ $i }}" class="form-label">Director 1</label>
+                            <input type="text" class="form-control" id="director_name_1_{{ $i }}" name="director_name_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'director_name_1_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_1" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_1" name="company_name_1_1" value="{{$FirstDirectorsFirm->company_name_1_1}}">
+                            <label for="company_name_1_{{ $i }}" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company_name_1_{{ $i }}" name="company_name_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_name_1_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="cin_1_1" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_1" name="cin_1_1" value="{{$FirstDirectorsFirm->cin_1_1}}">
+                            <label for="cin_1_{{ $i }}" class="form-label">CIN</label>
+                            <input type="text" class="form-control" id="cin_1_{{ $i }}" name="cin_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'cin_1_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_1" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_1" name="company_status_1_1" value="{{$FirstDirectorsFirm->company_status_1_1}}">
+                            <label for="company_status_1_{{ $i }}" class="form-label">Company Status</label>
+                            <input type="text" class="form-control" id="company_status_1_{{ $i }}" name="company_status_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_status_1_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_1" class="form-label">Appointment
+                            <label for="appointment_date_1_{{ $i }}" class="form-label">Appointment
                                 Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_1" name="appointment_date_1_1" value="{{$FirstDirectorsFirm->appointment_date_1_1}}">
+                            <input type="date" class="form-control" id="appointment_date_1_{{ $i }}" name="appointment_date_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'appointment_date_1_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_1" class="form-label">Business of the
+                            <label for="business_of_entity_1_{{ $i }}" class="form-label">Business of the
                                 Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_1" name="business_of_entity_1_1" value="{{$FirstDirectorsFirm->business_of_entity_1_1}}">
+                            <input type="text" class="form-control" id="business_of_entity_1_{{ $i }}" name="business_of_entity_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_of_entity_1_'. $i } }}">
                         </div>
                         <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_1" class="form-label">Business Conflict
+                            <label for="business_conflict_1_{{ $i }}" class="form-label">Business Conflict
                             </label>
-                            <input type="text" class="form-control" id="business_conflict_1_1" name="business_conflict_1_1" value="{{$FirstDirectorsFirm->business_conflict_1_1}}">
+                            <input type="text" class="form-control" id="business_conflict_1_{{ $i }}" name="business_conflict_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_conflict_1_'. $i } }}">
                         </div>
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_2" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_2" name="director_name_1_2" value="{{$FirstDirectorsFirm->director_name_1_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_2" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_2" name="company_name_1_2" value="{{$FirstDirectorsFirm->company_name_1_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_2" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_2" name="cin_1_2" value="{{$FirstDirectorsFirm->cin_1_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_2" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_2" name="company_status_1_2" value="{{$FirstDirectorsFirm->company_status_1_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_2" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_2" name="appointment_date_1_2" value="{{$FirstDirectorsFirm->appointment_date_1_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_2" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_2" name="business_of_entity_1_2" value="{{$FirstDirectorsFirm->business_of_entity_1_2}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_2" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_2" name="business_conflict_1_2" value="{{$FirstDirectorsFirm->business_conflict_1_2}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_3" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_3" name="director_name_1_3" value="{{$FirstDirectorsFirm->director_name_1_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_3" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_3" name="company_name_1_3" value="{{$FirstDirectorsFirm->company_name_1_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_3" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_3" name="cin_1_3" value="{{$FirstDirectorsFirm->cin_1_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_3" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_3" name="company_status_1_3" value="{{$FirstDirectorsFirm->company_status_1_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_3" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_3" name="appointment_date_1_3" value="{{$FirstDirectorsFirm->appointment_date_1_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_3" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_3" name="business_of_entity_1_3" value="{{$FirstDirectorsFirm->business_of_entity_1_3}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_3" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_3" name="business_conflict_1_3" value="{{$FirstDirectorsFirm->business_conflict_1_3}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_4" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_4" name="director_name_1_4" value="{{$FirstDirectorsFirm->director_name_1_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_4" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_4" name="company_name_1_4" value="{{$FirstDirectorsFirm->company_name_1_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_4" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_4" name="cin_1_4" value="{{$FirstDirectorsFirm->cin_1_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_4" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_4" name="company_status_1_4" value="{{$FirstDirectorsFirm->company_status_1_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_4" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_4" name="appointment_date_1_4" value="{{$FirstDirectorsFirm->appointment_date_1_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_4" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_4" name="business_of_entity_1_4" value="{{$FirstDirectorsFirm->business_of_entity_1_4}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_4" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_4" name="business_conflict_1_4" value="{{$FirstDirectorsFirm->business_conflict_1_4}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_5" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_5" name="director_name_1_5" value="{{$FirstDirectorsFirm->director_name_1_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_5" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_5" name="company_name_1_5" value="{{$FirstDirectorsFirm->company_name_1_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_5" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_5" name="cin_1_5" value="{{$FirstDirectorsFirm->cin_1_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_5" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_5" name="company_status_1_5" value="{{$FirstDirectorsFirm->company_status_1_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_5" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_5" name="appointment_date_1_5" value="{{$FirstDirectorsFirm->appointment_date_1_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_5" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_5" name="business_of_entity_1_5" value="{{$FirstDirectorsFirm->business_of_entity_1_5}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_5" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_5" name="business_conflict_1_5" value="{{$FirstDirectorsFirm->business_conflict_1_5}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_6" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_6" name="director_name_1_6" value="{{$FirstDirectorsFirm->director_name_1_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_6" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_6" name="company_name_1_6" value="{{$FirstDirectorsFirm->company_name_1_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_6" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_6" name="cin_1_6" value="{{$FirstDirectorsFirm->cin_1_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_6" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_6" name="company_status_1_6" value="{{$FirstDirectorsFirm->company_status_1_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_6" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_6" name="appointment_date_1_6" value="{{$FirstDirectorsFirm->appointment_date_1_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_6" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_6" name="business_of_entity_1_6" value="{{$FirstDirectorsFirm->business_of_entity_1_6}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_6" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_6" name="business_conflict_1_6" value="{{$FirstDirectorsFirm->business_conflict_1_6}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_7" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_7" name="director_name_1_7" value="{{$FirstDirectorsFirm->director_name_1_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_7" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_7" name="company_name_1_7" value="{{$FirstDirectorsFirm->company_name_1_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_7" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_7" name="cin_1_7" value="{{$FirstDirectorsFirm->cin_1_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_7" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_7" name="company_status_1_7" value="{{$FirstDirectorsFirm->company_status_1_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_7" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_7" name="appointment_date_1_7" value="{{$FirstDirectorsFirm->appointment_date_1_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_7" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_7" name="business_of_entity_1_7" value="{{$FirstDirectorsFirm->business_of_entity_1_7}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_7" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_7" name="business_conflict_1_7" value="{{$FirstDirectorsFirm->business_conflict_1_7}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_1_8" class="form-label">Director 1</label>
-                            <input type="text" class="form-control" id="director_name_1_8" name="director_name_1_8" value="{{$FirstDirectorsFirm->director_name_1_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_1_8" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_1_8" name="company_name_1_8" value="{{$FirstDirectorsFirm->company_name_1_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_1_8" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_1_8" name="cin_1_8" value="{{$FirstDirectorsFirm->cin_1_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_1_8" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_1_8" name="company_status_1_8" value="{{$FirstDirectorsFirm->company_status_1_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_1_8" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_1_8" name="appointment_date_1_8" value="{{$FirstDirectorsFirm->appointment_date_1_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_1_8" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_1_8" name="business_of_entity_1_8" value="{{$FirstDirectorsFirm->business_of_entity_1_8}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_1_8" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_1_8" name="business_conflict_1_8" value="{{$FirstDirectorsFirm->business_conflict_1_8}}">
-                        </div>
+                            
+                        @endfor
+                        
 
                         <!-- =========== Director1 ============ -->
 
                         <!-- =========== Director2 ============ -->
-
+                        @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_1" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_1" name="director_name_2_1" value="{{$SecondDirectorsFirm->director_name_2_1}}">
+                            <label for="director_name_2_{{ $i }}" class="form-label">Director 2</label>
+                            <input type="text" class="form-control" id="director_name_2_{{ $i }}" name="director_name_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'director_name_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_1" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_1" name="company_name_2_1" value="{{$SecondDirectorsFirm->company_name_2_1}}">
+                            <label for="company_name_2_{{ $i }}" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company_name_2_{{ $i }}" name="company_name_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_name_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="cin_2_1" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_1" name="cin_2_1" value="{{$SecondDirectorsFirm->cin_2_1}}">
+                            <label for="cin_2_{{ $i }}" class="form-label">CIN</label>
+                            <input type="text" class="form-control" id="cin_2_{{ $i }}" name="cin_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'cin_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_1" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_1" name="company_status_2_1" value="{{$SecondDirectorsFirm->company_status_2_1}}">
+                            <label for="company_status_2_{{ $i }}" class="form-label">Company Status</label>
+                            <input type="text" class="form-control" id="company_status_2_{{ $i }}" name="company_status_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_status_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_1" class="form-label">Appointment
+                            <label for="appointment_date_2_{{ $i }}" class="form-label">Appointment
                                 Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_1" name="appointment_date_2_1" value="{{$SecondDirectorsFirm->appointment_date_2_1}}">
+                            <input type="date" class="form-control" id="appointment_date_2_{{ $i }}" name="appointment_date_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'appointment_date_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_1" class="form-label">Business of the
+                            <label for="business_of_entity_2_{{ $i }}" class="form-label">Business of the
                                 Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_1" name="business_of_entity_2_1" value="{{$SecondDirectorsFirm->business_of_entity_2_1}}">
+                            <input type="text" class="form-control" id="business_of_entity_2_{{ $i }}" name="business_of_entity_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_of_entity_2_'. $i } }}">
                         </div>
                         <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_1" class="form-label">Business Conflict
+                            <label for="business_conflict_2_{{ $i }}" class="form-label">Business Conflict
                             </label>
-                            <input type="text" class="form-control" id="business_conflict_2_1" name="business_conflict_2_1" value="{{$SecondDirectorsFirm->business_conflict_2_1}}">
+                            <input type="text" class="form-control" id="business_conflict_2_{{ $i }}" name="business_conflict_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_conflict_2_'. $i } }}">
                         </div>
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_2" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_2" name="director_name_2_2" value="{{$SecondDirectorsFirm->director_name_2_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_2" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_2" name="company_name_2_2" value="{{$SecondDirectorsFirm->company_name_2_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_2" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_2" name="cin_2_2" value="{{$SecondDirectorsFirm->cin_2_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_2" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_2" name="company_status_2_2" value="{{$SecondDirectorsFirm->company_status_2_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_2" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_2" name="appointment_date_2_2" value="{{$SecondDirectorsFirm->appointment_date_2_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_2" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_2" name="business_of_entity_2_2" value="{{$SecondDirectorsFirm->business_of_entity_2_2}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_2" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_2" name="business_conflict_2_2" value="{{$SecondDirectorsFirm->business_conflict_2_2}}">
-                        </div>
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_3" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_3" name="director_name_2_3" value="{{$SecondDirectorsFirm->director_name_2_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_3" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_3" name="company_name_2_3" value="{{$SecondDirectorsFirm->company_name_2_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_3" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_3" name="cin_2_3" value="{{$SecondDirectorsFirm->cin_2_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_3" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_3" name="company_status_2_3" value="{{$SecondDirectorsFirm->company_status_2_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_3" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_3" name="appointment_date_2_3" value="{{$SecondDirectorsFirm->appointment_date_2_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_3" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_3" name="business_of_entity_2_3" value="{{$SecondDirectorsFirm->business_of_entity_2_3}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_3" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_3" name="business_conflict_2_3" value="{{$SecondDirectorsFirm->business_conflict_2_3}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_4" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_4" name="director_name_2_4" value="{{$SecondDirectorsFirm->director_name_2_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_4" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_4" name="company_name_2_4" value="{{$SecondDirectorsFirm->company_name_2_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_4" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_4" name="cin_2_4" value="{{$SecondDirectorsFirm->cin_2_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_4" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_4" name="company_status_2_4" value="{{$SecondDirectorsFirm->company_status_2_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_4" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_4" name="appointment_date_2_4" value="{{$SecondDirectorsFirm->appointment_date_2_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_4" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_4" name="business_of_entity_2_4" value="{{$SecondDirectorsFirm->business_of_entity_2_4}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_4" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_4" name="business_conflict_2_4" value="{{$SecondDirectorsFirm->business_conflict_2_4}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_5" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_5" name="director_name_2_5" value="{{$SecondDirectorsFirm->director_name_2_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_5" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_5" name="company_name_2_5" value="{{$SecondDirectorsFirm->company_name_2_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_5" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_5" name="cin_2_5" value="{{$SecondDirectorsFirm->cin_2_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_5" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_5" name="company_status_2_5" value="{{$SecondDirectorsFirm->company_status_2_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_5" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_5" name="appointment_date_2_5" value="{{$SecondDirectorsFirm->appointment_date_2_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_5" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_5" name="business_of_entity_2_5" value="{{$SecondDirectorsFirm->business_of_entity_2_5}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_5" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_5" name="business_conflict_2_5" value="{{$SecondDirectorsFirm->business_conflict_2_5}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_6" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_6" name="director_name_2_6" value="{{$SecondDirectorsFirm->director_name_2_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_6" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_6" name="company_name_2_6" value="{{$SecondDirectorsFirm->company_name_2_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_6" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_6" name="cin_2_6" value="{{$SecondDirectorsFirm->cin_2_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_6" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_6" name="company_status_2_6" value="{{$SecondDirectorsFirm->company_status_2_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_6" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_6" name="appointment_date_2_6" value="{{$SecondDirectorsFirm->appointment_date_2_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_6" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_6" name="business_of_entity_2_6" value="{{$SecondDirectorsFirm->business_of_entity_2_6}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_6" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_6" name="business_conflict_2_6" value="{{$SecondDirectorsFirm->business_conflict_2_6}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_7" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_7" name="director_name_2_7" value="{{$SecondDirectorsFirm->director_name_2_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_7" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_7" name="company_name_2_7" value="{{$SecondDirectorsFirm->company_name_2_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_7" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_7" name="cin_2_7" value="{{$SecondDirectorsFirm->cin_2_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_7" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_7" name="company_status_2_7" value="{{$SecondDirectorsFirm->company_status_2_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_7" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_7" name="appointment_date_2_7" value="{{$SecondDirectorsFirm->appointment_date_2_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_7" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_7" name="business_of_entity_2_7" value="{{$SecondDirectorsFirm->business_of_entity_2_7}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_7" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_7" name="business_conflict_2_7" value="{{$SecondDirectorsFirm->business_conflict_2_7}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_2_8" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_8" name="director_name_2_8" value="{{$SecondDirectorsFirm->director_name_2_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_2_8" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_8" name="company_name_2_8" value="{{$SecondDirectorsFirm->company_name_2_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_2_8" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_8" name="cin_2_8" value="{{$SecondDirectorsFirm->cin_2_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_2_8" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_8" name="company_status_2_8" value="{{$SecondDirectorsFirm->company_status_2_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_2_8" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_8" name="appointment_date_2_8" value="{{$SecondDirectorsFirm->appointment_date_2_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_2_8" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_8" name="business_of_entity_2_8" value="{{$SecondDirectorsFirm->business_of_entity_2_8}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_2_8" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_2_8" name="business_conflict_2_8" value="{{$SecondDirectorsFirm->business_conflict_2_8}}">
-                        </div>
-
-
-
+                            
+                        @endfor
+                        
 
 
                         <!-- =========== Director2 ============ -->
                         <!-- =========== Director3 ============ -->
 
+                        @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_1" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_1" name="director_name_3_1" value="{{$ThirdDirectorsFirm->director_name_3_1}}">
+                            <label for="director_name_3_{{ $i }}" class="form-label">Director 3</label>
+                            <input type="text" class="form-control" id="director_name_3_{{ $i }}" name="director_name_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'director_name_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_1" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_1" name="company_name_3_1" value="{{$ThirdDirectorsFirm->company_name_3_1}}">
+                            <label for="company_name_3_{{ $i }}" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company_name_3_{{ $i }}" name="company_name_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_name_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="cin_3_1" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_1" name="cin_3_1" value="{{$ThirdDirectorsFirm->cin_3_1}}">
+                            <label for="cin_3_{{ $i }}" class="form-label">CIN</label>
+                            <input type="text" class="form-control" id="cin_3_{{ $i }}" name="cin_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'cin_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_1" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_1" name="company_status_3_1" value="{{$ThirdDirectorsFirm->company_status_3_1}}">
+                            <label for="company_status_3_{{ $i }}" class="form-label">Company Status</label>
+                            <input type="text" class="form-control" id="company_status_3_{{ $i }}" name="company_status_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_status_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_1" class="form-label">Appointment
+                            <label for="appointment_date_3_{{ $i }}" class="form-label">Appointment
                                 Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_1" name="appointment_date_3_1" value="{{$ThirdDirectorsFirm->appointment_date_3_1}}">
+                            <input type="date" class="form-control" id="appointment_date_3_{{ $i }}" name="appointment_date_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'appointment_date_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_1" class="form-label">Business of the
+                            <label for="business_of_entity_3_{{ $i }}" class="form-label">Business of the
                                 Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_1" name="business_of_entity_3_1" value="{{$ThirdDirectorsFirm->business_of_entity_3_1}}">
+                            <input type="text" class="form-control" id="business_of_entity_3_{{ $i }}" name="business_of_entity_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_of_entity_3_'. $i } }}">
                         </div>
                         <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_1" class="form-label">Business Conflict
+                            <label for="business_conflict_3_{{ $i }}" class="form-label">Business Conflict
                             </label>
-                            <input type="text" class="form-control" id="business_conflict_3_1" name="business_conflict_3_1" value="{{$ThirdDirectorsFirm->business_conflict_3_1}}">
+                            <input type="text" class="form-control" id="business_conflict_3_{{ $i }}" name="business_conflict_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_conflict_3_'. $i } }}">
                         </div>
+                            
+                        @endfor
 
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_2" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_2" name="director_name_3_2" value="{{$ThirdDirectorsFirm->director_name_3_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_2" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_2" name="company_name_3_2" value="{{$ThirdDirectorsFirm->company_name_3_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_2" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_2" name="cin_3_2" value="{{$ThirdDirectorsFirm->cin_3_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_2" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_2" name="company_status_3_2" value="{{$ThirdDirectorsFirm->company_status_3_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_2" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_2" name="appointment_date_3_2" value="{{$ThirdDirectorsFirm->appointment_date_3_2}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_2" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_2" name="business_of_entity_3_2" value="{{$ThirdDirectorsFirm->business_of_entity_3_2}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_2" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_2" name="business_conflict_3_2" value="{{$ThirdDirectorsFirm->business_conflict_3_2}}">
-                        </div>
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_3" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_3" name="director_name_3_3" value="{{$ThirdDirectorsFirm->director_name_3_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_3" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_3" name="company_name_3_3" value="{{$ThirdDirectorsFirm->company_name_3_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_3" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_3" name="cin_3_3" value="{{$ThirdDirectorsFirm->cin_3_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_3" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_3" name="company_status_3_3" value="{{$ThirdDirectorsFirm->company_status_3_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_3" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_3" name="appointment_date_3_3" value="{{$ThirdDirectorsFirm->appointment_date_3_3}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_3" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_3" name="business_of_entity_3_3" value="{{$ThirdDirectorsFirm->business_of_entity_3_3}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_3" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_3" name="business_conflict_3_3" value="{{$ThirdDirectorsFirm->business_conflict_3_3}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_4" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_4" name="director_name_3_4" value="{{$ThirdDirectorsFirm->director_name_3_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_4" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_4" name="company_name_3_4" value="{{$ThirdDirectorsFirm->company_name_3_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_4" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_4" name="cin_3_4" value="{{$ThirdDirectorsFirm->cin_3_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_4" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_4" name="company_status_3_4" value="{{$ThirdDirectorsFirm->company_status_3_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_4" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_4" name="appointment_date_3_4" value="{{$ThirdDirectorsFirm->appointment_date_3_4}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_4" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_4" name="business_of_entity_3_4" value="{{$ThirdDirectorsFirm->business_of_entity_3_4}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_4" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_4" name="business_conflict_3_4" value="{{$ThirdDirectorsFirm->business_conflict_3_4}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_5" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_5" name="director_name_3_5" value="{{$ThirdDirectorsFirm->director_name_3_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_5" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_5" name="company_name_3_5" value="{{$ThirdDirectorsFirm->company_name_3_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_5" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_5" name="cin_3_5" value="{{$ThirdDirectorsFirm->cin_3_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_5" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_5" name="company_status_3_5" value="{{$ThirdDirectorsFirm->company_status_3_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_5" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_5" name="appointment_date_3_5" value="{{$ThirdDirectorsFirm->appointment_date_3_5}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_5" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_5" name="business_of_entity_3_5" value="{{$ThirdDirectorsFirm->business_of_entity_3_5}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_5" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_5" name="business_conflict_3_5" value="{{$ThirdDirectorsFirm->business_conflict_3_5}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_6" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_6" name="director_name_3_6" value="{{$ThirdDirectorsFirm->director_name_3_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_6" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_6" name="company_name_3_6" value="{{$ThirdDirectorsFirm->company_name_3_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_6" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_6" name="cin_3_6" value="{{$ThirdDirectorsFirm->cin_3_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_6" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_6" name="company_status_3_6" value="{{$ThirdDirectorsFirm->company_status_3_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_6" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_6" name="appointment_date_3_6" value="{{$ThirdDirectorsFirm->appointment_date_3_6}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_6" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_6" name="business_of_entity_3_6" value="{{$ThirdDirectorsFirm->business_of_entity_3_6}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_6" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_6" name="business_conflict_3_6" value="{{$ThirdDirectorsFirm->business_conflict_3_6}}">
-                        </div>
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_7" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_7" name="director_name_3_7" value="{{$ThirdDirectorsFirm->director_name_3_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_7" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_7" name="company_name_3_7" value="{{$ThirdDirectorsFirm->company_name_3_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_7" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_7" name="cin_3_7" value="{{$ThirdDirectorsFirm->cin_3_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_7" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_7" name="company_status_3_7" value="{{$ThirdDirectorsFirm->company_status_3_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_7" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_7" name="appointment_date_3_7" value="{{$ThirdDirectorsFirm->appointment_date_3_7}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_7" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_7" name="business_of_entity_3_7" value="{{$ThirdDirectorsFirm->business_of_entity_3_7}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_7" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_7" name="business_conflict_3_7" value="{{$ThirdDirectorsFirm->business_conflict_3_7}}">
-                        </div>
-
-
-
-                        <div class="col-xl-4 mb-3">
-                            <label for="director_name_3_8" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_8" name="director_name_3_8" value="{{$ThirdDirectorsFirm->director_name_3_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_name_3_8" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_8" name="company_name_3_8" value="{{$ThirdDirectorsFirm->company_name_3_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="cin_3_8" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_8" name="cin_3_8" value="{{$ThirdDirectorsFirm->cin_3_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_status_3_8" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_8" name="company_status_3_8" value="{{$ThirdDirectorsFirm->company_status_3_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="appointment_date_3_8" class="form-label">Appointment
-                                Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_8" name="appointment_date_3_8" value="{{$ThirdDirectorsFirm->appointment_date_3_8}}">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="business_of_entity_3_8" class="form-label">Business of the
-                                Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_8" name="business_of_entity_3_8" value="{{$ThirdDirectorsFirm->business_of_entity_3_8}}">
-                        </div>
-                        <div class="col-xl-12 mb-3">
-                            <label for="business_conflict_3_8" class="form-label">Business Conflict
-                            </label>
-                            <input type="text" class="form-control" id="business_conflict_3_8" name="business_conflict_3_8" value="{{$ThirdDirectorsFirm->business_conflict_3_8}}">
-                        </div>
 
                         <!-- =========== Director3 ============ -->
                         <div class="row">
@@ -1634,90 +604,25 @@
 
                         <input type="hidden" name="CourtCheckId" id="CourtCheckId" value="{{$CourtCheck->id}}" class="form-control" value="">
 
+                        @for ($i=1; $i <=5; $i++)
                         <div class="col-xl-3 mb-3">
-                            <label for="director_name_1" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="director_name_1" id="director_name_1" value="{{$CourtCheck->director_name_1}}" placeholder="">
+                            <label for="director_name_{{ $i }}" class="form-label">Name </label>
+                            <input type="text" class="form-control" name="director_name_{{ $i }}" id="director_name_{{ $i }}" value="{{$CourtCheck->{'director_name_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="director_jurisdiction_1" class="form-label">Jurisdiction </label>
-                            <input type="text" class="form-control" class="form-control" name="director_jurisdiction_1" id="director_jurisdiction_1" value="{{$CourtCheck->director_jurisdiction_1}}" placeholder="">
+                            <label for="director_jurisdiction_{{ $i }}" class="form-label">Jurisdiction </label>
+                            <input type="text" class="form-control" class="form-control" name="director_jurisdiction_{{ $i }}" id="director_jurisdiction_{{ $i }}" value="{{$CourtCheck->{'director_jurisdiction_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="director_record_1" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="director_record_1" id="director_record_1" value="{{$CourtCheck->director_record_1}}" placeholder="">
+                            <label for="director_record_{{ $i }}" class="form-label">Record</label>
+                            <input type="text" class="form-control" name="director_record_{{ $i }}" id="director_record_{{ $i }}" value="{{$CourtCheck->{'director_record_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="director_subject_matter_1" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="director_subject_matter_1" id="director_subject_matter_1" value="{{$CourtCheck->director_subject_matter_1}}" placeholder="">
+                            <label for="director_subject_matter_{{ $i }}" class="form-label">Subject Matter</label>
+                            <input type="text" class="form-control" name="director_subject_matter_{{ $i }}" id="director_subject_matter_{{ $i }}" value="{{$CourtCheck->{'director_subject_matter_'. $i } }}" placeholder="">
                         </div>
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_name_2" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="director_name_2" id="director_name_2" value="{{$CourtCheck->director_name_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_jurisdiction_2" class="form-label">Jurisdiction </label>
-                            <input type="text" class="form-control" class="form-control" name="director_jurisdiction_2" id="director_jurisdiction_2" value="{{$CourtCheck->director_jurisdiction_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_record_2" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="director_record_2" id="director_record_2" value="{{$CourtCheck->director_record_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_subject_matter_2" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="director_subject_matter_2" id="director_subject_matter_2" value="{{$CourtCheck->director_subject_matter_2}}" placeholder="">
-                        </div>
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_name_3" class="form-label">Name </label>
-                            <input type="text" class="form-control"  name="director_name_3" id="director_name_3" value="{{$CourtCheck->director_name_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_jurisdiction_3" class="form-label">Jurisdiction </label>
-                            <input type="text" class="form-control" class="form-control" name="director_jurisdiction_3" id="director_jurisdiction_3" value="{{$CourtCheck->director_jurisdiction_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_record_3" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="director_record_3" id="director_record_3" value="{{$CourtCheck->director_record_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_subject_matter_3" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="director_subject_matter_3" id="director_subject_matter_3" value="{{$CourtCheck->director_subject_matter_3}}" placeholder="">
-                        </div>
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_name_4" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="director_name_4" id="director_name_4" value="{{$CourtCheck->director_name_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_jurisdiction_4" class="form-label">Jurisdiction </label>
-                            <input type="text" class="form-control" class="form-control" name="director_jurisdiction_4" id="director_jurisdiction_4" value="{{$CourtCheck->director_jurisdiction_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_record_4" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="director_record_4" id="director_record_4" value="{{$CourtCheck->director_record_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_subject_matter_4" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="director_subject_matter_4" id="director_subject_matter_4" value="{{$CourtCheck->director_subject_matter_4}}" placeholder="">
-                        </div>
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_name_5" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="director_name_5" id="director_name_5" value="{{$CourtCheck->director_name_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_jurisdiction_5" class="form-label">Jurisdiction </label>
-                            <input type="text" class="form-control" class="form-control" name="director_jurisdiction_5" id="director_jurisdiction_5" value="{{$CourtCheck->director_jurisdiction_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_record_5" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="director_record_5" id="director_record_5" value="{{$CourtCheck->director_record_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="director_subject_matter_5" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="director_subject_matter_5" id="director_subject_matter_5" value="{{$CourtCheck->director_subject_matter_5}}" placeholder="">
-                        </div>
+                        @endfor
+                   
 
                         <div class="col-xl-12 d-flex justify-content-end">
                             <button type="button" class="btn btn report-tab-active" id="court-next-1">Next</button>
@@ -1732,76 +637,25 @@
                     <h4 class="card-title">Court Checks<br>
                         <span style="color:darkgray; font-size:12px;"> Court check of Company </span>
                     </h4>
+                    
+                    @for ($i=1; $i <=5; $i++)
                     <div class="row">
                         <div class="col-xl-3 mb-3">
-                            <label for="company_jurisdiction_1" class="form-label">Jurisdiction</label>
-                            <input type="text" class="form-control" name="company_jurisdiction_1" id="company_jurisdiction_1" value="{{$CourtCheck->company_jurisdiction_1}}" placeholder="">
+                            <label for="company_jurisdiction_{{ $i }}" class="form-label">Jurisdiction</label>
+                            <input type="text" class="form-control" name="company_jurisdiction_{{ $i }}" id="company_jurisdiction_{{ $i }}" value="{{$CourtCheck->{'company_jurisdiction_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-4 mb-3">
-                            <label for="company_record_1" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="company_record_1" id="company_record_1" value="{{$CourtCheck->company_record_1}}" placeholder="">
+                            <label for="company_record_{{ $i }}" class="form-label">Record</label>
+                            <input type="text" class="form-control" name="company_record_{{ $i }}" id="company_record_{{ $i }}" value="{{$CourtCheck->{'company_record_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="company_subject_matter_1" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="company_subject_matter_1" id="company_subject_matter_1" value="{{$CourtCheck->company_subject_matter_1}}" placeholder="">
+                            <label for="company_subject_matter_{{ $i }}" class="form-label">Subject Matter</label>
+                            <input type="text" class="form-control" name="company_subject_matter_{{ $i }}" id="company_subject_matter_{{ $i }}" value="{{$CourtCheck->{'company_subject_matter_'. $i } }}" placeholder="">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_jurisdiction_2" class="form-label">Jurisdiction</label>
-                            <input type="text" class="form-control" name="company_jurisdiction_2" id="company_jurisdiction_2" value="{{$CourtCheck->company_jurisdiction_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_record_2" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="company_record_2" id="company_record_2" value="{{$CourtCheck->company_record_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_subject_matter_2" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="company_subject_matter_2" id="company_subject_matter_2" value="{{$CourtCheck->company_subject_matter_2}}" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_jurisdiction_3" class="form-label">Jurisdiction</label>
-                            <input type="text" class="form-control" name="company_jurisdiction_3" id="company_jurisdiction_3" value="{{$CourtCheck->company_jurisdiction_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_record_3" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="company_record_3" id="company_record_3" value="{{$CourtCheck->company_record_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_subject_matter_3" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="company_subject_matter_3" id="company_subject_matter_3" value="{{$CourtCheck->company_subject_matter_3}}" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_jurisdiction_4" class="form-label">Jurisdiction</label>
-                            <input type="text" class="form-control"  name="company_jurisdiction_4" id="company_jurisdiction_4" value="{{$CourtCheck->company_jurisdiction_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_record_4" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="company_record_4" id="company_record_4" value="{{$CourtCheck->company_record_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_subject_matter_4" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="company_subject_matter_4" id="company_subject_matter_4" value="{{$CourtCheck->company_subject_matter_4}}" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_jurisdiction_5" class="form-label">Jurisdiction</label>
-                            <input type="text" class="form-control" name="company_jurisdiction_5" id="company_jurisdiction_5" value="{{$CourtCheck->company_jurisdiction_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-4 mb-3">
-                            <label for="company_record_5" class="form-label">Record</label>
-                            <input type="text" class="form-control" name="company_record_5" id="company_record_5" value="{{$CourtCheck->company_record_5}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="company_subject_matter_5" class="form-label">Subject Matter</label>
-                            <input type="text" class="form-control" name="company_subject_matter_5" id="company_subject_matter_5" value="{{$CourtCheck->company_subject_matter_5}}" placeholder="">
-                        </div>
-                    </div>
+                  
+                    @endfor
+                    
                     <!-- Repeat the above code block for additional rows -->
 
                     <!-- OFAC Check -->
@@ -1876,74 +730,24 @@
 
                         <input type="hidden" name="FinancialID" id="FinancialID" class="form-control" value="{{$Financial->id}}">
 
+                        @for ($i=1; $i <= 4; $i++)
                         <div class="col-xl-3 mb-3">
-                            <label for="name_1" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="name_1"  id="name_1" value="{{$Financial->name_1}}" placeholder="">
+                            <label for="name_{{ $i }}" class="form-label">Name </label>
+                            <input type="text" class="form-control" name="name_{{ $i }}"  id="name_{{ $i }}" value="{{$Financial->{'name_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="status_1" class="form-label">Status </label>
-                            <input type="text" class="form-control" name="status_1" id="status_1" value="{{$Financial->status_1}}" placeholder="">
+                            <label for="status_{{ $i }}" class="form-label">Status </label>
+                            <input type="text" class="form-control" name="status_{{ $i }}" id="status_{{ $i }}" value="{{$Financial->{'status_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="amount_1" class="form-label">Amount</label>
-                            <input type="number" step="any" minlenght="0" class="form-control" name="amount_1"  id="amount_1" value="{{$Financial->amount_1}}" placeholder="">
+                            <label for="amount_{{ $i }}" class="form-label">Amount</label>
+                            <input type="number" step="any" minlenght="0" class="form-control" name="amount_{{ $i }}"  id="amount_{{ $i }}" value="{{$Financial->{'amount_'. $i } }}" placeholder="">
                         </div>
                         <div class="col-xl-3 mb-3">
-                            <label for="charged_property_1" class="form-label">Charged Property </label>
-                            <input type="text" class="form-control"  name="charged_property_1"  id="charged_property_1" value="{{$Financial->charged_property_1}}" placeholder="">
+                            <label for="charged_property_{{ $i }}" class="form-label">Charged Property </label>
+                            <input type="text" class="form-control"  name="charged_property_{{ $i }}"  id="charged_property_{{ $i }}" value="{{$Financial->{'charged_property_'. $i } }}" placeholder="">
                         </div>
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="name_2" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="name_2"  id="name_2" value="{{$Financial->name_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="status_2" class="form-label">Status </label>
-                            <input type="text" class="form-control" name="status_2"  id="status_2" value="{{$Financial->status_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="amount_2" class="form-label">Amount</label>
-                            <input  type="number" step="any" minlenght="0" class="form-control" name="amount_2"  id="amount_2" value="{{$Financial->amount_2}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="charged_property_2" class="form-label">Charged Property </label>
-                            <input type="text" class="form-control"  name="charged_property_2"  id="charged_property_2" value="{{$Financial->charged_property_2}}" placeholder="">
-                        </div>
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="name_3" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="name_3"  id="name_3" value="{{$Financial->name_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="status_3" class="form-label">Status </label>
-                            <input type="text" class="form-control" name="status_3"  id="status_3" value="{{$Financial->status_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="amount_3" class="form-label">Amount</label>
-                            <input  type="number" step="any" minlenght="0" class="form-control" name="amount_3"  id="amount_3" value="{{$Financial->amount_3}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="charged_property_3" class="form-label">Charged Property </label>
-                            <input type="text" class="form-control"  name="charged_property_3"  id="charged_property_3" value="{{$Financial->charged_property_3}}" placeholder="">
-                        </div>
-
-
-                        <div class="col-xl-3 mb-3">
-                            <label for="name_4" class="form-label">Name </label>
-                            <input type="text" class="form-control" name="name_4"  id="name_4" value="{{$Financial->name_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="status_4" class="form-label">Status </label>
-                            <input type="text" class="form-control" name="status_4"  id="status_4" value="{{$Financial->status_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="amount_4" class="form-label">Amount</label>
-                            <input  type="number" step="any" minlenght="0" class="form-control" name="amount_4"  id="amount_4" value="{{$Financial->amount_4}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="charged_property_4" class="form-label">Charged Property </label>
-                            <input type="text" class="form-control"  name="charged_property_4"  id="charged_property_4" value="{{$Financial->charged_property_4}}" placeholder="">
-                        </div>
+                        @endfor
                         <div class="col-xl-3 mb-3">
                                 <label for="overall_financial_score" class="form-label">Overall Financial Score</label>
                                 <input type="number" step="any" minlength="0" class="form-control" name="overall_financial_score" id="overall_financial_score" value="{{$Financial->overall_financial_score}}" placeholder="">
@@ -3800,131 +2604,39 @@
                 <!-- Tax Return and Credit 2 step start ========================-->
                 <div class="Tax-Return-and-Credit-step" id="Tax-Return-and-Credit-step-2">
 
-                    <div class="row">
+                @for ($i=1; $i <= 4; $i++)
+                <div class="row">
                         <div class="col-xl-2 mb-3">
-                            <label for="name_1" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name_1" id="name_1" value="{{$TaxReurnCredit->name_1}}">
+                            <label for="name_{{ $i }}" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="name_{{ $i }}" id="name_{{ $i }}" value="{{$TaxReurnCredit->{'name_'. $i } }}">
                         </div>
                         <div class="col-xl-1 mb-3">
-                            <label for="credit_score_1" class="form-label">Credit Score</label>
-                            <input type="number"  step="any" class="form-control" name="credit_score_1" id="credit_score_1" value="{{$TaxReurnCredit->credit_score_1}}">
+                            <label for="credit_score_{{ $i }}" class="form-label">Credit Score</label>
+                            <input type="number"  step="any" class="form-control" name="credit_score_{{ $i }}" id="credit_score_{{ $i }}" value="{{$TaxReurnCredit->{'credit_score_'. $i } }}">
                         </div>
                         <div class="col-xl-1 mb-3">
-                            <label for="num_of_loans_1" class="form-label">No. of Loans</label>
-                            <input type="number"  step="any" class="form-control"  name="num_of_loans_1"  id="num_of_loans_1" value="{{$TaxReurnCredit->num_of_loans_1}}">
+                            <label for="num_of_loans_{{ $i }}" class="form-label">No. of Loans</label>
+                            <input type="number"  step="any" class="form-control"  name="num_of_loans_{{ $i }}"  id="num_of_loans_{{ $i }}" value="{{$TaxReurnCredit->{'num_of_loans_'. $i } }}">
                         </div>
                         <div class="col-xl-2 mb-3">
-                            <label for="outstanding_amount_1" class="form-label">Outstanding Amount</label>
-                            <input type="number"  step="any" class="form-control" name="outstanding_amount_1" id="outstanding_amount_1" value="{{$TaxReurnCredit->outstanding_amount_1}}">
+                            <label for="outstanding_amount_{{ $i }}" class="form-label">Outstanding Amount</label>
+                            <input type="number"  step="any" class="form-control" name="outstanding_amount_{{ $i }}" id="outstanding_amount_{{ $i }}" value="{{$TaxReurnCredit->{'outstanding_amount_'. $i } }}">
                         </div>
                         <div class="col-xl-2 mb-3">
-                            <label for="solvency_1" class="form-label">Solvency</label>
-                            <input type="text" class="form-control" name="solvency_1" id="solvency_1" value="{{$TaxReurnCredit->solvency_1}}">
+                            <label for="solvency_{{ $i }}" class="form-label">Solvency</label>
+                            <input type="text" class="form-control" name="solvency_{{ $i }}" id="solvency_{{ $i }}" value="{{$TaxReurnCredit->{'solvency_'. $i } }}">
                         </div>
                         <div class="col-xl-2 mb-3">
-                            <label for="payment_history_1" class="form-label">Payment History</label>
-                            <input type="text" class="form-control" name="payment_history_1" id="payment_history_1" value="{{$TaxReurnCredit->payment_history_1}}">
+                            <label for="payment_history_{{ $i }}" class="form-label">Payment History</label>
+                            <input type="text" class="form-control" name="payment_history_{{ $i }}" id="payment_history_{{ $i }}" value="{{$TaxReurnCredit->{'payment_history_'. $i } }}">
                         </div>
                         <div class="col-xl-2 mb-3">
-                            <label for="credit_dependency_1" class="form-label">Credit Dependency</label>
-                            <input type="text" class="form-control" name="credit_dependency_1" id="credit_dependency_1" value="{{$TaxReurnCredit->credit_dependency_1}}">
+                            <label for="credit_dependency_{{ $i }}" class="form-label">Credit Dependency</label>
+                            <input type="text" class="form-control" name="credit_dependency_{{ $i }}" id="credit_dependency_{{ $i }}" value="{{$TaxReurnCredit->{'credit_dependency_'. $i } }}">
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-xl-2 mb-3">
-                            <label for="name_2" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name_2" id="name_2" value="{{$TaxReurnCredit->name_2}}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="credit_score_2" class="form-label">Credit Score</label>
-                            <input type="number"  step="any" class="form-control" name="credit_score_2" id="credit_score_2" value="{{$TaxReurnCredit->credit_score_2}}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="num_of_loans_2" class="form-label">No. of Loans</label>
-                            <input type="number"  step="any" class="form-control"  name="num_of_loans_2"  id="num_of_loans_2" value="{{$TaxReurnCredit->num_of_loans_2}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="outstanding_amount_2" class="form-label">Outstanding Amount</label>
-                            <input type="number"  step="any" class="form-control" name="outstanding_amount_2" id="outstanding_amount_2" value="{{$TaxReurnCredit->outstanding_amount_2}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="solvency_2" class="form-label">Solvency</label>
-                            <input type="text" class="form-control" name="solvency_2" id="solvency_2" value="{{$TaxReurnCredit->solvency_2}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="payment_history_2" class="form-label">Payment History</label>
-                            <input type="text" class="form-control" name="payment_history_2" id="payment_history_2" value="{{$TaxReurnCredit->payment_history_2}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="credit_dependency_2" class="form-label">Credit Dependency</label>
-                            <input type="text" class="form-control" name="credit_dependency_2" id="credit_dependency_2" value="{{$TaxReurnCredit->credit_dependency_2}}">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-2 mb-3">
-                            <label for="name_3" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name_3" id="name_3" value="{{$TaxReurnCredit->name_3}}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="credit_score_3" class="form-label">Credit Score</label>
-                            <input type="number"  step="any" class="form-control" name="credit_score_3" id="credit_score_3" value="{{$TaxReurnCredit->credit_score_3}}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="num_of_loans_3" class="form-label">No. of Loans</label>
-                            <input type="number"  step="any" class="form-control"  name="num_of_loans_3"  id="num_of_loans_3" value="{{$TaxReurnCredit->num_of_loans_3}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="outstanding_amount_3" class="form-label">Outstanding Amount</label>
-                            <input type="number"  step="any" class="form-control" name="outstanding_amount_3" id="outstanding_amount_3" value="{{$TaxReurnCredit->outstanding_amount_3}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="solvency_3" class="form-label">Solvency</label>
-                            <input type="text" class="form-control" name="solvency_3" id="solvency_3" value="{{$TaxReurnCredit->solvency_3}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="payment_history_3" class="form-label">Payment History</label>
-                            <input type="text" class="form-control" name="payment_history_3" id="payment_history_3" value="{{$TaxReurnCredit->payment_history_3}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="credit_dependency_3" class="form-label">Credit Dependency</label>
-                            <input type="text" class="form-control" name="credit_dependency_3" id="credit_dependency_3" value="{{$TaxReurnCredit->credit_dependency_3}}">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-2 mb-3">
-                            <label for="name_4" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name_4" id="name_4" value="{{$TaxReurnCredit->name_4}}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="credit_score_4" class="form-label">Credit Score</label>
-                            <input type="number"  step="any" class="form-control" name="credit_score_4" id="credit_score_4" value="{{$TaxReurnCredit->credit_score_4}}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="num_of_loans_4" class="form-label">No. of Loans</label>
-                            <input type="number"  step="any" class="form-control"  name="num_of_loans_4"  id="num_of_loans_4" value="{{$TaxReurnCredit->num_of_loans_4}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="outstanding_amount_4" class="form-label">Outstanding Amount</label>
-                            <input type="number"  step="any" class="form-control" name="outstanding_amount_4" id="outstanding_amount_4" value="{{$TaxReurnCredit->outstanding_amount_4}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="solvency_4" class="form-label">Solvency</label>
-                            <input type="text" class="form-control" name="solvency_4" id="solvency_4" value="{{$TaxReurnCredit->solvency_4}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="payment_history_4" class="form-label">Payment History</label>
-                            <input type="text" class="form-control" name="payment_history_4" id="payment_history_4" value="{{$TaxReurnCredit->payment_history_4}}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="credit_dependency_4" class="form-label">Credit Dependency</label>
-                            <input type="text" class="form-control" name="credit_dependency_4" id="credit_dependency_4" value="{{$TaxReurnCredit->credit_dependency_4}}">
-                        </div>
-                    </div>
-
-
+                @endfor
+                    
                     <div class="row">
                         <div class="col-xl-2 mb-3">
                             <label for="overall_credit_history_score" class="form-label">Overall Credit History Score</label>
@@ -4082,11 +2794,14 @@
                         </div>
                     </div>
                     <div class="row">
+                        <label class="form-label">Recommendations</label>
+                        
+                        @for ($i=1; $i <=25; $i++)
                         <div class="col-xl-12 mb-3">
-
-                            <label class="form-label">Recommendations</label>
-                            <textarea rows="4" id="key_recommendations" name="key_recommendations" class="form-control"> {{$KeyObservation->key_recommendations}} </textarea>
+                                
+                        {{ $i }} <textarea placeholder="" rows="2" id="key_recommendations{{ $i }}" name="key_recommendations{{ $i }}" class="form-control"> {{$KeyObservation->{'key_recommendations'. $i } }} </textarea>
                         </div>
+                            @endfor
                     </div>
 
                     <div class="row">

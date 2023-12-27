@@ -21,15 +21,10 @@ class CreateKeyObservationsTable extends Migration
             $table->text('score_analysis')->nullable();
             $table->text('overall_risk_score')->nullable();
             $table->longText('key_observation')->nullable();
-            for ($i=1; $i <=10 ; $i++) {
-                # code...
+            for ($i=1; $i <=25 ; $i++) {
                 $table->text('key_recommendations_'.$i)->nullable();
             }
-            // file upload
             $table->string('key_observation_final_report_file')->nullable();
-
-
-
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
             $table->timestamps();
