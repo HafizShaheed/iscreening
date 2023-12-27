@@ -486,7 +486,7 @@ class adminController extends Controller
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id',$id)->first();
 
 
-// ===================================================== Business graph start ===================
+            // ===================================================== Business graph start ===================
 
                 $data['businessInteligenceGrapFY_accounts_payable'] = [
 
@@ -546,7 +546,7 @@ class adminController extends Controller
                     $data['BusinessIntelligence']->year_BI_FY_five,
 
 ];
-// ===================================================== Business graph end ===================
+        // ===================================================== Business graph end ===================
 
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
@@ -1090,67 +1090,72 @@ $data['financialRatioGrapFYhLablesName'] = [
         $firmBackground->ofac_check = $request->input('ofac_check');
         $firmBackground->regulatory_score = $request->input('regulatory_score');
         $firmBackground->score_analysis = $request->input('score_analysis');
-        $firmBackground->Type_of_risk = $request->input('credit_score') > 60 ? 'High Risk' : ($request->input('credit_score') <= 60 && $request->input('credit_score') > 30 ? 'Medium Risk' : ($request->input('credit_score') <= 30 ? 'Low Risk' : '' ) );
-        $firmBackground->name_1 = $request->input('name_1');
-        $firmBackground->pan_1 = $request->input('pan_1');
-        $firmBackground->aadhar_1 = $request->input('aadhar_1');
-        $firmBackground->date_of_appointment_1 = $request->input('date_of_appointment_1');
-        $firmBackground->educational_background_1 = $request->input('educational_background_1');
-        // second
-        $firmBackground->name_2 = $request->input('name_2');
-        $firmBackground->pan_2 = $request->input('pan_2');
-        $firmBackground->aadhar_2 = $request->input('aadhar_2');
-        $firmBackground->date_of_appointment_2 = $request->input('date_of_appointment_2');
-        $firmBackground->educational_background_2 = $request->input('educational_background_2');
-        // 3rd
+        $firmBackground->Type_of_risk = $request->input('regulatory_score') > 60 ? 'High Risk' : ($request->input('regulatory_score') <= 60 && $request->input('regulatory_score') > 30 ? 'Medium Risk' : ($request->input('regulatory_score') <= 30 ? 'Low Risk' : '' ) );
+        
+        for ($i = 1; $i <= 10; $i++) {
+            $firmBackground->{"name_$i"} = $request->input("name_$i");
+            $firmBackground->{"pan_$i"} = $request->input("pan_$i");
+            $firmBackground->{"aadhar_$i"} = $request->input("aadhar_$i");
+            $firmBackground->{"date_of_appointment_$i"} = $request->input("date_of_appointment_$i");
+            $firmBackground->{"educational_background_$i"} = $request->input("educational_background_$i");
+            $firmBackground->{"din_$i"} = $request->input("din_$i");
+        }
 
-        $firmBackground->name_3 = $request->input('name_3');
-        $firmBackground->pan_3 = $request->input('pan_3');
-        $firmBackground->aadhar_3 = $request->input('aadhar_3');
-        $firmBackground->date_of_appointment_3 = $request->input('date_of_appointment_3');
-        $firmBackground->educational_background_3 = $request->input('educational_background_3');
-        // 4th name
-        $firmBackground->name_4 = $request->input('name_4');
-        $firmBackground->pan_4 = $request->input('pan_4');
-        $firmBackground->aadhar_4 = $request->input('aadhar_4');
-        $firmBackground->date_of_appointment_4 = $request->input('date_of_appointment_4');
-        $firmBackground->educational_background_4 = $request->input('educational_background_4');
-        // 5th
-        $firmBackground->name_5 = $request->input('name_5');
-        $firmBackground->pan_5 = $request->input('pan_5');
-        $firmBackground->aadhar_5 = $request->input('aadhar_5');
-        $firmBackground->date_of_appointment_5 = $request->input('date_of_appointment_5');
-        $firmBackground->educational_background_5 = $request->input('educational_background_5');
-        // 6th
-        $firmBackground->name_6 = $request->input('name_6');
-        $firmBackground->pan_6 = $request->input('pan_6');
-        $firmBackground->aadhar_6 = $request->input('aadhar_6');
-        $firmBackground->date_of_appointment_6 = $request->input('date_of_appointment_6');
-        $firmBackground->educational_background_6 = $request->input('educational_background_6');
-        // 7th
-        $firmBackground->name_7 = $request->input('name_7');
-        $firmBackground->pan_7 = $request->input('pan_7');
-        $firmBackground->aadhar_7 = $request->input('aadhar_7');
-        $firmBackground->date_of_appointment_7 = $request->input('date_of_appointment_7');
-        $firmBackground->educational_background_7 = $request->input('educational_background_7');
-        // 8th
-        $firmBackground->name_8 = $request->input('name_8');
-        $firmBackground->pan_8 = $request->input('pan_8');
-        $firmBackground->aadhar_8 = $request->input('aadhar_8');
-        $firmBackground->date_of_appointment_8 = $request->input('date_of_appointment_8');
-        $firmBackground->educational_background_8 = $request->input('educational_background_8');
-        // 9th
-        $firmBackground->name_9 = $request->input('name_9');
-        $firmBackground->pan_9 = $request->input('pan_9');
-        $firmBackground->aadhar_9 = $request->input('aadhar_9');
-        $firmBackground->date_of_appointment_9 = $request->input('date_of_appointment_9');
-        $firmBackground->educational_background_9 = $request->input('educational_background_9');
-        // 10th
-        $firmBackground->name_10 = $request->input('name_10');
-        $firmBackground->pan_10 = $request->input('pan_10');
-        $firmBackground->aadhar_10 = $request->input('aadhar_10');
-        $firmBackground->date_of_appointment_10 = $request->input('date_of_appointment_10');
-        $firmBackground->educational_background_10 = $request->input('educational_background_10');
+        // second
+        // $firmBackground->name_2 = $request->input('name_2');
+        // $firmBackground->pan_2 = $request->input('pan_2');
+        // $firmBackground->aadhar_2 = $request->input('aadhar_2');
+        // $firmBackground->date_of_appointment_2 = $request->input('date_of_appointment_2');
+        // $firmBackground->educational_background_2 = $request->input('educational_background_2');
+        // // 3rd
+
+        // $firmBackground->name_3 = $request->input('name_3');
+        // $firmBackground->pan_3 = $request->input('pan_3');
+        // $firmBackground->aadhar_3 = $request->input('aadhar_3');
+        // $firmBackground->date_of_appointment_3 = $request->input('date_of_appointment_3');
+        // $firmBackground->educational_background_3 = $request->input('educational_background_3');
+        // // 4th name
+        // $firmBackground->name_4 = $request->input('name_4');
+        // $firmBackground->pan_4 = $request->input('pan_4');
+        // $firmBackground->aadhar_4 = $request->input('aadhar_4');
+        // $firmBackground->date_of_appointment_4 = $request->input('date_of_appointment_4');
+        // $firmBackground->educational_background_4 = $request->input('educational_background_4');
+        // // 5th
+        // $firmBackground->name_5 = $request->input('name_5');
+        // $firmBackground->pan_5 = $request->input('pan_5');
+        // $firmBackground->aadhar_5 = $request->input('aadhar_5');
+        // $firmBackground->date_of_appointment_5 = $request->input('date_of_appointment_5');
+        // $firmBackground->educational_background_5 = $request->input('educational_background_5');
+        // // 6th
+        // $firmBackground->name_6 = $request->input('name_6');
+        // $firmBackground->pan_6 = $request->input('pan_6');
+        // $firmBackground->aadhar_6 = $request->input('aadhar_6');
+        // $firmBackground->date_of_appointment_6 = $request->input('date_of_appointment_6');
+        // $firmBackground->educational_background_6 = $request->input('educational_background_6');
+        // // 7th
+        // $firmBackground->name_7 = $request->input('name_7');
+        // $firmBackground->pan_7 = $request->input('pan_7');
+        // $firmBackground->aadhar_7 = $request->input('aadhar_7');
+        // $firmBackground->date_of_appointment_7 = $request->input('date_of_appointment_7');
+        // $firmBackground->educational_background_7 = $request->input('educational_background_7');
+        // // 8th
+        // $firmBackground->name_8 = $request->input('name_8');
+        // $firmBackground->pan_8 = $request->input('pan_8');
+        // $firmBackground->aadhar_8 = $request->input('aadhar_8');
+        // $firmBackground->date_of_appointment_8 = $request->input('date_of_appointment_8');
+        // $firmBackground->educational_background_8 = $request->input('educational_background_8');
+        // // 9th
+        // $firmBackground->name_9 = $request->input('name_9');
+        // $firmBackground->pan_9 = $request->input('pan_9');
+        // $firmBackground->aadhar_9 = $request->input('aadhar_9');
+        // $firmBackground->date_of_appointment_9 = $request->input('date_of_appointment_9');
+        // $firmBackground->educational_background_9 = $request->input('educational_background_9');
+        // // 10th
+        // $firmBackground->name_10 = $request->input('name_10');
+        // $firmBackground->pan_10 = $request->input('pan_10');
+        // $firmBackground->aadhar_10 = $request->input('aadhar_10');
+        // $firmBackground->date_of_appointment_10 = $request->input('date_of_appointment_10');
+        // $firmBackground->educational_background_10 = $request->input('educational_background_10');
         $firmBackground->credit_score = $request->input('credit_score');
         $firmBackground->save();
 
@@ -2066,7 +2071,10 @@ $data['financialRatioGrapFYhLablesName'] = [
 
        $KeyObservation->overall_risk_score  = $request->input('overall_risk_score');
        $KeyObservation->key_observation  = $request->input('key_observation');
-       $KeyObservation->key_recommendations  = $request->input('key_recommendations');
+       for ($i = 1; $i <= 25; $i++) {
+       
+        $KeyObservation->{"key_recommendations_$i"} = $request->input("key_recommendations_$i");
+        }
        $KeyObservation->overall_risk_score = $request->input('overall_risk_score');
        $KeyObservation->status = 3;
        $KeyObservation->Type_of_risk = $request->input('overall_risk_score') > 60 ? 'High Risk' : ($request->input('overall_risk_score') <= 60 && $request->input('overall_risk_score') > 30 ? 'Medium Risk' : ($request->input('overall_risk_score') <= 30 ? 'Low Risk' : '' ) );
@@ -2202,6 +2210,7 @@ $data['financialRatioGrapFYhLablesName'] = [
 
     public function firm_file_download($id)
     {
+        $id = base64_decode($id);
         $data['FirmBackground'] = FirmBackground::where('id', $id)->first();
 
         // Replace 'path/to/your/image.jpg' with the actual path to your image
@@ -2214,7 +2223,9 @@ $data['financialRatioGrapFYhLablesName'] = [
     }
     public function onGround_file_download($id)
     {
+        $id = base64_decode($id);
         $data['OnGroundVerification'] = OnGroundVerification::where('id', $id)->first();
+        // dd($data['OnGroundVerification']);
 
         // Replace 'path/to/your/image.jpg' with the actual path to your image
         $imagePath = public_path('admin/assets/imgs/OnGroundVerification/' . $data['OnGroundVerification']->upload_picture);
@@ -2228,6 +2239,7 @@ $data['financialRatioGrapFYhLablesName'] = [
 
     public function final_Reprts_file_download($id)
     {
+        $id = base64_decode($id);
         $data['KeyObservation'] = KeyObservation::where('id', $id)->first();
 
         // Replace 'path/to/your/image.jpg' with the actual path to your image

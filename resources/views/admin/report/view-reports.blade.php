@@ -170,7 +170,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
-                                                                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
+                                                                <a href="{{ URL::to('/panel/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
                                                             </td>
 
                                                         </tr>
@@ -216,6 +216,13 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-8"> {{$FirmBackground->{'educational_background_'.$i} }}
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                    class="col-md-4">DIN</th>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                    class="col-md-8"> {{$FirmBackground->{'din_'.$i} }}
+                                                </td>
                                             </tr>
                                             @endif
                                             @endfor
@@ -987,7 +994,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->current_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                 </div>
@@ -1013,7 +1020,7 @@
                                                     class="card-title d-flex justify-content-center align-items-center">
                                                       Analysis</h3>
                                                     <p class="d-flex justify-content-center align-items-center text-center">
-                                                       abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                        {{ isset($FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->quick_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                        </p>
                                                     </div>
@@ -1025,7 +1032,7 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Dept Ratio </h4>
+                                                             Debt Ratio </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_DebtRatio"></canvas>
                                                         </div>
@@ -1034,7 +1041,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->debt_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->debt_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1056,7 +1063,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->solvency_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->solvency_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1078,7 +1085,7 @@
                                                             class="card-title d-flex justify-content-center align-items-center">
                                                               Analysis</h3>
                                                             <p class="d-flex justify-content-center align-items-center text-center">
-                                                               abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                                {{ isset($FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->debt_to_equity_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                                </p>
                                                         </div>
@@ -1099,7 +1106,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->asset_turnover_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->asset_turnover_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1120,7 +1127,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->absolute_liquidity_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1141,7 +1148,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->proprietary_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1164,7 +1171,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->net_profit_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                         </div>
@@ -1185,7 +1192,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->gross_profit_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1206,7 +1213,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->springate_s_score_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1227,7 +1234,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->trade_receivable_days_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1250,7 +1257,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->trade_payable_days_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                         </div>
@@ -1271,7 +1278,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->taffler_z_score_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                     </div>
@@ -1292,7 +1299,7 @@
                                                         class="card-title d-flex justify-content-center align-items-center">
                                                           Analysis</h3>
                                                         <p class="d-flex justify-content-center align-items-center text-center">
-                                                           abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                            {{ isset($FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1) ? $FinancialsRatioAnalysisFyOne->zmijewski_x_score_ratio_analysis_fy_one_1 : 'N/A' }}
 
                                                            </p>
                                                         </div>
@@ -1356,7 +1363,7 @@
                                                                             class="card-title d-flex justify-content-center align-items-center">
                                                                             Analysis</h3>
                                                                             <p class="d-flex justify-content-center align-items-center text-center">
-                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                                                {{ isset($BusinessIntelligence->operating_efficiency_BI_analysis) ? $BusinessIntelligence->operating_efficiency_BI_analysis : 'N/A' }}
 
                                                                             </p>
                                                                     </div>
@@ -1380,7 +1387,7 @@
                                                                             class="card-title d-flex justify-content-center align-items-center">
                                                                             Analysis</h3>
                                                                             <p class="d-flex justify-content-center align-items-center text-center">
-                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                                                {{ isset($BusinessIntelligence->inventory_turnover_BI_analysis) ? $BusinessIntelligence->inventory_turnover_BI_analysis : 'N/A' }}
 
                                                                             </p>
                                                                     </div>
@@ -1402,7 +1409,7 @@
                                                                             class="card-title d-flex justify-content-center align-items-center">
                                                                             Analysis</h3>
                                                                             <p class="d-flex justify-content-center align-items-center text-center">
-                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                                                {{ isset($BusinessIntelligence->days_sales_in_inventory_BI_analysis) ? $BusinessIntelligence->days_sales_in_inventory_BI_analysis : 'N/A' }}
 
                                                                             </p>
                                                                     </div>
@@ -1423,7 +1430,7 @@
                                                                             class="card-title d-flex justify-content-center align-items-center">
                                                                             Analysis</h3>
                                                                             <p class="d-flex justify-content-center align-items-center text-center">
-                                                                            abc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld bc jdsajdkl adsldasjdl jladjasldj sdjldjad aldsjaldjasld
+                                                                                {{ isset($BusinessIntelligence->accounts_payable_turnover_BI_analysis) ? $BusinessIntelligence->accounts_payable_turnover_BI_analysis : 'N/A' }}
 
                                                                             </p>
                                                                     </div>
@@ -1568,9 +1575,49 @@
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{ $TaxReurnCredit->credit_dependency_4 }} </td>
                                                         </tr>
 
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{ $TaxReurnCredit->name_4 }}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-1">{{ $TaxReurnCredit->credit_score_4 }}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-1">{{ $TaxReurnCredit->outstanding_amount_4 }}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-1">{{ $TaxReurnCredit->num_of_loans_4 }} </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{ $TaxReurnCredit->solvency_4 }}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{ $TaxReurnCredit->payment_history_4 }}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-2">{{ $TaxReurnCredit->credit_dependency_4 }} </td>
+                                                        </tr>
+
 
 
                                                     </tbody>
+
+                                                </table>
+                                                <table class="table primary-table-bordered">
+                                                    <thead class="thead-primary">
+
+
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Overall Credit History Score = {{$TaxReurnCredit->overall_credit_history_score}}</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Score Analysis</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3" class="col-md-3 text-start">{{$TaxReurnCredit->score_analysis}}</td>
+
+
+                                                        </tr>
+
+
+
+                                                    </tbody>
+
                                                 </table>
                                             </div>
                                         </div>
@@ -1620,13 +1667,42 @@
                                                     </thead>
                                                     <tbody>
 
+
+
+                                                        <tr>
+                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">MARKET REPUTATION SCORE = {{$MarketReputation->market_reputation_score}}</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Score Analysis</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3" class="col-md-3 text-start">{{$MarketReputation->score_analysis}}</td>
+
+
+                                                        </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                                <table class="table primary-table-bordered">
+                                                    <thead class="thead-primary">
+
+
+                                                    </thead>
+                                                    <tbody>
+
                                                         <tr>
                                                             <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">
                                                                 <embed src="{{URL::to('public/admin/assets/imgs/MarketReputations/') .'/'.$MarketReputation->file_path_market_reputations}}" width="500" height="550" type="application/pdf">
 
                                                             </td>
-                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">MARKET REPUTATION SCORE = {{ $MarketReputation->market_reputation_score }}</th>
                                                         </tr>
+
 
                                                     </tbody>
                                                 </table>
@@ -1675,9 +1751,16 @@
                                             <p for="educationalBackground" class="text-start">
                                                 {{ $KeyObservation->key_observation }}</p>
                                         </div>
-                                        <div class="col-xl-5 mb-6">
-                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:20px;color:#000000cf">OVERALL RISK SCORE =
+
+
+                                        <div class="col-xl-5 mb-3">
+                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:0px;color:#000000cf">OVERALL RISK SCORE =
                                                 {{ $KeyObservation->overall_risk_score }}</b></p>
+                                        </div>
+
+                                        <div class="col-xl-5 mb-6">
+                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:0px;color:#000000cf">Score Analysis</b>
+                                                {{ $KeyObservation->score_analysis }}</p>
                                         </div>
 
                                         <div  class="col-xl-2 mb-3">

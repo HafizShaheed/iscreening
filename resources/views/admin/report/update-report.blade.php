@@ -424,34 +424,34 @@
                         @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
                             <label for="director_name_2_{{ $i }}" class="form-label">Director 2</label>
-                            <input type="text" class="form-control" id="director_name_2_{{ $i }}" name="director_name_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'director_name_2_'. $i } }}">
+                            <input type="text" class="form-control" id="director_name_2_{{ $i }}" name="director_name_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'director_name_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="company_name_2_{{ $i }}" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_2_{{ $i }}" name="company_name_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_name_2_'. $i } }}">
+                            <input type="text" class="form-control" id="company_name_2_{{ $i }}" name="company_name_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'company_name_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="cin_2_{{ $i }}" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_2_{{ $i }}" name="cin_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'cin_2_'. $i } }}">
+                            <input type="text" class="form-control" id="cin_2_{{ $i }}" name="cin_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'cin_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="company_status_2_{{ $i }}" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_2_{{ $i }}" name="company_status_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_status_2_'. $i } }}">
+                            <input type="text" class="form-control" id="company_status_2_{{ $i }}" name="company_status_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'company_status_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="appointment_date_2_{{ $i }}" class="form-label">Appointment
                                 Date</label>
-                            <input type="date" class="form-control" id="appointment_date_2_{{ $i }}" name="appointment_date_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'appointment_date_2_'. $i } }}">
+                            <input type="date" class="form-control" id="appointment_date_2_{{ $i }}" name="appointment_date_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'appointment_date_2_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="business_of_entity_2_{{ $i }}" class="form-label">Business of the
                                 Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_2_{{ $i }}" name="business_of_entity_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_of_entity_2_'. $i } }}">
+                            <input type="text" class="form-control" id="business_of_entity_2_{{ $i }}" name="business_of_entity_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'business_of_entity_2_'. $i } }}">
                         </div>
                         <div class="col-xl-12 mb-3">
                             <label for="business_conflict_2_{{ $i }}" class="form-label">Business Conflict
                             </label>
-                            <input type="text" class="form-control" id="business_conflict_2_{{ $i }}" name="business_conflict_2_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_conflict_2_'. $i } }}">
+                            <input type="text" class="form-control" id="business_conflict_2_{{ $i }}" name="business_conflict_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'business_conflict_2_'. $i } }}">
                         </div>
                             
                         @endfor
@@ -464,34 +464,34 @@
                         @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
                             <label for="director_name_3_{{ $i }}" class="form-label">Director 3</label>
-                            <input type="text" class="form-control" id="director_name_3_{{ $i }}" name="director_name_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'director_name_3_'. $i } }}">
+                            <input type="text" class="form-control" id="director_name_3_{{ $i }}" name="director_name_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'director_name_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="company_name_3_{{ $i }}" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company_name_3_{{ $i }}" name="company_name_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_name_3_'. $i } }}">
+                            <input type="text" class="form-control" id="company_name_3_{{ $i }}" name="company_name_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'company_name_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="cin_3_{{ $i }}" class="form-label">CIN</label>
-                            <input type="text" class="form-control" id="cin_3_{{ $i }}" name="cin_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'cin_3_'. $i } }}">
+                            <input type="text" class="form-control" id="cin_3_{{ $i }}" name="cin_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'cin_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="company_status_3_{{ $i }}" class="form-label">Company Status</label>
-                            <input type="text" class="form-control" id="company_status_3_{{ $i }}" name="company_status_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'company_status_3_'. $i } }}">
+                            <input type="text" class="form-control" id="company_status_3_{{ $i }}" name="company_status_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'company_status_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="appointment_date_3_{{ $i }}" class="form-label">Appointment
                                 Date</label>
-                            <input type="date" class="form-control" id="appointment_date_3_{{ $i }}" name="appointment_date_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'appointment_date_3_'. $i } }}">
+                            <input type="date" class="form-control" id="appointment_date_3_{{ $i }}" name="appointment_date_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'appointment_date_3_'. $i } }}">
                         </div>
                         <div class="col-xl-4 mb-3">
                             <label for="business_of_entity_3_{{ $i }}" class="form-label">Business of the
                                 Entity</label>
-                            <input type="text" class="form-control" id="business_of_entity_3_{{ $i }}" name="business_of_entity_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_of_entity_3_'. $i } }}">
+                            <input type="text" class="form-control" id="business_of_entity_3_{{ $i }}" name="business_of_entity_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'business_of_entity_3_'. $i } }}">
                         </div>
                         <div class="col-xl-12 mb-3">
                             <label for="business_conflict_3_{{ $i }}" class="form-label">Business Conflict
                             </label>
-                            <input type="text" class="form-control" id="business_conflict_3_{{ $i }}" name="business_conflict_3_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_conflict_3_'. $i } }}">
+                            <input type="text" class="form-control" id="business_conflict_3_{{ $i }}" name="business_conflict_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'business_conflict_3_'. $i } }}">
                         </div>
                             
                         @endfor
@@ -2799,7 +2799,7 @@
                         @for ($i=1; $i <=25; $i++)
                         <div class="col-xl-12 mb-3">
                                 
-                        {{ $i }} <textarea placeholder="" rows="2" id="key_recommendations{{ $i }}" name="key_recommendations{{ $i }}" class="form-control"> {{$KeyObservation->{'key_recommendations'. $i } }} </textarea>
+                        {{ $i }} <textarea placeholder="" rows="2" id="key_recommendations_{{ $i }}" name="key_recommendations_{{ $i }}" class="form-control"> {{$KeyObservation->{'key_recommendations_'. $i } }} </textarea>
                         </div>
                             @endfor
                     </div>
