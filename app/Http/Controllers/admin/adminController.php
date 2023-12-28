@@ -1091,7 +1091,7 @@ $data['financialRatioGrapFYhLablesName'] = [
         $firmBackground->regulatory_score = $request->input('regulatory_score');
         $firmBackground->score_analysis = $request->input('score_analysis');
         $firmBackground->Type_of_risk = $request->input('regulatory_score') > 60 ? 'High Risk' : ($request->input('regulatory_score') <= 60 && $request->input('regulatory_score') > 30 ? 'Medium Risk' : ($request->input('regulatory_score') <= 30 ? 'Low Risk' : '' ) );
-        
+
         for ($i = 1; $i <= 10; $i++) {
             $firmBackground->{"name_$i"} = $request->input("name_$i");
             $firmBackground->{"pan_$i"} = $request->input("pan_$i");
@@ -1614,6 +1614,7 @@ $data['financialRatioGrapFYhLablesName'] = [
         $Financial->amount_4  = $request->input('amount_4');
         $Financial->charged_property_4  = $request->input('charged_property_4');
         $Financial->overall_financial_score  = $request->input('overall_financial_score');
+        $Financial->score_analysis  = $request->input('score_analysis');
         $Financial->Type_of_risk = $request->input('overall_financial_score') > 60 ? 'High Risk' : ($request->input('overall_financial_score') <= 60 && $request->input('overall_financial_score') > 30 ? 'Medium Risk' : ($request->input('overall_financial_score') <= 30 ? 'Low Risk' : '' ) );
 
         $Financial->save();
@@ -2070,9 +2071,10 @@ $data['financialRatioGrapFYhLablesName'] = [
 
 
        $KeyObservation->overall_risk_score  = $request->input('overall_risk_score');
+       $KeyObservation->score_analysis  = $request->input('score_analysis');
        $KeyObservation->key_observation  = $request->input('key_observation');
        for ($i = 1; $i <= 25; $i++) {
-       
+
         $KeyObservation->{"key_recommendations_$i"} = $request->input("key_recommendations_$i");
         }
        $KeyObservation->overall_risk_score = $request->input('overall_risk_score');

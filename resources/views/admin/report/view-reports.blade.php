@@ -1747,21 +1747,21 @@
                                 <div class="pt-4">
 
                                     <div class="row">
-                                        <div class="col-xl-5 mt-6">
+                                        <div class="col-xl-4 mt-6">
                                             <p for="educationalBackground" class="text-start">
                                                 {{ $KeyObservation->key_observation }}</p>
                                         </div>
 
 
-                                        <div class="col-xl-5 mb-3">
-                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:0px;color:#000000cf">OVERALL RISK SCORE =
+                                        <div class="col-xl-3 mt-3">
+                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf">OVERALL RISK SCORE =
                                                 {{ $KeyObservation->overall_risk_score }}</b></p>
                                         </div>
-
-                                        <div class="col-xl-5 mb-6">
-                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:0px;color:#000000cf">Score Analysis</b>
-                                                {{ $KeyObservation->score_analysis }}</p>
+                                          <div class="col-xl-3 mt-3">
+                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:14px;color:#000000cf">Score Analysis: </b>
+                                              <br>  {{ $KeyObservation->score_analysis }}</p>
                                         </div>
+
 
                                         <div  class="col-xl-2 mb-3">
 
@@ -1787,20 +1787,34 @@
                                         </div>
                                     </div>
                                     <div class="row">
+
+
+
+
+                                            @for($i = 1; $i <= 25; $i++)
+                                            @if(isset($KeyObservation->{'key_recommendations_'.$i}) && !empty($KeyObservation->{'key_recommendations_'.$i}))
+                                            <div class="col-xl-10 mb-3">
+                                                    <p for="educationalBackground" class="text-start">
+                                                        {{ $KeyObservation->{'key_recommendations_'.$i} }}
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-2 mb-3">
+                                        </div>
+
+                                            @endif
+                                        @endfor
+
+                                    </div>
+                                    <div class="row">
                                         <div class="col-xl-6 mb-3">
-                                            <p for="educationalBackground" class="text-start">
-
-                                                {{ $KeyObservation->key_recommendations }}
-                                            </p>
-
                                         </div>
                                         <div class="col-xl-6 mb-3">
                                             <p for="educationalBackground" class="text-center"><a
                                                     href="{{ URL::to('/panel/report/final_Reprts_file_download'.'/'. base64_encode($KeyObservation->id)) }}"
                                                     class="download-license-btn">Download Final Report</a></p>
                                         </div>
-
                                     </div>
+
 
                                 </div>
                             </div>

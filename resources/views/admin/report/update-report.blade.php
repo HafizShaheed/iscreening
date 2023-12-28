@@ -414,9 +414,9 @@
                             </label>
                             <input type="text" class="form-control" id="business_conflict_1_{{ $i }}" name="business_conflict_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'business_conflict_1_'. $i } }}">
                         </div>
-                            
+
                         @endfor
-                        
+
 
                         <!-- =========== Director1 ============ -->
 
@@ -453,9 +453,9 @@
                             </label>
                             <input type="text" class="form-control" id="business_conflict_2_{{ $i }}" name="business_conflict_2_{{ $i }}" value="{{$SecondDirectorsFirm->{'business_conflict_2_'. $i } }}">
                         </div>
-                            
+
                         @endfor
-                        
+
 
 
                         <!-- =========== Director2 ============ -->
@@ -493,7 +493,7 @@
                             </label>
                             <input type="text" class="form-control" id="business_conflict_3_{{ $i }}" name="business_conflict_3_{{ $i }}" value="{{$ThirdDirectorsFirm->{'business_conflict_3_'. $i } }}">
                         </div>
-                            
+
                         @endfor
 
 
@@ -622,7 +622,7 @@
                             <input type="text" class="form-control" name="director_subject_matter_{{ $i }}" id="director_subject_matter_{{ $i }}" value="{{$CourtCheck->{'director_subject_matter_'. $i } }}" placeholder="">
                         </div>
                         @endfor
-                   
+
 
                         <div class="col-xl-12 d-flex justify-content-end">
                             <button type="button" class="btn btn report-tab-active" id="court-next-1">Next</button>
@@ -637,7 +637,7 @@
                     <h4 class="card-title">Court Checks<br>
                         <span style="color:darkgray; font-size:12px;"> Court check of Company </span>
                     </h4>
-                    
+
                     @for ($i=1; $i <=5; $i++)
                     <div class="row">
                         <div class="col-xl-3 mb-3">
@@ -653,9 +653,9 @@
                             <input type="text" class="form-control" name="company_subject_matter_{{ $i }}" id="company_subject_matter_{{ $i }}" value="{{$CourtCheck->{'company_subject_matter_'. $i } }}" placeholder="">
                         </div>
                     </div>
-                  
+
                     @endfor
-                    
+
                     <!-- Repeat the above code block for additional rows -->
 
                     <!-- OFAC Check -->
@@ -751,6 +751,10 @@
                         <div class="col-xl-3 mb-3">
                                 <label for="overall_financial_score" class="form-label">Overall Financial Score</label>
                                 <input type="number" step="any" minlength="0" class="form-control" name="overall_financial_score" id="overall_financial_score" value="{{$Financial->overall_financial_score}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="score_analysis" class="form-label"> Score Analysis</label>
+                                <input type="text" step="any" minlength="0" class="form-control" name="score_analysis" id="score_analysis" value="{{$Financial->score_analysis}}" placeholder="">
                             </div>
 
 
@@ -2636,7 +2640,7 @@
                         </div>
                     </div>
                 @endfor
-                    
+
                     <div class="row">
                         <div class="col-xl-2 mb-3">
                             <label for="overall_credit_history_score" class="form-label">Overall Credit History Score</label>
@@ -2763,6 +2767,17 @@
                             <div class="col-xl-3 mb-3">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                            </div>
+                            <div class="col-xl-6 mb-3">
+                                <h1 class="form-label">Score Analysis</h1>
+                                <textarea rows="4" id="score_analysis" name="score_analysis" class="form-control">{{$KeyObservation->score_analysis}}</textarea>
+
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                            </div>
+                        </div>
 
 
 
@@ -2795,10 +2810,10 @@
                     </div>
                     <div class="row">
                         <label class="form-label">Recommendations</label>
-                        
+
                         @for ($i=1; $i <=25; $i++)
                         <div class="col-xl-12 mb-3">
-                                
+
                         {{ $i }} <textarea placeholder="" rows="2" id="key_recommendations_{{ $i }}" name="key_recommendations_{{ $i }}" class="form-control"> {{$KeyObservation->{'key_recommendations_'. $i } }} </textarea>
                         </div>
                             @endfor
