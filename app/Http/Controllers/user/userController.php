@@ -52,10 +52,12 @@ class userController extends Controller
             $lowRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
             // dd( $lowRiskCOunt);
             $data['totalRisk'] = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
+
             // Calculate percentages
-            $data['highRiskPercentage'] = $data['totalRisk'] > 0 ? (($highRiskCOunt * 100) / $data['totalRisk']) : 0;
-            $data['mediumRiskPercentage'] = $data['totalRisk'] > 0 ? (($mediumRiskCOunt * 100) / $data['totalRisk']) : 0;
-            $data['lowRiskPercentage'] = $data['totalRisk'] > 0 ? (($lowRiskCOunt * 100) / $data['totalRisk']) : 0;
+            $data['highRiskPercentage'] = $data['totalRisk'] > 0 ? number_format(($highRiskCOunt * 100) / $data['totalRisk'], 2, '.', '') : 0;
+            $data['mediumRiskPercentage'] = $data['totalRisk'] > 0 ? number_format(($mediumRiskCOunt * 100) / $data['totalRisk'], 2, '.', '') : 0;
+            $data['lowRiskPercentage'] = $data['totalRisk'] > 0 ? number_format(($lowRiskCOunt * 100) / $data['totalRisk'], 2, '.', '') : 0;
+
 
             // Pass percentages instead of counts
             $data['dougGraphHighRisk'] = [
@@ -119,22 +121,28 @@ class userController extends Controller
         ->get();
 
         // Organize the data by zone and risk type
-        $result = [];
+        $result_zone = [];
         foreach ($zoneRiskCounts as $count) {
-            $result[$count->zone][$count->Type_of_risk] = $count->count;
+            $result_zone[$count->zone][$count->Type_of_risk] = $count->count;
         }
 
         // Prepare data for the JavaScript chart
-        $data['labels_zone'] = array_keys($result);
+        $data['labels_zone'] = array_keys($result_zone);
+
         $data['highRiskCounts_zone'] = [];
         $data['mediumRiskCounts_zone'] = [];
         $data['lowRiskCounts_zone'] = [];
 
-        foreach ($result as $zone => $zoneRiskCounts) {
-            $data['highRiskCounts_zone'][] = $zoneRiskCounts['High Risk'] ?? 0;
-            $data['mediumRiskCounts_zone'][] = $zoneRiskCounts['Medium Risk'] ?? 0;
-            $data['lowRiskCounts_zone'][] = $zoneRiskCounts['Low Risk'] ?? 0;
+        foreach ($result_zone as $zone => $zoneRiskCounts) {
+            // Check if the index exists before accessing it
+            $data['highRiskCounts_zone'][] = isset($zoneRiskCounts['High Risk']) ? $zoneRiskCounts['High Risk'] : 0;
+            $data['mediumRiskCounts_zone'][] = isset($zoneRiskCounts['Medium Risk']) ? $zoneRiskCounts['Medium Risk'] : 0;
+            $data['lowRiskCounts_zone'][] = isset($zoneRiskCounts['Low Risk']) ? $zoneRiskCounts['Low Risk'] : 0;
         }
+
+        // dd($data['highRiskCounts_zone'] ,$data['mediumRiskCounts_zone'] );
+
+
         //================================= location/Zone thirdparty risk end ======================
 
 
@@ -175,8 +183,8 @@ class userController extends Controller
 
                 // Opertional count
                 $taxReurnCreditCountHigh = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-                $taxReurnCreditCountMedium = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
-                $taxReurnCreditCountLow = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+                $taxReurnCreditCountMedium = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+                $taxReurnCreditCountLow = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
                 $data['taxReurnCreditCount'] = [
                     $taxReurnCreditCountHigh,
                     $taxReurnCreditCountMedium,
@@ -184,8 +192,8 @@ class userController extends Controller
                 ];
               // Regulatary count
               $marketReputationCountHigh = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-              $marketReputationCountMedium = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
-              $marketReputationCountLow = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+              $marketReputationCountMedium = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+              $marketReputationCountLow = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
               $data['regulataryCount'] = [
                   $marketReputationCountHigh,
                   $marketReputationCountMedium,
@@ -195,7 +203,7 @@ class userController extends Controller
               $data['highRiskCOunt'] = $highRiskCOunt;
               $data['mediumRiskCOunt'] = $mediumRiskCOunt;
                  $data['lowRiskCOunt'] = $lowRiskCOunt;
-            // dd( $data['departmentCount']);
+            // dd( $data);
 
             return view('company.index', $data);
         } else {
