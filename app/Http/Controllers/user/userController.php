@@ -51,31 +51,33 @@ class userController extends Controller
             $mediumRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
             $lowRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
             // dd( $lowRiskCOunt);
-            $totalRisk = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
+            $data['totalRisk'] = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
+            // Calculate percentages
+            $data['highRiskPercentage'] = $data['totalRisk'] > 0 ? (($highRiskCOunt * 100) / $data['totalRisk']) : 0;
+            $data['mediumRiskPercentage'] = $data['totalRisk'] > 0 ? (($mediumRiskCOunt * 100) / $data['totalRisk']) : 0;
+            $data['lowRiskPercentage'] = $data['totalRisk'] > 0 ? (($lowRiskCOunt * 100) / $data['totalRisk']) : 0;
 
-            $data['highRiskPercentage'] = $totalRisk > 0 ? (($highRiskCOunt * 100) / $totalRisk) : 0;
-            $data['mediumRiskPercentage'] = $totalRisk > 0 ? (($mediumRiskCOunt * 100) / $totalRisk) : 0;
-            $data['lowRiskPercentage'] = $totalRisk > 0 ? (($lowRiskCOunt * 100) / $totalRisk) : 0;
-
-
+            // Pass percentages instead of counts
             $data['dougGraphHighRisk'] = [
-                $highRiskCOunt,
-                $totalRisk,
+                $data['highRiskPercentage'],
+                100 - $data['highRiskPercentage'],
             ];
 
             $data['dougGraphMediumRisk'] = [
-                $mediumRiskCOunt,
-                $totalRisk,
+                $data['mediumRiskPercentage'],
+                100 - $data['mediumRiskPercentage'],
             ];
-            // dd($data['dougGraphMediumRisk'] );
+
             $data['dougGraphLowRisk'] = [
-                $lowRiskCOunt,
-                $totalRisk,
-            ];
-            $data['OverallRisk'] = [
-                $totalRisk,
-                0,
-            ];
+                $data['lowRiskPercentage'],
+                100 - $data['lowRiskPercentage'],
+                ];
+
+
+            // $data['OverallRisk'] = [
+            //     $totalRisk,
+            //     0,
+            // ];
 
         //================================= departmen thirdparty risk ======================
             $departRiskCounts = DB::table('departments')
@@ -139,19 +141,22 @@ class userController extends Controller
 
 
             // Reputation count
-            $ReputationCountHigh = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-            $ReputationCountMedium = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
-            $ReputationCountLow = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-            $data['ReputationCount'] = [
-                $ReputationCountHigh,
-                $ReputationCountMedium,
-                   $ReputationCountLow,
+            $RegulatoryCountHigh = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
+            $RegulatoryCountMedium = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+            $RegulatoryCountLow = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+            $data['RegulatoryCount'] = [
+                $RegulatoryCountHigh,
+                $RegulatoryCountMedium,
+                   $RegulatoryCountLow,
             ];
+
+            // dd( $data['RegulatoryCount']);
+
 
             // Legal count
             $legalCountHigh = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-            $legalCountMedium = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
-            $legalCountLow = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+            $legalCountMedium = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+            $legalCountLow = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
             $data['legalCount'] = [
                 $legalCountHigh,
                 $legalCountMedium,
@@ -160,8 +165,8 @@ class userController extends Controller
 
              // Financial count
              $financialCountHigh = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-             $financialCountMedium = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
-             $financialCountLow = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+             $financialCountMedium = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
+             $financialCountLow = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
              $data['financialCount'] = [
                  $financialCountHigh,
                  $financialCountMedium,
@@ -215,8 +220,8 @@ class userController extends Controller
         $data['pageIntro'] = "Reports List";
         $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
         // $data['getallThirdParty'] = ThirdParty::where('user_id', auth()->user()->id)->get();
-        $query = ThirdParty::where('user_id', auth()->user()->id);
-
+        $query = ThirdParty::where(['user_id' => auth()->user()->id, 'status' => 3]);
+        // dd($query );
 
         if (isset($request->searchThirdparty) && !empty($request->searchThirdparty)) {
             $ThirdPartyName = $request->input('searchThirdparty');
@@ -364,7 +369,7 @@ class userController extends Controller
 
 // ===================================================== Business graph start ===================
 
-       
+
                 $data['businessInteligenceGrapFY_accounts_payable'] = [
 
                     $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_one,
@@ -415,7 +420,7 @@ class userController extends Controller
 
         ];
 // ===================================================== Business graph end ===================
-        
+
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
         $data['Financial'] = Financial::where('third_party_id', $id)->first();
@@ -440,7 +445,7 @@ class userController extends Controller
         $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id', $data['Financial']->id)->first();
-        
+
 
 
         $data['financialFindingsGrapFY_revenue'] = [
@@ -451,190 +456,190 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->revenue_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->revenue_fy_five_finding__1,
         ];
-        
-        
-        
+
+
+
         $data['financialFindingsGrapFY_net_profit'] = [
-        
+
             $data['FinancialsFindingsFyOne']->net_profit_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->net_profit_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->net_profit_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->net_profit_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->net_profit_fy_five_finding__1,
         ];
-        
+
         // start
         $data['financialFindingsGrapFY_gross_profit'] = [
-        
+
             $data['FinancialsFindingsFyOne']->gross_profit_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->gross_profit_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->gross_profit_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->gross_profit_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->gross_profit_fy_five_finding__1,
         ];
-        
+
         // end
            // start
            $data['financialFindingsGrapFY_working_capital_1'] = [
-        
+
             $data['FinancialsFindingsFyOne']->working_capital_1_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->working_capital_1_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->working_capital_1_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->working_capital_1_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->working_capital_1_fy_five_finding__1,
         ];
-        
-        
+
+
         // end
-        
+
         // start
         $data['financialFindingsGrapFY_quick_assets'] = [
-        
+
             $data['FinancialsFindingsFyOne']->quick_assets_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->quick_assets_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->quick_assets_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->quick_assets_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->quick_assets_fy_five_finding__1,
         ];
-        
-        
+
+
         // end
-        
+
           // start
           $data['financialFindingsGrapFY_total_assets'] = [
-        
+
             $data['FinancialsFindingsFyOne']->total_assets_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->total_assets_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->total_assets_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->total_assets_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->total_assets_fy_five_finding__1,
         ];
-        
-        
+
+
         // end
-        
+
           // start
           $data['financialFindingsGrapFY_current_assets'] = [
-        
+
             $data['FinancialsFindingsFyOne']->current_assets_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->current_assets_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->current_assets_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->current_assets_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->current_assets_fy_five_finding__1,
         ];
-        
-        
-        
+
+
+
         // start
         $data['financialFindingsGrapFY_current_liabilities'] = [
-        
+
             $data['FinancialsFindingsFyOne']->current_liabilities_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->current_liabilities_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->current_liabilities_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->current_liabilities_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->current_liabilities_fy_five_finding__1,
         ];
-        
-        
+
+
         // end
         // start
         $data['financialFindingsGrapFY_debt'] = [
-        
+
             $data['FinancialsFindingsFyOne']->debt_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->debt_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->debt_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->debt_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->debt_fy_five_finding__1,
         ];
-        
-        
+
+
         // end
-        
+
         // start
         $data['financialFindingsGrapFY_average_inventory'] = [
-        
+
             $data['FinancialsFindingsFyOne']->average_inventory_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->average_inventory_fy_two_finding__1,
             $data['FinancialsFindingsFyThree']->average_inventory_fy_three_finding__1,
             $data['FinancialsFindingsFyFour']->average_inventory_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->average_inventory_fy_five_finding__1,
         ];
-        
+
         // end
-        
+
             // start
             $data['financialFindingsGrapFY_net_sales'] = [
-        
+
                 $data['FinancialsFindingsFyOne']->net_sales_fy_one_finding__1,
                 $data['FinancialsFindingsFyTwo']->net_sales_fy_two_finding__1,
                 $data['FinancialsFindingsFyThree']->net_sales_fy_three_finding__1,
                 $data['FinancialsFindingsFyFour']->net_sales_fy_four_finding__1,
                 $data['FinancialsFindingsFyFive']->net_sales_fy_five_finding__1,
             ];
-        
-          
+
+
             // end
              // start
              $data['financialFindingsGrapFY_equity_share_capital'] = [
-        
+
                 $data['FinancialsFindingsFyOne']->equity_share_capital_fy_one_finding__1,
                 $data['FinancialsFindingsFyTwo']->equity_share_capital_fy_two_finding__1,
                 $data['FinancialsFindingsFyThree']->equity_share_capital_fy_three_finding__1,
                 $data['FinancialsFindingsFyFour']->equity_share_capital_fy_four_finding__1,
                 $data['FinancialsFindingsFyFive']->equity_share_capital_fy_five_finding__1,
             ];
-        
-           
-        
+
+
+
                  // start
                  $data['financialFindingsGrapFY_sundry_debtors'] = [
-        
+
                     $data['FinancialsFindingsFyOne']->sundry_debtors_fy_one_finding__1,
                     $data['FinancialsFindingsFyTwo']->sundry_debtors_fy_two_finding__1,
                     $data['FinancialsFindingsFyThree']->sundry_debtors_fy_three_finding__1,
                     $data['FinancialsFindingsFyFour']->sundry_debtors_fy_four_finding__1,
                     $data['FinancialsFindingsFyFive']->sundry_debtors_fy_five_finding__1,
                 ];
-        
-               
+
+
                 // end
-        
+
                      // start
             $data['financialFindingsGrapFY_sundry_creditors'] = [
-        
+
                 $data['FinancialsFindingsFyOne']->sundry_creditors_fy_one_finding__1,
                 $data['FinancialsFindingsFyTwo']->sundry_creditors_fy_two_finding__1,
                 $data['FinancialsFindingsFyThree']->sundry_creditors_fy_three_finding__1,
                 $data['FinancialsFindingsFyFour']->sundry_creditors_fy_four_finding__1,
                 $data['FinancialsFindingsFyFive']->sundry_creditors_fy_five_finding__1,
             ];
-        
-          
+
+
             // end
-        
+
                  // start
                  $data['financialFindingsGrapFY_loans_and_advances'] = [
-        
+
                     $data['FinancialsFindingsFyOne']->loans_and_advances_fy_one_finding__1,
                     $data['FinancialsFindingsFyTwo']->loans_and_advances_fy_two_finding__1,
                     $data['FinancialsFindingsFyThree']->loans_and_advances_fy_three_finding__1,
                     $data['FinancialsFindingsFyFour']->loans_and_advances_fy_four_finding__1,
                     $data['FinancialsFindingsFyFive']->loans_and_advances_fy_five_finding__1,
                 ];
-        
+
                 // end
-        
+
                      // start
                      $data['financialFindingsGrapFY_cash_and_cash_equivalents'] = [
-        
+
                         $data['FinancialsFindingsFyOne']->cash_and_cash_equivalents_fy_one_finding__1,
                         $data['FinancialsFindingsFyTwo']->cash_and_cash_equivalents_fy_two_finding__1,
                         $data['FinancialsFindingsFyThree']->cash_and_cash_equivalents_fy_three_finding__1,
                         $data['FinancialsFindingsFyFour']->cash_and_cash_equivalents_fy_four_finding__1,
                         $data['FinancialsFindingsFyFive']->cash_and_cash_equivalents_fy_five_finding__1,
                     ];
-        
-              
+
+
                     // end
 
 
@@ -663,7 +668,7 @@ class userController extends Controller
         $data['FinancialsRatioAnalysisFyTwo'] = FinancialsRatioAnalysisFyTwo::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id', $data['Financial']->id)->first();
 
-   
+
 $data['financialrationGrapFY_current_ratio'] = [
 
     $data['FinancialsRatioAnalysisFyOne']->current_ratio_fy_one_1,

@@ -193,7 +193,7 @@
 
 
                                             @for($i = 1; $i <= 10; $i++)
-                                            @if(!empty($FirmBackground->{'name_'.$i}))
+                                            @if(!empty($FirmBackground->{'name_'.$i}) || isset($FirmBackground->{'name_'.$i}))
                                             <tr>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
                                                         class="col-md-4"> Name ({{ $i }})</th>

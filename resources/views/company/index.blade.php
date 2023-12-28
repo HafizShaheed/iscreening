@@ -219,7 +219,7 @@
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
 
-                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Reputation </h4>
+                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Regulatary </h4>
 
                             <div class="d-flex justify-content-center align-items-center">
                                 <canvas id="barChartVerticalReputation"></canvas>
@@ -278,7 +278,7 @@
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
 
-                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Regulatary</h4>
+                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Reputation</h4>
 
                             <div class="d-flex justify-content-center align-items-center">
                                 <canvas id="barChartVerticalRegulatary"></canvas>
@@ -493,14 +493,20 @@
     var lowRiskCounts_zone = {!!isset($lowRiskCounts_zone) ? json_encode($lowRiskCounts_zone) : 'null'!!};
 
     // impact risk
-    var ReputationCount = {!!isset($ReputationCount) ? json_encode($ReputationCount) : 'null'!!};
+    var RegulatoryCount = {!!isset($RegulatoryCount) ? json_encode($RegulatoryCount) : 'null'!!};
     var legalCount = {!!isset($legalCount) ? json_encode($legalCount) : 'null'!!};
     var financialCount = {!!isset($financialCount) ? json_encode($financialCount) : 'null'!!};
     var taxReurnCreditCount = {!!isset($taxReurnCreditCount) ? json_encode($taxReurnCreditCount) : 'null'!!};
     var regulataryCount = {!!isset($regulataryCount) ? json_encode($regulataryCount) : 'null'!!};
 
+    var totalRisk = {!!isset($totalRisk) ? json_encode($totalRisk) : 'null'!!};
+    var highRiskCOunt = {!!isset($highRiskCOunt) ? json_encode($highRiskCOunt) : 'null'!!};
+    var mediumRiskCOunt = {!!isset($mediumRiskCOunt) ? json_encode($mediumRiskCOunt) : 'null'!!};
+    var lowRiskCOunt = {!!isset($lowRiskCOunt) ? json_encode($lowRiskCOunt) : 'null'!!};
 
-    labels_zone
+
+
+
     // var dougGraphHighRisk = @json($dougGraphHighRisk) ? @json($dougGraphHighRisk) : null ;
     // var dougGraphMediumRisk = @json($dougGraphMediumRisk);
     // var dougGraphLowRisk = @json($dougGraphLowRisk);
@@ -981,8 +987,8 @@
                             defaultFontFamily: 'Poppins',
                             labels: ["High Risk", "Medium Risk", "Low Risk"],
                             datasets: [{
-                                label: "Reputation",
-                                data: ReputationCount,
+                                label: "Regulatary",
+                                data: RegulatoryCount,
                                 backgroundColor: barColors,
                                 hoverBackgroundColor: barColors
                             }]
@@ -1849,7 +1855,7 @@
             // Doughnut Chart Function
             // Doughnut Chart Function
             // Doughnut Chart Function
-            var doughnutChartall = function(elementId, dataValues, dynamicColor, label1, label2) {
+            var doughnutChartall = function(elementId, dataValues, dynamicColor, label1, label2, count) {
                 if (jQuery('#' + elementId).length > 0) {
                     const doughnut_chart = document.getElementById(elementId).getContext('2d');
                     new Chart(doughnut_chart, {
@@ -1890,7 +1896,9 @@
                             tooltips: {
                                 callbacks: {
                                     label: function(tooltipItem, data) {
-                                        return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                                        var currentValue = dataset.data[tooltipItem.index];
+                                        return data.labels[tooltipItem.index] + ': ' + currentValue + ' (total ' + count[tooltipItem.index] + ')';
                                     }
                                 }
                             }
@@ -1901,10 +1909,13 @@
 
 
             // Call the function for each section
-            doughnutChartall("doughnut_chart_1", dougGraphHighRisk, 'rgba(255, 0, 0, 1)', "High Risk", "Over All Risk");
-            doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, 'rgba(0, 0, 255, 1)', "Medium Risk", "Over All Risk");
-            doughnutChartall("doughnut_chart_3", dougGraphLowRisk, 'rgba(0, 255, 0, 1)', "Low Risk", "Over All Risk");
-            // doughnutChartall("doughnut_chart_4", OverallRisk, "Over All Risk", "");
+            console.log(highRiskCOunt, "high");
+            console.log(mediumRiskCOunt, "medium");
+            console.log(lowRiskCOunt, "low");
+
+            doughnutChartall("doughnut_chart_1", dougGraphHighRisk, 'rgba(255, 0, 0, 1)', "High Risk", "Over All Risk", [highRiskCOunt, totalRisk - highRiskCOunt]);
+doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, 'rgba(0, 0, 255, 1)', "Medium Risk", "Over All Risk", [mediumRiskCOunt, totalRisk - mediumRiskCOunt]);
+doughnutChartall("doughnut_chart_3", dougGraphLowRisk, 'rgba(0, 255, 0, 1)', "Low Risk", "Over All Risk", [lowRiskCOunt, totalRisk - lowRiskCOunt]);
 
             var polarChart = function() {
                 if (jQuery('#polar_chart').length > 0) {

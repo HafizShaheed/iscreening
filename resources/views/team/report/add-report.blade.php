@@ -3205,7 +3205,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_firm_background') }}",
+                url: "{{ route('team.update_firm_background') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3258,7 +3258,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_on_ground_verification') }}",
+                url: "{{ route('team.update_on_ground_verification') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3308,7 +3308,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_court_check') }}",
+                url: "{{ route('team.update_court_check') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3672,7 +3672,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_financial') }}",
+                url: "{{ route('team.update_financial') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3722,7 +3722,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_Business_Intelligence') }}",
+                url: "{{ route('team.update_Business_Intelligence') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3772,7 +3772,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_Tax_Return_and_Credit') }}",
+                url: "{{ route('team.update_Tax_Return_and_Credit') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3821,7 +3821,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_Market_Reputation') }}",
+                url: "{{ route('team.update_Market_Reputation') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3870,7 +3870,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "{{ route('admin.update_Key_Observation') }}",
+                url: "{{ route('team.update_Key_Observation') }}",
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
                 },
@@ -3890,7 +3890,7 @@
                         timerProgressBar: true,
                         willClose: () => {
                             $("#Key-Observation-submit").prop("disabled", false);
-                            window.location.href = '{{ route("admin.report_List") }}';
+                            window.location.href = '{{ route("team.vender_List") }}';
 
                         },
                     });

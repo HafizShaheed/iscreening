@@ -1036,23 +1036,6 @@ $data['financialRatioGrapFYhLablesName'] = [
 
 
     function update_firm_background(Request $request){
-        // dd($request->all());
-        // $validator = Validator::make($request->all(), [
-
-        //     'third_party_name' => 'required|unique:third_parties,third_party_name,' . $request->id,
-        //     'third_party_email' => 'required|email|unique:third_parties,third_party_email,' . $request->id,
-        //     'user_id' => 'required',
-        //     'third_party_address' => 'required',
-        //     'third_party_department' => 'required',
-        //     'third_party_pos' => 'required',
-        //     'third_party_location' => 'required',
-        //     'third_party_phone' => 'required',
-        // ]);
-
-        // if ($validator->fails()) {
-        //     // dd($validator);
-        //     return redirect()->back()->withErrors($validator)->withInput();
-        // }
         $firmBackground = FirmBackground::findOrFail($request->FirmBackgroundID);
         if (!$firmBackground) {
             return response()->json(['error' => 'This Reports not found.']);
@@ -1101,61 +1084,7 @@ $data['financialRatioGrapFYhLablesName'] = [
             $firmBackground->{"din_$i"} = $request->input("din_$i");
         }
 
-        // second
-        // $firmBackground->name_2 = $request->input('name_2');
-        // $firmBackground->pan_2 = $request->input('pan_2');
-        // $firmBackground->aadhar_2 = $request->input('aadhar_2');
-        // $firmBackground->date_of_appointment_2 = $request->input('date_of_appointment_2');
-        // $firmBackground->educational_background_2 = $request->input('educational_background_2');
-        // // 3rd
 
-        // $firmBackground->name_3 = $request->input('name_3');
-        // $firmBackground->pan_3 = $request->input('pan_3');
-        // $firmBackground->aadhar_3 = $request->input('aadhar_3');
-        // $firmBackground->date_of_appointment_3 = $request->input('date_of_appointment_3');
-        // $firmBackground->educational_background_3 = $request->input('educational_background_3');
-        // // 4th name
-        // $firmBackground->name_4 = $request->input('name_4');
-        // $firmBackground->pan_4 = $request->input('pan_4');
-        // $firmBackground->aadhar_4 = $request->input('aadhar_4');
-        // $firmBackground->date_of_appointment_4 = $request->input('date_of_appointment_4');
-        // $firmBackground->educational_background_4 = $request->input('educational_background_4');
-        // // 5th
-        // $firmBackground->name_5 = $request->input('name_5');
-        // $firmBackground->pan_5 = $request->input('pan_5');
-        // $firmBackground->aadhar_5 = $request->input('aadhar_5');
-        // $firmBackground->date_of_appointment_5 = $request->input('date_of_appointment_5');
-        // $firmBackground->educational_background_5 = $request->input('educational_background_5');
-        // // 6th
-        // $firmBackground->name_6 = $request->input('name_6');
-        // $firmBackground->pan_6 = $request->input('pan_6');
-        // $firmBackground->aadhar_6 = $request->input('aadhar_6');
-        // $firmBackground->date_of_appointment_6 = $request->input('date_of_appointment_6');
-        // $firmBackground->educational_background_6 = $request->input('educational_background_6');
-        // // 7th
-        // $firmBackground->name_7 = $request->input('name_7');
-        // $firmBackground->pan_7 = $request->input('pan_7');
-        // $firmBackground->aadhar_7 = $request->input('aadhar_7');
-        // $firmBackground->date_of_appointment_7 = $request->input('date_of_appointment_7');
-        // $firmBackground->educational_background_7 = $request->input('educational_background_7');
-        // // 8th
-        // $firmBackground->name_8 = $request->input('name_8');
-        // $firmBackground->pan_8 = $request->input('pan_8');
-        // $firmBackground->aadhar_8 = $request->input('aadhar_8');
-        // $firmBackground->date_of_appointment_8 = $request->input('date_of_appointment_8');
-        // $firmBackground->educational_background_8 = $request->input('educational_background_8');
-        // // 9th
-        // $firmBackground->name_9 = $request->input('name_9');
-        // $firmBackground->pan_9 = $request->input('pan_9');
-        // $firmBackground->aadhar_9 = $request->input('aadhar_9');
-        // $firmBackground->date_of_appointment_9 = $request->input('date_of_appointment_9');
-        // $firmBackground->educational_background_9 = $request->input('educational_background_9');
-        // // 10th
-        // $firmBackground->name_10 = $request->input('name_10');
-        // $firmBackground->pan_10 = $request->input('pan_10');
-        // $firmBackground->aadhar_10 = $request->input('aadhar_10');
-        // $firmBackground->date_of_appointment_10 = $request->input('date_of_appointment_10');
-        // $firmBackground->educational_background_10 = $request->input('educational_background_10');
         $firmBackground->credit_score = $request->input('credit_score');
         $firmBackground->save();
 
@@ -1164,275 +1093,65 @@ $data['financialRatioGrapFYhLablesName'] = [
             // first director name
             $FirstDirectorsFirm = FirstDirectorsFirm::where('firm_background_id', $firmBackground->id)->firstOrFail();
 
-            $FirstDirectorsFirm->director_name_1_1 = $request->input('director_name_1_1');
-            $FirstDirectorsFirm->company_name_1_1 = $request->input('company_name_1_1');
-            $FirstDirectorsFirm->cin_1_1 = $request->input('cin_1_1');
-            $FirstDirectorsFirm->company_status_1_1 = $request->input('company_status_1_1');
-            $FirstDirectorsFirm->appointment_date_1_1 = $request->input('appointment_date_1_1');
-            $FirstDirectorsFirm->business_of_entity_1_1 = $request->input('business_of_entity_1_1');
-            $FirstDirectorsFirm->business_conflict_1_1 = $request->input('business_conflict_1_1');
 
-            $FirstDirectorsFirm->director_name_1_2 = $request->input('director_name_1_2');
-            $FirstDirectorsFirm->company_name_1_2 = $request->input('company_name_1_2');
-            $FirstDirectorsFirm->cin_1_2 = $request->input('cin_1_2');
-            $FirstDirectorsFirm->company_status_1_2 = $request->input('company_status_1_2');
-            $FirstDirectorsFirm->appointment_date_1_2 = $request->input('appointment_date_1_2');
-            $FirstDirectorsFirm->business_of_entity_1_2 = $request->input('business_of_entity_1_2');
-            $FirstDirectorsFirm->business_conflict_1_2 = $request->input('business_conflict_1_2');
+        for ($i = 1; $i <= 8; $i++) {
+            $FirstDirectorsFirm->{"director_name_1_$i"} = $request->input("director_name_1_$i");
+            $FirstDirectorsFirm->{"company_name_1_$i"} = $request->input("company_name_1_$i");
+            $FirstDirectorsFirm->{"cin_1_$i"} = $request->input("cin_1_$i");
+            $FirstDirectorsFirm->{"company_status_1_$i"} = $request->input("company_status_1_$i");
+            $FirstDirectorsFirm->{"appointment_date_1_$i"} = $request->input("appointment_date_1_$i");
+            $FirstDirectorsFirm->{"business_of_entity_1_$i"} = $request->input("business_of_entity_1_$i");
+            $FirstDirectorsFirm->{"business_conflict_1_$i"} = $request->input("business_conflict_1_$i");
 
-
-            $FirstDirectorsFirm->director_name_1_3 = $request->input('director_name_1_3');
-            $FirstDirectorsFirm->company_name_1_3 = $request->input('company_name_1_3');
-            $FirstDirectorsFirm->cin_1_3 = $request->input('cin_1_3');
-            $FirstDirectorsFirm->company_status_1_3 = $request->input('company_status_1_3');
-            $FirstDirectorsFirm->appointment_date_1_3 = $request->input('appointment_date_1_3');
-            $FirstDirectorsFirm->business_of_entity_1_3 = $request->input('business_of_entity_1_3');
-            $FirstDirectorsFirm->business_conflict_1_3 = $request->input('business_conflict_1_3');
-
-
-            $FirstDirectorsFirm->director_name_1_4 = $request->input('director_name_1_4');
-            $FirstDirectorsFirm->company_name_1_4 = $request->input('company_name_1_4');
-            $FirstDirectorsFirm->cin_1_4 = $request->input('cin_1_4');
-            $FirstDirectorsFirm->company_status_1_4 = $request->input('company_status_1_4');
-            $FirstDirectorsFirm->appointment_date_1_4 = $request->input('appointment_date_1_4');
-            $FirstDirectorsFirm->business_of_entity_1_4 = $request->input('business_of_entity_1_4');
-            $FirstDirectorsFirm->business_conflict_1_4 = $request->input('business_conflict_1_4');
-
-            $FirstDirectorsFirm->director_name_1_5 = $request->input('director_name_1_5');
-            $FirstDirectorsFirm->company_name_1_5 = $request->input('company_name_1_5');
-            $FirstDirectorsFirm->cin_1_5 = $request->input('cin_1_5');
-            $FirstDirectorsFirm->company_status_1_5 = $request->input('company_status_1_5');
-            $FirstDirectorsFirm->appointment_date_1_5 = $request->input('appointment_date_1_5');
-            $FirstDirectorsFirm->business_of_entity_1_5 = $request->input('business_of_entity_1_5');
-            $FirstDirectorsFirm->business_conflict_1_5 = $request->input('business_conflict_1_5');
-
-
-            $FirstDirectorsFirm->director_name_1_6 = $request->input('director_name_1_6');
-            $FirstDirectorsFirm->company_name_1_6 = $request->input('company_name_1_6');
-            $FirstDirectorsFirm->cin_1_6 = $request->input('cin_1_6');
-            $FirstDirectorsFirm->company_status_1_6 = $request->input('company_status_1_6');
-            $FirstDirectorsFirm->appointment_date_1_6 = $request->input('appointment_date_1_6');
-            $FirstDirectorsFirm->business_of_entity_1_6 = $request->input('business_of_entity_1_6');
-            $FirstDirectorsFirm->business_conflict_1_6 = $request->input('business_conflict_1_6');
-
-
-            $FirstDirectorsFirm->director_name_1_7 = $request->input('director_name_1_7');
-            $FirstDirectorsFirm->company_name_1_7 = $request->input('company_name_1_7');
-            $FirstDirectorsFirm->cin_1_7 = $request->input('cin_1_7');
-            $FirstDirectorsFirm->company_status_1_7 = $request->input('company_status_1_7');
-            $FirstDirectorsFirm->appointment_date_1_7 = $request->input('appointment_date_1_7');
-            $FirstDirectorsFirm->business_of_entity_1_7 = $request->input('business_of_entity_1_7');
-            $FirstDirectorsFirm->business_conflict_1_7 = $request->input('business_conflict_1_7');
-
-
-            $FirstDirectorsFirm->director_name_1_8 = $request->input('director_name_1_8');
-            $FirstDirectorsFirm->company_name_1_8 = $request->input('company_name_1_8');
-            $FirstDirectorsFirm->cin_1_8 = $request->input('cin_1_8');
-            $FirstDirectorsFirm->company_status_1_8 = $request->input('company_status_1_8');
-            $FirstDirectorsFirm->appointment_date_1_8 = $request->input('appointment_date_1_8');
-            $FirstDirectorsFirm->business_of_entity_1_8 = $request->input('business_of_entity_1_8');
-            $FirstDirectorsFirm->business_conflict_1_8 = $request->input('business_conflict_1_8');
+        }
             $FirstDirectorsFirm->save();
-
 
 
             // second director name
             $SecondDirectorsFirm = SecondDirectorsFirm::where('firm_background_id', $firmBackground->id)->firstOrFail();
 
-            $SecondDirectorsFirm->director_name_2_1 = $request->input('director_name_2_1');
-            $SecondDirectorsFirm->company_name_2_1 = $request->input('company_name_2_1');
-            $SecondDirectorsFirm->cin_2_1 = $request->input('cin_2_1');
-            $SecondDirectorsFirm->company_status_2_1 = $request->input('company_status_2_1');
-            $SecondDirectorsFirm->appointment_date_2_1 = $request->input('appointment_date_2_1');
-            $SecondDirectorsFirm->business_of_entity_2_1 = $request->input('business_of_entity_2_1');
-            $SecondDirectorsFirm->business_conflict_2_1 = $request->input('business_conflict_2_1');
-
-            $SecondDirectorsFirm->director_name_2_2 = $request->input('director_name_2_2');
-            $SecondDirectorsFirm->company_name_2_2 = $request->input('company_name_2_2');
-            $SecondDirectorsFirm->cin_2_2 = $request->input('cin_2_2');
-            $SecondDirectorsFirm->company_status_2_2 = $request->input('company_status_2_2');
-            $SecondDirectorsFirm->appointment_date_2_2 = $request->input('appointment_date_2_2');
-            $SecondDirectorsFirm->business_of_entity_2_2 = $request->input('business_of_entity_2_2');
-            $SecondDirectorsFirm->business_conflict_2_2 = $request->input('business_conflict_2_2');
-
-
-            $SecondDirectorsFirm->director_name_2_3 = $request->input('director_name_2_3');
-            $SecondDirectorsFirm->company_name_2_3 = $request->input('company_name_2_3');
-            $SecondDirectorsFirm->cin_2_3 = $request->input('cin_2_3');
-            $SecondDirectorsFirm->company_status_2_3 = $request->input('company_status_2_3');
-            $SecondDirectorsFirm->appointment_date_2_3 = $request->input('appointment_date_2_3');
-            $SecondDirectorsFirm->business_of_entity_2_3 = $request->input('business_of_entity_2_3');
-            $SecondDirectorsFirm->business_conflict_2_3 = $request->input('business_conflict_2_3');
-
-
-            $SecondDirectorsFirm->director_name_2_4 = $request->input('director_name_2_4');
-            $SecondDirectorsFirm->company_name_2_4 = $request->input('company_name_2_4');
-            $SecondDirectorsFirm->cin_2_4 = $request->input('cin_2_4');
-            $SecondDirectorsFirm->company_status_2_4 = $request->input('company_status_2_4');
-            $SecondDirectorsFirm->appointment_date_2_4 = $request->input('appointment_date_2_4');
-            $SecondDirectorsFirm->business_of_entity_2_4 = $request->input('business_of_entity_2_4');
-            $SecondDirectorsFirm->business_conflict_2_4 = $request->input('business_conflict_2_4');
-
-            $SecondDirectorsFirm->director_name_2_5 = $request->input('director_name_2_5');
-            $SecondDirectorsFirm->company_name_2_5 = $request->input('company_name_2_5');
-            $SecondDirectorsFirm->cin_2_5 = $request->input('cin_2_5');
-            $SecondDirectorsFirm->company_status_2_5 = $request->input('company_status_2_5');
-            $SecondDirectorsFirm->appointment_date_2_5 = $request->input('appointment_date_2_5');
-            $SecondDirectorsFirm->business_of_entity_2_5 = $request->input('business_of_entity_2_5');
-            $SecondDirectorsFirm->business_conflict_2_5 = $request->input('business_conflict_2_5');
-
-
-            $SecondDirectorsFirm->director_name_2_6 = $request->input('director_name_2_6');
-            $SecondDirectorsFirm->company_name_2_6 = $request->input('company_name_2_6');
-            $SecondDirectorsFirm->cin_2_6 = $request->input('cin_2_6');
-            $SecondDirectorsFirm->company_status_2_6 = $request->input('company_status_2_6');
-            $SecondDirectorsFirm->appointment_date_2_6 = $request->input('appointment_date_2_6');
-            $SecondDirectorsFirm->business_of_entity_2_6 = $request->input('business_of_entity_2_6');
-            $SecondDirectorsFirm->business_conflict_2_6 = $request->input('business_conflict_2_6');
-
-
-            $SecondDirectorsFirm->director_name_2_7 = $request->input('director_name_2_7');
-            $SecondDirectorsFirm->company_name_2_7 = $request->input('company_name_2_7');
-            $SecondDirectorsFirm->cin_2_7 = $request->input('cin_2_7');
-            $SecondDirectorsFirm->company_status_2_7 = $request->input('company_status_2_7');
-            $SecondDirectorsFirm->appointment_date_2_7 = $request->input('appointment_date_2_7');
-            $SecondDirectorsFirm->business_of_entity_2_7 = $request->input('business_of_entity_2_7');
-            $SecondDirectorsFirm->business_conflict_2_7 = $request->input('business_conflict_2_7');
-
-
-            $SecondDirectorsFirm->director_name_2_8 = $request->input('director_name_2_8');
-            $SecondDirectorsFirm->company_name_2_8 = $request->input('company_name_2_8');
-            $SecondDirectorsFirm->cin_2_8 = $request->input('cin_2_8');
-            $SecondDirectorsFirm->company_status_2_8 = $request->input('company_status_2_8');
-            $SecondDirectorsFirm->appointment_date_2_8 = $request->input('appointment_date_2_8');
-            $SecondDirectorsFirm->business_of_entity_2_8 = $request->input('business_of_entity_2_8');
-            $SecondDirectorsFirm->business_conflict_2_8 = $request->input('business_conflict_2_8');
+            for ($i = 1; $i <= 8; $i++) {
+                $SecondDirectorsFirm->{"director_name_2_$i"} = $request->input("director_name_2_$i");
+                $SecondDirectorsFirm->{"company_name_2_$i"} = $request->input("company_name_2_$i");
+                $SecondDirectorsFirm->{"cin_2_$i"} = $request->input("cin_2_$i");
+                $SecondDirectorsFirm->{"company_status_2_$i"} = $request->input("company_status_2_$i");
+                $SecondDirectorsFirm->{"appointment_date_2_$i"} = $request->input("appointment_date_2_$i");
+                $SecondDirectorsFirm->{"business_of_entity_2_$i"} = $request->input("business_of_entity_2_$i");
+                $SecondDirectorsFirm->{"business_conflict_2_$i"} = $request->input("business_conflict_2_$i");
+            }
             $SecondDirectorsFirm->save();
 
 
             // third director name
             $ThirdDirectorsFirm = ThirdDirectorsFirm::where('firm_background_id', $firmBackground->id)->firstOrFail();
 
-            $ThirdDirectorsFirm->director_name_3_1 = $request->input('director_name_3_1');
-            $ThirdDirectorsFirm->company_name_3_1 = $request->input('company_name_3_1');
-            $ThirdDirectorsFirm->cin_3_1 = $request->input('cin_3_1');
-            $ThirdDirectorsFirm->company_status_3_1 = $request->input('company_status_3_1');
-            $ThirdDirectorsFirm->appointment_date_3_1 = $request->input('appointment_date_3_1');
-            $ThirdDirectorsFirm->business_of_entity_3_1 = $request->input('business_of_entity_3_1');
-            $ThirdDirectorsFirm->business_conflict_3_1 = $request->input('business_conflict_3_1');
-
-            $ThirdDirectorsFirm->director_name_3_2 = $request->input('director_name_3_2');
-            $ThirdDirectorsFirm->company_name_3_2 = $request->input('company_name_3_2');
-            $ThirdDirectorsFirm->cin_3_2 = $request->input('cin_3_2');
-            $ThirdDirectorsFirm->company_status_3_2 = $request->input('company_status_3_2');
-            $ThirdDirectorsFirm->appointment_date_3_2 = $request->input('appointment_date_3_2');
-            $ThirdDirectorsFirm->business_of_entity_3_2 = $request->input('business_of_entity_3_2');
-            $ThirdDirectorsFirm->business_conflict_3_2 = $request->input('business_conflict_3_2');
+            for ($i = 1; $i <= 8; $i++) {
+                $ThirdDirectorsFirm->{"director_name_3_$i"} = $request->input("director_name_3_$i");
+                $ThirdDirectorsFirm->{"company_name_3_$i"} = $request->input("company_name_3_$i");
+                $ThirdDirectorsFirm->{"cin_3_$i"} = $request->input("cin_3_$i");
+                $ThirdDirectorsFirm->{"company_status_3_$i"} = $request->input("company_status_3_$i");
+                $ThirdDirectorsFirm->{"appointment_date_3_$i"} = $request->input("appointment_date_3_$i");
+                $ThirdDirectorsFirm->{"business_of_entity_3_$i"} = $request->input("business_of_entity_3_$i");
+                $ThirdDirectorsFirm->{"business_conflict_3_$i"} = $request->input("business_conflict_3_$i");
+            }
 
 
-            $ThirdDirectorsFirm->director_name_3_3 = $request->input('director_name_3_3');
-            $ThirdDirectorsFirm->company_name_3_3 = $request->input('company_name_3_3');
-            $ThirdDirectorsFirm->cin_3_3 = $request->input('cin_3_3');
-            $ThirdDirectorsFirm->company_status_3_3 = $request->input('company_status_3_3');
-            $ThirdDirectorsFirm->appointment_date_3_3 = $request->input('appointment_date_3_3');
-            $ThirdDirectorsFirm->business_of_entity_3_3 = $request->input('business_of_entity_3_3');
-            $ThirdDirectorsFirm->business_conflict_3_3 = $request->input('business_conflict_3_3');
-
-
-            $ThirdDirectorsFirm->director_name_3_4 = $request->input('director_name_3_4');
-            $ThirdDirectorsFirm->company_name_3_4 = $request->input('company_name_3_4');
-            $ThirdDirectorsFirm->cin_3_4 = $request->input('cin_3_4');
-            $ThirdDirectorsFirm->company_status_3_4 = $request->input('company_status_3_4');
-            $ThirdDirectorsFirm->appointment_date_3_4 = $request->input('appointment_date_3_4');
-            $ThirdDirectorsFirm->business_of_entity_3_4 = $request->input('business_of_entity_3_4');
-            $ThirdDirectorsFirm->business_conflict_3_4 = $request->input('business_conflict_3_4');
-
-            $ThirdDirectorsFirm->director_name_3_5 = $request->input('director_name_3_5');
-            $ThirdDirectorsFirm->company_name_3_5 = $request->input('company_name_3_5');
-            $ThirdDirectorsFirm->cin_3_5 = $request->input('cin_3_5');
-            $ThirdDirectorsFirm->company_status_3_5 = $request->input('company_status_3_5');
-            $ThirdDirectorsFirm->appointment_date_3_5 = $request->input('appointment_date_3_5');
-            $ThirdDirectorsFirm->business_of_entity_3_5 = $request->input('business_of_entity_3_5');
-            $ThirdDirectorsFirm->business_conflict_3_5 = $request->input('business_conflict_3_5');
-
-
-            $ThirdDirectorsFirm->director_name_3_6 = $request->input('director_name_3_6');
-            $ThirdDirectorsFirm->company_name_3_6 = $request->input('company_name_3_6');
-            $ThirdDirectorsFirm->cin_3_6 = $request->input('cin_3_6');
-            $ThirdDirectorsFirm->company_status_3_6 = $request->input('company_status_3_6');
-            $ThirdDirectorsFirm->appointment_date_3_6 = $request->input('appointment_date_3_6');
-            $ThirdDirectorsFirm->business_of_entity_3_6 = $request->input('business_of_entity_3_6');
-            $ThirdDirectorsFirm->business_conflict_3_6 = $request->input('business_conflict_3_6');
-
-
-            $ThirdDirectorsFirm->director_name_3_7 = $request->input('director_name_3_7');
-            $ThirdDirectorsFirm->company_name_3_7 = $request->input('company_name_3_7');
-            $ThirdDirectorsFirm->cin_3_7 = $request->input('cin_3_7');
-            $ThirdDirectorsFirm->company_status_3_7 = $request->input('company_status_3_7');
-            $ThirdDirectorsFirm->appointment_date_3_7 = $request->input('appointment_date_3_7');
-            $ThirdDirectorsFirm->business_of_entity_3_7 = $request->input('business_of_entity_3_7');
-            $ThirdDirectorsFirm->business_conflict_3_7 = $request->input('business_conflict_3_7');
-
-
-            $ThirdDirectorsFirm->director_name_3_8 = $request->input('director_name_3_8');
-            $ThirdDirectorsFirm->company_name_3_8 = $request->input('company_name_3_8');
-            $ThirdDirectorsFirm->cin_3_8 = $request->input('cin_3_8');
-            $ThirdDirectorsFirm->company_status_3_8 = $request->input('company_status_3_8');
-            $ThirdDirectorsFirm->appointment_date_3_8 = $request->input('appointment_date_3_8');
-            $ThirdDirectorsFirm->business_of_entity_3_8 = $request->input('business_of_entity_3_8');
-            $ThirdDirectorsFirm->business_conflict_3_8 = $request->input('business_conflict_3_8');
             $ThirdDirectorsFirm->save();
 
             // License form
 
             $License = License::where('firm_background_id', $firmBackground->id)->firstOrFail();
 
-            $License->license_name_1 = $request->input('license_name_1');
-            $License->license_no_1 = $request->input('license_no_1');
-            $License->date_of_issuance_1 = $request->input('date_of_issuance_1');
-            $License->date_of_expiry_1 = $request->input('date_of_expiry_1');
+            for ($i = 1; $i <= 8; $i++) {
+
+            $License->{"license_name_$i"} = $request->input("license_name_$i");
+            $License->{"license_no_$i"} = $request->input("license_no_$i");
+            $License->{"date_of_issuance_$i"} = $request->input("date_of_issuance_$i");
+            $License->{"date_of_expiry_$i"} = $request->input("date_of_expiry_$i");
+
+            }
 
 
-            $License->license_name_2 = $request->input('license_name_2');
-            $License->license_no_2 = $request->input('license_no_2');
-            $License->date_of_issuance_2 = $request->input('date_of_issuance_2');
-            $License->date_of_expiry_2 = $request->input('date_of_expiry_2');
-
-
-            $License->license_name_3 = $request->input('license_name_3');
-            $License->license_no_3 = $request->input('license_no_3');
-            $License->date_of_issuance_3 = $request->input('date_of_issuance_3');
-            $License->date_of_expiry_3 = $request->input('date_of_expiry_3');
-
-
-            $License->license_name_4 = $request->input('license_name_4');
-            $License->license_no_4 = $request->input('license_no_4');
-            $License->date_of_issuance_4 = $request->input('date_of_issuance_4');
-            $License->date_of_expiry_4 = $request->input('date_of_expiry_4');
-
-
-            $License->license_name_5 = $request->input('license_name_5');
-            $License->license_no_5 = $request->input('license_no_5');
-            $License->date_of_issuance_5 = $request->input('date_of_issuance_5');
-            $License->date_of_expiry_5 = $request->input('date_of_expiry_5');
-
-
-            $License->license_name_6 = $request->input('license_name_6');
-            $License->license_no_6 = $request->input('license_no_6');
-            $License->date_of_issuance_6 = $request->input('date_of_issuance_6');
-            $License->date_of_expiry_6 = $request->input('date_of_expiry_6');
-
-
-            $License->license_name_7 = $request->input('license_name_7');
-            $License->license_no_7 = $request->input('license_no_7');
-            $License->date_of_issuance_7 = $request->input('date_of_issuance_7');
-            $License->date_of_expiry_7 = $request->input('date_of_expiry_7');
-
-
-            $License->license_name_8 = $request->input('license_name_8');
-            $License->license_no_8 = $request->input('license_no_8');
-            $License->date_of_issuance_8 = $request->input('date_of_issuance_8');
-            $License->date_of_expiry_8 = $request->input('date_of_expiry_8');
 
             $License->save();
 
@@ -1508,6 +1227,7 @@ $data['financialRatioGrapFYhLablesName'] = [
         $OnGroundVerification->address_details = $request->input('address_details');
         $OnGroundVerification->address_visit_findings = $request->input('address_visit_findings');
         $OnGroundVerification->on_ground_verification_score = $request->input('on_ground_verification_score');
+        $OnGroundVerification->status = 1;
         $OnGroundVerification->save();
         return response()->json(['message' => 'On Ground Verification  Reports updated successfully!']);
 
@@ -1523,60 +1243,24 @@ $data['financialRatioGrapFYhLablesName'] = [
 
             }
 
+        for ($i = 1; $i <= 5; $i++) {
+            $CourtCheck->{"director_name_$i"}  = $request->input("director_name_$i");
+            $CourtCheck->{"director_jurisdiction_$i"}  = $request->input("director_jurisdiction_$i");
+            $CourtCheck->{"director_record_$i"}  = $request->input("director_record_$i");
+            $CourtCheck->{"director_subject_matter_$i"}  = $request->input("director_subject_matter_$i");
 
-        $CourtCheck->director_name_1  = $request->input('director_name_1');
-        $CourtCheck->director_jurisdiction_1  = $request->input('director_jurisdiction_1');
-        $CourtCheck->director_record_1  = $request->input('director_record_1');
-        $CourtCheck->director_subject_matter_1  = $request->input('director_subject_matter_1');
+        }
 
-        $CourtCheck->director_name_2  = $request->input('director_name_2');
-        $CourtCheck->director_jurisdiction_2  = $request->input('director_jurisdiction_2');
-        $CourtCheck->director_record_2  = $request->input('director_record_2');
-        $CourtCheck->director_subject_matter_2  = $request->input('director_subject_matter_2');
-
-        $CourtCheck->director_name_3  = $request->input('director_name_3');
-        $CourtCheck->director_jurisdiction_3  = $request->input('director_jurisdiction_3');
-        $CourtCheck->director_record_3  = $request->input('director_record_3');
-        $CourtCheck->director_subject_matter_3  = $request->input('director_subject_matter_3');
-
-        $CourtCheck->director_name_4  = $request->input('director_name_4');
-        $CourtCheck->director_jurisdiction_4  = $request->input('director_jurisdiction_4');
-        $CourtCheck->director_record_4  = $request->input('director_record_4');
-        $CourtCheck->director_subject_matter_4  = $request->input('director_subject_matter_4');
-
-        $CourtCheck->director_name_5  = $request->input('director_name_5');
-        $CourtCheck->director_jurisdiction_5  = $request->input('director_jurisdiction_5');
-        $CourtCheck->director_record_5  = $request->input('director_record_5');
-        $CourtCheck->director_subject_matter_5  = $request->input('director_subject_matter_5');
-
-        $CourtCheck->company_jurisdiction_1  = $request->input('company_jurisdiction_1');
-        $CourtCheck->company_record_1  = $request->input('company_record_1');
-        $CourtCheck->company_subject_matter_1  = $request->input('company_subject_matter_1');
-
-        $CourtCheck->company_jurisdiction_2  = $request->input('company_jurisdiction_2');
-        $CourtCheck->company_record_2  = $request->input('company_record_2');
-        $CourtCheck->company_subject_matter_2  = $request->input('company_subject_matter_2');
-
-        $CourtCheck->company_jurisdiction_3  = $request->input('company_jurisdiction_3');
-        $CourtCheck->company_record_3  = $request->input('company_record_3');
-        $CourtCheck->company_subject_matter_3  = $request->input('company_subject_matter_3');
-
-        $CourtCheck->company_jurisdiction_4  = $request->input('company_jurisdiction_4');
-        $CourtCheck->company_record_4  = $request->input('company_record_4');
-        $CourtCheck->company_subject_matter_4  = $request->input('company_subject_matter_4');
-
-        $CourtCheck->company_jurisdiction_5  = $request->input('company_jurisdiction_5');
-        $CourtCheck->company_record_5  = $request->input('company_record_5');
-        $CourtCheck->company_subject_matter_5  = $request->input('company_subject_matter_5');
-
-        $CourtCheck->company_jurisdiction_1  = $request->input('company_jurisdiction_1');
-        $CourtCheck->company_record_1  = $request->input('company_record_1');
-        $CourtCheck->company_subject_matter_1  = $request->input('company_subject_matter_1');
-
+        for ($i = 1; $i <= 5; $i++) {
+        $CourtCheck->{"company_jurisdiction_$i"}  = $request->input("company_jurisdiction_$i");
+        $CourtCheck->{"company_record_$i"}  = $request->input("company_record_$i");
+        $CourtCheck->{"company_subject_matter_$i"}  = $request->input("company_subject_matter_$i");
+        }
 
         $CourtCheck->legal_score  = $request->input('legal_score');
         $CourtCheck->score_analysis = $request->input('score_analysis');
         $CourtCheck->Type_of_risk = $request->input('legal_score') > 60 ? 'High Risk' : ($request->input('legal_score') <= 60 && $request->input('legal_score') > 30 ? 'Medium Risk' : ($request->input('legal_score') <= 30 ? 'Low Risk' : '' ) );
+        $CourtCheck->status = 1;
 
         $CourtCheck->save();
         return response()->json(['message' => 'Court Check  Reports updated successfully!']);
@@ -1594,25 +1278,14 @@ $data['financialRatioGrapFYhLablesName'] = [
         }
 
 
+        for ($i = 1; $i <= 4; $i++) {
+            $Financial->{"name_$i"}  = $request->input("name_$i");
+            $Financial->{"status_$i"}  = $request->input("status_$i");
+            $Financial->{"amount_$i"}  = $request->input("amount_$i");
+            $Financial->{"charged_property_$i"}  = $request->input("charged_property_$i");
+         }
 
-        $Financial->name_1  = $request->input('name_1');
-        $Financial->status_1  = $request->input('status_1');
-        $Financial->amount_1  = $request->input('amount_1');
-        $Financial->charged_property_1  = $request->input('charged_property_1');
-        $Financial->name_2  = $request->input('name_2');
-        $Financial->status_2  = $request->input('status_2');
-        $Financial->amount_2  = $request->input('amount_2');
-        $Financial->charged_property_2  = $request->input('charged_property_2');
 
-        $Financial->name_3  = $request->input('name_3');
-        $Financial->status_3  = $request->input('status_3');
-        $Financial->amount_3  = $request->input('amount_3');
-        $Financial->charged_property_3  = $request->input('charged_property_3');
-
-        $Financial->name_4  = $request->input('name_4');
-        $Financial->status_4  = $request->input('status_4');
-        $Financial->amount_4  = $request->input('amount_4');
-        $Financial->charged_property_4  = $request->input('charged_property_4');
         $Financial->overall_financial_score  = $request->input('overall_financial_score');
         $Financial->score_analysis  = $request->input('score_analysis');
         $Financial->Type_of_risk = $request->input('overall_financial_score') > 60 ? 'High Risk' : ($request->input('overall_financial_score') <= 60 && $request->input('overall_financial_score') > 30 ? 'Medium Risk' : ($request->input('overall_financial_score') <= 30 ? 'Low Risk' : '' ) );
@@ -1966,47 +1639,20 @@ $data['financialRatioGrapFYhLablesName'] = [
 
         }
 
-        $TaxReurnCredit->tax_fy1  = $request->input('tax_fy1');
-        $TaxReurnCredit->tax_fy2  = $request->input('tax_fy2');
-        $TaxReurnCredit->tax_fy3  = $request->input('tax_fy3');
-        $TaxReurnCredit->tax_fy4  = $request->input('tax_fy4');
-        $TaxReurnCredit->tax_fy5  = $request->input('tax_fy5');
 
-        $TaxReurnCredit->name_1  = $request->input('name_1');
-        $TaxReurnCredit->credit_score_1  = $request->input('credit_score_1');
-        $TaxReurnCredit->outstanding_amount_1  = $request->input('outstanding_amount_1');
-        $TaxReurnCredit->solvency_1  = $request->input('solvency_1');
-        $TaxReurnCredit->payment_history_1  = $request->input('payment_history_1');
-        $TaxReurnCredit->credit_dependency_1  = $request->input('credit_dependency_1');
-        $TaxReurnCredit->num_of_loans_1  = $request->input('num_of_loans_1');
-        $TaxReurnCredit->num_of_loans_2  = $request->input('num_of_loans_2');
-        $TaxReurnCredit->num_of_loans_3  = $request->input('num_of_loans_3');
-        $TaxReurnCredit->num_of_loans_4  = $request->input('num_of_loans_4');
+        for ($i = 1; $i <= 5; $i++) {
+        $TaxReurnCredit->{"tax_fy$i"}  = $request->input("tax_fy$i");
 
-
-
-        $TaxReurnCredit->name_2  = $request->input('name_2');
-        $TaxReurnCredit->credit_score_2  = $request->input('credit_score_2');
-        $TaxReurnCredit->outstanding_amount_2  = $request->input('outstanding_amount_2');
-        $TaxReurnCredit->solvency_2  = $request->input('solvency_2');
-        $TaxReurnCredit->payment_history_2  = $request->input('payment_history_2');
-        $TaxReurnCredit->credit_dependency_2  = $request->input('credit_dependency_2');
-
-        $TaxReurnCredit->name_3  = $request->input('name_3');
-        $TaxReurnCredit->credit_score_3  = $request->input('credit_score_3');
-        $TaxReurnCredit->outstanding_amount_3  = $request->input('outstanding_amount_3');
-        $TaxReurnCredit->solvency_3  = $request->input('solvency_3');
-        $TaxReurnCredit->payment_history_3  = $request->input('payment_history_3');
-        $TaxReurnCredit->credit_dependency_3  = $request->input('credit_dependency_3');
-
-        $TaxReurnCredit->name_4  = $request->input('name_4');
-        $TaxReurnCredit->credit_score_4  = $request->input('credit_score_4');
-        $TaxReurnCredit->outstanding_amount_4  = $request->input('outstanding_amount_4');
-        $TaxReurnCredit->solvency_4  = $request->input('solvency_4');
-        $TaxReurnCredit->payment_history_4  = $request->input('payment_history_4');
-        $TaxReurnCredit->credit_dependency_4  = $request->input('credit_dependency_4');
-
-
+        }
+        for ($i = 1; $i <= 4; $i++) {
+            $TaxReurnCredit->{"name_$i"}  = $request->input("name_$i");
+            $TaxReurnCredit->{"credit_score_$i"}  = $request->input("credit_score_$i");
+            $TaxReurnCredit->{"outstanding_amount_$i"}  = $request->input("outstanding_amount_$i");
+            $TaxReurnCredit->{"solvency_$i"}  = $request->input("solvency_$i");
+            $TaxReurnCredit->{"payment_history_$i"}  = $request->input("payment_history_$i");
+            $TaxReurnCredit->{"credit_dependency_$i"}  = $request->input("credit_dependency_$i");
+            $TaxReurnCredit->{"num_of_loans_$i"}  = $request->input("num_of_loans_$i");
+         }
         $TaxReurnCredit->overall_credit_history_score  = $request->input('overall_credit_history_score');
         $TaxReurnCredit->score_analysis = $request->input('score_analysis');
         $TaxReurnCredit->Type_of_risk = $request->input('overall_credit_history_score') > 60 ? 'High Risk' : ($request->input('overall_credit_history_score') <= 60 && $request->input('overall_credit_history_score') > 30 ? 'Medium Risk' : ($request->input('overall_credit_history_score') <= 30 ? 'Low Risk' : '' ) );
@@ -2077,6 +1723,7 @@ $data['financialRatioGrapFYhLablesName'] = [
 
         $KeyObservation->{"key_recommendations_$i"} = $request->input("key_recommendations_$i");
         }
+
        $KeyObservation->overall_risk_score = $request->input('overall_risk_score');
        $KeyObservation->status = 3;
        $KeyObservation->Type_of_risk = $request->input('overall_risk_score') > 60 ? 'High Risk' : ($request->input('overall_risk_score') <= 60 && $request->input('overall_risk_score') > 30 ? 'Medium Risk' : ($request->input('overall_risk_score') <= 30 ? 'Low Risk' : '' ) );
