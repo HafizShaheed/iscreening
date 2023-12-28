@@ -1909,13 +1909,13 @@
 
 
             // Call the function for each section
-            console.log(highRiskCOunt, "high");
-            console.log(mediumRiskCOunt, "medium");
-            console.log(lowRiskCOunt, "low");
+            // console.log(highRiskCOunt, "high");
+            // console.log(mediumRiskCOunt, "medium");
+            // console.log(lowRiskCOunt, "low");
 
-            doughnutChartall("doughnut_chart_1", dougGraphHighRisk, 'rgba(255, 0, 0, 1)', "High Risk", "Over All Risk", [highRiskCOunt, totalRisk ]);
-doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, 'rgba(0, 0, 255, 1)', "Medium Risk", "Over All Risk", [mediumRiskCOunt, totalRisk]);
-doughnutChartall("doughnut_chart_3", dougGraphLowRisk, 'rgba(0, 255, 0, 1)', "Low Risk", "Over All Risk", [lowRiskCOunt, totalRisk]);
+                doughnutChartall("doughnut_chart_1", dougGraphHighRisk, 'rgba(255, 0, 0, 1)', "High Risk", "Over All Risk", [highRiskCOunt, totalRisk ]);
+                doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, 'rgba(0, 0, 255, 1)', "Medium Risk", "Over All Risk", [mediumRiskCOunt, totalRisk]);
+                doughnutChartall("doughnut_chart_3", dougGraphLowRisk, 'rgba(0, 255, 0, 1)', "Low Risk", "Over All Risk", [lowRiskCOunt, totalRisk]);
 
             var polarChart = function() {
                 if (jQuery('#polar_chart').length > 0) {

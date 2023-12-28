@@ -287,10 +287,13 @@ class teamController extends Controller
 
        $TaxReurnCredit = TaxReurnCredit::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $TaxReurnCredit->team_user_id = Auth::guard('team')->id();
+
        $TaxReurnCredit->save();
 
        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $KeyObservation->team_user_id = Auth::guard('team')->id();
+       $KeyObservation->status = 1;
+
        $KeyObservation->save();
 
        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
@@ -333,9 +336,16 @@ class teamController extends Controller
         $OnGroundVerification->status = 1;
         $OnGroundVerification->save();
 
-       $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
-       $ThirdParty->status = 1;
-       $ThirdParty->save();
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->team_user_id = Auth::guard('team')->id();
+        $KeyObservation->status = 1;
+
+        $KeyObservation->save();
+
+        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
+
         return response()->json(['message' => 'On Ground Verification  Reports updated successfully!']);
 
 
@@ -370,6 +380,12 @@ class teamController extends Controller
             $CourtCheck->status = 1;
 
         $CourtCheck->save();
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->team_user_id = Auth::guard('team')->id();
+        $KeyObservation->status = 1;
+
+        $KeyObservation->save();
+
         $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
         $ThirdParty->status = 1;
         $ThirdParty->save();
@@ -404,6 +420,12 @@ class teamController extends Controller
         $Financial->status = 1;
 
         $Financial->save();
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->team_user_id = Auth::guard('team')->id();
+        $KeyObservation->status = 1;
+
+        $KeyObservation->save();
+
         $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
         $ThirdParty->status = 1;
         $ThirdParty->save();
@@ -729,6 +751,12 @@ class teamController extends Controller
         $BusinessIntelligence->status = 1;
         $BusinessIntelligence->save();
 
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->team_user_id = Auth::guard('team')->id();
+        $KeyObservation->status = 1;
+
+        $KeyObservation->save();
+
         $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
         $ThirdParty->status = 1;
         $ThirdParty->save();
@@ -767,6 +795,12 @@ class teamController extends Controller
 
         $TaxReurnCredit->save();
 
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->team_user_id = Auth::guard('team')->id();
+        $KeyObservation->status = 1;
+
+        $KeyObservation->save();
+
         $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
         $ThirdParty->status = 1;
         $ThirdParty->save();
@@ -799,6 +833,12 @@ class teamController extends Controller
         $MarketReputation->status = 1;
 
         $MarketReputation->save();
+
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->team_user_id = Auth::guard('team')->id();
+        $KeyObservation->status = 1;
+
+        $KeyObservation->save();
 
         $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);
         $ThirdParty->status = 1;
@@ -838,36 +878,51 @@ class teamController extends Controller
          }
        $KeyObservation->status = 3;
        $KeyObservation->Type_of_risk = $request->input('overall_risk_score') > 60 ? 'High Risk' : ($request->input('overall_risk_score') <= 60 && $request->input('overall_risk_score') > 30 ? 'Medium Risk' : ($request->input('overall_risk_score') <= 30 ? 'Low Risk' : '' ) );
+       $KeyObservation->team_user_id = Auth::guard('team')->id();
 
        $KeyObservation->save();
 
-       $FirmBackground = FirmBackground::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
-       $FirmBackground->status = 3;
 
+       $FirmBackground = FirmBackground::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+       $FirmBackground->team_user_id = Auth::guard('team')->id();
+
+       $FirmBackground->status = 3;
        $FirmBackground->save();
 
        $BusinessIntelligence = BusinessIntelligence::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $BusinessIntelligence->status = 3;
+              $BusinessIntelligence->team_user_id = Auth::guard('team')->id();
+
        $BusinessIntelligence->save();
 
        $CourtCheck = CourtCheck::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $CourtCheck->status = 3;
+              $CourtCheck->team_user_id = Auth::guard('team')->id();
+
        $CourtCheck->save();
 
        $Financial = Financial::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $Financial->status = 3;
+              $Financial->team_user_id = Auth::guard('team')->id();
+
        $Financial->save();
 
        $MarketReputation = MarketReputation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $MarketReputation->status = 3;
+              $MarketReputation->team_user_id = Auth::guard('team')->id();
+
        $MarketReputation->save();
 
        $OnGroundVerification = OnGroundVerification::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $OnGroundVerification->status = 3;
+              $OnGroundVerification->team_user_id = Auth::guard('team')->id();
+
        $OnGroundVerification->save();
 
        $TaxReurnCredit = TaxReurnCredit::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $TaxReurnCredit->status = 3;
+              $TaxReurnCredit->team_user_id = Auth::guard('team')->id();
+
        $TaxReurnCredit->save();
 
        $ThirdParty = ThirdParty::findOrFail($request->getThirdPartyForID);

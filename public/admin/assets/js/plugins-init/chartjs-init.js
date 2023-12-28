@@ -31,9 +31,9 @@
                             data: financialrationGrapFY_current_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -92,9 +92,9 @@
                             data: financialrationGrapFY_quick_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -151,9 +151,9 @@
                             data: financialrationGrapFY_debt_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -209,9 +209,9 @@
                             data: financialrationGrapFY_solvency_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -268,9 +268,9 @@
                             data: financialrationGrapFY_debt_to_equity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -327,9 +327,9 @@
                             data: financialrationGrapFY_asset_turnover_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -386,9 +386,9 @@
                             data: financialrationGrapFY_absolute_liquidity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -445,9 +445,9 @@
                             data: financialrationGrapFY_proprietary_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -505,9 +505,9 @@
                             data: financialrationGrapFY_net_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -564,9 +564,9 @@
                             data: financialrationGrapFY_gross_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -624,9 +624,9 @@
                             data: financialrationGrapFY_springate_s_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -683,9 +683,9 @@
                             data: financialrationGrapFY_trade_receivable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -742,9 +742,9 @@
                             data: financialrationGrapFY_trade_payable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -801,9 +801,9 @@
                             data: financialrationGrapFY_taffler_z_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -860,9 +860,9 @@
                             data: financialrationGrapFY_zmijewski_x_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: 'rgba(33, 150, 243, 0.4)',
+							backgroundColor: '#2585b1',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -923,9 +923,9 @@
                             data: businessInteligenceGrapFY_accounts_payable,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: '#f3643a',
+							backgroundColor: '#61c0e2',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -983,9 +983,9 @@
                             data: businessInteligenceGrapFY_inventory_turnover,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: '#f3643a',
+							backgroundColor: '#61c0e2',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -1041,9 +1041,9 @@
                             data: businessInteligenceGrapFY_days_sales_in_inventory,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: '#f3643a',
+							backgroundColor: '#61c0e2',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -1099,9 +1099,9 @@
                             data: businessInteligenceGrapFY_operating_efficiency,
                             borderColor: 'black',
                             borderWidth: "2",
-							backgroundColor: '#f3643a',
+							backgroundColor: '#61c0e2',
                             pointRadius: 5,
-                            pointBackgroundColor: ['black','red', 'green', 'yellow', 'purple'],}
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
                     ]
                 },
                 options: {
@@ -1168,7 +1168,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1222,7 +1222,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1274,7 +1274,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1326,7 +1326,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1379,7 +1379,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1431,7 +1431,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1482,7 +1482,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1533,7 +1533,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1584,7 +1584,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1634,7 +1634,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1685,7 +1685,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1736,7 +1736,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1787,7 +1787,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1839,7 +1839,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1890,7 +1890,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {
@@ -1941,7 +1941,7 @@
                             borderColor: '#fff',
                             borderWidth: "0",
                             // Use an array of colors for each bar
-                            backgroundColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],                        }
+                            backgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],                        }
                     ]
                 },
                 options: {

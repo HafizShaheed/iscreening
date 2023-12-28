@@ -47,11 +47,21 @@ class userController extends Controller
             $data['page'] = "Dashboard";
             $data['pageIntro'] = "Introducing Client Dashboard";
             $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-            $highRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-            $mediumRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-            $lowRiskCOunt = KeyObservation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
-            // dd( $lowRiskCOunt);
+            $highRiskCOunt = KeyObservation::
+            where('Type_of_risk', 'High Risk')->
+            where(['user_id' => auth()->user()->id, 'status' => 3])->
+            count();
+            $mediumRiskCOunt = KeyObservation::
+            where('Type_of_risk', 'Medium Risk')->
+            where(['user_id' => auth()->user()->id, 'status' => 3])->
+            count();
+            $lowRiskCOunt = KeyObservation::
+            where('Type_of_risk', 'Low Risk')->
+            where(['user_id' => auth()->user()->id, 'status' => 3])->
+            count();
             $data['totalRisk'] = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
+
+            // dd( $data['totalRisk'] );
 
             // Calculate percentages
             $data['highRiskPercentage'] = $data['totalRisk'] > 0 ? number_format(($highRiskCOunt * 100) / $data['totalRisk'], 2, '.', '') : 0;
@@ -85,7 +95,7 @@ class userController extends Controller
             $departRiskCounts = DB::table('departments')
             ->leftJoin('third_parties', 'departments.id', '=', 'third_parties.department_id')
             ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
-            ->where('key_observations.user_id', auth()->user()->id)
+            ->where(['key_observations.user_id' => auth()->user()->id, 'key_observations.status' => 3])
             ->select('departments.dept_name as department', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
             ->groupBy('departments.id', 'departments.dept_name', 'key_observations.Type_of_risk')
             ->get();
@@ -115,7 +125,7 @@ class userController extends Controller
         $zoneRiskCounts = DB::table('zones')
         ->leftJoin('third_parties', 'zones.id', '=', 'third_parties.zone_id')
         ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
-        ->where('key_observations.user_id', auth()->user()->id)
+        ->where(['key_observations.user_id' => auth()->user()->id, 'key_observations.status' => 3])
         ->select('zones.zone_name as zone', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
         ->groupBy('zones.id', 'zones.zone_name', 'key_observations.Type_of_risk')
         ->get();
@@ -149,9 +159,9 @@ class userController extends Controller
 
 
             // Reputation count
-            $RegulatoryCountHigh = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-            $RegulatoryCountMedium = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-            $RegulatoryCountLow = FirmBackground::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+            $RegulatoryCountHigh = FirmBackground::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+            $RegulatoryCountMedium = FirmBackground::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+            $RegulatoryCountLow = FirmBackground::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
             $data['RegulatoryCount'] = [
                 $RegulatoryCountHigh,
                 $RegulatoryCountMedium,
@@ -162,9 +172,9 @@ class userController extends Controller
 
 
             // Legal count
-            $legalCountHigh = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-            $legalCountMedium = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-            $legalCountLow = CourtCheck::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+            $legalCountHigh = CourtCheck::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+            $legalCountMedium = CourtCheck::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+            $legalCountLow = CourtCheck::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
             $data['legalCount'] = [
                 $legalCountHigh,
                 $legalCountMedium,
@@ -172,9 +182,9 @@ class userController extends Controller
             ];
 
              // Financial count
-             $financialCountHigh = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-             $financialCountMedium = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-             $financialCountLow = Financial::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+             $financialCountHigh = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+             $financialCountMedium = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+             $financialCountLow = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
              $data['financialCount'] = [
                  $financialCountHigh,
                  $financialCountMedium,
@@ -182,18 +192,18 @@ class userController extends Controller
              ];
 
                 // Opertional count
-                $taxReurnCreditCountHigh = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-                $taxReurnCreditCountMedium = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-                $taxReurnCreditCountLow = TaxReurnCredit::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+                $taxReurnCreditCountHigh = TaxReurnCredit::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+                $taxReurnCreditCountMedium = TaxReurnCredit::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+                $taxReurnCreditCountLow = TaxReurnCredit::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
                 $data['taxReurnCreditCount'] = [
                     $taxReurnCreditCountHigh,
                     $taxReurnCreditCountMedium,
                        $taxReurnCreditCountLow,
                 ];
               // Regulatary count
-              $marketReputationCountHigh = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'High Risk')->count();
-              $marketReputationCountMedium = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Medium Risk')->count();
-              $marketReputationCountLow = MarketReputation::where('user_id', auth()->user()->id)->where('Type_of_risk', 'Low Risk')->count();
+              $marketReputationCountHigh = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+              $marketReputationCountMedium = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+              $marketReputationCountLow = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
               $data['regulataryCount'] = [
                   $marketReputationCountHigh,
                   $marketReputationCountMedium,
