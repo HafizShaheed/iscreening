@@ -71,51 +71,53 @@
             <div class="card-body justify-content-center">
 
             <div class="row">
-
-                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                        <div class="card-title mb-4 d-flex justify-content-center align-items-center">
-                            <div class="card chart-grd same-card" style="background-color: #ff0000cc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-                                <div class="card-body depostit-card p-0">
-                                    <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
-                                        <div class="justify-content-center align-items-center">
-                                            <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total High Risk</h5>
-                                            <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $highRiskCOunt }}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+    <div class="card-title mb-4 d-flex justify-content-center align-items-center">
+        <div class="card chart-grd same-card" style="background-color: rgb(239, 83, 80); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <div class="card-body depostit-card p-0">
+                <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
+                    <div class="justify-content-center align-items-center">
+                        <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total High Risk</h5>
+                        <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $highRiskCOunt }}</h5>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                        <div class="card-title mb-4 d-flex justify-content-center align-items-center">
-                            <div class="card chart-grd same-card" style="background-color: #0000ffb5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-                                <div class="card-body depostit-card p-0">
-                                    <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
-                                        <div class="justify-content-center align-items-center">
-                                            <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total Medium Risk</h5>
-                                            <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $mediumRiskCOunt }}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
-                        <div class="card-title mb-4 d-flex justify-content-center align-items-center">
-                            <div class="card chart-grd same-card" style="background-color: #00ff00a8; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-                                <div class="card-body depostit-card p-0">
-                                    <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
-                                        <div class="justify-content-center align-items-center">
-                                            <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total Low Risk</h5>
-                                            <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $lowRiskCOunt }}</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+    <div class="card-title mb-4 d-flex justify-content-center align-items-center">
+        <div class="card chart-grd same-card" style="background-color: rgb(121, 134, 203); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <div class="card-body depostit-card p-0">
+                <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
+                    <div class="justify-content-center align-items-center">
+                        <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total Medium Risk</h5>
+                        <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $mediumRiskCOunt }}</h5>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+    <div class="card-title mb-4 d-flex justify-content-center align-items-center">
+        <div class="card chart-grd same-card" style="background-color: rgb(129, 199, 132); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <div class="card-body depostit-card p-0">
+                <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
+                    <div class="justify-content-center align-items-center">
+                        <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total Low Risk</h5>
+                        <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $lowRiskCOunt }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
             </div>
 
@@ -611,9 +613,9 @@
             //             'rgba(54, 162, 235, 1)',
             //             'rgba(153, 102, 255, 1)',
             //             'rgba(255, 159, 64, 1)',
-            //             'rgba(255, 0, 0, 1)',    // August
-            //             'rgba(0, 255, 0, 1)',    // September
-            //             'rgba(0, 0, 255, 1)',    // October
+            //             'rgb(239, 83, 80)',    // August
+            //             'rgb(129, 199, 132)',    // September
+            //             'rgb(121, 134, 203)',    // October
             //             'rgba(255, 165, 0, 1)',   // December
             //             'rgba(128, 0, 128, 1)',  // November
             //         ];
@@ -673,16 +675,16 @@
                     const barChartVerticalDepartment = document.getElementById("barChartVerticalDepartment").getContext('2d');
                     //generate gradient
                     const barChartVerticalDepartmentgradientStroke = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
-                    barChartVerticalDepartmentgradientStroke.addColorStop(0, "rgba(255, 0, 0, 1)");
-                    barChartVerticalDepartmentgradientStroke.addColorStop(1, "rgba(255, 0, 0, 1)");
+                    barChartVerticalDepartmentgradientStroke.addColorStop(0, "rgb(239, 83, 80)");
+                    barChartVerticalDepartmentgradientStroke.addColorStop(1, "rgb(239, 83, 80)");
 
                     const barChartVerticalDepartmentgradientStroke2 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
-                    barChartVerticalDepartmentgradientStroke2.addColorStop(0, "rgba(0, 0, 255, 1)");
-                    barChartVerticalDepartmentgradientStroke2.addColorStop(1, "rgba(0, 0, 255, 1)");
+                    barChartVerticalDepartmentgradientStroke2.addColorStop(0, "rgb(121, 134, 203)");
+                    barChartVerticalDepartmentgradientStroke2.addColorStop(1, "rgb(121, 134, 203)");
 
                     const barChartVerticalDepartmentgradientStroke3 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
-                    barChartVerticalDepartmentgradientStroke3.addColorStop(0, "rgba(0, 255, 0, 1)");
-                    barChartVerticalDepartmentgradientStroke3.addColorStop(1, "rgba(0, 255, 0, 1)");
+                    barChartVerticalDepartmentgradientStroke3.addColorStop(0, "rgb(129, 199, 132)");
+                    barChartVerticalDepartmentgradientStroke3.addColorStop(1, "rgb(129, 199, 132)");
 
                     // '', // August
                     //     '', // October
@@ -763,16 +765,16 @@
                     const barChartHorizontalLocation = document.getElementById("barChartHorizontalLocation").getContext('2d');
                     //generate gradient
                     const barChartHorizontalLocationgradientStroke = barChartHorizontalLocation.createLinearGradient(50, 100, 50, 50);
-                    barChartHorizontalLocationgradientStroke.addColorStop(0, "rgba(255, 0, 0, 1)");
-                    barChartHorizontalLocationgradientStroke.addColorStop(1, "rgba(255, 0, 0, 1)");
+                    barChartHorizontalLocationgradientStroke.addColorStop(0, "rgb(239, 83, 80)");
+                    barChartHorizontalLocationgradientStroke.addColorStop(1, "rgb(239, 83, 80)");
 
                     const barChartHorizontalLocationgradientStroke2 = barChartHorizontalLocation.createLinearGradient(50, 100, 50, 50);
-                    barChartHorizontalLocationgradientStroke2.addColorStop(0, "rgba(0, 0, 255, 1)");
-                    barChartHorizontalLocationgradientStroke2.addColorStop(1, "rgba(0, 0, 255, 1)");
+                    barChartHorizontalLocationgradientStroke2.addColorStop(0, "rgb(121, 134, 203)");
+                    barChartHorizontalLocationgradientStroke2.addColorStop(1, "rgb(121, 134, 203)");
 
                     const barChartHorizontalLocationgradientStroke3 = barChartHorizontalLocation.createLinearGradient(50, 100, 50, 50);
-                    barChartHorizontalLocationgradientStroke3.addColorStop(0, "rgba(0, 255, 0, 1)");
-                    barChartHorizontalLocationgradientStroke3.addColorStop(1, "rgba(0, 255, 0, 1)");
+                    barChartHorizontalLocationgradientStroke3.addColorStop(0, "rgb(129, 199, 132)");
+                    barChartHorizontalLocationgradientStroke3.addColorStop(1, "rgb(129, 199, 132)");
 
                     // '', // August
                     //     '', // October
@@ -859,9 +861,9 @@
             //             'rgba(54, 162, 235, 1)',
             //             'rgba(153, 102, 255, 1)',
             //             'rgba(255, 159, 64, 1)',
-            //             'rgba(255, 0, 0, 1)', // August
-            //             'rgba(0, 255, 0, 1)', // September
-            //             'rgba(0, 0, 255, 1)', // October
+            //             'rgb(239, 83, 80)', // August
+            //             'rgb(129, 199, 132)', // September
+            //             'rgb(121, 134, 203)', // October
             //             'rgba(255, 165, 0, 1)', // December
             //             'rgba(128, 0, 128, 1)', // November
             //         ];
@@ -916,9 +918,9 @@
             //         const barColors = [
 
 
-            //             'rgba(255, 0, 0, 1)', // August
-            //             'rgba(0, 255, 0, 1)', // September
-            //             'rgba(0, 0, 255, 1)', // October
+            //             'rgb(239, 83, 80)', // August
+            //             'rgb(129, 199, 132)', // September
+            //             'rgb(121, 134, 203)', // October
             //             'rgba(255, 165, 0, 1)', // December
             //             'rgba(128, 0, 128, 1)', // November
             //         ];
@@ -973,9 +975,9 @@
                     const barColors = [
 
 
-                        'rgba(255, 0, 0, 1)', // August
-                        'rgba(0, 0, 255, 1)', // October
-                        'rgba(0, 255, 0, 1)', // September
+                        'rgb(239, 83, 80)', // August
+                        'rgb(121, 134, 203)', // October
+                        'rgb(129, 199, 132)', // September
                     ];
 
                     const barChart = document.getElementById("barChartVerticalReputation").getContext('2d');
@@ -1027,9 +1029,9 @@
                     // Create an array of different colors for each month
                     const barColors = [
 
-                        'rgba(255, 0, 0, 1)', // August
-                        'rgba(0, 0, 255, 1)', // October
-                        'rgba(0, 255, 0, 1)', // September
+                        'rgb(239, 83, 80)', // August
+                        'rgb(121, 134, 203)', // October
+                        'rgb(129, 199, 132)', // September
                     ];
 
                     const barChart = document.getElementById("barChartVerticalLegal").getContext('2d');
@@ -1080,9 +1082,9 @@
                     // Create an array of different colors for each month
                     const barColors = [
 
-                        'rgba(255, 0, 0, 1)', // August
-                        'rgba(0, 0, 255, 1)', // October
-                        'rgba(0, 255, 0, 1)', // September
+                        'rgb(239, 83, 80)', // August
+                        'rgb(121, 134, 203)', // October
+                        'rgb(129, 199, 132)', // September
                     ];
 
                     const barChart = document.getElementById("barChartVerticalFinancial").getContext('2d');
@@ -1133,9 +1135,9 @@
                     // Create an array of different colors for each month
                     const barColors = [
 
-                        'rgba(255, 0, 0, 1)', // August
-                        'rgba(0, 0, 255, 1)', // October
-                        'rgba(0, 255, 0, 1)', // September
+                        'rgb(239, 83, 80)', // August
+                        'rgb(121, 134, 203)', // October
+                        'rgb(129, 199, 132)', // September
                     ];
 
                     const barChart = document.getElementById("barChartVerticalOpertional").getContext('2d');
@@ -1186,9 +1188,9 @@
                     // Create an array of different colors for each month
                     const barColors = [
 
-                        'rgba(255, 0, 0, 1)', // August
-                        'rgba(0, 0, 255, 1)', // October
-                        'rgba(0, 255, 0, 1)', // September
+                        'rgb(239, 83, 80)', // August
+                        'rgb(121, 134, 203)', // October
+                        'rgb(129, 199, 132)', // September
                     ];
 
                     const barChart = document.getElementById("barChartVerticalRegulatary").getContext('2d');
@@ -1869,11 +1871,11 @@
                                 borderColor: "rgba(255,255,255,1)",
                                 backgroundColor: [
                                     dynamicColor,
-                                    "#1c9bf6",
+                                    "#90CAF9",
                                 ],
                                 hoverBackgroundColor: [
                                     dynamicColor,
-                                    "#1c9bf6",
+                                    "#90CAF9",
                                     // August
                                     // October
                                     // September
@@ -1898,7 +1900,7 @@
                                     label: function(tooltipItem, data) {
                                         var dataset = data.datasets[tooltipItem.datasetIndex];
                                         var currentValue = dataset.data[tooltipItem.index];
-                                        return data.labels[tooltipItem.index] + ': ' + currentValue + ' (total ' + count[tooltipItem.index] + ')';
+                                        return data.labels[tooltipItem.index] + ': ' + currentValue  + '% '+ ' (total ' + count[tooltipItem.index] + ')';
                                     }
                                 }
                             }
@@ -1913,9 +1915,9 @@
             // console.log(mediumRiskCOunt, "medium");
             // console.log(lowRiskCOunt, "low");
 
-                doughnutChartall("doughnut_chart_1", dougGraphHighRisk, 'rgba(255, 0, 0, 1)', "High Risk", "Over All Risk", [highRiskCOunt, totalRisk ]);
-                doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, 'rgba(0, 0, 255, 1)', "Medium Risk", "Over All Risk", [mediumRiskCOunt, totalRisk]);
-                doughnutChartall("doughnut_chart_3", dougGraphLowRisk, 'rgba(0, 255, 0, 1)', "Low Risk", "Over All Risk", [lowRiskCOunt, totalRisk]);
+                doughnutChartall("doughnut_chart_1", dougGraphHighRisk, 'rgb(239, 83, 80)', "High Risk", "Over All Risk", [highRiskCOunt, totalRisk ]);
+                doughnutChartall("doughnut_chart_2", dougGraphMediumRisk, 'rgb(121, 134, 203)', "Medium Risk", "Over All Risk", [mediumRiskCOunt, totalRisk]);
+                doughnutChartall("doughnut_chart_3", dougGraphLowRisk, 'rgb(129, 199, 132)', "Low Risk", "Over All Risk", [lowRiskCOunt, totalRisk]);
 
             var polarChart = function() {
                 if (jQuery('#polar_chart').length > 0) {
