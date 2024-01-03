@@ -192,9 +192,9 @@ class userController extends Controller
              ];
 
                 // Opertional count
-                $taxReurnCreditCountHigh = TaxReurnCredit::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
-                $taxReurnCreditCountMedium = TaxReurnCredit::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
-                $taxReurnCreditCountLow = TaxReurnCredit::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
+                $taxReurnCreditCountHigh = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+                $taxReurnCreditCountMedium = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+                $taxReurnCreditCountLow = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
                 $data['taxReurnCreditCount'] = [
                     $taxReurnCreditCountHigh,
                     $taxReurnCreditCountMedium,
@@ -858,11 +858,11 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
 
         $data['financialRatioGrapFYhLablesName'] = [
 
-            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'],
             $data['FinancialsRatioAnalysisFyOneGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
         ];
 
         // dd($data['financialRatioGrapFYhLablesName']);
