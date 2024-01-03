@@ -968,11 +968,11 @@ class adminController extends Controller
 
         $data['financialRatioGrapFYhLablesName'] = [
 
-            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
-            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'],
             $data['FinancialsRatioAnalysisFyOneGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
+            $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
         ];
 
         // dd($data['financialRatioGrapFYhLablesName']);
