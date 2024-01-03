@@ -669,11 +669,11 @@ class userController extends Controller
 
         $data['financialFindingsGrapFYhLablesName'] = [
 
-            $data['FinancialsFindingsFyFiveGraphLableName'],
-            $data['FinancialsFindingsFyFourGraphLableName'],
-            $data['FinancialsFindingsFyThreeGraphLableName'],
-            $data['FinancialsFindingsFyTwoGraphLableName'],
             $data['FinancialsFindingsFyOneGraphLableName'],
+            $data['FinancialsFindingsFyTwoGraphLableName'],
+            $data['FinancialsFindingsFyThreeGraphLableName'],
+            $data['FinancialsFindingsFyFourGraphLableName'],
+            $data['FinancialsFindingsFyFiveGraphLableName'],
         ];
 
 // ===================================================== financial finding graph end ========================
