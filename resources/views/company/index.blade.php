@@ -221,7 +221,7 @@
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
 
-                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Regulatary </h4>
+                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Regulatory </h4>
 
                             <div class="d-flex justify-content-center align-items-center">
                                 <canvas id="barChartVerticalReputation"></canvas>
@@ -989,7 +989,7 @@
                             defaultFontFamily: 'Poppins',
                             labels: ["High Risk", "Medium Risk", "Low Risk"],
                             datasets: [{
-                                label: "Regulatary",
+                                label: "Regulatory",
                                 data: RegulatoryCount,
                                 backgroundColor: barColors,
                                 hoverBackgroundColor: barColors
