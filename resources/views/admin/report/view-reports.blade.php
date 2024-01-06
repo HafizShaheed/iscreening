@@ -1747,18 +1747,18 @@
                                 <div class="pt-4">
 
                                     <div class="row">
-                                        <div class="col-xl-4 mt-6">
+                                        <!-- <div class="col-xl-4 mt-6">
                                             <p for="educationalBackground" class="text-start">
-                                                <!-- {{ $KeyObservation->key_observation }}</p> -->
-                                        </div>
+                                                {{ $KeyObservation->key_observation }}</p>
+                                        </div> -->
 
 
                                         <div class="col-xl-3 mt-3">
                                             <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf">OVERALL RISK SCORE =
                                                 {{ $KeyObservation->overall_risk_score }}</b></p>
                                         </div>
-                                          <div class="col-xl-3 mt-3">
-                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:14px;color:#000000cf">Score Analysis: </b>
+                                          <div class="col-xl-7 mt-3">
+                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
                                               <br>  {{ $KeyObservation->score_analysis }}</p>
                                         </div>
 
