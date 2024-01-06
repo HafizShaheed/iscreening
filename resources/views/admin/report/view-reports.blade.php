@@ -1779,40 +1779,32 @@
 
 
                                     <div class="row">
-                                        <div class="col-xl-6 mb-3">
-                                            <b  style="color:black" for="educationalBackground" class="text-start">Observations</b>
-                                        </div>
-                                        <div class="col-xl-6 mb-3">
-                                            <b  style="color:black" for="educationalBackground" class="text-start">Recommendations</b>
-                                        </div>
-                                    </div>
-                                    <div class="row">
+    <div class="col-xl-6 mb-3">
+        <b style="color: black" for="educationalBackground" class="text-start">Observations</b>
+    </div>
+    <div class="col-xl-6 mb-3">
+        <b style="color: black" for="educationalBackground" class="text-start">Recommendations</b>
+    </div>
+</div>
+<div class="row">
+    @for($i = 1; $i <= 25; $i++)
+        <div class="col-xl-6 mb-1">
+            @if(isset($KeyObservation->{'key_observation_'.$i}) && !empty($KeyObservation->{'key_observation_'.$i}))
+                <p for="educationalBackground" class="text-start">
+                    {{ $KeyObservation->{'key_observation_'.$i} }}
+                </p>
+            @endif
+        </div>
+        <div class="col-xl-6 mb-1">
+            @if(isset($KeyObservation->{'key_recommendations_'.$i}) && !empty($KeyObservation->{'key_recommendations_'.$i}))
+                <p for="educationalBackground" class="text-start">
+                    {{ $KeyObservation->{'key_recommendations_'.$i} }}
+                </p>
+            @endif
+        </div>
+    @endfor
+</div>
 
-
-
-
-                                            @for($i = 1; $i <= 25; $i++)
-                                            @if(isset($KeyObservation->{'key_observation_'.$i}) && !empty($KeyObservation->{'key_observation_'.$i}))
-                                            <div class="col-xl-6 mb-1">
-                                                    <p for="educationalBackground" class="text-start">
-                                                        {{ $KeyObservation->{'key_observation_'.$i} }}
-                                                    </p>
-                                                </div>
-                                            @endif
-                                      
-                                            @if(isset($KeyObservation->{'key_recommendations_'.$i}) && !empty($KeyObservation->{'key_recommendations_'.$i}))
-                                            <div class="col-xl-6 mb-1">
-                                                    <p for="educationalBackground" class="text-start">
-                                                        {{ $KeyObservation->{'key_recommendations_'.$i} }}
-                                                    </p>
-                                                </div>
-                                            @endif
-                                            @endfor
-                                     
-
-                                       
-
-                                    </div>
                                     <div class="row">
                                         <div class="col-xl-6 mb-3">
                                         </div>
