@@ -2745,11 +2745,11 @@
                 <div class="Key-Observation-step" id="Key-Observation-step-2">
 
                     <div class="row">
-                        <div class="col-xl-2 mb-3">
+                        <!-- <div class="col-xl-2 mb-3">
                             <label for="key_observation" class="form-label">Observations</label>
                             <input type="text" class="form-control" name="key_observation" id="key_observation" value="{{$KeyObservation->key_observation}}" >
-                        </div>
-                        <div class="col-xl-4 mb-3">
+                        </div> -->
+                        <div class="col-xl-6 mb-3">
                             <label for="file" class="form-label">Upload Final Report</label>
                             <div class="dz-default dlab-message upload-img mb-3">
                                 <div class="fallback">
@@ -2760,16 +2760,30 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label class="form-label">Recommendations</label>
+                        
+                        <div class="col-xl-6 mb-3">
+                            <label class="form-label">Key observations</label>
 
-                        @for ($i=1; $i <=25; $i++)
-                        <div class="col-xl-12 mb-3">
-
-                        {{ $i }} <textarea placeholder="" rows="2" id="key_recommendations_{{ $i }}" name="key_recommendations_{{ $i }}" class="form-control"> {{$KeyObservation->{'key_recommendations_'. $i } }} </textarea>
                         </div>
-                            @endfor
-                    </div>
+                         
+                        <div class="col-xl-6 mb-3">
+                            <label class="form-label">Recommendations</label>
 
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                    @for ($i = 1; $i <= 25; $i++)
+                        <div class="col-xl-6 mb-3">
+                            {{ $i }} <textarea placeholder=" Observation {{ $i }}" rows="2" id="key_observation_{{ $i }}" name="key_observation_{{ $i }}" class="form-control">{{ $KeyObservation->{'key_observation_' . $i } }}</textarea>
+                        </div>
+                  
+                        <div class="col-xl-6 mb-3">
+                        {{ $i }} <textarea placeholder="Recommendations {{ $i }}" rows="2" id="key_recommendations_{{ $i }}" name="key_recommendations_{{ $i }}" class="form-control">{{ $KeyObservation->{'key_recommendations_' . $i } }}</textarea>
+
+                        </div>
+                    @endfor
+                    </div>
                     <div class="row">
                         <div class="col-xl-6 d-flex justify-content-start">
 

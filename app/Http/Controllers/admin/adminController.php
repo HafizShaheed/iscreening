@@ -1743,7 +1743,11 @@ class adminController extends Controller
 
         $KeyObservation->overall_risk_score  = $request->input('overall_risk_score');
         $KeyObservation->score_analysis  = $request->input('score_analysis');
-        $KeyObservation->key_observation  = $request->input('key_observation');
+        for ($i = 1; $i <= 25; $i++) {
+
+            $KeyObservation->{"key_observation_$i"} = $request->input("key_observation_$i");
+        }
+
         for ($i = 1; $i <= 25; $i++) {
 
             $KeyObservation->{"key_recommendations_$i"} = $request->input("key_recommendations_$i");

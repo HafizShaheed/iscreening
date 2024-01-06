@@ -871,11 +871,14 @@ class teamController extends Controller
 
         $KeyObservation->overall_risk_score  = $request->input('overall_risk_score');
         $KeyObservation->score_analysis  = $request->input('score_analysis');
-        $KeyObservation->key_observation  = $request->input('key_observation');
         for ($i = 1; $i <= 25; $i++) {
 
-         $KeyObservation->{"key_recommendations_$i"} = $request->input("key_recommendations_$i");
+         $KeyObservation->{"key_observation_$i"} = $request->input("key_observation_$i");
          }
+         for ($i = 1; $i <= 25; $i++) {
+
+            $KeyObservation->{"key_recommendations_$i"} = $request->input("key_recommendations_$i");
+        }
        $KeyObservation->status = 3;
        $KeyObservation->Type_of_risk = $request->input('overall_risk_score') > 60 ? 'High Risk' : ($request->input('overall_risk_score') <= 60 && $request->input('overall_risk_score') > 30 ? 'Medium Risk' : ($request->input('overall_risk_score') <= 30 ? 'Low Risk' : '' ) );
        $KeyObservation->team_user_id = Auth::guard('team')->id();
