@@ -669,92 +669,194 @@
 
             // ============================================== department chart of high risk low risk medium =============
 
+            // var barVerticalChartForDepartment = function() {
+            //     //stalked bar chart
+            //     if (jQuery('#barChartVerticalDepartment').length > 0) {
+            //         const barChartVerticalDepartment = document.getElementById("barChartVerticalDepartment").getContext('2d');
+            //         //generate gradient
+            //         const barChartVerticalDepartmentgradientStroke = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+            //         barChartVerticalDepartmentgradientStroke.addColorStop(0, "rgb(239, 83, 80)");
+            //         barChartVerticalDepartmentgradientStroke.addColorStop(1, "rgb(239, 83, 80)");
+
+            //         const barChartVerticalDepartmentgradientStroke2 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+            //         barChartVerticalDepartmentgradientStroke2.addColorStop(0, "rgb(121, 134, 203)");
+            //         barChartVerticalDepartmentgradientStroke2.addColorStop(1, "rgb(121, 134, 203)");
+
+            //         const barChartVerticalDepartmentgradientStroke3 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+            //         barChartVerticalDepartmentgradientStroke3.addColorStop(0, "rgb(129, 199, 132)");
+            //         barChartVerticalDepartmentgradientStroke3.addColorStop(1, "rgb(129, 199, 132)");
+
+            //         // '', // August
+            //         //     '', // October
+            //         //     '', // September
+
+            //         barChartVerticalDepartment.height = 100;
+
+            //         let barChartData = {
+            //             defaultFontFamily: 'Poppins',
+            //             labels: labelsDepartment,
+            //             datasets: [{
+            //                 label: 'High Risk',
+            //                 backgroundColor: barChartVerticalDepartmentgradientStroke,
+            //                 hoverBackgroundColor: barChartVerticalDepartmentgradientStroke,
+            //                 data: highRiskCounts_department
+            //             }, {
+            //                 label: 'Medium Risk',
+            //                 backgroundColor: barChartVerticalDepartmentgradientStroke2,
+            //                 hoverBackgroundColor: barChartVerticalDepartmentgradientStroke2,
+            //                 data:mediumRiskCounts_department
+            //             }, {
+            //                 label: 'Low Risk',
+            //                 backgroundColor: barChartVerticalDepartmentgradientStroke3,
+            //                 hoverBackgroundColor: barChartVerticalDepartmentgradientStroke3,
+            //                 data: lowRiskCounts_department
+            //             }]
+
+            //         };
+
+            //         new Chart(barChartVerticalDepartment, {
+            //             type: 'bar',
+            //             data: barChartData,
+            //             options: {
+            //                 legend: {
+            //                     display: false
+            //                 },
+            //                 title: {
+            //                     display: false
+            //                 },
+            //                 tooltips: {
+            //                     mode: 'index',
+            //                     intersect: true
+            //                 },
+            //                 responsive: true,
+            //                 scales: {
+            //                     xAxes: [{
+            //                         //display:0,
+            //                         stacked: true,
+            //                         ticks: {
+            //                             fontColor: '#888',
+            //                         },
+            //                         gridLines: {
+            //                             color: "rgba(255, 255, 255, 0.1)"
+            //                         }
+            //                     }],
+            //                     yAxes: [{
+            //                         //display:0,
+            //                         stacked: true,
+            //                         ticks: {
+            //                             fontColor: '#888',
+            //                         },
+            //                         gridLines: {
+            //                             color: "rgba(255, 255, 255, 0.1)"
+            //                         }
+            //                     }]
+            //                 }
+            //             }
+            //         });
+            //     }
+            // }
+
             var barVerticalChartForDepartment = function() {
-                //stalked bar chart
-                if (jQuery('#barChartVerticalDepartment').length > 0) {
-                    const barChartVerticalDepartment = document.getElementById("barChartVerticalDepartment").getContext('2d');
-                    //generate gradient
-                    const barChartVerticalDepartmentgradientStroke = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
-                    barChartVerticalDepartmentgradientStroke.addColorStop(0, "rgb(239, 83, 80)");
-                    barChartVerticalDepartmentgradientStroke.addColorStop(1, "rgb(239, 83, 80)");
+                    //stalked bar chart
+                    if (jQuery('#barChartVerticalDepartment').length > 0) {
+                        const barChartVerticalDepartment = document.getElementById("barChartVerticalDepartment").getContext('2d');
+                        //generate gradient
+                        const barChartVerticalDepartmentgradientStroke = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+                        barChartVerticalDepartmentgradientStroke.addColorStop(0, "rgb(239, 83, 80)");
+                        barChartVerticalDepartmentgradientStroke.addColorStop(1, "rgb(239, 83, 80)");
 
-                    const barChartVerticalDepartmentgradientStroke2 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
-                    barChartVerticalDepartmentgradientStroke2.addColorStop(0, "rgb(121, 134, 203)");
-                    barChartVerticalDepartmentgradientStroke2.addColorStop(1, "rgb(121, 134, 203)");
+                        const barChartVerticalDepartmentgradientStroke2 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+                        barChartVerticalDepartmentgradientStroke2.addColorStop(0, "rgb(121, 134, 203)");
+                        barChartVerticalDepartmentgradientStroke2.addColorStop(1, "rgb(121, 134, 203)");
 
-                    const barChartVerticalDepartmentgradientStroke3 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
-                    barChartVerticalDepartmentgradientStroke3.addColorStop(0, "rgb(129, 199, 132)");
-                    barChartVerticalDepartmentgradientStroke3.addColorStop(1, "rgb(129, 199, 132)");
+                        const barChartVerticalDepartmentgradientStroke3 = barChartVerticalDepartment.createLinearGradient(50, 100, 50, 50);
+                        barChartVerticalDepartmentgradientStroke3.addColorStop(0, "rgb(129, 199, 132)");
+                        barChartVerticalDepartmentgradientStroke3.addColorStop(1, "rgb(129, 199, 132)");
 
-                    // '', // August
-                    //     '', // October
-                    //     '', // September
+                        barChartVerticalDepartment.height = 100;
 
-                    barChartVerticalDepartment.height = 100;
+                        let barChartData = {
+                            defaultFontFamily: 'Poppins',
+                            labels: labelsDepartment,
+                            datasets: [{
+                                label: 'High Risk',
+                                backgroundColor: barChartVerticalDepartmentgradientStroke,
+                                hoverBackgroundColor: barChartVerticalDepartmentgradientStroke,
+                                data: highRiskCounts_department
+                            }, {
+                                label: 'Medium Risk',
+                                backgroundColor: barChartVerticalDepartmentgradientStroke2,
+                                hoverBackgroundColor: barChartVerticalDepartmentgradientStroke2,
+                                data: mediumRiskCounts_department
+                            }, {
+                                label: 'Low Risk',
+                                backgroundColor: barChartVerticalDepartmentgradientStroke3,
+                                hoverBackgroundColor: barChartVerticalDepartmentgradientStroke3,
+                                data: lowRiskCounts_department
+                            }]
+                        };
 
-                    let barChartData = {
-                        defaultFontFamily: 'Poppins',
-                        labels: labelsDepartment,
-                        datasets: [{
-                            label: 'High Risk',
-                            backgroundColor: barChartVerticalDepartmentgradientStroke,
-                            hoverBackgroundColor: barChartVerticalDepartmentgradientStroke,
-                            data: highRiskCounts_department
-                        }, {
-                            label: 'Medium Risk',
-                            backgroundColor: barChartVerticalDepartmentgradientStroke2,
-                            hoverBackgroundColor: barChartVerticalDepartmentgradientStroke2,
-                            data:mediumRiskCounts_department
-                        }, {
-                            label: 'Low Risk',
-                            backgroundColor: barChartVerticalDepartmentgradientStroke3,
-                            hoverBackgroundColor: barChartVerticalDepartmentgradientStroke3,
-                            data: lowRiskCounts_department
-                        }]
-
-                    };
-
-                    new Chart(barChartVerticalDepartment, {
-                        type: 'bar',
-                        data: barChartData,
-                        options: {
-                            legend: {
-                                display: false
-                            },
-                            title: {
-                                display: false
-                            },
-                            tooltips: {
-                                mode: 'index',
-                                intersect: true
-                            },
-                            responsive: true,
-                            scales: {
-                                xAxes: [{
-                                    //display:0,
-                                    stacked: true,
-                                    ticks: {
-                                        fontColor: '#888',
-                                    },
-                                    gridLines: {
-                                        color: "rgba(255, 255, 255, 0.1)"
-                                    }
-                                }],
-                                yAxes: [{
-                                    //display:0,
-                                    stacked: true,
-                                    ticks: {
-                                        fontColor: '#888',
-                                    },
-                                    gridLines: {
-                                        color: "rgba(255, 255, 255, 0.1)"
-                                    }
-                                }]
+                        var myChart = new Chart(barChartVerticalDepartment, {
+                            type: 'bar',
+                            data: barChartData,
+                            options: {
+                                legend: {
+                                    display: false
+                                },
+                                title: {
+                                    display: false
+                                },
+                                tooltips: {
+                                    mode: 'index',
+                                    intersect: true
+                                },
+                                responsive: true,
+                                scales: {
+                                    xAxes: [{
+                                        stacked: true,
+                                        ticks: {
+                                            fontColor: '#888',
+                                        },
+                                        gridLines: {
+                                            color: "rgba(255, 255, 255, 0.1)"
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        stacked: true,
+                                        ticks: {
+                                            fontColor: '#888',
+                                        },
+                                        gridLines: {
+                                            color: "rgba(255, 255, 255, 0.1)"
+                                        }
+                                    }]
+                                }
                             }
-                        }
-                    });
-                }
+                        });
+
+                        var chartCanvas = barChartVerticalDepartment.canvas;
+
+                        // Set the cursor to pointer when hovering over the chart
+                        chartCanvas.style.cursor = 'pointer';
+
+                        // Add click event listener
+                        chartCanvas.addEventListener('click', function (event) {
+                                            var activePoint = myChart.getElementAtEvent(event)[0];
+
+                                            if (activePoint) {
+                                                var labelValue = myChart.data.labels[activePoint._index];
+
+                                                // Redirect to the next page with the clicked bar label
+                                                // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                                                // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                                                window.location.href = '{{ URL::to("company/report") }}?Department=' + encodeURIComponent(labelValue);
+
+
+                                            }
+                                        });
+                    }
             }
+
 
 
             // ============================================== location/zone chart of high risk low risk medium =============
@@ -804,7 +906,7 @@
 
                     };
 
-                    new Chart(barChartHorizontalLocation, {
+                 var myChartLocation =   new Chart(barChartHorizontalLocation, {
                         type: 'horizontalBar',
                         data: barChartData,
                         options: {
@@ -843,6 +945,28 @@
                             }
                         }
                     });
+
+                    var chartCanvas =  barChartHorizontalLocation.canvas;
+
+                    // Set the cursor to pointer when hovering over the chart
+                    chartCanvas.style.cursor = 'pointer';
+
+                    chartCanvas.addEventListener('click', function (event) {
+                        var activePoint = myChartLocation.getElementAtEvent(event)[0];
+
+                        if (activePoint) {
+                            var labelValue = myChartLocation.data.labels[activePoint._index];
+
+                            // Redirect to the next page with the clicked bar label
+                            // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                            // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                            window.location.href = '{{ URL::to("company/report") }}?Location=' + encodeURIComponent(labelValue);
+
+
+                        }
+                    });
+
+
                 }
             }
 
@@ -983,7 +1107,7 @@
                     const barChart = document.getElementById("barChartVerticalReputation").getContext('2d');
                     barChart.height = 100;
 
-                    new Chart(barChart, {
+                    var chartRegu =new Chart(barChart, {
                         type: 'bar',
                         data: {
                             defaultFontFamily: 'Poppins',
@@ -1019,6 +1143,25 @@
                             }
                         }
                     });
+                            var chartCanvas =  barChart.canvas;
+
+                            // Set the cursor to pointer when hovering over the chart
+                            chartCanvas.style.cursor = 'pointer';
+
+                            chartCanvas.addEventListener('click', function (event) {
+                            var activePoint = chartRegu.getElementAtEvent(event)[0];
+
+                            if (activePoint) {
+                                var labelValue = chartRegu.data.labels[activePoint._index];
+
+                                // Redirect to the next page with the clicked bar label
+                                // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                                // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                                window.location.href = '{{ URL::to("company/report") }}?Regulatory=' + encodeURIComponent(labelValue);
+
+
+                            }
+                            });
                 }
             }
 
@@ -1037,7 +1180,7 @@
                     const barChart = document.getElementById("barChartVerticalLegal").getContext('2d');
                     barChart.height = 100;
 
-                    new Chart(barChart, {
+                   var chartLegal = new Chart(barChart, {
                         type: 'bar',
                         data: {
                             defaultFontFamily: 'Poppins',
@@ -1073,6 +1216,25 @@
                             }
                         }
                     });
+                    var chartCanvas =  barChart.canvas;
+
+                            // Set the cursor to pointer when hovering over the chart
+                            chartCanvas.style.cursor = 'pointer';
+
+                            chartCanvas.addEventListener('click', function (event) {
+                        var activePoint = chartLegal.getElementAtEvent(event)[0];
+
+                        if (activePoint) {
+                            var labelValue = chartLegal.data.labels[activePoint._index];
+
+                            // Redirect to the next page with the clicked bar label
+                            // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                            // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                            window.location.href = '{{ URL::to("company/report") }}?Legal=' + encodeURIComponent(labelValue);
+
+
+                        }
+                    });
                 }
             }
 
@@ -1090,7 +1252,7 @@
                     const barChart = document.getElementById("barChartVerticalFinancial").getContext('2d');
                     barChart.height = 100;
 
-                    new Chart(barChart, {
+                  var chartFinancial =  new Chart(barChart, {
                         type: 'bar',
                         data: {
                             defaultFontFamily: 'Poppins',
@@ -1126,6 +1288,25 @@
                             }
                         }
                     });
+                    var chartCanvas =  barChart.canvas;
+
+                            // Set the cursor to pointer when hovering over the chart
+                            chartCanvas.style.cursor = 'pointer';
+
+                            chartCanvas.addEventListener('click', function (event) {
+                        var activePoint = chartFinancial.getElementAtEvent(event)[0];
+
+                        if (activePoint) {
+                            var labelValue = chartFinancial.data.labels[activePoint._index];
+
+                            // Redirect to the next page with the clicked bar label
+                            // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                            // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                            window.location.href = '{{ URL::to("company/report") }}?Financial=' + encodeURIComponent(labelValue);
+
+
+                        }
+                    });
                 }
             }
 
@@ -1143,7 +1324,7 @@
                     const barChart = document.getElementById("barChartVerticalOpertional").getContext('2d');
                     barChart.height = 100;
 
-                    new Chart(barChart, {
+                    var chartOperational= new Chart(barChart, {
                         type: 'bar',
                         data: {
                             defaultFontFamily: 'Poppins',
@@ -1179,6 +1360,25 @@
                             }
                         }
                     });
+                    var chartCanvas =  barChart.canvas;
+
+                            // Set the cursor to pointer when hovering over the chart
+                            chartCanvas.style.cursor = 'pointer';
+
+                            chartCanvas.addEventListener('click', function (event) {
+                        var activePoint = chartOperational.getElementAtEvent(event)[0];
+
+                        if (activePoint) {
+                            var labelValue = chartOperational.data.labels[activePoint._index];
+
+                            // Redirect to the next page with the clicked bar label
+                            // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                            // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                            window.location.href = '{{ URL::to("company/report") }}?Operational=' + encodeURIComponent(labelValue);
+
+
+                        }
+                    });
                 }
             }
 
@@ -1196,7 +1396,7 @@
                     const barChart = document.getElementById("barChartVerticalRegulatary").getContext('2d');
                     barChart.height = 100;
 
-                    new Chart(barChart, {
+                 var ChartReputation=   new Chart(barChart, {
                         type: 'bar',
                         data: {
                             defaultFontFamily: 'Poppins',
@@ -1232,6 +1432,26 @@
                             }
                         }
                     });
+                    var chartCanvas =  barChart.canvas;
+
+                            // Set the cursor to pointer when hovering over the chart
+                            chartCanvas.style.cursor = 'pointer';
+
+                            chartCanvas.addEventListener('click', function (event) {
+                        var activePoint = ChartReputation.getElementAtEvent(event)[0];
+
+                        if (activePoint) {
+                            var labelValue = ChartReputation.data.labels[activePoint._index];
+
+                            // Redirect to the next page with the clicked bar label
+                            // window.location.href = '/next-page/' + encodeURIComponent(labelValue);
+                            // window.location.href = '{{ URL::to("company/report") }}' + '?' + encodeURIComponent(labelValue);
+                            window.location.href = '{{ URL::to("company/report") }}?Reputation=' + encodeURIComponent(labelValue);
+
+
+                        }
+                    });
+
                 }
             }
 

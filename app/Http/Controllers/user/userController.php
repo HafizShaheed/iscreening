@@ -231,7 +231,7 @@ class userController extends Controller
     // }
     public function report_List(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
 
         $data['title'] = "Reports Managment";
         $data['page'] = "Reports Managment";
