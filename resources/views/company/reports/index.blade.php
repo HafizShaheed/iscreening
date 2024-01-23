@@ -303,19 +303,81 @@
                                 <span> {{ $state ? $state->state_name : '' }} </span>
                             </td>
                             @php
-                            $KeyObservation =
-                            \App\Models\KeyObservation::where('third_party_id',$value->id)->first();
+                                $KeyObservation = null;
+
+                                if (request('Regulatory')) {
+                                    $KeyObservation = \App\Models\FirmBackground::where('third_party_id', $value->id)->first();
+                                } elseif(request('Legal')){
+                                    $KeyObservation = \App\Models\CourtCheck::where('third_party_id', $value->id)->first();
+                                } elseif(request('Financial')){
+                                    $KeyObservation = \App\Models\Financial::where('third_party_id', $value->id)->first();
+                                }elseif(request('Operational')){
+                                    $KeyObservation = \App\Models\BusinessIntelligence::where('third_party_id', $value->id)->first();
+                                }
+                                elseif(request('Reputation')){
+                                    $KeyObservation = \App\Models\MarketReputation::where('third_party_id', $value->id)->first();
+                                }
+                                elseif(request('riskType') === "Reputation"){
+                                    $KeyObservation = \App\Models\MarketReputation::where('third_party_id', $value->id)->first();
+                                    
+                                }
+                                elseif(request('riskType') === "Operational"){
+                                    $KeyObservation = \App\Models\BusinessIntelligence::where('third_party_id', $value->id)->first();
+                                    
+                                }
+                                elseif(request('riskType') === "Financial"){
+                                    $KeyObservation = \App\Models\Financial::where('third_party_id', $value->id)->first();
+                                    
+                                }
+                                elseif(request('riskType') === "Legal"){
+                                    $KeyObservation = \App\Models\CourtCheck::where('third_party_id', $value->id)->first();
+                                    
+                                }
+                                elseif(request('riskType') === "Regulatory"){
+                                    $KeyObservation = \App\Models\FirmBackground::where('third_party_id', $value->id)->first();
+                                    
+                                }
+                                
+                                else {
+                                    $KeyObservation = \App\Models\KeyObservation::where('third_party_id', $value->id)->first();
+                                }
                             @endphp
+                            
+
                             <td class="">
-
-
-                                <span class=""> {{ $KeyObservation ? $KeyObservation->overall_risk_score : '' }} </span>
-                                </td>
-                                <td class="">
-                                    <span class=""> {{ $KeyObservation ? $KeyObservation->Type_of_risk : '' }} </span>
-
-
+                                @if ($KeyObservation)
+                                    @if (request('Regulatory'))
+                                        <span class=""> {{ $KeyObservation->regulatory_score ?? '' }} </span>
+                                    @elseif (request('Legal'))
+                                        <span class=""> {{ $KeyObservation->legal_score ?? '' }} </span>
+                                    @elseif (request('Financial'))
+                                        <span class=""> {{ $KeyObservation->overall_financial_score ?? '' }} </span>
+                                    @elseif (request('Operational'))
+                                        <span class=""> {{ $KeyObservation->efficiency_score ?? '' }} </span>
+                                    @elseif (request('Reputation'))
+                                        <span class=""> {{ $KeyObservation->market_reputation_score ?? '' }} </span>
+                                    @elseif (request('riskType') === "Reputation")
+                                        <span class=""> {{ $KeyObservation->market_reputation_score ?? '' }} </span>
+                                    @elseif (request('riskType') === "Operational")
+                                        <span class=""> {{ $KeyObservation->efficiency_score ?? '' }} </span>
+                                    @elseif (request('riskType') === "Financial")
+                                        <span class=""> {{ $KeyObservation->overall_financial_score ?? '' }} </span>
+                                    @elseif (request('riskType') === "Legal")
+                                        <span class=""> {{ $KeyObservation->legal_score ?? '' }} </span>
+                                    @elseif (request('riskType') === "Regulatory")
+                                        <span class=""> {{ $KeyObservation->regulatory_score ?? '' }} </span>
+                                    @else
+                                        <span class=""> {{ $KeyObservation->overall_risk_score ?? '' }} </span>
+                                    @endif
+                                @else
+                                    <span class=""> No Data </span>
+                                @endif
                             </td>
+                            <td class="">
+                                <span class=""> {{ $KeyObservation ? $KeyObservation->Type_of_risk : '' }} </span>
+                            </td>
+
+                           
 
                             <td class=" space-between ">
 
