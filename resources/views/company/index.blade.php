@@ -71,12 +71,13 @@
             <div class="card-body justify-content-center">
 
             <div class="row">
-            <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+<div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+    <a href="{{ URL::to('company/report') }}?TotalHighRisk=TotalHighRisk">
     <div class="card-title mb-4 d-flex justify-content-center align-items-center">
         <div class="card chart-grd same-card" style="background-color: rgb(239, 83, 80); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <div class="card-body depostit-card p-0">
                 <div class="depostit-card-media d-flex justify-content-between pt-3 pd-3">
-                    <div class="justify-content-center align-items-center">
+                    <div class="justify-content-center align-items-center" >
                         <h5 class="justify-content-center align-items-center" style="color: #fff; text-shadow: 1px 1px 2px #000;">Total High Risk</h5>
                         <h5 class="justify-content-center align-items-center text-center" style="color: #fff; font-size: 24px; text-shadow: 1px 1px 2px #000;">{{ $highRiskCOunt }}</h5>
                     </div>
@@ -84,10 +85,13 @@
             </div>
         </div>
     </div>
+    </a>
+    
 </div>
 
 
 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+<a href="{{ URL::to('company/report') }}?TotalMediumRisk=TotalMediumRisk">
     <div class="card-title mb-4 d-flex justify-content-center align-items-center">
         <div class="card chart-grd same-card" style="background-color: rgb(121, 134, 203); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <div class="card-body depostit-card p-0">
@@ -100,10 +104,13 @@
             </div>
         </div>
     </div>
+    </a>
 </div>
 
 
 <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+<a href="{{ URL::to('company/report') }}?TotalLowRisk=TotalLowRisk">
+
     <div class="card-title mb-4 d-flex justify-content-center align-items-center">
         <div class="card chart-grd same-card" style="background-color: rgb(129, 199, 132); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <div class="card-body depostit-card p-0">
@@ -116,6 +123,7 @@
             </div>
         </div>
     </div>
+</a>
 </div>
 
 

@@ -323,7 +323,7 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        if (isset($request->HighRisk) && !empty($request->HighRisk)) {
+        if (isset($request->HighRisk) && !empty($request->HighRisk) || !empty($request->TotalHighRisk) ) {
 
             $observationIds = KeyObservation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', 'High Risk')
@@ -332,7 +332,7 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        if (isset($request->MediumRisk) && !empty($request->MediumRisk)) {
+        if (isset($request->MediumRisk) && !empty($request->MediumRisk) || !empty($request->TotalMediumRisk) ) {
 
             $observationIds = KeyObservation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', 'Medium Risk')
@@ -341,7 +341,7 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        if (isset($request->LowRisk) && !empty($request->LowRisk)) {
+        if (isset($request->LowRisk) && !empty($request->LowRisk) || !empty($request->TotalLowRisk) ) {
 
             $observationIds = KeyObservation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', 'Low Risk')

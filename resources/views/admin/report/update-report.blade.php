@@ -880,6 +880,78 @@
 
                         </div>
 
+                        <!-- graph financial  graph heading start -->
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="revenue_fy_one_finding_heading_graph" class="form-label">Revenue Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="revenue_fy_one_finding_heading_graph"  id="revenue_fy_one_finding_heading_graph" value="{{$Financial->revenue_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="net_profit_fy_one_finding_heading_graph" class="form-label">Net Profit Graph Heading</label>
+                                <input type="text" step="any" class="form-control"  name="net_profit_fy_one_finding_heading_graph"  id="net_profit_fy_one_finding_heading_graph" value="{{$Financial->net_profit_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_fy_one_finding_heading_graph" class="form-label">Gross Profit Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="gross_profit_fy_one_finding_heading_graph" id="gross_profit_fy_one_finding_heading_graph" value="{{$Financial->gross_profit_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="working_capital_1_fy_one_finding_heading_graph" class="form-label">Working capital Graph Heading</label>
+                                <input type="text" step="any" class="form-control"  name="working_capital_1_fy_one_finding_heading_graph"  id="working_capital_1_fy_one_finding_heading_graph" value="{{$Financial->working_capital_1_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="quick_assets_fy_one_finding_heading_graph" class="form-label">Quick Assets Graph Heading</label>
+                                <input type="text" step="any" class="form-control"  name="quick_assets_fy_one_finding_heading_graph"  id="quick_assets_fy_one_finding_heading_graph" value="{{$Financial->quick_assets_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="total_assets_fy_one_finding_heading_graph" class="form-label">Total Assets Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="total_assets_fy_one_finding_heading_graph"  id="total_assets_fy_one_finding_heading_graph" value="{{$Financial->total_assets_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="current_assets_fy_one_finding_heading_graph" class="form-label">Current Assets Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="current_assets_fy_one_finding_heading_graph"  id="current_assets_fy_one_finding_heading_graph" value="{{$Financial->current_assets_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="current_liabilities_fy_one_finding_heading_graph" class="form-label">Current Liabilities Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="current_liabilities_fy_one_finding_heading_graph"  id="current_liabilities_fy_one_finding_heading_graph" value="{{$Financial->current_liabilities_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="debt_fy_one_finding_heading_graph" class="form-label">Debt Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="debt_fy_one_finding_heading_graph" id="debt_fy_one_finding_heading_graph" value="{{$Financial->debt_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="average_inventory_fy_one_finding_heading_graph" class="form-label">Average Inventory Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="average_inventory_fy_one_finding_heading_graph"  id="average_inventory_fy_one_finding_heading_graph" value="{{$Financial->average_inventory_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="net_sales_fy_one_finding_heading_graph" class="form-label">Net Sales Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="net_sales_fy_one_finding_heading_graph"  id="net_sales_fy_one_finding_heading_graph" value="{{$Financial->net_sales_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="equity_share_capital_fy_one_finding_heading_graph" class="form-label">Equity/Share Capital Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="equity_share_capital_fy_one_finding_heading_graph"  id="equity_share_capital_fy_one_finding_heading_graph" value="{{$Financial->equity_share_capital_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="sundry_debtors_fy_one_finding_heading_graph" class="form-label">Sundry Debtors Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="sundry_debtors_fy_one_finding_heading_graph"  id="sundry_debtors_fy_one_finding_heading_graph" value="{{$Financial->sundry_debtors_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="sundry_creditors_fy_one_finding_heading_graph" class="form-label">Sundry Creditors Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="sundry_creditors_fy_one_finding_heading_graph"  id="sundry_creditors_fy_one_finding_heading_graph" value="{{$Financial->sundry_creditors_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="loans_and_advances_fy_one_finding_heading_graph" class="form-label">Loans and Advances Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="loans_and_advances_fy_one_finding_heading_graph"  id="loans_and_advances_fy_one_finding_heading_graph" value="{{$Financial->loans_and_advances_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="cash_and_cash_equivalents_fy_one_finding_heading_graph" class="form-label">Cash and Cash Equivalents Graph Heading</label>
+                                <input type="text" step="any" class="form-control" name="cash_and_cash_equivalents_fy_one_finding_heading_graph"  id="cash_and_cash_equivalents_fy_one_finding_heading_graph" value="{{$Financial->cash_and_cash_equivalents_fy_one_finding_heading_graph}}" placeholder="">
+                            </div>
+
+                        </div>
+
+                        <!-- graph financial  graph heading start -->
+
+
                         <!-- Navigation buttons -->
 
                         <div class="row">
@@ -1544,6 +1616,80 @@
                         </div>
 
 
+
+                     <!-- graph ratio  graph heading start -->
+                     
+                     <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="current_ratio_fy_two_1" class="form-label">Current ratio</label>
+                                <input type="number" step="any"  class="form-control" name="current_ratio_fy_two_1"  id="current_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->current_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="debt_ratio_fy_two_1" class="form-label">Debt Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="debt_ratio_fy_two_1"  id="debt_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->debt_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="solvency_ratio_fy_two_1" class="form-label">Solvency Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="solvency_ratio_fy_two_1"  id="solvency_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->solvency_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="debt_to_equity_ratio_fy_two_1" class="form-label">Debt to Equity Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="debt_to_equity_ratio_fy_two_1"  id="debt_to_equity_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->debt_to_equity_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="asset_turnover_ratio_fy_two_1" class="form-label">Asset Turnover Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="asset_turnover_ratio_fy_two_1"  id="asset_turnover_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->asset_turnover_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="absolute_liquidity_ratio_fy_two_1" class="form-label">Absolute Liquidity Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="absolute_liquidity_ratio_fy_two_1"  id="absolute_liquidity_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->absolute_liquidity_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="proprietary_ratio_fy_two_1" class="form-label">Proprietary Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="proprietary_ratio_fy_two_1"  id="proprietary_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->proprietary_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="net_profit_ratio_fy_two_1" class="form-label">Net Profit Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="net_profit_ratio_fy_two_1"  id="net_profit_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->net_profit_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                            <div class="col-xl-3 mb-3">
+                                <label for="gross_profit_ratio_fy_two_1" class="form-label">Gross Profit Ratio</label>
+                                <input type="number" step="any"  class="form-control" name="gross_profit_ratio_fy_two_1"  id="gross_profit_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->gross_profit_ratio_fy_two_1}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="springate_s_score_ratio_fy_two_1" class="form-label">Springate S Score</label>
+                                <input type="number"  step="any" class="form-control" name="springate_s_score_ratio_fy_two_1"  id="springate_s_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->springate_s_score_ratio_fy_two_1}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="trade_receivable_days_ratio_fy_two_1" class="form-label">Trade Receivable Days</label>
+                                <input type="number" step="any"  class="form-control" name="trade_receivable_days_ratio_fy_two_1"  id="trade_receivable_days_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->trade_receivable_days_ratio_fy_two_1}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="trade_payable_days_ratio_fy_two_1" class="form-label">Trade Payable Days</label>
+                                <input type="number" step="any"  class="form-control" name="trade_payable_days_ratio_fy_two_1"  id="trade_payable_days_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->trade_payable_days_ratio_fy_two_1}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="taffler_z_score_ratio_fy_two_1" class="form-label">Taffler Z-Score</label>
+                                <input type="number" step="any"  class="form-control" name="taffler_z_score_ratio_fy_two_1"  id="taffler_z_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->taffler_z_score_ratio_fy_two_1}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="zmijewski_x_score_ratio_fy_two_1" class="form-label">Zmijewski X-Score</label>
+                                <input type="number" step="any"  class="form-control" name="zmijewski_x_score_ratio_fy_two_1"  id="zmijewski_x_score_ratio_fy_two_1" value="{{$FinancialsRatioAnalysisFyTwo->zmijewski_x_score_ratio_fy_two_1}}" placeholder="">
+                            </div>
+
+                        </div>
+                     <!-- graph ratio  graph heading end -->
+
+
+
                         <!-- Navigation buttons -->
 
                         <div class="row">
@@ -2186,8 +2332,27 @@
                     <label for="score_analysis" class="form-label">Score Analysis</label>
                     <input type="text"   class="form-control" name="score_analysis"  id="score_analysis" value="{{$BusinessIntelligence->score_analysis}}" placeholder="">
                     </div>
+                    
 
 
+                    </div>
+                    <div class="row">
+                    <div class="col-xl-3 mb-3">
+                        <label for="operating_efficiency_BI_heading_graph" class="form-label">Operating Efficiency Graph Heading</label>
+                        <input type="text"   class="form-control" name="operating_efficiency_BI_heading_graph"  id="operating_efficiency_BI_heading_graph" value="{{$BusinessIntelligence->operating_efficiency_BI_heading_graph}}" placeholder="">
+                    </div>
+                    <div class="col-xl-3 mb-3">
+                        <label for="inventory_turnover_BI_heading_graph" class="form-label">Inventory Turnover Graph Heading</label>
+                        <input type="text"   class="form-control" name="inventory_turnover_BI_heading_graph"  id="inventory_turnover_BI_heading_graph" value="{{$BusinessIntelligence->inventory_turnover_BI_heading_graph}}" placeholder="">
+                    </div>
+                    <div class="col-xl-3 mb-3">
+                        <label for="days_sales_in_inventory_BI_heading_graph" class="form-label">Days Sales In Inventory Graph Heading</label>
+                        <input type="text"   class="form-control" name="days_sales_in_inventory_BI_heading_graph"  id="days_sales_in_inventory_BI_heading_graph" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_heading_graph}}" placeholder="">
+                    </div>
+                    <div class="col-xl-3 mb-3">
+                        <label for="accounts_payable_turnover_BI_heading_graph" class="form-label">Accounts Payable Turnover Graph Heading</label>
+                        <input type="text"   class="form-control" name="accounts_payable_turnover_BI_heading_graph"  id="accounts_payable_turnover_BI_heading_graph" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_heading_graph}}" placeholder="">
+                    </div>
                     </div>
 
 

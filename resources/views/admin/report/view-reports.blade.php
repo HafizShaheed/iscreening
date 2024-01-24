@@ -1354,7 +1354,7 @@
                                                                 <div class="card">
                                                                     <h4
                                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                            Operating Efficiency Ratio</h4>
+                                                                            {{ isset($BusinessIntelligence->operating_efficiency_BI_heading_graph) ? $BusinessIntelligence->operating_efficiency_BI_heading_graph : 'N/A' }}</h4>
                                                                             <div class="d-flex justify-content-center align-items-center">
                                                                                 <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
                                                                             </div>
@@ -1378,7 +1378,9 @@
                                                                 <div class="card">
                                                                     <h4
                                                                     class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                    Inventory Turnover Ratio</h4>
+                                                                    {{ isset($BusinessIntelligence->inventory_turnover_BI_heading_graph) ? $BusinessIntelligence->inventory_turnover_BI_heading_graph : 'N/A' }}
+
+                                                                </h4>
                                                                     <div class="d-flex justify-content-center align-items-center">
                                                                         <canvas id="barChart_InventoryTurnoverRatio"></canvas>
                                                                         </div>
@@ -1400,7 +1402,8 @@
                                                                     <div class="card">
                                                                         <h4
                                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                        Days Sales In Inventory</h4>
+                                                                        {{ isset($BusinessIntelligence->days_sales_in_inventory_BI_heading_graph) ? $BusinessIntelligence->days_sales_in_inventory_BI_heading_graph : 'N/A' }}
+                                                                        </h4>
                                                                         <div class="d-flex justify-content-center align-items-center">
                                                                             <canvas id="barChart_DaysSalesInInventory"></canvas>
                                                                         </div>
@@ -1421,7 +1424,9 @@
                                                                     <div class="card">
                                                                         <h4
                                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                        Accounts Payable Turnover Ratio</h4>
+                                                                        {{ isset($BusinessIntelligence->accounts_payable_turnover_BI_heading_graph) ? $BusinessIntelligence->accounts_payable_turnover_BI_heading_graph : 'N/A' }}
+
+                                                                    </h4>
                                                                         <div class="d-flex justify-content-center align-items-center">
                                                                             <canvas id="barChart_businessIntelligence"></canvas>
                                                                         </div>

@@ -27,7 +27,6 @@ class CreateFinancialsTable extends Migration
 
             // Financials - Charge Information - Set 2
             $this->addChargeFields($table, 2);
-
             $this->addChargeFields($table, 3);
             $this->addChargeFields($table, 4);
             $table->timestamps();
