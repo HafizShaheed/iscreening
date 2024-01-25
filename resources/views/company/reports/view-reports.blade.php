@@ -747,7 +747,7 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Revenue</h4>
+                                                            {{ $Financial->revenue_fy_one_finding_heading_graph ?  $Financial->revenue_fy_one_finding_heading_graph : "" }}</h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_1" width="100px"></canvas>
                                                         </div>
@@ -761,7 +761,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Net Profit</h4>
+                                                            {{ $Financial->net_profit_fy_one_finding_heading_graph ?  $Financial->net_profit_fy_one_finding_heading_graph : "" }}
+                                                             </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_NetProfit" width="100px"></canvas>
                                                         </div>
@@ -775,7 +776,9 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Gross Profit</h4>
+                                                            {{ $Financial->gross_profit_fy_one_finding_heading_graph ?  $Financial->gross_profit_fy_one_finding_heading_graph  : "" }}
+
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_GrossProfit" width="100px"></canvas>
                                                         </div>
@@ -789,7 +792,10 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                            Working Capital</h4>
+                                                                {{ $Financial->working_capital_1_fy_one_finding_heading_graph ?  $Financial->working_capital_1_fy_one_finding_heading_graph  : "" }}
+
+
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_WorkingCapital" width="100px"></canvas>
                                                         </div>
@@ -808,7 +814,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                              Quick Assets</h4>
+                                                                {{ $Financial->quick_assets_fy_one_finding_heading_graph ?  $Financial->quick_assets_fy_one_finding_heading_graph  : "" }}
+                                                              </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_QuickAssets" width="100px"></canvas>
                                                         </div>
@@ -822,7 +829,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                               Total Assets</h4>
+                                                                {{ $Financial->total_assets_fy_one_finding_heading_graph ?  $Financial->total_assets_fy_one_finding_heading_graph  : "" }}
+                                                               </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TotalAssets" width="100px"></canvas>
                                                         </div>
@@ -836,7 +844,8 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                           Current Assets</h4>
+                                                                {{ $Financial->current_assets_fy_one_finding_heading_graph ?  $Financial->current_assets_fy_one_finding_heading_graph  : "" }}
+                                                           </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_CurrentAssets" width="100px"></canvas>
                                                             </div>
@@ -849,7 +858,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                              Current Liabilities</h4>
+                                                                {{ $Financial->current_liabilities_fy_one_finding_heading_graph ?  $Financial->current_liabilities_fy_one_finding_heading_graph  : "" }}
+                                                              </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_CurrentLiabilities" width="100px"></canvas>
                                                         </div>
@@ -864,7 +874,8 @@
                                                      <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                               Debt</h4>
+                                                            {{ $Financial->debt_fy_one_finding_heading_graph ?  $Financial->debt_fy_one_finding_heading_graph  : "" }}
+                                                                    </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_Debt" width="100px"></canvas>
                                                         </div>
@@ -877,7 +888,8 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                           Average Inventory</h4>
+                                                            {{ $Financial->average_inventory_fy_one_finding_heading_graph ?  $Financial->average_inventory_fy_one_finding_heading_graph  : "" }}
+                                                           </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_AverageInventory" width="100px"></canvas>
                                                             </div>
@@ -890,7 +902,8 @@
                                                      <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                              Net Sales</h4>
+                                                            {{ $Financial->net_sales_fy_one_finding_heading_graph ?  $Financial->net_sales_fy_one_finding_heading_graph  : "" }}
+                                                              </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_NetSales" width="100px"></canvas>
                                                         </div>
@@ -903,7 +916,8 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                         Share Capital</h4>
+                                                            {{ $Financial->equity_share_capital_fy_one_finding_heading_graph ?  $Financial->equity_share_capital_fy_one_finding_heading_graph  : "" }}
+                                                         </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_ShareCapital" width="100px"></canvas>
                                                             </div>
@@ -922,7 +936,8 @@
                                                      <div class="card">
                                                         <h4
                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                              Sundry Debtors</h4>
+                                                            {{ $Financial->sundry_debtors_fy_one_finding_heading_graph ?  $Financial->sundry_debtors_fy_one_finding_heading_graph  : "" }}
+                                                              </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SundryDebtors" width="100px"></canvas>
                                                         </div>
@@ -935,7 +950,8 @@
                                                     <div class="card">
                                                         <h4
                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                          Sundry Creditors</h4>
+                                                            {{ $Financial->sundry_creditors_fy_one_finding_heading_graph ?  $Financial->sundry_creditors_fy_one_finding_heading_graph  : "" }}
+                                                          </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SundryCreditors" width="100px"></canvas>
                                                         </div>
@@ -948,7 +964,8 @@
                                                      <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                              Loans & Advances</h4>
+                                                            {{ $Financial->loans_and_advances_fy_one_finding_heading_graph ?  $Financial->loans_and_advances_fy_one_finding_heading_graph  : "" }}
+                                                              </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_LoansAndAdvances" width="100px"></canvas>
                                                         </div>
@@ -961,7 +978,8 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                           Cash And Cash Equivalents</h4>
+                                                            {{ $Financial->cash_and_cash_equivalents_fy_one_finding_heading_graph ?  $Financial->cash_and_cash_equivalents_fy_one_finding_heading_graph  : "" }}
+                                                           </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_CashAndCashEquivalents" width="100px"></canvas>
                                                             </div>
@@ -987,7 +1005,9 @@
                                                  <div class="card">
                                                      <h4
                                                      class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                       Current Ratio</h4>
+                                                     {{ $Financial->current_ratio_fy_one_ratio_heading_graph  ?  $Financial->current_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                    </h4>
                                                      <div class="d-flex justify-content-center align-items-center">
                                                          <canvas id="barChart_financialRation"></canvas>
                                                         </div>
@@ -1013,7 +1033,9 @@
                                                 <div class="card">
                                                     <h4
                                                     class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                    Quick Ratio</h4>
+                                                    {{ $Financial->quick_ratio_fy_one_ratio_heading_graph  ?  $Financial->quick_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                </h4>
                                                     <div class="d-flex justify-content-center align-items-center">
                                                         <canvas id="barChart_QuickRatio"></canvas>
                                                     </div>
@@ -1034,7 +1056,9 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Debt Ratio </h4>
+                                                            {{ $Financial->debt_ratio_fy_one_ratio_heading_graph  ?  $Financial->debt_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_DebtRatio"></canvas>
                                                         </div>
@@ -1056,7 +1080,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Solvency Ratio</h4>
+                                                            {{ $Financial->solvency_ratio_fy_one_ratio_heading_graph  ?  $Financial->solvency_ratio_fy_one_ratio_heading_graph : "" }}
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SolvencyRatio"></canvas>
                                                         </div>
@@ -1078,7 +1103,9 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                          Debt To Equity Ratio</h4>
+                                                         {{ $Financial->debt_to_equity_ratio_fy_one_ratio_heading_graph  ?  $Financial->debt_to_equity_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                        </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_DebtToEquityRatio"></canvas>
                                                             </div>
@@ -1099,7 +1126,9 @@
                                                      <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Asset Turnover Ratio</h4>
+                                                            {{ $Financial->asset_turnover_ratio_fy_one_ratio_heading_graph  ?  $Financial->asset_turnover_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_AssetTurnoverRatio"></canvas>
                                                         </div>
@@ -1120,7 +1149,9 @@
                                                     <div class="card">
                                                         <h4
                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                         Absolute Liquidity Ratio</h4>
+                                                        {{ $Financial->absolute_liquidity_ratio_fy_one_ratio_heading_graph  ?  $Financial->absolute_liquidity_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                    </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_AbsoluteLiquidityRatio"></canvas>
                                                         </div>
@@ -1141,7 +1172,9 @@
                                                      <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Proprietary Ratio</h4>
+                                                            {{ $Financial->proprietary_ratio_fy_one_ratio_heading_graph  ?  $Financial->proprietary_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_ProprietaryRatio"></canvas>
                                                         </div>
@@ -1164,7 +1197,9 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                          Net Profit Ratio </h4>
+                                                         {{ $Financial->net_profit_ratio_fy_one_ratio_heading_graph  ?  $Financial->net_profit_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                         </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_NetProfitRatio"></canvas>
                                                             </div>
@@ -1185,7 +1220,8 @@
                                                     <div class="card">
                                                         <h4
                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                         Gross Profit Ratio</h4>
+                                                        {{ $Financial->gross_profit_ratio_fy_one_ratio_heading_graph  ?  $Financial->gross_profit_ratio_fy_one_ratio_heading_graph : "" }}
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_GrossProfitRatio"></canvas>
                                                         </div>
@@ -1206,7 +1242,10 @@
                                                      <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Springate Score</h4>
+
+                                                            {{ $Financial->springate_s_score_ratio_fy_one_ratio_heading_graph  ?  $Financial->springate_s_score_ratio_fy_one_ratio_heading_graph : "" }}
+
+                                                        </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_SpringateSScore"></canvas>
                                                         </div>
@@ -1227,7 +1266,8 @@
                                                     <div class="card">
                                                         <h4
                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                        Trade Receivable Days</h4>
+                                                        {{ $Financial->trade_receivable_days_ratio_fy_one_ratio_heading_graph  ?  $Financial->trade_receivable_days_ratio_fy_one_ratio_heading_graph : "" }}
+                                                    </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TradeReceivableDays"></canvas>
                                                         </div>
@@ -1250,7 +1290,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             Trade Payable Days</h4>
+                                                            {{ $Financial->trade_payable_days_ratio_fy_one_ratio_heading_graph  ?  $Financial->trade_payable_days_ratio_fy_one_ratio_heading_graph : "" }}
+                                                            </h4>
                                                             <div class="d-flex justify-content-center align-items-center">
                                                                 <canvas id="barChart_TradePayableDays"></canvas>
                                                             </div>
@@ -1271,7 +1312,8 @@
                                                     <div class="card">
                                                         <h4
                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                             TafflerZ Score</h4>
+                                                            {{ $Financial->taffler_z_score_ratio_fy_one_ratio_heading_graph  ?  $Financial->taffler_z_score_ratio_fy_one_ratio_heading_graph : "" }}
+                                                            </h4>
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <canvas id="barChart_TafflerZScore"></canvas>
                                                         </div>
@@ -1292,7 +1334,8 @@
                                                      <div class="card">
                                                          <h4
                                                          class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                          ZmijewskiX Score</h4>
+                                                         {{ $Financial->zmijewski_x_score_ratio_fy_one_ratio_heading_graph  ?  $Financial->zmijewski_x_score_ratio_fy_one_ratio_heading_graph : "" }}
+                                                        </h4>
                                                          <div class="d-flex justify-content-center align-items-center">
                                                              <canvas id="barChart_ZmijewskiXScore"></canvas>
                                                             </div>
@@ -1356,7 +1399,7 @@
                                                                 <div class="card">
                                                                     <h4
                                                                             class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                            Operating Efficiency Ratio</h4>
+                                                                            {{ isset($BusinessIntelligence->operating_efficiency_BI_heading_graph) ? $BusinessIntelligence->operating_efficiency_BI_heading_graph : 'N/A' }}</h4>
                                                                             <div class="d-flex justify-content-center align-items-center">
                                                                                 <canvas id="barChart_OperatingEfficiencyRatio"></canvas>
                                                                             </div>
@@ -1380,7 +1423,9 @@
                                                                 <div class="card">
                                                                     <h4
                                                                     class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                    Inventory Turnover Ratio</h4>
+                                                                    {{ isset($BusinessIntelligence->inventory_turnover_BI_heading_graph) ? $BusinessIntelligence->inventory_turnover_BI_heading_graph : 'N/A' }}
+
+                                                                </h4>
                                                                     <div class="d-flex justify-content-center align-items-center">
                                                                         <canvas id="barChart_InventoryTurnoverRatio"></canvas>
                                                                         </div>
@@ -1402,7 +1447,8 @@
                                                                     <div class="card">
                                                                         <h4
                                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                        Days Sales In Inventory</h4>
+                                                                        {{ isset($BusinessIntelligence->days_sales_in_inventory_BI_heading_graph) ? $BusinessIntelligence->days_sales_in_inventory_BI_heading_graph : 'N/A' }}
+                                                                        </h4>
                                                                         <div class="d-flex justify-content-center align-items-center">
                                                                             <canvas id="barChart_DaysSalesInInventory"></canvas>
                                                                         </div>
@@ -1423,7 +1469,9 @@
                                                                     <div class="card">
                                                                         <h4
                                                                         class="card-title mb-4 d-flex justify-content-center align-items-center">
-                                                                        Accounts Payable Turnover Ratio</h4>
+                                                                        {{ isset($BusinessIntelligence->accounts_payable_turnover_BI_heading_graph) ? $BusinessIntelligence->accounts_payable_turnover_BI_heading_graph : 'N/A' }}
+
+                                                                    </h4>
                                                                         <div class="d-flex justify-content-center align-items-center">
                                                                             <canvas id="barChart_businessIntelligence"></canvas>
                                                                         </div>
@@ -1443,8 +1491,7 @@
                                         </div>
                                     </div>
 
-                                </div>
-                            </div>
+                                </div>                            </div>
                         </div>
                     </div>
                 </div>
