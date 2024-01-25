@@ -412,10 +412,47 @@ class teamController extends Controller
                 $Financial->{"charged_property_$i"}  = $request->input("charged_property_$i");
              }
 
+             $Financial->revenue_fy_one_finding_heading_graph  = $request->input('revenue_fy_one_finding_heading_graph');
+             $Financial->net_profit_fy_one_finding_heading_graph  = $request->input('net_profit_fy_one_finding_heading_graph');
+             $Financial->gross_profit_fy_one_finding_heading_graph  = $request->input('gross_profit_fy_one_finding_heading_graph');
+             $Financial->working_capital_1_fy_one_finding_heading_graph  = $request->input('working_capital_1_fy_one_finding_heading_graph');
+             $Financial->quick_assets_fy_one_finding_heading_graph  = $request->input('quick_assets_fy_one_finding_heading_graph');
+             $Financial->total_assets_fy_one_finding_heading_graph  = $request->input('total_assets_fy_one_finding_heading_graph');
+             $Financial->current_assets_fy_one_finding_heading_graph  = $request->input('current_assets_fy_one_finding_heading_graph');
+             $Financial->current_liabilities_fy_one_finding_heading_graph  = $request->input('current_liabilities_fy_one_finding_heading_graph');
+             $Financial->debt_fy_one_finding_heading_graph  = $request->input('debt_fy_one_finding_heading_graph');
+             $Financial->average_inventory_fy_one_finding_heading_graph  = $request->input('average_inventory_fy_one_finding_heading_graph');
+             $Financial->net_sales_fy_one_finding_heading_graph  = $request->input('net_sales_fy_one_finding_heading_graph');
+             $Financial->equity_share_capital_fy_one_finding_heading_graph  = $request->input('equity_share_capital_fy_one_finding_heading_graph');
+             $Financial->sundry_debtors_fy_one_finding_heading_graph  = $request->input('sundry_debtors_fy_one_finding_heading_graph');
+             $Financial->sundry_creditors_fy_one_finding_heading_graph  = $request->input('sundry_creditors_fy_one_finding_heading_graph');
+             $Financial->loans_and_advances_fy_one_finding_heading_graph  = $request->input('loans_and_advances_fy_one_finding_heading_graph');
+             $Financial->cash_and_cash_equivalents_fy_one_finding_heading_graph  = $request->input('cash_and_cash_equivalents_fy_one_finding_heading_graph');
+
+             // above heading finding graph
+             // below heading ratio graph
+             $Financial->current_ratio_fy_one_ratio_heading_graph  = $request->input('current_ratio_fy_one_ratio_heading_graph');
+             $Financial->debt_ratio_fy_one_ratio_heading_graph  = $request->input('debt_ratio_fy_one_ratio_heading_graph');
+             $Financial->solvency_ratio_fy_one_ratio_heading_graph  = $request->input('solvency_ratio_fy_one_ratio_heading_graph');
+             $Financial->debt_to_equity_ratio_fy_one_ratio_heading_graph  = $request->input('debt_to_equity_ratio_fy_one_ratio_heading_graph');
+             $Financial->asset_turnover_ratio_fy_one_ratio_heading_graph  = $request->input('asset_turnover_ratio_fy_one_ratio_heading_graph');
+             $Financial->absolute_liquidity_ratio_fy_one_ratio_heading_graph  = $request->input('absolute_liquidity_ratio_fy_one_ratio_heading_graph');
+             $Financial->proprietary_ratio_fy_one_ratio_heading_graph  = $request->input('proprietary_ratio_fy_one_ratio_heading_graph');
+             $Financial->net_profit_ratio_fy_one_ratio_heading_graph  = $request->input('net_profit_ratio_fy_one_ratio_heading_graph');
+             $Financial->gross_profit_ratio_fy_one_ratio_heading_graph  = $request->input('gross_profit_ratio_fy_one_ratio_heading_graph');
+             $Financial->springate_s_score_ratio_fy_one_ratio_heading_graph  = $request->input('springate_s_score_ratio_fy_one_ratio_heading_graph');
+             $Financial->trade_receivable_days_ratio_fy_one_ratio_heading_graph  = $request->input('trade_receivable_days_ratio_fy_one_ratio_heading_graph');
+             $Financial->trade_payable_days_ratio_fy_one_ratio_heading_graph  = $request->input('trade_payable_days_ratio_fy_one_ratio_heading_graph');
+             $Financial->taffler_z_score_ratio_fy_one_ratio_heading_graph  = $request->input('taffler_z_score_ratio_fy_one_ratio_heading_graph');
+             $Financial->zmijewski_x_score_ratio_fy_one_ratio_heading_graph  = $request->input('zmijewski_x_score_ratio_fy_one_ratio_heading_graph');
+             $Financial->quick_ratio_fy_one_ratio_heading_graph  = $request->input('quick_ratio_fy_one_ratio_heading_graph');
+
+
 
             $Financial->overall_financial_score  = $request->input('overall_financial_score');
             $Financial->score_analysis  = $request->input('score_analysis');
             $Financial->Type_of_risk = $request->input('overall_financial_score') > 60 ? 'High Risk' : ($request->input('overall_financial_score') <= 60 && $request->input('overall_financial_score') > 30 ? 'Medium Risk' : ($request->input('overall_financial_score') <= 30 ? 'Low Risk' : '' ) );
+
 
         $Financial->status = 1;
 
@@ -742,6 +779,11 @@ class teamController extends Controller
         $BusinessIntelligence->inventory_turnover_BI_FY_five  = $request->input('inventory_turnover_BI_FY_five');
         $BusinessIntelligence->days_sales_in_inventory_BI_FY_five  = $request->input('days_sales_in_inventory_BI_FY_five');
         $BusinessIntelligence->accounts_payable_turnover_BI_FY_five  = $request->input('accounts_payable_turnover_BI_FY_five');
+
+        $BusinessIntelligence->operating_efficiency_BI_heading_graph  = $request->input('operating_efficiency_BI_heading_graph');
+        $BusinessIntelligence->inventory_turnover_BI_heading_graph  = $request->input('inventory_turnover_BI_heading_graph');
+        $BusinessIntelligence->days_sales_in_inventory_BI_heading_graph  = $request->input('days_sales_in_inventory_BI_heading_graph');
+        $BusinessIntelligence->accounts_payable_turnover_BI_heading_graph  = $request->input('accounts_payable_turnover_BI_heading_graph');
 
 
         $BusinessIntelligence->efficiency_score  = $request->input('efficiency_score');

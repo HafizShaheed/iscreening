@@ -483,7 +483,11 @@
                                                     </tr>
 
                                                     <tr>
-                                                        <td style=" text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="2"  class="col-md-4"><a href="{{ URL::to('/panel/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn">Download field visit Image</a></td>
+                                                        <td style=" text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="2"  class="col-md-4">
+                                                        <a href="{{ URL::to('/panel/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download PDF or Image</a>
+
+                                                        <a href="{{ URL::to('/panel/report/onGround_file_view'.'/'. base64_encode($OnGroundVerification->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;text-align: center; ">View Report</a>
+                                                    </td>
 
                                                     </tr>
                                                 </tbody>

@@ -993,6 +993,21 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
         return response()->download($imagePath, $fileName);
     }
 
+    public function onGround_file_view($id)
+    {
+        $id = base64_decode($id);
+        $data['OnGroundVerification'] = OnGroundVerification::where('id', $id)->first();
+
+        // Replace 'path/to/your/file' with the actual path to your file
+        $filePath = public_path('admin/assets/imgs/OnGroundVerification/' . $data['OnGroundVerification']->upload_picture);
+
+        // Specify the desired file name
+        $fileName = $data['OnGroundVerification']->upload_picture;
+
+        // Return a file response
+        return response()->file($filePath, ['Content-Type' => mime_content_type($filePath)]);
+    }
+
     public function final_Reprts_file_download($id)
     {
         $id = base64_decode($id);

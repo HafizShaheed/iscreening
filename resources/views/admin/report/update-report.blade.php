@@ -949,7 +949,7 @@
 
                         </div>
 
-                        <!-- graph financial  graph heading start -->
+                        <!-- graph financial  graph heading end -->
 
 
                         <!-- Navigation buttons -->
@@ -1689,7 +1689,7 @@
                                 <input type="text" step="any"  class="form-control" name="zmijewski_x_score_ratio_fy_one_ratio_heading_graph"  id="zmijewski_x_score_ratio_fy_one_ratio_heading_graph" value="{{$Financial->zmijewski_x_score_ratio_fy_one_ratio_heading_graph}}" placeholder="">
                             </div>
 
-                        </div>
+                    </div>
                      <!-- graph ratio  graph heading end -->
 
 
@@ -2341,22 +2341,22 @@
 
                     </div>
                     <div class="row">
-                    <div class="col-xl-3 mb-3">
-                        <label for="operating_efficiency_BI_heading_graph" class="form-label">Operating Efficiency Graph Heading</label>
-                        <input type="text"   class="form-control" name="operating_efficiency_BI_heading_graph"  id="operating_efficiency_BI_heading_graph" value="{{$BusinessIntelligence->operating_efficiency_BI_heading_graph}}" placeholder="">
-                    </div>
-                    <div class="col-xl-3 mb-3">
-                        <label for="inventory_turnover_BI_heading_graph" class="form-label">Inventory Turnover Graph Heading</label>
-                        <input type="text"   class="form-control" name="inventory_turnover_BI_heading_graph"  id="inventory_turnover_BI_heading_graph" value="{{$BusinessIntelligence->inventory_turnover_BI_heading_graph}}" placeholder="">
-                    </div>
-                    <div class="col-xl-3 mb-3">
-                        <label for="days_sales_in_inventory_BI_heading_graph" class="form-label">Days Sales In Inventory Graph Heading</label>
-                        <input type="text"   class="form-control" name="days_sales_in_inventory_BI_heading_graph"  id="days_sales_in_inventory_BI_heading_graph" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_heading_graph}}" placeholder="">
-                    </div>
-                    <div class="col-xl-3 mb-3">
-                        <label for="accounts_payable_turnover_BI_heading_graph" class="form-label">Accounts Payable Turnover Graph Heading</label>
-                        <input type="text"   class="form-control" name="accounts_payable_turnover_BI_heading_graph"  id="accounts_payable_turnover_BI_heading_graph" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_heading_graph}}" placeholder="">
-                    </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="operating_efficiency_BI_heading_graph" class="form-label">Operating Efficiency Graph Heading</label>
+                            <input type="text"   class="form-control" name="operating_efficiency_BI_heading_graph"  id="operating_efficiency_BI_heading_graph" value="{{$BusinessIntelligence->operating_efficiency_BI_heading_graph}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="inventory_turnover_BI_heading_graph" class="form-label">Inventory Turnover Graph Heading</label>
+                            <input type="text"   class="form-control" name="inventory_turnover_BI_heading_graph"  id="inventory_turnover_BI_heading_graph" value="{{$BusinessIntelligence->inventory_turnover_BI_heading_graph}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="days_sales_in_inventory_BI_heading_graph" class="form-label">Days Sales In Inventory Graph Heading</label>
+                            <input type="text"   class="form-control" name="days_sales_in_inventory_BI_heading_graph"  id="days_sales_in_inventory_BI_heading_graph" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_heading_graph}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="accounts_payable_turnover_BI_heading_graph" class="form-label">Accounts Payable Turnover Graph Heading</label>
+                            <input type="text"   class="form-control" name="accounts_payable_turnover_BI_heading_graph"  id="accounts_payable_turnover_BI_heading_graph" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_heading_graph}}" placeholder="">
+                        </div>
                     </div>
 
 
