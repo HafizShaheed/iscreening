@@ -170,7 +170,8 @@
                                                         </tr>
                                                         <tr>
                                                             <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
-                                                                <a href="{{ URL::to('/panel/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn">Download Licenses</a>
+                                                            <a href="{{ URL::to('/panel/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
+                                                                <a href="{{ URL::to('/panel/report/firm_file_view'.'/'.base64_encode($FirmBackground->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Licenses</a>
                                                             </td>
 
                                                         </tr>
@@ -1799,32 +1800,24 @@
                                 <div class="pt-4">
 
                                     <div class="row">
-                                        <!-- <div class="col-xl-4 mt-6">
-                                            <p for="educationalBackground" class="text-start">
-                                                {{ $KeyObservation->key_observation }}</p>
-                                        </div> -->
+
 
 
                                         <div class="col-xl-3 mt-3">
                                             <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf">OVERALL RISK SCORE =
                                                 {{ $KeyObservation->overall_risk_score }}</b></p>
                                         </div>
-                                          <div class="col-xl-7 mt-3">
-                                            <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
+                                        <div class="col-xl-2 mt-6">
+                                        <canvas id="doughnut_chart"></canvas>
+                                        </div>
+                                        <div class="col-xl-1  mt-3">   </div>
+                                        <div class="col-xl-6  mt-3">
+                                            <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
                                               <br>  {{ $KeyObservation->score_analysis }}</p>
                                         </div>
 
 
-                                        <div  class="col-xl-2 mb-3">
 
-
-
-
-
-                                <canvas id="doughnut_chart"></canvas>
-
-
-                                        </div>
 
                                     </div>
 

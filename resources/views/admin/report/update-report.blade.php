@@ -105,6 +105,7 @@
         <div class="card-body justify-content-center">
             <div class="d-flex flex-row flex-nowrap">
                 <a href="JavaScript:void(0)" id="click-Firm-Background" class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Firm Background</a>
+                <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
                 <a href="JavaScript:void(0)" id="click-On-Ground-Verification" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground Verification</a>
                 <a href="JavaScript:void(0)" id="click-Court-Checks" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Court
                     Checks</a>
@@ -518,6 +519,45 @@
     </div>
 </div>
 <!-- Firm Background form end -->
+<!-- Documents start -->
+
+<div class="row" id="Tab-Documents">
+    <div class="card">
+        <div class="card-header justify-content-start">
+            <h4 class="card-title"> Documents
+            </h4>
+
+        </div>
+        <div class="card-body justify-content-start">
+            <form id="Documents-step-form" enctype="multipart/form-data">
+                <!-- Verificationform 1 step end -->
+                <div class="Documents-step" id="Documents-step-1">
+
+
+                    <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+                    <div class="row">
+                    @for ($i=1; $i <= 8; $i++)
+
+
+                        @endfor
+                    </div>
+
+
+
+                        <div class="col-xl-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn report-tab-active" id="submit-Documents">submit</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Verificationform 1 step end -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Documents end -->
 
 <!-- On Ground Verificationform start -->
 
@@ -3066,6 +3106,8 @@
         $('#click-Firm-Background').on('click', function() {
             $('#Firm-Background').show();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
@@ -3076,6 +3118,8 @@
             $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3086,6 +3130,30 @@
 
 
 
+
+        });
+
+        $('#click-Documents').on('click', function() {
+            $('#Firm-Background').hide();
+            $('#Court-Checks').hide();
+            $('#Tab-Documents').show();
+
+            $("#On-Ground-Verification").hide();
+            $("#Financials").hide();
+            $("#Business-Intelligence").hide();
+            $("#Tax-Return-and-Credit").hide();
+            $("#Market-Reputation").hide();
+            $("#Key-Observation").hide();
+
+            $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-active').removeClass('report-tab-unactive');
+            $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
         });
 
@@ -3102,6 +3170,7 @@
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-active').removeClass('report-tab-unactive');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3114,6 +3183,8 @@
         $('#click-Court-Checks').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').show();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
@@ -3123,8 +3194,11 @@
 
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3166,6 +3240,8 @@
         $('#click-Financials').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").show();
             $("#Business-Intelligence").hide();
@@ -3175,6 +3251,8 @@
 
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Financials").addClass('report-tab-active').removeClass('report-tab-unactive');
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3232,6 +3310,8 @@
             $('#Court-Checks').hide();
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
+            $('#Tab-Documents').hide();
+
             $("#Business-Intelligence").show();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
@@ -3240,6 +3320,8 @@
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Business-Intelligence").addClass('report-tab-active').removeClass('report-tab-unactive');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3284,6 +3366,8 @@
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
             $("#On-Ground-Verification").hide();
+            $('#Tab-Documents').hide();
+
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").show();
@@ -3336,6 +3420,8 @@
             $('#Court-Checks').hide();
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
+            $('#Tab-Documents').hide();
+
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").show();
@@ -3356,6 +3442,8 @@
         $('#click-Key-Observation').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
@@ -3405,6 +3493,8 @@
         function allFormHideStaringAfter() {
             $('#Firm-Background').show();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();

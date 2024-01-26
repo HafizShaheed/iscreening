@@ -1948,6 +1948,20 @@ class adminController extends Controller
         return response()->download($imagePath, $fileName);
     }
 
+    public function firm_file_view($id)
+    {
+        $id = base64_decode($id);
+        $data['FirmBackground'] = FirmBackground::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $data['FirmBackground']->file);
+
+        // Specify the desired file name
+        $fileName = $data['FirmBackground']->file;
+
+        // return response()->download($imagePath, $fileName);
+        return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
+    }
     public function onGround_file_view($id)
     {
         $id = base64_decode($id);

@@ -271,17 +271,17 @@ class userController extends Controller
                 $getLocationId =Zone::where('zone_name', $request->Location)->first();
                 $query->where('zone_id', $getLocationId->id);
             }else{
-            
+
                 $decodedlocations = array_map(function ($location) {
                     return base64_decode($location);
                 }, $request->location);
-    
+
                 $location = array_map('intval', $decodedlocations);
-    
+
                 $query->whereIn('zone_id', $location);
 
             }
-          
+
         }
 
 
@@ -311,7 +311,7 @@ class userController extends Controller
 
             }
 
-         
+
         }
 
         if (isset($request->overallRisk) && !empty($request->overallRisk)) {
@@ -356,7 +356,7 @@ class userController extends Controller
                 $MarketReputation = MarketReputation::where('user_id', auth()->user()->id)
                     ->where('market_reputation_score', '<>', null)
                     ->where('status',  '=', 3)
-                   
+
                     ->pluck('third_party_id');
                 // dd($MarketReputation);
                 $query->whereIn('id', $MarketReputation);
@@ -366,7 +366,7 @@ class userController extends Controller
                 $CourtCheck = CourtCheck::where('user_id', auth()->user()->id)
                     ->where('legal_score',  '<>', null)
                     ->where('status',  '=', 3)
-                   
+
                     ->pluck('third_party_id');
 
                 $query->whereIn('id', $CourtCheck);
@@ -375,7 +375,7 @@ class userController extends Controller
                 $Financial = Financial::where('user_id', auth()->user()->id)
                     ->where('overall_financial_score',  '<>', null)
                     ->where('status',  '=', 3)
-                   
+
                     ->pluck('third_party_id');
 
                 $query->whereIn('id', $Financial);
@@ -384,7 +384,7 @@ class userController extends Controller
                 $TaxReurnCredit = BusinessIntelligence::where('user_id', auth()->user()->id)
                     ->where('efficiency_score',  '<>', null)
                     ->where('status',  '=', 3)
-                   
+
                     ->pluck('third_party_id');
 
                 $query->whereIn('id', $TaxReurnCredit);
@@ -393,7 +393,7 @@ class userController extends Controller
                 $firmBackground = FirmBackground::where('user_id', auth()->user()->id)
                     ->where('regulatory_score',  '<>', null)
                     ->where('status',  '=', 3)
-                   
+
                     ->pluck('third_party_id');
 
                 $query->whereIn('id', $firmBackground);
@@ -451,9 +451,9 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        
-        
-        
+
+
+
 
         $data['getallThirdParty'] = $query->get();
         // dd($data);
@@ -1008,6 +1008,20 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
         return response()->file($filePath, ['Content-Type' => mime_content_type($filePath)]);
     }
 
+    public function firm_file_view($id)
+    {
+        $id = base64_decode($id);
+        $data['FirmBackground'] = FirmBackground::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $data['FirmBackground']->file);
+
+        // Specify the desired file name
+        $fileName = $data['FirmBackground']->file;
+
+        // return response()->download($imagePath, $fileName);
+        return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
+    }
     public function final_Reprts_file_download($id)
     {
         $id = base64_decode($id);
