@@ -24,6 +24,8 @@
             <div class="d-flex flex-row flex-nowrap">
                 <a href="JavaScript:void(0)" id="click-Firm-Background"
                     class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Firm Background</a>
+                    <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
+
                 <a href="JavaScript:void(0)" id="click-On-Ground-Verification"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground
                     Verification</a>
@@ -435,6 +437,74 @@
         </div>
     </div>
 <!-- firm background tab End -->
+<!-- document Report  start--> 
+<div class="col-xl-12" id="tab-document-report">
+        <div class="card dz-card">
+
+            <div class="tab-content" id="myTabContent">
+                <div class="card-header flex-wrap border-0" id="default-tab">
+                </div>
+                <div class="tab-pane fade show active" id="DefaultTab" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="card-body pt-0">
+                        <!-- Nav tabs -->
+                        <div class="default-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#ON-GROUND VERIFICATION "> Document</a>
+                                </li>
+
+
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="ON-GROUND VERIFICATION " role="tabpanel">
+                                    <div class="pt-4">
+                                        <div class="table-responsive">
+                                        <table class="table primary-table-bordered">
+                                                    <thead class="thead-primary">
+                                                        <tr>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document Name</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document No.</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        @for ($i = 1; $i <= 18; $i++)
+                                                            @if(!empty($Document->{'document_name_'.$i}))
+                                                                <tr>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_name_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_number_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_date_of_issuance_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_date_of_expiry_'.$i} }}</td>
+                                                                </tr>
+                                                            @endif
+                                                        @endfor
+
+                                                     
+                                                        <tr>
+                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
+                                                            <a href="{{ URL::to('/company/report/document_file_download'.'/'.base64_encode($Document->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Document</a>
+                                                                <a href="{{ URL::to('/company/report/document_file_view'.'/'.base64_encode($Document->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Document</a>
+                                                            </td>
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- document reports end -->
+<!-- on ground verification tab start -->
 <!-- on ground verification tab start -->
     <div class="col-xl-12" id="tab-On-Ground-Verification">
         <div class="card dz-card">
@@ -1961,6 +2031,8 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
         $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
         $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -1975,6 +2047,34 @@ $(document).ready(function() {
         $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
     });
+    $('#click-Documents').on('click', function() {
+        $('#tab-Firm-Background').hide();
+        $('#tab-On-Ground-Verification').hide();
+        $('#tab-document-report').show();
+
+        $('#tab-Court-Checks').hide();
+        $('#tab-Financials').hide();
+        $('#tab-Business-Intelligence').hide();
+        $('#tab-Tax-Return-and-Credit').hide();
+        $('#tab-Market-Reputation').hide();
+        $('#tab-Key-Observation').hide();
+
+        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+        $("#click-Documents").addClass('report-tab-active').removeClass(
+            'report-tab-unactive');
+        $("##click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+
+        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+            'report-tab-active');
+        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+            'report-tab-active');
+        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+
+
+    });
     $('#click-On-Ground-Verification').on('click', function() {
         $('#tab-Firm-Background').hide();
         $('#tab-On-Ground-Verification').show();
@@ -1985,6 +2085,8 @@ $(document).ready(function() {
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
 
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
         $("#click-On-Ground-Verification").addClass('report-tab-active').removeClass(
@@ -2009,7 +2111,8 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
-
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
         $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
@@ -2031,7 +2134,8 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
-
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
 
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -2057,6 +2161,9 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
         $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
@@ -2079,6 +2186,8 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').show();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -2102,7 +2211,8 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').show();
         $('#tab-Key-Observation').hide();
-
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
         $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
@@ -2125,6 +2235,8 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').show();
+        $('#tab-document-report').hide();
+        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
         $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
         $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -2146,6 +2258,7 @@ $(document).ready(function() {
         $('#tab-Firm-Background').show();
         $('#tab-On-Ground-Verification').hide();
         $('#tab-Court-Checks').hide();
+        $('#tab-document-report').hide();
         $('#tab-Financials').hide();
         $('#tab-Business-Intelligence').hide();
         $('#tab-Tax-Return-and-Credit').hide();

@@ -529,17 +529,45 @@
 
         </div>
         <div class="card-body justify-content-start">
-            <form id="Documents-step-form" enctype="multipart/form-data">
+            <form id="Documents-form" enctype="multipart/form-data">
                 <!-- Verificationform 1 step end -->
                 <div class="Documents-step" id="Documents-step-1">
 
 
                     <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
-                    <div class="row">
-                    @for ($i=1; $i <= 8; $i++)
+                    <input type="hidden" name="DocumentID" id="DocumentID" value="{{$Document->id}}" class="form-control" value="">
 
+                    <div class="row">
+                        @for ($i=1; $i <=15; $i++)
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_name_{{ $i }}" class="form-label">Document Name</label>
+                            <input type="text" class="form-control" id="document_name_{{ $i }}" name="document_name_{{ $i }}" value="{{ $Document->{'document_name_' . $i} }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_number_{{ $i }}" class="form-label">Document No</label>
+                            <input type="text" class="form-control" id="document_number_{{ $i }}" name="document_number_{{ $i }}" value="{{$Document->{'document_number_'. $i } }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
+                            <input type="date" class="form-control" id="document_date_of_issuance_{{ $i }}" name="document_date_of_issuance_{{ $i }}" value="{{$Document->{'document_date_of_issuance_'.$i } }}">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
+                            <input type="date" class="form-control" id="document_date_of_expiry_{{ $i }}" name="document_date_of_expiry_{{ $i }}" value="{{$Document->{'document_date_of_expiry_'. $i} }}">
+                        </div>
 
                         @endfor
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6  mb-3">
+                        <label for="document_upload" class="form-label">Upload Document</label>
+                        <div class="dz-default dlab-message upload-img mb-3">
+                        <div class="fallback">
+                        <input  type="file" class="form-control" id="document_upload" accept=".pdf, image/*" name="document_upload" value="{{$Document->upload_picture}}" placeholder="upload image">
+
+                        </div>
+                        </div>
+                        </div>
                     </div>
 
 
@@ -3550,9 +3578,9 @@
                             $("#firm-submit").prop("disabled", false);
                             $('#Firm-Background').hide();
 
-                            $("#On-Ground-Verification").show();
+                            $("#Tab-Documents").show();
 
-                            $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
+                            $('#click-Documents').addClass('report-tab-active').removeClass('report-tab-unactive');
                             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
 
                         },
@@ -3562,6 +3590,58 @@
                     console.log(error);
 
                     $('#firm-submit').prop('disabled', false);
+                }
+            });
+        });
+
+        // tab-doucument
+        $('#Documents-form').on('submit', function (e) {
+            e.preventDefault();
+
+
+
+            var formData = new FormData(this);
+
+
+            $('#submit-Documents').prop('disabled', true);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('admin.update_documents') }}",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                data: formData,
+                dataType: "json",
+                processData: false, // important for FormData
+                contentType: false, // important for FormData
+                success: function (response) {
+                    console.log(response);
+
+                    Swal.fire({
+                        title: "Success!",
+                        text: response.message,
+                        icon: "success",
+                        confirmButtonText: "OK",
+                        timer: 3000, // 3 seconds
+                        timerProgressBar: true,
+                        willClose: () => {
+                            $("#submit-Documents").prop("disabled", false);
+
+                            $("#Tab-Documents").hide();
+                            $('#On-Ground-Verification').show();
+
+                            $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
+                            $('#click-Documents').addClass('report-tab-unactive').removeClass('report-tab-active');
+                         
+
+                        },
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+
+                    $('#submit-Documents').prop('disabled', false);
                 }
             });
         });

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BusinessIntelligence;
 use App\Models\CourtCheck;
 use App\Models\Department;
+use App\Models\Document;
 use App\Models\Financial;
 use App\Models\FinancialsFindingsFyFive;
 use App\Models\FinancialsFindingsFyFour;
@@ -538,6 +539,7 @@ class userController extends Controller
 
         $data['MarketReputation'] = MarketReputation::where('third_party_id', $id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id', $id)->first();
+        $data['Document'] = Document::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
 
 // ===================================================== financial finding graph end ========================
@@ -1018,6 +1020,37 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
 
         // Specify the desired file name
         $fileName = $data['FirmBackground']->file;
+
+        // return response()->download($imagePath, $fileName);
+        return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
+    }
+
+    public function document_file_download($id)
+    {
+        $id = base64_decode($id);
+        $data['Document'] = Document::where('id', $id)->first();
+        // dd($data['Document']);
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+        
+
+        // Specify the desired file name
+        $fileName = $data['Document']->document_upload;
+
+        return response()->download($imagePath, $fileName);
+    }
+
+    public function document_file_view($id)
+    {
+        $id = base64_decode($id);
+        $data['Document'] = Document::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath  = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+
+        // Specify the desired file name
+        $fileName = $data['Document']->document_upload;
 
         // return response()->download($imagePath, $fileName);
         return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);

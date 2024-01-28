@@ -34,6 +34,7 @@ return array(
     'App\\Models\\BusinessIntelligence' => $baseDir . '/app/Models/BusinessIntelligence.php',
     'App\\Models\\CourtCheck' => $baseDir . '/app/Models/CourtCheck.php',
     'App\\Models\\Department' => $baseDir . '/app/Models/Department.php',
+    'App\\Models\\Document' => $baseDir . '/app/Models/Document.php',
     'App\\Models\\Financial' => $baseDir . '/app/Models/Financial.php',
     'App\\Models\\FinancialsFindingsFyFive' => $baseDir . '/app/Models/FinancialsFindingsFyFive.php',
     'App\\Models\\FinancialsFindingsFyFour' => $baseDir . '/app/Models/FinancialsFindingsFyFour.php',

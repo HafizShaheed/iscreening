@@ -15,7 +15,7 @@ use Carbon\Carbon;
 
 use App\Models\BusinessIntelligence;
 use App\Models\CourtCheck;
-
+use App\Models\Document;
 use App\Models\Financial;
 use App\Models\FinancialsFindingsFyFive;
 use App\Models\FinancialsFindingsFyFour;
@@ -563,6 +563,7 @@ class adminController extends Controller
 
         $data['MarketReputation'] = MarketReputation::where('third_party_id', $id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id', $id)->first();
+        $data['Document'] = Document::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
 
 
@@ -1008,6 +1009,7 @@ class adminController extends Controller
         $data['KeyObservation'] = KeyObservation::where('third_party_id', $id)->first();
         $data['MarketReputation'] = MarketReputation::where('third_party_id', $id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id', $id)->first();
+        $data['Document'] = Document::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
 
         $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->first();
@@ -1160,6 +1162,10 @@ class adminController extends Controller
             $BusinessIntelligence->team_user_id = $request->input('team_user_id');
             $BusinessIntelligence->save();
 
+            $Document = Document::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+            $Document->user_id = $request->input('user_id');
+            $Document->team_user_id = $request->input('team_user_id');
+            $Document->save();
 
             $CourtCheck = CourtCheck::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
             $CourtCheck->user_id = $request->input('user_id');
@@ -1200,6 +1206,50 @@ class adminController extends Controller
         }
 
         return response()->json(['message' => 'Firm Background Reports updated successfully!']);
+    }
+
+    function update_documents(Request $request)
+    {
+        // dd($request->all());
+
+        $Document = Document::findOrFail($request->DocumentID);
+        if (!$Document) {
+            return response()->json(['error' => 'This Reports not found.']);
+        }
+
+
+        for ($i = 1; $i <= 15; $i++) {
+
+            $Document->{"document_name_$i"} = $request->input("document_name_$i");
+            $Document->{"document_number_$i"} = $request->input("document_number_$i");
+            $Document->{"document_date_of_issuance_$i"} = $request->input("document_date_of_issuance_$i");
+            $Document->{"document_date_of_expiry_$i"} = $request->input("document_date_of_expiry_$i");
+        }
+
+
+        if ($request->hasFile('document_upload')) {
+            $file = $request->file('document_upload');
+            // Generate a unique filename
+            $filename = 'Document' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+            // Move the file to the destination folder
+            $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+
+
+            $Document->document_upload = $filename;
+        }
+
+
+        $Document->status = 1;
+        $Document->save();
+
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->status = 1;
+        $KeyObservation->save();
+
+        $ThirdParty = ThirdParty::where('id', $request->getThirdPartyForID)->firstOrFail();
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
+        return response()->json(['message' => 'Document  Reports updated successfully!']);
     }
 
     function update_on_ground_verification(Request $request)
@@ -1822,6 +1872,10 @@ class adminController extends Controller
         $OnGroundVerification->status = 3;
         $OnGroundVerification->save();
 
+        $Document = Document::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $Document->status = 3;
+        $Document->save();
+
         $TaxReurnCredit = TaxReurnCredit::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
         $TaxReurnCredit->status = 3;
         $TaxReurnCredit->save();
@@ -1861,6 +1915,12 @@ class adminController extends Controller
         $MarketReputation = MarketReputation::where('third_party_id', $request->thirdpartyId)->firstOrFail();
         $MarketReputation->status = 2;
         $MarketReputation->save();
+
+
+        $Document = Document::where('third_party_id', $request->thirdpartyId)->firstOrFail();
+        $Document->status = 2;
+        $Document->save();
+
 
         $OnGroundVerification = OnGroundVerification::where('third_party_id', $request->thirdpartyId)->firstOrFail();
         $OnGroundVerification->status = 2;
@@ -1912,6 +1972,10 @@ class adminController extends Controller
         $TaxReurnCredit->status = 3;
         $TaxReurnCredit->save();
 
+        $Document = Document::where('third_party_id', $request->thirdpartyId)->firstOrFail();
+        $Document->status = 3;
+        $Document->save();
+
         $ThirdParty = ThirdParty::findOrFail($request->thirdpartyId);
         $ThirdParty->status = 3;
         $ThirdParty->save();
@@ -1946,6 +2010,36 @@ class adminController extends Controller
         $fileName = $data['OnGroundVerification']->upload_picture;
 
         return response()->download($imagePath, $fileName);
+    }
+    public function document_file_download($id)
+    {
+        $id = base64_decode($id);
+        $data['Document'] = Document::where('id', $id)->first();
+        // dd($data['Document']);
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+        
+
+        // Specify the desired file name
+        $fileName = $data['Document']->document_upload;
+
+        return response()->download($imagePath, $fileName);
+    }
+
+    public function document_file_view($id)
+    {
+        $id = base64_decode($id);
+        $data['Document'] = Document::where('id', $id)->first();
+
+        // Replace 'path/to/your/image.jpg' with the actual path to your image
+        $imagePath  = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+
+        // Specify the desired file name
+        $fileName = $data['Document']->document_upload;
+
+        // return response()->download($imagePath, $fileName);
+        return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
     }
 
     public function firm_file_view($id)

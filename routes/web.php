@@ -47,6 +47,9 @@ Route::get('/clear-cache', function() {
             Route::get('/firm_file_download/{id}', 'userController@firm_file_download')->name('company.firm_file_download');
             Route::get('/firm_file_view/{id}', 'userController@firm_file_view')->name('company.firm_file_view');
             Route::get('/onGround_file_download/{id}', 'userController@onGround_file_download')->name('company.onGround_file_download');
+            Route::get('/document_file_download/{id}', 'userController@document_file_download')->name('company.document_file_download');
+            Route::get('/document_file_view/{id}', 'userController@document_file_view')->name('company.document_file_view');
+            
             Route::get('/onGround_file_view/{id}', 'userController@onGround_file_view')->name('company.onGround_file_view');
 
 
@@ -148,6 +151,7 @@ Route::get('/clear-cache', function() {
                 Route::get('/view/{id}', 'adminController@report_View')->name('admin.report_View');
                 Route::get('/edit/{id}', 'adminController@Edit_report')->name('admin.Edit_report');
                 Route::post('/update_firm_background', 'adminController@update_firm_background')->name('admin.update_firm_background');
+                Route::post('/update_documents', 'adminController@update_documents')->name('admin.update_documents');
                 Route::post('/update_on_ground_verification', 'adminController@update_on_ground_verification')->name('admin.update_on_ground_verification');
                 Route::post('/update_court_check', 'adminController@update_court_check')->name('admin.update_court_check');
                 Route::post('/update_financial', 'adminController@update_financial')->name('admin.update_financial');
@@ -159,6 +163,8 @@ Route::get('/clear-cache', function() {
                 Route::post('/update_completed_allreports', 'adminController@update_completed_allreports')->name('admin.update_completed_allreports');
                 Route::get('/firm_file_download/{id}', 'adminController@firm_file_download')->name('admin.firm_file_download');
                 Route::get('/firm_file_view/{id}', 'adminController@firm_file_view')->name('admin.firm_file_view');
+                Route::get('/document_file_download/{id}', 'adminController@document_file_download')->name('admin.document_file_download');
+                Route::get('/document_file_view/{id}', 'adminController@document_file_view')->name('admin.document_file_view');
                 Route::get('/onGround_file_download/{id}', 'adminController@onGround_file_download')->name('admin.onGround_file_download');
                 Route::get('/onGround_file_view/{id}', 'adminController@onGround_file_view')->name('admin.onGround_file_view');
                 Route::get('/final_Reprts_file_download/{id}', 'adminController@final_Reprts_file_download')->name('admin.final_Reprts_file_download');

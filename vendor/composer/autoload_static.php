@@ -565,6 +565,7 @@ class ComposerStaticInit522c5d14649e195f80acb4d9a8e5bbd1
         'App\\Models\\BusinessIntelligence' => __DIR__ . '/../..' . '/app/Models/BusinessIntelligence.php',
         'App\\Models\\CourtCheck' => __DIR__ . '/../..' . '/app/Models/CourtCheck.php',
         'App\\Models\\Department' => __DIR__ . '/../..' . '/app/Models/Department.php',
+        'App\\Models\\Document' => __DIR__ . '/../..' . '/app/Models/Document.php',
         'App\\Models\\Financial' => __DIR__ . '/../..' . '/app/Models/Financial.php',
         'App\\Models\\FinancialsFindingsFyFive' => __DIR__ . '/../..' . '/app/Models/FinancialsFindingsFyFive.php',
         'App\\Models\\FinancialsFindingsFyFour' => __DIR__ . '/../..' . '/app/Models/FinancialsFindingsFyFour.php',

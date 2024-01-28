@@ -29,6 +29,8 @@ use App\Models\TaxReurnCredit;
 use App\Models\MarketReputation;
 use App\Models\KeyObservation;
 use App\Models\team\TeamUser;
+use App\Models\Document;
+
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use Validator;
@@ -88,6 +90,11 @@ class userController extends Controller
             $thirdPartyID = $thirdParty->id;
             if(isset($thirdPartyID) && !is_null($thirdPartyID)){
                 $firmbackgound =FirmBackground::create([
+                        'user_id' =>$request->user_id,
+                        'third_party_id' => $thirdPartyID,
+                        'created_at' => now(),
+                    ]);
+                Document::create([
                         'user_id' =>$request->user_id,
                         'third_party_id' => $thirdPartyID,
                         'created_at' => now(),
