@@ -17,6 +17,7 @@ use Carbon\Carbon;
 use App\Models\BusinessIntelligence;
 use App\Models\CourtCheck;
 
+use App\Models\Document;
 use App\Models\Financial;
 use App\Models\FinancialsFindingsFyFive;
 use App\Models\FinancialsFindingsFyFour;
@@ -116,6 +117,7 @@ class teamController extends Controller
         $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
         $data['MarketReputation'] = MarketReputation::where('third_party_id',$id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id',$id)->first();
+        $data['Document'] = Document::where('third_party_id',$id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id',$id)->first();
 
         $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->first();
@@ -285,6 +287,11 @@ class teamController extends Controller
        $OnGroundVerification->team_user_id = Auth::guard('team')->id();
        $OnGroundVerification->save();
 
+       
+       $Document = Document::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+       $Document->team_user_id = Auth::guard('team')->id();
+       $Document->save();
+
        $TaxReurnCredit = TaxReurnCredit::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $TaxReurnCredit->team_user_id = Auth::guard('team')->id();
 
@@ -350,6 +357,51 @@ class teamController extends Controller
 
 
     }
+
+    function update_documents(Request $request)
+    {
+        // dd($request->all());
+
+        $Document = Document::findOrFail($request->DocumentID);
+        if (!$Document) {
+            return response()->json(['error' => 'This Reports not found.']);
+        }
+
+
+        for ($i = 1; $i <= 15; $i++) {
+
+            $Document->{"document_name_$i"} = $request->input("document_name_$i");
+            $Document->{"document_number_$i"} = $request->input("document_number_$i");
+            $Document->{"document_date_of_issuance_$i"} = $request->input("document_date_of_issuance_$i");
+            $Document->{"document_date_of_expiry_$i"} = $request->input("document_date_of_expiry_$i");
+        }
+
+
+        if ($request->hasFile('document_upload')) {
+            $file = $request->file('document_upload');
+            // Generate a unique filename
+            $filename = 'Document' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+            // Move the file to the destination folder
+            $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+
+
+            $Document->document_upload = $filename;
+        }
+
+
+        $Document->status = 1;
+        $Document->save();
+
+        $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+        $KeyObservation->status = 1;
+        $KeyObservation->save();
+
+        $ThirdParty = ThirdParty::where('id', $request->getThirdPartyForID)->firstOrFail();
+        $ThirdParty->status = 1;
+        $ThirdParty->save();
+        return response()->json(['message' => 'Document  Reports updated successfully!']);
+    }
+
 
     function update_court_check(Request $request){
                 // dd($request->all());

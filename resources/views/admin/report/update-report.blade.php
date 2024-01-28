@@ -3211,7 +3211,6 @@
         $('#click-Court-Checks').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').show();
-            $('#Tab-Documents').hide();
 
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
@@ -3219,10 +3218,12 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
+            
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
 
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');

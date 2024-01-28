@@ -105,6 +105,7 @@
         <div class="card-body justify-content-center">
             <div class="d-flex flex-row flex-nowrap">
                 <a href="JavaScript:void(0)" id="click-Firm-Background" class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Firm Background</a>
+                <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
                 <a href="JavaScript:void(0)" id="click-On-Ground-Verification" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground Verification</a>
                 <a href="JavaScript:void(0)" id="click-Court-Checks" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Court
                     Checks</a>
@@ -470,6 +471,73 @@
 </div>
 <!-- Firm Background form end -->
 
+<!-- Documents start -->
+
+<div class="row" id="Tab-Documents">
+    <div class="card">
+        <div class="card-header justify-content-start">
+            <h4 class="card-title"> Documents
+            </h4>
+
+        </div>
+        <div class="card-body justify-content-start">
+            <form id="Documents-form" enctype="multipart/form-data">
+                <!-- Verificationform 1 step end -->
+                <div class="Documents-step" id="Documents-step-1">
+
+
+                    <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+                    <input type="hidden" name="DocumentID" id="DocumentID" value="{{$Document->id}}" class="form-control" value="">
+
+                    <div class="row">
+                        @for ($i=1; $i <=15; $i++)
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_name_{{ $i }}" class="form-label">Document Name</label>
+                            <input type="text" class="form-control" id="document_name_{{ $i }}" name="document_name_{{ $i }}" value="{{ $Document->{'document_name_' . $i} }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_number_{{ $i }}" class="form-label">Document No</label>
+                            <input type="text" class="form-control" id="document_number_{{ $i }}" name="document_number_{{ $i }}" value="{{$Document->{'document_number_'. $i } }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
+                            <input type="date" class="form-control" id="document_date_of_issuance_{{ $i }}" name="document_date_of_issuance_{{ $i }}" value="{{$Document->{'document_date_of_issuance_'.$i } }}">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="document_date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
+                            <input type="date" class="form-control" id="document_date_of_expiry_{{ $i }}" name="document_date_of_expiry_{{ $i }}" value="{{$Document->{'document_date_of_expiry_'. $i} }}">
+                        </div>
+
+                        @endfor
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6  mb-3">
+                        <label for="document_upload" class="form-label">Upload Document</label>
+                        <div class="dz-default dlab-message upload-img mb-3">
+                        <div class="fallback">
+                        <input  type="file" class="form-control" id="document_upload" accept=".pdf, image/*" name="document_upload" value="{{$Document->upload_picture}}" placeholder="upload image">
+
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+
+                        <div class="col-xl-12 d-flex justify-content-end">
+                            <button type="submit" class="btn btn report-tab-active" id="submit-Documents">submit</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Verificationform 1 step end -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Documents end -->
 <!-- On Ground Verificationform start -->
 
 <div class="row" id="On-Ground-Verification">
@@ -3017,6 +3085,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
             $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3033,6 +3103,29 @@
 
 
         });
+        $('#click-Documents').on('click', function() {
+            $('#Firm-Background').hide();
+            $('#Court-Checks').hide();
+            $('#Tab-Documents').show();
+
+            $("#On-Ground-Verification").hide();
+            $("#Financials").hide();
+            $("#Business-Intelligence").hide();
+            $("#Tax-Return-and-Credit").hide();
+            $("#Market-Reputation").hide();
+            $("#Key-Observation").hide();
+
+            $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-active').removeClass('report-tab-unactive');
+            $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+
+        });
 
         $('#click-On-Ground-Verification').on('click', function() {
             $('#Firm-Background').hide();
@@ -3043,7 +3136,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-active').removeClass('report-tab-unactive');
@@ -3065,7 +3159,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3117,7 +3212,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3181,7 +3277,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3234,7 +3331,8 @@
             $("#Tax-Return-and-Credit").show();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3285,7 +3383,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").show();
             $("#Key-Observation").hide();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3307,7 +3406,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").show();
-
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3356,6 +3456,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
+            $('#Tab-Documents').hide();
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
             $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3371,7 +3473,60 @@
 
 
         // firm background
-        $('#firm-step-form').on('submit', function (e) {
+        // $('#firm-step-form').on('submit', function (e) {
+        //     e.preventDefault();
+
+        //     console.log('Form submitted');
+
+        //     var formData = new FormData(this);
+
+
+        //     $('#firm-submit').prop('disabled', true);
+
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "{{ route('team.update_firm_background') }}",
+        //         headers: {
+        //             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        //         },
+        //         data: formData,
+        //         dataType: "json",
+        //         processData: false, // important for FormData
+        //         contentType: false, // important for FormData
+        //         success: function (response) {
+        //             console.log(response);
+
+        //             Swal.fire({
+        //                 title: "Success!",
+        //                 text: response.message,
+        //                 icon: "success",
+        //                 confirmButtonText: "OK",
+        //                 timer: 3000, // 3 seconds
+        //                 timerProgressBar: true,
+        //                 willClose: () => {
+        //                     $("#firm-submit").prop("disabled", false);
+        //                     $('#Firm-Background').hide();
+
+        //                     $("#On-Ground-Verification").show();
+
+        //                     $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
+        //                     $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+
+        //                 },
+        //             });
+        //         },
+        //         error: function (error) {
+        //             console.log(error);
+
+        //             $('#firm-submit').prop('disabled', false);
+        //         }
+        //     });
+        // });
+
+
+
+          // firm background
+          $('#firm-step-form').on('submit', function (e) {
             e.preventDefault();
 
             console.log('Form submitted');
@@ -3405,9 +3560,9 @@
                             $("#firm-submit").prop("disabled", false);
                             $('#Firm-Background').hide();
 
-                            $("#On-Ground-Verification").show();
+                            $("#Tab-Documents").show();
 
-                            $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
+                            $('#click-Documents').addClass('report-tab-active').removeClass('report-tab-unactive');
                             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
 
                         },
@@ -3417,6 +3572,58 @@
                     console.log(error);
 
                     $('#firm-submit').prop('disabled', false);
+                }
+            });
+        });
+
+        // tab-doucument
+        $('#Documents-form').on('submit', function (e) {
+            e.preventDefault();
+
+
+
+            var formData = new FormData(this);
+
+
+            $('#submit-Documents').prop('disabled', true);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('team.update_documents') }}",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                data: formData,
+                dataType: "json",
+                processData: false, // important for FormData
+                contentType: false, // important for FormData
+                success: function (response) {
+                    console.log(response);
+
+                    Swal.fire({
+                        title: "Success!",
+                        text: response.message,
+                        icon: "success",
+                        confirmButtonText: "OK",
+                        timer: 3000, // 3 seconds
+                        timerProgressBar: true,
+                        willClose: () => {
+                            $("#submit-Documents").prop("disabled", false);
+
+                            $("#Tab-Documents").hide();
+                            $('#On-Ground-Verification').show();
+
+                            $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
+                            $('#click-Documents').addClass('report-tab-unactive').removeClass('report-tab-active');
+                         
+
+                        },
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+
+                    $('#submit-Documents').prop('disabled', false);
                 }
             });
         });
