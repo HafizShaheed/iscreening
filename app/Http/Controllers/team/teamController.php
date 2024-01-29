@@ -112,12 +112,12 @@ class teamController extends Controller
 
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id',$id)->first();
         $data['CourtCheck'] = CourtCheck::where('third_party_id',$id)->first();
+        $data['Document'] = Document::where('third_party_id',$id)->first();
         $data['Financial'] = Financial::where('third_party_id',$id)->first();
         $data['FirmBackground'] = FirmBackground::where('third_party_id',$id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id',$id)->first();
         $data['MarketReputation'] = MarketReputation::where('third_party_id',$id)->first();
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id',$id)->first();
-        $data['Document'] = Document::where('third_party_id',$id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id',$id)->first();
 
         $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->first();
@@ -1012,9 +1012,15 @@ class teamController extends Controller
 
        $OnGroundVerification = OnGroundVerification::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $OnGroundVerification->status = 3;
-              $OnGroundVerification->team_user_id = Auth::guard('team')->id();
+      $OnGroundVerification->team_user_id = Auth::guard('team')->id();
 
        $OnGroundVerification->save();
+
+       $Document = Document::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+       $Document->status = 3;
+        $Document->team_user_id = Auth::guard('team')->id();
+       $Document->save();
+
 
        $TaxReurnCredit = TaxReurnCredit::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
        $TaxReurnCredit->status = 3;

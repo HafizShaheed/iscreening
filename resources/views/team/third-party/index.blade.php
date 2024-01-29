@@ -17,7 +17,8 @@
                         <label for="thirdPartyName">Third Party:</label>
                         <div class="d-flex justify-content-start align-items-start">
                             @php
-                            $thirdparties = \App\Models\ThirdParty::get();
+                            $thirdparties = \App\Models\ThirdParty::where('status', '<>', 3)->get();
+                            $clientIds = \App\Models\ThirdParty::where('status', '<>', 3)->pluck('user_id');
                             @endphp
                             <select class="multi-select" name="PartyName" id="PartyName"
                                 placeholder="Select Third Party">
@@ -36,14 +37,14 @@
                         <label for="thirdPartyName">Client Name:</label>
                         <div class="d-flex justify-content-start align-items-start">
                             @php
-                            $user = \App\Models\User::get();
+                            $user = \App\Models\User::whereIn('id', $clientIds)->get();
                             @endphp
                             <select class="multi-select" name="clientName" id="clientNameID"
                                 placeholder="Select Third Party">
                                 <option disabled selected>Select Client</option>
                                 @forelse ($user as $client )
                                 <option data-display="Select" value="{{ $client->id }}">
-                                    {{ $client->first_name  }}
+                                    {{ $client->first_name }}
                                 </option>
                                 @empty
                                 <p>No records found!</p>

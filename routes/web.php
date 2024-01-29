@@ -87,8 +87,9 @@ Route::get('/clear-cache', function() {
                 Route::get('/', 'teamController@report_List')->name('team.report_List');
                 Route::get('/view', 'teamController@report_View')->name('team.report_View');
                 Route::get('/edit/{id}', 'teamController@add_report')->name('team.add_report');
-
+                
                 Route::post('/update_firm_background', 'teamController@update_firm_background')->name('team.update_firm_background');
+                Route::post('/update_documents', 'teamController@update_documents')->name('team.update_documents');
                 Route::post('/update_on_ground_verification', 'teamController@update_on_ground_verification')->name('team.update_on_ground_verification');
                 Route::post('/update_court_check', 'teamController@update_court_check')->name('team.update_court_check');
                 Route::post('/update_financial', 'teamController@update_financial')->name('team.update_financial');
