@@ -433,7 +433,7 @@
         </div>
     </div>
 <!-- firm background tab End -->
-<!-- document Report  start--> 
+<!-- document Report  start-->
 <div class="col-xl-12" id="tab-document-report">
         <div class="card dz-card">
 
@@ -462,6 +462,7 @@
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document No.</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">Documents</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -469,22 +470,23 @@
                                                         @for ($i = 1; $i <= 18; $i++)
                                                             @if(!empty($Document->{'document_name_'.$i}))
                                                                 <tr>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_name_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_number_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_date_of_issuance_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_name_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_number_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_date_of_issuance_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
+                                                                        <a href="{{ URL::to('/panel/report/document_file_download'.'/'.base64_encode($Document->id)) }}" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                    </td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                        <a href="{{ URL::to('/panel/report/document_file_view'.'/'.base64_encode($Document->id)) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                    </td>
+
                                                                 </tr>
                                                             @endif
                                                         @endfor
 
-                                                     
-                                                        <tr>
-                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
-                                                            <a href="{{ URL::to('/panel/report/document_file_download'.'/'.base64_encode($Document->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Document</a>
-                                                                <a href="{{ URL::to('/panel/report/document_file_view'.'/'.base64_encode($Document->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Document</a>
-                                                            </td>
 
-                                                        </tr>
+
                                                     </tbody>
                                                 </table>
                                         </div>
@@ -2024,7 +2026,7 @@ $(document).ready(function() {
         $('#tab-Firm-Background').show();
         $('#tab-On-Ground-Verification').hide();
         $('#tab-document-report').hide();
-        
+
         $('#tab-Court-Checks').hide();
         $('#tab-Financials').hide();
         $('#tab-Business-Intelligence').hide();
@@ -2083,7 +2085,7 @@ $(document).ready(function() {
         $('#tab-Tax-Return-and-Credit').hide();
         $('#tab-Market-Reputation').hide();
         $('#tab-Key-Observation').hide();
-        
+
         $('#tab-document-report').hide();
         $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 

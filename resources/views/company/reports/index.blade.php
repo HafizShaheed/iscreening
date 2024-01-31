@@ -319,30 +319,32 @@
                                 }
                                 elseif(request('riskType') === "Reputation"){
                                     $KeyObservation = \App\Models\MarketReputation::where('third_party_id', $value->id)->first();
-                                    
+
                                 }
                                 elseif(request('riskType') === "Operational"){
                                     $KeyObservation = \App\Models\BusinessIntelligence::where('third_party_id', $value->id)->first();
-                                    
+
                                 }
                                 elseif(request('riskType') === "Financial"){
                                     $KeyObservation = \App\Models\Financial::where('third_party_id', $value->id)->first();
-                                    
+
                                 }
                                 elseif(request('riskType') === "Legal"){
                                     $KeyObservation = \App\Models\CourtCheck::where('third_party_id', $value->id)->first();
-                                    
+
                                 }
                                 elseif(request('riskType') === "Regulatory"){
                                     $KeyObservation = \App\Models\FirmBackground::where('third_party_id', $value->id)->first();
-                                    
+
                                 }
-                                
+
                                 else {
                                     $KeyObservation = \App\Models\KeyObservation::where('third_party_id', $value->id)->first();
                                 }
+
+                                $Overallscore = \App\Models\KeyObservation::where('third_party_id', $value->id)->first();
                             @endphp
-                            
+
 
                             <td class="">
                                 @if ($KeyObservation)
@@ -374,10 +376,10 @@
                                 @endif
                             </td>
                             <td class="">
-                                <span class=""> {{ $KeyObservation ? $KeyObservation->Type_of_risk : '' }} </span>
+                                <span class=""> {{ $Overallscore ? $Overallscore->Type_of_risk : '' }} </span>
                             </td>
 
-                           
+
 
                             <td class=" space-between ">
 

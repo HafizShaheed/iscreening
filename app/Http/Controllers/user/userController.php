@@ -46,8 +46,8 @@ class userController extends Controller
         if (auth()->user()) {
             $data['title'] = "Client Dashboard";
             $data['page'] = "Dashboard";
-            $data['pageIntro'] = "Introducing Client Dashboard";
-            $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+            $data['pageIntro'] = "Welcome to Alt-i – Your 360° Risk Management Solution";
+            $data['pageDescription'] = "";
             $highRiskCOunt = KeyObservation::
             where('Type_of_risk', 'High Risk')->
             where(['user_id' => auth()->user()->id, 'status' => 3])->
@@ -238,8 +238,8 @@ class userController extends Controller
 
         $data['title'] = "Reports Managment";
         $data['page'] = "Reports Managment";
-        $data['pageIntro'] = "Reports List";
-        $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        $data['pageIntro'] = "Insights List";
+        $data['pageDescription'] = "";
         // $data['getallThirdParty'] = ThirdParty::where('user_id', auth()->user()->id)->get();
         $query = ThirdParty::where(['user_id' => auth()->user()->id, 'status' => 3]);
         // dd($query );
@@ -467,8 +467,8 @@ class userController extends Controller
         $id = base64_decode($id);
         $data['title'] = "View Reports";
         $data['page'] = "View Reports";
-        $data['pageIntro'] = "Introducing Client View Reports";
-        $data['pageDescription'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        $data['pageIntro'] = "Insight View";
+        $data['pageDescription'] = "";
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
 
 // ===================================================== Business graph start ===================
@@ -1033,7 +1033,7 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
 
         // Replace 'path/to/your/image.jpg' with the actual path to your image
         $imagePath = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
-        
+
 
         // Specify the desired file name
         $fileName = $data['Document']->document_upload;

@@ -276,13 +276,18 @@
                             <label for="license_no_{{ $i }}" class="form-label">License No</label>
                             <input type="text" class="form-control" id="license_no_{{ $i }}" name="license_no_{{ $i }}" value="{{$License->{'license_no_'. $i } }}" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
+                        <div class="col-xl-2 mb-3">
                             <label for="date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
                             <input type="date" class="form-control" id="date_of_issuance_{{ $i }}" name="date_of_issuance_{{ $i }}" value="{{$License->{'date_of_issuance_'.$i } }}">
                         </div>
-                        <div class="col-xl-3 mb-3">
+                        <div class="col-xl-2 mb-3">
                             <label for="date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
                             <input type="date" class="form-control" id="date_of_expiry_{{ $i }}" name="date_of_expiry_{{ $i }}" value="{{$License->{'date_of_expiry_'. $i} }}">
+                        </div>
+                        <div class="col-xl-2 mt-2">
+                            <label for="file" class="form-label"></label>
+                                    <input name="file" type="file" class="form-control" id="file" accept=".pdf, image/*" placeholder="">
+
                         </div>
 
                         @endfor
@@ -547,18 +552,23 @@
                             <label for="document_number_{{ $i }}" class="form-label">Document No</label>
                             <input type="text" class="form-control" id="document_number_{{ $i }}" name="document_number_{{ $i }}" value="{{$Document->{'document_number_'. $i } }}" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
+                        <div class="col-xl-2 mb-3">
                             <label for="document_date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
                             <input type="date" class="form-control" id="document_date_of_issuance_{{ $i }}" name="document_date_of_issuance_{{ $i }}" value="{{$Document->{'document_date_of_issuance_'.$i } }}">
                         </div>
-                        <div class="col-xl-3 mb-3">
+                        <div class="col-xl-2 mb-3">
                             <label for="document_date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
                             <input type="date" class="form-control" id="document_date_of_expiry_{{ $i }}" name="document_date_of_expiry_{{ $i }}" value="{{$Document->{'document_date_of_expiry_'. $i} }}">
                         </div>
+                        <div class="col-xl-2 mt-2">
+                            <label for="document_upload" class="form-label"></label>
+                            <input  type="file" class="form-control" id="document_upload" accept=".pdf, image/*" name="document_upload" value="{{$Document->upload_picture}}" placeholder="upload image">
+                        </div>
+
 
                         @endfor
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-xl-6  mb-3">
                         <label for="document_upload" class="form-label">Upload Document</label>
                         <div class="dz-default dlab-message upload-img mb-3">
@@ -568,7 +578,7 @@
                         </div>
                         </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -3218,7 +3228,7 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            
+
             $('#Tab-Documents').hide();
             $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
 
@@ -3634,7 +3644,7 @@
 
                             $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
                             $('#click-Documents').addClass('report-tab-unactive').removeClass('report-tab-active');
-                         
+
 
                         },
                     });

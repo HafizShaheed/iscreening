@@ -23,8 +23,8 @@ class CreateDocumentsTable extends Migration
                 $table->text('document_number_'.$i)->nullable();
                 $table->string('document_date_of_issuance_'.$i)->nullable();
                 $table->string('document_date_of_expiry_'.$i)->nullable();
+                $table->string('document_upload_file'.$i)->nullable();
             }
-            $table->string('document_upload')->nullable();
             $table->text('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
