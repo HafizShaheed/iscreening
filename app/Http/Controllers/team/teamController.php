@@ -153,16 +153,16 @@ class teamController extends Controller
 
        }
 
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            // Generate a unique filename
-            $filename = 'firmBackground' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-            // Move the file to the destination folder
-            $file->move(public_path('admin/assets/imgs/firmBacgroundImages/'), $filename);
+        // if ($request->hasFile('file')) {
+        //     $file = $request->file('file');
+        //     // Generate a unique filename
+        //     $filename = 'firmBackground' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+        //     // Move the file to the destination folder
+        //     $file->move(public_path('admin/assets/imgs/firmBacgroundImages/'), $filename);
 
 
-            $firmBackground->file = $filename;
-        }
+        //     $firmBackground->file = $filename;
+        // }
 
 
 
@@ -261,7 +261,17 @@ class teamController extends Controller
 
             }
 
-
+            for ($i = 1; $i <= 8; $i++) {
+                if ($request->hasFile("licenses_upload_file_$i")) {
+                    $file = $request->file("licenses_upload_file_$i");
+                    // Generate a unique filename
+                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                    // Move the file to the destination folder
+                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                    $file->move(public_path('admin/assets/imgs/firmBacgroundImages/'), $filename);
+                    $License->{"licenses_upload_file_$i"} = $filename;
+                }
+            }
 
             $License->save();
 
@@ -377,15 +387,26 @@ class teamController extends Controller
         }
 
 
-        if ($request->hasFile('document_upload')) {
-            $file = $request->file('document_upload');
-            // Generate a unique filename
-            $filename = 'Document' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-            // Move the file to the destination folder
-            $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+        // if ($request->hasFile('document_upload')) {
+        //     $file = $request->file('document_upload');
+        //     // Generate a unique filename
+        //     $filename = 'Document' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+        //     // Move the file to the destination folder
+        //     $file->move(public_path('admin/assets/imgs/Document/'), $filename);
 
 
-            $Document->document_upload = $filename;
+        //     $Document->document_upload = $filename;
+        // }
+
+        for ($i = 1; $i <= 15; $i++) {
+            if ($request->hasFile("document_upload_file$i")) {
+                $file = $request->file("document_upload_file$i");
+                // Generate a unique filename
+                $filename = 'Document-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                // Move the file to the destination folder
+                $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                $Document->{"document_upload_file$i"} = $filename;
+            }
         }
 
 

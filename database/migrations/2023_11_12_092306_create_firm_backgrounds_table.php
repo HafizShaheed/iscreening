@@ -165,8 +165,7 @@ class CreateFirmBackgroundsTable extends Migration
         $table->string("license_no_$index")->nullable();
         $table->date("date_of_issuance_$index")->nullable();
         $table->date("date_of_expiry_$index")->nullable();
-        $table->date("date_of_expiry_$index")->nullable();
-        $table->date("licenses_upload_file_$index")->nullable();
+            $table->string("licenses_upload_file_$index")->nullable();
 
     }
 
