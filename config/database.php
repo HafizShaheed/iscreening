@@ -43,6 +43,27 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+
+        // 'mysql' => [
+        //     'driver' => 'mysql',
+        //     'url' => null,
+        //     'host' => '127.0.0.1',
+        //     'port' => '3306',
+        //     'database' => 'databaseIS',
+        //     'username' => 'root',
+        //     'password' => '',
+        //     'unix_socket' => '',
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'strict' => true,
+        //     'engine' => null,
+        //     'options' => extension_loaded('pdo_mysql') ? array_filter([
+        //         PDO::MYSQL_ATTR_SSL_CA => null, // You can hardcode other options here if needed
+        //     ]) : [],
+        // ],
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
@@ -62,6 +83,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',

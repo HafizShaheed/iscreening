@@ -1,7 +1,7 @@
     <div class="deznav">
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
-                <li class="menu-title">I SCREENING TEAM</li>
+                <li class="menu-title">ALTBUSINESSINTEL TEAM</li>
 
                 <li class="{{ $page == 'Dashboard' ? 'mm-active' : '' }}">
                     <a  href="{{ URL::to('/panel-team') }}" class="{{ $page == 'Dashboard' ? 'mm-active' : '' }}" aria-expanded="false">

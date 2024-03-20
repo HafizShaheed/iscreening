@@ -285,9 +285,8 @@
                             <input type="date" class="form-control" id="date_of_expiry_{{ $i }}" name="date_of_expiry_{{ $i }}" value="{{$License->{'date_of_expiry_'. $i} }}">
                         </div>
                         <div class="col-xl-2 mt-2">
-                            <label for="file" class="form-label"></label>
-                                    <input name="file" type="file" class="form-control" id="file" accept=".pdf, image/*" placeholder="">
-
+                            <label for="licenses_upload_file_{{ $i }}" class="form-label"></label>
+                            <input  type="file" class="form-control" id="licenses_upload_file_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_{{ $i }}" value="{{$Document->{'licenses_upload_file_'. $i} }}" placeholder="">
                         </div>
 
                         @endfor
@@ -308,7 +307,7 @@
                             <label for="score_analysis"  class="form-label">Score Analysis </label>
                             <input type="text" class="form-control" id="score_analysis" name="score_analysis" value="{{$FirmBackground->score_analysis}}" min="1" placeholder="">
                         </div>
-                        <div class="col-xl-3 mb-3">
+                        <!-- <div class="col-xl-3 mb-3">
                             <label for="file" class="form-label"></label>
                             <div class="dz-default dlab-message upload-img mb-3">
                                 <div class="fallback">
@@ -316,7 +315,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Navigation buttons -->
@@ -561,8 +560,8 @@
                             <input type="date" class="form-control" id="document_date_of_expiry_{{ $i }}" name="document_date_of_expiry_{{ $i }}" value="{{$Document->{'document_date_of_expiry_'. $i} }}">
                         </div>
                         <div class="col-xl-2 mt-2">
-                            <label for="document_upload" class="form-label"></label>
-                            <input  type="file" class="form-control" id="document_upload" accept=".pdf, image/*" name="document_upload" value="{{$Document->upload_picture}}" placeholder="upload image">
+                            <label for="document_upload_file{{ $i }}" class="form-label"></label>
+                            <input  type="file" class="form-control" id="document_upload_file{{ $i }}" accept=".pdf, image/*" name="document_upload_file{{ $i }}" value="{{$Document->{'document_upload_file'. $i} }}" placeholder="">
                         </div>
 
 

@@ -1044,16 +1044,7 @@ class adminController extends Controller
             return response()->json(['error' => 'This Reports not found.']);
         }
 
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            // Generate a unique filename
-            $filename = 'firmBackground' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-            // Move the file to the destination folder
-            $file->move(public_path('admin/assets/imgs/firmBacgroundImages/'), $filename);
-
-
-            $firmBackground->file = $filename;
-        }
+      
 
 
 
@@ -1152,7 +1143,20 @@ class adminController extends Controller
             }
 
 
+        
 
+            for ($i = 1; $i <= 8; $i++) {
+                if ($request->hasFile("licenses_upload_file_$i")) {
+                    $file = $request->file("licenses_upload_file_$i");
+                    // Generate a unique filename
+                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                    // Move the file to the destination folder
+                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                    $file->move(public_path('admin/assets/imgs/firmBacgroundImages/'), $filename);
+                    $License->{"licenses_upload_file_$i"} = $filename;
+                }
+            }
+            
             $License->save();
 
 
@@ -1227,16 +1231,29 @@ class adminController extends Controller
         }
 
 
-        if ($request->hasFile('document_upload')) {
-            $file = $request->file('document_upload');
-            // Generate a unique filename
-            $filename = 'Document' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-            // Move the file to the destination folder
-            $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+        // if ($request->hasFile('document_upload')) {
+
+        //     $file = $request->file('document_upload');
+        //     // Generate a unique filename
+        //     $filename = 'Document' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+        //     // Move the file to the destination folder
+        //     $file->move(public_path('admin/assets/imgs/Document/'), $filename);
 
 
-            $Document->document_upload = $filename;
+        //     $Document->document_upload = $filename;
+        // }
+
+        for ($i = 1; $i <= 15; $i++) {
+            if ($request->hasFile("document_upload_file$i")) {
+                $file = $request->file("document_upload_file$i");
+                // Generate a unique filename
+                $filename = 'Document-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                // Move the file to the destination folder
+                $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                $Document->{"document_upload_file$i"} = $filename;
+            }
         }
+
 
 
         $Document->status = 1;
@@ -1984,18 +2001,41 @@ class adminController extends Controller
     }
 
 
-    public function firm_file_download($id)
+    public function firm_file_download($id,$index)
     {
+       
         $id = base64_decode($id);
-        $data['FirmBackground'] = FirmBackground::where('id', $id)->first();
+        $License = License::find($id);
 
-        // Replace 'path/to/your/image.jpg' with the actual path to your image
-        $imagePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $data['FirmBackground']->file);
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
 
         // Specify the desired file name
-        $fileName = $data['FirmBackground']->file;
+        $downloadFileName = $fileName;
 
-        return response()->download($imagePath, $fileName);
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
     }
     public function onGround_file_download($id)
     {
@@ -2011,51 +2051,160 @@ class adminController extends Controller
 
         return response()->download($imagePath, $fileName);
     }
-    public function document_file_download($id)
+    // public function document_file_download($id)
+    // {
+    //     $id = base64_decode($id);
+    //     $data['Document'] = Document::where('id', $id)->first();
+    //     // dd($data['Document']);
+
+    //     // Replace 'path/to/your/image.jpg' with the actual path to your image
+    //     $imagePath = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+
+
+    //     // Specify the desired file name
+    //     $fileName = $data['Document']->document_upload;
+
+    //     return response()->download($imagePath, $fileName);
+    // }
+
+    public function document_file_download($id, $index)
     {
         $id = base64_decode($id);
-        $data['Document'] = Document::where('id', $id)->first();
-        // dd($data['Document']);
+        $document = Document::find($id);
 
-        // Replace 'path/to/your/image.jpg' with the actual path to your image
-        $imagePath = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
-        
+        if (!$document) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 15) {
+            abort(404);
+        }
+
+        $fileName = $document->{"document_upload_file$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/Document/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
 
         // Specify the desired file name
-        $fileName = $data['Document']->document_upload;
+        $downloadFileName = $fileName;
 
-        return response()->download($imagePath, $fileName);
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
     }
 
-    public function document_file_view($id)
+
+    // public function document_file_view($id)
+    // {
+    //     $id = base64_decode($id);
+    //     $data['Document'] = Document::where('id', $id)->first();
+
+    //     // Replace 'path/to/your/image.jpg' with the actual path to your image
+    //     $imagePath  = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+
+    //     // Specify the desired file name
+    //     $fileName = $data['Document']->document_upload;
+
+    //     // return response()->download($imagePath, $fileName);
+    //     return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
+    // }
+
+    public function document_file_view($id, $index)
     {
         $id = base64_decode($id);
-        $data['Document'] = Document::where('id', $id)->first();
+        $document = Document::find($id);
 
-        // Replace 'path/to/your/image.jpg' with the actual path to your image
-        $imagePath  = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
+        if (!$document) {
+            abort(404);
+        }
 
-        // Specify the desired file name
-        $fileName = $data['Document']->document_upload;
+        $fileIndex = (int) $index;
 
-        // return response()->download($imagePath, $fileName);
-        return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 15) {
+            abort(404);
+        }
+
+        $fileName = $document->{"document_upload_file$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/Document/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
     }
 
-    public function firm_file_view($id)
+
+    public function firm_file_view($id, $index)
     {
+      
         $id = base64_decode($id);
-        $data['FirmBackground'] = FirmBackground::where('id', $id)->first();
+        $License = License::find($id);
 
-        // Replace 'path/to/your/image.jpg' with the actual path to your image
-        $imagePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $data['FirmBackground']->file);
+        if (!$License) {
+            abort(404);
+        }
 
-        // Specify the desired file name
-        $fileName = $data['FirmBackground']->file;
+        $fileIndex = (int) $index;
 
-        // return response()->download($imagePath, $fileName);
-        return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmBacgroundImages/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
     }
+
+
+
     public function onGround_file_view($id)
     {
         $id = base64_decode($id);

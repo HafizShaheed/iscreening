@@ -13,7 +13,7 @@
 
 <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>I SCREEING | Admin-Login </title>
+    <title>ALTBUSINESSINTEL | Admin-Login </title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{URL::to('/public/admin/assets/images/logo/logo.png')}}">
 

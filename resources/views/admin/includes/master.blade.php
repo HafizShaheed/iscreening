@@ -17,7 +17,7 @@
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{URL::to('/public/admin/assets/images/logo/logo.png')}}">
 
-    <title> I SCREEING | {{ $title }} </title>
+    <title> ALTBUSINESSINTEL | {{ $title }} </title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 

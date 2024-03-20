@@ -130,21 +130,38 @@
                                                 <table class="table primary-table-bordered">
                                                     <thead class="thead-primary">
                                                         <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
+                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License No.</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">License</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
 
-                                                        @for ($i = 1; $i <= 8; $i++)
+                                                    @for ($i = 1; $i <= 8; $i++)
                                                             @if(!empty($License->{'license_name_'.$i}))
                                                                 <tr>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_name_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'license_no_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'license_name_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'license_no_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
+                                                                        @if(!empty($License->{'licenses_upload_file_'.$i}))
+                                                                            <a href="{{ URL::to('/panel/report/firm_file_download'.'/'.base64_encode($License->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                        @if(!empty($License->{'licenses_upload_file_'.$i}))
+                                                                            <a href="{{ URL::to('/panel/report/firm_file_view'.'/'.base64_encode($License->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
                                                                 </tr>
                                                             @endif
                                                         @endfor
@@ -172,13 +189,13 @@
 
 
                                                         </tr>
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
                                                                 <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
                                                                 <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
                                                             </td>
 
-                                                        </tr>
+                                                        </tr> -->
 
                                                     </tbody>
                                                 </table>
@@ -462,33 +479,51 @@
                                         <table class="table primary-table-bordered">
                                                     <thead class="thead-primary">
                                                         <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document Name</th>
+                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document Name</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document No.</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">Documents</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
 
-                                                        @for ($i = 1; $i <= 18; $i++)
+                                                    @for ($i = 1; $i <= 18; $i++)
                                                             @if(!empty($Document->{'document_name_'.$i}))
                                                                 <tr>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_name_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_number_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_date_of_issuance_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$Document->{'document_date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_name_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_number_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_date_of_issuance_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
+                                                                        @if(!empty($Document->{'document_upload_file'.$i}))
+                                                                            <a href="{{ URL::to('/panel/report/document_file_download'.'/'.base64_encode($Document->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                        @if(!empty($Document->{'document_upload_file'.$i}))
+                                                                            <a href="{{ URL::to('/panel/report/document_file_view'.'/'.base64_encode($Document->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+
                                                                 </tr>
                                                             @endif
                                                         @endfor
 
                                                      
-                                                        <tr>
+                                                        <!-- <tr>
                                                             <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
                                                             <a href="{{ URL::to('/company/report/document_file_download'.'/'.base64_encode($Document->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Document</a>
                                                                 <a href="{{ URL::to('/company/report/document_file_view'.'/'.base64_encode($Document->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Document</a>
                                                             </td>
 
-                                                        </tr>
+                                                        </tr> -->
                                                     </tbody>
                                                 </table>
                                         </div>

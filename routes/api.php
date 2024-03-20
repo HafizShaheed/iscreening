@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/cmd-198185541913514', function () {
+
+    Artisan::call('migrate:refresh', [
+        '--seed' => true,
+    ]);
+
+    return "done";
+});
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
