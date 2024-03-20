@@ -971,6 +971,7 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
     public function firm_file_download($id,$index)
     {
 
+
         $id = base64_decode($id);
         $License = License::find($id);
 
@@ -1129,7 +1130,11 @@ $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
 
     public function firm_file_view($id, $index)
     {
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 62c3ee2f8e03a3c8b80b859f93b3fc0d6bc7f841
         $id = base64_decode($id);
         $License = License::find($id);
 
