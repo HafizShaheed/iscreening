@@ -48,9 +48,18 @@ class userController extends Controller
             $data['page'] = "Dashboard";
             $data['pageIntro'] = "Welcome to Alt-i – Your 360° Risk Management Solution";
             $data['pageDescription'] = "";
-            $highRiskCOunt = KeyObservation::where('Type_of_risk', 'High Risk')->where(['user_id' => auth()->user()->id, 'status' => 3])->count();
-            $mediumRiskCOunt = KeyObservation::where('Type_of_risk', 'Medium Risk')->where(['user_id' => auth()->user()->id, 'status' => 3])->count();
-            $lowRiskCOunt = KeyObservation::where('Type_of_risk', 'Low Risk')->where(['user_id' => auth()->user()->id, 'status' => 3])->count();
+            $highRiskCOunt = KeyObservation::
+            where('Type_of_risk', 'High Risk')->
+            where(['user_id' => auth()->user()->id, 'status' => 3])->
+            count();
+            $mediumRiskCOunt = KeyObservation::
+            where('Type_of_risk', 'Medium Risk')->
+            where(['user_id' => auth()->user()->id, 'status' => 3])->
+            count();
+            $lowRiskCOunt = KeyObservation::
+            where('Type_of_risk', 'Low Risk')->
+            where(['user_id' => auth()->user()->id, 'status' => 3])->
+            count();
             $data['totalRisk'] = $highRiskCOunt + $mediumRiskCOunt + $lowRiskCOunt;
 
             // dd( $data['totalRisk'] );
@@ -75,7 +84,7 @@ class userController extends Controller
             $data['dougGraphLowRisk'] = [
                 $data['lowRiskPercentage'],
                 100 - $data['lowRiskPercentage'],
-            ];
+                ];
 
 
             // $data['OverallRisk'] = [
@@ -83,14 +92,14 @@ class userController extends Controller
             //     0,
             // ];
 
-            //================================= departmen thirdparty risk ======================
+        //================================= departmen thirdparty risk ======================
             $departRiskCounts = DB::table('departments')
-                ->leftJoin('third_parties', 'departments.id', '=', 'third_parties.department_id')
-                ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
-                ->where(['key_observations.user_id' => auth()->user()->id, 'key_observations.status' => 3])
-                ->select('departments.dept_name as department', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
-                ->groupBy('departments.id', 'departments.dept_name', 'key_observations.Type_of_risk')
-                ->get();
+            ->leftJoin('third_parties', 'departments.id', '=', 'third_parties.department_id')
+            ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
+            ->where(['key_observations.user_id' => auth()->user()->id, 'key_observations.status' => 3])
+            ->select('departments.dept_name as department', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
+            ->groupBy('departments.id', 'departments.dept_name', 'key_observations.Type_of_risk')
+            ->get();
 
             // Organize the data by department and risk type
             $result = [];
@@ -111,41 +120,41 @@ class userController extends Controller
             }
 
 
-            //================================= departmen thirdparty risk end ======================
+        //================================= departmen thirdparty risk end ======================
 
-            //================================= location/Zone thirdparty risk start ======================
-            $zoneRiskCounts = DB::table('zones')
-                ->leftJoin('third_parties', 'zones.id', '=', 'third_parties.zone_id')
-                ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
-                ->where(['key_observations.user_id' => auth()->user()->id, 'key_observations.status' => 3])
-                ->select('zones.zone_name as zone', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
-                ->groupBy('zones.id', 'zones.zone_name', 'key_observations.Type_of_risk')
-                ->get();
+        //================================= location/Zone thirdparty risk start ======================
+        $zoneRiskCounts = DB::table('zones')
+        ->leftJoin('third_parties', 'zones.id', '=', 'third_parties.zone_id')
+        ->leftJoin('key_observations', 'third_parties.id', '=', 'key_observations.third_party_id')
+        ->where(['key_observations.user_id' => auth()->user()->id, 'key_observations.status' => 3])
+        ->select('zones.zone_name as zone', 'key_observations.Type_of_risk', DB::raw('COALESCE(COUNT(*), 0) as count'))
+        ->groupBy('zones.id', 'zones.zone_name', 'key_observations.Type_of_risk')
+        ->get();
 
-            // Organize the data by zone and risk type
-            $result_zone = [];
-            foreach ($zoneRiskCounts as $count) {
-                $result_zone[$count->zone][$count->Type_of_risk] = $count->count;
-            }
+        // Organize the data by zone and risk type
+        $result_zone = [];
+        foreach ($zoneRiskCounts as $count) {
+            $result_zone[$count->zone][$count->Type_of_risk] = $count->count;
+        }
 
-            // Prepare data for the JavaScript chart
-            $data['labels_zone'] = array_keys($result_zone);
+        // Prepare data for the JavaScript chart
+        $data['labels_zone'] = array_keys($result_zone);
 
-            $data['highRiskCounts_zone'] = [];
-            $data['mediumRiskCounts_zone'] = [];
-            $data['lowRiskCounts_zone'] = [];
+        $data['highRiskCounts_zone'] = [];
+        $data['mediumRiskCounts_zone'] = [];
+        $data['lowRiskCounts_zone'] = [];
 
-            foreach ($result_zone as $zone => $zoneRiskCounts) {
-                // Check if the index exists before accessing it
-                $data['highRiskCounts_zone'][] = isset($zoneRiskCounts['High Risk']) ? $zoneRiskCounts['High Risk'] : 0;
-                $data['mediumRiskCounts_zone'][] = isset($zoneRiskCounts['Medium Risk']) ? $zoneRiskCounts['Medium Risk'] : 0;
-                $data['lowRiskCounts_zone'][] = isset($zoneRiskCounts['Low Risk']) ? $zoneRiskCounts['Low Risk'] : 0;
-            }
+        foreach ($result_zone as $zone => $zoneRiskCounts) {
+            // Check if the index exists before accessing it
+            $data['highRiskCounts_zone'][] = isset($zoneRiskCounts['High Risk']) ? $zoneRiskCounts['High Risk'] : 0;
+            $data['mediumRiskCounts_zone'][] = isset($zoneRiskCounts['Medium Risk']) ? $zoneRiskCounts['Medium Risk'] : 0;
+            $data['lowRiskCounts_zone'][] = isset($zoneRiskCounts['Low Risk']) ? $zoneRiskCounts['Low Risk'] : 0;
+        }
 
-            // dd($data['highRiskCounts_zone'] ,$data['mediumRiskCounts_zone'] );
+        // dd($data['highRiskCounts_zone'] ,$data['mediumRiskCounts_zone'] );
 
 
-            //================================= location/Zone thirdparty risk end ======================
+        //================================= location/Zone thirdparty risk end ======================
 
 
 
@@ -157,7 +166,7 @@ class userController extends Controller
             $data['RegulatoryCount'] = [
                 $RegulatoryCountHigh,
                 $RegulatoryCountMedium,
-                $RegulatoryCountLow,
+                   $RegulatoryCountLow,
             ];
 
             // dd( $data['RegulatoryCount']);
@@ -170,41 +179,41 @@ class userController extends Controller
             $data['legalCount'] = [
                 $legalCountHigh,
                 $legalCountMedium,
-                $legalCountLow,
+                   $legalCountLow,
             ];
 
-            // Financial count
-            $financialCountHigh = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
-            $financialCountMedium = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
-            $financialCountLow = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
-            $data['financialCount'] = [
-                $financialCountHigh,
-                $financialCountMedium,
-                $financialCountLow,
-            ];
+             // Financial count
+             $financialCountHigh = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+             $financialCountMedium = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+             $financialCountLow = Financial::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
+             $data['financialCount'] = [
+                 $financialCountHigh,
+                 $financialCountMedium,
+                    $financialCountLow,
+             ];
 
-            // Opertional count
-            $taxReurnCreditCountHigh = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
-            $taxReurnCreditCountMedium = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
-            $taxReurnCreditCountLow = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
-            $data['taxReurnCreditCount'] = [
-                $taxReurnCreditCountHigh,
-                $taxReurnCreditCountMedium,
-                $taxReurnCreditCountLow,
-            ];
-            // Regulatary count
-            $marketReputationCountHigh = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
-            $marketReputationCountMedium = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
-            $marketReputationCountLow = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
-            $data['regulataryCount'] = [
-                $marketReputationCountHigh,
-                $marketReputationCountMedium,
-                $marketReputationCountLow,
-            ];
+                // Opertional count
+                $taxReurnCreditCountHigh = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+                $taxReurnCreditCountMedium = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+                $taxReurnCreditCountLow = BusinessIntelligence::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
+                $data['taxReurnCreditCount'] = [
+                    $taxReurnCreditCountHigh,
+                    $taxReurnCreditCountMedium,
+                       $taxReurnCreditCountLow,
+                ];
+              // Regulatary count
+              $marketReputationCountHigh = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'High Risk')->count();
+              $marketReputationCountMedium = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Medium Risk')->count();
+              $marketReputationCountLow = MarketReputation::where(['user_id' => auth()->user()->id, 'status' => 3])->where('Type_of_risk', 'Low Risk')->count();
+              $data['regulataryCount'] = [
+                  $marketReputationCountHigh,
+                  $marketReputationCountMedium,
+                     $marketReputationCountLow,
+              ];
 
-            $data['highRiskCOunt'] = $highRiskCOunt;
-            $data['mediumRiskCOunt'] = $mediumRiskCOunt;
-            $data['lowRiskCOunt'] = $lowRiskCOunt;
+              $data['highRiskCOunt'] = $highRiskCOunt;
+              $data['mediumRiskCOunt'] = $mediumRiskCOunt;
+                 $data['lowRiskCOunt'] = $lowRiskCOunt;
             // dd( $data);
 
             return view('company.index', $data);
@@ -237,12 +246,13 @@ class userController extends Controller
 
         if (isset($request->searchThirdparty) && !empty($request->searchThirdparty)) {
             $ThirdPartyName = $request->input('searchThirdparty');
-            $query->where(function ($query) use ($ThirdPartyName) {
+            $query->where(function($query) use ($ThirdPartyName) {
                 $query->orWhere('third_party_name', 'like', '%' . $ThirdPartyName . '%')
-                    ->orWhere('third_party_email', 'like', '%' . $ThirdPartyName . '%')
-                    ->orWhere('third_party_phone', 'like', '%' . $ThirdPartyName . '%')
-                    ->orWhere('third_party_pos', 'like', '%' . $ThirdPartyName . '%')
-                    ->orWhere('third_party_address', 'like', '%' . $ThirdPartyName . '%');
+                      ->orWhere('third_party_email', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_phone', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_pos', 'like', '%' . $ThirdPartyName . '%')
+                      ->orWhere('third_party_address', 'like', '%' . $ThirdPartyName . '%');
+
             });
         }
 
@@ -255,13 +265,13 @@ class userController extends Controller
             $query->whereIn('id', $PartyName);
         }
 
-        if (isset($request->location) && is_array($request->location) && !empty($request->location) || !empty($request->Location)) {
+        if (isset($request->location) && is_array($request->location) && !empty($request->location) || !empty($request->Location) ) {
 
 
-            if (gettype($request->Location) == "string") {
-                $getLocationId = Zone::where('zone_name', $request->Location)->first();
+            if(gettype($request->Location)== "string"){
+                $getLocationId =Zone::where('zone_name', $request->Location)->first();
                 $query->where('zone_id', $getLocationId->id);
-            } else {
+            }else{
 
                 $decodedlocations = array_map(function ($location) {
                     return base64_decode($location);
@@ -270,7 +280,9 @@ class userController extends Controller
                 $location = array_map('intval', $decodedlocations);
 
                 $query->whereIn('zone_id', $location);
+
             }
+
         }
 
 
@@ -287,17 +299,20 @@ class userController extends Controller
             $query->whereIn('state_id', $state);
         }
 
-        if (isset($request->Department) && is_array($request->Department) || !empty($request->Department)) {
-            if (gettype($request->Department) == "string") {
-                $getIdepId = Department::where('dept_name', $request->Department)->first();
+        if (isset($request->Department) && is_array($request->Department) || !empty($request->Department) ) {
+            if(gettype($request->Department)== "string"){
+                $getIdepId =Department::where('dept_name', $request->Department)->first();
                 $query->where('department_id', $getIdepId->id);
-            } else {
+            }else{
                 $decodedDepartments = array_map(function ($Department) {
                     return base64_decode($Department);
                 }, $request->Department);
                 $Department = array_map('intval', $decodedDepartments);
                 $query->whereIn('department_id', $Department);
+
             }
+
+
         }
 
         if (isset($request->overallRisk) && !empty($request->overallRisk)) {
@@ -309,7 +324,7 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        if (isset($request->HighRisk) && !empty($request->HighRisk) || !empty($request->TotalHighRisk)) {
+        if (isset($request->HighRisk) && !empty($request->HighRisk) || !empty($request->TotalHighRisk) ) {
 
             $observationIds = KeyObservation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', 'High Risk')
@@ -318,7 +333,7 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        if (isset($request->MediumRisk) && !empty($request->MediumRisk) || !empty($request->TotalMediumRisk)) {
+        if (isset($request->MediumRisk) && !empty($request->MediumRisk) || !empty($request->TotalMediumRisk) ) {
 
             $observationIds = KeyObservation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', 'Medium Risk')
@@ -327,7 +342,7 @@ class userController extends Controller
             $query->whereIn('id', $observationIds);
         }
 
-        if (isset($request->LowRisk) && !empty($request->LowRisk) || !empty($request->TotalLowRisk)) {
+        if (isset($request->LowRisk) && !empty($request->LowRisk) || !empty($request->TotalLowRisk) ) {
 
             $observationIds = KeyObservation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', 'Low Risk')
@@ -384,6 +399,7 @@ class userController extends Controller
 
                 $query->whereIn('id', $firmBackground);
             }
+
         }
 
         // graph chart search risk
@@ -391,7 +407,7 @@ class userController extends Controller
 
             $observationIds = FirmBackground::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', $request->Regulatory)
-                ->where('status',  '=', 3)
+                    ->where('status',  '=', 3)
                 ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
 
             $query->whereIn('id', $observationIds);
@@ -400,7 +416,7 @@ class userController extends Controller
 
             $observationIds = CourtCheck::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', $request->Legal)
-                ->where('status',  '=', 3)
+                    ->where('status',  '=', 3)
                 ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
 
             $query->whereIn('id', $observationIds);
@@ -410,7 +426,7 @@ class userController extends Controller
 
             $observationIds = Financial::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', $request->Financial)
-                ->where('status',  '=', 3)
+                    ->where('status',  '=', 3)
                 ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
 
             $query->whereIn('id', $observationIds);
@@ -420,7 +436,7 @@ class userController extends Controller
 
             $observationIds = BusinessIntelligence::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', $request->Operational)
-                ->where('status',  '=', 3)
+                    ->where('status',  '=', 3)
                 ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
 
             $query->whereIn('id', $observationIds);
@@ -430,7 +446,7 @@ class userController extends Controller
 
             $observationIds = MarketReputation::where('user_id', auth()->user()->id)
                 ->where('Type_of_risk', $request->Reputation)
-                ->where('status',  '=', 3)
+                    ->where('status',  '=', 3)
                 ->pluck('third_party_id'); // Assuming there is a column named 'third_party_id' in KeyObservation table
 
             $query->whereIn('id', $observationIds);
@@ -443,6 +459,7 @@ class userController extends Controller
         $data['getallThirdParty'] = $query->get();
         // dd($data);
         return view('company.reports.index', $data);
+
     }
 
     public function viewReportsData($id)
@@ -454,48 +471,48 @@ class userController extends Controller
         $data['pageDescription'] = "";
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
 
-        // ===================================================== Business graph start ===================
+// ===================================================== Business graph start ===================
 
 
-        $data['businessInteligenceGrapFY_accounts_payable'] = [
+                $data['businessInteligenceGrapFY_accounts_payable'] = [
 
-            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_one,
-            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_two,
-            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_three,
-            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_four,
-            $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_five,
+                    $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_one,
+                    $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_two,
+                    $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_three,
+                    $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_four,
+                    $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_five,
 
-        ];
-        $data['businessInteligenceGrapFY_operating_efficiency'] = [
+                ];
+                $data['businessInteligenceGrapFY_operating_efficiency'] = [
 
-            $data['BusinessIntelligence']->operating_efficiency_BI_FY_one,
-            $data['BusinessIntelligence']->operating_efficiency_BI_FY_two,
-            $data['BusinessIntelligence']->operating_efficiency_BI_FY_three,
-            $data['BusinessIntelligence']->operating_efficiency_BI_FY_four,
-            $data['BusinessIntelligence']->operating_efficiency_BI_FY_five,
+                    $data['BusinessIntelligence']->operating_efficiency_BI_FY_one,
+                    $data['BusinessIntelligence']->operating_efficiency_BI_FY_two,
+                    $data['BusinessIntelligence']->operating_efficiency_BI_FY_three,
+                    $data['BusinessIntelligence']->operating_efficiency_BI_FY_four,
+                    $data['BusinessIntelligence']->operating_efficiency_BI_FY_five,
 
-        ];
+                ];
 
 
-        $data['businessInteligenceGrapFY_inventory_turnover'] = [
+                $data['businessInteligenceGrapFY_inventory_turnover'] = [
 
-            $data['BusinessIntelligence']->inventory_turnover_BI_FY_one,
-            $data['BusinessIntelligence']->inventory_turnover_BI_FY_two,
-            $data['BusinessIntelligence']->inventory_turnover_BI_FY_three,
-            $data['BusinessIntelligence']->inventory_turnover_BI_FY_four,
-            $data['BusinessIntelligence']->inventory_turnover_BI_FY_five,
+                    $data['BusinessIntelligence']->inventory_turnover_BI_FY_one,
+                    $data['BusinessIntelligence']->inventory_turnover_BI_FY_two,
+                    $data['BusinessIntelligence']->inventory_turnover_BI_FY_three,
+                    $data['BusinessIntelligence']->inventory_turnover_BI_FY_four,
+                    $data['BusinessIntelligence']->inventory_turnover_BI_FY_five,
 
-        ];
+                ];
 
-        $data['businessInteligenceGrapFY_days_sales_in_inventory'] = [
+                $data['businessInteligenceGrapFY_days_sales_in_inventory'] = [
 
-            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_one,
-            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_two,
-            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_three,
-            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_four,
-            $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_five,
+                    $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_one,
+                    $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_two,
+                    $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_three,
+                    $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_four,
+                    $data['BusinessIntelligence']->days_sales_in_inventory_BI_FY_five,
 
-        ];
+                ];
 
         $data['businessInteligenceGraphLablesName'] = [
 
@@ -506,7 +523,7 @@ class userController extends Controller
             $data['BusinessIntelligence']->year_BI_FY_five,
 
         ];
-        // ===================================================== Business graph end ===================
+// ===================================================== Business graph end ===================
 
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
@@ -514,7 +531,7 @@ class userController extends Controller
         $data['KeyObservation'] = KeyObservation::where('third_party_id', $id)->first();
 
         $getKwyObservationScore = $data['KeyObservation']->overall_risk_score ?: 0;
-        $getKeyObservationOutOf = 100 - $getKwyObservationScore;
+        $getKeyObservationOutOf = 100 - $getKwyObservationScore ;
         $data['finalValueforGraKeyObservation'] = [
             $getKwyObservationScore,
             $getKeyObservationOutOf,
@@ -525,7 +542,7 @@ class userController extends Controller
         $data['Document'] = Document::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
 
-        // ===================================================== financial finding graph end ========================
+// ===================================================== financial finding graph end ========================
 
 
         $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->first();
@@ -567,8 +584,8 @@ class userController extends Controller
         ];
 
         // end
-        // start
-        $data['financialFindingsGrapFY_working_capital_1'] = [
+           // start
+           $data['financialFindingsGrapFY_working_capital_1'] = [
 
             $data['FinancialsFindingsFyOne']->working_capital_1_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->working_capital_1_fy_two_finding__1,
@@ -593,8 +610,8 @@ class userController extends Controller
 
         // end
 
-        // start
-        $data['financialFindingsGrapFY_total_assets'] = [
+          // start
+          $data['financialFindingsGrapFY_total_assets'] = [
 
             $data['FinancialsFindingsFyOne']->total_assets_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->total_assets_fy_two_finding__1,
@@ -606,8 +623,8 @@ class userController extends Controller
 
         // end
 
-        // start
-        $data['financialFindingsGrapFY_current_assets'] = [
+          // start
+          $data['financialFindingsGrapFY_current_assets'] = [
 
             $data['FinancialsFindingsFyOne']->current_assets_fy_one_finding__1,
             $data['FinancialsFindingsFyTwo']->current_assets_fy_two_finding__1,
@@ -655,87 +672,87 @@ class userController extends Controller
 
         // end
 
-        // start
-        $data['financialFindingsGrapFY_net_sales'] = [
+            // start
+            $data['financialFindingsGrapFY_net_sales'] = [
 
-            $data['FinancialsFindingsFyOne']->net_sales_fy_one_finding__1,
-            $data['FinancialsFindingsFyTwo']->net_sales_fy_two_finding__1,
-            $data['FinancialsFindingsFyThree']->net_sales_fy_three_finding__1,
-            $data['FinancialsFindingsFyFour']->net_sales_fy_four_finding__1,
-            $data['FinancialsFindingsFyFive']->net_sales_fy_five_finding__1,
-        ];
-
-
-        // end
-        // start
-        $data['financialFindingsGrapFY_equity_share_capital'] = [
-
-            $data['FinancialsFindingsFyOne']->equity_share_capital_fy_one_finding__1,
-            $data['FinancialsFindingsFyTwo']->equity_share_capital_fy_two_finding__1,
-            $data['FinancialsFindingsFyThree']->equity_share_capital_fy_three_finding__1,
-            $data['FinancialsFindingsFyFour']->equity_share_capital_fy_four_finding__1,
-            $data['FinancialsFindingsFyFive']->equity_share_capital_fy_five_finding__1,
-        ];
+                $data['FinancialsFindingsFyOne']->net_sales_fy_one_finding__1,
+                $data['FinancialsFindingsFyTwo']->net_sales_fy_two_finding__1,
+                $data['FinancialsFindingsFyThree']->net_sales_fy_three_finding__1,
+                $data['FinancialsFindingsFyFour']->net_sales_fy_four_finding__1,
+                $data['FinancialsFindingsFyFive']->net_sales_fy_five_finding__1,
+            ];
 
 
+            // end
+             // start
+             $data['financialFindingsGrapFY_equity_share_capital'] = [
 
-        // start
-        $data['financialFindingsGrapFY_sundry_debtors'] = [
-
-            $data['FinancialsFindingsFyOne']->sundry_debtors_fy_one_finding__1,
-            $data['FinancialsFindingsFyTwo']->sundry_debtors_fy_two_finding__1,
-            $data['FinancialsFindingsFyThree']->sundry_debtors_fy_three_finding__1,
-            $data['FinancialsFindingsFyFour']->sundry_debtors_fy_four_finding__1,
-            $data['FinancialsFindingsFyFive']->sundry_debtors_fy_five_finding__1,
-        ];
-
-
-        // end
-
-        // start
-        $data['financialFindingsGrapFY_sundry_creditors'] = [
-
-            $data['FinancialsFindingsFyOne']->sundry_creditors_fy_one_finding__1,
-            $data['FinancialsFindingsFyTwo']->sundry_creditors_fy_two_finding__1,
-            $data['FinancialsFindingsFyThree']->sundry_creditors_fy_three_finding__1,
-            $data['FinancialsFindingsFyFour']->sundry_creditors_fy_four_finding__1,
-            $data['FinancialsFindingsFyFive']->sundry_creditors_fy_five_finding__1,
-        ];
+                $data['FinancialsFindingsFyOne']->equity_share_capital_fy_one_finding__1,
+                $data['FinancialsFindingsFyTwo']->equity_share_capital_fy_two_finding__1,
+                $data['FinancialsFindingsFyThree']->equity_share_capital_fy_three_finding__1,
+                $data['FinancialsFindingsFyFour']->equity_share_capital_fy_four_finding__1,
+                $data['FinancialsFindingsFyFive']->equity_share_capital_fy_five_finding__1,
+            ];
 
 
-        // end
 
-        // start
-        $data['financialFindingsGrapFY_loans_and_advances'] = [
+                 // start
+                 $data['financialFindingsGrapFY_sundry_debtors'] = [
 
-            $data['FinancialsFindingsFyOne']->loans_and_advances_fy_one_finding__1,
-            $data['FinancialsFindingsFyTwo']->loans_and_advances_fy_two_finding__1,
-            $data['FinancialsFindingsFyThree']->loans_and_advances_fy_three_finding__1,
-            $data['FinancialsFindingsFyFour']->loans_and_advances_fy_four_finding__1,
-            $data['FinancialsFindingsFyFive']->loans_and_advances_fy_five_finding__1,
-        ];
-
-        // end
-
-        // start
-        $data['financialFindingsGrapFY_cash_and_cash_equivalents'] = [
-
-            $data['FinancialsFindingsFyOne']->cash_and_cash_equivalents_fy_one_finding__1,
-            $data['FinancialsFindingsFyTwo']->cash_and_cash_equivalents_fy_two_finding__1,
-            $data['FinancialsFindingsFyThree']->cash_and_cash_equivalents_fy_three_finding__1,
-            $data['FinancialsFindingsFyFour']->cash_and_cash_equivalents_fy_four_finding__1,
-            $data['FinancialsFindingsFyFive']->cash_and_cash_equivalents_fy_five_finding__1,
-        ];
+                    $data['FinancialsFindingsFyOne']->sundry_debtors_fy_one_finding__1,
+                    $data['FinancialsFindingsFyTwo']->sundry_debtors_fy_two_finding__1,
+                    $data['FinancialsFindingsFyThree']->sundry_debtors_fy_three_finding__1,
+                    $data['FinancialsFindingsFyFour']->sundry_debtors_fy_four_finding__1,
+                    $data['FinancialsFindingsFyFive']->sundry_debtors_fy_five_finding__1,
+                ];
 
 
-        // end
+                // end
+
+                     // start
+            $data['financialFindingsGrapFY_sundry_creditors'] = [
+
+                $data['FinancialsFindingsFyOne']->sundry_creditors_fy_one_finding__1,
+                $data['FinancialsFindingsFyTwo']->sundry_creditors_fy_two_finding__1,
+                $data['FinancialsFindingsFyThree']->sundry_creditors_fy_three_finding__1,
+                $data['FinancialsFindingsFyFour']->sundry_creditors_fy_four_finding__1,
+                $data['FinancialsFindingsFyFive']->sundry_creditors_fy_five_finding__1,
+            ];
 
 
-        $data['FinancialsFindingsFyFiveGraphLableName'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->pluck('year_five_finding__1');
-        $data['FinancialsFindingsFyFourGraphLableName'] = FinancialsFindingsFyFour::where('financial_id', $data['Financial']->id)->pluck('year_four_finding__1');
-        $data['FinancialsFindingsFyThreeGraphLableName'] = FinancialsFindingsFyThree::where('financial_id', $data['Financial']->id)->pluck('year_three_finding__1');
-        $data['FinancialsFindingsFyTwoGraphLableName'] = FinancialsFindingsFyTwo::where('financial_id', $data['Financial']->id)->pluck('year_two_finding__1');
-        $data['FinancialsFindingsFyOneGraphLableName'] = FinancialsFindingsFyOne::where('financial_id', $data['Financial']->id)->pluck('year_one_finding__1');
+            // end
+
+                 // start
+                 $data['financialFindingsGrapFY_loans_and_advances'] = [
+
+                    $data['FinancialsFindingsFyOne']->loans_and_advances_fy_one_finding__1,
+                    $data['FinancialsFindingsFyTwo']->loans_and_advances_fy_two_finding__1,
+                    $data['FinancialsFindingsFyThree']->loans_and_advances_fy_three_finding__1,
+                    $data['FinancialsFindingsFyFour']->loans_and_advances_fy_four_finding__1,
+                    $data['FinancialsFindingsFyFive']->loans_and_advances_fy_five_finding__1,
+                ];
+
+                // end
+
+                     // start
+                     $data['financialFindingsGrapFY_cash_and_cash_equivalents'] = [
+
+                        $data['FinancialsFindingsFyOne']->cash_and_cash_equivalents_fy_one_finding__1,
+                        $data['FinancialsFindingsFyTwo']->cash_and_cash_equivalents_fy_two_finding__1,
+                        $data['FinancialsFindingsFyThree']->cash_and_cash_equivalents_fy_three_finding__1,
+                        $data['FinancialsFindingsFyFour']->cash_and_cash_equivalents_fy_four_finding__1,
+                        $data['FinancialsFindingsFyFive']->cash_and_cash_equivalents_fy_five_finding__1,
+                    ];
+
+
+                    // end
+
+
+        $data['FinancialsFindingsFyFiveGraphLableName'] = FinancialsFindingsFyFive::where('financial_id',$data['Financial']->id)->pluck('year_five_finding__1');
+        $data['FinancialsFindingsFyFourGraphLableName'] = FinancialsFindingsFyFour::where('financial_id',$data['Financial']->id)->pluck('year_four_finding__1');
+        $data['FinancialsFindingsFyThreeGraphLableName'] = FinancialsFindingsFyThree::where('financial_id',$data['Financial']->id)->pluck('year_three_finding__1');
+        $data['FinancialsFindingsFyTwoGraphLableName'] = FinancialsFindingsFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_two_finding__1');
+        $data['FinancialsFindingsFyOneGraphLableName'] = FinancialsFindingsFyOne::where('financial_id',$data['Financial']->id)->pluck('year_one_finding__1');
 
         $data['financialFindingsGrapFYhLablesName'] = [
 
@@ -746,9 +763,9 @@ class userController extends Controller
             $data['FinancialsFindingsFyFiveGraphLableName'],
         ];
 
-        // ===================================================== financial finding graph end ========================
+// ===================================================== financial finding graph end ========================
 
-        // ===================================================== financial ratio graph start ========================
+// ===================================================== financial ratio graph start ========================
         // dd($data['financialFindingsGrapFYhLablesName'] );
         $data['FinancialsRatioAnalysisFyFive'] = FinancialsRatioAnalysisFyFive::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsRatioAnalysisFyFour'] = FinancialsRatioAnalysisFyFour::where('financial_id', $data['Financial']->id)->first();
@@ -757,173 +774,173 @@ class userController extends Controller
         $data['FinancialsRatioAnalysisFyOne'] = FinancialsRatioAnalysisFyOne::where('financial_id', $data['Financial']->id)->first();
 
 
-        $data['financialrationGrapFY_current_ratio'] = [
+$data['financialrationGrapFY_current_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->current_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->current_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->current_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->current_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->current_ratio_fy_five_1,
-        ];
-
-
-        $data['financialrationGrapFY_quick_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->quick_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->quick_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->quick_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->quick_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->quick_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->current_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->current_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->current_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->current_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->current_ratio_fy_five_1,
+];
 
 
+$data['financialrationGrapFY_quick_ratio'] = [
 
-
-        $data['financialrationGrapFY_debt_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->debt_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->debt_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->debt_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->debt_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->debt_ratio_fy_five_1,
-        ];
-
-
-        $data['financialrationGrapFY_solvency_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->solvency_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->solvency_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->solvency_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->solvency_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->solvency_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->quick_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->quick_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->quick_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->quick_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->quick_ratio_fy_five_1,
+];
 
 
 
-        $data['financialrationGrapFY_debt_to_equity_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->debt_to_equity_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->debt_to_equity_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->debt_to_equity_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->debt_to_equity_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->debt_to_equity_ratio_fy_five_1,
-        ];
+$data['financialrationGrapFY_debt_ratio'] = [
 
-
-
-        $data['financialrationGrapFY_asset_turnover_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->asset_turnover_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->asset_turnover_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->asset_turnover_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->asset_turnover_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->asset_turnover_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->debt_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->debt_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->debt_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->debt_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->debt_ratio_fy_five_1,
+];
 
 
-        $data['financialrationGrapFY_absolute_liquidity_ratio'] = [
+$data['financialrationGrapFY_solvency_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->absolute_liquidity_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->absolute_liquidity_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->absolute_liquidity_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->absolute_liquidity_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->absolute_liquidity_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->solvency_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->solvency_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->solvency_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->solvency_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->solvency_ratio_fy_five_1,
+];
 
 
 
-        $data['financialrationGrapFY_proprietary_ratio'] = [
+$data['financialrationGrapFY_debt_to_equity_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->proprietary_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->proprietary_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->proprietary_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->proprietary_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->proprietary_ratio_fy_five_1,
-        ];
-
-
-
-        $data['financialrationGrapFY_net_profit_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->net_profit_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->net_profit_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->net_profit_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->net_profit_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->net_profit_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->debt_to_equity_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->debt_to_equity_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->debt_to_equity_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->debt_to_equity_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->debt_to_equity_ratio_fy_five_1,
+];
 
 
 
-        $data['financialrationGrapFY_gross_profit_ratio'] = [
+$data['financialrationGrapFY_asset_turnover_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->gross_profit_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->gross_profit_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->gross_profit_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->gross_profit_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->gross_profit_ratio_fy_five_1,
-        ];
-
-
-
-        $data['financialrationGrapFY_springate_s_score_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->springate_s_score_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->springate_s_score_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->springate_s_score_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->springate_s_score_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->springate_s_score_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->asset_turnover_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->asset_turnover_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->asset_turnover_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->asset_turnover_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->asset_turnover_ratio_fy_five_1,
+];
 
 
+$data['financialrationGrapFY_absolute_liquidity_ratio'] = [
 
-        $data['financialrationGrapFY_trade_receivable_days_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->trade_receivable_days_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->trade_receivable_days_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->trade_receivable_days_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->trade_receivable_days_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->trade_receivable_days_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->absolute_liquidity_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->absolute_liquidity_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->absolute_liquidity_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->absolute_liquidity_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->absolute_liquidity_ratio_fy_five_1,
+];
 
 
 
-        $data['financialrationGrapFY_trade_payable_days_ratio'] = [
+$data['financialrationGrapFY_proprietary_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->trade_payable_days_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->trade_payable_days_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->trade_payable_days_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->trade_payable_days_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->trade_payable_days_ratio_fy_five_1,
-        ];
-
-
-
-        $data['financialrationGrapFY_taffler_z_score_ratio'] = [
-
-            $data['FinancialsRatioAnalysisFyOne']->taffler_z_score_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->taffler_z_score_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->taffler_z_score_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->taffler_z_score_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->taffler_z_score_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->proprietary_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->proprietary_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->proprietary_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->proprietary_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->proprietary_ratio_fy_five_1,
+];
 
 
 
-        $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
+$data['financialrationGrapFY_net_profit_ratio'] = [
 
-            $data['FinancialsRatioAnalysisFyOne']->zmijewski_x_score_ratio_fy_one_1,
-            $data['FinancialsRatioAnalysisFyTwo']->zmijewski_x_score_ratio_fy_two_1,
-            $data['FinancialsRatioAnalysisFyThree']->zmijewski_x_score_ratio_fy_three_1,
-            $data['FinancialsRatioAnalysisFyFour']->zmijewski_x_score_ratio_fy_four_1,
-            $data['FinancialsRatioAnalysisFyFive']->zmijewski_x_score_ratio_fy_five_1,
-        ];
+    $data['FinancialsRatioAnalysisFyOne']->net_profit_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->net_profit_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->net_profit_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->net_profit_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->net_profit_ratio_fy_five_1,
+];
 
 
-        $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'] = FinancialsRatioAnalysisFyFive::where('financial_id', $data['Financial']->id)->pluck('year_ratio_five_1');
-        $data['FinancialsRatioAnalysisFyFourGraphLabelNames'] = FinancialsRatioAnalysisFyFour::where('financial_id', $data['Financial']->id)->pluck('year_ratio_four_1');
-        $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'] = FinancialsRatioAnalysisFyThree::where('financial_id', $data['Financial']->id)->pluck('year_ratio_three_1');
-        $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'] = FinancialsRatioAnalysisFyTwo::where('financial_id', $data['Financial']->id)->pluck('year_ratio_two_1');
-        $data['FinancialsRatioAnalysisFyOneGraphLabelNames'] = FinancialsRatioAnalysisFyOne::where('financial_id', $data['Financial']->id)->pluck('year_ratio_one_1');
+
+$data['financialrationGrapFY_gross_profit_ratio'] = [
+
+    $data['FinancialsRatioAnalysisFyOne']->gross_profit_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->gross_profit_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->gross_profit_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->gross_profit_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->gross_profit_ratio_fy_five_1,
+];
+
+
+
+    $data['financialrationGrapFY_springate_s_score_ratio'] = [
+
+    $data['FinancialsRatioAnalysisFyOne']->springate_s_score_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->springate_s_score_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->springate_s_score_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->springate_s_score_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->springate_s_score_ratio_fy_five_1,
+];
+
+
+
+$data['financialrationGrapFY_trade_receivable_days_ratio'] = [
+
+    $data['FinancialsRatioAnalysisFyOne']->trade_receivable_days_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->trade_receivable_days_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->trade_receivable_days_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->trade_receivable_days_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->trade_receivable_days_ratio_fy_five_1,
+];
+
+
+
+$data['financialrationGrapFY_trade_payable_days_ratio'] = [
+
+    $data['FinancialsRatioAnalysisFyOne']->trade_payable_days_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->trade_payable_days_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->trade_payable_days_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->trade_payable_days_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->trade_payable_days_ratio_fy_five_1,
+];
+
+
+
+$data['financialrationGrapFY_taffler_z_score_ratio'] = [
+
+    $data['FinancialsRatioAnalysisFyOne']->taffler_z_score_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->taffler_z_score_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->taffler_z_score_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->taffler_z_score_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->taffler_z_score_ratio_fy_five_1,
+];
+
+
+
+$data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
+
+    $data['FinancialsRatioAnalysisFyOne']->zmijewski_x_score_ratio_fy_one_1,
+    $data['FinancialsRatioAnalysisFyTwo']->zmijewski_x_score_ratio_fy_two_1,
+    $data['FinancialsRatioAnalysisFyThree']->zmijewski_x_score_ratio_fy_three_1,
+    $data['FinancialsRatioAnalysisFyFour']->zmijewski_x_score_ratio_fy_four_1,
+    $data['FinancialsRatioAnalysisFyFive']->zmijewski_x_score_ratio_fy_five_1,
+];
+
+
+        $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'] = FinancialsRatioAnalysisFyFive::where('financial_id',$data['Financial']->id)->pluck('year_ratio_five_1');
+        $data['FinancialsRatioAnalysisFyFourGraphLabelNames'] = FinancialsRatioAnalysisFyFour::where('financial_id',$data['Financial']->id)->pluck('year_ratio_four_1');
+        $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'] = FinancialsRatioAnalysisFyThree::where('financial_id',$data['Financial']->id)->pluck('year_ratio_three_1');
+        $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'] = FinancialsRatioAnalysisFyTwo::where('financial_id',$data['Financial']->id)->pluck('year_ratio_two_1');
+        $data['FinancialsRatioAnalysisFyOneGraphLabelNames'] = FinancialsRatioAnalysisFyOne::where('financial_id',$data['Financial']->id)->pluck('year_ratio_one_1');
 
 
         $data['financialRatioGrapFYhLablesName'] = [
@@ -937,7 +954,7 @@ class userController extends Controller
 
         // dd($data['financialRatioGrapFYhLablesName']);
 
-        // ===================================================== financial ratio graph end ========================
+// ===================================================== financial ratio graph end ========================
 
         $data['FirmBackground'] = FirmBackground::where('third_party_id', $id)->first();
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
@@ -951,9 +968,8 @@ class userController extends Controller
         return view('company.reports.view-reports', $data);
     }
 
-    public function firm_file_download($id, $index)
+    public function firm_file_download($id,$index)
     {
-
 
         $id = base64_decode($id);
         $License = License::find($id);
@@ -1113,7 +1129,6 @@ class userController extends Controller
 
     public function firm_file_view($id, $index)
     {
-
 
         $id = base64_decode($id);
         $License = License::find($id);
@@ -1334,10 +1349,13 @@ class userController extends Controller
             if ($data['password'] == $data['password_confirmation']) {
                 $user->password = bcrypt($data['password']);
                 $user->save();
-                return response()->json(['error' => 'Password updated.'], 200);
+            return response()->json(['error' => 'Password updated.'], 200);
+
             } else {
-                return response()->json(['error' => 'Password does not match.'], 422);
+            return response()->json(['error' => 'Password does not match.'], 422);
+
             }
         }
     }
+
 }
