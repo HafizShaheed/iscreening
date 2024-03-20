@@ -38,7 +38,7 @@
 					<a href="../index.html"><img  src="{{URL::to('/public/admin/assets')}}/images/logo-full.png" class="mb-3 logo-dark" alt=""></a>
 					<a href="../index.html"><img  src="{{URL::to('/public/admin/assets')}}/images/logi-white.png" class="mb-3 logo-light" alt=""></a>
 
-					<p>ISCREENING dashboard uses line charts to visualize.</p>
+					<p>Alternis Business Intelligence dashboard uses line charts to visualize.</p>
 				</div>
 				<div class="login-media text-center">
 					<img  src="{{URL::to('/public/admin/assets')}}/images/login.png" alt="">
@@ -49,7 +49,7 @@
 			<div class="login-form">
 				<div class="text-center">
 					<h3 class="title">Sign In</h3>
-					<p>Sign in to your account to start using I-Screening Client Dashboard</p>
+					<p>Sign in to your account to start using Alternis Business Intelligence Client Dashboard</p>
                     @if(session()->has('success'))
                    <div class="alert alert-success">
                        {{ session()->get('success') }}
