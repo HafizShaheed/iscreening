@@ -265,7 +265,7 @@
                             <th>Location</th>
                             <th>State</th>
                             <th>Type of Risk </th>
-                            <th>Over All Risk </th>
+                            <th>Overall Risk </th>
                             <th class="text-center">View Report</th>
                         </tr>
                     </thead>

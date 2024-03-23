@@ -60,7 +60,7 @@
                 <div class="card-header flex-wrap border-0" id="default-tab">
                     <h4 class="card-title">Firm Background<br>
 
-                            <b>Vender Name:{{isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name : ''}} </b>
+                            <b>Third-Party Name:{{isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name : ''}} </b>
                         </p>
 
                     </h4>
@@ -73,7 +73,7 @@
                             <div class="default-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Basic-Information"> Basic Information Registration/Licenses Director Details</a>
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#Basic-Information"> Charges on the Entity</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#Registrations-Licenses">
@@ -454,7 +454,7 @@
         </div>
     </div>
 <!-- firm background tab End -->
-<!-- document Report  start--> 
+<!-- document Report  start-->
 <div class="col-xl-12" id="tab-document-report">
         <div class="card dz-card">
 
@@ -516,7 +516,7 @@
                                                             @endif
                                                         @endfor
 
-                                                     
+
                                                         <!-- <tr>
                                                             <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
                                                             <a href="{{ URL::to('/company/report/document_file_download'.'/'.base64_encode($Document->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Document</a>
@@ -593,7 +593,7 @@
 
                                                     <tr>
                                                     <td style=" text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="2"  class="">
-                                                    <a href="{{ URL::to('/company/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download PDF or Image</a>
+                                                    <a href="{{ URL::to('/company/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Report</a>
                                                        <a href="{{ URL::to('/company/report/onGround_file_view'.'/'. base64_encode($OnGroundVerification->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Report </a></td>
 
                                                     </tr>

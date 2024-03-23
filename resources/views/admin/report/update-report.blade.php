@@ -640,7 +640,7 @@
                                 <label for="upload_picture" class="form-label">Upload Picture</label>
                                 <div class="dz-default dlab-message upload-img mb-3">
                                     <div class="fallback">
-                                        <input  type="file" class="form-control" id="upload_picture" accept="image/*" name="upload_picture" value="{{$OnGroundVerification->upload_picture}}" placeholder="upload image">
+                                        <input  type="file" class="form-control" id="upload_picture" accept=".pdf, image/*" name="upload_picture" value="{{$OnGroundVerification->upload_picture}}" placeholder="upload image">
 
                                     </div>
                                 </div>
