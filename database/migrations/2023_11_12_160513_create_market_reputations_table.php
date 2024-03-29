@@ -26,7 +26,14 @@ class CreateMarketReputationsTable extends Migration
             $table->integer('status')->default(0)->nullable();
 
             // File Upload
-            $table->string('file_path_market_reputations')->nullable();
+            for ($i=1; $i <= 6; $i++) { 
+                # code...
+                $this->offLineFields($table, $i);
+            }
+            for ($i=1; $i <= 6; $i++) { 
+                # code...
+                $this->onLineFields($table, $i);
+            }
 
             $table->timestamps();
         });
@@ -40,5 +47,21 @@ class CreateMarketReputationsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('market_reputations');
+    }
+
+    private function offLineFields(Blueprint $table, $index)
+    {
+        $table->string("offLine_reference_name_$index")->nullable();
+        $table->string("offLine_contact_$index")->nullable();
+        $table->string("offLine_email_$index")->nullable();
+        $table->string("offLine_company_name_$index")->nullable();
+        $table->string("offLine_upload_file_$index")->nullable();
+    }
+    private function onLineFields(Blueprint $table, $index)
+    {
+        $table->text("onLine_description_$index")->nullable();
+        $table->string("onLine_source_$index")->nullable();
+        $table->string("onLine_upload_file_$index")->nullable();
+        ;
     }
 }

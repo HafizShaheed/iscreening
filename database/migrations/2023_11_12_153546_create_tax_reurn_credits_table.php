@@ -22,11 +22,6 @@ class CreateTaxReurnCreditsTable extends Migration
             $table->string('Type_of_risk')->nullable();
             $table->integer('status')->default(0)->nullable();
 
-            $table->string('tax_fy1')->nullable();
-            $table->string('tax_fy2')->nullable();
-            $table->string('tax_fy3')->nullable();
-            $table->string('tax_fy4')->nullable();
-            $table->string('tax_fy5')->nullable();
 
             $this->addTaxFields($table, 1);
             $this->addTaxFields($table, 2);

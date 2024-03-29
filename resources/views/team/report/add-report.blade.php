@@ -48,7 +48,7 @@
                     <div class="col-xl-2 col-sm-2 col-2 mt-4 mt-md-0">
                         <div class="d-flex justify-content-center align-items-center">
                             <a href="JavaScript:void(0)" id="click-Firm-Background"
-                                class="btn btn-secondary btn-sm">Firm Background</a>
+                                class="btn btn-secondary btn-sm">Business Overview</a>
                         </div>
                     </div>
                     <div class="col-xl-2 col-sm-2 col-2 mt-4 mt-md-0">
@@ -85,7 +85,7 @@
                 <div class="row justify-content-start">
                     <div class="col-xl-2 col-sm-2 col-2 mt-4 mt-md-0">
                         <div class="d-flex justify-content-center align-items-center">
-                            <a href="JavaScript:void(0)" class="btn btn-secondary btn-sm">Market Reputation</a>
+                            <a href="JavaScript:void(0)" class="btn btn-secondary btn-sm">Reputation Watch </a>
                         </div>
                     </div>
                     <div class="col-xl-2 col-sm-2 col-2 mt-4 mt-md-0">
@@ -104,7 +104,7 @@
     <div class="card">
         <div class="card-body justify-content-center">
             <div class="d-flex flex-row flex-nowrap">
-                <a href="JavaScript:void(0)" id="click-Firm-Background" class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Firm Background</a>
+                <a href="JavaScript:void(0)" id="click-Firm-Background" class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Business Overview</a>
                 <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
                 <a href="JavaScript:void(0)" id="click-On-Ground-Verification" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground Verification</a>
                 <a href="JavaScript:void(0)" id="click-Court-Checks" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Court
@@ -112,7 +112,7 @@
                 <a href="JavaScript:void(0)" id="click-Financials" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Financials</a>
                 <a href="JavaScript:void(0)" id="click-Business-Intelligence" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Business Intelligence</a>
                 <a href="JavaScript:void(0)" id="click-Tax-Return-and-Credit" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Tax Return and Credit</a>
-                <a href="JavaScript:void(0)" id="click-Market-Reputation" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Market Reputation</a>
+                <a href="JavaScript:void(0)" id="click-Market-Reputation" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Reputation Watch </a>
                 <a href="JavaScript:void(0)" id="click-Key-Observation" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Key Observation</a>
                 <!-- Add similar code for other buttons as needed -->
             </div>
@@ -132,7 +132,7 @@
 
                 <!-- firm background 1 step end -->
                 <div class="firm-step" id="firm-step-1">
-                    <h4 class="card-title">Firm Background<br>
+                    <h4 class="card-title">Business Overview</br>
                         <span style="color:darkgray; font-size:12px;"> Basic Information </span>
                     </h4>
                     <div class="row">
@@ -214,7 +214,7 @@
                 <!-- firm background 1 step end -->
                 <!-- firm background 2 step start ========================-->
                 <div class="firm-step" id="firm-step-2">
-                    <h4 class="card-title">Firm Background<br>
+                    <h4 class="card-title">Business Overview</br>
                         <span style="color:darkgray; font-size:12px;">Registrations/Compliance </span>
                     </h4>
                     <div class="row">
@@ -285,8 +285,8 @@
                 <!-- firm background 2 step end ========================-->
                 <!-- firm background 3 step start ========================-->
                 <div class="firm-step" id="firm-step-3">
-                    <h4 class="card-title">Firm Background<br>
-                        <span style="color:darkgray; font-size:12px;">Director/Proprietor/Partner Details </span>
+                    <h4 class="card-title">Business Overview</br>
+                        <span style="color:darkgray; font-size:12px;"> Management Details </span>
                     </h4>
                  <!-- Copy 1 -->
                  @for ($i = 1; $i <= 10; $i++)
@@ -333,7 +333,7 @@
                 <!-- firm background 3 step end ========================-->
                 <!-- firm background 4 step start ========================-->
                 <div class="firm-step" id="firm-step-4">
-                    <h4 class="card-title">Firm Background<br>
+                    <h4 class="card-title">Business Overview</br>
                         <span style="color:darkgray; font-size:12px;">Directorship Check</span>
                     </h4>
                     <div class="row">
@@ -625,7 +625,7 @@
                 <!-- Court Checks 1 step end -->
                 <div class="court-step" id="court-step-1">
                     <h4 class="card-title">Court Checks<br>
-                        <span style="color:darkgray; font-size:12px;"> Court Check of Directors </span>
+                        <span style="color:darkgray; font-size:12px;"> Management Legal Records </span>
                     </h4>
                     <div class="row">
                     <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
@@ -663,7 +663,7 @@
                 <!-- Court Checks 2 step start ========================-->
                 <div class="court-step" id="court-step-2">
                     <h4 class="card-title">Court Checks<br>
-                        <span style="color:darkgray; font-size:12px;"> Court check of Company </span>
+                        <span style="color:darkgray; font-size:12px;"> Company Legal Records </span>
                     </h4>
 
                     @for ($i=1; $i <=5; $i++)
@@ -706,7 +706,7 @@
                 <!-- Court Checks 3 step start ========================-->
                 <div class="court-step" id="court-step-3">
                     <h4 class="card-title">Court Checks<br>
-                        <span style="color:darkgray; font-size:12px;"> Court Check of Directors </span>
+                        <span style="color:darkgray; font-size:12px;"> Management Legal Records </span>
                     </h4>
                     <div class="row">
                         <div class="col-xl-4 mb-3">
@@ -751,7 +751,7 @@
                 <!-- Financials 1 step end -->
                 <div class="Financials-step" id="Financials-step-1">
                     <h4 class="card-title">Financials<br>
-                        <span style="color:darkgray; font-size:12px;"> Charges on the Entity </span>
+                        <span style="color:darkgray; font-size:12px;"> Business Information </span>
                     </h4>
                     <div class="row">
                     <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">

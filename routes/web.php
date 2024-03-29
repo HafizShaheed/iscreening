@@ -152,7 +152,9 @@ Route::get('/clear-cache', function() {
                 Route::get('/view/{id}', 'adminController@report_View')->name('admin.report_View');
                 Route::get('/edit/{id}', 'adminController@Edit_report')->name('admin.Edit_report');
                 Route::post('/update_firm_background', 'adminController@update_firm_background')->name('admin.update_firm_background');
+                Route::post('/update_compliance_watch', 'adminController@update_compliance_watch')->name('admin.update_compliance_watch');
                 Route::post('/update_documents', 'adminController@update_documents')->name('admin.update_documents');
+
                 Route::post('/update_on_ground_verification', 'adminController@update_on_ground_verification')->name('admin.update_on_ground_verification');
                 Route::post('/update_court_check', 'adminController@update_court_check')->name('admin.update_court_check');
                 Route::post('/update_financial', 'adminController@update_financial')->name('admin.update_financial');
@@ -162,13 +164,21 @@ Route::get('/clear-cache', function() {
                 Route::post('/update_Key_Observation', 'adminController@update_Key_Observation')->name('admin.update_Key_Observation');
                 Route::post('/update_resubmited_allreports', 'adminController@update_resubmited_allreports')->name('admin.update_resubmited_allreports');
                 Route::post('/update_completed_allreports', 'adminController@update_completed_allreports')->name('admin.update_completed_allreports');
+
+                // file upload muliple download and view
                 Route::get('/firm_file_download/{id}/{index}', 'adminController@firm_file_download')->name('admin.firm_file_download');
                 Route::get('/firm_file_view/{id}/{index}', 'adminController@firm_file_view')->name('admin.firm_file_view');
+                Route::get('/firm_file_adhar_download/{id}/{index}', 'adminController@firm_file_adhar_download')->name('admin.firm_file_adhar_download');
+                Route::get('/firm_file_adhar_view/{id}/{index}', 'adminController@firm_file_adhar_view')->name('admin.firm_file_adhar_view');
+                Route::get('/gst_compliance_watch_download/{id}/{index}', 'adminController@gst_compliance_watch_download')->name('admin.gst_compliance_watch_download');
+                Route::get('/gst_compliance_watch_view/{id}/{index}', 'adminController@gst_compliance_watch_view')->name('admin.gst_compliance_watch_view');
                 Route::get('/document_file_download/{id}/{index}', 'adminController@document_file_download')->name('admin.document_file_download');
                 Route::get('/document_file_view/{id}/{index}', 'adminController@document_file_view')->name('admin.document_file_view');
                 Route::get('/onGround_file_download/{id}', 'adminController@onGround_file_download')->name('admin.onGround_file_download');
                 Route::get('/onGround_file_view/{id}', 'adminController@onGround_file_view')->name('admin.onGround_file_view');
                 Route::get('/final_Reprts_file_download/{id}', 'adminController@final_Reprts_file_download')->name('admin.final_Reprts_file_download');
+                // file upload muliple download and view
+
                 Route::get('/generate_pdf_of_reports/{id}', 'adminController@generate_pdf_of_reports')->name('admin.generate_pdf_of_reports');
 
 

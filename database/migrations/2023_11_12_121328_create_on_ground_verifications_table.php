@@ -19,7 +19,10 @@ class CreateOnGroundVerificationsTable extends Migration
             $table->integer('third_party_id')->nullable();
             $table->integer('team_user_id')->nullable();
             $table->longText('address_details')->nullable();
-            $table->longText('address_visit_findings')->nullable();
+            for ($i=1; $i <= 12; $i++) {
+                $table->string("address_visit_findings_$i")->nullable();
+                # code...
+            }
             $table->string('on_ground_verification_score')->nullable();
             $table->string('upload_picture')->nullable();
             $table->text('score_analysis')->nullable();

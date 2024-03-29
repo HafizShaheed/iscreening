@@ -33,12 +33,17 @@ use App\Models\FirmBackground;
 use App\Models\FirstDirectorsFirm;
 use App\Models\SecondDirectorsFirm;
 use App\Models\ThirdDirectorsFirm;
+use App\Models\BusinessOwnershipPatternsFirm;
+use App\Models\RelatedPartiesFirm;
 use App\Models\License;
-
-use App\Models\KeyObservation;
-use App\Models\MarketReputation;
-use App\Models\OnGroundVerification;
+use App\Models\ComplianceWatch;
+use App\Models\Gst;
+use App\Models\RelatedPartyLegal;
 use App\Models\TaxReurnCredit;
+use App\Models\MarketReputation;
+use App\Models\KeyObservation;
+use App\Models\OnGroundVerification;
+use App\Models\AdharPartnerDetail;
 use Validator;
 use PDF;
 
@@ -985,6 +990,8 @@ class adminController extends Controller
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['RelatedPartiesFirm'] = RelatedPartiesFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['BusinessOwnershipPatternsFirm'] = BusinessOwnershipPatternsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['getThirdPartyForID'] = ThirdParty::where('id', $id)->first();
         $data['Getclient'] = User::where('id', $data['getThirdPartyForID']->user_id)->first();
         $data['GetTeaMuser'] = TeamUser::where('id', $data['FirmBackground']->team_user_id)->first();
@@ -1004,6 +1011,8 @@ class adminController extends Controller
 
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
+        $data['RelatedPartyLegal'] = RelatedPartyLegal::where('court_check_id', $data['CourtCheck']->id)->first();
+
         $data['Financial'] = Financial::where('third_party_id', $id)->first();
         $data['FirmBackground'] = FirmBackground::where('third_party_id', $id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id', $id)->first();
@@ -1028,7 +1037,13 @@ class adminController extends Controller
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
-        $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['AdharPartnerDetail'] = AdharPartnerDetail::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['BusinessOwnershipPatternsFirm'] = BusinessOwnershipPatternsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['RelatedPartiesFirm'] = RelatedPartiesFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
+
+        $data['ComplianceWatch'] = ComplianceWatch::where('third_party_id', $id)->first();
+        $data['License'] = License::where('compliance_watche_id', $data['ComplianceWatch']->id)->first();
+        $data['Gst'] = Gst::where('compliance_watche_id', $data['ComplianceWatch']->id)->first();
 
         $data['getThirdPartyForID'] = ThirdParty::where('id', $id)->first();
 
@@ -1043,13 +1058,6 @@ class adminController extends Controller
         if (!$firmBackground) {
             return response()->json(['error' => 'This Reports not found.']);
         }
-
-      
-
-
-
-
-
         $firmBackground->incorporation_year = $request->input('incorporation_year');
         $firmBackground->user_id = $request->input('user_id');
         $firmBackground->team_user_id = $request->input('team_user_id');
@@ -1068,20 +1076,56 @@ class adminController extends Controller
         $firmBackground->score_analysis = $request->input('score_analysis');
         $firmBackground->Type_of_risk = $request->input('regulatory_score') > 60 ? 'High Risk' : ($request->input('regulatory_score') <= 60 && $request->input('regulatory_score') > 30 ? 'Medium Risk' : ($request->input('regulatory_score') <= 30 ? 'Low Risk' : ''));
 
-        for ($i = 1; $i <= 10; $i++) {
-            $firmBackground->{"name_$i"} = $request->input("name_$i");
-            $firmBackground->{"pan_$i"} = $request->input("pan_$i");
-            $firmBackground->{"aadhar_$i"} = $request->input("aadhar_$i");
-            $firmBackground->{"date_of_appointment_$i"} = $request->input("date_of_appointment_$i");
-            $firmBackground->{"educational_background_$i"} = $request->input("educational_background_$i");
-            $firmBackground->{"din_$i"} = $request->input("din_$i");
-        }
 
 
         $firmBackground->credit_score = $request->input('credit_score');
         $firmBackground->save();
 
         if ($firmBackground->id) {
+            $AdharPartnerDetail = AdharPartnerDetail::where('firm_background_id', $firmBackground->id)->firstOrFail();
+
+
+            for ($i = 1; $i <= 8; $i++) {
+                $AdharPartnerDetail->{"name_$i"} = $request->input("name_$i");
+                $AdharPartnerDetail->{"pan_$i"} = $request->input("pan_$i");
+                $AdharPartnerDetail->{"aadhar_$i"} = $request->input("aadhar_$i");
+                $AdharPartnerDetail->{"date_of_appointment_$i"} = $request->input("date_of_appointment_$i");
+                $AdharPartnerDetail->{"educational_background_$i"} = $request->input("educational_background_$i");
+                $AdharPartnerDetail->{"din_$i"} = $request->input("din_$i");
+            }
+
+            for ($i = 1; $i <= 8; $i++) {
+                if ($request->hasFile("licenses_upload_file_aadhar_$i")) {
+                    $file = $request->file("licenses_upload_file_aadhar_$i");
+                    // Generate a unique filename
+                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                    // Move the file to the destination folder
+                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                    $file->move(public_path('admin/assets/imgs/firmAdharImagesOrFile/'), $filename);
+                    $AdharPartnerDetail->{"licenses_upload_file_aadhar_$i"} = $filename;
+                }
+            }
+
+            $AdharPartnerDetail->save();
+
+            $BusinessOwnershipPatternsFirm = BusinessOwnershipPatternsFirm::where('firm_background_id', $firmBackground->id)->firstOrFail();
+            for ($i = 1; $i <= 6; $i++) {
+                $BusinessOwnershipPatternsFirm->{"business_patterns_name_of_the_shareholder_$i"} = $request->input("business_patterns_name_of_the_shareholder_$i");
+                $BusinessOwnershipPatternsFirm->{"business_patterns_appointment_date_$i"} = $request->input("business_patterns_appointment_date_$i");
+                $BusinessOwnershipPatternsFirm->{"business_patterns_shareholding_in_the_entity_$i"} = $request->input("business_patterns_shareholding_in_the_entity_$i");
+            }
+            $BusinessOwnershipPatternsFirm->save();
+
+
+            $RelatedPartiesFirm = RelatedPartiesFirm::where('firm_background_id', $firmBackground->id)->firstOrFail();
+            for ($i = 1; $i <= 8; $i++) {
+                $RelatedPartiesFirm->{"Related_party_name_$i"} = $request->input("Related_party_name_$i");
+                $RelatedPartiesFirm->{"Related_party_relation_$i"} = $request->input("Related_party_relation_$i");
+                $RelatedPartiesFirm->{"Related_party_comments_$i"} = $request->input("business_patterns_shareholding_in_the_entity_$i");
+            }
+            $RelatedPartiesFirm->save();
+
+
 
             // first director name
             $FirstDirectorsFirm = FirstDirectorsFirm::where('firm_background_id', $firmBackground->id)->firstOrFail();
@@ -1132,32 +1176,7 @@ class adminController extends Controller
 
             // License form
 
-            $License = License::where('firm_background_id', $firmBackground->id)->firstOrFail();
 
-            for ($i = 1; $i <= 8; $i++) {
-
-                $License->{"license_name_$i"} = $request->input("license_name_$i");
-                $License->{"license_no_$i"} = $request->input("license_no_$i");
-                $License->{"date_of_issuance_$i"} = $request->input("date_of_issuance_$i");
-                $License->{"date_of_expiry_$i"} = $request->input("date_of_expiry_$i");
-            }
-
-
-        
-
-            for ($i = 1; $i <= 8; $i++) {
-                if ($request->hasFile("licenses_upload_file_$i")) {
-                    $file = $request->file("licenses_upload_file_$i");
-                    // Generate a unique filename
-                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-                    // Move the file to the destination folder
-                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
-                    $file->move(public_path('admin/assets/imgs/firmBacgroundImages/'), $filename);
-                    $License->{"licenses_upload_file_$i"} = $filename;
-                }
-            }
-            
-            $License->save();
 
 
 
@@ -1165,6 +1184,11 @@ class adminController extends Controller
             $BusinessIntelligence->user_id = $request->input('user_id');
             $BusinessIntelligence->team_user_id = $request->input('team_user_id');
             $BusinessIntelligence->save();
+
+            $ComplianceWatch = ComplianceWatch::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+            $ComplianceWatch->user_id = $request->input('user_id');
+            $ComplianceWatch->team_user_id = $request->input('team_user_id');
+            $ComplianceWatch->save();
 
             $Document = Document::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
             $Document->user_id = $request->input('user_id');
@@ -1211,6 +1235,101 @@ class adminController extends Controller
 
         return response()->json(['message' => 'Firm Background Reports updated successfully!']);
     }
+
+    function update_compliance_watch(Request $request)
+    {
+        // dd($request->all());
+
+        $ComplianceWatch = ComplianceWatch::findOrFail($request->ComplianceWatchID);
+        if (!$ComplianceWatch) {
+            return response()->json(['error' => 'This Reports not found.']);
+        }
+
+
+
+        $ComplianceWatch->Type_of_risk = $request->input('compliance_score') > 60 ? 'High Risk' : ($request->input('compliance_score') <= 60 && $request->input('compliance_score') > 30 ? 'Medium Risk' : ($request->input('compliance_score') <= 30 ? 'Low Risk' : ''));
+        $ComplianceWatch->score_analysis = $request->input('score_analysis');
+        for ($i = 1; $i <= 5; $i++) {
+            $ComplianceWatch->{"tax_fy$i"}  = $request->input("tax_fy$i");
+        }
+
+
+
+        for ($i = 1; $i <= 15; $i++) {
+            if ($request->hasFile("document_upload_file$i")) {
+                $file = $request->file("document_upload_file$i");
+                // Generate a unique filename
+                $filename = 'Document-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                // Move the file to the destination folder
+                $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                $ComplianceWatch->{"ComplianceWatch_upload_file$i"} = $filename;
+            }
+        }
+
+
+
+        $ComplianceWatch->status = 1;
+        $ComplianceWatch->save();
+        if($ComplianceWatch->id){
+            $License = License::where('compliance_watche_id', $ComplianceWatch->id)->firstOrFail();
+
+            for ($i = 1; $i <= 8; $i++) {
+
+                $License->{"license_name_$i"} = $request->input("license_name_$i");
+                $License->{"license_no_$i"} = $request->input("license_no_$i");
+                $License->{"date_of_issuance_$i"} = $request->input("date_of_issuance_$i");
+                $License->{"date_of_expiry_$i"} = $request->input("date_of_expiry_$i");
+            }
+
+            for ($i = 1; $i <= 8; $i++) {
+                if ($request->hasFile("licenses_upload_file_$i")) {
+                    $file = $request->file("licenses_upload_file_$i");
+                    // Generate a unique filename
+                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                    // Move the file to the destination folder
+                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                    $file->move(public_path('admin/assets/imgs/complianceWatchesFileAndImages/'), $filename);
+                    $License->{"licenses_upload_file_$i"} = $filename;
+                }
+            }
+
+            $License->save();
+
+            $Gst = Gst::where('compliance_watche_id', $ComplianceWatch->id)->firstOrFail();
+
+            for ($i = 1; $i <= 8; $i++) {
+
+                $Gst->{"gst_number_$i"} = $request->input("gst_number_$i");
+                $Gst->{"date_of_filing_$i"} = $request->input("date_of_filing_$i");
+            }
+            for ($i = 1; $i <= 8; $i++) {
+                if ($request->hasFile("gst_upload_file_$i")) {
+                    $file = $request->file("gst_upload_file_$i");
+                    // Generate a unique filename
+                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                    // Move the file to the destination folder
+                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                    $file->move(public_path('admin/assets/imgs/GstFileAndImages/'), $filename);
+                    $Gst->{"gst_upload_file_$i"} = $filename;
+                }
+            }
+
+            $Gst->save();
+
+
+            $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
+            $KeyObservation->status = 1;
+            $KeyObservation->save();
+
+            $ThirdParty = ThirdParty::where('id', $request->getThirdPartyForID)->firstOrFail();
+            $ThirdParty->status = 1;
+            $ThirdParty->save();
+        }
+
+
+        return response()->json(['message' => 'Compliance Watch  Reports updated successfully!']);
+    }
+
 
     function update_documents(Request $request)
     {
@@ -1291,7 +1410,9 @@ class adminController extends Controller
         $OnGroundVerification->score_analysis = $request->input('score_analysis');
         $OnGroundVerification->Type_of_risk = $request->input('on_ground_verification_score') > 60 ? 'High Risk' : ($request->input('on_ground_verification_score') <= 60 && $request->input('on_ground_verification_score') > 30 ? 'Medium Risk' : ($request->input('on_ground_verification_score') <= 30 ? 'Low Risk' : ''));
         $OnGroundVerification->address_details = $request->input('address_details');
-        $OnGroundVerification->address_visit_findings = $request->input('address_visit_findings');
+        for ($i = 1; $i <=12; $i++) {
+            $OnGroundVerification->{"address_visit_findings_$i"} = $request->input("address_visit_findings_$i");
+        }
         $OnGroundVerification->on_ground_verification_score = $request->input('on_ground_verification_score');
         $OnGroundVerification->status = 1;
         $OnGroundVerification->save();
@@ -1334,6 +1455,16 @@ class adminController extends Controller
         $CourtCheck->status = 1;
 
         $CourtCheck->save();
+        if($CourtCheck->id){
+        $RelatedPartyLegal = RelatedPartyLegal::where('court_check_id', $request->getThirdPartyForID)->firstOrFail();
+
+        for ($i = 1; $i <= 8; $i++) {
+            $RelatedPartyLegal->{"related_party_legal_name_$i"}  = $request->input("related_party_legal_name_$i");
+            $RelatedPartyLegal->{"related_party_legal_jurisdiction_$i"}  = $request->input("related_party_legal_jurisdiction_$i");
+            $RelatedPartyLegal->{"related_party_legal_record_$i"}  = $request->input("related_party_legal_record_$i");
+            $RelatedPartyLegal->{"related_party_legal_subject_matter_$i"}  = $request->input("related_party_legal_subject_matter_$i");
+        }
+        $RelatedPartyLegal->save();
         $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
         $KeyObservation->status = 1;
         $KeyObservation->save();
@@ -1341,6 +1472,9 @@ class adminController extends Controller
         $ThirdParty = ThirdParty::where('id', $request->getThirdPartyForID)->firstOrFail();
         $ThirdParty->status = 1;
         $ThirdParty->save();
+
+        }
+
         return response()->json(['message' => 'Court Check  Reports updated successfully!']);
     }
 
@@ -1761,9 +1895,7 @@ class adminController extends Controller
         }
 
 
-        for ($i = 1; $i <= 5; $i++) {
-            $TaxReurnCredit->{"tax_fy$i"}  = $request->input("tax_fy$i");
-        }
+
         for ($i = 1; $i <= 4; $i++) {
             $TaxReurnCredit->{"name_$i"}  = $request->input("name_$i");
             $TaxReurnCredit->{"credit_score_$i"}  = $request->input("credit_score_$i");
@@ -1797,22 +1929,55 @@ class adminController extends Controller
             return response()->json(['error' => 'This Reports not found.']);
         }
 
-        if ($request->hasFile('file_path_market_reputations')) {
-            $file = $request->file('file_path_market_reputations');
-            // Generate a unique filename
-            $filename = 'MarketReputations' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
-            // Move the file to the destination folder
-            $file->move(public_path('admin/assets/imgs/MarketReputations/'), $filename);
-
-
-            $MarketReputation->file_path_market_reputations = $filename;
-        }
+        // if ($request->hasFile('file_path_market_reputations')) {
+        //     $file = $request->file('file_path_market_reputations');
+        //     // Generate a unique filename
+        //     $filename = 'MarketReputations' . '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+        //     // Move the file to the destination folder
+        //     $file->move(public_path('admin/assets/imgs/MarketReputations/'), $filename);
+        //     $MarketReputation->file_path_market_reputations = $filename;
+        // }
 
 
 
         $MarketReputation->market_reputation_score  = $request->input('market_reputation_score');
         $MarketReputation->score_analysis = $request->input('score_analysis');
         $MarketReputation->Type_of_risk = $request->input('market_reputation_score') > 60 ? 'High Risk' : ($request->input('market_reputation_score') <= 60 && $request->input('market_reputation_score') > 30 ? 'Medium Risk' : ($request->input('market_reputation_score') <= 30 ? 'Low Risk' : ''));
+
+        for ($i = 1; $i <= 6; $i++) {
+            $MarketReputation->{"offLine_reference_name_$i"}  = $request->input("offLine_reference_name_$i");
+            $MarketReputation->{"offLine_contact_$i"}  = $request->input("offLine_contact_$i");
+            $MarketReputation->{"offLine_email_$i"}  = $request->input("offLine_email_$i");
+            $MarketReputation->{"offLine_company_name_$i"}  = $request->input("offLine_company_name_$i");
+
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            if ($request->hasFile("offLine_upload_file_$i")) {
+                $file = $request->file("offLine_upload_file_$i");
+                // Generate a unique filename
+                $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                // Move the file to the destination folder
+                // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                $file->move(public_path('admin/assets/imgs/MarketReputationOfflineImagesAndFile/'), $filename);
+                $MarketReputation->{"offLine_upload_file_$i"} = $filename;
+            }
+        }
+
+        for ($i = 1; $i <= 6; $i++) {
+            $MarketReputation->{"onLine_description_$i"}  = $request->input("onLine_description_$i");
+            $MarketReputation->{"onLine_source_$i"}  = $request->input("onLine_source_$i");
+        }
+        for ($i = 1; $i <= 6; $i++) {
+            if ($request->hasFile("onLine_upload_file_$i")) {
+                $file = $request->file("onLine_upload_file_$i");
+                // Generate a unique filename
+                $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                // Move the file to the destination folder
+                // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                $file->move(public_path('admin/assets/imgs/MarketReputationOnlineImagesAndFile/'), $filename);
+                $MarketReputation->{"onLine_upload_file_$i"} = $filename;
+            }
+        }
 
         $MarketReputation->save();
         $KeyObservation = KeyObservation::where('third_party_id', $request->getThirdPartyForID)->firstOrFail();
@@ -2003,7 +2168,7 @@ class adminController extends Controller
 
     public function firm_file_download($id,$index)
     {
-       
+
         $id = base64_decode($id);
         $License = License::find($id);
 
@@ -2024,7 +2189,7 @@ class adminController extends Controller
             abort(404);
         }
 
-        $filePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $fileName);
+        $filePath = public_path('admin/assets/imgs/complianceWatchesFileAndImages/' . $fileName);
 
         // Check if the file exists
         if (!file_exists($filePath)) {
@@ -2036,6 +2201,203 @@ class adminController extends Controller
 
         // Return the file for download
         return response()->download($filePath, $downloadFileName);
+    }
+    public function firm_file_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = License::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/complianceWatchesFileAndImages/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
+    public function firm_file_adhar_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = AdharPartnerDetail::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_aadhar_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmAdharImagesOrFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function firm_file_adhar_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = AdharPartnerDetail::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_aadhar_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmAdharImagesOrFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
+    public function gst_compliance_watch_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = Gst::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"gst_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/GstFileAndImages/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function gst_compliance_watch_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = Gst::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"gst_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/GstFileAndImages/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
     }
     public function onGround_file_download($id)
     {
@@ -2051,22 +2413,6 @@ class adminController extends Controller
 
         return response()->download($imagePath, $fileName);
     }
-    // public function document_file_download($id)
-    // {
-    //     $id = base64_decode($id);
-    //     $data['Document'] = Document::where('id', $id)->first();
-    //     // dd($data['Document']);
-
-    //     // Replace 'path/to/your/image.jpg' with the actual path to your image
-    //     $imagePath = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
-
-
-    //     // Specify the desired file name
-    //     $fileName = $data['Document']->document_upload;
-
-    //     return response()->download($imagePath, $fileName);
-    // }
-
     public function document_file_download($id, $index)
     {
         $id = base64_decode($id);
@@ -2102,23 +2448,6 @@ class adminController extends Controller
         // Return the file for download
         return response()->download($filePath, $downloadFileName);
     }
-
-
-    // public function document_file_view($id)
-    // {
-    //     $id = base64_decode($id);
-    //     $data['Document'] = Document::where('id', $id)->first();
-
-    //     // Replace 'path/to/your/image.jpg' with the actual path to your image
-    //     $imagePath  = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
-
-    //     // Specify the desired file name
-    //     $fileName = $data['Document']->document_upload;
-
-    //     // return response()->download($imagePath, $fileName);
-    //     return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
-    // }
-
     public function document_file_view($id, $index)
     {
         $id = base64_decode($id);
@@ -2159,52 +2488,6 @@ class adminController extends Controller
         // Return the file with appropriate headers
         return response()->file($filePath, $headers);
     }
-
-
-    public function firm_file_view($id, $index)
-    {
-      
-        $id = base64_decode($id);
-        $License = License::find($id);
-
-        if (!$License) {
-            abort(404);
-        }
-
-        $fileIndex = (int) $index;
-
-        // Ensure the index is valid
-        if ($fileIndex < 1 || $fileIndex > 8) {
-            abort(404);
-        }
-
-        $fileName = $License->{"licenses_upload_file_$fileIndex"};
-
-        if (!$fileName) {
-            abort(404);
-        }
-
-        $filePath = public_path('admin/assets/imgs/firmBacgroundImages/'  . $fileName);
-
-        // Check if the file exists
-        if (!file_exists($filePath)) {
-            abort(404);
-        }
-
-        // Get the MIME type of the file
-        $mimeType = mime_content_type($filePath);
-
-        // Set the response headers
-        $headers = [
-            'Content-Type' => $mimeType,
-        ];
-
-        // Return the file with appropriate headers
-        return response()->file($filePath, $headers);
-    }
-
-
-
     public function onGround_file_view($id)
     {
         $id = base64_decode($id);
@@ -2219,9 +2502,6 @@ class adminController extends Controller
         // Return a file response
         return response()->file($filePath, ['Content-Type' => mime_content_type($filePath)]);
     }
-
-
-
     public function final_Reprts_file_download($id)
     {
         $id = base64_decode($id);
@@ -2235,8 +2515,6 @@ class adminController extends Controller
 
         return response()->download($imagePath, $fileName);
     }
-
-
     public function generate_pdf_of_reports($id)
     {
         // dd($id);

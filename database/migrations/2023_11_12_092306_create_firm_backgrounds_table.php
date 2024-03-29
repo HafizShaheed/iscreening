@@ -37,44 +37,13 @@ class CreateFirmBackgroundsTable extends Migration
             $table->string('Type_of_risk')->nullable();
             $table->string('file')->nullable();
 
-            $this->addDirectorInfoFields($table, 1);
-            $this->addDirectorInfoFields($table, 2);
-            $this->addDirectorInfoFields($table, 3);
-            $this->addDirectorInfoFields($table, 4);
-            $this->addDirectorInfoFields($table, 5);
-            $this->addDirectorInfoFields($table, 6);
-            $this->addDirectorInfoFields($table, 7);
-            $this->addDirectorInfoFields($table, 8);
-            $this->addDirectorInfoFields($table, 9);
-            $this->addDirectorInfoFields($table, 10);
 
             $table->string('credit_score')->nullable();
             $table->integer('status')->default(0)->nullable();
             $table->timestamps();
         });
 
-        Schema::create('licenses', function (Blueprint $table) {
-            $table->id();
-            $table->integer('firm_background_id')->nullable();
-             // License Information - License 1
-             $this->addLicenseFields($table, 1);
-
-             // License Information - License 2
-             $this->addLicenseFields($table, 2);
-
-             // License Information - License 3
-             $this->addLicenseFields($table, 3);
-
-             $this->addLicenseFields($table, 4);
-             $this->addLicenseFields($table, 5);
-             $this->addLicenseFields($table, 6);
-             $this->addLicenseFields($table, 7);
-             $this->addLicenseFields($table, 8);
-             $table->integer('status')->default(0)->nullable();
-
-
-            $table->timestamps();
-        });
+      
 
         Schema::create('first_directors_firm', function (Blueprint $table) {
             $table->id();
@@ -143,6 +112,54 @@ class CreateFirmBackgroundsTable extends Migration
 
             $table->timestamps();
         });
+
+        Schema::create('related_parties_firms', function (Blueprint $table) {
+            $table->id();
+            $table->integer('firm_background_id')->nullable();
+
+            // direction 3
+            for ($i=1; $i <= 8 ; $i++) { 
+                # code...
+                $this->relatedPartyFields($table, $i);
+            }
+
+         
+            $table->integer('status')->default(0)->nullable();
+
+            $table->timestamps();
+        });
+        Schema::create('business_ownership_patterns_firms', function (Blueprint $table) {
+            $table->id();
+            $table->integer('firm_background_id')->nullable();
+
+            // direction 3
+            for ($i=1; $i <= 8 ; $i++) { 
+                # code...
+                $this->businessOwnershipPatternsFields($table, $i);
+            }
+
+         
+            $table->integer('status')->default(0)->nullable();
+
+            $table->timestamps();
+        });
+        Schema::create('adhar_partner_details', function (Blueprint $table) {
+            $table->id();
+            $table->integer('firm_background_id')->nullable();
+
+            // direction 3
+            for ($i=1; $i <= 8 ; $i++) { 
+                # code...
+            $this->addDirectorInfoADharFields($table, $i);
+
+            }
+
+         
+            $table->integer('status')->default(0)->nullable();
+
+            $table->timestamps();
+        });
+       
     }
 
     /**
@@ -155,21 +172,31 @@ class CreateFirmBackgroundsTable extends Migration
         Schema::dropIfExists('first_directors_firm');
         Schema::dropIfExists('second_directors_firm');
         Schema::dropIfExists('third_directors_firm');
-        Schema::dropIfExists('licenses');
+        Schema::dropIfExists('related_parties_firms');
         Schema::dropIfExists('firm_backgrounds');
+        Schema::dropIfExists('business_ownership_patterns_firms');
+        
     }
 
-    private function addLicenseFields(Blueprint $table, $index)
+    private function businessOwnershipPatternsFields(Blueprint $table, $index)
     {
-        $table->string("license_name_$index")->nullable();
-        $table->string("license_no_$index")->nullable();
-        $table->date("date_of_issuance_$index")->nullable();
-        $table->date("date_of_expiry_$index")->nullable();
-            $table->string("licenses_upload_file_$index")->nullable();
+        $table->string("business_patterns_name_of_the_shareholder_$index")->nullable();
+        $table->date("business_patterns_appointment_date_$index")->nullable();
+        $table->text("business_patterns_shareholding_in_the_entity_$index")->nullable();
+   
 
     }
 
-    private function addDirectorInfoFields(Blueprint $table, $index)
+  
+
+    private function relatedPartyFields(Blueprint $table, $index)
+    {
+        $table->string("Related_party_name_$index")->nullable();
+        $table->string("Related_party_relation_$index")->nullable();
+        $table->text("Related_party_comments_$index")->nullable();
+    }
+
+    private function addDirectorInfoADharFields(Blueprint $table, $index)
     {
         $table->string("name_$index")->nullable();
         $table->string("pan_$index")->nullable();
@@ -177,6 +204,8 @@ class CreateFirmBackgroundsTable extends Migration
         $table->date("date_of_appointment_$index")->nullable();
         $table->string("educational_background_$index")->nullable();
         $table->string("din_$index")->nullable();
+        $table->string("licenses_upload_file_aadhar_$index")->nullable();
+        
     }
 
     private function addDirector1Fields(Blueprint $table, $index)

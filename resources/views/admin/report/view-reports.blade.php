@@ -21,7 +21,7 @@
         <div class="card-body justify-content-center">
             <div class="d-flex flex-row flex-nowrap">
                 <a href="JavaScript:void(0)" id="click-Firm-Background"
-                    class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Firm Background</a>
+                    class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Business Overview</a>
                     <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
                     <a href="JavaScript:void(0)" id="click-On-Ground-Verification"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground
@@ -55,7 +55,7 @@
 
                 <div class="tab-content" id="myTabContent">
                 <div class="card-header flex-wrap border-0" id="default-tab">
-                    <h4 class="card-title">Firm Background<br>
+                    <h4 class="card-title">Business Overview</br>
                         <p style="color:rgb(0, 0, 0); font-size:16px;"> <b>Client Name: {{isset($Getclient->first_name) ? $Getclient->first_name : ''}}</b><br>
                             <b>Third-Party Name:{{isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name : ''}} </b>
                         </p>
@@ -70,17 +70,17 @@
                             <div class="default-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Basic-Information">Charges on the Entity</a>
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#Basic-Information">Basic Information</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#Registrations-Licenses">
                                             Registrations/Licenses</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#Director-Details"> Director/Proprietor/Partner Details</a>
+                                        <a class="nav-link" data-bs-toggle="tab" href="#Director-Details">  Management Details</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#Directorship-Check-Business-Conflict-Check"></i> Directorship Check Business Conflict Check</a>
+                                        <a class="nav-link" data-bs-toggle="tab" href="#Directorship-Check-Business-Conflict-Check"></i> Business Conflict Overview</a>
                                     </li>
 
                                 </ul>
@@ -620,11 +620,11 @@
                         <div class="default-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#Court-check-of-directors">Court check of directors</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#Court-check-of-directors">Management Legal Records</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="tab" href="#Court-Check-Of-Company">
-                                        Court Check Of Company</a>
+                                        Company Legal Records</a>
                                 </li>
 
 
@@ -771,7 +771,7 @@
                         <div class="default-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#ChargesontheEntityFinancialFindingsRatioAnalysis"> Charges on the Entity Financial Findings Ratio Analysis</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#ChargesontheEntityFinancialFindingsRatioAnalysis"> Business Information Financial Findings Ratio Analysis</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -1802,7 +1802,7 @@
                             <div class="default-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Market-Reputation">Market Reputation</a>
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#Market-Reputation">Reputation Watch </a>
                                     </li>
 
 

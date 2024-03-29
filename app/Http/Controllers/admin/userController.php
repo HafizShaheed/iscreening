@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\AdharPartnerDetail;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ThirdParty;
@@ -25,6 +26,11 @@ use App\Models\FinancialsRatioAnalysisFyThree;
 use App\Models\FinancialsRatioAnalysisFyOne;
 use App\Models\FinancialsRatioAnalysisFyTwo;
 use App\Models\BusinessIntelligence;
+use App\Models\BusinessOwnershipPatternsFirm;
+use App\Models\ComplianceWatch;
+use App\Models\Gst;
+use App\Models\RelatedPartiesFirm;
+use App\Models\RelatedPartyLegal;
 use App\Models\TaxReurnCredit;
 use App\Models\MarketReputation;
 use App\Models\KeyObservation;
@@ -94,17 +100,24 @@ class userController extends Controller
                         'third_party_id' => $thirdPartyID,
                         'created_at' => now(),
                     ]);
+                    $complianceWatch=ComplianceWatch::create([
+                        'user_id' =>$request->user_id,
+                        'third_party_id' => $thirdPartyID,
+                        'created_at' => now(),
+                    ]);
+                 
                 Document::create([
                         'user_id' =>$request->user_id,
                         'third_party_id' => $thirdPartyID,
                         'created_at' => now(),
                     ]);
+
                 OnGroundVerification::create([
                     'user_id' =>$request->user_id,
                     'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
                 ]);
-                CourtCheck::create([
+                $courtCheck=CourtCheck::create([
                     'user_id' =>$request->user_id,
                     'third_party_id' => $thirdPartyID,
                     'created_at' => now(),
@@ -135,13 +148,26 @@ class userController extends Controller
                     'created_at' => now(),
                 ]);
                 $firmbackgoundID = $firmbackgound->id;
+                $ComplianceWatchID = $complianceWatch->id;
+                $courtCheckID = $courtCheck->id;
                 $financialID = $financial->id;
-                if(isset($firmbackgoundID) && !is_null($firmbackgoundID)){
+                if(isset($ComplianceWatchID) && !is_null($ComplianceWatchID)){
                     License::create([
-                        'firm_background_id' =>$firmbackgoundID,
+                        'compliance_watche_id' =>$ComplianceWatchID,
                         'created_at' => now(),
                     ]);
-
+                    Gst::create([
+                        'compliance_watche_id' =>$ComplianceWatchID,
+                        'created_at' => now(),
+                    ]);
+                }
+                if(isset($courtCheckID) && !is_null($courtCheckID)){
+                    RelatedPartyLegal::create([
+                        'court_check_id' =>$courtCheckID,
+                        'created_at' => now(),
+                    ]);
+                }
+                if(isset($firmbackgoundID) && !is_null($firmbackgoundID)){
                     FirstDirectorsFirm::create([
                         'firm_background_id' =>$firmbackgoundID,
                         'created_at' => now(),
@@ -151,6 +177,18 @@ class userController extends Controller
                         'created_at' => now(),
                     ]);
                     ThirdDirectorsFirm::create([
+                        'firm_background_id' =>$firmbackgoundID,
+                        'created_at' => now(),
+                    ]);
+                    AdharPartnerDetail::create([
+                        'firm_background_id' =>$firmbackgoundID,
+                        'created_at' => now(),
+                    ]);
+                    BusinessOwnershipPatternsFirm::create([
+                        'firm_background_id' =>$firmbackgoundID,
+                        'created_at' => now(),
+                    ]);
+                    RelatedPartiesFirm::create([
                         'firm_background_id' =>$firmbackgoundID,
                         'created_at' => now(),
                     ]);

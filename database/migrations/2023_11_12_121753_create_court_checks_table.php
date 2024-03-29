@@ -31,6 +31,7 @@ class CreateCourtChecksTable extends Migration
             $this->companyCourtFields($table, 3);
             $this->companyCourtFields($table, 4);
             $this->companyCourtFields($table, 5);
+          
             $table->integer('legal_score')->nullable();
             $table->text('score_analysis')->nullable();
             $table->string('Type_of_risk')->nullable();
@@ -40,6 +41,18 @@ class CreateCourtChecksTable extends Migration
 
             $table->timestamps();
         });
+
+        Schema::create('related_party_legals', function (Blueprint $table) {
+            $table->id();
+            $table->integer('court_check_id')->nullable();
+            for ($i=1; $i <= 8; $i++) { 
+                # code...
+                $this->relatedPartyLegalFields($table, $i);
+            }
+            $table->timestamps();
+        });
+
+        
     }
 
     /**
@@ -50,6 +63,7 @@ class CreateCourtChecksTable extends Migration
     public function down()
     {
         Schema::dropIfExists('court_checks');
+        Schema::dropIfExists('related_party_legals');
     }
 
 
@@ -66,5 +80,13 @@ class CreateCourtChecksTable extends Migration
         $table->string("company_jurisdiction_$index")->nullable();
         $table->string("company_record_$index")->nullable();
         $table->string("company_subject_matter_$index")->nullable();
+    }
+
+    private function relatedPartyLegalFields(Blueprint $table, $index)
+    {
+        $table->string("related_party_legal_name_$index")->nullable();
+        $table->string("related_party_legal_jurisdiction_$index")->nullable();
+        $table->string("related_party_legal_record_$index")->nullable();
+        $table->string("related_party_legal_subject_matter_$index")->nullable();
     }
 }
