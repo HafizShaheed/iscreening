@@ -172,6 +172,12 @@ Route::get('/clear-cache', function() {
                 Route::get('/firm_file_adhar_view/{id}/{index}', 'adminController@firm_file_adhar_view')->name('admin.firm_file_adhar_view');
                 Route::get('/gst_compliance_watch_download/{id}/{index}', 'adminController@gst_compliance_watch_download')->name('admin.gst_compliance_watch_download');
                 Route::get('/gst_compliance_watch_view/{id}/{index}', 'adminController@gst_compliance_watch_view')->name('admin.gst_compliance_watch_view');
+
+                Route::get('/market_file_online_download/{id}/{index}', 'adminController@market_file_online_download')->name('admin.market_file_online_download');
+                Route::get('/market_file_online_view/{id}/{index}', 'adminController@market_file_online_view')->name('admin.market_file_online_view');
+                Route::get('/market_file_offline_download/{id}/{index}', 'adminController@market_file_offline_download')->name('admin.market_file_offline_download');
+                Route::get('/market_file_offline_view/{id}/{index}', 'adminController@market_file_offline_view')->name('admin.market_file_offline_view');
+
                 Route::get('/document_file_download/{id}/{index}', 'adminController@document_file_download')->name('admin.document_file_download');
                 Route::get('/document_file_view/{id}/{index}', 'adminController@document_file_view')->name('admin.document_file_view');
                 Route::get('/onGround_file_download/{id}', 'adminController@onGround_file_download')->name('admin.onGround_file_download');

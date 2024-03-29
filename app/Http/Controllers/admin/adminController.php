@@ -554,6 +554,14 @@ class adminController extends Controller
 
 
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
+        $data['RelatedPartyLegal'] = RelatedPartyLegal::where('court_check_id', $data['CourtCheck']->id)->first();
+
+        $getLegalCourtCheckScore = $data['CourtCheck']->legal_score ? : 0;
+        $getLegalCourtCheckOutOf = 100 -  $getLegalCourtCheckScore;
+        $data['finalValueLegalCourtCheck'] = [
+            $getLegalCourtCheckScore,
+            $getLegalCourtCheckOutOf,
+        ];
         $data['Financial'] = Financial::where('third_party_id', $id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id', $id)->first();
 
@@ -567,6 +575,12 @@ class adminController extends Controller
         // dd($finalValueforGraKeyObservation);
 
         $data['MarketReputation'] = MarketReputation::where('third_party_id', $id)->first();
+        $getMarketReputationScore = $data['MarketReputation']->market_reputation_score ?: 0;
+        $getMarketReputationOutOf = 100 -  $getMarketReputationScore;
+        $data['finalValueMarketReputation'] = [
+            $getMarketReputationScore,
+            $getMarketReputationOutOf,
+        ];
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id', $id)->first();
         $data['Document'] = Document::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
@@ -986,12 +1000,30 @@ class adminController extends Controller
         // ===================================================== financial ratio graph end ========================
         // dd(  $data['financialRatioGrapFYhLablesName'] );
         $data['FirmBackground'] = FirmBackground::where('third_party_id', $id)->first();
+        $getFirmBackgroundScore = $data['FirmBackground']->regulatory_score ? : 0;
+        $getFirmBackgroundOutOf = 100 -  $getFirmBackgroundScore;
+        $data['finalValueforFirmBackground'] = [
+            $getFirmBackgroundScore,
+            $getFirmBackgroundOutOf,
+        ];
+        $data['AdharPartnerDetail'] = AdharPartnerDetail::where('firm_background_id', $data['FirmBackground']->id)->first();
+
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
-        $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
+        // $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['RelatedPartiesFirm'] = RelatedPartiesFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['BusinessOwnershipPatternsFirm'] = BusinessOwnershipPatternsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
+
+        $data['ComplianceWatch'] = ComplianceWatch::where('third_party_id', $id)->first();
+        $getComplianWatchScore = $data['ComplianceWatch']->compliance_score ?: 0;
+        $getComplianceWatchOutOf = 100 -  $getComplianWatchScore;
+        $data['finalValueComplianceWatch'] = [
+            $getComplianWatchScore,
+            $getComplianceWatchOutOf,
+        ];
+        $data['License'] = License::where('compliance_watche_id', $data['ComplianceWatch']->id)->first();
+        $data['Gst'] = Gst::where('compliance_watche_id', $data['ComplianceWatch']->id)->first();
         $data['getThirdPartyForID'] = ThirdParty::where('id', $id)->first();
         $data['Getclient'] = User::where('id', $data['getThirdPartyForID']->user_id)->first();
         $data['GetTeaMuser'] = TeamUser::where('id', $data['FirmBackground']->team_user_id)->first();
@@ -1249,6 +1281,7 @@ class adminController extends Controller
 
         $ComplianceWatch->Type_of_risk = $request->input('compliance_score') > 60 ? 'High Risk' : ($request->input('compliance_score') <= 60 && $request->input('compliance_score') > 30 ? 'Medium Risk' : ($request->input('compliance_score') <= 30 ? 'Low Risk' : ''));
         $ComplianceWatch->score_analysis = $request->input('score_analysis');
+        $ComplianceWatch->compliance_score = $request->input('compliance_score');
         for ($i = 1; $i <= 5; $i++) {
             $ComplianceWatch->{"tax_fy$i"}  = $request->input("tax_fy$i");
         }
@@ -2322,6 +2355,161 @@ class adminController extends Controller
         return response()->file($filePath, $headers);
     }
 
+    public function market_file_offline_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"offLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOfflineImagesAndFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function market_file_offline_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"offLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOfflineImagesAndFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+    public function market_file_online_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"onLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOnlineImagesAndFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function market_file_online_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"onLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOnlineImagesAndFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
     public function gst_compliance_watch_download($id,$index)
     {
 
@@ -2543,7 +2731,7 @@ class adminController extends Controller
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
-        $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
+        // $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['getThirdPartyForID'] = ThirdParty::where('id', $id)->first();
         $data['Getclient'] = User::where('id', $data['getThirdPartyForID']->user_id)->first();
         $data['GetTeaMuser'] = TeamUser::where('id', $data['FirmBackground']->team_user_id)->first();

@@ -2767,13 +2767,189 @@
 			});
 		}
 	}
-    // var doughnutChart = function(){
-    //     if(jQuery('#doughnut_chart').length > 0 ){
-    //         //doughut chart
-    //         const doughnut_chart = document.getElementById("doughnut_chart").getContext('2d');
-    //         doughnut_chart.height = 100;
+    var doughnutChartfirmBackground = function(){
+		if(jQuery('#doughnut_chartfirmBackground').length > 0 ){
+			//doughut chart
+			const doughnut_chartfirmBackground = document.getElementById("doughnut_chartfirmBackground").getContext('2d');
+			doughnut_chartfirmBackground.height = 100;
+			new Chart(doughnut_chartfirmBackground, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueforFirmBackground,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
 
-    //         new Chart(doughnut_chart, {
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    var doughnutChartComplianceWatch = function(){
+		if(jQuery('#doughnut_chartComplianceWatch').length > 0 ){
+			//doughut chart
+			const doughnut_chartComplianceWatch = document.getElementById("doughnut_chartComplianceWatch").getContext('2d');
+			doughnut_chartComplianceWatch.height = 100;
+			new Chart(doughnut_chartComplianceWatch, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueComplianceWatch,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    var doughnutChartLegalCourtCheck = function(){
+		if(jQuery('#doughnut_chartLegalCourtCheck').length > 0 ){
+			//doughut chart
+			const doughnut_chartLegalCourtCheck = document.getElementById("doughnut_chartLegalCourtCheck").getContext('2d');
+			doughnut_chartLegalCourtCheck.height = 100;
+			new Chart(doughnut_chartLegalCourtCheck, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueLegalCourtCheck,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    var doughnutChartMarketReputation = function(){
+		if(jQuery('#doughnut_chartMarketReputation').length > 0 ){
+			//doughut chart
+			const doughnut_chartMarketReputation = document.getElementById("doughnut_chartMarketReputation").getContext('2d');
+			doughnut_chartMarketReputation.height = 100;
+			new Chart(doughnut_chartMarketReputation, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueMarketReputation,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    // var doughnutChartfirmBackground = function(){
+    //     if(jQuery('#doughnut_chartfirmBackground').length > 0 ){
+    //         //doughut chart
+    //         const doughnut_chartfirmBackground = document.getElementById("doughnut_chartfirmBackground").getContext('2d');
+    //         doughnut_chartfirmBackground.height = 100;
+
+    //         new Chart(doughnut_chartfirmBackground, {
     //             type: 'doughnut',
     //             data: {
     //                 weight: 5,
@@ -2937,6 +3113,10 @@
 			radarChart();
 			pieChart();
 			doughnutChart();
+            doughnutChartfirmBackground();
+            doughnutChartComplianceWatch();
+            doughnutChartLegalCourtCheck();
+            doughnutChartMarketReputation();
 			polarChart();
 		},
 
