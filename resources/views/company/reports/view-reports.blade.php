@@ -40,8 +40,7 @@
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Tax Return and
                     Credit</a>
                 <a href="JavaScript:void(0)" id="click-Market-Reputation"
-                    class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Market
-                    Reputation</a>
+                    class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Reputation Watch </a>
                 <a href="JavaScript:void(0)" id="click-Key-Observation"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Key
                     Observation</a>
@@ -2131,7 +2130,7 @@
 
                 <div class="tab-content" id="myTabContent">
                     <div class="card-header flex-wrap border-0" id="default-tab">
-                        <h4 class="card-title">Market Reputation<br>
+                        <h4 class="card-title">Reputation Watch <br>
 
                         </h4>
 
