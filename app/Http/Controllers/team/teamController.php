@@ -193,6 +193,18 @@ class teamController extends Controller
                     $AdharPartnerDetail->{"licenses_upload_file_aadhar_$i"} = $filename;
                 }
             }
+            for ($i = 1; $i <= 8; $i++) {
+                if ($request->hasFile("licenses_upload_file_pan_$i")) {
+                    $file = $request->file("licenses_upload_file_pan_$i");
+                    // Generate a unique filename
+                    $filename = 'firmBackground-'.$i. '-' . date('dmyHis') . rand() . '.' . $file->getClientOriginalExtension();
+                    // Move the file to the destination folder
+                    // $file->move(public_path('admin/assets/imgs/Document/'), $filename);
+                    $file->move(public_path('admin/assets/imgs/firmPanImagesOrFile/'), $filename);
+                    $AdharPartnerDetail->{"licenses_upload_file_pan_$i"} = $filename;
+                }
+            }
+
 
             $AdharPartnerDetail->save();
 

@@ -50,6 +50,8 @@ Route::get('/clear-cache', function() {
               Route::get('/firm_file_view/{id}/{index}', 'userController@firm_file_view')->name('company.firm_file_view');
               Route::get('/firm_file_adhar_download/{id}/{index}', 'userController@firm_file_adhar_download')->name('company.firm_file_adhar_download');
               Route::get('/firm_file_adhar_view/{id}/{index}', 'userController@firm_file_adhar_view')->name('company.firm_file_adhar_view');
+              Route::get('/firm_file_pan_download/{id}/{index}', 'userController@firm_file_pan_download')->name('company.firm_file_pan_download');
+              Route::get('/firm_file_pan_view/{id}/{index}', 'userController@firm_file_pan_view')->name('company.firm_file_pan_view');
               Route::get('/gst_compliance_watch_download/{id}/{index}', 'userController@gst_compliance_watch_download')->name('company.gst_compliance_watch_download');
               Route::get('/gst_compliance_watch_view/{id}/{index}', 'userController@gst_compliance_watch_view')->name('company.gst_compliance_watch_view');
 
@@ -182,6 +184,8 @@ Route::get('/clear-cache', function() {
                 Route::get('/firm_file_view/{id}/{index}', 'adminController@firm_file_view')->name('admin.firm_file_view');
                 Route::get('/firm_file_adhar_download/{id}/{index}', 'adminController@firm_file_adhar_download')->name('admin.firm_file_adhar_download');
                 Route::get('/firm_file_adhar_view/{id}/{index}', 'adminController@firm_file_adhar_view')->name('admin.firm_file_adhar_view');
+                Route::get('/firm_file_pan_download/{id}/{index}', 'adminController@firm_file_pan_download')->name('admin.firm_file_pan_download');
+                Route::get('/firm_file_pan_view/{id}/{index}', 'adminController@firm_file_pan_view')->name('admin.firm_file_pan_view');
                 Route::get('/gst_compliance_watch_download/{id}/{index}', 'adminController@gst_compliance_watch_download')->name('admin.gst_compliance_watch_download');
                 Route::get('/gst_compliance_watch_view/{id}/{index}', 'adminController@gst_compliance_watch_view')->name('admin.gst_compliance_watch_view');
 

@@ -205,6 +205,7 @@ class CreateFirmBackgroundsTable extends Migration
         $table->string("educational_background_$index")->nullable();
         $table->string("din_$index")->nullable();
         $table->string("licenses_upload_file_aadhar_$index")->nullable();
+        $table->string("licenses_upload_file_pan_$index")->nullable();
         
     }
 

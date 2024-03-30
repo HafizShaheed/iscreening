@@ -154,8 +154,8 @@
                                                   
                                                     
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
-                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
-                                                                <a href="{{ URL::to('/company/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_pan_'.$i}))
+                                                                <a href="{{ URL::to('/company/report/firm_file_pan_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
                                                             @else
                                                                 <!-- Handle if document doesn't exist -->
                                                                 <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
@@ -163,8 +163,8 @@
                                                         </td>
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
                                                             
-                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
-                                                                <a href="{{ URL::to('/company/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_pan_'.$i}))
+                                                                <a href="{{ URL::to('/company/report/firm_file_pan_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
                                                             @else
                                                                 <!-- Handle if document doesn't exist -->
                                                                 <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>

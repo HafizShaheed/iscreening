@@ -296,8 +296,8 @@
                                             <input type="text" class="form-control" id="pan_{{ $i }}" name="pan_{{ $i }}" value="{{ $AdharPartnerDetail->{'pan_' . $i} }}">
                                         </div>
                                         <div class="col mt-4">
-                                            <label for="licenses_upload_file_aadhar_{{ $i }}" class="form-label"></label>
-                                            <input  type="file" class="form-control" id="licenses_upload_file_aadhar_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_aadhar_{{ $i }}" value="{{$AdharPartnerDetail->{'licenses_upload_file_aadhar_'. $i} }}" placeholder="">
+                                            <label for="licenses_upload_file_pan_{{ $i }}" class="form-label"></label>
+                                            <input  type="file" class="form-control" id="licenses_upload_file_pan_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_pan_{{ $i }}" value="{{$AdharPartnerDetail->{'licenses_upload_file_pan_'. $i} }}" placeholder="">
                                         </div>
                                         <div class="col mt-3">
                                             <label for="aadhar_{{ $i }}" class="form-label">Aadhar</label>

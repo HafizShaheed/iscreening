@@ -1143,6 +1143,84 @@ class userController extends Controller
         return response()->file($filePath, $headers);
     }
 
+    public function firm_file_pan_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = AdharPartnerDetail::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_pan_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmpanImagesOrFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function firm_file_pan_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = AdharPartnerDetail::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_pan_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmPanImagesOrFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
     public function market_file_offline_download($id,$index)
     {
 
