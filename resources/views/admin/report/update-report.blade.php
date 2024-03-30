@@ -273,20 +273,12 @@
                                             <label for="name_{{ $i }}" class="form-label">Name ({{ $i }})</label>
                                             <input type="text" class="form-control" id="name_{{ $i }}" name="name_{{ $i }}" value="{{ $AdharPartnerDetail->{'name_' . $i} }}">
                                         </div>
-                                        <div class="col mt-3">
-                                            <label for="pan_{{ $i }}" class="form-label">PAN</label>
-                                            <input type="text" class="form-control" id="pan_{{ $i }}" name="pan_{{ $i }}" value="{{ $AdharPartnerDetail->{'pan_' . $i} }}">
-                                        </div>
-                                        <div class="col mt-3">
-                                            <label for="aadhar_{{ $i }}" class="form-label">Aadhar</label>
-                                            <input type="text" class="form-control" id="aadhar_{{ $i }}" name="aadhar_{{ $i }}" value="{{ $AdharPartnerDetail->{'aadhar_' . $i} }}">
-                                        </div>
+                                    
                                         <div class="col mt-3">
                                             <label for="date_of_appointment_{{ $i }}" class="form-label">Date of Appointment</label>
                                             <input type="date" class="form-control" id="date_of_appointment_{{ $i }}" name="date_of_appointment_{{ $i }}" value="{{ $AdharPartnerDetail->{'date_of_appointment_' . $i} }}">
                                         </div>
-                                        </div>
-                                        <div class="row">
+
 
                                         <div class="col mt-3">
                                             <label for="educational_background_{{ $i }}" class="form-label">Educational Background</label>
@@ -295,6 +287,21 @@
                                         <div class="col mt-3">
                                             <label for="din_{{ $i }}" class="form-label">DIN</label>
                                             <input type="text" class="form-control" id="din_{{ $i }}" name="din_{{ $i }}" value="{{ $AdharPartnerDetail->{'din_' . $i} }}">
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="row">
+                                    <div class="col mt-3">
+                                            <label for="pan_{{ $i }}" class="form-label">PAN</label>
+                                            <input type="text" class="form-control" id="pan_{{ $i }}" name="pan_{{ $i }}" value="{{ $AdharPartnerDetail->{'pan_' . $i} }}">
+                                        </div>
+                                        <div class="col mt-4">
+                                            <label for="licenses_upload_file_aadhar_{{ $i }}" class="form-label"></label>
+                                            <input  type="file" class="form-control" id="licenses_upload_file_aadhar_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_aadhar_{{ $i }}" value="{{$AdharPartnerDetail->{'licenses_upload_file_aadhar_'. $i} }}" placeholder="">
+                                        </div>
+                                        <div class="col mt-3">
+                                            <label for="aadhar_{{ $i }}" class="form-label">Aadhar</label>
+                                            <input type="text" class="form-control" id="aadhar_{{ $i }}" name="aadhar_{{ $i }}" value="{{ $AdharPartnerDetail->{'aadhar_' . $i} }}">
                                         </div>
                                         <div class="col mt-4">
                                             <label for="licenses_upload_file_aadhar_{{ $i }}" class="form-label"></label>

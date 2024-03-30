@@ -29,16 +29,14 @@
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground
                     Verification</a>
                 <a href="JavaScript:void(0)" id="click-Court-Checks"
-                    class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Court
-                    Checks</a>
+                    class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Legal Records</a>
                 <a href="JavaScript:void(0)" id="click-Financials"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Financials</a>
                 <a href="JavaScript:void(0)" id="click-Business-Intelligence"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Business
                     Intelligence</a>
                 <a href="JavaScript:void(0)" id="click-Tax-Return-and-Credit"
-                    class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Tax Return and
-                    Credit</a>
+                    class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Credit</a>
                 <a href="JavaScript:void(0)" id="click-Market-Reputation"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Reputation Watch </a>
                 <a href="JavaScript:void(0)" id="click-Key-Observation"
@@ -135,59 +133,90 @@
                                                  <!-- director 2 -->
 
 
-                                            @for($i = 1; $i <= 10; $i++)
+                                                 @for($i = 1; $i <= 10; $i++)
                                             @if(!empty($AdharPartnerDetail->{'name_'.$i}) || isset($AdharPartnerDetail->{'name_'.$i}))
-                                            <tr>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                <tr>
+                                                    <th style="background-color: #5a595a; color: white;" 
                                                         class="col-md-4"> Name ({{ $i }})</th>
-                                                    <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8"> {{$AdharPartnerDetail->{'name_'.$i} }}</th>
+
+                                                    <th style="background-color: #5a595a; color: white;"  
+                                                        class="col-md-4"> {{$AdharPartnerDetail->{'name_'.$i} }}</th>
+                                                        <th style="background-color: #5a595a; color: white; text-align: center;" colspan="2"
+                                                        class="col-md-4"></th>
+                                                      
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">PAN</th>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8"> {{$AdharPartnerDetail->{'pan_'.$i} }}</td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4"> 
+                                                    {{$AdharPartnerDetail->{'pan_'.$i} }}</td>
+                                                   
+                                                  
+                                                    
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
+                                                                <a href="{{ URL::to('/company/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                            @else
+                                                                <!-- Handle if document doesn't exist -->
+                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                            @endif
+                                                        </td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+                                                            
+                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
+                                                                <a href="{{ URL::to('/company/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                            @else
+                                                                <!-- Handle if document doesn't exist -->
+                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                            @endif
+
+                                                        </td>
+                                                
+                                                   
+                                                    
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">AADHAR</th>
+                                                        class="col-md-3">AADHAR</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8"> {{$AdharPartnerDetail->{'aadhar_'.$i} }}</td>
+                                                        class="col-md-4"> {{$AdharPartnerDetail->{'aadhar_'.$i} }}</td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
+                                                                <a href="{{ URL::to('/company/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                            @else
+                                                                <!-- Handle if document doesn't exist -->
+                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                            @endif
+                                                        </td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+                                                            
+                                                            @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
+                                                                <a href="{{ URL::to('/company/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                            @else
+                                                                <!-- Handle if document doesn't exist -->
+                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                            @endif
+
+                                                        </td>
+                                                      
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Educational Background</th>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8"> {{$AdharPartnerDetail->{'educational_background_'.$i} }}
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"
+                                                        class="col-md-4"> {{$AdharPartnerDetail->{'educational_background_'.$i} }}
                                                     </td>
+                                                    
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                     class="col-md-4">DIN</th>
-                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                    class="col-md-8"> {{$AdharPartnerDetail->{'din_'.$i} }}
-                                                </td>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"
+                                                        class="col-md-4"> {{$AdharPartnerDetail->{'din_'.$i} }}
+                                                    </td>
+                                                    
                                                 </tr>
-                                                <tr>
-                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                                                        @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
-                                                            <a href="{{ URL::to('/company/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
-                                                        @else
-                                                            <!-- Handle if document doesn't exist -->
-                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
-                                                        @endif
-                                                        </td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                                                        @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
-                                                            <a href="{{ URL::to('/company/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
-                                                        @else
-                                                            <!-- Handle if document doesn't exist -->
-                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
-                                                        @endif
-
-                                                </td>
-                                            </tr>
+                                              
                                             @endif
                                             @endfor
                                                 <!-- <tr>
@@ -1990,7 +2019,7 @@
 
                 <div class="tab-content" id="myTabContent">
                     <div class="card-header flex-wrap border-0" id="default-tab">
-                        <h4 class="card-title">Tax Return & Credit<br>
+                        <h4 class="card-title">Credit History<br>
 
                         </h4>
 
