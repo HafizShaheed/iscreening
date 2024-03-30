@@ -105,10 +105,10 @@
         <div class="card-body justify-content-center">
             <div class="d-flex flex-row flex-nowrap">
                 <a href="JavaScript:void(0)" id="click-Firm-Background" class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Business Overview</a>
+                <a href="JavaScript:void(0)" id="click-Compliance-Watch" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Compliance Watch</a>
                 <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
                 <a href="JavaScript:void(0)" id="click-On-Ground-Verification" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground Verification</a>
-                <a href="JavaScript:void(0)" id="click-Court-Checks" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Court
-                    Checks</a>
+                <a href="JavaScript:void(0)" id="click-Court-Checks" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Legal Records</a>
                 <a href="JavaScript:void(0)" id="click-Financials" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Financials</a>
                 <a href="JavaScript:void(0)" id="click-Business-Intelligence" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Business Intelligence</a>
                 <a href="JavaScript:void(0)" id="click-Tax-Return-and-Credit" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Tax Return and Credit</a>
@@ -136,18 +136,14 @@
                         <span style="color:darkgray; font-size:12px;"> Basic Information </span>
                     </h4>
                     <div class="row">
+                        <div class="col-xl-4 mb-3">
+                            <label class="form-label">Client Name : {{  isset($getClientID->first_name) ? $getClientID->first_name  : ''  }}<span class="text-danger">*</span></label>
 
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label class="form-label">Third Party Name: {{  isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name  : '' }}<span class="text-danger">*</span></label>
 
-
-
-                    <div class="col-xl-4 mb-3">
-                        <label class="form-label">Client Name : {{  isset($getClientID->first_name) ? $getClientID->first_name  : ''  }}<span class="text-danger">*</span></label>
-
-                    </div>
-                    <div class="col-xl-4 mb-3">
-                        <label class="form-label">Third Party Name: {{  isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name  : '' }}<span class="text-danger">*</span></label>
-
-                    </div>
+                        </div>
                     </div>
 
                     <input type="hidden" name="FirmBackgroundID" value="{{$FirmBackground->id}}" id="inputFirmBackgroundID" class="form-control" value="">
@@ -212,133 +208,98 @@
                     </div>
                 </div>
                 <!-- firm background 1 step end -->
-                <!-- firm background 2 step start ========================-->
-                <div class="firm-step" id="firm-step-2">
-                    <h4 class="card-title">Business Overview</br>
-                        <span style="color:darkgray; font-size:12px;">Registrations/Compliance </span>
-                    </h4>
-                    <div class="row">
-                        @for ($i=1; $i <=8; $i++)
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_name_{{ $i }}" class="form-label">License Name</label>
-                            <input type="text" class="form-control" id="license_name_{{ $i }}" name="license_name_{{ $i }}" value="{{ $License->{'license_name_' . $i} }}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="license_no_{{ $i }}" class="form-label">License No</label>
-                            <input type="text" class="form-control" id="license_no_{{ $i }}" name="license_no_{{ $i }}" value="{{$License->{'license_no_'. $i } }}" placeholder="">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
-                            <input type="date" class="form-control" id="date_of_issuance_{{ $i }}" name="date_of_issuance_{{ $i }}" value="{{$License->{'date_of_issuance_'.$i } }}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
-                            <input type="date" class="form-control" id="date_of_expiry_{{ $i }}" name="date_of_expiry_{{ $i }}" value="{{$License->{'date_of_expiry_'. $i} }}">
-                        </div>
-                        <div class="col-xl-2 mt-2">
-                            <label for="licenses_upload_file_{{ $i }}" class="form-label"></label>
-                            <input  type="file" class="form-control" id="licenses_upload_file_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_{{ $i }}" value="{{$Document->{'licenses_upload_file_'. $i} }}" placeholder="">
-                        </div>
+                    <!-- firm background 2 step start ========================-->
+                    <div class="firm-step" id="firm-step-2">
+                        <h4 class="card-title">Business Overview</br>
+                            <span style="color:darkgray; font-size:12px;">Management Details </span>
+                        </h4>
+                        <div class="row">
+                            @for ($i = 1; $i <= 8; $i++)
+                                    <div class="row">
+                                        <div class="col mt-3">
+                                            <label for="name_{{ $i }}" class="form-label">Name ({{ $i }})</label>
+                                            <input type="text" class="form-control" id="name_{{ $i }}" name="name_{{ $i }}" value="{{ $AdharPartnerDetail->{'name_' . $i} }}">
+                                        </div>
+                                        <div class="col mt-3">
+                                            <label for="pan_{{ $i }}" class="form-label">PAN</label>
+                                            <input type="text" class="form-control" id="pan_{{ $i }}" name="pan_{{ $i }}" value="{{ $AdharPartnerDetail->{'pan_' . $i} }}">
+                                        </div>
+                                        <div class="col mt-3">
+                                            <label for="aadhar_{{ $i }}" class="form-label">Aadhar</label>
+                                            <input type="text" class="form-control" id="aadhar_{{ $i }}" name="aadhar_{{ $i }}" value="{{ $AdharPartnerDetail->{'aadhar_' . $i} }}">
+                                        </div>
+                                        <div class="col mt-3">
+                                            <label for="date_of_appointment_{{ $i }}" class="form-label">Date of Appointment</label>
+                                            <input type="date" class="form-control" id="date_of_appointment_{{ $i }}" name="date_of_appointment_{{ $i }}" value="{{ $AdharPartnerDetail->{'date_of_appointment_' . $i} }}">
+                                        </div>
+                                        </div>
+                                        <div class="row">
 
-                        @endfor
-                    </div>
-                    <!-- Repeat the above code block for additional rows -->
+                                        <div class="col mt-3">
+                                            <label for="educational_background_{{ $i }}" class="form-label">Educational Background</label>
+                                            <input type="text" class="form-control" id="educational_background_{{ $i }}" name="educational_background_{{ $i }}" value="{{ $AdharPartnerDetail->{'educational_background_' . $i} }}">
+                                        </div>
+                                        <div class="col mt-3">
+                                            <label for="din_{{ $i }}" class="form-label">DIN</label>
+                                            <input type="text" class="form-control" id="din_{{ $i }}" name="din_{{ $i }}" value="{{ $AdharPartnerDetail->{'din_' . $i} }}">
+                                        </div>
+                                        <div class="col mt-4">
+                                            <label for="licenses_upload_file_aadhar_{{ $i }}" class="form-label"></label>
+                                            <input  type="file" class="form-control" id="licenses_upload_file_aadhar_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_aadhar_{{ $i }}" value="{{$AdharPartnerDetail->{'licenses_upload_file_aadhar_'. $i} }}" placeholder="">
+                                        </div>
+                                    </div>
+                                @endfor
+                        </div>
+                        <!-- Repeat the above code block for additional rows -->
 
-                    <!-- OFAC Check -->
-                    <div class="row">
-                        <div class="col-xl-3 mb-3">
-                            <label for="ofac_check" class="form-label">OFAC Check</label>
-                            <input type="text" class="form-control" id="ofac_check" name="ofac_check" value="{{$FirmBackground->ofac_check}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="regulatory_score" class="form-label">Regulatory Score </label>
-                            <input type="number" step="any" class="form-control" id="regulatory_score" name="regulatory_score" value="{{$FirmBackground->regulatory_score}}" placeholder="">
-                        </div>
-                        <div class="col-xl-3 mb-3">
-                            <label for="score_analysis"  class="form-label">Score Analysis </label>
-                            <input type="text" class="form-control" id="score_analysis" name="score_analysis" value="{{$FirmBackground->score_analysis}}" min="1" placeholder="">
-                        </div>
-                        <!-- <div class="col-xl-3 mb-3">
-                            <label for="file" class="form-label"></label>
-                            <div class="dz-default dlab-message upload-img mb-3">
-                                <div class="fallback">
-                                    <input name="file" type="file" class="form-control" id="file" accept=".pdf, image/*" placeholder="">
-
-                                </div>
+                        <!-- OFAC Check -->
+                        <div class="row">
+                            <div class="col-xl-3 mb-3">
+                                <label for="ofac_check" class="form-label">OFAC Check</label>
+                                <input type="text" class="form-control" id="ofac_check" name="ofac_check" value="{{$FirmBackground->ofac_check}}" placeholder="">
                             </div>
-                        </div> -->
-                    </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="regulatory_score" class="form-label">Regulatory Score </label>
+                                <input type="number" step="any" class="form-control" id="regulatory_score" name="regulatory_score" value="{{$FirmBackground->regulatory_score}}" placeholder="">
+                            </div>
+                            <div class="col-xl-3 mb-3">
+                                <label for="score_analysis"  class="form-label">Score Analysis </label>
+                                <input type="text" class="form-control" id="score_analysis" name="score_analysis" value="{{$FirmBackground->score_analysis}}" min="1" placeholder="">
+                            </div>
+                            <!-- <div class="col-xl-3 mb-3">
+                                <label for="file" class="form-label"></label>
+                                <div class="dz-default dlab-message upload-img mb-3">
+                                    <div class="fallback">
+                                        <input name="file" type="file" class="form-control" id="file" accept=".pdf, image/*" placeholder="">
 
-                    <!-- Navigation buttons -->
-
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-                            <button type="button" class="btn btn report-tab-unactive" id="firm-prev-2">Previous</button>
+                                    </div>
+                                </div>
+                            </div> -->
                         </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
 
-                            <button type="button" class="btn btn report-tab-active" id="firm-next-2">Next</button>
+                        <!-- Navigation buttons -->
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+                                <button type="button" class="btn btn report-tab-unactive" id="firm-prev-2">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="firm-next-2">Next</button>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-                <!-- firm background 2 step end ========================-->
+                    </div>
+                    <!-- firm background 2 step end ========================-->
                 <!-- firm background 3 step start ========================-->
                 <div class="firm-step" id="firm-step-3">
                     <h4 class="card-title">Business Overview</br>
-                        <span style="color:darkgray; font-size:12px;"> Management Details </span>
+                        <span style="color:darkgray; font-size:12px;"> Business Conflict Overview </span>
                     </h4>
                  <!-- Copy 1 -->
-                 @for ($i = 1; $i <= 10; $i++)
-                    <div class="row">
-                        <div class="col mt-4">
-                            <label for="name_{{ $i }}" class="form-label">Name ({{ $i }})</label>
-                            <input type="text" class="form-control" id="name_{{ $i }}" name="name_{{ $i }}" value="{{ $FirmBackground->{'name_' . $i} }}">
-                        </div>
-                        <div class="col mt-4">
-                            <label for="pan_{{ $i }}" class="form-label">PAN</label>
-                            <input type="text" class="form-control" id="pan_{{ $i }}" name="pan_{{ $i }}" value="{{ $FirmBackground->{'pan_' . $i} }}">
-                        </div>
-                        <div class="col mt-4">
-                            <label for="aadhar_{{ $i }}" class="form-label">Aadhar</label>
-                            <input type="text" class="form-control" id="aadhar_{{ $i }}" name="aadhar_{{ $i }}" value="{{ $FirmBackground->{'aadhar_' . $i} }}">
-                        </div>
-                        <div class="col mt-4">
-                            <label for="date_of_appointment_{{ $i }}" class="form-label">Date of Appointment</label>
-                            <input type="date" class="form-control" id="date_of_appointment_{{ $i }}" name="date_of_appointment_{{ $i }}" value="{{ $FirmBackground->{'date_of_appointment_' . $i} }}">
-                        </div>
-                        <div class="col mt-4">
-                            <label for="educational_background_{{ $i }}" class="form-label">Educational Background</label>
-                            <input type="text" class="form-control" id="educational_background_{{ $i }}" name="educational_background_{{ $i }}" value="{{ $FirmBackground->{'educational_background_' . $i} }}">
-                        </div>
-                        <div class="col mt-4">
-                            <label for="din_{{ $i }}" class="form-label">DIN</label>
-                            <input type="text" class="form-control" id="din_{{ $i }}" name="din_{{ $i }}" value="{{ $FirmBackground->{'din_' . $i} }}">
-                        </div>
-                    </div>
-                @endfor
+                 <div class="row">
 
-                    <div class="row">
-                        <div class="col-xl-6 d-flex justify-content-start">
-
-                            <button type="button" class="btn btn report-tab-unactive" id="firm-prev-3">Previous</button>
-                        </div>
-                        <div class="col-xl-6 d-flex justify-content-end">
-
-                            <button type="button" class="btn btn report-tab-active" id="firm-next-3">Next</button>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- firm background 3 step end ========================-->
-                <!-- firm background 4 step start ========================-->
-                <div class="firm-step" id="firm-step-4">
-                    <h4 class="card-title">Business Overview</br>
-                        <span style="color:darkgray; font-size:12px;">Directorship Check</span>
-                    </h4>
-                    <div class="row">
-                        <!-- =========== Director1 ============ -->
-                        @for ($i=1; $i <= 8; $i++)
+                 @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
                             <label for="director_name_1_{{ $i }}" class="form-label">Director 1</label>
                             <input type="text" class="form-control" id="director_name_1_{{ $i }}" name="director_name_1_{{ $i }}" value="{{$FirstDirectorsFirm->{'director_name_1_'. $i } }}">
@@ -372,11 +333,13 @@
                         </div>
 
                         @endfor
+                        </div>
 
 
                         <!-- =========== Director1 ============ -->
 
                         <!-- =========== Director2 ============ -->
+                        <div class="row">
                         @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
                             <label for="director_name_2_{{ $i }}" class="form-label">Director 2</label>
@@ -411,12 +374,12 @@
                         </div>
 
                         @endfor
-
+                        </div>
 
 
                         <!-- =========== Director2 ============ -->
                         <!-- =========== Director3 ============ -->
-
+                        <div class="row">
                         @for ($i=1; $i <= 8; $i++)
                         <div class="col-xl-4 mb-3">
                             <label for="director_name_3_{{ $i }}" class="form-label">Director 3</label>
@@ -451,13 +414,88 @@
                         </div>
 
                         @endfor
+                        </div>
+                    <div class="row">
+                        <div class="col-xl-6 d-flex justify-content-start">
+
+                            <button type="button" class="btn btn report-tab-unactive" id="firm-prev-3">Previous</button>
+                        </div>
+                        <div class="col-xl-6 d-flex justify-content-end">
+
+                            <button type="button" class="btn btn report-tab-active" id="firm-next-3">Next</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- firm background 3 step end ========================-->
+                <!-- firm background 4 step start ========================-->
+                <div class="firm-step" id="firm-step-4">
+                    <h4 class="card-title">Business Overview</br>
+                        <span style="color:darkgray; font-size:12px;">Related Parties</span>
+                    </h4>
+                    <div class="row">
+                        <!-- =========== related party ============ -->
+                        @for ($i=1; $i <= 8; $i++)
+                        <div class="col-xl-4 mb-3">
+                            <label for="Related_party_name_{{ $i }}" class="form-label"> Name</label>
+                            <input type="text" class="form-control" id="Related_party_name_{{ $i }}" name="Related_party_name_{{ $i }}" value="{{$RelatedPartiesFirm->{'Related_party_name_'. $i } }}">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="Related_party_relation_{{ $i }}" class="form-label">Relation</label>
+                            <input type="text" class="form-control" id="Related_party_relation_{{ $i }}" name="Related_party_relation_{{ $i }}" value="{{$RelatedPartiesFirm->{'Related_party_relation_'. $i } }}">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="Related_party_comments_{{ $i }}" class="form-label">Comments</label>
+                            <input type="text" class="form-control" id="Related_party_comments_{{ $i }}" name="Related_party_comments_{{ $i }}" value="{{$RelatedPartiesFirm->{'Related_party_comments_'. $i } }}">
+                        </div>
+
+
+                        @endfor
+
+
+                        <!-- =========== related party ============ -->
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+
+                                <button type="button" class="btn btn report-tab-unactive" id="firm-prev-4">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="button" class="btn btn report-tab-active" id="firm-next-4">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- firm background 4 step end ========================-->
+                <div class="firm-step" id="firm-step-5">
+                    <h4 class="card-title">Business Overview</br>
+                        <span style="color:darkgray; font-size:12px;">Business Ownership Pattern</span>
+                    </h4>
+                    <div class="row">
+                        <!-- =========== Director1 ============ -->
+                        @for ($i=1; $i <= 6; $i++)
+                        <div class="col-xl-4 mb-3">
+                            <label for="business_patterns_name_of_the_shareholder_{{ $i }}" class="form-label">Name Of The Shareholder</label>
+                            <input type="text" class="form-control" id="business_patterns_name_of_the_shareholder_{{ $i }}" name="business_patterns_name_of_the_shareholder_{{ $i }}" value="{{$BusinessOwnershipPatternsFirm->{'business_patterns_name_of_the_shareholder_'. $i } }}">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="business_patterns_appointment_date_{{ $i }}" class="form-label">Appointment Date</label>
+                            <input type="date" class="form-control" id="business_patterns_appointment_date_{{ $i }}" name="business_patterns_appointment_date_{{ $i }}" value="{{$BusinessOwnershipPatternsFirm->{'business_patterns_appointment_date_'. $i } }}">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="business_patterns_shareholding_in_the_entity_{{ $i }}" class="form-label">Shareholding In The Entity</label>
+                            <input type="text" class="form-control" id="business_patterns_shareholding_in_the_entity_{{ $i }}" name="business_patterns_shareholding_in_the_entity_{{ $i }}" value="{{$BusinessOwnershipPatternsFirm->{'business_patterns_shareholding_in_the_entity_'. $i } }}">
+                        </div>
+
+
+                        @endfor
 
 
                         <!-- =========== Director3 ============ -->
                         <div class="row">
                             <div class="col-xl-6 d-flex justify-content-start">
 
-                                <button type="button" class="btn btn report-tab-unactive" id="firm-prev-4">Previous</button>
+                                <button type="button" class="btn btn report-tab-unactive" id="firm-prev-5">Previous</button>
                             </div>
                             <div class="col-xl-6 d-flex justify-content-end">
 
@@ -466,14 +504,158 @@
                         </div>
                     </div>
                 </div>
-                <!-- firm background 4 step end ========================-->
-
 
             </form>
         </div>
     </div>
 </div>
 <!-- Firm Background form end -->
+
+<!-- Compliance Watch form start -->
+
+<div class="row" id="Compliance-Watch"  class="Firm-Background-class-form-submit"  >
+    <div class="card">
+        <div class="card-body justify-content-start">
+            <form id="Compliance-Watch-step-form" enctype="multipart/form-data">
+
+            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+
+                <!-- firm background 1 step end -->
+                <div class="Compliance-step" id="Compliance-step-1">
+
+                     <h4 class="card-title">Compliance Watch</br>
+                        <span style="color:darkgray; font-size:12px;">Registrations/Compliance </span>
+                    </h4>
+                    <div class="row">
+                        @for ($i=1; $i <=8; $i++)
+                        <div class="col-xl-3 mb-3">
+                            <label for="license_name_{{ $i }}" class="form-label">License Name</label>
+                            <input type="text" class="form-control" id="license_name_{{ $i }}" name="license_name_{{ $i }}" value="{{ $License->{'license_name_' . $i} }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="license_no_{{ $i }}" class="form-label">License No</label>
+                            <input type="text" class="form-control" id="license_no_{{ $i }}" name="license_no_{{ $i }}" value="{{$License->{'license_no_'. $i } }}" placeholder="">
+                        </div>
+                        <div class="col-xl-2 mb-3">
+                            <label for="date_of_issuance_{{ $i }}" class="form-label">Date of Issuance</label>
+                            <input type="date" class="form-control" id="date_of_issuance_{{ $i }}" name="date_of_issuance_{{ $i }}" value="{{$License->{'date_of_issuance_'.$i } }}">
+                        </div>
+                        <div class="col-xl-2 mb-3">
+                            <label for="date_of_expiry_{{ $i }}" class="form-label">Date of Expiry</label>
+                            <input type="date" class="form-control" id="date_of_expiry_{{ $i }}" name="date_of_expiry_{{ $i }}" value="{{$License->{'date_of_expiry_'. $i} }}">
+                        </div>
+                        <div class="col-xl-2 mt-2">
+                            <label for="licenses_upload_file_{{ $i }}" class="form-label"></label>
+                            <input  type="file" class="form-control" id="licenses_upload_file_{{ $i }}" accept=".pdf, image/*" name="licenses_upload_file_{{ $i }}" value="{{$Document->{'licenses_upload_file_'. $i} }}" placeholder="">
+                        </div>
+
+                        @endfor
+                    </div>
+
+                    <input type="hidden" name="ComplianceWatchID" value="{{$ComplianceWatch->id}}" id="inputComplianceWatchID" class="form-control" value="">
+
+                    <div class="row">
+                        <div class="col-xl-6 d-flex justify-content-start">
+                        </div>
+                        <div class="col-xl-6 d-flex justify-content-end">
+
+                            <button type="button" class="btn btn report-tab-active" id="Compliance-next-2">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- firm background 1 step end -->
+                <!-- firm background 2 step start ========================-->
+                <div class="Compliance-step" id="Compliance-step-2">
+
+                    <!-- Repeat the above code block for additional rows -->
+                    <h4 class="card-title">Compliance Watch</br>
+                        <span style="color:darkgray; font-size:12px;">Goods and Services Tax </span>
+                    </h4>
+                    <div class="row">
+                        @for ($i=1; $i <=8; $i++)
+                        <div class="col-xl-4 mb-3">
+                            <label for="gst_number_{{ $i }}" class="form-label">GST No</label>
+                            <input type="text" class="form-control" id="gst_number_{{ $i }}" name="gst_number_{{ $i }}" value="{{ $Gst->{'gst_number_' . $i} }}" placeholder="">
+                        </div>
+                        <div class="col-xl-4 mb-3">
+                            <label for="date_of_filing_{{ $i }}" class="form-label">Date Of Filing</label>
+                            <input type="date" class="form-control" id="date_of_filing_{{ $i }}" name="date_of_filing_{{ $i }}" value="{{$Gst->{'date_of_filing_'.$i } }}">
+                        </div>
+                        <div class="col-xl-4 mt-2">
+                            <label for="gst_upload_file_{{ $i }}" class="form-label"></label>
+                            <input  type="file" class="form-control" id="gst_upload_file_{{ $i }}" accept=".pdf, image/*" name="gst_upload_file_{{ $i }}" value="{{$Gst->{'gst_upload_file_'. $i} }}" placeholder="">
+                        </div>
+
+                        @endfor
+                    </div>
+
+                    <!-- Repeat the above code block for additional rows -->
+
+                    <!-- OFAC Check -->
+                    <div class="row">
+
+                        <div class="col-xl-3 mb-3">
+                            <label for="compliance_score" class="form-label">Compliance Score </label>
+                            <input type="number" step="any" class="form-control" id="compliance_score" name="compliance_score" value="{{$ComplianceWatch->compliance_score}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="score_analysis"  class="form-label">Score Analysis </label>
+                            <input type="text" class="form-control" id="score_analysis" name="score_analysis" value="{{$ComplianceWatch->score_analysis}}" min="1" placeholder="">
+                        </div>
+                    </div>
+
+
+                    <!-- Navigation buttons -->
+
+                    <div class="row">
+                        <div class="col-xl-6 d-flex justify-content-start">
+                            <button type="button" class="btn btn report-tab-unactive" id="Compliance-prev-2">Previous</button>
+                        </div>
+                        <div class="col-xl-6 d-flex justify-content-end">
+
+                            <button type="button" class="btn btn report-tab-active" id="Compliance-next-3">Next</button>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- firm background 2 step end ========================-->
+                <!-- firm background 3 step start ========================-->
+                <div class="Compliance-step" id="Compliance-step-3">
+                    <h4 class="card-title">Compliance Watch</br>
+                        <span style="color:darkgray; font-size:12px;"> Taxes </span>
+                    </h4>
+                 <!-- Copy 1 -->
+                 <div class="row">
+                    @for ($i=1; $i <=5; $i++)
+                        <div class="col-xl-4 mb-3">
+                            <label for="tax_fy{{ $i }}" class="form-label">FY{{ $i }} </label>
+                            <input type="text" class="form-control" id="tax_fy{{ $i }}" name="tax_fy{{ $i }}" value="{{ $ComplianceWatch->{'tax_fy' . $i} }}" placeholder="">
+                        </div> <br>
+
+
+                        @endfor
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-6 d-flex justify-content-start">
+
+                                <button type="button" class="btn btn report-tab-unactive" id="Compliance-prev-3">Previous</button>
+                            </div>
+                            <div class="col-xl-6 d-flex justify-content-end">
+
+                                <button type="submit" class="btn btn report-tab-active" id="Compliance-submit">Submit</button>
+                            </div>
+                        </div>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Compliance Watchform end -->
 
 <!-- Documents start -->
 
@@ -547,6 +729,7 @@
 </div>
 
 <!-- Documents end -->
+
 <!-- On Ground Verificationform start -->
 
 <div class="row" id="On-Ground-Verification">
@@ -569,13 +752,22 @@
 
                             <input type="text" class="form-control" id="address_details" name="address_details" value="{{$OnGroundVerification->address_details}}" placeholder="">
                         </div>
-
                         <input type="hidden" name="onGroundVerificationID" id="onGroundVerificationID" value="{{$OnGroundVerification->id}}" class="form-control" value="">
 
-                        <div class="col-xl-12 mb-3">
-                            <label for="address_visit_findings" class="form-label">Address Visit Findings</label>
-                            <input type="text" class="form-control" id="address_visit_findings" name="address_visit_findings" value="{{$OnGroundVerification->address_visit_findings}}" placeholder="">
-                        </div>
+
+                        <div class="row">
+                            @for ($i=1; $i <= 12; $i++)
+                                <div class="col-xl-6 mb-3">
+                                    <label for="address_visit_findings_{{ $i }}" class="form-label">{{ $i }}- Address Visit Findings</label>
+                                    <input type="text" class="form-control" name="address_visit_findings_{{ $i }}" id="address_visit_findings_{{ $i }}" value="{{$OnGroundVerification->{'address_visit_findings_'. $i } }}">
+                                </div>
+
+                            @endfor
+
+
+
+                            </div>
+
 
                         <div class="row">
                             <div class="col-xl-3  mb-3">
@@ -624,7 +816,7 @@
         <form id="court-step-form" enctype="multipart/form-data">
                 <!-- Court Checks 1 step end -->
                 <div class="court-step" id="court-step-1">
-                    <h4 class="card-title">Court Checks<br>
+                    <h4 class="card-title">Legal Records<br>
                         <span style="color:darkgray; font-size:12px;"> Management Legal Records </span>
                     </h4>
                     <div class="row">
@@ -659,10 +851,10 @@
 
                     </div>
                 </div>
-                <!-- Court Checks 1 step end -->
-                <!-- Court Checks 2 step start ========================-->
+                <!-- Legal Records 1 step end -->
+                <!-- Legal Records 2 step start ========================-->
                 <div class="court-step" id="court-step-2">
-                    <h4 class="card-title">Court Checks<br>
+                    <h4 class="card-title">Legal Records<br>
                         <span style="color:darkgray; font-size:12px;"> Company Legal Records </span>
                     </h4>
 
@@ -705,9 +897,30 @@
                 <!-- Court Checks 2 step end ========================-->
                 <!-- Court Checks 3 step start ========================-->
                 <div class="court-step" id="court-step-3">
-                    <h4 class="card-title">Court Checks<br>
+                    <h4 class="card-title">Legal Records<br>
                         <span style="color:darkgray; font-size:12px;"> Management Legal Records </span>
                     </h4>
+                    @for ($i=1; $i <=5; $i++)
+                    <div class="row">
+                        <div class="col-xl-3 mb-3">
+                            <label for="related_party_legal_name_{{ $i }}" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="related_party_legal_name_{{ $i }}" id="related_party_legal_name_{{ $i }}" value="{{$RelatedPartyLegal->{'related_party_legal_name_'. $i } }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="related_party_legal_jurisdiction_{{ $i }}" class="form-label">Jurisdiction</label>
+                            <input type="text" class="form-control" name="related_party_legal_jurisdiction_{{ $i }}" id="related_party_legal_jurisdiction_{{ $i }}" value="{{$RelatedPartyLegal->{'related_party_legal_jurisdiction_'. $i } }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="related_party_legal_record_{{ $i }}" class="form-label">Record</label>
+                            <input type="text" class="form-control" name="related_party_legal_record_{{ $i }}" id="related_party_legal_record_{{ $i }}" value="{{$RelatedPartyLegal->{'related_party_legal_record_'. $i } }}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="related_party_legal_subject_matter_{{ $i }}" class="form-label">Subject Matter</label>
+                            <input type="text" class="form-control" name="related_party_legal_subject_matter_{{ $i }}" id="related_party_legal_subject_matter_{{ $i }}" value="{{$RelatedPartyLegal->{'related_party_legal_subject_matter_'. $i } }}" placeholder="">
+                        </div>
+                    </div>
+
+                    @endfor
                     <div class="row">
                         <div class="col-xl-4 mb-3">
                             <label for="legal_score" class="form-label">Legal Score</label>
@@ -751,7 +964,7 @@
                 <!-- Financials 1 step end -->
                 <div class="Financials-step" id="Financials-step-1">
                     <h4 class="card-title">Financials<br>
-                        <span style="color:darkgray; font-size:12px;"> Business Information </span>
+                        <span style="color:darkgray; font-size:12px;"> Basic Information </span>
                     </h4>
                     <div class="row">
                     <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
@@ -907,6 +1120,7 @@
                             </div>
 
                         </div>
+
                         <!-- graph financial  graph heading start -->
                         <div class="row">
                             <div class="col-xl-3 mb-3">
@@ -977,6 +1191,7 @@
                         </div>
 
                         <!-- graph financial  graph heading end -->
+
 
                         <!-- Navigation buttons -->
 
@@ -1642,7 +1857,8 @@
                         </div>
 
 
-                    <!-- graph ratio  graph heading start -->
+
+                     <!-- graph ratio  graph heading start -->
 
                      <div class="row">
                          <div class="col-xl-3 mb-3">
@@ -1716,6 +1932,8 @@
 
                     </div>
                      <!-- graph ratio  graph heading end -->
+
+
 
                         <!-- Navigation buttons -->
 
@@ -2308,7 +2526,7 @@
 
                         </div>
                     </div>
-                <div class="row">
+                    <div class="row">
                     <div class="col-xl-3 mb-3">
                     <label for="operating_efficiency_BI_FY_one" class="form-label">Operating Efficiency ratio</label>
                     <input  type="number" step="any"  class="form-control" name="operating_efficiency_BI_FY_one" id="operating_efficiency_BI_FY_one" value="{{$BusinessIntelligence->operating_efficiency_BI_FY_one}}" placeholder="">
@@ -2361,26 +2579,26 @@
                     </div>
 
 
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 mb-3">
-                        <label for="operating_efficiency_BI_heading_graph" class="form-label">Operating Efficiency Graph Heading</label>
-                        <input type="text"   class="form-control" name="operating_efficiency_BI_heading_graph"  id="operating_efficiency_BI_heading_graph" value="{{$BusinessIntelligence->operating_efficiency_BI_heading_graph}}" placeholder="">
-                    </div>
-                    <div class="col-xl-3 mb-3">
-                        <label for="inventory_turnover_BI_heading_graph" class="form-label">Inventory Turnover Graph Heading</label>
-                        <input type="text"   class="form-control" name="inventory_turnover_BI_heading_graph"  id="inventory_turnover_BI_heading_graph" value="{{$BusinessIntelligence->inventory_turnover_BI_heading_graph}}" placeholder="">
-                    </div>
-                    <div class="col-xl-3 mb-3">
-                        <label for="days_sales_in_inventory_BI_heading_graph" class="form-label">Days Sales In Inventory Graph Heading</label>
-                        <input type="text"   class="form-control" name="days_sales_in_inventory_BI_heading_graph"  id="days_sales_in_inventory_BI_heading_graph" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_heading_graph}}" placeholder="">
-                    </div>
-                    <div class="col-xl-3 mb-3">
-                        <label for="accounts_payable_turnover_BI_heading_graph" class="form-label">Accounts Payable Turnover Graph Heading</label>
-                        <input type="text"   class="form-control" name="accounts_payable_turnover_BI_heading_graph"  id="accounts_payable_turnover_BI_heading_graph" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_heading_graph}}" placeholder="">
-                    </div>
-                </div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 mb-3">
+                            <label for="operating_efficiency_BI_heading_graph" class="form-label">Operating Efficiency Graph Heading</label>
+                            <input type="text"   class="form-control" name="operating_efficiency_BI_heading_graph"  id="operating_efficiency_BI_heading_graph" value="{{$BusinessIntelligence->operating_efficiency_BI_heading_graph}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="inventory_turnover_BI_heading_graph" class="form-label">Inventory Turnover Graph Heading</label>
+                            <input type="text"   class="form-control" name="inventory_turnover_BI_heading_graph"  id="inventory_turnover_BI_heading_graph" value="{{$BusinessIntelligence->inventory_turnover_BI_heading_graph}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="days_sales_in_inventory_BI_heading_graph" class="form-label">Days Sales In Inventory Graph Heading</label>
+                            <input type="text"   class="form-control" name="days_sales_in_inventory_BI_heading_graph"  id="days_sales_in_inventory_BI_heading_graph" value="{{$BusinessIntelligence->days_sales_in_inventory_BI_heading_graph}}" placeholder="">
+                        </div>
+                        <div class="col-xl-3 mb-3">
+                            <label for="accounts_payable_turnover_BI_heading_graph" class="form-label">Accounts Payable Turnover Graph Heading</label>
+                            <input type="text"   class="form-control" name="accounts_payable_turnover_BI_heading_graph"  id="accounts_payable_turnover_BI_heading_graph" value="{{$BusinessIntelligence->accounts_payable_turnover_BI_heading_graph}}" placeholder="">
+                        </div>
+                    </div>
 
 
                             <!-- Navigation buttons -->
@@ -2754,84 +2972,44 @@
                 <!-- Tax Return and Credit 1 step end -->
                 <div class="Tax-Return-and-Credit-step" id="Tax-Return-and-Credit-step-1">
                     <div class="row">
-            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+                     <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                         <input type="hidden" name="TaxReurnCreditID" id="TaxReurnCreditID" class="form-control" value="{{$TaxReurnCredit->id}}" >
 
-                        <div class="row">
-                            <div class="col-xl-4 mb-3">
-                                <label for="tax_fy1" class="form-label">FY1 </label>
-                                <input type="text" class="form-control" name="tax_fy1" id="tax_fy1" value="{{$TaxReurnCredit->tax_fy1}}" placeholder="">
+
+
+                        @for ($i=1; $i <= 4; $i++)
+                    <div class="row">
+                            <div class="col-xl-2 mb-3">
+                                <label for="name_{{ $i }}" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name_{{ $i }}" id="name_{{ $i }}" value="{{$TaxReurnCredit->{'name_'. $i } }}">
                             </div>
-                            <div class="col-xl-4 mb-3">
-                                <label for="tax_fy2" class="form-label">FY2 </label>
-                                <input type="text" class="form-control" name="tax_fy2" id="tax_fy2" value="{{$TaxReurnCredit->tax_fy2}}" placeholder="">
+                            <div class="col-xl-1 mb-3">
+                                <label for="credit_score_{{ $i }}" class="form-label">Credit Score</label>
+                                <input type="number"  step="any" class="form-control" name="credit_score_{{ $i }}" id="credit_score_{{ $i }}" value="{{$TaxReurnCredit->{'credit_score_'. $i } }}">
+                            </div>
+                            <div class="col-xl-1 mb-3">
+                                <label for="num_of_loans_{{ $i }}" class="form-label">No. of Loans</label>
+                                <input type="number"  step="any" class="form-control"  name="num_of_loans_{{ $i }}"  id="num_of_loans_{{ $i }}" value="{{$TaxReurnCredit->{'num_of_loans_'. $i } }}">
+                            </div>
+                            <div class="col-xl-2 mb-3">
+                                <label for="outstanding_amount_{{ $i }}" class="form-label">Outstanding Amount</label>
+                                <input type="number"  step="any" class="form-control" name="outstanding_amount_{{ $i }}" id="outstanding_amount_{{ $i }}" value="{{$TaxReurnCredit->{'outstanding_amount_'. $i } }}">
+                            </div>
+                            <div class="col-xl-2 mb-3">
+                                <label for="solvency_{{ $i }}" class="form-label">Solvency</label>
+                                <input type="text" class="form-control" name="solvency_{{ $i }}" id="solvency_{{ $i }}" value="{{$TaxReurnCredit->{'solvency_'. $i } }}">
+                            </div>
+                            <div class="col-xl-2 mb-3">
+                                <label for="payment_history_{{ $i }}" class="form-label">Payment History</label>
+                                <input type="text" class="form-control" name="payment_history_{{ $i }}" id="payment_history_{{ $i }}" value="{{$TaxReurnCredit->{'payment_history_'. $i } }}">
+                            </div>
+                            <div class="col-xl-2 mb-3">
+                                <label for="credit_dependency_{{ $i }}" class="form-label">Credit Dependency</label>
+                                <input type="text" class="form-control" name="credit_dependency_{{ $i }}" id="credit_dependency_{{ $i }}" value="{{$TaxReurnCredit->{'credit_dependency_'. $i } }}">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-4 mb-3">
-                                <label for="tax_fy3" class="form-label">FY3 </label>
-                                <input type="text" class="form-control" name="tax_fy3" id="tax_fy3" value="{{$TaxReurnCredit->tax_fy3}}" placeholder="">
-                            </div>
-                            <div class="col-xl-4 mb-3">
-                                <label for="tax_fy4" class="form-label">FY4 </label>
-                                <input type="text" class="form-control" name="tax_fy4" id="tax_fy4" value="{{$TaxReurnCredit->tax_fy4}}" placeholder="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-4 mb-3">
-                                <label for="tax_fy5" class="form-label">FY5 </label>
-                                <input type="text" class="form-control" name="tax_fy5" id="tax_fy5" value="{{$TaxReurnCredit->tax_fy5}}" placeholder="">
-                            </div>
-
-                        </div>
-
-
-
-
-                        <div class="col-xl-12 d-flex justify-content-end">
-                            <button type="button" class="btn btn report-tab-active" id="Tax-Return-and-Credit-next-1">Next</button>
-                        </div>
-
-
-                    </div>
-                </div>
-                <!-- Tax Return and Credit 1 step end -->
-                <!-- Tax Return and Credit 2 step start ========================-->
-                <div class="Tax-Return-and-Credit-step" id="Tax-Return-and-Credit-step-2">
-
-                @for ($i=1; $i <= 4; $i++)
-                <div class="row">
-                        <div class="col-xl-2 mb-3">
-                            <label for="name_{{ $i }}" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name_{{ $i }}" id="name_{{ $i }}" value="{{$TaxReurnCredit->{'name_'. $i } }}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="credit_score_{{ $i }}" class="form-label">Credit Score</label>
-                            <input type="number"  step="any" class="form-control" name="credit_score_{{ $i }}" id="credit_score_{{ $i }}" value="{{$TaxReurnCredit->{'credit_score_'. $i } }}">
-                        </div>
-                        <div class="col-xl-1 mb-3">
-                            <label for="num_of_loans_{{ $i }}" class="form-label">No. of Loans</label>
-                            <input type="number"  step="any" class="form-control"  name="num_of_loans_{{ $i }}"  id="num_of_loans_{{ $i }}" value="{{$TaxReurnCredit->{'num_of_loans_'. $i } }}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="outstanding_amount_{{ $i }}" class="form-label">Outstanding Amount</label>
-                            <input type="number"  step="any" class="form-control" name="outstanding_amount_{{ $i }}" id="outstanding_amount_{{ $i }}" value="{{$TaxReurnCredit->{'outstanding_amount_'. $i } }}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="solvency_{{ $i }}" class="form-label">Solvency</label>
-                            <input type="text" class="form-control" name="solvency_{{ $i }}" id="solvency_{{ $i }}" value="{{$TaxReurnCredit->{'solvency_'. $i } }}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="payment_history_{{ $i }}" class="form-label">Payment History</label>
-                            <input type="text" class="form-control" name="payment_history_{{ $i }}" id="payment_history_{{ $i }}" value="{{$TaxReurnCredit->{'payment_history_'. $i } }}">
-                        </div>
-                        <div class="col-xl-2 mb-3">
-                            <label for="credit_dependency_{{ $i }}" class="form-label">Credit Dependency</label>
-                            <input type="text" class="form-control" name="credit_dependency_{{ $i }}" id="credit_dependency_{{ $i }}" value="{{$TaxReurnCredit->{'credit_dependency_'. $i } }}">
-                        </div>
-                    </div>
-                @endfor
+                    @endfor
 
                     <div class="row">
                         <div class="col-xl-2 mb-3">
@@ -2847,7 +3025,7 @@
                     <div class="row">
                         <div class="col-xl-6 d-flex justify-content-start">
 
-                            <button type="button" class="btn btn report-tab-unactive" id="Tax-Return-and-Credit-prev-2">Previous</button>
+                            <!-- <button type="button" class="btn btn report-tab-unactive" id="Tax-Return-and-Credit-prev-2">Previous</button> -->
                         </div>
                         <div class="col-xl-6 d-flex justify-content-end">
 
@@ -2856,7 +3034,21 @@
                         </div>
                     </div>
 
+
+                        <!-- <div class="col-xl-12 d-flex justify-content-end">
+                            <button type="button" class="btn btn report-tab-active" id="Tax-Return-and-Credit-next-1">Next</button>
+                        </div> -->
+
+
+                    </div>
                 </div>
+                <!-- Tax Return and Credit 1 step end -->
+                <!-- Tax Return and Credit 2 step start ========================-->
+                <!-- <div class="Tax-Return-and-Credit-step" id="Tax-Return-and-Credit-step-2">
+
+
+
+                </div> -->
                 <!-- Tax Return and Credit 2 step end ========================-->
 
             </form>
@@ -2871,7 +3063,7 @@
 <div class="row" id="Market-Reputation">
     <div class="card">
         <div class="card-header justify-content-start">
-            <h4 class="card-title">Market Reputation
+            <h4 class="card-title">Reputation Watch
             </h4>
 
         </div>
@@ -2879,13 +3071,92 @@
             <form id="Market-Reputatio-step-form" enctype="multipart/form-data">
                 <!-- firm background 1 step end -->
                 <div class="Market-Reputation-step" id="Market-Reputation-step-1">
+
+                <h4 class="card-title">Reputation Watch</br>
+                        <span style="color:darkgray; font-size:12px;">Reputation Watch Offline </span>
+                    </h4>
                     <div class="row">
 
 
                         <div class="row">
-            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
+                            <input type="hidden" name="getThirdPartyForID" id="getThirdPartyForID" class="form-control" value="{{$getThirdPartyForID->id}}">
 
                         <input type="hidden" class="form-control"  name="MarketReputationID" id="MarketReputationID" value="{{$MarketReputation->id}}">
+                        </div>
+                        @for ($i=1; $i <= 6; $i++)
+                        <div class="row">
+                                <div class="col-xl-3 mb-3">
+                                    <label for="offLine_reference_name_{{ $i }}" class="form-label">Reference Name</label>
+                                    <input type="text" class="form-control" name="offLine_reference_name_{{ $i }}" id="offLine_reference_name_{{ $i }}" value="{{$MarketReputation->{'offLine_reference_name_'. $i } }}">
+                                </div>
+                                <div class="col-xl-2 mb-3">
+                                    <label for="offLine_contact_{{ $i }}" class="form-label">Contact</label>
+                                    <input type="text"  step="any" class="form-control" name="offLine_contact_{{ $i }}" id="offLine_contact_{{ $i }}" value="{{$MarketReputation->{'offLine_contact_'. $i } }}">
+                                </div>
+                                <div class="col-xl-2 mb-3">
+                                    <label for="offLine_email_{{ $i }}" class="form-label">Email</label>
+                                    <input type="text"   class="form-control"  name="offLine_email_{{ $i }}"  id="offLine_email_{{ $i }}" value="{{$MarketReputation->{'offLine_email_'. $i } }}">
+                                </div>
+                                <div class="col-xl-3 mb-3">
+                                    <label for="offLine_company_name_{{ $i }}" class="form-label">Company Name</label>
+                                    <input type="text"  step="any" class="form-control" name="offLine_company_name_{{ $i }}" id="offLine_company_name_{{ $i }}" value="{{$MarketReputation->{'offLine_company_name_'. $i } }}">
+                                </div>
+                                <div class="col-xl-2 mb-5">
+                                            <label for="offLine_upload_file_{{ $i }}" class="form-label"></label>
+                                            <input  type="file" class="form-control" id="offLine_upload_file_{{ $i }}" accept=".pdf, image/*" name="offLine_upload_file_{{ $i }}" value="{{$MarketReputation->{'offLine_upload_file_'. $i} }}" placeholder="">
+                                </div>
+
+                            </div>
+                        @endfor
+
+
+                        <!-- <div class="row">
+
+
+                            <div class="col-xl-6 mb-3">
+                                <label for="file_path_market_reputations" class="form-label"></label>
+                                <div class="dz-default dlab-message upload-img mb-3">
+                                    <div class="fallback">
+                                        <input name="file_path_market_reputations" type="file" title="Support Formate Pdf only" accept=".pdf" class="form-control" id="file_path_market_reputations" value="{{$MarketReputation->file_path_market_reputations}}" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+
+
+                        <div class="col-xl-12 d-flex justify-content-end">
+                            <button type="button" class="btn btn report-tab-active" id="Market-Reputation-next-1">Next</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="Market-Reputation-step" id="Market-Reputation-step-2">
+                    <div class="row">
+
+
+
+                    @for ($i=1; $i <= 6; $i++)
+                        <div class="row">
+                                <div class="col-xl-8 mb-3">
+                                    <label for="onLine_description_{{ $i }}" class="form-label">Description</label>
+                                    <input type="text" class="form-control" name="onLine_description_{{ $i }}" id="onLine_description_{{ $i }}" value="{{$MarketReputation->{'onLine_description_'. $i } }}">
+                                </div>
+                                <div class="col-xl-2 mb-3">
+                                    <label for="onLine_source_{{ $i }}" class="form-label">Source</label>
+                                    <input type="text"  step="any" class="form-control" name="onLine_source_{{ $i }}" id="onLine_source_{{ $i }}" value="{{$MarketReputation->{'onLine_source_'. $i } }}">
+                                </div>
+
+                                <div class="col-xl-2 mb-5">
+                                            <label for="onLine_upload_file_{{ $i }}" class="form-label"></label>
+                                            <input  type="file" class="form-control" id="onLine_upload_file_{{ $i }}" accept=".pdf, image/*" name="onLine_upload_file_{{ $i }}" value="{{$MarketReputation->{'onLine_upload_file_'. $i} }}" placeholder="">
+                                </div>
+
+                            </div>
+                        @endfor
+                        <div class="row">
 
 
                             <div class="col-xl-3 mb-3">
@@ -2898,7 +3169,7 @@
                             </div>
 
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
 
 
                             <div class="col-xl-6 mb-3">
@@ -2909,15 +3180,21 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> -->
+
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 d-flex justify-content-start">
+
+                            <button type="button" class="btn btn report-tab-unactive" id="Market-Reputation-prev-2">Previous</button>
                         </div>
+                        <div class="col-xl-6 d-flex justify-content-end">
 
+                        <button type="submit" class="btn btn report-tab-active" id="submit-Market-Reputation">submit</button>
 
-
-                        <div class="col-xl-12 d-flex justify-content-end">
-                            <button type="submit" class="btn btn report-tab-active" id="submit-Market-Reputation">submit</button>
                         </div>
-
-
                     </div>
                 </div>
                 <!-- firm background 1 step end -->
@@ -3002,13 +3279,13 @@
                     </div>
                     <div class="row">
 
-                        <div class="col-xl-6 mb-3">
-                            <label class="form-label">Key observations</label>
+                        <div class="col-xl-6 mb-1">
+                            <label class="form-label"><b>Key observations</b></label>
 
                         </div>
 
-                        <div class="col-xl-6 mb-3">
-                            <label class="form-label">Recommendations</label>
+                        <div class="col-xl-6 mb-1">
+                            <label class="form-label"><b>Recommendations</b></label>
 
                         </div>
                     </div>
@@ -3025,6 +3302,7 @@
                         </div>
                     @endfor
                     </div>
+
                     <div class="row">
                         <div class="col-xl-6 d-flex justify-content-start">
 
@@ -3046,7 +3324,6 @@
 </div>
 
 <!-- Key Observation form end -->
-
 
 
 @endsection
@@ -3087,31 +3364,94 @@
 
         $('#click-Firm-Background').on('click', function() {
             $('#Firm-Background').show();
+
+
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
+
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
+            $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+        });
+
+
+        $('#click-Compliance-Watch').on('click', function() {
+            $('#Firm-Background').hide();
+            $('#Compliance-Watch').show();
+
+            $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
+            $("#On-Ground-Verification").hide();
+            $("#Financials").hide();
+            $("#Business-Intelligence").hide();
+            $("#Tax-Return-and-Credit").hide();
+            $("#Market-Reputation").hide();
+            $("#Key-Observation").hide();
+
+            $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#click-Compliance-Watch').addClass('report-tab-active').removeClass('report-tab-unactive');
+            $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
-
-
-
-
-
         });
+
+
+        var CompliancecurrentStep = 1;
+        $(".Compliance-step").hide();
+        $("#Compliance-step-1").show();
+
+        // Function to navigate to the next step
+        function CompliancenextStep() {
+            $(".Compliance-step").hide();
+            CompliancecurrentStep++;
+            $("#Compliance-step-" + CompliancecurrentStep).show();
+        }
+
+        // Function to navigate to the previous step
+        function ComplianceprevStep() {
+            $(".Compliance-step").hide();
+            CompliancecurrentStep--;
+            $("#Compliance-step-" + CompliancecurrentStep).show();
+        }
+
+        // Event listeners for "Next" and "Previous" buttons
+        $("#Compliance-next-1").on("click", CompliancenextStep);
+        $("#Compliance-prev-2").on("click", ComplianceprevStep);
+        $("#Compliance-next-2").on("click", CompliancenextStep);
+        $("#Compliance-prev-3").on("click", ComplianceprevStep);
+        $("#Compliance-next-3").on("click", CompliancenextStep);
+        $("#Compliance-prev-4").on("click", ComplianceprevStep);
+        $("#Compliance-next-4").on("click", CompliancenextStep);
+        $("#Compliance-prev-5").on("click", ComplianceprevStep);
+
+
+
+
+
         $('#click-Documents').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
@@ -3123,7 +3463,8 @@
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Documents").addClass('report-tab-active').removeClass('report-tab-unactive');
@@ -3139,17 +3480,19 @@
         $('#click-On-Ground-Verification').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
             $("#On-Ground-Verification").show();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-active').removeClass('report-tab-unactive');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3162,18 +3505,24 @@
         $('#click-Court-Checks').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').show();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#Tab-Documents').hide();
             $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3215,16 +3564,20 @@
         $('#click-Financials').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").show();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Financials").addClass('report-tab-active').removeClass('report-tab-unactive');
             $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3282,15 +3635,19 @@
             $('#Court-Checks').hide();
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
+            $('#Tab-Documents').hide();
+
             $("#Business-Intelligence").show();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+
             $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-Business-Intelligence").addClass('report-tab-active').removeClass('report-tab-unactive');
             $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3335,13 +3692,15 @@
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
             $("#On-Ground-Verification").hide();
+            $('#Tab-Documents').hide();
+
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").show();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3388,12 +3747,14 @@
             $('#Court-Checks').hide();
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
+            $('#Tab-Documents').hide();
+
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").show();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3406,17 +3767,47 @@
 
         });
 
+        var marketReputationcurrentStep = 1;
+        $(".Market-Reputation-step").hide();
+        $("#Market-Reputation-step-1").show();
+
+        // Function to navigate to the next step
+        function marketReputationnextStep() {
+            $(".Market-Reputation-step").hide();
+            marketReputationcurrentStep++;
+            $("#Market-Reputation-step-" + marketReputationcurrentStep).show();
+        }
+
+        // Function to navigate to the previous step
+        function marketReputationprevStep() {
+            $(".Market-Reputation-step").hide();
+            marketReputationcurrentStep--;
+            $("#Market-Reputation-step-" + marketReputationcurrentStep).show();
+        }
+
+        // Event listeners for "Next" and "Previous" buttons
+        $("#Market-Reputation-next-1").on("click", marketReputationnextStep);
+        $("#Market-Reputation-prev-2").on("click", marketReputationprevStep);
+        $("#Market-Reputation-next-2").on("click", marketReputationnextStep);
+        $("#Market-Reputation-prev-3").on("click", marketReputationprevStep);
+        $("#Market-Reputation-next-3").on("click", marketReputationnextStep);
+        $("#Market-Reputation-prev-4").on("click", marketReputationprevStep);
+        $("#Market-Reputation-next-4").on("click", marketReputationnextStep);
+        $("#Market-Reputation-prev-5").on("click", marketReputationprevStep);
+
         $('#click-Key-Observation').on('click', function() {
             $('#Firm-Background').hide();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").show();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3459,15 +3850,16 @@
         function allFormHideStaringAfter() {
             $('#Firm-Background').show();
             $('#Court-Checks').hide();
+            $('#Tab-Documents').hide();
+
             $("#On-Ground-Verification").hide();
             $("#Financials").hide();
             $("#Business-Intelligence").hide();
             $("#Tax-Return-and-Credit").hide();
             $("#Market-Reputation").hide();
             $("#Key-Observation").hide();
-            $('#Tab-Documents').hide();
-            $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-
+            $('#Compliance-Watch').hide();
+            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
             $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
             $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
             $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
@@ -3482,60 +3874,7 @@
 
 
         // firm background
-        // $('#firm-step-form').on('submit', function (e) {
-        //     e.preventDefault();
-
-        //     console.log('Form submitted');
-
-        //     var formData = new FormData(this);
-
-
-        //     $('#firm-submit').prop('disabled', true);
-
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "{{ route('team.update_firm_background') }}",
-        //         headers: {
-        //             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
-        //         },
-        //         data: formData,
-        //         dataType: "json",
-        //         processData: false, // important for FormData
-        //         contentType: false, // important for FormData
-        //         success: function (response) {
-        //             console.log(response);
-
-        //             Swal.fire({
-        //                 title: "Success!",
-        //                 text: response.message,
-        //                 icon: "success",
-        //                 confirmButtonText: "OK",
-        //                 timer: 3000, // 3 seconds
-        //                 timerProgressBar: true,
-        //                 willClose: () => {
-        //                     $("#firm-submit").prop("disabled", false);
-        //                     $('#Firm-Background').hide();
-
-        //                     $("#On-Ground-Verification").show();
-
-        //                     $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
-        //                     $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-
-        //                 },
-        //             });
-        //         },
-        //         error: function (error) {
-        //             console.log(error);
-
-        //             $('#firm-submit').prop('disabled', false);
-        //         }
-        //     });
-        // });
-
-
-
-          // firm background
-          $('#firm-step-form').on('submit', function (e) {
+        $('#firm-step-form').on('submit', function (e) {
             e.preventDefault();
 
             console.log('Form submitted');
@@ -3568,11 +3907,11 @@
                         willClose: () => {
                             $("#firm-submit").prop("disabled", false);
                             $('#Firm-Background').hide();
-
-                            $("#Tab-Documents").show();
-
-                            $('#click-Documents').addClass('report-tab-active').removeClass('report-tab-unactive');
                             $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+
+
+                            $('#Compliance-Watch').show();
+                            $('#click-Compliance-Watch').addClass('report-tab-active').removeClass('report-tab-unactive');
 
                         },
                     });
@@ -3581,6 +3920,59 @@
                     console.log(error);
 
                     $('#firm-submit').prop('disabled', false);
+                }
+            });
+        });
+
+         // firm background
+         $('#Compliance-Watch-step-form').on('submit', function (e) {
+            e.preventDefault();
+
+            console.log('Form submitted');
+
+            var formData = new FormData(this);
+
+
+            $('#Compliance-submit').prop('disabled', true);
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('team.update_compliance_watch') }}",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+                data: formData,
+                dataType: "json",
+                processData: false, // important for FormData
+                contentType: false, // important for FormData
+                success: function (response) {
+                    console.log(response);
+
+                    Swal.fire({
+                        title: "Success!",
+                        text: response.message,
+                        icon: "success",
+                        confirmButtonText: "OK",
+                        timer: 3000, // 3 seconds
+                        timerProgressBar: true,
+                        willClose: () => {
+                            $("#Compliance-submit").prop("disabled", false);
+
+                            $('#Compliance-Watch').hide();
+                            $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+
+
+                            $("#Tab-Documents").show();
+
+                            $('#click-Documents').addClass('report-tab-active').removeClass('report-tab-unactive');
+
+                        },
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+
+                    $('#Compliance-submit').prop('disabled', false);
                 }
             });
         });
@@ -3624,7 +4016,7 @@
 
                             $('#click-On-Ground-Verification').addClass('report-tab-active').removeClass('report-tab-unactive');
                             $('#click-Documents').addClass('report-tab-unactive').removeClass('report-tab-active');
-                         
+
 
                         },
                     });

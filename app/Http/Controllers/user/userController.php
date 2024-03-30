@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\AdharPartnerDetail;
 use App\Models\BusinessIntelligence;
+use App\Models\BusinessOwnershipPatternsFirm;
+use App\Models\ComplianceWatch;
 use App\Models\CourtCheck;
 use App\Models\Department;
 use App\Models\Document;
@@ -20,10 +23,13 @@ use App\Models\FinancialsRatioAnalysisFyThree;
 use App\Models\FinancialsRatioAnalysisFyTwo;
 use App\Models\FirmBackground;
 use App\Models\FirstDirectorsFirm;
+use App\Models\Gst;
 use App\Models\KeyObservation;
 use App\Models\License;
 use App\Models\MarketReputation;
 use App\Models\OnGroundVerification;
+use App\Models\RelatedPartiesFirm;
+use App\Models\RelatedPartyLegal;
 use App\Models\SecondDirectorsFirm;
 use App\Models\TaxReurnCredit;
 use App\Models\team\TeamUser;
@@ -438,6 +444,7 @@ class userController extends Controller
         $data['pageDescription'] = "";
         $data['BusinessIntelligence'] = BusinessIntelligence::where('third_party_id', $id)->first();
 
+
         // ===================================================== Business graph start ===================
 
         $data['businessInteligenceGrapFY_accounts_payable'] = [
@@ -449,6 +456,15 @@ class userController extends Controller
             $data['BusinessIntelligence']->accounts_payable_turnover_BI_FY_five,
 
         ];
+
+        function areAllValuesNull($array)
+        {
+            return count(array_filter($array, function ($value) {
+                return $value !== null;
+            })) === 0;
+        }
+
+        // dd(  areAllValuesNull($data['businessInteligenceGrapFY_accounts_payable']) == true ?  "trye" : "" );
         $data['businessInteligenceGrapFY_operating_efficiency'] = [
 
             $data['BusinessIntelligence']->operating_efficiency_BI_FY_one,
@@ -458,6 +474,7 @@ class userController extends Controller
             $data['BusinessIntelligence']->operating_efficiency_BI_FY_five,
 
         ];
+
 
         $data['businessInteligenceGrapFY_inventory_turnover'] = [
 
@@ -479,6 +496,7 @@ class userController extends Controller
 
         ];
 
+
         $data['businessInteligenceGraphLablesName'] = [
 
             $data['BusinessIntelligence']->year_BI_FY_one,
@@ -490,29 +508,49 @@ class userController extends Controller
         ];
         // ===================================================== Business graph end ===================
 
+
         $data['CourtCheck'] = CourtCheck::where('third_party_id', $id)->first();
+        $data['RelatedPartyLegal'] = RelatedPartyLegal::where('court_check_id', $data['CourtCheck']->id)->first();
+
+        $getLegalCourtCheckScore = $data['CourtCheck']->legal_score ? : 0;
+        $getLegalCourtCheckOutOf = 100 -  $getLegalCourtCheckScore;
+        $data['finalValueLegalCourtCheck'] = [
+            $getLegalCourtCheckScore,
+            $getLegalCourtCheckOutOf,
+        ];
         $data['Financial'] = Financial::where('third_party_id', $id)->first();
         $data['KeyObservation'] = KeyObservation::where('third_party_id', $id)->first();
 
         $getKwyObservationScore = $data['KeyObservation']->overall_risk_score ?: 0;
-        $getKeyObservationOutOf = 100 - $getKwyObservationScore;
+        $getKeyObservationOutOf = 100 -  $getKwyObservationScore;
         $data['finalValueforGraKeyObservation'] = [
             $getKwyObservationScore,
             $getKeyObservationOutOf,
         ];
 
+        // dd($finalValueforGraKeyObservation);
+
         $data['MarketReputation'] = MarketReputation::where('third_party_id', $id)->first();
+        $getMarketReputationScore = $data['MarketReputation']->market_reputation_score ?: 0;
+        $getMarketReputationOutOf = 100 -  $getMarketReputationScore;
+        $data['finalValueMarketReputation'] = [
+            $getMarketReputationScore,
+            $getMarketReputationOutOf,
+        ];
         $data['OnGroundVerification'] = OnGroundVerification::where('third_party_id', $id)->first();
         $data['Document'] = Document::where('third_party_id', $id)->first();
         $data['TaxReurnCredit'] = TaxReurnCredit::where('third_party_id', $id)->first();
 
+
         // ===================================================== financial finding graph end ========================
+
 
         $data['FinancialsFindingsFyFive'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsFindingsFyFour'] = FinancialsFindingsFyFour::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsFindingsFyThree'] = FinancialsFindingsFyThree::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsFindingsFyTwo'] = FinancialsFindingsFyTwo::where('financial_id', $data['Financial']->id)->first();
         $data['FinancialsFindingsFyOne'] = FinancialsFindingsFyOne::where('financial_id', $data['Financial']->id)->first();
+
 
         $data['financialFindingsGrapFY_revenue'] = [
 
@@ -522,6 +560,8 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->revenue_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->revenue_fy_five_finding__1,
         ];
+
+
 
         $data['financialFindingsGrapFY_net_profit'] = [
 
@@ -553,6 +593,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFive']->working_capital_1_fy_five_finding__1,
         ];
 
+
         // end
 
         // start
@@ -564,6 +605,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->quick_assets_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->quick_assets_fy_five_finding__1,
         ];
+
 
         // end
 
@@ -577,6 +619,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFive']->total_assets_fy_five_finding__1,
         ];
 
+
         // end
 
         // start
@@ -589,6 +632,8 @@ class userController extends Controller
             $data['FinancialsFindingsFyFive']->current_assets_fy_five_finding__1,
         ];
 
+
+
         // start
         $data['financialFindingsGrapFY_current_liabilities'] = [
 
@@ -598,6 +643,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->current_liabilities_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->current_liabilities_fy_five_finding__1,
         ];
+
 
         // end
         // start
@@ -609,6 +655,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->debt_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->debt_fy_five_finding__1,
         ];
+
 
         // end
 
@@ -634,6 +681,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFive']->net_sales_fy_five_finding__1,
         ];
 
+
         // end
         // start
         $data['financialFindingsGrapFY_equity_share_capital'] = [
@@ -645,6 +693,8 @@ class userController extends Controller
             $data['FinancialsFindingsFyFive']->equity_share_capital_fy_five_finding__1,
         ];
 
+
+
         // start
         $data['financialFindingsGrapFY_sundry_debtors'] = [
 
@@ -654,6 +704,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->sundry_debtors_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->sundry_debtors_fy_five_finding__1,
         ];
+
 
         // end
 
@@ -666,6 +717,7 @@ class userController extends Controller
             $data['FinancialsFindingsFyFour']->sundry_creditors_fy_four_finding__1,
             $data['FinancialsFindingsFyFive']->sundry_creditors_fy_five_finding__1,
         ];
+
 
         // end
 
@@ -691,7 +743,9 @@ class userController extends Controller
             $data['FinancialsFindingsFyFive']->cash_and_cash_equivalents_fy_five_finding__1,
         ];
 
+
         // end
+
 
         $data['FinancialsFindingsFyFiveGraphLableName'] = FinancialsFindingsFyFive::where('financial_id', $data['Financial']->id)->pluck('year_five_finding__1');
         $data['FinancialsFindingsFyFourGraphLableName'] = FinancialsFindingsFyFour::where('financial_id', $data['Financial']->id)->pluck('year_four_finding__1');
@@ -727,6 +781,7 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->current_ratio_fy_five_1,
         ];
 
+
         $data['financialrationGrapFY_quick_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->quick_ratio_fy_one_1,
@@ -735,6 +790,9 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->quick_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->quick_ratio_fy_five_1,
         ];
+
+
+
 
         $data['financialrationGrapFY_debt_ratio'] = [
 
@@ -745,6 +803,7 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->debt_ratio_fy_five_1,
         ];
 
+
         $data['financialrationGrapFY_solvency_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->solvency_ratio_fy_one_1,
@@ -753,6 +812,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->solvency_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->solvency_ratio_fy_five_1,
         ];
+
+
 
         $data['financialrationGrapFY_debt_to_equity_ratio'] = [
 
@@ -763,6 +824,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->debt_to_equity_ratio_fy_five_1,
         ];
 
+
+
         $data['financialrationGrapFY_asset_turnover_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->asset_turnover_ratio_fy_one_1,
@@ -771,6 +834,7 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->asset_turnover_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->asset_turnover_ratio_fy_five_1,
         ];
+
 
         $data['financialrationGrapFY_absolute_liquidity_ratio'] = [
 
@@ -781,6 +845,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->absolute_liquidity_ratio_fy_five_1,
         ];
 
+
+
         $data['financialrationGrapFY_proprietary_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->proprietary_ratio_fy_one_1,
@@ -789,6 +855,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->proprietary_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->proprietary_ratio_fy_five_1,
         ];
+
+
 
         $data['financialrationGrapFY_net_profit_ratio'] = [
 
@@ -799,6 +867,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->net_profit_ratio_fy_five_1,
         ];
 
+
+
         $data['financialrationGrapFY_gross_profit_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->gross_profit_ratio_fy_one_1,
@@ -807,6 +877,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->gross_profit_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->gross_profit_ratio_fy_five_1,
         ];
+
+
 
         $data['financialrationGrapFY_springate_s_score_ratio'] = [
 
@@ -817,6 +889,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->springate_s_score_ratio_fy_five_1,
         ];
 
+
+
         $data['financialrationGrapFY_trade_receivable_days_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->trade_receivable_days_ratio_fy_one_1,
@@ -825,6 +899,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->trade_receivable_days_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->trade_receivable_days_ratio_fy_five_1,
         ];
+
+
 
         $data['financialrationGrapFY_trade_payable_days_ratio'] = [
 
@@ -835,6 +911,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->trade_payable_days_ratio_fy_five_1,
         ];
 
+
+
         $data['financialrationGrapFY_taffler_z_score_ratio'] = [
 
             $data['FinancialsRatioAnalysisFyOne']->taffler_z_score_ratio_fy_one_1,
@@ -843,6 +921,8 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFour']->taffler_z_score_ratio_fy_four_1,
             $data['FinancialsRatioAnalysisFyFive']->taffler_z_score_ratio_fy_five_1,
         ];
+
+
 
         $data['financialrationGrapFY_zmijewski_x_score_ratio'] = [
 
@@ -853,11 +933,14 @@ class userController extends Controller
             $data['FinancialsRatioAnalysisFyFive']->zmijewski_x_score_ratio_fy_five_1,
         ];
 
+
+
         $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'] = FinancialsRatioAnalysisFyFive::where('financial_id', $data['Financial']->id)->pluck('year_ratio_five_1');
         $data['FinancialsRatioAnalysisFyFourGraphLabelNames'] = FinancialsRatioAnalysisFyFour::where('financial_id', $data['Financial']->id)->pluck('year_ratio_four_1');
         $data['FinancialsRatioAnalysisFyThreeGraphLabelNames'] = FinancialsRatioAnalysisFyThree::where('financial_id', $data['Financial']->id)->pluck('year_ratio_three_1');
         $data['FinancialsRatioAnalysisFyTwoGraphLabelNames'] = FinancialsRatioAnalysisFyTwo::where('financial_id', $data['Financial']->id)->pluck('year_ratio_two_1');
         $data['FinancialsRatioAnalysisFyOneGraphLabelNames'] = FinancialsRatioAnalysisFyOne::where('financial_id', $data['Financial']->id)->pluck('year_ratio_one_1');
+
 
         $data['financialRatioGrapFYhLablesName'] = [
 
@@ -871,20 +954,40 @@ class userController extends Controller
         // dd($data['financialRatioGrapFYhLablesName']);
 
         // ===================================================== financial ratio graph end ========================
-
+        // dd(  $data['financialRatioGrapFYhLablesName'] );
         $data['FirmBackground'] = FirmBackground::where('third_party_id', $id)->first();
+        $getFirmBackgroundScore = $data['FirmBackground']->regulatory_score ? : 0;
+        $getFirmBackgroundOutOf = 100 -  $getFirmBackgroundScore;
+        $data['finalValueforFirmBackground'] = [
+            $getFirmBackgroundScore,
+            $getFirmBackgroundOutOf,
+        ];
+        $data['AdharPartnerDetail'] = AdharPartnerDetail::where('firm_background_id', $data['FirmBackground']->id)->first();
+
         $data['FirstDirectorsFirm'] = FirstDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['SecondDirectorsFirm'] = SecondDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
         $data['ThirdDirectorsFirm'] = ThirdDirectorsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
-        $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
+        // $data['License'] = License::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['RelatedPartiesFirm'] = RelatedPartiesFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
+        $data['BusinessOwnershipPatternsFirm'] = BusinessOwnershipPatternsFirm::where('firm_background_id', $data['FirmBackground']->id)->first();
+
+        $data['ComplianceWatch'] = ComplianceWatch::where('third_party_id', $id)->first();
+        $getComplianWatchScore = $data['ComplianceWatch']->compliance_score ?: 0;
+        $getComplianceWatchOutOf = 100 -  $getComplianWatchScore;
+        $data['finalValueComplianceWatch'] = [
+            $getComplianWatchScore,
+            $getComplianceWatchOutOf,
+        ];
+        $data['License'] = License::where('compliance_watche_id', $data['ComplianceWatch']->id)->first();
+        $data['Gst'] = Gst::where('compliance_watche_id', $data['ComplianceWatch']->id)->first();
         $data['getThirdPartyForID'] = ThirdParty::where('id', $id)->first();
         $data['Getclient'] = User::where('id', $data['getThirdPartyForID']->user_id)->first();
-        $data['GetTeaMuser'] = TeamUser::where('id', $data['FirmBackground']->team_user_id)->first();
 
         return view('company.reports.view-reports', $data);
     }
 
-    public function firm_file_download($id, $index)
+
+    public function firm_file_download($id,$index)
     {
 
         $id = base64_decode($id);
@@ -907,7 +1010,7 @@ class userController extends Controller
             abort(404);
         }
 
-        $filePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $fileName);
+        $filePath = public_path('admin/assets/imgs/complianceWatchesFileAndImages/' . $fileName);
 
         // Check if the file exists
         if (!file_exists($filePath)) {
@@ -920,10 +1023,363 @@ class userController extends Controller
         // Return the file for download
         return response()->download($filePath, $downloadFileName);
     }
+    public function firm_file_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = License::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/complianceWatchesFileAndImages/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
+    public function firm_file_adhar_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = AdharPartnerDetail::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_aadhar_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmAdharImagesOrFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function firm_file_adhar_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = AdharPartnerDetail::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"licenses_upload_file_aadhar_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/firmAdharImagesOrFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
+    public function market_file_offline_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"offLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOfflineImagesAndFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function market_file_offline_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"offLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOfflineImagesAndFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+    public function market_file_online_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"onLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOnlineImagesAndFile/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function market_file_online_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = MarketReputation::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"onLine_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/MarketReputationOnlineImagesAndFile/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
+
+    public function gst_compliance_watch_download($id,$index)
+    {
+
+        $id = base64_decode($id);
+        $License = Gst::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"gst_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/GstFileAndImages/' . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Specify the desired file name
+        $downloadFileName = $fileName;
+
+        // Return the file for download
+        return response()->download($filePath, $downloadFileName);
+    }
+    public function gst_compliance_watch_view($id, $index)
+    {
+
+        $id = base64_decode($id);
+        $License = Gst::find($id);
+
+        if (!$License) {
+            abort(404);
+        }
+
+        $fileIndex = (int) $index;
+
+        // Ensure the index is valid
+        if ($fileIndex < 1 || $fileIndex > 8) {
+            abort(404);
+        }
+
+        $fileName = $License->{"gst_upload_file_$fileIndex"};
+
+        if (!$fileName) {
+            abort(404);
+        }
+
+        $filePath = public_path('admin/assets/imgs/GstFileAndImages/'  . $fileName);
+
+        // Check if the file exists
+        if (!file_exists($filePath)) {
+            abort(404);
+        }
+
+        // Get the MIME type of the file
+        $mimeType = mime_content_type($filePath);
+
+        // Set the response headers
+        $headers = [
+            'Content-Type' => $mimeType,
+        ];
+
+        // Return the file with appropriate headers
+        return response()->file($filePath, $headers);
+    }
     public function onGround_file_download($id)
     {
         $id = base64_decode($id);
         $data['OnGroundVerification'] = OnGroundVerification::where('id', $id)->first();
+        // dd($data['OnGroundVerification']);
 
         // Replace 'path/to/your/image.jpg' with the actual path to your image
         $imagePath = public_path('admin/assets/imgs/OnGroundVerification/' . $data['OnGroundVerification']->upload_picture);
@@ -933,22 +1389,6 @@ class userController extends Controller
 
         return response()->download($imagePath, $fileName);
     }
-
-    public function onGround_file_view($id)
-    {
-        $id = base64_decode($id);
-        $data['OnGroundVerification'] = OnGroundVerification::where('id', $id)->first();
-
-        // Replace 'path/to/your/file' with the actual path to your file
-        $filePath = public_path('admin/assets/imgs/OnGroundVerification/' . $data['OnGroundVerification']->upload_picture);
-
-        // Specify the desired file name
-        $fileName = $data['OnGroundVerification']->upload_picture;
-
-        // Return a file response
-        return response()->file($filePath, ['Content-Type' => mime_content_type($filePath)]);
-    }
-
     public function document_file_download($id, $index)
     {
         $id = base64_decode($id);
@@ -984,22 +1424,6 @@ class userController extends Controller
         // Return the file for download
         return response()->download($filePath, $downloadFileName);
     }
-
-    // public function document_file_view($id)
-    // {
-    //     $id = base64_decode($id);
-    //     $data['Document'] = Document::where('id', $id)->first();
-
-    //     // Replace 'path/to/your/image.jpg' with the actual path to your image
-    //     $imagePath  = public_path('admin/assets/imgs/Document/' . $data['Document']->document_upload);
-
-    //     // Specify the desired file name
-    //     $fileName = $data['Document']->document_upload;
-
-    //     // return response()->download($imagePath, $fileName);
-    //     return response()->file($imagePath, ['Content-Type' => mime_content_type($imagePath)]);
-    // }
-
     public function document_file_view($id, $index)
     {
         $id = base64_decode($id);
@@ -1040,48 +1464,21 @@ class userController extends Controller
         // Return the file with appropriate headers
         return response()->file($filePath, $headers);
     }
-
-    public function firm_file_view($id, $index)
+    public function onGround_file_view($id)
     {
-
         $id = base64_decode($id);
-        $License = License::find($id);
+        $data['OnGroundVerification'] = OnGroundVerification::where('id', $id)->first();
 
-        if (!$License) {
-            abort(404);
-        }
+        // Replace 'path/to/your/file' with the actual path to your file
+        $filePath = public_path('admin/assets/imgs/OnGroundVerification/' . $data['OnGroundVerification']->upload_picture);
 
-        $fileIndex = (int) $index;
+        // Specify the desired file name
+        $fileName = $data['OnGroundVerification']->upload_picture;
 
-        // Ensure the index is valid
-        if ($fileIndex < 1 || $fileIndex > 8) {
-            abort(404);
-        }
-
-        $fileName = $License->{"licenses_upload_file_$fileIndex"};
-
-        if (!$fileName) {
-            abort(404);
-        }
-
-        $filePath = public_path('admin/assets/imgs/firmBacgroundImages/' . $fileName);
-
-        // Check if the file exists
-        if (!file_exists($filePath)) {
-            abort(404);
-        }
-
-        // Get the MIME type of the file
-        $mimeType = mime_content_type($filePath);
-
-        // Set the response headers
-        $headers = [
-            'Content-Type' => $mimeType,
-        ];
-
-        // Return the file with appropriate headers
-        return response()->file($filePath, $headers);
+        // Return a file response
+        return response()->file($filePath, ['Content-Type' => mime_content_type($filePath)]);
     }
+
 
     public function final_Reprts_file_download($id)
     {

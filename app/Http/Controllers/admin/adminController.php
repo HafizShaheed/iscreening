@@ -994,7 +994,7 @@ class adminController extends Controller
             $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
             $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
         ];
-
+ 
         // dd($data['financialRatioGrapFYhLablesName']);
 
         // ===================================================== financial ratio graph end ========================

@@ -44,17 +44,28 @@ Route::get('/clear-cache', function() {
         Route::prefix('report')->group(function(){
             Route::get('/', 'userController@report_List')->name('company.report_List');
             Route::get('/view/{id}', 'userController@viewReportsData')->name('company.viewReportsData');
-            Route::get('/firm_file_download/{id}/{index}', 'userController@firm_file_download')->name('company.firm_file_download');
-            Route::get('/firm_file_view/{id}/{index}', 'userController@firm_file_view')->name('company.firm_file_view');
-            Route::get('/onGround_file_download/{id}', 'userController@onGround_file_download')->name('company.onGround_file_download');
-            Route::get('/document_file_download/{id}/{index}', 'userController@document_file_download')->name('company.document_file_download');
-            Route::get('/document_file_view/{id}/{index}', 'userController@document_file_view')->name('company.document_file_view');
 
-            Route::get('/onGround_file_view/{id}', 'userController@onGround_file_view')->name('company.onGround_file_view');
+              // file upload muliple download and view
+              Route::get('/firm_file_download/{id}/{index}', 'userController@firm_file_download')->name('company.firm_file_download');
+              Route::get('/firm_file_view/{id}/{index}', 'userController@firm_file_view')->name('company.firm_file_view');
+              Route::get('/firm_file_adhar_download/{id}/{index}', 'userController@firm_file_adhar_download')->name('company.firm_file_adhar_download');
+              Route::get('/firm_file_adhar_view/{id}/{index}', 'userController@firm_file_adhar_view')->name('company.firm_file_adhar_view');
+              Route::get('/gst_compliance_watch_download/{id}/{index}', 'userController@gst_compliance_watch_download')->name('company.gst_compliance_watch_download');
+              Route::get('/gst_compliance_watch_view/{id}/{index}', 'userController@gst_compliance_watch_view')->name('company.gst_compliance_watch_view');
 
+              Route::get('/market_file_online_download/{id}/{index}', 'userController@market_file_online_download')->name('company.market_file_online_download');
+              Route::get('/market_file_online_view/{id}/{index}', 'userController@market_file_online_view')->name('company.market_file_online_view');
+              Route::get('/market_file_offline_download/{id}/{index}', 'userController@market_file_offline_download')->name('company.market_file_offline_download');
+              Route::get('/market_file_offline_view/{id}/{index}', 'userController@market_file_offline_view')->name('company.market_file_offline_view');
 
-            Route::get('/final_Reprts_file_download/{id}', 'userController@final_Reprts_file_download')->name('company.final_Reprts_file_download');
-            Route::get('/generate_pdf_of_reports/{id}', 'userController@generate_pdf_of_reports')->name('company.generate_pdf_of_reports');
+              Route::get('/document_file_download/{id}/{index}', 'userController@document_file_download')->name('company.document_file_download');
+              Route::get('/document_file_view/{id}/{index}', 'userController@document_file_view')->name('company.document_file_view');
+              Route::get('/onGround_file_download/{id}', 'userController@onGround_file_download')->name('company.onGround_file_download');
+              Route::get('/onGround_file_view/{id}', 'userController@onGround_file_view')->name('company.onGround_file_view');
+
+              Route::get('/final_Reprts_file_download/{id}', 'userController@final_Reprts_file_download')->name('company.final_Reprts_file_download');
+              Route::get('/generate_pdf_of_reports/{id}', 'userController@generate_pdf_of_reports')->name('company.generate_pdf_of_reports');
+              // file upload muliple download and view
 
 
 
@@ -80,7 +91,7 @@ Route::get('/clear-cache', function() {
 
 
 
-        Route::middleware('teamAuth')->group(function(){
+        Route::middleware('teamAuth')->group(function(){    
 
             Route::get('/dashboard', 'teamController@index')->name('team.index');
             Route::prefix('report')->group(function(){
@@ -89,6 +100,7 @@ Route::get('/clear-cache', function() {
                 Route::get('/edit/{id}', 'teamController@add_report')->name('team.add_report');
 
                 Route::post('/update_firm_background', 'teamController@update_firm_background')->name('team.update_firm_background');
+                Route::post('/update_compliance_watch', 'teamController@update_compliance_watch')->name('team.update_compliance_watch');
                 Route::post('/update_documents', 'teamController@update_documents')->name('team.update_documents');
                 Route::post('/update_on_ground_verification', 'teamController@update_on_ground_verification')->name('team.update_on_ground_verification');
                 Route::post('/update_court_check', 'teamController@update_court_check')->name('team.update_court_check');

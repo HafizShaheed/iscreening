@@ -185,7 +185,7 @@
                                                             <!-- Handle if document doesn't exist -->
                                                             <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
                                                         @endif
-                                                        
+
                                                 </td>
                                             </tr>
                                             @endif
@@ -471,7 +471,7 @@
 
                                                     <div class="col-xl-3 mt-3">
                                                         <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf"> SCORE =
-                                                            {{ $FirstDirectorsFirm->regulatory_score }}</b></p>
+                                                            {{ $FirmBackground->regulatory_score }}</b></p>
                                                     </div>
                                                     <div class="col-xl-3 mt-6">
                                                     <canvas id="doughnut_chartfirmBackground"></canvas>
@@ -479,7 +479,7 @@
 
                                                     <div class="col-xl-6  mt-3">
                                                         <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
-                                                        <br>  {{ $FirstDirectorsFirm->score_analysis }}</p>
+                                                        <br>  {{ $FirmBackground->score_analysis }}</p>
                                                     </div>
 
 
@@ -489,10 +489,10 @@
 
 
 
-                                    
 
 
-                                    
+
+
 
 
                                         </div>
@@ -867,7 +867,7 @@
                                                         <tr>
                                                         <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-">Address Visit Findings</th>
 
-                                                                        
+
 
 
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">
@@ -1065,7 +1065,7 @@
                                             <table class="table primary-table-bordered">
                                                 <thead class="thead-primary">
 
-                                                    
+
                                                 </thead>
                                                 <tbody>
                                                 @for ($i = 1; $i <= 8; $i++)
@@ -1123,7 +1123,7 @@
                                                         <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
                                                         <br>  {{ $CourtCheck->score_analysis }}</p>
                                                     </div>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2112,7 +2112,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                   
+
 
                                 </div>
                             </div>
@@ -2152,7 +2152,7 @@
                                     <a class="nav-link" data-bs-toggle="tab" href="#Market-Reputation-Score">
                                         Score Analysis</a>
                                     </li>
-                                    
+
 
 
                                 </ul>
@@ -2288,10 +2288,10 @@
                                                                 <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
                                                                 <br>  {{ $MarketReputation->score_analysis }}</p>
                                                             </div>
-                                                </div>  
+                                                </div>
                                             </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -2409,14 +2409,6 @@
 
 
 
-
-
-
-
-
-
-
-
 @endsection
 
 @section('addScript')
@@ -2469,7 +2461,7 @@
     var finalValueComplianceWatch =@json($finalValueComplianceWatch);
     var finalValueLegalCourtCheck =@json($finalValueLegalCourtCheck);
     var finalValueMarketReputation =@json($finalValueMarketReputation);
-    
+
 
     var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
     var financialFindingsGrapFYhLablesName =@json($financialFindingsGrapFYhLablesName);

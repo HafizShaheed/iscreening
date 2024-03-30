@@ -682,7 +682,7 @@
                     @for ($i=1; $i <=5; $i++)
                         <div class="col-xl-4 mb-3">
                             <label for="tax_fy{{ $i }}" class="form-label">FY{{ $i }} </label>
-                            <input type="text" class="form-control" id="tax_fy{{ $i }}" name="tax_fy{{ $i }}" value="{{ $Gst->{'tax_fy' . $i} }}" placeholder="">
+                            <input type="text" class="form-control" id="tax_fy{{ $i }}" name="tax_fy{{ $i }}" value="{{ $ComplianceWatch->{'tax_fy' . $i} }}" placeholder="">
                         </div> <br>
 
 
@@ -812,7 +812,7 @@
                             @for ($i=1; $i <= 12; $i++)
                                 <div class="col-xl-6 mb-3">
                                     <label for="address_visit_findings_{{ $i }}" class="form-label">{{ $i }}- Address Visit Findings</label>
-                                    <input type="text" class="form-control" name="address_visit_findings_{{ $i }}" id="address_visit_findings_{{ $i }}" value="{{$MarketReputation->{'address_visit_findings_'. $i } }}">
+                                    <input type="text" class="form-control" name="address_visit_findings_{{ $i }}" id="address_visit_findings_{{ $i }}" value="{{$OnGroundVerification->{'address_visit_findings_'. $i } }}">
                                 </div>
 
                             @endfor

@@ -17,16 +17,15 @@
 @section('content')
 
 
-
 <div class="row">
     <div class="card">
         <div class="card-body justify-content-center">
             <div class="d-flex flex-row flex-nowrap">
                 <a href="JavaScript:void(0)" id="click-Firm-Background"
                     class="btn btn-secondary report-tab-active border-round-tab  btn-sm mx-1 p-lg-3">Business Overview</a>
+                    <a href="JavaScript:void(0)" id="click-Compliance-Watch" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Compliance Watch</a>
                     <a href="JavaScript:void(0)" id="click-Documents" class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">Documents</a>
-
-                <a href="JavaScript:void(0)" id="click-On-Ground-Verification"
+                    <a href="JavaScript:void(0)" id="click-On-Ground-Verification"
                     class="btn btn-secondary report-tab-unactive border-round-tab btn-sm mx-1 p-lg-3">On Ground
                     Verification</a>
                 <a href="JavaScript:void(0)" id="click-Court-Checks"
@@ -59,7 +58,7 @@
                 <div class="tab-content" id="myTabContent">
                 <div class="card-header flex-wrap border-0" id="default-tab">
                     <h4 class="card-title">Business Overview</br>
-
+                        <p style="color:rgb(0, 0, 0); font-size:16px;">
                             <b>Third-Party Name:{{isset($getThirdPartyForID->third_party_name) ? $getThirdPartyForID->third_party_name : ''}} </b>
                         </p>
 
@@ -73,17 +72,23 @@
                             <div class="default-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Basic-Information"> Basic Information</a>
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#Basic-Information">Basic Information</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#Registrations-Licenses">
-                                            Registrations/Licenses</a>
-                                    </li>
+
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#Director-Details">  Management Details</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#Directorship-Check-Business-Conflict-Check"></i> Business Conflict Overview</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#business-Related-Parties"></i> Related Parties </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#business-Business-Ownership-Pattern"></i> Business Ownership Pattern  </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#business-firm-graph-analysis"></i> Business Overview Score  </a>
                                     </li>
 
                                 </ul>
@@ -122,129 +127,66 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="Registrations-Licenses">
-
-
-                                        <div class="pt-4">
-                                            <div class="table-responsive">
-                                                <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
-                                                        <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License No.</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">License</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-
-                                                    @for ($i = 1; $i <= 8; $i++)
-                                                            @if(!empty($License->{'license_name_'.$i}))
-                                                                <tr>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'license_name_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'license_no_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
-                                                                        @if(!empty($License->{'licenses_upload_file_'.$i}))
-                                                                            <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($License->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
-                                                                        @else
-                                                                            <!-- Handle if document doesn't exist -->
-                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
-                                                                        @endif
-                                                                    </td>
-                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
-                                                                        @if(!empty($License->{'licenses_upload_file_'.$i}))
-                                                                            <a href="{{ URL::to('/company/report/firm_file_view'.'/'.base64_encode($License->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
-                                                                        @else
-                                                                            <!-- Handle if document doesn't exist -->
-                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
-                                                                        @endif
-                                                                    </td>
-                                                                </tr>
-                                                            @endif
-                                                        @endfor
-
-                                                        <tr>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$FirmBackground->ofac_check}}</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Regulatory Score = {{$FirmBackground->regulatory_score}}</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-
-
-                                                        </tr>
-
-                                                        <tr>
-
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Score Analysis</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3" class="col-md-3 text-start">{{$FirmBackground->score_analysis}}</td>
-
-
-                                                        </tr>
-                                                        <!-- <tr>
-                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
-                                                                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
-                                                                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
-                                                            </td>
-
-                                                        </tr> -->
-
-                                                    </tbody>
-                                                </table>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="tab-pane fade" id="Director-Details">
                                         <div class="pt-4">
                                             <div class="table-responsive">
                                                 <table class="table primary-table-bordered">
 
-                                        <tbody>
+                                                 <tbody>
                                                  <!-- director 2 -->
 
 
                                             @for($i = 1; $i <= 10; $i++)
-                                            @if(!empty($FirmBackground->{'name_'.$i}) || isset($FirmBackground->{'name_'.$i}))
+                                            @if(!empty($AdharPartnerDetail->{'name_'.$i}) || isset($AdharPartnerDetail->{'name_'.$i}))
                                             <tr>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
                                                         class="col-md-4"> Name ({{ $i }})</th>
                                                     <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-8"> {{$FirmBackground->{'name_'.$i} }}</th>
+                                                        class="col-md-8"> {{$AdharPartnerDetail->{'name_'.$i} }}</th>
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">PAN</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8"> {{$FirmBackground->{'pan_'.$i} }}</td>
+                                                        class="col-md-8"> {{$AdharPartnerDetail->{'pan_'.$i} }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">AADHAR</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8"> {{$FirmBackground->{'aadhar_'.$i} }}</td>
+                                                        class="col-md-8"> {{$AdharPartnerDetail->{'aadhar_'.$i} }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">Educational Background</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-8"> {{$FirmBackground->{'educational_background_'.$i} }}
+                                                        class="col-md-8"> {{$AdharPartnerDetail->{'educational_background_'.$i} }}
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                     class="col-md-4">DIN</th>
                                                 <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                    class="col-md-8"> {{$FirmBackground->{'din_'.$i} }}
+                                                    class="col-md-8"> {{$AdharPartnerDetail->{'din_'.$i} }}
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
+                                                        @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
+                                                            <a href="{{ URL::to('/company/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                        @else
+                                                            <!-- Handle if document doesn't exist -->
+                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                        @endif
+                                                        </td>
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
+                                                        @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
+                                                            <a href="{{ URL::to('/company/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                        @else
+                                                            <!-- Handle if document doesn't exist -->
+                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                        @endif
+
                                                 </td>
                                             </tr>
                                             @endif
@@ -445,6 +387,117 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="tab-pane fade" id="business-Related-Parties">
+                                       <div class="pt-4">
+                                            <div class="table-responsive">
+                                                <table class="table primary-table-bordered">
+
+                                                 <tbody>
+                                                 <!-- director 2 -->
+
+
+                                            @for($i = 1; $i <= 6; $i++)
+                                            @if(!empty($RelatedPartiesFirm->{'Related_party_name_'.$i}) || isset($RelatedPartiesFirm->{'Related_party_name_'.$i}))
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4"> Name ({{ $i }})</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8"> {{$RelatedPartiesFirm->{'Related_party_name_'.$i} }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Relation</th>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8"> {{$RelatedPartiesFirm->{'Related_party_relation_'.$i} }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Comments</th>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8"> {{$RelatedPartiesFirm->{'Related_party_comments_'.$i} }}</td>
+                                                </tr>
+
+
+                                            @endif
+                                            @endfor
+
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="business-Business-Ownership-Pattern">
+                                       <div class="pt-4">
+                                            <div class="table-responsive">
+                                                <table class="table primary-table-bordered">
+
+
+
+                                            @for($i = 1; $i <= 6; $i++)
+                                            @if(!empty($BusinessOwnershipPatternsFirm->{'business_patterns_name_of_the_shareholder_'.$i}) || isset($BusinessOwnershipPatternsFirm->{'business_patterns_name_of_the_shareholder_'.$i}))
+                                            <tr>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-4"> Name Of The Shareholder ({{ $i }})</th>
+                                                    <th style="background-color: #5a595a; color: white;" scope="col"
+                                                        class="col-md-8"> {{$BusinessOwnershipPatternsFirm->{'business_patterns_name_of_the_shareholder_'.$i} }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Appointment Date</th>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8"> {{$BusinessOwnershipPatternsFirm->{'business_patterns_appointment_date_'.$i} }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-4">Shareholding In The Entity_</th>
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                        class="col-md-8"> {{$BusinessOwnershipPatternsFirm->{'business_patterns_shareholding_in_the_entity_'.$i} }}</td>
+                                                </tr>
+
+
+                                            @endif
+                                            @endfor
+
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="business-firm-graph-analysis">
+                                        <div class="pt-4">
+
+                                                <div class="row">
+
+
+
+                                                    <div class="col-xl-3 mt-3">
+                                                        <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf"> SCORE =
+                                                            {{ $FirmBackground->regulatory_score }}</b></p>
+                                                    </div>
+                                                    <div class="col-xl-3 mt-6">
+                                                    <canvas id="doughnut_chartfirmBackground"></canvas>
+                                                    </div>
+
+                                                    <div class="col-xl-6  mt-3">
+                                                        <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
+                                                        <br>  {{ $FirmBackground->score_analysis }}</p>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -454,6 +507,247 @@
         </div>
     </div>
 <!-- firm background tab End -->
+<!-- Compliance-Watch tab End -->
+    <div class="col-xl-12" id="tab-Compliance-Watch">
+        <div class="card dz-card">
+
+                <div class="tab-content" id="myTabContent">
+                <div class="card-header flex-wrap border-0" id="default-tab">
+                    <h4 class="card-title">Compliance Watch</br>
+
+                    </h4>
+
+
+                </div>
+                    <div class="tab-pane fade show active" id="DefaultTab" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="card-body pt-0">
+                            <!-- Nav tabs -->
+                            <div class="default-tab">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#New-Registrations-Licenses">Registrations/Licenses</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#Goods-Services-Tax">
+                                        Goods and Services Tax</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#tax-Compliance">Taxes </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#score-analysis-compliance-watch"></i> Compliance Score </a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="New-Registrations-Licenses" role="tabpanel">
+                                    <div class="pt-4">
+                                            <div class="table-responsive">
+                                                <table class="table primary-table-bordered">
+                                                    <thead class="thead-primary">
+                                                        <tr>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License Name</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">License No.</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">License</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        @for ($i = 1; $i <= 8; $i++)
+                                                            @if(!empty($License->{'license_name_'.$i}))
+                                                                <tr>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'license_name_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'license_no_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'date_of_issuance_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$License->{'date_of_expiry_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
+                                                                        @if(!empty($License->{'licenses_upload_file_'.$i}))
+                                                                            <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($License->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                        @if(!empty($License->{'licenses_upload_file_'.$i}))
+                                                                            <a href="{{ URL::to('/company/report/firm_file_view'.'/'.base64_encode($License->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+                                                        @endfor
+
+
+
+
+                                                        <!-- <tr>
+                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
+                                                            <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
+                                                                <a href="{{ URL::to('/company/report/firm_file_view'.'/'.base64_encode($FirmBackground->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Licenses</a>
+                                                            </td>
+
+                                                        </tr> -->
+                                                    </tbody>
+                                                </table>
+
+
+                                            </div>
+                                    </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Goods-Services-Tax">
+                                        <div class="pt-4">
+                                            <div class="table-responsive">
+                                                <table class="table primary-table-bordered">
+                                                    <thead class="thead-primary">
+                                                        <tr>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4 text-start">GST No</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4 text-start">Date of Filling</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" colspan="2"  class="col-md-4 text-center">File</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        @for ($i = 1; $i <= 8; $i++)
+                                                            @if(!empty($Gst->{'gst_number_'.$i}))
+                                                                <tr>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4 text-start">{{$Gst->{'gst_number_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4 text-start">{{$Gst->{'date_of_filing_'.$i} }}</td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4 text-start">
+                                                                        @if(!empty($Gst->{'gst_upload_file_'.$i}))
+                                                                            <a href="{{ URL::to('/company/report/gst_compliance_watch_download'.'/'.base64_encode($Gst->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+                                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                        @if(!empty($Gst->{'gst_upload_file_'.$i}))
+                                                                            <a href="{{ URL::to('/company/report/gst_compliance_watch_view'.'/'.base64_encode($Gst->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                        @else
+                                                                            <!-- Handle if document doesn't exist -->
+                                                                            <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                        @endif
+                                                                    </td>
+                                                                </tr>
+                                                            @endif
+                                                        @endfor
+
+                                                        <tr>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Ofac Check</th>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">{{$FirmBackground->ofac_check}}</td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
+
+
+                                                        </tr>
+
+                                                        <tr>
+
+
+
+                                                        </tr>
+                                                        <!-- <tr>
+                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
+                                                            <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
+                                                                <a href="{{ URL::to('/company/report/firm_file_view'.'/'.base64_encode($FirmBackground->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Licenses</a>
+                                                            </td>
+
+                                                        </tr> -->
+                                                    </tbody>
+                                                </table>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="tax-Compliance">
+                                        <div class="pt-4">
+                                                <div class="table-responsive">
+                                                    <table class="table primary-table-bordered">
+                                                        <thead class="thead-primary">
+                                                            <tr>
+
+
+
+                                                            </tr>
+
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Year</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">Tax Paid</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 1</>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $ComplianceWatch->tax_fy1 }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 2</th>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $ComplianceWatch->tax_fy2 }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 3</td>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $ComplianceWatch->tax_fy3 }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 4</th>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $ComplianceWatch->tax_fy4 }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 5</th>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $ComplianceWatch->tax_fy5 }}</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="tab-pane fade" id="score-analysis-compliance-watch">
+                                        <div class="pt-4">
+
+                                            <div class="row">
+                                                <div class="col-xl-3 mt-3">
+                                                    <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf"> SCORE =
+                                                        {{ $ComplianceWatch->compliance_score }}</b></p>
+                                                </div>
+                                                <div class="col-xl-3 mt-6">
+                                                    <canvas id="doughnut_chartComplianceWatch"></canvas>
+                                                </div>
+
+                                                <div class="col-xl-6  mt-3">
+                                                    <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
+                                                    <br>  {{ $ComplianceWatch->score_analysis }}</p>
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+<!-- Compliance-Watchtab End -->
 <!-- document Report  start-->
 <div class="col-xl-12" id="tab-document-report">
         <div class="card dz-card">
@@ -479,7 +773,7 @@
                                         <table class="table primary-table-bordered">
                                                     <thead class="thead-primary">
                                                         <tr>
-                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document Name</th>
+                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document Name</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Document No.</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Date of Issuance</th>
                                                             <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Expiry Date</th>
@@ -488,7 +782,7 @@
                                                     </thead>
                                                     <tbody>
 
-                                                    @for ($i = 1; $i <= 18; $i++)
+                                                        @for ($i = 1; $i <= 18; $i++)
                                                             @if(!empty($Document->{'document_name_'.$i}))
                                                                 <tr>
                                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$Document->{'document_name_'.$i} }}</td>
@@ -517,13 +811,7 @@
                                                         @endfor
 
 
-                                                        <!-- <tr>
-                                                            <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
-                                                            <a href="{{ URL::to('/company/report/document_file_download'.'/'.base64_encode($Document->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Document</a>
-                                                                <a href="{{ URL::to('/company/report/document_file_view'.'/'.base64_encode($Document->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Document</a>
-                                                            </td>
 
-                                                        </tr> -->
                                                     </tbody>
                                                 </table>
                                         </div>
@@ -539,7 +827,6 @@
         </div>
     </div>
     <!-- document reports end -->
-<!-- on ground verification tab start -->
 <!-- on ground verification tab start -->
     <div class="col-xl-12" id="tab-On-Ground-Verification">
         <div class="card dz-card">
@@ -578,8 +865,20 @@
                                                         <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{$OnGroundVerification->address_details}} </td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">Address Visit Findings</th>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{$OnGroundVerification->address_visit_findings}}</td>
+                                                        <tr>
+                                                        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-">Address Visit Findings</th>
+
+
+
+
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">
+                                                        @for ($i = 1; $i <= 12; $i++)
+                                                                @if(!empty($OnGroundVerification->{'address_visit_findings_'.$i}))
+                                                                {{$OnGroundVerification->{'address_visit_findings_'.$i} }} <br>
+                                                                @endif
+                                                                @endfor
+
+                                                        </td>
                                                     </tr>
 
                                                     <tr>
@@ -592,9 +891,11 @@
                                                     </tr>
 
                                                     <tr>
-                                                    <td style=" text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="2"  class="">
-                                                    <a href="{{ URL::to('/company/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Report</a>
-                                                       <a href="{{ URL::to('/company/report/onGround_file_view'.'/'. base64_encode($OnGroundVerification->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Report </a></td>
+                                                        <td style=" text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="2"  class="col-md-4">
+                                                        <a href="{{ URL::to('/company/report/onGround_file_download'.'/'. base64_encode($OnGroundVerification->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Report</a>
+
+                                                        <a href="{{ URL::to('/company/report/onGround_file_view'.'/'. base64_encode($OnGroundVerification->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;text-align: center; ">View Report</a>
+                                                    </td>
 
                                                     </tr>
                                                 </tbody>
@@ -634,6 +935,15 @@
                                     <a class="nav-link" data-bs-toggle="tab" href="#Court-Check-Of-Company">
                                         Company Legal Records</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#Court-Related-Party-Legal-Records">
+                                    Related Party Legal Records </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#Court-Legal-Record-Score">
+                                    Legal Record Score  </a>
+                                </li>
+
 
 
                             </ul>
@@ -647,56 +957,55 @@
 
                                                 </thead>
                                                 <tbody>
-            @for ($i = 1; $i <= 5; $i++)
-                @if (!empty($CourtCheck->{'director_name_' . $i}))
-            <tr>
+                                                        @for ($i = 1; $i <= 5; $i++)
+                                                        @if (!empty($CourtCheck->{'director_name_' . $i}))
+                                                            <tr>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col"
+                                                                class="col-md-4">Name</th>
+                                                                <th style="background-color: #5a595a; color: white;" colspan="2"
+                                                                scope="col" class="col-md-8"> {{ $CourtCheck->{'director_name_' . $i} }}
+                                                                </th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                    class="col-md-4">Jurisdiction</th>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                    class="col-md-4">Record</th>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                    class="col-md-4">Subject Matter</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                        class="col-md-4">
+                                                                    {{ $CourtCheck->{'director_jurisdiction_' . $i} }}
+                                                                </td>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                        class="col-md-4">
+                                                                    {{ $CourtCheck->{'director_record_' . $i} }}
+                                                                </td>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                        class="col-md-4">
+                                                                    {{ $CourtCheck->{'director_subject_matter_' . $i} }}
+                                                                </td>
+                                                            </tr>
+                                                        @endif
+                                                        @endfor
 
-                <th style="background-color: #5a595a; color: white;" scope="col"
-                                                        class="col-md-4">Name</th>
-                                                    <th style="background-color: #5a595a; color: white;" colspan="2"
-                                                        scope="col" class="col-md-8"> {{ $CourtCheck->{'director_name_' . $i} }}
-                                                    </th>
-            </tr>
-            <tr>
-                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Jurisdiction</th>
-                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Record</th>
-                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Subject Matter</th>
-                                                </tr>
-            <tr>
-                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-                    {{ $CourtCheck->{'director_jurisdiction_' . $i} }}
-                </td>
-                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-                    {{ $CourtCheck->{'director_record_' . $i} }}
-                </td>
-                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-                    {{ $CourtCheck->{'director_subject_matter_' . $i} }}
-                </td>
-            </tr>
-        @endif
-            @endfor
+                                                            <!-- <tr>
+                                                                <td style="font-size: 16px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                                class="col-md-4">
+                                                                    LEGAL SCORE = {{ $CourtCheck->legal_score }}
+                                                                </td>
+                                                            </tr> -->
 
-    <tr>
-        <td style="font-size: 16px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-            LEGAL SCORE = {{ $CourtCheck->legal_score }}
-        </td>
-    </tr>
+                                                            <!-- <tr>
+                                                                <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                    class="col-md-4">Score Analysis</th>
+                                                                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                    class="col-md-4"> {{ $CourtCheck->score_analysis }}</td>
 
-    <tr>
-        <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-            class="col-md-4">Score Analysis</th>
-        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-            class="col-md-4"> {{ $CourtCheck->score_analysis }}</td>
-
-    </tr>
-</tbody>
+                                                            </tr> -->
+                                                        </tbody>
 
                                             </table>
                                         </div>
@@ -711,47 +1020,113 @@
 
                                                 </thead>
                                                 <tbody>
-    @for ($i = 1; $i <= 5; $i++)
-        @if (!empty($CourtCheck->{'director_name_' . $i}))
-            <tr>
-            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
-            <th style="background-color: #5a595a; color: white;" colspan="2"scope="col" class="col-md-8">
-                    {{ $CourtCheck->{'director_name_' . $i} }}
-                </th>
-            </tr>
-            <tr>
-                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Jurisdiction</td>
-                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Record</th>
-                                                    <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">Subject Matter</td>
-                                                </tr>
-            <tr>
-                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-                    {{ $CourtCheck->{'company_jurisdiction_' . $i} }}
-                </td>
-                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-                    {{ $CourtCheck->{'company_record_' . $i} }}
-                </td>
-                <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
-                                                        class="col-md-4">
-                    {{ $CourtCheck->{'company_subject_matter_' . $i} }}
-                </td>
-            </tr>
-        @endif
-    @endfor
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    @if (!empty($CourtCheck->{'director_name_' . $i}))
+                                                        <tr>
+                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
+                                                        <th style="background-color: #5a595a; color: white;" colspan="2"scope="col" class="col-md-8">
+                                                                {{ $CourtCheck->{'director_name_' . $i} }}
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                class="col-md-4">Jurisdiction</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                class="col-md-4">Record</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                class="col-md-4">Subject Matter</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                    class="col-md-4">
+                                                                {{ $CourtCheck->{'company_jurisdiction_' . $i} }}
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                    class="col-md-4">
+                                                                {{ $CourtCheck->{'company_record_' . $i} }}
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                    class="col-md-4">
+                                                                {{ $CourtCheck->{'company_subject_matter_' . $i} }}
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                @endfor
 
 
-</tbody>
+                                                </tbody>
 
                                             </table>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane fade" id="Court-Related-Party-Legal-Records">
+                                    <div class="pt-4">
+                                        <div class="table-responsive">
+                                            <table class="table primary-table-bordered">
+                                                <thead class="thead-primary">
 
+
+                                                </thead>
+                                                <tbody>
+                                                @for ($i = 1; $i <= 8; $i++)
+                                                    @if (!empty($RelatedPartyLegal->{'related_party_legal_name_' . $i}))
+                                                        <tr>
+                                                        <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Name</th>
+                                                        <th style="background-color: #5a595a; color: white;" colspan="2"scope="col" class="col-md-8">
+                                                                {{ $RelatedPartyLegal->{'related_party_legal_name_' . $i} }}
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                class="col-md-4">Jurisdiction</td>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                class="col-md-4">Record</th>
+                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                class="col-md-4">Subject Matter</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                    class="col-md-4">
+                                                                {{ $RelatedPartyLegal->{'related_party_legal_jurisdiction_' . $i} }}
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                    class="col-md-4">
+                                                                {{ $RelatedPartyLegal->{'related_party_legal_record_' . $i} }}
+                                                            </td>
+                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
+                                                                                                    class="col-md-4">
+                                                                {{ $RelatedPartyLegal->{'related_party_legal_subject_matter_' . $i} }}
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                @endfor
+
+
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Court-Legal-Record-Score">
+                                    <div class="pt-4">
+                                        <div class="row">
+                                                    <div class="col-xl-3 mt-3">
+                                                        <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf"> SCORE =
+                                                            {{ $CourtCheck->legal_score}}</b></p>
+                                                    </div>
+                                                    <div class="col-xl-3 mt-6">
+                                                        <canvas id="doughnut_chartLegalCourtCheck"></canvas>
+                                                    </div>
+
+                                                    <div class="col-xl-6  mt-3">
+                                                        <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
+                                                        <br>  {{ $CourtCheck->score_analysis }}</p>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1600,7 +1975,8 @@
                                         </div>
                                     </div>
 
-                                </div>                            </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1627,61 +2003,18 @@
                             <div class="default-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Tax-Return">Tax Return</a>
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#Tax-Return"> Credit History</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#Credit-History">
                                             Credit History</a>
-                                    </li>
+                                    </li> -->
 
 
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="Tax-Return" role="tabpanel">
-                                        <div class="pt-4">
-                                            <div class="table-responsive">
-                                                <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
-                                                        <tr>
-
-
-
-                                                        </tr>
-
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-4">Year</th>
-                                                            <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-8">Tax Paid</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 1</>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy1 }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 2</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy2 }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 3</td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy3 }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 4</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy4 }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-4">FY 5</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">{{ $TaxReurnCredit->tax_fy5 }}</td>
-                                                        </tr>
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="Credit-History">
-                                        <div class="pt-4">
+                                    <div class="pt-4">
                                             <div class="table-responsive">
                                                 <table class="table primary-table-bordered">
                                                     <thead class="thead-primary">
@@ -1781,6 +2114,7 @@
                                         </div>
                                     </div>
 
+
                                 </div>
                             </div>
                         </div>
@@ -1809,63 +2143,154 @@
                             <div class="default-tab">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Market-Reputation">Reputation Watch </a>
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#Market-Reputation-OFFLINE">Reputation Watch Offline </a>
                                     </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#Market-Reputation-ONLINE">
+                                       Reputation Watch Online</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#Market-Reputation-Score">
+                                        Score Analysis</a>
+                                    </li>
+
 
 
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="Market-Reputation" role="tabpanel">
+                                    <div class="tab-pane fade show active" id="Market-Reputation-OFFLINE" role="tabpanel">
                                         <div class="pt-4">
-                                            <div class="table-responsive">
-                                                <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
+                                                <div class="table-responsive">
+                                                    <table class="table primary-table-bordered">
+                                                        <thead class="thead-primary">
+                                                            <tr>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Name</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Contact No.</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Email</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Company Name</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">File</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @for ($i = 1; $i <= 8; $i++)
+                                                                @if(!empty($MarketReputation->{'offLine_reference_name_'.$i}))
+                                                                    <tr>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$MarketReputation->{'offLine_reference_name_'.$i} }}</td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$MarketReputation->{'offLine_contact_'.$i} }}</td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$MarketReputation->{'offLine_email_'.$i} }}</td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$MarketReputation->{'offLine_company_name_'.$i} }}</td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
+                                                                            @if(!empty($MarketReputation->{'offLine_upload_file_'.$i}))
+                                                                                <a href="{{ URL::to('/company/report/market_file_offline_download'.'/'.base64_encode($MarketReputation->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                            @else
+                                                                                <!-- Handle if document doesn't exist -->
+                                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                            @endif
+                                                                        </td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                            @if(!empty($MarketReputation->{'offLine_upload_file_'.$i}))
+                                                                                <a href="{{ URL::to('/company/report/market_file_offline_view'.'/'.base64_encode($MarketReputation->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                            @else
+                                                                                <!-- Handle if document doesn't exist -->
+                                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                            @endif
+                                                                        </td>
+                                                                    </tr>
+                                                                @endif
+                                                            @endfor
 
 
-                                                    </thead>
-                                                    <tbody>
 
 
+                                                            <!-- <tr>
+                                                                <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
+                                                                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
+                                                                    <a href="{{ URL::to('/company/report/firm_file_view'.'/'.base64_encode($FirmBackground->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Licenses</a>
+                                                                </td>
 
-                                                        <tr>
-                                                            <th style="font-size: 18px; font-weight: bolder; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">MARKET REPUTATION SCORE = {{$MarketReputation->market_reputation_score}}</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start"></td>
-
-
-                                                        </tr>
-
-                                                        <tr>
-
-                                                            <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-3 text-start">Score Analysis</th>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3" class="col-md-3 text-start">{{$MarketReputation->score_analysis}}</td>
+                                                            </tr> -->
+                                                        </tbody>
+                                                    </table>
 
 
-                                                        </tr>
-
-
-                                                    </tbody>
-                                                </table>
-                                                <table class="table primary-table-bordered">
-                                                    <thead class="thead-primary">
-
-
-                                                    </thead>
-                                                    <tbody>
-
-                                                        <tr>
-                                                            <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"  class="col-md-8">
-                                                                <embed src="{{URL::to('public/admin/assets/imgs/MarketReputations/') .'/'.$MarketReputation->file_path_market_reputations}}" width="500" height="550" type="application/pdf">
-
-                                                            </td>
-                                                        </tr>
-
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                </div>
                                         </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Market-Reputation-ONLINE">
+                                    <div class="pt-4">
+                                                <div class="table-responsive">
+                                                    <table class="table primary-table-bordered">
+                                                        <thead class="thead-primary">
+                                                            <tr>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Description</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" class="col-md-3 text-start">Source</th>
+                                                                <th style="background-color: #5a595a; color: white;" scope="col" colspan="2" class="col-md-3 text-center">File</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @for ($i = 1; $i <= 8; $i++)
+                                                                @if(!empty($MarketReputation->{'onLine_description_'.$i}))
+                                                                    <tr>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$MarketReputation->{'onLine_description_'.$i} }}</td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">{{$MarketReputation->{'onLine_source_'.$i} }}</td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-start">
+                                                                            @if(!empty($MarketReputation->{'onLine_upload_file_'.$i}))
+                                                                                <a href="{{ URL::to('/company/report/market_file_online_download'.'/'.base64_encode($MarketReputation->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
+                                                                            @else
+                                                                                <!-- Handle if document doesn't exist -->
+                                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                            @endif
+                                                                        </td>
+                                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2 text-end">
+                                                                            @if(!empty($MarketReputation->{'onLine_upload_file_'.$i}))
+                                                                                <a href="{{ URL::to('/company/report/market_file_online_view'.'/'.base64_encode($MarketReputation->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
+                                                                            @else
+                                                                                <!-- Handle if document doesn't exist -->
+                                                                                <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
+                                                                            @endif
+                                                                        </td>
+                                                                    </tr>
+                                                                @endif
+                                                            @endfor
+
+
+
+
+                                                            <!-- <tr>
+                                                                <td style="text-align-last: center; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="4" class="col-md-3">
+                                                                <a href="{{ URL::to('/company/report/firm_file_download'.'/'.base64_encode($FirmBackground->id)) }}" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">Download Licenses</a>
+                                                                    <a href="{{ URL::to('/company/report/firm_file_view'.'/'.base64_encode($FirmBackground->id)) }}" target="_blank" class="download-license-btn" style="display: inline-block; width: 200px;  text-align: center; ">View Licenses</a>
+                                                                </td>
+
+                                                            </tr> -->
+                                                        </tbody>
+                                                    </table>
+
+
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="Market-Reputation-Score">
+                                            <div class="pt-4">
+                                                <div class="row">
+                                                            <div class="col-xl-3 mt-3">
+                                                                <p for="educationalBackground" class="text-center mt-20" > <b style="font-size:18px;color:#000000cf"> SCORE =
+                                                                    {{ $MarketReputation->market_reputation_score}}</b></p>
+                                                            </div>
+                                                            <div class="col-xl-3 mt-6">
+                                                                <canvas id="doughnut_chartMarketReputation"></canvas>
+                                                            </div>
+
+                                                            <div class="col-xl-6  mt-3">
+                                                                <p for="educationalBackground" class="text-start ml-2 mt-20" > <b style="font-size:18px;color:#000000cf">Score Analysis: </b>
+                                                                <br>  {{ $MarketReputation->score_analysis }}</p>
+                                                            </div>
+                                                </div>
+                                            </div>
                                     </div>
 
                                 </div>
@@ -1904,7 +2329,7 @@
                             <div class="tab-pane fade show active" id="Key-Observation" role="tabpanel">
                                 <div class="pt-4">
 
-                                     <div class="row">
+                                    <div class="row">
 
 
 
@@ -1929,31 +2354,31 @@
 
 
                                     <div class="row">
-                                            <div class="col-xl-6 mb-3">
-                                                <b style="color: black" for="educationalBackground" class="text-start">Observations</b>
+                                    <div class="col-xl-6 mb-3">
+                                        <b style="color: black" for="educationalBackground" class="text-start">Observations</b>
+                                    </div>
+                                    <div class="col-xl-6 mb-3">
+                                        <b style="color: black" for="educationalBackground" class="text-start">Recommendations</b>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        @for($i = 1; $i <= 25; $i++)
+                                            <div class="col-xl-6 mb-1">
+                                                @if(isset($KeyObservation->{'key_observation_'.$i}) && !empty($KeyObservation->{'key_observation_'.$i}))
+                                                    <p for="educationalBackground" class="text-start">
+                                                        {{ $KeyObservation->{'key_observation_'.$i} }}
+                                                    </p>
+                                                @endif
                                             </div>
-                                            <div class="col-xl-6 mb-3">
-                                                <b style="color: black" for="educationalBackground" class="text-start">Recommendations</b>
+                                            <div class="col-xl-6 mb-1">
+                                                @if(isset($KeyObservation->{'key_recommendations_'.$i}) && !empty($KeyObservation->{'key_recommendations_'.$i}))
+                                                    <p for="educationalBackground" class="text-start">
+                                                        {{ $KeyObservation->{'key_recommendations_'.$i} }}
+                                                    </p>
+                                                @endif
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            @for($i = 1; $i <= 25; $i++)
-                                                <div class="col-xl-6 mb-1">
-                                                    @if(isset($KeyObservation->{'key_observation_'.$i}) && !empty($KeyObservation->{'key_observation_'.$i}))
-                                                        <p for="educationalBackground" class="text-start">
-                                                            {{ $KeyObservation->{'key_observation_'.$i} }}
-                                                        </p>
-                                                    @endif
-                                                </div>
-                                                <div class="col-xl-6 mb-1">
-                                                    @if(isset($KeyObservation->{'key_recommendations_'.$i}) && !empty($KeyObservation->{'key_recommendations_'.$i}))
-                                                        <p for="educationalBackground" class="text-start">
-                                                            {{ $KeyObservation->{'key_recommendations_'.$i} }}
-                                                        </p>
-                                                    @endif
-                                                </div>
-                                            @endfor
-                                        </div>
+                                        @endfor
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-xl-6 mb-3">
@@ -1978,15 +2403,6 @@
     </div>
 </div>
 <!--click-Key-Observation tab End -->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2041,6 +2457,11 @@
 
 
     var finalValueforGraKeyObservation =@json($finalValueforGraKeyObservation);
+    var finalValueforFirmBackground =@json($finalValueforFirmBackground);
+    var finalValueComplianceWatch =@json($finalValueComplianceWatch);
+    var finalValueLegalCourtCheck =@json($finalValueLegalCourtCheck);
+    var finalValueMarketReputation =@json($finalValueMarketReputation);
+
 
     var businessInteligenceGraphLablesName =@json($businessInteligenceGraphLablesName);
     var financialFindingsGrapFYhLablesName =@json($financialFindingsGrapFYhLablesName);
@@ -2057,252 +2478,294 @@
 $(document).ready(function() {
 
 
-    $('#click-Firm-Background').on('click', function() {
-        $('#tab-Firm-Background').show();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+$('#click-Firm-Background').on('click', function() {
+    $('#tab-Firm-Background').show();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-document-report').hide();
 
-        $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
 
-    });
-    $('#click-Documents').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-document-report').show();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
 
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
+    $('#click-Firm-Background').addClass('report-tab-active').removeClass('report-tab-unactive');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Documents").addClass('report-tab-active').removeClass(
-            'report-tab-unactive');
-        $("##click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
+});
+$('#click-Compliance-Watch').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-document-report').hide();
 
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-Compliance-Watch').show();
+    $('#click-Compliance-Watch').addClass('report-tab-active').removeClass('report-tab-unactive');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
+});
+$('#click-Documents').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-document-report').show();
 
-    });
-    $('#click-On-Ground-Verification').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').show();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Documents").addClass('report-tab-active').removeClass(
+        'report-tab-unactive');
+    $("##click-On-Ground-Verification").addClass('report-tab-unactive').removeClass('report-tab-active');
 
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-active').removeClass(
-            'report-tab-unactive');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
-
-
-    });
-
-    $('#click-Court-Checks').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').show();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
-    });
-    $('#click-Financials').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').show();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
 
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-active').removeClass('report-tab-unactive');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+});
+$('#click-On-Ground-Verification').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').show();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+
+    $('#tab-document-report').hide();
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-active').removeClass(
+        'report-tab-unactive');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
 
-    });
-    $('#click-Business-Intelligence').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').show();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+});
 
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-active').removeClass(
-            'report-tab-unactive');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
-    });
-    $('#click-Tax-Return-and-Credit').on('click', function() {
-
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').show();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-active').removeClass(
-            'report-tab-unactive');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
-
-    });
-    $('#click-Market-Reputation').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').show();
-        $('#tab-Key-Observation').hide();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-active').removeClass('report-tab-unactive');
-        $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
-
-    });
-    $('#click-Key-Observation').on('click', function() {
-        $('#tab-Firm-Background').hide();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').show();
-        $('#tab-document-report').hide();
-        $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
-
-        $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
-            'report-tab-active');
-        $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
-        $("#click-Key-Observation").addClass('report-tab-active').removeClass('report-tab-unactive');
-
-    });
+$('#click-Court-Checks').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').show();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-document-report').hide();
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-active').removeClass('report-tab-unactive');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+});
+$('#click-Financials').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').show();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-document-report').hide();
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Financials").addClass('report-tab-active').removeClass('report-tab-unactive');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
 
 
+});
+$('#click-Business-Intelligence').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').show();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-document-report').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-active').removeClass(
+        'report-tab-unactive');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+});
+$('#click-Tax-Return-and-Credit').on('click', function() {
 
-    const hidetabExceptFir = () => {
-        $('#tab-Firm-Background').show();
-        $('#tab-On-Ground-Verification').hide();
-        $('#tab-Court-Checks').hide();
-        $('#tab-document-report').hide();
-        $('#tab-Financials').hide();
-        $('#tab-Business-Intelligence').hide();
-        $('#tab-Tax-Return-and-Credit').hide();
-        $('#tab-Market-Reputation').hide();
-        $('#tab-Key-Observation').hide();
-    }
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').show();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-document-report').hide();
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-active').removeClass(
+        'report-tab-unactive');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+
+});
+$('#click-Market-Reputation').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').show();
+    $('#tab-Key-Observation').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#tab-document-report').hide();
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-active').removeClass('report-tab-unactive');
+    $("#click-Key-Observation").addClass('report-tab-unactive').removeClass('report-tab-active');
+
+});
+$('#click-Key-Observation').on('click', function() {
+    $('#tab-Firm-Background').hide();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').show();
+    $('#tab-document-report').hide();
+    $('#tab-Compliance-Watch').hide();
+    $('#click-Compliance-Watch').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Documents").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Firm-Background').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $('#click-Court-Checks').addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-On-Ground-Verification").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Financials").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Business-Intelligence").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Tax-Return-and-Credit").addClass('report-tab-unactive').removeClass(
+        'report-tab-active');
+    $("#click-Market-Reputation").addClass('report-tab-unactive').removeClass('report-tab-active');
+    $("#click-Key-Observation").addClass('report-tab-active').removeClass('report-tab-unactive');
+
+});
 
 
-    hidetabExceptFir();
+
+const hidetabExceptFir = () => {
+    $('#tab-Firm-Background').show();
+    $('#tab-On-Ground-Verification').hide();
+    $('#tab-Court-Checks').hide();
+    $('#tab-Financials').hide();
+    $('#tab-Business-Intelligence').hide();
+    $('#tab-Tax-Return-and-Credit').hide();
+    $('#tab-Market-Reputation').hide();
+    $('#tab-Key-Observation').hide();
+    $('#tab-document-report').hide();
+    $('#tab-Compliance-Watch').hide();
+}
+
+
+hidetabExceptFir();
 });
 </script>
 
@@ -5086,6 +5549,183 @@ $(document).ready(function() {
 		}
 	}
 
+    var doughnutChartfirmBackground = function(){
+		if(jQuery('#doughnut_chartfirmBackground').length > 0 ){
+			//doughut chart
+			const doughnut_chartfirmBackground = document.getElementById("doughnut_chartfirmBackground").getContext('2d');
+			doughnut_chartfirmBackground.height = 100;
+			new Chart(doughnut_chartfirmBackground, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueforFirmBackground,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    var doughnutChartComplianceWatch = function(){
+		if(jQuery('#doughnut_chartComplianceWatch').length > 0 ){
+			//doughut chart
+			const doughnut_chartComplianceWatch = document.getElementById("doughnut_chartComplianceWatch").getContext('2d');
+			doughnut_chartComplianceWatch.height = 100;
+			new Chart(doughnut_chartComplianceWatch, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueComplianceWatch,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    var doughnutChartLegalCourtCheck = function(){
+		if(jQuery('#doughnut_chartLegalCourtCheck').length > 0 ){
+			//doughut chart
+			const doughnut_chartLegalCourtCheck = document.getElementById("doughnut_chartLegalCourtCheck").getContext('2d');
+			doughnut_chartLegalCourtCheck.height = 100;
+			new Chart(doughnut_chartLegalCourtCheck, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueLegalCourtCheck,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+    var doughnutChartMarketReputation = function(){
+		if(jQuery('#doughnut_chartMarketReputation').length > 0 ){
+			//doughut chart
+			const doughnut_chartMarketReputation = document.getElementById("doughnut_chartMarketReputation").getContext('2d');
+			doughnut_chartMarketReputation.height = 100;
+			new Chart(doughnut_chartMarketReputation, {
+				type: 'doughnut',
+				data: {
+					weight: 5,
+					defaultFontFamily: 'Poppins',
+					datasets: [{
+						data: finalValueMarketReputation,
+						borderWidth: 3,
+						borderColor: "rgba(255,255,255,1)",
+						backgroundColor: [
+							"rgba(98, 126, 234, 1)",
+
+
+						],
+						hoverBackgroundColor: [
+							"rgba(98, 126, 234, .9)",
+
+						]
+
+					}],
+					labels: [
+					    "Score",
+					    "Out of",
+
+
+					]
+				},
+				options: {
+					weight: 19,
+
+                     cutoutPercentage: 80,
+                rotation: 1 * Math.PI,
+                circumference: 1 * Math.PI,
+                responsive: true,
+					// maintainAspectRatio: false
+				}
+			});
+		}
+	}
+
 
     // // Doughnut Chart Function
     // var doughnutChartall = function (elementId, dataValues, label1, label2) {
@@ -5238,6 +5878,10 @@ $(document).ready(function() {
 			radarChart();
 			pieChart();
 			doughnutChart();
+            doughnutChartfirmBackground();
+            doughnutChartComplianceWatch();
+            doughnutChartLegalCourtCheck();
+            doughnutChartMarketReputation();
 			polarChart();
 		},
 
