@@ -994,7 +994,7 @@ class adminController extends Controller
             $data['FinancialsRatioAnalysisFyFourGraphLabelNames'],
             $data['FinancialsRatioAnalysisFyFiveGraphLabelNames'],
         ];
- 
+
         // dd($data['financialRatioGrapFYhLablesName']);
 
         // ===================================================== financial ratio graph end ========================
@@ -1166,7 +1166,7 @@ class adminController extends Controller
             for ($i = 1; $i <= 8; $i++) {
                 $RelatedPartiesFirm->{"Related_party_name_$i"} = $request->input("Related_party_name_$i");
                 $RelatedPartiesFirm->{"Related_party_relation_$i"} = $request->input("Related_party_relation_$i");
-                $RelatedPartiesFirm->{"Related_party_comments_$i"} = $request->input("business_patterns_shareholding_in_the_entity_$i");
+                $RelatedPartiesFirm->{"Related_party_comments_$i"} = $request->input("Related_party_comments_$i");
             }
             $RelatedPartiesFirm->save();
 
