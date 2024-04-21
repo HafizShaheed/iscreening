@@ -88,7 +88,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Quick Ratio",
+                            label: "",
                             data: financialrationGrapFY_quick_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -147,7 +147,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Dept Ratio",
+                            label: "",
                             data: financialrationGrapFY_debt_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -205,7 +205,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Solvency Ratio",
+                            label: "",
                             data: financialrationGrapFY_solvency_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -264,7 +264,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Dept to Equity",
+                            label: "",
                             data: financialrationGrapFY_debt_to_equity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -323,7 +323,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Asset Turnover Ratio",
+                            label: "",
                             data: financialrationGrapFY_asset_turnover_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -382,7 +382,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials absolute liquidity ratio",
+                            label: "",
                             data: financialrationGrapFY_absolute_liquidity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -441,7 +441,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Property ratio",
+                            label: "",
                             data: financialrationGrapFY_proprietary_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -501,7 +501,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Net Profit",
+                            label: "",
                             data: financialrationGrapFY_net_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -560,7 +560,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Gross Profit",
+                            label: "",
                             data: financialrationGrapFY_gross_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -620,7 +620,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials springate score ratio",
+                            label: "",
                             data: financialrationGrapFY_springate_s_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -679,7 +679,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials trade receivable days ratio",
+                            label: "",
                             data: financialrationGrapFY_trade_receivable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -738,7 +738,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financialstrade payable days ratio",
+                            label: "",
                             data: financialrationGrapFY_trade_payable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -797,7 +797,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials taffler z score ratio",
+                            label: "",
                             data: financialrationGrapFY_taffler_z_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -856,7 +856,7 @@
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials zmijewski x score ratio",
+                            label: "",
                             data: financialrationGrapFY_zmijewski_x_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -919,7 +919,7 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence operating efficiency",
+                            label: "",
                             data: businessInteligenceGrapFY_accounts_payable,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -979,7 +979,7 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence inventory turnover",
+                            label: "",
                             data: businessInteligenceGrapFY_inventory_turnover,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -1037,7 +1037,7 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence days sales in inventory",
+                            label: "",
                             data: businessInteligenceGrapFY_days_sales_in_inventory,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -1095,7 +1095,7 @@
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence accounts payable",
+                            label: "",
                             data: businessInteligenceGrapFY_operating_efficiency,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -1141,6 +1141,594 @@
         }
     }
 
+    //========================================================================== BI dummy graph start ========================= //
+    var barChartbusiness_dummy_1 = function(){
+        if(jQuery('#barChart_business_dummy_1').length > 0 ){
+            const barChart_business_dummy_1 = document.getElementById("barChart_business_dummy_1").getContext('2d');
+
+            barChart_business_dummy_1.height = 100;
+
+            new Chart(barChart_business_dummy_1, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_2 = function(){
+        if(jQuery('#barChart_business_dummy_2').length > 0 ){
+            const barChart_business_dummy_2 = document.getElementById("barChart_business_dummy_2").getContext('2d');
+
+            barChart_business_dummy_2.height = 100;
+
+            new Chart(barChart_business_dummy_2, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_3 = function(){
+        if(jQuery('#barChart_business_dummy_3').length > 0 ){
+            const barChart_business_dummy_3 = document.getElementById("barChart_business_dummy_3").getContext('2d');
+
+            barChart_business_dummy_3.height = 100;
+
+            new Chart(barChart_business_dummy_3, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_4 = function(){
+        if(jQuery('#barChart_business_dummy_4').length > 0 ){
+            const barChart_business_dummy_4 = document.getElementById("barChart_business_dummy_4").getContext('2d');
+
+            barChart_business_dummy_4.height = 100;
+
+            new Chart(barChart_business_dummy_4, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_5 = function(){
+        if(jQuery('#barChart_business_dummy_5').length > 0 ){
+            const barChart_business_dummy_5 = document.getElementById("barChart_business_dummy_5").getContext('2d');
+
+            barChart_business_dummy_5.height = 100;
+
+            new Chart(barChart_business_dummy_5, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_6 = function(){
+        if(jQuery('#barChart_business_dummy_6').length > 0 ){
+            const barChart_business_dummy_6 = document.getElementById("barChart_business_dummy_6").getContext('2d');
+
+            barChart_business_dummy_6.height = 100;
+
+            new Chart(barChart_business_dummy_6, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+
+    var barChartbusiness_dummy_7 = function(){
+        if(jQuery('#barChart_business_dummy_7').length > 0 ){
+            const barChart_business_dummy_7 = document.getElementById("barChart_business_dummy_7").getContext('2d');
+
+            barChart_business_dummy_7.height = 100;
+
+            new Chart(barChart_business_dummy_7, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_8 = function(){
+        if(jQuery('#barChart_business_dummy_8').length > 0 ){
+            const barChart_business_dummy_8 = document.getElementById("barChart_business_dummy_8").getContext('2d');
+
+            barChart_business_dummy_8.height = 100;
+
+            new Chart(barChart_business_dummy_8, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_9 = function(){
+        if(jQuery('#barChart_business_dummy_9').length > 0 ){
+            const barChart_business_dummy_9 = document.getElementById("barChart_business_dummy_9").getContext('2d');
+
+            barChart_business_dummy_9.height = 100;
+
+            new Chart(barChart_business_dummy_9, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+
+    var barChartbusiness_dummy_10 = function(){
+        if(jQuery('#barChart_business_dummy_10').length > 0 ){
+            const barChart_business_dummy_10 = document.getElementById("barChart_business_dummy_10").getContext('2d');
+
+            barChart_business_dummy_10.height = 100;
+
+            new Chart(barChart_business_dummy_10, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+
+
+    //========================================================================== BI  dummy graph end ========================= //
+
+
     //========================================================================== BI graph start ========================= //
 
     //========================================================================== Ratio graph start ========================= //
@@ -1163,7 +1751,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
+                            label: "",
                             data: financialFindingsGrapFY_revenue,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1217,7 +1805,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Net Profit",
+                            label: "",
                             data: financialFindingsGrapFY_net_profit,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1269,7 +1857,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Gross Profit",
+                            label: "",
                             data: financialFindingsGrapFY_gross_profit,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1321,7 +1909,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Working Capital",
+                            label: "",
                             data: financialFindingsGrapFY_working_capital_1,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1374,7 +1962,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Quick Assets",
+                            label: "",
                             data: financialFindingsGrapFY_quick_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1426,7 +2014,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Total Assets",
+                            label: "",
                             data: financialFindingsGrapFY_total_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1477,7 +2065,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Current Assets",
+                            label: "",
                             data: financialFindingsGrapFY_current_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1528,7 +2116,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Current Liabilities",
+                            label: "",
                             data: financialFindingsGrapFY_current_liabilities,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1579,7 +2167,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Debt",
+                            label: "",
                             data: financialFindingsGrapFY_debt,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1629,7 +2217,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Average Inventory",
+                            label: "",
                             data: financialFindingsGrapFY_average_inventory,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1680,7 +2268,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Net Sales",
+                            label: "",
                             data: financialFindingsGrapFY_net_sales,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1731,7 +2319,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Equity Share Capital",
+                            label: "",
                             data: financialFindingsGrapFY_equity_share_capital,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1782,7 +2370,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Sundry Debtors",
+                            label: "",
                             data: financialFindingsGrapFY_sundry_debtors,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1834,7 +2422,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Sundry Creditors",
+                            label: "",
                             data: financialFindingsGrapFY_sundry_creditors,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1885,7 +2473,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Loans And Advances",
+                            label: "",
                             data: financialFindingsGrapFY_loans_and_advances,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -1936,7 +2524,7 @@
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Cash & Cash Equivalents",
+                            label: "",
                             data: financialFindingsGrapFY_cash_and_cash_equivalents,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -3097,6 +3685,19 @@
             barChart_DaysSalesInInventory();
             barChart_InventoryTurnoverRatio();
             barChart_OperatingEfficiencyRatio();
+            // business dummy start
+            barChartbusiness_dummy_1();
+            barChartbusiness_dummy_2();
+            barChartbusiness_dummy_3();
+            barChartbusiness_dummy_4();
+            barChartbusiness_dummy_5();
+            barChartbusiness_dummy_6();
+            barChartbusiness_dummy_7();
+            barChartbusiness_dummy_8();
+            barChartbusiness_dummy_9();
+            barChartbusiness_dummy_10();
+            // business dummy end
+
             // business Ratio end
 
 

@@ -288,7 +288,7 @@
                     <div class=" col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
                         <div class="card">
 
-                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Reputation</h4>
+                            <h4 class="card-title mb-4 d-flex justify-content-center align-items-center">Reputational</h4>
 
                             <div class="d-flex justify-content-center align-items-center">
                                 <canvas id="barChartVerticalRegulatary"></canvas>

@@ -136,24 +136,24 @@
                                                  @for($i = 1; $i <= 10; $i++)
                                             @if(!empty($AdharPartnerDetail->{'name_'.$i}) || isset($AdharPartnerDetail->{'name_'.$i}))
                                                 <tr>
-                                                    <th style="background-color: #5a595a; color: white;" 
+                                                    <th style="background-color: #5a595a; color: white;"
                                                         class="col-md-4"> Name ({{ $i }})</th>
 
-                                                    <th style="background-color: #5a595a; color: white;"  
+                                                    <th style="background-color: #5a595a; color: white;"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'name_'.$i} }}</th>
                                                         <th style="background-color: #5a595a; color: white; text-align: center;" colspan="2"
                                                         class="col-md-4"></th>
-                                                      
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">PAN</th>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4"> 
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4">
                                                     {{$AdharPartnerDetail->{'pan_'.$i} }}</td>
-                                                   
-                                                  
-                                                    
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+
+
+
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_pan_'.$i}))
                                                                 <a href="{{ URL::to('/company/report/firm_file_pan_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
                                                             @else
@@ -161,8 +161,8 @@
                                                                 <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
                                                             @endif
                                                         </td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
-                                                            
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
+
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_pan_'.$i}))
                                                                 <a href="{{ URL::to('/company/report/firm_file_pan_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
                                                             @else
@@ -171,16 +171,16 @@
                                                             @endif
 
                                                         </td>
-                                                
-                                                   
-                                                    
+
+
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-3">AADHAR</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'aadhar_'.$i} }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
                                                                 <a href="{{ URL::to('/company/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
                                                             @else
@@ -188,8 +188,8 @@
                                                                 <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
                                                             @endif
                                                         </td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
-                                                            
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
+
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
                                                                 <a href="{{ URL::to('/company/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
                                                             @else
@@ -198,7 +198,7 @@
                                                             @endif
 
                                                         </td>
-                                                      
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
@@ -206,7 +206,7 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'educational_background_'.$i} }}
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
@@ -214,9 +214,9 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'din_'.$i} }}
                                                     </td>
-                                                    
+
                                                 </tr>
-                                              
+
                                             @endif
                                             @endfor
                                                 <!-- <tr>
@@ -1182,7 +1182,7 @@
                         <div class="default-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#ChargesontheEntityFinancialFindingsRatioAnalysis"> Business Information Financial Findings Ratio Analysis</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#ChargesontheEntityFinancialFindingsRatioAnalysis">Charges on Entity</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -1998,6 +1998,170 @@
                                                                     </div>
                                                                 </div>
                                                                 @endif
+
+                                                                <!-- =============================================== Business Dummy start =======================================  -->
+                                                                   <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_1"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_2"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_3"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_4"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_5"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_6"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_7"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_8"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_9"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_10"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                <!-- =============================================== Business Dummy end =======================================  -->
+
                                                     </div>
                                             </div>
                                         </div>
@@ -2894,7 +3058,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Quick Ratio",
+                            label: "",
                             data: financialrationGrapFY_quick_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -2953,7 +3117,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Dept Ratio",
+                            label: "",
                             data: financialrationGrapFY_debt_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3011,7 +3175,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Solvency Ratio",
+                            label: "",
                             data: financialrationGrapFY_solvency_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3070,7 +3234,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Ratio Dept to Equity",
+                            label: "",
                             data: financialrationGrapFY_debt_to_equity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3129,7 +3293,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Asset Turnover Ratio",
+                            label: "",
                             data: financialrationGrapFY_asset_turnover_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3188,7 +3352,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials absolute liquidity ratio",
+                            label: "",
                             data: financialrationGrapFY_absolute_liquidity_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3247,7 +3411,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Property ratio",
+                            label: "",
                             data: financialrationGrapFY_proprietary_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3307,7 +3471,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Net Profit",
+                            label: "",
                             data: financialrationGrapFY_net_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3366,7 +3530,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Gross Profit",
+                            label: "",
                             data: financialrationGrapFY_gross_profit_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3426,7 +3590,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials springate score ratio",
+                            label: "",
                             data: financialrationGrapFY_springate_s_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3485,7 +3649,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials trade receivable days ratio",
+                            label: "",
                             data: financialrationGrapFY_trade_receivable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3544,7 +3708,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financialstrade payable days ratio",
+                            label: "",
                             data: financialrationGrapFY_trade_payable_days_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3603,7 +3767,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials taffler z score ratio",
+                            label: "",
                             data: financialrationGrapFY_taffler_z_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3662,7 +3826,7 @@ hidetabExceptFir();
                     labels:  financialRatioGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials zmijewski x score ratio",
+                            label: "",
                             data: financialrationGrapFY_zmijewski_x_score_ratio,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3712,7 +3876,7 @@ hidetabExceptFir();
 
 
            // pay able start
-           var barChart1businessIntelligenc = function(){
+    var barChart1businessIntelligenc = function(){
         if(jQuery('#barChart_businessIntelligence').length > 0 ){
             const barChart_businessIntelligence = document.getElementById("barChart_businessIntelligence").getContext('2d');
 
@@ -3725,7 +3889,7 @@ hidetabExceptFir();
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence operating efficiency",
+                            label: "",
                             data: businessInteligenceGrapFY_accounts_payable,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3785,7 +3949,7 @@ hidetabExceptFir();
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence inventory turnover",
+                            label: "",
                             data: businessInteligenceGrapFY_inventory_turnover,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3843,7 +4007,7 @@ hidetabExceptFir();
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence days sales in inventory",
+                            label: "",
                             data: businessInteligenceGrapFY_days_sales_in_inventory,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3901,7 +4065,7 @@ hidetabExceptFir();
                     labels:  businessInteligenceGraphLablesName,
                     datasets: [
                         {
-                            label: "Business Intelligence accounts payable",
+                            label: "",
                             data: businessInteligenceGrapFY_operating_efficiency,
                             borderColor: 'black',
                             borderWidth: "2",
@@ -3947,6 +4111,592 @@ hidetabExceptFir();
         }
     }
 
+        //========================================================================== BI dummy graph start ========================= //
+        var barChartbusiness_dummy_1 = function(){
+        if(jQuery('#barChart_business_dummy_1').length > 0 ){
+            const barChart_business_dummy_1 = document.getElementById("barChart_business_dummy_1").getContext('2d');
+
+            barChart_business_dummy_1.height = 100;
+
+            new Chart(barChart_business_dummy_1, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_2 = function(){
+        if(jQuery('#barChart_business_dummy_2').length > 0 ){
+            const barChart_business_dummy_2 = document.getElementById("barChart_business_dummy_2").getContext('2d');
+
+            barChart_business_dummy_2.height = 100;
+
+            new Chart(barChart_business_dummy_2, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_3 = function(){
+        if(jQuery('#barChart_business_dummy_3').length > 0 ){
+            const barChart_business_dummy_3 = document.getElementById("barChart_business_dummy_3").getContext('2d');
+
+            barChart_business_dummy_3.height = 100;
+
+            new Chart(barChart_business_dummy_3, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_4 = function(){
+        if(jQuery('#barChart_business_dummy_4').length > 0 ){
+            const barChart_business_dummy_4 = document.getElementById("barChart_business_dummy_4").getContext('2d');
+
+            barChart_business_dummy_4.height = 100;
+
+            new Chart(barChart_business_dummy_4, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_5 = function(){
+        if(jQuery('#barChart_business_dummy_5').length > 0 ){
+            const barChart_business_dummy_5 = document.getElementById("barChart_business_dummy_5").getContext('2d');
+
+            barChart_business_dummy_5.height = 100;
+
+            new Chart(barChart_business_dummy_5, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_6 = function(){
+        if(jQuery('#barChart_business_dummy_6').length > 0 ){
+            const barChart_business_dummy_6 = document.getElementById("barChart_business_dummy_6").getContext('2d');
+
+            barChart_business_dummy_6.height = 100;
+
+            new Chart(barChart_business_dummy_6, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+
+    var barChartbusiness_dummy_7 = function(){
+        if(jQuery('#barChart_business_dummy_7').length > 0 ){
+            const barChart_business_dummy_7 = document.getElementById("barChart_business_dummy_7").getContext('2d');
+
+            barChart_business_dummy_7.height = 100;
+
+            new Chart(barChart_business_dummy_7, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_8 = function(){
+        if(jQuery('#barChart_business_dummy_8').length > 0 ){
+            const barChart_business_dummy_8 = document.getElementById("barChart_business_dummy_8").getContext('2d');
+
+            barChart_business_dummy_8.height = 100;
+
+            new Chart(barChart_business_dummy_8, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+    var barChartbusiness_dummy_9 = function(){
+        if(jQuery('#barChart_business_dummy_9').length > 0 ){
+            const barChart_business_dummy_9 = document.getElementById("barChart_business_dummy_9").getContext('2d');
+
+            barChart_business_dummy_9.height = 100;
+
+            new Chart(barChart_business_dummy_9, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+
+    var barChartbusiness_dummy_10 = function(){
+        if(jQuery('#barChart_business_dummy_10').length > 0 ){
+            const barChart_business_dummy_10 = document.getElementById("barChart_business_dummy_10").getContext('2d');
+
+            barChart_business_dummy_10.height = 100;
+
+            new Chart(barChart_business_dummy_10, {
+                type: 'line',
+                data: {
+                    defaultFontFamily: 'Poppins',
+                    labels:  ['A','B','C','D','E'],
+                    datasets: [
+                        {
+                            label: "",
+                            data: [12,23,45,12,56],
+                            borderColor: 'black',
+                            borderWidth: "2",
+							backgroundColor: '#61c0e2',
+                            pointRadius: 5,
+                            pointBackgroundColor: ['#2585b1', '#cf924c', '#ad4043', '#78b2b3', '#559e83'],}
+                    ]
+                },
+                options: {
+                    legend: false,
+                    scales: {
+                        yAxes: [{
+                            show: false,
+                            ticks: {
+                                beginAtZero: true,
+                                color: '#888',
+                                fontColor:'#888'
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)",
+                                offsetGridLines: true,
+                            }
+                        }],
+                        xAxes: [{
+                            barPercentage: 2,
+                            ticks:{
+                                fontColor: '#888',
+                            },
+                            gridLines:{
+                                color:"rgba(255, 255, 255, 0.1)"
+                            }
+                        }]
+                    },
+                //     tooltips: {
+                //     callbacks: {
+                //         label: function (tooltipItem, data) {
+                //             return data.labels[tooltipItem.index] + ': ' + data.datasets[0].data[tooltipItem.index];
+                //         }
+                //     }
+                // }
+                }
+            });
+        }
+    }
+
+
+    //========================================================================== BI  dummy graph end ========================= //
     //========================================================================== BI graph start ========================= //
 
     //========================================================================== Ratio graph start ========================= //
@@ -3969,7 +4719,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Revenue",
+                            label: "",
                             data: financialFindingsGrapFY_revenue,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4023,7 +4773,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Net Profit",
+                            label: "",
                             data: financialFindingsGrapFY_net_profit,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4075,7 +4825,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Gross Profit",
+                            label: "",
                             data: financialFindingsGrapFY_gross_profit,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4127,7 +4877,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Working Capital",
+                            label: "",
                             data: financialFindingsGrapFY_working_capital_1,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4180,7 +4930,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Quick Assets",
+                            label: "",
                             data: financialFindingsGrapFY_quick_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4232,7 +4982,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Total Assets",
+                            label: "",
                             data: financialFindingsGrapFY_total_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4283,7 +5033,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Current Assets",
+                            label: "",
                             data: financialFindingsGrapFY_current_assets,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4334,7 +5084,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Current Liabilities",
+                            label: "",
                             data: financialFindingsGrapFY_current_liabilities,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4385,7 +5135,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Debt",
+                            label: "",
                             data: financialFindingsGrapFY_debt,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4435,7 +5185,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Average Inventory",
+                            label: "",
                             data: financialFindingsGrapFY_average_inventory,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4486,7 +5236,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Net Sales",
+                            label: "",
                             data: financialFindingsGrapFY_net_sales,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4537,7 +5287,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Equity Share Capital",
+                            label: "",
                             data: financialFindingsGrapFY_equity_share_capital,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4588,7 +5338,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Sundry Debtors",
+                            label: "",
                             data: financialFindingsGrapFY_sundry_debtors,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4640,7 +5390,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Sundry Creditors",
+                            label: "",
                             data: financialFindingsGrapFY_sundry_creditors,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4691,7 +5441,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Loans And Advances",
+                            label: "",
                             data: financialFindingsGrapFY_loans_and_advances,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -4742,7 +5492,7 @@ hidetabExceptFir();
                     labels: financialFindingsGrapFYhLablesName,
                     datasets: [
                         {
-                            label: "Financials Findinds Cash & Cash Equivalents",
+                            label: "",
                             data: financialFindingsGrapFY_cash_and_cash_equivalents,
                             borderColor: '#fff',
                             borderWidth: "0",
@@ -5890,6 +6640,18 @@ hidetabExceptFir();
             barChart_DaysSalesInInventory();
             barChart_InventoryTurnoverRatio();
             barChart_OperatingEfficiencyRatio();
+                  // business dummy start
+                  barChartbusiness_dummy_1();
+            barChartbusiness_dummy_2();
+            barChartbusiness_dummy_3();
+            barChartbusiness_dummy_4();
+            barChartbusiness_dummy_5();
+            barChartbusiness_dummy_6();
+            barChartbusiness_dummy_7();
+            barChartbusiness_dummy_8();
+            barChartbusiness_dummy_9();
+            barChartbusiness_dummy_10();
+            // business dummy end
             // business Ratio end
 
 

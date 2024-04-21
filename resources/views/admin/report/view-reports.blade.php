@@ -136,24 +136,24 @@
                                             @for($i = 1; $i <= 10; $i++)
                                             @if(!empty($AdharPartnerDetail->{'name_'.$i}) || isset($AdharPartnerDetail->{'name_'.$i}))
                                                 <tr>
-                                                    <th style="background-color: #5a595a; color: white;" 
+                                                    <th style="background-color: #5a595a; color: white;"
                                                         class="col-md-4"> Name ({{ $i }})</th>
 
-                                                    <th style="background-color: #5a595a; color: white;"  
+                                                    <th style="background-color: #5a595a; color: white;"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'name_'.$i} }}</th>
                                                         <th style="background-color: #5a595a; color: white; text-align: center;" colspan="2"
                                                         class="col-md-4"></th>
-                                                      
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4">PAN</th>
-                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4"> 
+                                                    <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-4">
                                                     {{$AdharPartnerDetail->{'pan_'.$i} }}</td>
-                                                   
-                                                  
-                                                    
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+
+
+
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_pan_'.$i}))
                                                                 <a href="{{ URL::to('/panel/report/firm_file_pan_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
                                                             @else
@@ -161,8 +161,8 @@
                                                                 <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
                                                             @endif
                                                         </td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
-                                                            
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
+
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_pan_'.$i}))
                                                                 <a href="{{ URL::to('/panel/report/firm_file_pan_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
                                                             @else
@@ -171,16 +171,16 @@
                                                             @endif
 
                                                         </td>
-                                                
-                                                   
-                                                    
+
+
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-3">AADHAR</th>
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'aadhar_'.$i} }}</td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
                                                                 <a href="{{ URL::to('/panel/report/firm_file_adhar_download'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 100px;  text-align: center; ">Download </a>
                                                             @else
@@ -188,8 +188,8 @@
                                                                 <a  class="download-license-btn" style=" width: 200px;  text-align: center; ">N/A</a>
                                                             @endif
                                                         </td>
-                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2"> 
-                                                            
+                                                        <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" class="col-md-2">
+
                                                             @if(!empty($AdharPartnerDetail->{'licenses_upload_file_aadhar_'.$i}))
                                                                 <a href="{{ URL::to('/panel/report/firm_file_adhar_view'.'/'.base64_encode($AdharPartnerDetail->id).'/'.$i) }}" target="_blank" class="download-license-btn" style=" width: 200px;  text-align: center; ">View</a>
                                                             @else
@@ -198,7 +198,7 @@
                                                             @endif
 
                                                         </td>
-                                                      
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
@@ -206,7 +206,7 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'educational_background_'.$i} }}
                                                     </td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                     <th style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"
@@ -214,9 +214,9 @@
                                                     <td style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);" colspan="3"
                                                         class="col-md-4"> {{$AdharPartnerDetail->{'din_'.$i} }}
                                                     </td>
-                                                    
+
                                                 </tr>
-                                              
+
                                             @endif
                                             @endfor
                                                 <!-- <tr>
@@ -1182,7 +1182,7 @@
                         <div class="default-tab">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#ChargesontheEntityFinancialFindingsRatioAnalysis"> Business Information Financial Findings Ratio Analysis</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#ChargesontheEntityFinancialFindingsRatioAnalysis">Charges on Entity</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -1998,6 +1998,169 @@
                                                                     </div>
                                                                 </div>
                                                                 @endif
+                                                                <!-- =============================================== Business Dummy start =======================================  -->
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_1"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_2"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_3"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_4"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_5"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_6"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_7"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_8"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_9"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-sm-4 col-4 mt-4 mt-md-0">
+                                                                        <div class="card">
+                                                                            <h4
+                                                                            class="card-title mb-4 d-flex justify-content-center align-items-center">Business Dummy </h4>
+                                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                                <canvas id="barChart_business_dummy_10"></canvas>
+                                                                            </div>
+                                                                            <hr>
+                                                                                <h3
+                                                                                class="card-title d-flex justify-content-center align-items-center">
+                                                                                Analysis</h3>
+                                                                                <p class="d-flex justify-content-center align-items-center text-center">
+                                                                                Analysis
+                                                                                </p>
+                                                                        </div>
+                                                                    </div>
+                                                                <!-- =============================================== Business Dummy end =======================================  -->
+
                                                     </div>
                                             </div>
                                         </div>
